@@ -25,19 +25,14 @@ class DaidalosDeploy_Controller extends Controller
 // Attributes
 //////////////////////////////////////////////////////////////////////////////*/
 
-  protected $options           = array
-  (
-    'syncmetadata' => array
-    (
+  protected $options = array(
+    'syncmetadata' => array(
     ),
-    'syncdatabase' => array
-    (
+    'syncdatabase' => array(
     ),
-    'syncdata' => array
-    (
+    'syncdata' => array(
     ),
-    'syncdocu' => array
-    (
+    'syncdocu' => array(
     ),
   );
 
@@ -120,10 +115,10 @@ class DaidalosDeploy_Controller extends Controller
 
     $respsonse->addMessage('Start Table Sync: '.date('Y-m-d H:i:s'));
     
-    $db = $model->getDb();
-    $db->begin();
+    //$db = $model->getDb();
+    //$db->begin();
     $model->syncDatabase($rootPath);
-    $db->commit();
+    //$db->commit();
     $respsonse->addMessage('Sucessfully sychronised Tables '.date('Y-m-d H:i:s'));
 
   }//end public function service_syncDatabase */
