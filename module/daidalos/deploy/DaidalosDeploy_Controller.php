@@ -60,8 +60,10 @@ class DaidalosDeploy_Controller extends Controller
     $respsonse->addMessage("Using Rootpath ".$rootPath);
 
     $type = $request->param('type', Validator::CNAME);
-
+    $db = $model->getDb();
+    $db->begin();
     $model->syncMetadata($rootPath, $type);
+    $db->commit();
 
     $respsonse->addMessage('Sucessfully synced Metadata '.date('Y-m-d H:i:s'));
 
@@ -77,8 +79,10 @@ class DaidalosDeploy_Controller extends Controller
     /* @var $model DaidalosDeployDocu_Model */
 
     $respsonse->addMessage('Start Docu Sync: '.date('Y-m-d H:i:s'));
-
+    $db = $model->getDb();
+    $db->begin();
     $model->syncDocu();
+    $db->commit();
 
     $respsonse->addMessage('Sucessfully synced Docu '.date('Y-m-d H:i:s'));
 
@@ -89,7 +93,7 @@ class DaidalosDeploy_Controller extends Controller
    */
   public function service_syncDatabase($request, $respsonse)
   {
-
+    
     $model = $this->loadModel('DaidalosDeployDatabase');
     /* @var $model DaidalosDeployDatabase_Model */
 
@@ -115,7 +119,11 @@ class DaidalosDeploy_Controller extends Controller
     }
 
     $respsonse->addMessage('Start Table Sync: '.date('Y-m-d H:i:s'));
+    
+    $db = $model->getDb();
+    $db->begin();
     $model->syncDatabase($rootPath);
+    $db->commit();
     $respsonse->addMessage('Sucessfully sychronised Tables '.date('Y-m-d H:i:s'));
 
   }//end public function service_syncDatabase */
@@ -132,7 +140,10 @@ class DaidalosDeploy_Controller extends Controller
     /* @var $model DaidalosDeployDatabase_Model */
 
     $respsonse->addMessage('Start Model / Data Sync: '.date('Y-m-d H:i:s'));
+    $db = $model->getDb();
+    $db->begin();
     $model->syncData($rootPath);
+    $db->commit();
     $respsonse->addMessage('Sucessfully sychronized Data from the Model '.date('Y-m-d H:i:s'));
 
   }//end public function service_syncData */
