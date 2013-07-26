@@ -1,0 +1,1 @@
+<h2>Module <?php echo $this->model->data->name ?></h2>

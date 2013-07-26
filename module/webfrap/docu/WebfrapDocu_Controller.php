@@ -125,6 +125,7 @@ class WebfrapDocu_Controller extends Controller
     $helpPage = $orm->getByKey('WbfsysDocuHelp', $key);
 
     if (!$helpPage) {
+      
       // hielfeseiten erst mal nur für existierende Masken zulassen
       $mask = $orm->getByKey('WbfsysMask', $key);
       if (!$mask) {

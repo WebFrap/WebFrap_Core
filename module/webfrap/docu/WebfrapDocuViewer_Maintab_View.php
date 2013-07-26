@@ -79,23 +79,18 @@ class WebfrapDocuViewer_Maintab_View extends WgtMaintabCustom
    *   string formId: the id of the form;
    * }
    */
-  public function addMenu($helpPage, $params)
+  public function addMenu( $params)
   {
 
-    $i18n         = $this->getI18n();
+    $i18n = $this->getI18n();
 
-    $iconMenu     = '<i class="icon-reorder" ></i>';
-    $iconSupport  = $this->icon('control/support.png'      ,'Support');
-    $iconHelp     = $this->icon('control/help.png'      ,'Help');
-    $iconClose    = $this->icon('control/close.png'      ,'Close');
-    $iconEdit     = $this->icon('control/edit.png'      ,'Edit');
-    $iconBug      = $this->icon('control/bug.png'      ,'Bug');
-    $iconBookmark      = $this->icon('control/bookmark.png'      ,'Bookmark');
-    $iconFaq      = $this->icon('control/faq.png'      ,'Faq');
+    $iconMenu = '<i class="icon-reorder" ></i>';
+    $iconClose = $this->icon('control/close.png'      ,'Close');
+    $iconBookmark = $this->icon('control/bookmark.png'      ,'Bookmark');
 
-    $menu          = $this->newMenu($this->id.'_dropmenu');
+    $menu = $this->newMenu($this->id.'_dropmenu');
 
-    $this->addActions($helpPage, $params);
+    $this->addActions($params);
 
     $menu->content = <<<HTML
 
@@ -113,15 +108,6 @@ class WebfrapDocuViewer_Maintab_View extends WgtMaintabCustom
     </li>
   </ul>
   <ul>
-    <li>
-      <a class="deeplink" >{$iconSupport} {$this->i18n->l('Support', 'wbf.label')}</a>
-      <span>
-      <ul>
-        <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Issue.create&amp;context=menu" >{$iconBug} {$this->i18n->l('Bug', 'wbf.label')}</a></li>
-        <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Faq.create&amp;context=menu" >{$iconFaq} {$this->i18n->l('Faq', 'wbf.label')}</a></li>
-      </ul>
-      </span>
-    </li>
     <li>
       <a class="wgtac_close" >{$iconClose} {$this->i18n->l('Close','wbf.label')}</a>
     </li>
@@ -143,7 +129,7 @@ HTML;
    *   string formId: the id of the form;
    * }
    */
-  public function addActions($helpPage, $params)
+  public function addActions($params)
   {
 
     // add the button action for save in the window
