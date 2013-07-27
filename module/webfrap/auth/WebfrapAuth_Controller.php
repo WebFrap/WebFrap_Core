@@ -103,8 +103,6 @@ class WebfrapAuth_Controller extends Controller
     if ($this->view->isType(View::AJAX))
       View::$sendBody = true;
 
-    View::$sendMenu = false;
-
     $this->view->setTitle(Conf::status('default.title').' Login');
     $this->view->setIndex('login'  );
     $this->view->setTemplate('webfrap/auth/form_login', true  );
@@ -196,7 +194,6 @@ class WebfrapAuth_Controller extends Controller
         $model->protocolLogin($user);
 
         $conf = Conf::get('view');
-        $this->view->setHtmlHead($conf['head.user']);
 
         Webfrap::getInstance()->redirectToDefault();
 
@@ -207,14 +204,12 @@ class WebfrapAuth_Controller extends Controller
         $conf = Conf::get('view');
 
         $this->view->setIndex($conf['index.login']);
-        $this->view->setHtmlHead($conf['head.login']);
 
         $this->view->message->addError('Failed to login');
       }
     } else {
       $conf = Conf::get('view');
       $this->view->setIndex($conf['index.login']);
-      $this->view->setHtmlHead($conf['head.login']);
       $this->view->message->addError('Login Failed');
       $this->service_form($request, $response);
     }
@@ -244,7 +239,6 @@ class WebfrapAuth_Controller extends Controller
   public function service_formResetPasswd($request, $response)
   {
 
-    $this->tplEngine->setHtmlHead('public');
     $this->tplEngine->setIndex('public/default');
 
     $this->view->setTemplate('webfrap/auth/form_reset_pwd', true  );
@@ -259,7 +253,6 @@ class WebfrapAuth_Controller extends Controller
   public function service_formChangePasswd($request, $response)
   {
 
-    $this->tplEngine->setHtmlHead('public');
     $this->tplEngine->setIndex('public/default');
 
     $this->view->setTemplate('webfrap/auth/form_change_pwd', true  );
@@ -274,7 +267,6 @@ class WebfrapAuth_Controller extends Controller
   public function service_formForgotPasswd($request, $response)
   {
 
-    $this->tplEngine->setHtmlHead('public');
     $this->tplEngine->setIndex('public/plain');
 
     $this->view->setTemplate('webfrap/auth/form_forgot_pwd', true  );

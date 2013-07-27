@@ -62,7 +62,6 @@ class WebfrapDesktop_Controller extends Controller
     $view->setTitle('Desktop');
 
     $conf = Conf::get('view');
-    $view->setHtmlHead($conf['head.user']);
 
     $profile = $this->getUser()->getProfile();
 
@@ -114,7 +113,6 @@ class WebfrapDesktop_Controller extends Controller
     $view->setTitle('Desktop');
 
     $conf = Conf::get('view');
-    $view->setHtmlHead($conf['head.user']);
 
     $profile = $this->getUser()->getProfile();
 

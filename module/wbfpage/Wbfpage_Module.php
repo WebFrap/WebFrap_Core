@@ -31,7 +31,6 @@ class Wbfpage_Module extends Module
   public function main()
   {
 
-    $this->tplEngine->setHtmlHead('public');
     $this->tplEngine->setIndex('public/default');
 
     $this->runController();
