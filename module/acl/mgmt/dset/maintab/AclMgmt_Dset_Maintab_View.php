@@ -54,7 +54,7 @@ class AclMgmt_Dset_Maintab_View extends WgtMaintab
   * add the table item
   * add the search field elements
   *
-  * @param TFlag $params
+  * @param Context $params
   * @return boolean
   */
   public function displayListing($domainEntity, $areaId, $params)
@@ -91,7 +91,7 @@ class AclMgmt_Dset_Maintab_View extends WgtMaintab
     $params->searchFormAction = 'ajax.php?c=Acl.Mgmt_Dset.search&amp;objid='.$domainEntity.'&amp;dkey='.$this->domainNode->domainName;
 
     // fill the relevant data for the search form
-    $this->setSearchFormData($params);
+    $params->injectSearchFormData($this);
 
     // create the form action & action id
     $params->formAction = 'index.php?c=Acl.Mgmt_Dset.update&amp;dkey='.$this->domainNode->domainName;

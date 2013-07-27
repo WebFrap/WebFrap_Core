@@ -567,7 +567,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   {
     $i18n     = $this->view->i18n;
 
-    if (!Webfrap::classLoadable('CorePerson_Entity')) {
+    if (!Webfrap::classExists('CorePerson_Entity')) {
       if (DEBUG)
         Debug::console('Entity CorePerson not exists');
 
@@ -855,7 +855,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   {
     $i18n     = $this->view->i18n;
 
-    if (!Webfrap::classLoadable('EnterpriseEmployee_Entity')) {
+    if (!Webfrap::classExists('EnterpriseEmployee_Entity')) {
       if (DEBUG)
         Debug::console('Entity EnterpriseEmployee not exists');
 
@@ -976,7 +976,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   {
     $i18n     = $this->view->i18n;
 
-    if (!Webfrap::classLoadable('WbfsysRoleUser_Entity')) {
+    if (!Webfrap::classExists('WbfsysRoleUser_Entity')) {
       if (DEBUG)
         Debug::console('Entity WbfsysRoleUser not exists');
 
@@ -1105,7 +1105,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   {
     $i18n     = $this->view->i18n;
 
-    if (!Webfrap::classLoadable('WbfsysRoleUser_Entity')) {
+    if (!Webfrap::classExists('WbfsysRoleUser_Entity')) {
       if (DEBUG)
         Debug::console('Entity WbfsysRoleUser not exists');
 
@@ -1357,7 +1357,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   {
     $i18n     = $this->view->i18n;
 
-    if (!Webfrap::classLoadable('WbfsysRoleUser_Entity')) {
+    if (!Webfrap::classExists('WbfsysRoleUser_Entity')) {
       if (DEBUG)
         Debug::console('Entity WbfsysRoleUser not exists');
 
@@ -1486,7 +1486,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   {
     $i18n     = $this->view->i18n;
 
-    if (!Webfrap::classLoadable('WbfsysRoleUser_Entity')) {
+    if (!Webfrap::classExists('WbfsysRoleUser_Entity')) {
       if (DEBUG)
         Debug::console('Entity WbfsysRoleUser not exists');
 
@@ -1738,7 +1738,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   {
     $i18n     = $this->view->i18n;
 
-    if (!Webfrap::classLoadable('WbfsysRoleUser_Entity')) {
+    if (!Webfrap::classExists('WbfsysRoleUser_Entity')) {
       if (DEBUG)
         Debug::console('Entity WbfsysRoleUser not exists');
 
@@ -1867,7 +1867,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   {
     $i18n     = $this->view->i18n;
 
-    if (!Webfrap::classLoadable('WbfsysRoleUser_Entity')) {
+    if (!Webfrap::classExists('WbfsysRoleUser_Entity')) {
       if (DEBUG)
         Debug::console('Entity WbfsysRoleUser not exists');
 
@@ -2132,7 +2132,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
     $i18n     = $this->view->i18n;
 
     if (!isset($this->listElementData['wbfsys_role_user_level'])) {
-      if (!Webfrap::classLoadable('WbfsysSecurityLevelValue_Selectbox')) {
+      if (!Webfrap::classExists('WbfsysSecurityLevelValue_Selectbox')) {
         if (DEBUG)
           Debug::console('WbfsysSecurityLevelValue_Selectbox not exists');
 
@@ -2221,7 +2221,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
     $i18n     = $this->view->i18n;
 
     if (!isset($this->listElementData['wbfsys_role_user_profile'])) {
-      if (!Webfrap::classLoadable('WbfsysProfileValue_Selectbox')) {
+      if (!Webfrap::classExists('WbfsysProfileValue_Selectbox')) {
         if (DEBUG)
           Debug::console('WbfsysProfileValue_Selectbox not exists');
 

@@ -69,7 +69,7 @@ class AclUser_Maintab_View extends WgtMaintab
     $params->searchFormId = 'wgt-form-table-'.$this->domainNode->aclDomainKey.'-acl-search';
 
     // fill the relevant data for the search form
-    $this->setSearchFormData($params);
+    $params->injectSearchFormData($this);
 
     // create the form action
     $params->formAction = 'index.php?c=Acl.Mgmt.updateArea&dkey='.$this->domainNode->domainName;

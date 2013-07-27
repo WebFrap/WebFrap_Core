@@ -214,7 +214,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
   public function input_m_parent($params)
   {
 
-    if (!Webfrap::classLoadable('WbfsysSecurityArea_Entity')) {
+    if (!Webfrap::classExists('WbfsysSecurityArea_Entity')) {
       if (DEBUG)
         Debug::console('Entity WbfsysSecurityArea not exists');
 
@@ -341,7 +341,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
   */
   public function input_id_ref_listing($params)
   {
-    if (!Webfrap::classLoadable('WbfsysSecurityLevel_Selectbox')) {
+    if (!Webfrap::classExists('WbfsysSecurityLevel_Selectbox')) {
       if (DEBUG)
         Debug::console('WbfsysSecurityLevel_Selectbox not exists');
 
@@ -408,7 +408,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
   */
   public function input_id_ref_access($params)
   {
-    if (!Webfrap::classLoadable('WbfsysSecurityLevel_Selectbox')) {
+    if (!Webfrap::classExists('WbfsysSecurityLevel_Selectbox')) {
       if (DEBUG)
         Debug::console('WbfsysSecurityLevel_Selectbox not exists');
 
@@ -475,7 +475,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
   */
   public function input_id_ref_insert($params)
   {
-    if (!Webfrap::classLoadable('WbfsysSecurityLevel_Selectbox')) {
+    if (!Webfrap::classExists('WbfsysSecurityLevel_Selectbox')) {
       if (DEBUG)
         Debug::console('WbfsysSecurityLevel_Selectbox not exists');
 
@@ -542,7 +542,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
   */
   public function input_id_ref_update($params)
   {
-    if (!Webfrap::classLoadable('WbfsysSecurityLevel_Selectbox')) {
+    if (!Webfrap::classExists('WbfsysSecurityLevel_Selectbox')) {
       if (DEBUG)
         Debug::console('WbfsysSecurityLevel_Selectbox not exists');
 
@@ -609,7 +609,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
   */
   public function input_id_ref_delete($params)
   {
-    if (!Webfrap::classLoadable('WbfsysSecurityLevel_Selectbox')) {
+    if (!Webfrap::classExists('WbfsysSecurityLevel_Selectbox')) {
       if (DEBUG)
         Debug::console('WbfsysSecurityLevel_Selectbox not exists');
 
@@ -676,7 +676,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
   */
   public function input_id_ref_admin($params)
   {
-    if (!Webfrap::classLoadable('WbfsysSecurityLevel_Selectbox')) {
+    if (!Webfrap::classExists('WbfsysSecurityLevel_Selectbox')) {
       if (DEBUG)
         Debug::console('WbfsysSecurityLevel_Selectbox not exists');
 
@@ -743,7 +743,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
   */
   public function input_id_level_listing($params)
   {
-    if (!Webfrap::classLoadable('WbfsysSecurityLevel_Selectbox')) {
+    if (!Webfrap::classExists('WbfsysSecurityLevel_Selectbox')) {
       if (DEBUG)
         Debug::console('WbfsysSecurityLevel_Selectbox not exists');
 
@@ -810,7 +810,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
   */
   public function input_id_level_access($params)
   {
-    if (!Webfrap::classLoadable('WbfsysSecurityLevel_Selectbox')) {
+    if (!Webfrap::classExists('WbfsysSecurityLevel_Selectbox')) {
       if (DEBUG)
         Debug::console('WbfsysSecurityLevel_Selectbox not exists');
 
@@ -877,7 +877,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
   */
   public function input_id_level_insert($params)
   {
-    if (!Webfrap::classLoadable('WbfsysSecurityLevel_Selectbox')) {
+    if (!Webfrap::classExists('WbfsysSecurityLevel_Selectbox')) {
       if (DEBUG)
         Debug::console('WbfsysSecurityLevel_Selectbox not exists');
 
@@ -944,7 +944,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
   */
   public function input_id_level_update($params)
   {
-    if (!Webfrap::classLoadable('WbfsysSecurityLevel_Selectbox')) {
+    if (!Webfrap::classExists('WbfsysSecurityLevel_Selectbox')) {
       if (DEBUG)
         Debug::console('WbfsysSecurityLevel_Selectbox not exists');
 
@@ -1011,7 +1011,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
   */
   public function input_id_level_delete($params)
   {
-    if (!Webfrap::classLoadable('WbfsysSecurityLevel_Selectbox')) {
+    if (!Webfrap::classExists('WbfsysSecurityLevel_Selectbox')) {
       if (DEBUG)
         Debug::console('WbfsysSecurityLevel_Selectbox not exists');
 
@@ -1078,7 +1078,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
   */
   public function input_id_level_admin($params)
   {
-    if (!Webfrap::classLoadable('WbfsysSecurityLevel_Selectbox')) {
+    if (!Webfrap::classExists('WbfsysSecurityLevel_Selectbox')) {
       if (DEBUG)
         Debug::console('WbfsysSecurityLevel_Selectbox not exists');
 
@@ -1177,7 +1177,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
   public function input_id_target($params)
   {
 
-    if (!Webfrap::classLoadable('WbfsysSecurityArea_Entity')) {
+    if (!Webfrap::classExists('WbfsysSecurityArea_Entity')) {
       if (DEBUG)
         Debug::console('Entity WbfsysSecurityArea not exists');
 
@@ -1260,7 +1260,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
   */
   public function input_id_type($params)
   {
-    if (!Webfrap::classLoadable('WbfsysSecurityAreaType_Selectbox')) {
+    if (!Webfrap::classExists('WbfsysSecurityAreaType_Selectbox')) {
       if (DEBUG)
         Debug::console('WbfsysSecurityAreaType_Selectbox not exists');
 
@@ -1503,7 +1503,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
   public function input_id_source($params)
   {
 
-    if (!Webfrap::classLoadable('WbfsysSecurityArea_Entity')) {
+    if (!Webfrap::classExists('WbfsysSecurityArea_Entity')) {
       if (DEBUG)
         Debug::console('Entity WbfsysSecurityArea not exists');
 
@@ -1879,7 +1879,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
   public function input_m_role_create($params)
   {
 
-    if (!Webfrap::classLoadable('WbfsysRoleUser_Entity')) {
+    if (!Webfrap::classExists('WbfsysRoleUser_Entity')) {
       if (DEBUG)
         Debug::console('Entity WbfsysRoleUser not exists');
 
@@ -2007,7 +2007,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
   public function input_m_role_change($params)
   {
 
-    if (!Webfrap::classLoadable('WbfsysRoleUser_Entity')) {
+    if (!Webfrap::classExists('WbfsysRoleUser_Entity')) {
       if (DEBUG)
         Debug::console('Entity WbfsysRoleUser not exists');
 
@@ -2225,7 +2225,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
   public function search_id_type($params)
   {
 
-    if (!Webfrap::classLoadable('WbfsysSecurityAreaType_Selectbox')) {
+    if (!Webfrap::classExists('WbfsysSecurityAreaType_Selectbox')) {
       if (DEBUG)
         Debug::console('WbfsysSecurityAreaType_Selectbox not exists');
 
@@ -2463,7 +2463,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
   {
     //tpl: special
 
-    if (!Webfrap::classLoadable('WbfsysRoleUser_Entity')) {
+    if (!Webfrap::classExists('WbfsysRoleUser_Entity')) {
       if (DEBUG)
         Debug::console('Class WbfsysRoleUser_Entity not exists');
 
@@ -2524,7 +2524,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
   {
     //tpl: special
 
-    if (!Webfrap::classLoadable('WbfsysRoleUser_Entity')) {
+    if (!Webfrap::classExists('WbfsysRoleUser_Entity')) {
       if (DEBUG)
         Debug::console('Class WbfsysRoleUser_Entity not exists');
 

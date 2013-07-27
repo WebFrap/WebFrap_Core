@@ -50,7 +50,7 @@ class AclMgmt_Qfdu_Dset_Area_View extends LibTemplateAreaView
   * display the Quallified users tab
   *
   * @param int $areaId
-  * @param TFlag $params
+  * @param Context $params
   *
   * @return boolean
   */
@@ -65,7 +65,7 @@ class AclMgmt_Qfdu_Dset_Area_View extends LibTemplateAreaView
     $params->searchFormId = 'wgt-form-table-'.$this->domainNode->aclDomainKey.'-acl-dset-search';
 
     // fill the relevant data for the search form
-    $this->setSearchFormData($params);
+    $params->injectSearchFormData($this);
 
     // add the id to the form
     $params->formId = 'wgt-form-'.$this->domainNode->aclDomainKey.'-acl-dset-update';
@@ -93,8 +93,7 @@ class AclMgmt_Qfdu_Dset_Area_View extends LibTemplateAreaView
     $ui->setView($this);
     $ui->domainNode = $this->domainNode;
 
-    $ui->createListItem
-    (
+    $ui->createListItem(
       $this->model->loadListByDset_Dsets($params),
       $params->access,
       $params

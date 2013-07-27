@@ -51,7 +51,7 @@ class MaintenanceDbConsistency_Controller extends Controller
     //$protocol = new TProtocol();
 
     foreach ($extensionLoader as $extension) {
-      if (Webfrap::classLoadable($extension)) {
+      if (Webfrap::classExists($extension)) {
         $ext = new $extension($this);
         try {
           $ext->run();
@@ -73,7 +73,7 @@ class MaintenanceDbConsistency_Controller extends Controller
     //$protocol = new TProtocol();
 
     foreach ($extensionLoader as $extension) {
-      if (Webfrap::classLoadable($extension)) {
+      if (Webfrap::classExists($extension)) {
         $ext = new $extension($this);
         try {
           $ext->run();

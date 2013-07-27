@@ -253,7 +253,7 @@ SQL;
 
     $className = 'LibDb'.$dbConf['class'];
 
-    if (WebFrap::loadable($className)) {
+    if (WebFrap::classExists($className)) {
       $this->db = new $className($dbConf);
     } else {
       throw new LibDb_Exception

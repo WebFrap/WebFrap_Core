@@ -113,7 +113,7 @@ class DaidalosBdlModeller_Controller extends Controller
 
     $nodeKey = 'DaidalosBdlNode_'.SParserString::subToCamelCase($type);
 
-    if (!Webfrap::classLoadable($nodeKey.'_Model')) {
+    if (!Webfrap::classExists($nodeKey.'_Model')) {
       throw new InternalError_Exception('Sorry there is no support for filetype: '.$type.' yet');
     }
 

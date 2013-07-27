@@ -307,7 +307,7 @@ class WebfrapAnnouncement_Crud_Edit_Form extends WgtCrudForm
     if
     (
       isset($this->fields['webfrap_announcement']['type'])
-        && Webfrap::classLoadable('WbfsysAnnouncementType_Selectbox')
+        && Webfrap::classExists('WbfsysAnnouncementType_Selectbox')
     )
     {
 

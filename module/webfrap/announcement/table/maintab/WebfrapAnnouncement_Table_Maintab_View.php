@@ -53,7 +53,7 @@ class WebfrapAnnouncement_Table_Maintab_View extends WgtMaintab
   *
   * View Methode zum Erstellen des Listing Elements und eines Suchformulars
   *
-  * @param TFlag $params benamte parameter
+  * @param Context $params benamte parameter
   * @return boolean
   */
   public function displayListing($params)
@@ -92,7 +92,7 @@ class WebfrapAnnouncement_Table_Maintab_View extends WgtMaintab
     // set search form erweitert die Action anhand der in params mit
     // übergebene flags und schiebt formAction und formId in den VAR index
     // der aktuellen view
-    $this->setSearchFormData($params);
+    $params->injectSearchFormData($this);
 
     // filter auswerten die mitgeschickt werden können
     $condition = array();

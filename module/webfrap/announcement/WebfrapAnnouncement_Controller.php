@@ -165,16 +165,12 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
     // wenn er keine neuen Datensätze erstellen darf können wir direkt aufhören
     if (!$access->insert) {
       // ausgabe einer fehlerseite und adieu
-      throw new InvalidRequest_Exception
-      (
-        $response->i18n->l
-        (
+      throw new InvalidRequest_Exception(
+        $response->i18n->l(
           'You have no permission to create new entries for {@resource@}!',
           'wbf.message',
-          array
-          (
-            'resource' => $response->i18n->l
-            (
+          array(
+            'resource' => $response->i18n->l(
               'Announcement',
               'wbfsys.announcement.label'
             )
@@ -184,8 +180,7 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
       );
     }
 
-    $view = $response->loadView
-    (
+    $view = $response->loadView(
       'form-webfrap_announcement-create',
       'WebfrapAnnouncement_Crud_Create',
       'displayForm'
@@ -258,14 +253,11 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
     // auf Anfage logischerweise nicht bearbeiten
     if (!$objid = $this->getOID()) {
       // Ok wir haben keine id bekommen, also ist hier schluss
-      throw new InvalidRequest_Exception
-      (
-        $response->i18n->l
-        (
+      throw new InvalidRequest_Exception(
+        $response->i18n->l(
           'The Request for {@service@} was invalid. ID was missing!',
           'wbf.message',
-          array
-          (
+          array(
             'service' => 'edit'
           )
         ),
@@ -283,14 +275,11 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
     // daher muss das System eine 404 Meldung zurückgeben
     if (!$entityWbfsysAnnouncement) {
       // if not this request is per definition invalid
-      throw new InvalidRequest_Exception
-      (
-        $response->i18n->l
-        (
+      throw new InvalidRequest_Exception(
+        $response->i18n->l(
           'The requested {@resource@} for ID {@id@} not exists!',
           'wbf.message',
-          array
-          (
+          array(
             'resource'  => $response->i18n->l('Announcement', 'wbfsys.announcement.label'),
             'id'        => $objid
           )
@@ -315,14 +304,11 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
     // ok wenn er nichtmal lesen darf, dann ist hier direkt schluss
     if (!$access->update) {
       // ausgabe einer fehlerseite und adieu
-      throw new InvalidRequest_Exception
-      (
-        $response->i18n->l
-        (
+      throw new InvalidRequest_Exception(
+        $response->i18n->l(
           'You have no permission to access {@resource@}:{@id@}',
           'wbf.message',
-          array
-          (
+          array(
             'resource'  => $response->i18n->l('Announcement', 'wbfsys.announcement.label'),
             'id'        => $objid
           )

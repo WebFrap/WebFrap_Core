@@ -103,7 +103,7 @@ class DaidalosBdlIndex_Model extends Model
     } else {
 
       $indexClass = 'BdlIndex_'.SParserString::subToCamelCase($type);
-      if (!Webfrap::classLoadable($indexClass)) {
+      if (!Webfrap::classExists($indexClass)) {
         Debug::console("Tried to sync index for a non supported node type: ".$type);
 
         return;

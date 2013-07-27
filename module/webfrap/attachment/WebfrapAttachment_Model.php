@@ -781,7 +781,7 @@ SQL;
 
      $className = SFormatStrings::subToCamelCase($domainNode->aclDomainKey).'_Crud_Access_Dataset';
 
-     if (!Webfrap::classLoadable($className))
+     if (!Webfrap::classExists($className))
        throw new InvalidRequest_Exception('Requested invalid mask rights');
 
      // überschreiben der refid
