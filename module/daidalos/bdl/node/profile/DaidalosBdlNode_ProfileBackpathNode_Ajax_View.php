@@ -36,9 +36,9 @@ class DaidalosBdlNode_ProfileBackpathNode_Ajax_View extends LibTemplateAjaxView
   public function displayInsert($backpath, $path, $idx, $profileName)
   {
 
-    $iconEdit   = Wgt::icon('control/edit.png', 'xsmall');
-    $iconDelete = Wgt::icon('control/delete.png', 'xsmall');
-    $iconAdd    = Wgt::icon('control/add.png', 'xsmall');
+    $iconEdit   = '<i class="icon-edit" ></i>';
+    $iconDelete = '<i class="icon-remove" ></i>';
+    $iconAdd    = '<i class="icon-plus-sign" ></i>';
 
     $pathId = str_replace('.', '-', $path);
 
@@ -118,9 +118,9 @@ XML
   public function displayUpdate($pathNode, $path, $profileName)
   {
 
-    $iconEdit   = Wgt::icon('control/edit.png', 'xsmall');
-    $iconDelete = Wgt::icon('control/delete.png', 'xsmall');
-    $iconAdd    = Wgt::icon('control/add.png', 'xsmall');
+    $iconEdit   = '<i class="icon-edit" ></i>';
+    $iconDelete = '<i class="icon-remove" ></i>';
+    $iconAdd    = '<i class="icon-plus-sign" ></i>';
 
     // Sub render function
     $renderSubNode = function($pathNode, $path, $subRednerer) use ($profileName, $iconAdd, $iconEdit, $iconDelete) {

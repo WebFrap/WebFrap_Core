@@ -62,8 +62,8 @@ class DaidalosBdlNode_EntityAttribute_Ajax_View extends LibTemplateAjaxView
     else
       $iconAttrUnique = '';
 
-    $iconEdit   = Wgt::icon('control/edit.png', 'xsmall');
-    $iconDelete = Wgt::icon('control/delete.png', 'xsmall');
+    $iconEdit   = '<i class="icon-edit" ></i>';
+    $iconDelete = '<i class="icon-remove" ></i>';
 
     $pos = $index +1;
 
@@ -152,8 +152,8 @@ XML
       $iconAttrUnique = '';
 
 
-    $iconEdit   = Wgt::icon('control/edit.png', 'xsmall');
-    $iconDelete = Wgt::icon('control/delete.png', 'xsmall');
+    $iconEdit   = '<i class="icon-edit" ></i>';
+    $iconDelete = '<i class="icon-remove" ></i>';
 
     $pos = $index +1;
 

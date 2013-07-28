@@ -53,9 +53,9 @@ class DaidalosBdl_Mvcbase_Permission_Ajax_View extends LibTemplateAjaxView
   public function displayInsert($permission, $index, $pNodeName)
   {
 
-    $iconEdit   = Wgt::icon('control/edit.png', 'xsmall');
-    $iconDelete = Wgt::icon('control/delete.png', 'xsmall');
-    $iconAdd    = Wgt::icon('control/add.png', 'xsmall');
+    $iconEdit   = '<i class="icon-edit" ></i>';
+    $iconDelete = '<i class="icon-remove" ></i>';
+    $iconAdd    = '<i class="icon-plus-sign" ></i>';
 
     $this->setAreaContent('childNode', <<<XML
 <htmlArea selector="ul#wgt-list-{$this->domainKey}-{$pNodeName}-permission" action="append" ><![CDATA[
@@ -121,9 +121,9 @@ XML
   public function displayUpdate($permission, $index, $pNodeName)
   {
 
-    $iconEdit   = Wgt::icon('control/edit.png', 'xsmall');
-    $iconDelete = Wgt::icon('control/delete.png', 'xsmall');
-    $iconAdd    = Wgt::icon('control/add.png', 'xsmall');
+    $iconEdit   = '<i class="icon-edit" ></i>';
+    $iconDelete = '<i class="icon-remove" ></i>';
+    $iconAdd    = '<i class="icon-plus-sign" ></i>';
 
     // Sub render function
     $renderSubNode = function

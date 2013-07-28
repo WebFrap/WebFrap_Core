@@ -35,9 +35,9 @@ class DaidalosBdlNode_ProfilePermission_Ajax_View extends LibTemplateAjaxView
   public function displayInsert($permission, $index, $profileName)
   {
 
-    $iconEdit   = Wgt::icon('control/edit.png', 'xsmall');
-    $iconDelete = Wgt::icon('control/delete.png', 'xsmall');
-    $iconAdd    = Wgt::icon('control/add.png', 'xsmall');
+    $iconEdit   = '<i class="icon-edit" ></i>';
+    $iconDelete = '<i class="icon-remove" ></i>';
+    $iconAdd    = '<i class="icon-plus-sign" ></i>';
 
     $this->setAreaContent('childNode', <<<XML
 <htmlArea selector="ul#wgt-list-profile-{$profileName}-permission" action="append" ><![CDATA[
@@ -105,9 +105,9 @@ XML
   public function displayUpdate($permission, $index, $profileName)
   {
 
-    $iconEdit   = Wgt::icon('control/edit.png', 'xsmall');
-    $iconDelete = Wgt::icon('control/delete.png', 'xsmall');
-    $iconAdd    = Wgt::icon('control/add.png', 'xsmall');
+    $iconEdit   = '<i class="icon-edit" ></i>';
+    $iconDelete = '<i class="icon-remove" ></i>';
+    $iconAdd    = '<i class="icon-plus-sign" ></i>';
 
     // Sub render function
     $renderSubNode = function($ref, $path, $subRednerer) use ($profileName, $iconAdd, $iconEdit, $iconDelete) {
