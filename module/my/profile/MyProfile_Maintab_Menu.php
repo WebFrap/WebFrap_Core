@@ -61,7 +61,7 @@ class MyProfile_Maintab_Menu extends WgtDropmenu
     $iconMenu    = $view->icon('control/menu.png',  'Menu');
     $iconSend    = $view->icon('message/send.png', 'Send');
     $iconBookmark  = $view->icon('control/bookmark.png', 'Bookmark');
-    $iconClose     = $view->icon('control/close.png', 'Close');
+    $iconClose     = '<i class="icon-remove-circle " ></i>';
 
     $entries = new TArray();
     $entries->support  = $this->entriesSupport($params);

@@ -90,7 +90,7 @@ class DaidalosPackage_Editor_Maintab_View extends WgtMaintabCustom
     $iconMenu     = $this->icon('control/menu.png'      ,'Menu');
     $iconSupport  = $this->icon('control/support.png'      ,'Support');
     $iconHelp     = $this->icon('control/help.png'      ,'Help');
-    $iconClose    = $this->icon('control/close.png'      ,'Close');
+    $iconClose    = '<i class="icon-remove-circle " ></i>';
     $iconSave     = $this->icon('control/save.png'      ,'Save');
     $iconBug      = $this->icon('control/bug.png'      ,'Bug');
 

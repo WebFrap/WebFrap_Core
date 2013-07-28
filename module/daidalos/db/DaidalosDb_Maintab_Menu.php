@@ -42,7 +42,7 @@ class DaidalosDb_Maintab_Menu extends WgtDropmenu
     $view = $this->view;
 
     $iconMenu          = $view->icon('control/menu.png'     ,'Menu'   );
-    $iconClose         = $view->icon('control/close.png'    ,'Close'   );
+    $iconClose         = '<i class="icon-remove-circle " ></i>';
     $iconSearch        = $view->icon('control/search.png'   ,'Search'  );
     $iconBookmark      = $view->icon('control/bookmark.png' ,'Bookmark');
     $iconQuery         = $view->icon('daidalos/query.png' ,'Query');

@@ -111,7 +111,7 @@ class MaintenanceDb_Index_Search_Maintab_View extends WgtMaintabCustom
     $iconMenu      = $view->icon( 'control/menu.png',  'Menu');
     $iconRebuild   = $view->icon( 'maintenance/rebuild_index.png', 'Rebuild Index');
     $iconBookmark  = $view->icon( 'control/bookmark.png', 'Bookmark');
-    $iconClose     = $view->icon( 'control/close.png', 'Close');
+    $iconClose     = '<i class="icon-remove-circle " ></i>';
     $iconSearch    = $view->icon('control/search.png','Search');
 
     $entries = new TArray();
