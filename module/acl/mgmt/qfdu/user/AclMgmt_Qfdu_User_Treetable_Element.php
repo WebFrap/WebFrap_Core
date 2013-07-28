@@ -158,7 +158,7 @@ class AclMgmt_Qfdu_User_Treetable_Element extends WgtTreetable
         Wgt::ACTION_DELETE,
         'Delete',
         'index.php?c=Acl.Mgmt_Qfdu_User.dropUserAssignments&dkey='.$this->domainNode->domainName.'&amp;objid=',
-        'control/delete.png',
+        'icon-remove-sign',
         '',
         'wbf.label',
         Acl::ADMIN
@@ -173,7 +173,7 @@ class AclMgmt_Qfdu_User_Treetable_Element extends WgtTreetable
         Wgt::ACTION_DELETE,
         'Delete',
         'index.php?c=Acl.Mgmt_Qfdu_User.dropDsetAssignments&dkey='.$this->domainNode->domainName.'&amp;objid=',
-        'control/delete.png',
+        'icon-remove-sign',
         '',
         'wbf.label',
         Acl::ADMIN

@@ -64,7 +64,7 @@ class WebfrapProtocol_Table extends WgtTable
       Wgt::ACTION_AJAX_GET,
       'edit',
       'index.php?c=Demo.Entity1.edit&amp;objid=',
-      'control/edit.png',
+      'icon-edit',
       'wcm wcm_req_ajax',
       'demo.entity1.label.title_edit'
     ),

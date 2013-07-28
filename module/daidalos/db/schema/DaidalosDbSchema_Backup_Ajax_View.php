@@ -77,7 +77,7 @@ XML
   {
 
     $iconRestore = Wgt::icon('control/restore.png');
-    $iconDel     = Wgt::icon('control/delete.png');
+    $iconDel     = '<i class="icon-remove-sign" ></i>';
 
     $file = new IoFile(PATH_GW."data/backups/db/{$dbKey}/schemas/{$schemaKey}/".$uplDump->getOldname());
 

@@ -158,7 +158,7 @@ class AclUser_Treetable_Element extends WgtTreetable
         Wgt::ACTION_DELETE,
         'Delete',
         'index.php?c=Acl.Mgmt_Qfdu.deleteUser&dkey='.$this->domainNode->domainName.'&amp;objid=',
-        'control/delete.png',
+        'icon-remove-sign',
         '',
         'wbf.label',
         Acl::ADMIN
@@ -183,7 +183,7 @@ class AclUser_Treetable_Element extends WgtTreetable
         Wgt::ACTION_DELETE,
         'Delete',
         'index.php?c=Acl.Mgmt_Qfdu.deleteDataset&dkey='.$this->domainNode->domainName.'&amp;objid=',
-        'control/delete.png',
+        'icon-remove-sign',
         '',
         'wbf.label',
         Acl::ADMIN

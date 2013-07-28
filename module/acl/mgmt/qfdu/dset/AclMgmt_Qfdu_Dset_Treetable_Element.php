@@ -152,7 +152,7 @@ class AclMgmt_Qfdu_Dset_Treetable_Element extends WgtTreetable
         Wgt::ACTION_DELETE,
         'Delete',
         'ajax.php?c=Acl.Mgmt_Qfdu.deleteUser&dkey='.$this->domainNode->domainName.'&amp;objid=',
-        'control/delete.png',
+        'icon-remove-sign',
         '',
         'wbf.label',
         Acl::ADMIN
@@ -177,7 +177,7 @@ class AclMgmt_Qfdu_Dset_Treetable_Element extends WgtTreetable
         Wgt::ACTION_DELETE,
         'Delete',
         'ajax.php?c=Acl.Mgmt_Qfdu.deleteDataset&amp;area_id='.$this->areaId.'&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',
-        'control/delete.png',
+        'icon-remove-sign',
         '',
         'wbf.label',
         Acl::ADMIN

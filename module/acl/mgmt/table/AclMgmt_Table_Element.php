@@ -105,7 +105,7 @@ class AclMgmt_Table_Element extends WgtTable
         Wgt::ACTION_DELETE,
         'Delete',
         'index.php?c=Acl.Mgmt.deleteGroup&dkey='.$this->domainNode->domainName.'&amp;objid=',
-        'control/delete.png',
+        'icon-remove-sign',
         '',
         'wbf.label',
         Acl::ADMIN

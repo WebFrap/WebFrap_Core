@@ -46,12 +46,12 @@ class WebfrapSystem_Status_Maintab_View extends WgtMaintab
    * @var WebfrapMaintenance_Metadata_List_Menu
    */
   public $metadataMenu = null;
-  
+
   /**
    * @var array
    */
   public $contextData = array();
-  
+
   /**
    * @var WebfrapMaintenance_Context_List_Menu
    */
@@ -85,14 +85,14 @@ class WebfrapSystem_Status_Maintab_View extends WgtMaintab
     $this->metadataModel = $this->loadModel('WebfrapMaintenance_Metadata');
     $this->metadataModel->loadStats();
     $this->metadataMenu = new WebfrapMaintenance_Metadata_List_Menu();
-    
-    
+
+
     $this->contextMenu = new WebfrapMaintenance_Context_List_Menu();
-    
+
     $session = $this->getSession();
-    
+
     $data = $session->getContext();
-    
+
     if (!$data){
       $this->contextData = array();
     } else {
@@ -100,7 +100,7 @@ class WebfrapSystem_Status_Maintab_View extends WgtMaintab
         $this->contextData[] = array('id'=>$key, 'value' => $value);
       }
     }
-    
+
 
     // set the window title
     $this->setTitle($i18nText);
@@ -141,7 +141,7 @@ class WebfrapSystem_Status_Maintab_View extends WgtMaintab
     $iconSupport  = $this->icon('control/support.png'      ,'Support');
     $iconHelp     = $this->icon('control/help.png'      ,'Help');
     $iconClose    = $this->icon('control/close.png'      ,'Close');
-    $iconEdit     = $this->icon('control/edit.png'      ,'Edit');
+    $iconEdit     = '<i class="icon-edit" ></i>';
     $iconBookmark      = $this->icon('control/bookmark.png'      ,'Bookmark');
 
     $iconNew      = $this->icon('control/add.png'      ,'Add');

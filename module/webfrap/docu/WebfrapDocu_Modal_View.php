@@ -86,7 +86,7 @@ class WebfrapDocu_Modal_View extends WgtModal
     $view = $this->getView();
     $i18n = $this->getI18n();
 
-    $iconEdit     = $this->icon('control/edit.png'      ,'Edit');
+    $iconEdit = '<i class="icon-edit" ></i>';
 
     $menu          =  <<<HTML
 
