@@ -81,7 +81,6 @@ class DaidalosDbRole_Maintab_View extends WgtMaintabCustom
     $iconBookmark      = $this->icon('control/bookmark.png' ,'Bookmark');
 
     $iconSupport = $this->icon('control/support.png'  ,'Support');
-    $iconBug     = $this->icon('control/bug.png'      ,'Bug');
     $iconFaq     = $this->icon('control/faq.png'      ,'Faq');
 
     $iconQuery         = $this->icon('daidalos/query.png' ,'Query');
@@ -130,7 +129,6 @@ class DaidalosDbRole_Maintab_View extends WgtMaintabCustom
       <a class="deeplink" >{$iconSupport} {$this->i18n->l('Support', 'wbf.label')}</a>
       <span>
       <ul>
-        <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Issue.create&amp;context=menu" >{$iconBug} {$this->i18n->l('Bug', 'wbf.label')}</a></li>
         <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Faq.create&amp;context=menu" >{$iconFaq} {$this->i18n->l('Faq', 'wbf.label')}</a></li>
       </ul>
       </span>

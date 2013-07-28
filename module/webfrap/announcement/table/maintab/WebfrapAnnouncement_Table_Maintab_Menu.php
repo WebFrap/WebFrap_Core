@@ -47,10 +47,9 @@ class WebfrapAnnouncement_Table_Maintab_Menu extends WgtDropmenu
     $iconBookmark    = $this->view->icon('control/bookmark.png'      ,'Bookmark');
     $iconAdd         = $this->view->icon('control/add.png'      ,'Create');
 
-    $iconSupport   = $this->view->icon('control/support.png'  ,'Support');
-    $iconBug       = $this->view->icon('control/bug.png'      ,'Bug');
-    $iconFaq       = $this->view->icon('control/faq.png'      ,'Faq');
-    $iconHelp      = $this->view->icon('control/help.png'     ,'Help');
+    $iconSupport = '<i class="icon-info-sign"></i>';
+    $iconFaq = '<i class="icon-question-sign"></i>';
+    $iconHelp = '<i class="icon-info"></i>';
 
     $entries = new TArray();
 
@@ -88,7 +87,6 @@ BUTTON;
       <a class="deeplink" >{$iconSupport} {$this->view->i18n->l('Support', 'wbf.label')}</a>
       <span>
       <ul>
-        <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Issue.create&amp;context=menu" >{$iconBug} {$this->view->i18n->l('Bug', 'wbf.label')}</a></li>
         <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Faq.create&amp;context=menu" >{$iconFaq} {$this->view->i18n->l('Faq', 'wbf.label')}</a></li>
       </ul>
       </span>

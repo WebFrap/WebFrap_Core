@@ -45,7 +45,6 @@ class DaidalosDbBackup_Maintab_Menu extends WgtDropmenu
     $iconBookmark      = $this->view->icon('control/bookmark.png' ,'Bookmark');
     $iconBackup        = $this->view->icon('daidalos/backup.png' ,'Backup');
     $iconSupport       = $this->view->icon('control/support.png'  ,'Support');
-    $iconBug           = $this->view->icon('control/bug.png'      ,'Bug');
     $iconFaq           = $this->view->icon('control/faq.png'      ,'Faq');
     $iconHelp          = $this->view->icon('control/help.png'     ,'Help');
 
@@ -73,7 +72,6 @@ class DaidalosDbBackup_Maintab_Menu extends WgtDropmenu
       <a class="deeplink" >{$iconSupport} {$this->i18n->l('Support', 'wbf.label')}</a>
       <span>
       <ul>
-        <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Issue.create&amp;context=menu" >{$iconBug} {$this->i18n->l('Bug', 'wbf.label')}</a></li>
         <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Faq.create&amp;context=menu" >{$iconFaq} {$this->i18n->l('Faq', 'wbf.label')}</a></li>
       </ul>
       </span>

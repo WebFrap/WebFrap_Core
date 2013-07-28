@@ -82,10 +82,9 @@ class WebfrapEditor_Maintab_View extends WgtMaintabCustom
     $iconSave          = $this->icon('control/save.png' ,'Save');
     $iconShow          = $this->icon('control/show.png' ,'Show');
 
-    $iconSupport   = $this->icon('control/support.png'  ,'Support');
-    $iconBug       = $this->icon('control/bug.png'      ,'Bug');
-    $iconFaq       = $this->icon('control/faq.png'      ,'Faq');
-    $iconHelp      = $this->icon('control/help.png'     ,'Help');
+    $iconSupport = '<i class="icon-info-sign"></i>';
+    $iconFaq = '<i class="icon-question-sign"></i>';
+    $iconHelp = '<i class="icon-info"></i>';
 
     $nodeId = $activeNode->getId();
 
@@ -114,7 +113,6 @@ class WebfrapEditor_Maintab_View extends WgtMaintabCustom
       <a class="deeplink" >{$iconSupport} {$this->i18n->l('Support', 'wbf.label')}</a>
       <span>
       <ul>
-        <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Issue.create&amp;context=menu" >{$iconBug} {$this->i18n->l('Bug', 'wbf.label')}</a></li>
         <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Faq.create&amp;context=menu" >{$iconFaq} {$this->i18n->l('Faq', 'wbf.label')}</a></li>
       </ul>
       </span>

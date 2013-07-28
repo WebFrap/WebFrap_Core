@@ -97,10 +97,9 @@ HTML;
   protected function entriesSupport($params)
   {
 
-    $iconSupport         = $this->view->icon('control/support.png'      ,'Support');
-    $iconFaq         = $this->view->icon('control/faq.png'      ,'Faq');
-    $iconHelp         = $this->view->icon('control/help.png'      ,'Help');
-
+    $iconSupport = '<i class="icon-info-sign"></i>';
+    $iconFaq = '<i class="icon-question-sign"></i>';
+    $iconHelp = '<i class="icon-info"></i>';
 
     $html = <<<HTML
 
@@ -118,6 +117,7 @@ HTML;
 HTML;
 
     return $html;
+
   }//end public function entriesSupport */
 
 }//end class WbfsysAnnouncement_Crud_Create_Maintab_Menu
