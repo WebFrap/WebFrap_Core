@@ -99,9 +99,9 @@ class WebfrapMaintenance_DoubleCheck_Show_Maintab_View extends WgtMaintabCustom
     $menu->setAcl($acl);
     $menu->setModel($this->model);
 
-    $iconMenu      = $this->icon( 'control/menu.png',  'Menu');
+    $iconMenu      = '<i class="icon-reorder" ></i>';
     $iconRebuild   = $this->icon( 'maintenance/rebuild_index.png', 'Rebuild Index');
-    $iconBookmark  = $this->icon( 'control/bookmark.png', 'Bookmark');
+    $iconBookmark  = '<i class="icon-bookmark" ></i>';
     $iconClose     = $this->icon( 'control/close.png', 'Close');
 
     $entries = new TArray();

@@ -58,9 +58,9 @@ class MyProfile_Maintab_Menu extends WgtDropmenu
     $acl   = $this->getAcl();
     $view   = $this->getView();
 
-    $iconMenu    = $view->icon('control/menu.png',  'Menu');
+    $iconMenu    = '<i class="icon-reorder" ></i>';
     $iconSend    = $view->icon('message/send.png', 'Send');
-    $iconBookmark  = $view->icon('control/bookmark.png', 'Bookmark');
+    $iconBookmark  = '<i class="icon-bookmark" ></i>';
     $iconClose     = '<i class="icon-remove-circle " ></i>';
 
     $entries = new TArray();

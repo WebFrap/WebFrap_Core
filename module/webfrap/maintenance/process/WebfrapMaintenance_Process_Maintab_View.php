@@ -99,8 +99,8 @@ class WebfrapMaintenance_Process_Maintab_View extends WgtMaintabList
     $menu->setModel($this->model);
 
     $i18n = $this->getI18n();
-    $iconMenu      = $this->icon( 'control/menu.png',  'Menu');
-    $iconBookmark  = $this->icon( 'control/bookmark.png', 'Bookmark');
+    $iconMenu      = '<i class="icon-reorder" ></i>';
+    $iconBookmark  = '<i class="icon-bookmark" ></i>';
     $iconClose     = $this->icon( 'control/close.png', 'Close');
 
     $entries = new TArray();

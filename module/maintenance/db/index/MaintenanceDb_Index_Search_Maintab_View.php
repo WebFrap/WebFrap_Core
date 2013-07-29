@@ -108,9 +108,9 @@ class MaintenanceDb_Index_Search_Maintab_View extends WgtMaintabCustom
     $acl     = $this->getAcl();
     $view   = $this->getView();
 
-    $iconMenu      = $view->icon( 'control/menu.png',  'Menu');
+    $iconMenu      = '<i class="icon-reorder" ></i>';
     $iconRebuild   = $view->icon( 'maintenance/rebuild_index.png', 'Rebuild Index');
-    $iconBookmark  = $view->icon( 'control/bookmark.png', 'Bookmark');
+    $iconBookmark  = '<i class="icon-bookmark" ></i>';
     $iconClose     = '<i class="icon-remove-circle " ></i>';
     $iconSearch    = $view->icon('control/search.png','Search');
 

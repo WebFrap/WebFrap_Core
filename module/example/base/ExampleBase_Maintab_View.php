@@ -83,7 +83,6 @@ class ExampleBase_Maintab_View extends WgtMaintabCustom
     $user   = $this->getUser();
     $access = $params->access;
 
-    $iconMisc         = $this->icon('control/misc.png'      ,'Misc');
     $iconEntity         = $this->icon('control/entity.png'      ,'Entity');
     $iconSearch         = $this->icon('control/search.png'      ,'Search');
 

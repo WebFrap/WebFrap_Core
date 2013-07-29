@@ -59,11 +59,10 @@ class DaidalosDatabase_Connection_Table_Element extends WgtTable
     foreach ($this->data as $key => $row) {
       $rowid = $this->name."_row_$key";
 
-      $body .= "<tr class=\"row$num\" id=\"$rowid\" >";
+      $body .= "<tr class=\"row{$num}\" id=\"$rowid\" >";
 
       $urlConf = 'index.php?c=Daidalos.Projects.genMask&amp;objid='.urlencode($key);
-      $linkConf = '<a title="GenMask"  class="wcm wcm_req_ajax wgt_info" href="'.$urlConf.'">'
-        .Wgt::icon('daidalos/bdl_mask.png' , 'xsmall' , 'build').'</a>';
+      $linkConf = '<a title="GenMask"  class="wcm wcm_req_ajax wgt_info" href="'.$urlConf.'"><i class="icon-list-alt " ></i></a>';
 
       $body .= '<td valign="top" >'.$key.'</td>'.NL;
       $body .= '<td valign="top" >'.$row['class'].'</td>'.NL;

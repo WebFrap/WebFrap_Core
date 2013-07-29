@@ -89,7 +89,6 @@ class WebfrapBase_Maintab_View extends WgtMaintab
     $user   = $this->getUser();
     $access = $params->access;
 
-    $iconMisc         = $this->icon('control/misc.png'      ,'Misc');
     $iconClose         = $this->icon('control/close.png'      ,'Close');
     $iconEntity         = $this->icon('control/entity.png'      ,'Entity');
     $iconSearch         = $this->icon('control/search.png'      ,'Search');

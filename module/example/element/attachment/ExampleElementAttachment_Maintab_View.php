@@ -55,7 +55,7 @@ class ExampleElementAttachment_Maintab_View extends WgtMaintabCustom
   public function addMenu($params)
   {
 
-    $iconMenu          = $this->icon('control/menu.png'     ,'Menu'   );
+    $iconMenu          = '<i class="icon-reorder" ></i>';
     $iconClose         = $this->icon('control/close.png'    ,'Close'   );
 
     $menu     = $this->newMenu($this->id.'_dropmenu');

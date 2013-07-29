@@ -39,10 +39,10 @@ class WebfrapDocu_Page_Maintab_Menu extends WgtDropmenu
   public function buildMenu($key, $params)
   {
 
-    $iconMenu          = $this->view->icon('control/menu.png'     ,'Menu'   );
+    $iconMenu          = '<i class="icon-reorder" ></i>';
     $iconClose         = $this->view->icon('control/close.png'    ,'Close'   );
     $iconSearch        = $this->view->icon('control/search.png'   ,'Search'  );
-    $iconBookmark      = $this->view->icon('control/bookmark.png' ,'Bookmark');
+    $iconBookmark      = '<i class="icon-bookmark" ></i>';
     $iconSave          = $this->view->icon('control/save.png' ,'Save');
     $iconRefresh       = $this->view->icon('control/refresh.png' ,'Refresh');
 

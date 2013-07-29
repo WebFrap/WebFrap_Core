@@ -76,7 +76,7 @@ XML
   public function displayUpload($uplDump, $dbKey, $schemaKey, $params)
   {
 
-    $iconRestore = Wgt::icon('control/restore.png');
+    $iconRestore = '<i class="icon-undo" ></i>';
     $iconDel     = '<i class="icon-remove-sign" ></i>';
 
     $file = new IoFile(PATH_GW."data/backups/db/{$dbKey}/schemas/{$schemaKey}/".$uplDump->getOldname());

@@ -78,7 +78,7 @@ class WebfrapEditor_Maintab_View extends WgtMaintabCustom
     $iconMenu          = '<i class="icon-reorder" ></i>';
     $iconClose         = $this->icon('control/close.png'    ,'Close'   );
     $iconSearch        = $this->icon('control/search.png'   ,'Search'  );
-    $iconBookmark      = $this->icon('control/bookmark.png' ,'Bookmark');
+    $iconBookmark      = '<i class="icon-bookmark" ></i>';
     $iconSave          = $this->icon('control/save.png' ,'Save');
     $iconShow          = $this->icon('control/show.png' ,'Show');
 

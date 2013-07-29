@@ -71,10 +71,10 @@ class DaidalosDbSchema_Maintab_View extends WgtMaintabCustom
     $menu->id = $this->id.'_dropmenu';
     $this->injectActions($dbKey, $params);
 
-    $iconMenu          = $this->icon('control/menu.png',  'Menu');
+    $iconMenu          = '<i class="icon-reorder" ></i>';
     $iconClose         = $this->icon('control/close.png',  'Close');
     $iconSearch        = $this->icon('control/search.png',  'Search');
-    $iconBookmark      = $this->icon('control/bookmark.png',  'Bookmark');
+    $iconBookmark      = '<i class="icon-bookmark" ></i>';
 
     $iconSupport = $this->icon('control/support.png'  ,'Support');
     $iconFaq     = $this->icon('control/faq.png'      ,'Faq');

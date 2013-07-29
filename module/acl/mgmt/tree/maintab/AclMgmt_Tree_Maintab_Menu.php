@@ -55,9 +55,9 @@ class AclMgmt_Tree_Maintab_Menu extends WgtDropmenu
   {
 
     $view             = $this->view;
-    $iconMenu        = $view->icon('control/menu.png'      ,'Menu');
+    $iconMenu        = '<i class="icon-reorder" ></i>';
     $iconEdit        = $view->icon('control/save.png'      ,'Save');
-    $iconBookmark    = $view->icon('control/bookmark.png'  ,'Bookmark');
+    $iconBookmark    = '<i class="icon-bookmark" ></i>';
     $iconClose       = '<i class="icon-remove-circle " ></i>';
 
     $access           = $params->access;

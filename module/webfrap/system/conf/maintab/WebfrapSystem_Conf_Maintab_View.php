@@ -85,7 +85,7 @@ class WebfrapSystem_Conf_Maintab_View extends WgtMaintab
     $iconClose    = $this->icon('control/close.png'      ,'Close');
     $iconEdit     = '<i class="icon-edit" ></i>';
     $iconBug      = $this->icon('control/bug.png'      ,'Bug');
-    $iconBookmark      = $this->icon('control/bookmark.png'      ,'Bookmark');
+    $iconBookmark      = '<i class="icon-bookmark" ></i>';
     $iconFaq      = $this->icon('control/bookmark.png'      ,'Bookmark');
 
     $iconNew      = $this->icon('control/add.png'      ,'Add');

@@ -39,10 +39,10 @@ class DaidalosAcl_Maintab_Menu extends WgtDropmenu
   public function buildMenu($params)
   {
 
-    $iconMenu          = $this->view->icon('control/menu.png'     ,'Menu'   );
+    $iconMenu          = '<i class="icon-reorder" ></i>';
     $iconClose         = '<i class="icon-remove-circle " ></i>';
     $iconSearch        = $this->view->icon('control/search.png'   ,'Search'  );
-    $iconBookmark      = $this->view->icon('control/bookmark.png' ,'Bookmark');
+    $iconBookmark      = '<i class="icon-bookmark" ></i>';
 
     $entries = new TArray();
     $entries->support  = $this->entriesSupport($params);

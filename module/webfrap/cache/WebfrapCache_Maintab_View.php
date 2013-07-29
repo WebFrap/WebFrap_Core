@@ -86,8 +86,8 @@ class WebfrapCache_Maintab_View extends WgtMaintabCustom
     $iconClose    = $this->icon('control/close.png'      ,'Close');
     $iconEdit     = '<i class="icon-edit" ></i>';
     $iconBug      = $this->icon('control/bug.png'      ,'Bug');
-    $iconBookmark      = $this->icon('control/bookmark.png'      ,'Bookmark');
-    $iconFaq      = $this->icon('control/bookmark.png'      ,'Bookmark');
+    $iconBookmark      = '<i class="icon-bookmark" ></i>';
+    $iconFaq      = '<i class="icon-bookmark" ></i>';
 
     $iconClean    = $this->icon('control/clean.png'      ,'Clean');
     $iconRefresh    = $this->icon('control/refresh.png'      ,'Refresh');

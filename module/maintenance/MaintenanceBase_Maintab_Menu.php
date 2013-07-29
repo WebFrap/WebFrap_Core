@@ -36,8 +36,7 @@ class MaintenanceBase_Maintab_Menu extends WgtDropmenu
   public function buildMenu($params)
   {
 
-    $iconMenu         = $this->view->icon('control/menu.png'   , 'Menu'    );
-    $iconMisc         = $this->view->icon('control/misc.png'   , 'Misc'    );
+    $iconMenu         = '<i class="icon-reorder" ></i>';
     $iconClose        = $this->view->icon('control/close.png'  , 'Close'   );
     $iconEntity       = $this->view->icon('control/entity.png' , 'Entity'  );
     $iconSearch       = $this->view->icon('control/search.png' , 'Search'  );

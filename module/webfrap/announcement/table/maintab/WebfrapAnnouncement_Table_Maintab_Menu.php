@@ -40,11 +40,10 @@ class WebfrapAnnouncement_Table_Maintab_Menu extends WgtDropmenu
     $acl   = $this->getAcl();
     $view   = $this->getView();
 
-    $iconMenu        = $this->view->icon('control/menu.png'      ,'Menu');
-    $iconMisc        = $this->view->icon('control/misc.png'      ,'Misc');
+    $iconMenu        = '<i class="icon-reorder" ></i>';
     $iconClose       = $this->view->icon('control/close.png'      ,'Close');
     $iconEntity      = $this->view->icon('control/entity.png'      ,'Entity');
-    $iconBookmark    = $this->view->icon('control/bookmark.png'      ,'Bookmark');
+    $iconBookmark    = '<i class="icon-bookmark" ></i>';
     $iconAdd         = $this->view->icon('control/add.png'      ,'Create');
 
     $iconSupport = '<i class="icon-info-sign"></i>';

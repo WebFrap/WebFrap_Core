@@ -64,10 +64,10 @@ class DaidalosSupportUser_Maintab_View extends WgtMaintabCustom
     $menu->id = $this->id.'_dropmenu';
     $this->injectActions( $params);
 
-    $iconMenu          = $this->icon('control/menu.png',  'Menu');
+    $iconMenu          = '<i class="icon-reorder" ></i>';
     $iconClose         = '<i class="icon-remove-circle " ></i>';
     $iconSearch        = $this->icon('control/search.png',  'Search');
-    $iconBookmark      = $this->icon('control/bookmark.png',  'Bookmark');
+    $iconBookmark      = '<i class="icon-bookmark" ></i>';
     $iconQuery         = $this->icon('daidalos/query.png',  'Query');
     $iconCreate        = $this->icon('control/add.png',  'Create');
 
