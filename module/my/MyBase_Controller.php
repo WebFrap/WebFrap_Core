@@ -63,7 +63,7 @@ class MyBase_Controller extends Controller
 
     $view->setTemplate('webfrap/menu/modmenu'  );
 
-    $modMenu = $view->newItem('modMenu', 'MenuFolder'  );
+    $modMenu = $view->newItem('modMenu', 'WgtElementMenuExplorer'  );
     $modMenu->setData(DaoFoldermenu::get('report/overview',true));
 
   } // end public function menu */

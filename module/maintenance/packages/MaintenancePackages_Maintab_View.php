@@ -111,7 +111,7 @@ class MaintenancePackages_Maintab_View extends WgtMaintabCustom
   <li class="wgt-root" >
     <button
       class="wcm wcm_ui_button wgtac_clean_cache wcm_ui_tip-top"
-      title="Clean the full cache" >{$iconRefresh} {$i18n->l('Refresh','wbf.label')}</button>
+      title="Clean the full cache" ><i class="icon-refresh" ></i> {$i18n->l('Refresh','wbf.label')}</button>
     <ul style="margin-top:-10px;" ></ul>
   </li>
 </ul>

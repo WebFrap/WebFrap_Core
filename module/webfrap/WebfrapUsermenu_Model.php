@@ -31,7 +31,7 @@ class WebfrapUsermenu_Model extends Model
   public function table($view  )
   {
 
-    $modMenu = $view->newItem('widgetUserMenu', 'MenuFolder');
+    $modMenu = $view->newItem('widgetUserMenu', 'WgtElementMenuExplorer');
     $modMenu->setSource('user/menu');
     $modMenu->setId('wbf_desktop_usermenu');
 
@@ -43,7 +43,7 @@ class WebfrapUsermenu_Model extends Model
    */
   public function desktop($view  )
   {
-    $modMenu = $view->newItem('widgetUserMenu', 'MenuFolder');
+    $modMenu = $view->newItem('widgetUserMenu', 'WgtElementMenuExplorer');
 
     $modMenu->setData(DaoFoldermenu::get('user/menu'));
     $modMenu->setId('wbf_desktop_usermenu');

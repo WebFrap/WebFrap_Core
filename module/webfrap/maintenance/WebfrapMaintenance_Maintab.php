@@ -39,7 +39,7 @@ class WebfrapMaintenance_Maintab extends WgtMaintab
 
     $this->setTemplate('webfrap/navigation/maintab/modmenu');
 
-    $modMenu = $this->newItem('modMenu', 'MenuFolder');
+    $modMenu = $this->newItem('modMenu', 'WgtElementMenuExplorer');
     $modMenu->setData
     (
       DaoFoldermenu::get('maintenance/'.$menuName, true),

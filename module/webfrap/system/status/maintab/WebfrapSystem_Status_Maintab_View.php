@@ -206,7 +206,7 @@ class WebfrapSystem_Status_Maintab_View extends WgtMaintab
 <div class="wgt-panel-control" >
   <button
       class="wcm wcm_ui_button wgtac_refresh wcm_ui_tip-top"
-      title="Refresh" >{$iconRefresh} {$this->i18n->l('Refresh','wbf.label')}</button>
+      title="Refresh" ><i class="icon-refresh" ></i> {$this->i18n->l('Refresh','wbf.label')}</button>
 </div>
 
 

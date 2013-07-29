@@ -36,7 +36,7 @@ class MyStartpageProjectManager_Widget extends WgtWidget
     $view     = $this->getView();
 
     $profile = $user->getProfileName();
-    $modMenu = $view->newItem('widgetUserMenu', 'MenuFolder');
+    $modMenu = $view->newItem('widgetUserMenu', 'WgtElementMenuExplorer');
 
     $modMenu->setData(DaoFoldermenu::get('profile/'.strtolower($profile)));
     $modMenu->setId('wbf_desktop_usermenu');

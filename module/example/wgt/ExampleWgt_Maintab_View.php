@@ -100,7 +100,7 @@ class ExampleWgt_Maintab_View extends WgtMaintabCustom
 <div class="wgt-panel-control" >
   <button
     class="wgt-button"
-    onclick="\$R.get('maintab.php?c=Example.Wgt.tree');" >{$iconRefresh} {$this->i18n->l('Refresh','wbf.label')}</button>
+    onclick="\$R.get('maintab.php?c=Example.Wgt.tree');" ><i class="icon-refresh" ></i> {$this->i18n->l('Refresh','wbf.label')}</button>
 </div>
 
 HTML;

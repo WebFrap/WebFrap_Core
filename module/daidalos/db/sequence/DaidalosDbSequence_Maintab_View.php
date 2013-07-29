@@ -141,7 +141,7 @@ class DaidalosDbSequence_Maintab_View extends WgtMaintabCustom
 </div>
 
 <div class="wgt-panel-control" >
-  <button class="wgt-button wgtac_refresh" >{$iconRefresh}</button>
+  <button class="wgt-button wgtac_refresh" ><i class="icon-refresh" ></i></button>
 </div>
 
 <div class="wgt-panel-control" >

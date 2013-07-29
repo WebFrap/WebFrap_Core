@@ -39,7 +39,7 @@ class WebfrapMessage_Modal_View extends WgtModal
 
     $this->setTemplate('webfrap/modmenu'  );
 
-    $modMenu = $this->newItem('modMenu', 'MenuFolder');
+    $modMenu = $this->newItem('modMenu', 'WgtElementMenuExplorer');
     $modMenu->setData(DaoFoldermenu::get('webfrap/root',true));
 
   }//end public function display */

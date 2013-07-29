@@ -109,7 +109,7 @@ class WebfrapStatsUsage_Maintab_View extends WgtMaintab
 </div>
 
 <div class="wgt-panel-control" >
-  <button class="wgt-button wgtac_refresh" >{$iconRefresh} {$this->i18n->l('Refresh','wbf.label')}</button>
+  <button class="wgt-button wgtac_refresh" ><i class="icon-refresh" ></i> {$this->i18n->l('Refresh','wbf.label')}</button>
 </div>
 
 HTML;
