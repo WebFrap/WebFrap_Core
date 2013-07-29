@@ -271,7 +271,7 @@ JSON;
     foreach ($folderIterator as $fileName) {
       $key = str_replace('.list.php', '', basename($fileName));
       try {
-        $cache->rebuildList($key);
+        $cache->rebuildListBulk($key);
         $response->addMessage("Successfully rebuild list: ".$key  );
       } catch (Webfrap_Exception $e) {
         $response->addError("Failed to render js: ".$key." ".$e->getMessage()  );
