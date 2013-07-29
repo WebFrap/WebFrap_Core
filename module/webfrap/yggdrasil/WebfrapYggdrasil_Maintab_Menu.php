@@ -70,15 +70,15 @@ BUTTON;
     $this->content = <<<HTML
 <ul class="wcm wcm_ui_dropmenu wgt-dropmenu" id="{$this->id}" >
   <li class="wgt-root" >
-    <button class="wcm wcm_ui_button" >{$iconMenu} {$view->i18n->l('Menu','wbf.label')}</button>
+    <button class="wcm wcm_ui_button" ><i class="icon-reorder" ></i> {$view->i18n->l('Menu','wbf.label')}</button>
     <ul style="margin-top:-10px;" >
       <li>
-        <p class="wgtac_bookmark" >{$iconBookmark} {$view->i18n->l('Bookmark','wbf.label')}</p>
+        <p class="wgtac_bookmark" ><i class="icon-bookmark" ></i> {$view->i18n->l('Bookmark','wbf.label')}</p>
       </li>
 {$entries->custom}
 {$entries->support}
       <li>
-        <p class="wgtac_close" >{$iconClose} {$view->i18n->l('Close','wbf.label')}</p>
+        <p class="wgtac_close" ><i class="icon-remove-circle" ></i> {$view->i18n->l('Close','wbf.label')}</p>
       </li>
     </ul>
   </li>

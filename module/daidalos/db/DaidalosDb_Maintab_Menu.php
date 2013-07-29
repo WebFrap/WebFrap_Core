@@ -43,7 +43,6 @@ class DaidalosDb_Maintab_Menu extends WgtDropmenu
 
     $iconMenu          = '<i class="icon-reorder" ></i>';
     $iconClose         = '<i class="icon-remove-circle " ></i>';
-    $iconSearch        = '<i class="icon-search" ></i>';
     $iconBookmark      = '<i class="icon-bookmark" ></i>';
     $iconQuery         = $view->icon('daidalos/query.png' ,'Query');
     $iconSupport = $view->icon('control/support.png'  ,'Support');
@@ -59,13 +58,13 @@ class DaidalosDb_Maintab_Menu extends WgtDropmenu
   <button
     class="wcm wcm_control_dropmenu wgt-button"
     id="{$this->id}-control"
-    wgt_drop_box="{$this->id}_dropmenu"  >{$iconMenu} {$view->i18n->l('Menu','wbf.label')}</button>
+    wgt_drop_box="{$this->id}_dropmenu"  ><i class="icon-reorder" ></i> {$view->i18n->l('Menu','wbf.label')}</button>
 </div>
 
 <div class="wgt-dropdownbox" id="{$this->id}_dropmenu" >
   <ul>
     <li>
-      <a class="wgtac_bookmark" >{$iconBookmark} {$view->i18n->l('Bookmark', 'wbf.label')}</a>
+      <a class="wgtac_bookmark" ><i class="icon-bookmark" ></i> {$view->i18n->l('Bookmark', 'wbf.label')}</a>
     </li>
   </ul>
   <ul>
@@ -79,7 +78,7 @@ class DaidalosDb_Maintab_Menu extends WgtDropmenu
       </span>
     </li>
     <li>
-      <a class="wgtac_close" >{$iconClose} {$view->i18n->l('Close','wbf.label')}</a>
+      <a class="wgtac_close" ><i class="icon-remove-circle" ></i> {$view->i18n->l('Close','wbf.label')}</a>
     </li>
   </ul>
 </div>

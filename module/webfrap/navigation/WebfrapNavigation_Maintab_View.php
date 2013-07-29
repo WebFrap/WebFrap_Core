@@ -50,11 +50,10 @@ class WebfrapNavigation_Maintab_View extends WgtMaintab
     $this->setTemplate('webfrap/navigation/modmenu', true  );
 
     /* @var $className WgtElementMenu  */
-    $className = 'ElementMenu'.ucfirst($params->menuType) ;
+    $className = 'WgtElementMenu'.ucfirst($params->menuType) ;
 
     $modMenu = $this->newItem('modMenu', $className);
-    $modMenu->setData
-    (
+    $modMenu->setData(
       DaoFoldermenu::get('webfrap/root',true),
       'maintab.php'
     );
@@ -78,8 +77,7 @@ class WebfrapNavigation_Maintab_View extends WgtMaintab
   {
 
     /**/
-    $menu     = $this->newMenu
-    (
+    $menu     = $this->newMenu(
       $this->id.'_dropmenu',
       'WebfrapNavigation'
     );

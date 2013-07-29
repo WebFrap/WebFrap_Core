@@ -15,7 +15,7 @@ if ($acl->hasRole('developer')) {
     '..',
     'Webfrap Root',
     'maintab.php?c=Daidalos.Base.menu',
-    'places/folder_up.png',
+    'icon-level-up',
   );
 
   $this->files[] = array

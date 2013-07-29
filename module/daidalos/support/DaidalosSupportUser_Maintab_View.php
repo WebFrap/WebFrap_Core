@@ -66,7 +66,6 @@ class DaidalosSupportUser_Maintab_View extends WgtMaintabCustom
 
     $iconMenu          = '<i class="icon-reorder" ></i>';
     $iconClose         = '<i class="icon-remove-circle " ></i>';
-    $iconSearch        = $this->icon('control/search.png',  'Search');
     $iconBookmark      = '<i class="icon-bookmark" ></i>';
     $iconQuery         = $this->icon('daidalos/query.png',  'Query');
     $iconCreate        = $this->icon('control/add.png',  'Create');
@@ -77,15 +76,15 @@ class DaidalosSupportUser_Maintab_View extends WgtMaintabCustom
     $menu->content = <<<HTML
 <ul class="wgt-dropmenu" id="{$this->id}" style="z-index:500;height:16px;"  >
   <li class="wgt-root" >
-    <button class="wgt-button" >{$iconMenu} {$this->i18n->l('Menu','wbf.label')}</button>
+    <button class="wgt-button" ><i class="icon-reorder" ></i> {$this->i18n->l('Menu','wbf.label')}</button>
     <ul style="margin-top:-10px;" >
       <li>
-        <p class="wgtac_bookmark" >{$iconBookmark} {$this->i18n->l('Bookmark','wbf.label')}</p>
+        <p class="wgtac_bookmark" ><i class="icon-bookmark" ></i> {$this->i18n->l('Bookmark','wbf.label')}</p>
       </li>
 {$entries->support}
 {$entries->report}
       <li>
-        <p class="wgtac_close" >{$iconClose} {$this->i18n->l('Close','wbf.label')}</p>
+        <p class="wgtac_close" ><i class="icon-remove-circle" ></i> {$this->i18n->l('Close','wbf.label')}</p>
       </li>
     </ul>
   </li>

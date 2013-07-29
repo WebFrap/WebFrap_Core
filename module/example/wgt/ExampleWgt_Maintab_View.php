@@ -64,7 +64,6 @@ class ExampleWgt_Maintab_View extends WgtMaintabCustom
 
     $iconClose = '<i class="icon-remove-circle " ></i>';
     $iconEntity = $this->icon('control/entity.png'      ,'Entity');
-    $iconSearch = $this->icon('control/search.png'      ,'Search');
     $iconRefresh = '<i class="icon-refresh" ></i>';
 
     $entries = new TArray();
@@ -92,7 +91,7 @@ class ExampleWgt_Maintab_View extends WgtMaintabCustom
     </ul>
     <ul>
       <li>
-        <a class="wgtac_close" >{$iconClose} {$this->i18n->l('Close', 'wbf.label')}</a>
+        <a class="wgtac_close" ><i class="icon-remove-circle" ></i> {$this->i18n->l('Close', 'wbf.label')}</a>
       </li>
     </ul>
 

@@ -12,7 +12,7 @@ $this->firstEntry = array(
   '..',
   I18n::s('System', 'wbf.label'  ),
   'maintab.php?c=Webfrap.Base.menu&amp;menu=maintenance',
-  'places/folder_up.png',
+  'icon-level-up',
 );
 
 if ($acl->hasRole('developer')) {

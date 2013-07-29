@@ -12,7 +12,7 @@ $this->firstEntry = array(
   '..',
   I18n::s('Root', 'wbf.label'  ),
   'maintab.php?c=Webfrap.Base.menu&amp;menu=maintenance',
-  'places/folder_up.png',
+  'icon-level-up',
 );
 
 $this->files[] = array(

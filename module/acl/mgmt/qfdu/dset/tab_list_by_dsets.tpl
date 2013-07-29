@@ -3,7 +3,7 @@
   accept-charset="utf-8"
   id="<?php echo $VAR->searchFormId?>"
   action="<?php echo $VAR->searchFormAction?>" ></form>
-    
+
 <form
   method="post"
   accept-charset="utf-8"
@@ -15,8 +15,8 @@
     <button
       class="wgt-button"
       id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-acl-tdset-append"
-      onclick="$R.form('wgt-form-<?php 
-        echo $VAR->domain->aclDomainKey ?>-acl-tdset-append');$UI.form.reset('wgt-form-<?php 
+      onclick="$R.form('wgt-form-<?php
+        echo $VAR->domain->aclDomainKey ?>-acl-tdset-append');$UI.form.reset('wgt-form-<?php
         echo $VAR->domain->aclDomainKey ?>-acl-tdset-append');return false;" >
       <img src="<?php echo View::$iconsWeb ?>xsmall/control/connect.png" alt="connect" /> Append
     </button>
@@ -24,26 +24,26 @@
     <button
       class="wgt-button"
       id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-acl-tdset-reload"
-      onclick="$R.get('ajax.php?c=Acl.Mgmt_Qfdu.tabUsers&area_id=<?php 
-        echo $VAR->areaId ?>&dkey=<?php 
-        echo $VAR->domain->domainName ?>&tabid=wgt_tab-<?php 
-        echo $VAR->domain->aclDomainKey ?>_acl_listing_tab_<?php 
+      onclick="$R.get('ajax.php?c=Acl.Mgmt_Qfdu.tabUsers&area_id=<?php
+        echo $VAR->areaId ?>&dkey=<?php
+        echo $VAR->domain->domainName ?>&tabid=wgt_tab-<?php
+        echo $VAR->domain->aclDomainKey ?>_acl_listing_tab_<?php
         echo $VAR->domain->aclDomainKey ?>-acl_qfd_users');return false;" >
       <img src="<?php echo View::$iconsWeb ?>xsmall/control/refresh.png" alt="Reload" /> Reload
     </button>
 </div>
-    
+
 <div class="wgt-space" style="width:100%" >
 
   <!-- formular -->
   <div class="left bw61" >
-      
+
         <!-- <?php echo $VAR->domain->label ?> Entity -->
         <div class="left"  >
 
           <label
             class="wgt-label"
-            for="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tdset-vid" 
+            for="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tdset-vid"
           ><?php echo $VAR->domain->label ?></label>
 
           <div class="wgt-input medium" >
@@ -69,7 +69,7 @@
               class="wgt-button append"
               onclick="$R.get('modal.php?c=<?php echo $VAR->domain->domainUrl ?>.selection&input=<?php echo $VAR->domain->aclDomainKey ?>-acl-tdset-vid');return false;"
             >
-              <img src="<?php echo View::$iconsWeb ?>xsmall/control/search.png" alt="search" />
+              <i class="icon-search" ></i>
             </button>
          </div>
 
@@ -78,7 +78,7 @@
 
           <label
             class="wgt-label"
-            for="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tdset-id_user" 
+            for="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tdset-id_user"
           ><?php echo $I18N->l( 'User', 'wbf.label' ); ?></label>
 
           <div class="wgt-input medium" >
@@ -103,13 +103,13 @@
               id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-acl-advanced_search"
               class="wgt-button append"
               onclick="$R.get('modal.php?c=Wbfsys.RoleUser.selection&input=<?php echo $VAR->domain->aclDomainKey ?>-acl-tdset-id_user');return false;"    >
-              <img src="<?php echo View::$iconsWeb ?>xsmall/control/search.png" alt="search" />
+              <i class="icon-search" ></i>
             </button>
           </div>
         </div>
-        
+
        </div>
-         
+
        <div class="inline bw3" >
 
 
@@ -117,7 +117,7 @@
         <div class="left" >
           <label
             class="wgt-label"
-            for="<?php echo $ELEMENT->selectboxGroups->id ?>" 
+            for="<?php echo $ELEMENT->selectboxGroups->id ?>"
           ><?php echo $I18N->l( 'Group', 'wbf.label' ); ?></label>
           <div class="wgt-input medium" >
             <?php echo $ELEMENT->selectboxGroups->niceElement() ?>
@@ -166,11 +166,11 @@
 <?php echo $ELEMENT->listingQualifiedUsers ?>
 
 </div>
-  
+
 <script type="application/javascript">
 
 <?php foreach( $this->jsItems as $jsItem ){ ?>
   <?php echo $ELEMENT->$jsItem->jsCode?>
 <?php } ?>
 </script>
- 
+

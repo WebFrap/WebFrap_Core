@@ -14,7 +14,7 @@ if ($acl->hasRole('developer')) {
     '..',
     'Webfrap Root',
     'maintab.php?c=Webfrap.Navigation.explorer',
-    'places/folder_up.png',
+    'icon-level-up',
   );
 
   $this->files[] = array(

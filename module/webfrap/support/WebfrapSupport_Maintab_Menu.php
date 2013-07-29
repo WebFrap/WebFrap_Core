@@ -47,11 +47,11 @@ class WebfrapNavigation_Maintab_Menu extends WgtDropmenu
     $this->content = <<<HTML
 <ul class="wcm wcm_ui_dropmenu wgt-dropmenu" id="{$this->id}" style="z-index:500;height:16px;"  >
   <li class="wgt-root" >
-    <button class="wcm wcm_ui_button" >{$iconMenu} {$this->view->i18n->l('Menu','wbf.label')}</button>
+    <button class="wcm wcm_ui_button" ><i class="icon-reorder" ></i> {$this->view->i18n->l('Menu','wbf.label')}</button>
     <ul style="margin-top:-10px;" >
 {$entries->support}
       <li>
-        <p class="wgtac_close" >{$iconClose} {$this->view->i18n->l('Close','wbf.label')}</p>
+        <p class="wgtac_close" ><i class="icon-remove-circle" ></i> {$this->view->i18n->l('Close','wbf.label')}</p>
       </li>
     </ul>
   </li>
@@ -77,7 +77,7 @@ HTML;
     id="wgt-button-webfrap_navigation_search"
     class="wgt-button append"
   >
-    {$iconSearch} Search
+    <i class="icon-search" ></i> Search
   </button>
 
 </div>

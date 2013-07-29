@@ -97,7 +97,7 @@ class DaidalosPackage_Workspace_Maintab_View extends WgtMaintab
     $menu->content = <<<HTML
 <ul class="wcm wcm_ui_dropmenu wgt-dropmenu" id="{$this->id}_dropmenu" >
   <li class="wgt-root" >
-    <button class="wcm wcm_ui_button" >{$iconMenu} {$i18n->l('Menu','wbf.label')}</button>
+    <button class="wcm wcm_ui_button" ><i class="icon-reorder" ></i> {$i18n->l('Menu','wbf.label')}</button>
     <ul style="margin-top:-10px;" >
       <li class="current" >
         <p><i class="icon-question-sign" ></i> {$i18n->l('Support','wbf.label')}</p>
@@ -110,7 +110,7 @@ class DaidalosPackage_Workspace_Maintab_View extends WgtMaintab
         </ul>
       </li>
       <li>
-        <p class="wgtac_close" >{$iconClose} {$i18n->l('Close','wbf.label')}</p>
+        <p class="wgtac_close" ><i class="icon-remove-circle" ></i> {$i18n->l('Close','wbf.label')}</p>
       </li>
     </ul>
   </li>

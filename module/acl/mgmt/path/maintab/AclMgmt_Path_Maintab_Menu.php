@@ -58,7 +58,6 @@ class AclMgmt_Path_Maintab_Menu extends WgtDropmenu
     $iconMenu        = '<i class="icon-reorder" ></i>';
     $iconEdit        = '<i class="icon-save" ></i>';
     $iconBookmark    = '<i class="icon-bookmark" ></i>';
-    $iconClose       = '<i class="icon-remove-circle " ></i>';
 
     $access           = $params->access;
     $user            = $this->getUser();
@@ -73,7 +72,7 @@ class AclMgmt_Path_Maintab_Menu extends WgtDropmenu
       class="wcm wcm_control_dropmenu wgt-button"
       tabindex="-1"
       id="{$this->id}-control"
-      wgt_drop_box="{$this->id}"  >{$iconMenu} {$view->i18n->l('Menu','wbf.label')}</button>
+      wgt_drop_box="{$this->id}"  ><i class="icon-reorder" ></i> {$view->i18n->l('Menu','wbf.label')}</button>
       <var id="{$this->id}-control-cfg-dropmenu"  >{"triggerEvent":"click"}</var>
   </div>
 
@@ -81,7 +80,7 @@ class AclMgmt_Path_Maintab_Menu extends WgtDropmenu
 
     <ul>
       <li>
-        <a class="wgtac_bookmark" >{$iconBookmark} {$view->i18n->l('Bookmark', 'wbf.label')}</a>
+        <a class="wgtac_bookmark" ><i class="icon-bookmark" ></i> {$view->i18n->l('Bookmark', 'wbf.label')}</a>
       </li>
     </ul>
 
@@ -91,7 +90,7 @@ class AclMgmt_Path_Maintab_Menu extends WgtDropmenu
 
     <ul>
       <li>
-        <a class="wgtac_close" >{$iconClose} {$this->view->i18n->l('Close','wbf.label')}</a>
+        <a class="wgtac_close" ><i class="icon-remove-circle" ></i> {$this->view->i18n->l('Close','wbf.label')}</a>
       </li>
     </ul>
   </div>
@@ -112,9 +111,7 @@ HTML;
   protected function entriesSupport($objid, $params)
   {
 
-    $iconSupport  = $this->view->icon( 'control/support.png'  ,'Support');
     $iconFaq      = $this->view->icon( 'control/faq.png'      ,'Faq'  );
-
 
     $html = <<<HTML
 

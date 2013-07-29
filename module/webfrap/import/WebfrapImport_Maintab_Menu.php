@@ -53,13 +53,13 @@ class WebfrapImport_Maintab_Menu extends WgtDropmenu
     <button
       class="wcm wcm_widget_dropmenu wgt-button"
       id="{$this->id}-control"
-      wgt_drop_box="{$this->id}"  >{$iconMenu} {$this->view->i18n->l('Menu','wbf.label')}</button>
+      wgt_drop_box="{$this->id}"  ><i class="icon-reorder" ></i> {$this->view->i18n->l('Menu','wbf.label')}</button>
   </div>
 
   <div class="wgt-dropdownbox" id="{$this->id}" >
     <ul>
       <li>
-        <a class="wgtac_bookmark" >{$iconBookmark} {$this->view->i18n->l('Bookmark','wbf.label')}</a>
+        <a class="wgtac_bookmark" ><i class="icon-bookmark" ></i> {$this->view->i18n->l('Bookmark','wbf.label')}</a>
       </li>
     </ul>
     <ul>
@@ -68,7 +68,7 @@ class WebfrapImport_Maintab_Menu extends WgtDropmenu
     </ul>
     <ul>
       <li>
-        <a class="wgtac_close" >{$iconClose} {$this->view->i18n->l('Close','wbf.label')}</a>
+        <a class="wgtac_close" ><i class="icon-remove-circle" ></i> {$this->view->i18n->l('Close','wbf.label')}</a>
       </li>
     </ul>
   </div>

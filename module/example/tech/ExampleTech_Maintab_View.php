@@ -64,13 +64,11 @@ class ExampleTech_Maintab_View extends WgtMaintabCustom
 
     $iconClose         = '<i class="icon-remove-circle " ></i>';
     $iconEntity         = $this->icon('control/entity.png'      ,'Entity');
-    $iconSearch         = $this->icon('control/search.png'      ,'Search');
     $iconRefresh         = '<i class="icon-refresh" ></i>';
 
     $entries = new TArray();
 
-    $menu     = $this->newMenu
-    (
+    $menu     = $this->newMenu(
       $this->id.'_dropmenu'
     );
     $menu->id = $this->id.'_dropmenu';

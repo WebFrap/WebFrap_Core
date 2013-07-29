@@ -41,7 +41,6 @@ class DaidalosAcl_Maintab_Menu extends WgtDropmenu
 
     $iconMenu          = '<i class="icon-reorder" ></i>';
     $iconClose         = '<i class="icon-remove-circle " ></i>';
-    $iconSearch        = '<i class="icon-search " ></i>';
     $iconBookmark      = '<i class="icon-bookmark" ></i>';
 
     $entries = new TArray();
@@ -50,15 +49,15 @@ class DaidalosAcl_Maintab_Menu extends WgtDropmenu
     $this->content = <<<HTML
 <ul class="wgt-dropmenu" id="{$this->id}" style="z-index:500;height:16px;"  >
   <li class="wgt-root" >
-    <button class=" wgt-button" >{$iconMenu} {$this->view->i18n->l('Menu','wbf.label')}</button>
+    <button class=" wgt-button" ><i class="icon-reorder" ></i> {$this->view->i18n->l('Menu','wbf.label')}</button>
     <ul style="margin-top:-10px;" >
       <li>
-        <p class="wgtac_bookmark" >{$iconBookmark} {$this->view->i18n->l('Bookmark','wbf.label')}</p>
+        <p class="wgtac_bookmark" ><i class="icon-bookmark" ></i> {$this->view->i18n->l('Bookmark','wbf.label')}</p>
       </li>
 {$entries->support}
 {$entries->report}
       <li>
-        <p class="wgtac_close" >{$iconClose} {$this->view->i18n->l('Close','wbf.label')}</p>
+        <p class="wgtac_close" ><i class="icon-remove-circle" ></i> {$this->view->i18n->l('Close','wbf.label')}</p>
       </li>
     </ul>
   </li>

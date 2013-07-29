@@ -53,14 +53,14 @@ class WebfrapNavigation_Maintab_Menu extends WgtDropmenu
     <button
       class="wcm wcm_control_dropmenu wgt-button"
       id="{$this->id}-control"
-      wgt_drop_box="{$this->id}"  >{$iconMenu} {$this->view->i18n->l('Menu','wbf.label')}</button>
+      wgt_drop_box="{$this->id}"  ><i class="icon-reorder" ></i> {$this->view->i18n->l('Menu','wbf.label')}</button>
       <var id="{$this->id}-control-cfg-dropmenu"  >{"triggerEvent":"mouseover","closeOnLeave":"true"}</var>
   </div>
 
   <div class="wgt-dropdownbox" id="{$this->id}" >
     <ul>
       <li>
-        <a class="wgtac_close" >{$iconClose} {$this->view->i18n->l('Close', 'wbf.label')}</a>
+        <a class="wgtac_close" ><i class="icon-remove-circle" ></i> {$this->view->i18n->l('Close', 'wbf.label')}</a>
       </li>
     </ul>
   </div>
@@ -128,7 +128,7 @@ HTML;
     id="wgt-button-webfrap_navigation_search"
     class="wgt-button append"
   >
-    {$iconSearch} Search
+    <i class="icon-search" ></i> Search
   </button>
 
 </div>

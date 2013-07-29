@@ -84,12 +84,10 @@ class ExampleBase_Maintab_View extends WgtMaintabCustom
     $access = $params->access;
 
     $iconEntity         = $this->icon('control/entity.png'      ,'Entity');
-    $iconSearch         = $this->icon('control/search.png'      ,'Search');
 
     $entries = new TArray();
 
-    $menu     = $this->newMenu
-    (
+    $menu     = $this->newMenu(
       $this->id.'_dropmenu'
     );
     $menu->id = $this->id.'_dropmenu';
@@ -137,7 +135,7 @@ HTML;
     id="wgt-button-webfrap_navigation_search"
     tabindex="-1"
     class="wgt-button append" >
-    {$iconSearch}
+    <i class="icon-search" ></i>
   </button>
 
 </div>
