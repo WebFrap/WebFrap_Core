@@ -46,7 +46,7 @@ class WebfrapYggdrasil_Maintab_Menu extends WgtDropmenu
     $iconMenu    = '<i class="icon-reorder" ></i>';
     $iconSend    = $view->icon('message/send.png', 'Send');
     $iconBookmark  = '<i class="icon-bookmark" ></i>';
-    $iconClose     = $view->icon('control/close.png', 'Close');
+    $iconClose     = '<i class="icon-remove-circle " ></i>';
 
     $entries = new TArray();
     $entries->support  = $this->entriesSupport($params);

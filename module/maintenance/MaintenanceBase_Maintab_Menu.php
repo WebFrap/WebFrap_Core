@@ -37,7 +37,7 @@ class MaintenanceBase_Maintab_Menu extends WgtDropmenu
   {
 
     $iconMenu         = '<i class="icon-reorder" ></i>';
-    $iconClose        = $this->view->icon('control/close.png'  , 'Close'   );
+    $iconClose        = '<i class="icon-remove-circle " ></i>';
     $iconEntity       = $this->view->icon('control/entity.png' , 'Entity'  );
     $iconSearch       = $this->view->icon('control/search.png' , 'Search'  );
 

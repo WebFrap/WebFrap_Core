@@ -72,7 +72,7 @@ class DaidalosDbSchema_Maintab_View extends WgtMaintabCustom
     $this->injectActions($dbKey, $params);
 
     $iconMenu          = '<i class="icon-reorder" ></i>';
-    $iconClose         = $this->icon('control/close.png',  'Close');
+    $iconClose         = '<i class="icon-remove-circle " ></i>';
     $iconSearch        = $this->icon('control/search.png',  'Search');
     $iconBookmark      = '<i class="icon-bookmark" ></i>';
 

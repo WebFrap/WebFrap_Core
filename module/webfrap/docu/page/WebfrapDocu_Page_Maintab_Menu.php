@@ -40,7 +40,7 @@ class WebfrapDocu_Page_Maintab_Menu extends WgtDropmenu
   {
 
     $iconMenu          = '<i class="icon-reorder" ></i>';
-    $iconClose         = $this->view->icon('control/close.png'    ,'Close'   );
+    $iconClose         = '<i class="icon-remove-circle " ></i>';
     $iconSearch        = $this->view->icon('control/search.png'   ,'Search'  );
     $iconBookmark      = '<i class="icon-bookmark" ></i>';
     $iconSave          = $this->view->icon('control/save.png' ,'Save');

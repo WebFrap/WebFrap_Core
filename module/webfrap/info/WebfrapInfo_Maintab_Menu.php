@@ -32,7 +32,7 @@ class WebfrapInfo_Maintab_Menu extends WgtDropmenu
   {
 
     $iconMenu         = '<i class="icon-reorder" ></i>';
-    $iconClose        = $this->view->icon('control/close.png'  , 'Close'   );
+    $iconClose        = '<i class="icon-remove-circle " ></i>';
 
     $entries = new TArray();
 
