@@ -1,8 +1,8 @@
 <?php
 
 $this->crumbs = array(
-  array('Root',$this->interface.'?c=Webfrap.Navigation.explorer','control/desktop.png'),
-  array('Daidalos',$this->interface.'?c=Daidalos.Base.menu','control/folder.png'),
+  array('Root',$this->interface.'?c=Webfrap.Navigation.explorer','icon-desktop'),
+  array('Daidalos',$this->interface.'?c=Daidalos.Base.menu','icon-folder-close-alt'),
 );
 
 
