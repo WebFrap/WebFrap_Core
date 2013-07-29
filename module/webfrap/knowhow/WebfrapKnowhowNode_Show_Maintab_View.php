@@ -67,7 +67,7 @@ class WebfrapKnowhowNode_Show_Maintab_View extends WgtMaintabCustom
     $iconClose         = '<i class="icon-remove-circle " ></i>';
     $iconSearch        = $this->icon('control/search.png'   ,'Search'  );
     $iconBookmark      = '<i class="icon-bookmark" ></i>';
-    $iconSave          = $this->icon('control/save.png' ,'Save');
+    $iconSave          = '<i class="icon-save" ></i>';
     $iconEdit          = '<i class="icon-edit" ></i>';
 
     $iconSupport   = $this->icon('control/support.png'  ,'Support');

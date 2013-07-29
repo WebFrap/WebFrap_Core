@@ -56,7 +56,7 @@ class AclMgmt_Path_Maintab_Menu extends WgtDropmenu
 
     $view             = $this->view;
     $iconMenu        = '<i class="icon-reorder" ></i>';
-    $iconEdit        = $view->icon('control/save.png'      ,'Save');
+    $iconEdit        = '<i class="icon-save" ></i>';
     $iconBookmark    = '<i class="icon-bookmark" ></i>';
     $iconClose       = '<i class="icon-remove-circle " ></i>';
 
