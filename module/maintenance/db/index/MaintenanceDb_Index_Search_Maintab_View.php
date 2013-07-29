@@ -171,7 +171,7 @@ HTML;
     $html = <<<HTML
 
       <li>
-        <p>{$iconSupport} {$this->i18n->l('Support','wbf.label')}</p>
+        <p><i class="icon-question-sign" ></i> {$this->i18n->l('Support','wbf.label')}</p>
         <ul>
           <li><a class="wcm wcm_req_ajax" href="modal.php?c=Webfrap.Docu.open&amp;key=wbfsys_message-create" >{$iconHelp} {$this->i18n->l('Help','wbf.label')}</a></li>
           <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Issue.create&amp;context=create" >{$iconBug} {$this->i18n->l('Bug','wbf.label')}</a></li>

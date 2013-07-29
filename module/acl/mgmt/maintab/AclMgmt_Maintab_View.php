@@ -154,8 +154,7 @@ class AclMgmt_Maintab_View extends WgtMaintab
   public function createMenu($objid, $params)
   {
 
-    $menu     = $this->newMenu
-    (
+    $menu     = $this->newMenu(
       $this->id.'_dropmenu',
       $this->domainNode->domainAclMask
     );

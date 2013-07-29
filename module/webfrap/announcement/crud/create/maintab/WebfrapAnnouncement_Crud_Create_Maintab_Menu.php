@@ -104,7 +104,7 @@ HTML;
     $html = <<<HTML
 
       <li>
-        <p>{$iconSupport} {$this->view->i18n->l('Support','wbf.label')}</p>
+        <p><i class="icon-question-sign" ></i> {$this->view->i18n->l('Support','wbf.label')}</p>
         <ul>
 
           <li><a class="wcm wcm_req_ajax" href="modal.php?c=Webfrap.Docu.open&amp;key=wbfsys_announcement-create" >{$iconHelp} {$this->view->i18n->l('Help','wbf.label')}</a></li>

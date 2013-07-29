@@ -87,7 +87,7 @@ HTML;
     $html = <<<HTML
 
       <li>
-        <p>{$iconSupport} Support</p>
+        <p><i class="icon-question-sign" ></i> Support</p>
         <ul>
           <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Faq.create&amp;context=menu" >{$iconFaq} Faq</a></li>
         </ul>

@@ -87,7 +87,7 @@ class MaintenanceDbConsistency_Maintab_Menu extends WgtDropmenu
   </ul>
   <ul>
     <li>
-      <a class="deeplink" >{$iconSupport} {$view->i18n->l('Support', 'wbf.label')}</a>
+      <a class="deeplink" ><i class="icon-question-sign" ></i> {$view->i18n->l('Support', 'wbf.label')}</a>
       <span>
       <ul>
         <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Issue.create&amp;context=menu" >{$iconBug} {$view->i18n->l('Bug', 'wbf.label')}</a></li>

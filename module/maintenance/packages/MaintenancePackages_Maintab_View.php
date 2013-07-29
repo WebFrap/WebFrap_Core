@@ -94,7 +94,7 @@ class MaintenancePackages_Maintab_View extends WgtMaintabCustom
     <button class="wcm wcm_ui_button" >{$iconMenu} {$i18n->l('Menu','wbf.label')}</button>
     <ul style="margin-top:-10px;" >
       <li class="current" >
-        <p>{$iconSupport} {$i18n->l('Support','wbf.label')}</p>
+        <p><i class="icon-question-sign" ></i> {$i18n->l('Support','wbf.label')}</p>
         <ul>
           <li>
             <a class="wcm wcm_req_ajax" href="modal.php?c=Webfrap.Bug.create&amp;context=webfrap_docu-create" >

@@ -107,7 +107,7 @@ HTML;
     $html = <<<HTML
 
       <li>
-        <p>{$iconSupport} {$this->view->i18n->l('Support','wbf.label')}</p>
+        <p><i class="icon-question-sign" ></i> {$this->view->i18n->l('Support','wbf.label')}</p>
         <ul>
 
 

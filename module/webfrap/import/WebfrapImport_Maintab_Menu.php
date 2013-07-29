@@ -96,7 +96,7 @@ HTML;
     $html = <<<HTML
 
       <li>
-        <a class="deeplink" >{$iconSupport} Support</a>
+        <a class="deeplink" ><i class="icon-question-sign" ></i> Support</a>
         <span>
           <ul>
             <li><a class="wcm wcm_req_ajax" href="modal.php?c=_Maintenance.help&amp;context=menu" >{$iconHelp} Help</a></li>

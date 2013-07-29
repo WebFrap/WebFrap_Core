@@ -119,7 +119,7 @@ HTML;
     $html = <<<HTML
 
   <li>
-    <a class="deeplink" >{$iconSupport} {$this->view->i18n->l('Support','wbf.label')}</a>
+    <a class="deeplink" ><i class="icon-question-sign" ></i> {$this->view->i18n->l('Support','wbf.label')}</a>
     <span>
       <ul>
         <li><a

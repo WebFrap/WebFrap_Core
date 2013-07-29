@@ -217,8 +217,7 @@
 
   </div><!-- end maintab -->
 
-  <script type="application/javascript" >
-
+<script>
 $S('#<?php echo $VAR->searchFormId?>').data('connect',function( objid ){
   $R.post(
     'ajax.php?c=Acl.Mgmt.appendGroup&dkey=<?php echo $VAR->domain->aclDomainKey ?>',{
@@ -228,9 +227,9 @@ $S('#<?php echo $VAR->searchFormId?>').data('connect',function( objid ){
   );
 });
 
-  <?php foreach( $this->jsItems as $jsItem ){ ?>
-  <?php echo $ELEMENT->$jsItem->jsCode?>
-  <?php } ?>
-  </script>
+<?php foreach( $this->jsItems as $jsItem ){ ?>
+<?php echo $ELEMENT->$jsItem->jsCode?>
+<?php } ?>
+</script>
 
 

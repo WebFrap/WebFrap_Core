@@ -88,7 +88,7 @@ HTML;
     $html = <<<HTML
 
       <li>
-        <p>{$iconSupport} Support</p>
+        <p><i class="icon-question-sign" ></i> Support</p>
         <ul>
           <li><a class="wcm wcm_req_ajax" href="maintab.php?c=Webfrap.Base.help&refer=webfrap-maintenance-menu" >{$iconHelp} Help</a></li>
           <li><a class="wcm wcm_req_ajax" href="maintab.php?c=Wbfsys.Issue.create&refer=webfrap-maintenance-menu" >{$iconBug} Bug</a></li>
