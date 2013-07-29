@@ -41,7 +41,7 @@ class DaidalosAcl_Maintab_Menu extends WgtDropmenu
 
     $iconMenu          = '<i class="icon-reorder" ></i>';
     $iconClose         = '<i class="icon-remove-circle " ></i>';
-    $iconSearch        = $this->view->icon('control/search.png'   ,'Search'  );
+    $iconSearch        = '<i class="icon-search " ></i>';
     $iconBookmark      = '<i class="icon-bookmark" ></i>';
 
     $entries = new TArray();

@@ -65,7 +65,7 @@ class DaidalosDbSchemaTable_Maintab_View extends WgtMaintabCustom
 
     $iconMenu          = '<i class="icon-reorder" ></i>';
     $iconClose         = '<i class="icon-remove-circle " ></i>';
-    $iconSearch        = $this->icon('control/search.png'   ,'Search'  );
+    $iconSearch        = '<i class="icon-search" ></i>';
     $iconBookmark      = '<i class="icon-bookmark" ></i>';
 
     $iconSupport = $this->icon('control/support.png'  ,'Support');
