@@ -85,7 +85,7 @@ class MaintenancePackages_Maintab_View extends WgtMaintabCustom
     $iconEdit     = '<i class="icon-edit" ></i>';
     $iconBug      = $this->icon('control/bug.png'      ,'Bug');
 
-    $iconRefresh    = $this->icon('control/refresh.png'      ,'Refresh');
+    $iconRefresh    = '<i class="icon-refresh" ></i>';
 
     $menu          = $this->newMenu($this->id.'_dropmenu');
     $menu->content = <<<HTML

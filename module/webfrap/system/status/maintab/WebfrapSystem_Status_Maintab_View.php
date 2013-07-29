@@ -146,7 +146,7 @@ class WebfrapSystem_Status_Maintab_View extends WgtMaintab
 
     $iconNew      = $this->icon('control/add.png'      ,'Add');
     $iconClean    = $this->icon('control/clean.png'      ,'Clean');
-    $iconRefresh  = $this->icon('control/refresh.png'      ,'Refresh');
+    $iconRefresh  = '<i class="icon-refresh" ></i>';
     $iconInfo  = $this->icon('control/info.png'      ,'Info');
     $iconWork  = $this->icon('context/work.png'      ,'Work');
 

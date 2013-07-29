@@ -44,7 +44,7 @@ class WebfrapDocu_Page_Maintab_Menu extends WgtDropmenu
     $iconSearch        = $this->view->icon('control/search.png'   ,'Search'  );
     $iconBookmark      = '<i class="icon-bookmark" ></i>';
     $iconSave          = $this->view->icon('control/save.png' ,'Save');
-    $iconRefresh       = $this->view->icon('control/refresh.png' ,'Refresh');
+    $iconRefresh       = '<i class="icon-refresh" ></i>';
 
     $entries = new TArray();
 

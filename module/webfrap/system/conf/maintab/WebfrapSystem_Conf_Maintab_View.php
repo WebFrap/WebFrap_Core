@@ -90,7 +90,7 @@ class WebfrapSystem_Conf_Maintab_View extends WgtMaintab
 
     $iconNew      = $this->icon('control/add.png'      ,'Add');
     $iconClean    = $this->icon('control/clean.png'      ,'Clean');
-    $iconRefresh  = $this->icon('control/refresh.png'      ,'Refresh');
+    $iconRefresh  = '<i class="icon-refresh" ></i>';
 
     $menu          = $this->newMenu($this->id.'_dropmenu');
     $menu->content = <<<HTML

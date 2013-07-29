@@ -90,7 +90,7 @@ class WebfrapCache_Maintab_View extends WgtMaintabCustom
     $iconFaq      = '<i class="icon-bookmark" ></i>';
 
     $iconClean    = $this->icon('control/clean.png'      ,'Clean');
-    $iconRefresh    = $this->icon('control/refresh.png'      ,'Refresh');
+    $iconRefresh    = '<i class="icon-refresh" ></i>';
 
     $menu          = $this->newMenu($this->id.'_dropmenu');
     $menu->content = <<<HTML

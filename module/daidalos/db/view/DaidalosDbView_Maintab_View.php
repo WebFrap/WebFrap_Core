@@ -90,7 +90,7 @@ class DaidalosDbView_Maintab_View extends WgtMaintabCustom
     $iconRecreate      = $this->icon('daidalos/table_dump.png' ,'Refresh Wbf Views');
     $iconDeleteView    = $this->icon('daidalos/table_clean.png' ,'Delete Wbf Views');
 
-    $iconRefresh       = $this->icon('control/refresh.png' ,'Refresh');
+    $iconRefresh       = '<i class="icon-refresh" ></i>';
 
     $entries = new TArray();
 

@@ -65,7 +65,7 @@ class ExampleWgt_Maintab_View extends WgtMaintabCustom
     $iconClose = '<i class="icon-remove-circle " ></i>';
     $iconEntity = $this->icon('control/entity.png'      ,'Entity');
     $iconSearch = $this->icon('control/search.png'      ,'Search');
-    $iconRefresh = $this->icon('control/refresh.png'      ,'Refresh');
+    $iconRefresh = '<i class="icon-refresh" ></i>';
 
     $entries = new TArray();
 

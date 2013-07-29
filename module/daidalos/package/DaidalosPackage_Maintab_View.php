@@ -89,7 +89,7 @@ class DaidalosPackage_Maintab_View extends WgtMaintab
     $iconFaq       = $this->icon('control/faq.png'      ,'Faq');
     $iconHelp      = $this->icon('control/help.png'     ,'Help');
 
-    $iconRefresh    = $this->icon('control/refresh.png'      ,'Refresh');
+    $iconRefresh    = '<i class="icon-refresh" ></i>';
 
     $menu          = $this->newMenu($this->id.'_dropmenu');
     $menu->content = <<<HTML

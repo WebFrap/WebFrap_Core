@@ -90,7 +90,7 @@ class WebfrapTaskPlanner_Calendar_Maintab_View extends WgtMaintab
     $iconFaq      = $this->icon('control/bookmark.png'      ,'Bookmark');
 
     $iconClean    = $this->icon('control/clean.png'      ,'Clean');
-    $iconRefresh    = $this->icon('control/refresh.png'      ,'Refresh');
+    $iconRefresh    = '<i class="icon-refresh" ></i>';
 
     $menu          = $this->newMenu($this->id.'_dropmenu');
     $menu->content = <<<HTML

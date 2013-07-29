@@ -64,7 +64,7 @@ class WebfrapEditor_Workspace_Maintab_View extends WgtMaintabCustom
     $iconSearch        = $this->icon('control/search.png'   ,'Search'  );
     $iconBookmark      = '<i class="icon-bookmark" ></i>';
     $iconSave          = $this->icon('control/save.png' ,'Save');
-    $iconRefresh       = $this->icon('control/refresh.png' ,'Refresh');
+    $iconRefresh       = '<i class="icon-refresh" ></i>';
 
     $iconSupport   = $this->icon('control/support.png'  ,'Support');
     $iconBug       = $this->icon('control/bug.png'      ,'Bug');
