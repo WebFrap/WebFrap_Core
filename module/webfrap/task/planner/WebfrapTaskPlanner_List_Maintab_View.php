@@ -93,7 +93,6 @@ class WebfrapTaskPlanner_List_Maintab_View extends WgtMaintabList
     $iconFaq      = $this->icon('control/bookmark.png'      ,'Bookmark');
 
     $iconNew    = $this->icon('control/add.png'      ,'Add');
-    $iconClean    = $this->icon('control/clean.png'      ,'Clean');
     $iconRefresh    = '<i class="icon-refresh" ></i>';
 
     $menu          = $this->newMenu($this->id.'_dropmenu');

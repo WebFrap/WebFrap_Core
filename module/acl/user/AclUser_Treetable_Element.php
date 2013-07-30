@@ -128,7 +128,7 @@ class AclUser_Treetable_Element extends WgtTreetable
         Wgt::ACTION_DELETE,
         'Delete',
         'index.php?c=Acl.Mgmt_Qfdu.cleanGroup&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',
-        'control/clean.png',
+        'icon-eraser',
         '',
         'wbf.label',
         Acl::ADMIN
@@ -138,7 +138,7 @@ class AclUser_Treetable_Element extends WgtTreetable
         Wgt::ACTION_BUTTON_GET,
         'Reference ACLs',
         'maintab.php?c=Acl.Mgmt_Tree.showGraph&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',
-        'control/mask_tree.png',
+        'icon-cogs',
         '',
         'wbf.inheritance',
         Acl::ADMIN
@@ -168,7 +168,7 @@ class AclUser_Treetable_Element extends WgtTreetable
         Wgt::ACTION_DELETE,
         'Clean',
         'index.php?c=Acl.Mgmt_Qfdu.cleanUser&dkey='.$this->domainNode->domainName.'&amp;objid=',
-        'control/clean.png',
+        'icon-eraser',
         '',
         'wbf.label',
         Acl::ADMIN
@@ -193,7 +193,7 @@ class AclUser_Treetable_Element extends WgtTreetable
         Wgt::ACTION_BUTTON_GET,
         'Dset Rights',
         'maintab.php?c=Acl.Mgmt_Dset.listing&dkey='.$this->domainNode->domainName.'&amp;objid=',
-        'control/rights.png',
+        'icon-shield',
         '',
         'wbf.label',
         Acl::ADMIN

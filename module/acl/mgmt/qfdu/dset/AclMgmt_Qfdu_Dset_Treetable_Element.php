@@ -126,7 +126,7 @@ class AclMgmt_Qfdu_Dset_Treetable_Element extends WgtTreetable
         Wgt::ACTION_DELETE,
         'Delete',
         'index.php?c=Acl.Mgmt_Qfdu.cleanGroup&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',
-        'control/clean.png',
+        'icon-eraser',
         '',
         'wbf.label',
         Acl::ADMIN
@@ -135,7 +135,7 @@ class AclMgmt_Qfdu_Dset_Treetable_Element extends WgtTreetable
         Wgt::ACTION_BUTTON_GET,
         'Reference ACLs',
         'maintab.php?c=Acl.Mgmt_Tree.showGraph&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',
-        'control/mask_tree.png',
+        'icon-cogs',
         '',
         'wbf.inheritance',
         Acl::ADMIN
@@ -162,7 +162,7 @@ class AclMgmt_Qfdu_Dset_Treetable_Element extends WgtTreetable
         Wgt::ACTION_DELETE,
         'Delete',
         'ajax.php?c=Acl.Mgmt_Qfdu.cleanUser&dkey='.$this->domainNode->domainName.'&amp;objid=',
-        'control/clean.png',
+        'icon-eraser',
         '',
         'wbf.label',
         Acl::ADMIN
@@ -187,7 +187,7 @@ class AclMgmt_Qfdu_Dset_Treetable_Element extends WgtTreetable
         Wgt::ACTION_BUTTON_GET,
         'Dset Rights',
         'maintab.php?c=Acl.Mgmt_Dset.listing&amp;area_id='.$this->areaId.'&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',
-        'control/rights.png',
+        'icon-shield',
         '',
         'wbf.label',
         Acl::ADMIN
@@ -1011,8 +1011,6 @@ HTML;
   public function buildTableFooter()
   {
 
-    $iconClean = $this->icon('control/clean.png', 'Clean');
-    //$iconDelete = $this->icon('control/delete.png', 'Delete Selection');
     $iconExport = $this->icon('mimetypes/application-vnd.ms-excel.png', 'Export');
 
     $html = '<div class="wgt-panel wgt-border-top" >'.NL;
@@ -1036,7 +1034,7 @@ HTML;
     <ul>
       <li><a
         class="wcm wcm_req_del"
-        href="ajax.php?c=Acl.Mgmt_Qfdu.dropAllAssignments&amp;dkey={$this->domainNode->domainName}" >{$iconClean} Delete all</a></li>
+        href="ajax.php?c=Acl.Mgmt_Qfdu.dropAllAssignments&amp;dkey={$this->domainNode->domainName}" ><i class="icon-eraser" ></i> Delete all</a></li>
       <li><a
         target="_document"
         href="document.php?c=Acl.Mgmt_Qfdu_Dset.export&amp;dkey={$this->domainNode->domainName}" >{$iconExport} Export</a></li>

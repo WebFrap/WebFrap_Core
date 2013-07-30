@@ -88,7 +88,6 @@ class WebfrapTaskPlanner_Calendar_Maintab_View extends WgtMaintab
     $iconBug      = $this->icon('control/bug.png'      ,'Bug');
     $iconFaq      = $this->icon('control/bookmark.png'      ,'Bookmark');
 
-    $iconClean    = $this->icon('control/clean.png'      ,'Clean');
     $iconRefresh    = '<i class="icon-refresh" ></i>';
 
     $menu          = $this->newMenu($this->id.'_dropmenu');
@@ -133,7 +132,7 @@ class WebfrapTaskPlanner_Calendar_Maintab_View extends WgtMaintab
 <div class="wgt-panel-control" >
   <button
       class="wcm wcm_ui_button wgtac_clean_cache wcm_ui_tip-top"
-      title="Clean the full cache" >{$iconClean} {$this->i18n->l('Clean all','wbf.label')}</button>
+      title="Clean the full cache" ><i class="icon-eraser" ></i> {$this->i18n->l('Clean all','wbf.label')}</button>
 </div>
 
 HTML;

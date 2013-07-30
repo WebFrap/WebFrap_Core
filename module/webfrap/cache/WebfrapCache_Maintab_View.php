@@ -88,7 +88,6 @@ class WebfrapCache_Maintab_View extends WgtMaintabCustom
     $iconBug      = $this->icon('control/bug.png'      ,'Bug');
     $iconFaq      = '<i class="icon-bookmark" ></i>';
 
-    $iconClean    = $this->icon('control/clean.png'      ,'Clean');
     $iconRefresh    = '<i class="icon-refresh" ></i>';
 
     $menu          = $this->newMenu($this->id.'_dropmenu');
@@ -133,7 +132,7 @@ class WebfrapCache_Maintab_View extends WgtMaintabCustom
 <div class="wgt-panel-control" >
   <button
       class="wcm wcm_ui_button wgtac_clean_cache wcm_ui_tip-top"
-      title="Clean the full cache" >{$iconClean} {$this->i18n->l('Clean all','wbf.label')}</button>
+      title="Clean the full cache" ><i class="icon-eraser" ></i> {$this->i18n->l('Clean all','wbf.label')}</button>
 </div>
 
 HTML;
