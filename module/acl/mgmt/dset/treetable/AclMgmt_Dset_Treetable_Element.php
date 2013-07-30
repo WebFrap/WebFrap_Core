@@ -465,9 +465,9 @@ class AclMgmt_Dset_Treetable_Element extends WgtTreetable
       $body .= '<td valign="top" >';
 
       if (!is_null($row['group_users_vid'])) {
-        $body .= '<em>'.$this->icon('relation/dataset.png','Dataset').' Dataset</em>';
+        $body .= '<em><i class="icon-file-alt " ></i> Dataset</em>';
       } elseif (isset($row['group_users_id_area']) && !is_null($row['group_users_id_area'])) {
-        $body .= '<em>'.$this->icon('relation/management.png','Management').' All Projects</em>';
+        $body .= '<em><i class="icon-list-alt" ></i> All Projects</em>';
       } else {
         $body .= '<em>'.$this->icon('relation/global.png','Global').' Global</em>';
       }
@@ -625,9 +625,9 @@ class AclMgmt_Dset_Treetable_Element extends WgtTreetable
 
 
       if (!is_null($row['group_users_vid'])) {
-        $body .= '<em>'.$this->icon('relation/dataset.png','Dataset').' Dataset</em>';
+        $body .= '<em><i class="icon-file-alt " ></i> Dataset</em>';
       } elseif (isset($row['group_users_id_area']) && !is_null($row['group_users_id_area'])) {
-        $body .= '<em>'.$this->icon('relation/management.png','Management').' Table</em>';
+        $body .= '<em><i class="icon-list-alt" ></i> Table</em>';
       } else {
         $body .= '<em>'.$this->icon('relation/global.png','Global').' Global</em>';
       }

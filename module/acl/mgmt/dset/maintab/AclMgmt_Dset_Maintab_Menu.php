@@ -51,7 +51,6 @@ class AclMgmt_Dset_Maintab_Menu extends WgtDropmenu
   public function buildMenu($objid, $params)
   {
 
-    $iconMenu        = '<i class="icon-reorder" ></i>';
     $iconEdit        = '<i class="icon-save" ></i>';
     $iconBookmark    = '<i class="icon-bookmark" ></i>';
     $iconMask        = $this->view->icon('control/mask.png', 'Mask');
