@@ -122,7 +122,7 @@ class WebfrapEditor_Maintab_View extends WgtMaintabCustom
 </div>
 
 <div class="wgt-panel-control" >
-  <button class="wgt-button wgtac_save" >{$iconSave} {$this->i18n->l('Save','wbf.label')}</button>
+  <button class="wgt-button wgtac_save" ><i class="icon-save" ></i> {$this->i18n->l('Save','wbf.label')}</button>
 </div>
 
 HTML;

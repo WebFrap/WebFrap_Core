@@ -110,7 +110,7 @@ class WebfrapKnowhowNode_Show_Maintab_View extends WgtMaintabCustom
 </div>
 
 <div class="wgt-panel-control" >
-  <button class="wgt-button wgtac_edit" >{$iconEdit} {$this->i18n->l('Edit','wbf.label')}</button>
+  <button class="wgt-button wgtac_edit" ><i class="icon-edit" ></i> {$this->i18n->l('Edit','wbf.label')}</button>
 </div>
 
 

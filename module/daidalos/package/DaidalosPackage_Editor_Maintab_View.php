@@ -119,7 +119,7 @@ class DaidalosPackage_Editor_Maintab_View extends WgtMaintabCustom
     </ul>
   </li>
   <li class="wgt-root" >
-    <button class="wgt-button wgtac_save" >{$iconSave} {$this->i18n->l('Save','wbf.label')}</button>
+    <button class="wgt-button wgtac_save" ><i class="icon-save" ></i> {$this->i18n->l('Save','wbf.label')}</button>
     <ul style="margin-top:-10px;" ></ul>
   </li>
   <li class="wgt-root" >

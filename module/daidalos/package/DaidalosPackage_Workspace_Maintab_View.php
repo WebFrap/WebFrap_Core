@@ -115,7 +115,7 @@ class DaidalosPackage_Workspace_Maintab_View extends WgtMaintab
     </ul>
   </li>
   <li class="wgt-root" >
-    <button class="wgt-button wgtac_new" >{$iconAdd} {$this->i18n->l('New','wbf.label')}</button>
+    <button class="wgt-button wgtac_new" ><i class="icon-plus-sign" ></i> {$this->i18n->l('New','wbf.label')}</button>
     <ul style="margin-top:-10px;" ></ul>
   </li>
 </ul>

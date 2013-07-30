@@ -95,7 +95,7 @@ class AclMgmt_Path_Maintab_Menu extends WgtDropmenu
   </div>
 
   <div class="wgt-panel-control" >
-    <button class="wcm wcm_ui_button wgtac_edit" >{$iconEdit} {$this->view->i18n->l('Save','wbf.label')}</button>
+    <button class="wcm wcm_ui_button wgtac_edit" ><i class="icon-edit" ></i> {$this->view->i18n->l('Save','wbf.label')}</button>
   </div>
 
 HTML;

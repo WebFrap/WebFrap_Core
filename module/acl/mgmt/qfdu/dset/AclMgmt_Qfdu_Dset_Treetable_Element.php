@@ -1019,7 +1019,7 @@ HTML;
     $html .= ' </div>';
     $html .= ' <div class="menu" style="float:left;width:150px;" >';
 
-    // <li><a>{$iconDelete} Delete Selection</a></li>
+    // <li><a><i class="icon-remove" ></i> Delete Selection</a></li>
 
     $html .=   <<<HTML
 

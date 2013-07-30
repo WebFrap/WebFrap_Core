@@ -33,7 +33,7 @@
         onclick="$R.form('wgt-form-<?php
           echo $VAR->domain->aclDomainKey ?>-acl-qfdu-append');$UI.form.reset('wgt-form-<?php
           echo $VAR->domain->aclDomainKey ?>-acl-qfdu-append');return false;" >
-        <img src="<?php echo View::$iconsWeb ?>xsmall/control/connect.png" alt="connect" /> Append
+        <i class="icon-link " ></i> Append
       </button>
 
       <button
@@ -44,7 +44,7 @@
           echo $VAR->domain->domainName ?>&tabid=wgt_tab-<?php
           echo $VAR->domain->aclDomainKey ?>_acl_listing_tab_<?php
           echo $VAR->domain->aclDomainKey ?>-acl_qfd_users');return false;" >
-        <img src="<?php echo View::$iconsWeb ?>xsmall/control/refresh.png" alt="Reload" /> Reload
+        <i class="icon-refresh" ></i> Reload
       </button>
     </div>
 

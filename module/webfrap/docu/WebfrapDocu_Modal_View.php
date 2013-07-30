@@ -93,7 +93,7 @@ class WebfrapDocu_Modal_View extends WgtModal
 <div class="wgt-panel wgt-border" >
 
   <div class="wgt-panel-control" >
-    <button class="wgtac_edit wgt-button" >{$iconEdit} {$i18n->l('Edit','wbf.label')}</button>
+    <button class="wgtac_edit wgt-button" ><i class="icon-edit" ></i> {$i18n->l('Edit','wbf.label')}</button>
   </div>
 
 </div>
