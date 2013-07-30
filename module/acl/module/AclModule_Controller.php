@@ -49,85 +49,68 @@ class AclModule_Controller extends MvcController_Domain
    *
    * @var array
    */
-  protected $options           = array
-  (
-    'listing' => array
-    (
+  protected $options           = array(
+    'listing' => array(
       'method'    => array('GET'),
       'views'      => array('maintab')
     ),
-    'search' => array
-    (
+    'search' => array(
       'method'    => array('GET'),
       'views'      => array('ajax')
     ),
-    'loadgroups' => array
-    (
+    'loadgroups' => array(
       'method'    => array('GET'),
       'views'      => array('ajax')
     ),
-    'appendgroup' => array
-    (
+    'appendgroup' => array(
       'method'    => array('PUT', 'POST'),
       'views'      => array('ajax')
     ),
-    'deletegroup' => array
-    (
+    'deletegroup' => array(
       'method'    => array('DELETE'),
       'views'      => array('ajax')
     ),
-    'updatearea' => array
-    (
+    'updatearea' => array(
       'method'    => array('PUT', 'POST'),
       'views'      => array('ajax')
     ),
-    'tabqualifiedusers' => array
-    (
+    'tabqualifiedusers' => array(
       'method'    => array('GET'),
       'views'      => array('ajax')
     ),
-    'searchqfdusers' => array
-    (
+    'searchqfdusers' => array(
       'method'    => array('GET'),
       'views'      => array('ajax')
     ),
-    'loadqfdusers' => array
-    (
+    'loadqfdusers' => array(
       'method'    => array('GET'),
       'views'      => array('ajax')
     ),
-    'loadqfduentity' => array
-    (
+    'loadqfduentity' => array(
       'method'    => array('GET'),
       'views'      => array('ajax')
     ),
-    'appendqfduser' => array
-    (
+    'appendqfduser' => array(
       'method'    => array('PUT', 'POST'),
       'views'      => array('ajax')
     ),
-    'cleanqfdugroup' => array
-    (
+    'cleanqfdugroup' => array(
       'method'    => array('DELETE'),
       'views'      => array('ajax')
     ),
-    'deleteqfduser' => array
-    (
+    'deleteqfduser' => array(
       'method'    => array('DELETE'),
       'views'      => array('ajax')
     ),
-    'cleanqfduser' => array
-    (
+    'cleanqfduser' => array(
       'method'    => array('DELETE'),
       'views'      => array('ajax')
     ),
-    'deleteqfdudataset' => array
-    (
+    'deleteqfdudataset' => array(
       'method'    => array('DELETE'),
       'views'      => array('ajax')
     ),
-    'emptyqfduusers' => array
-    (
+    'emptyqfduusers' => array(
       'method'    => array('DELETE'),
       'views'      => array('ajax')
     )
