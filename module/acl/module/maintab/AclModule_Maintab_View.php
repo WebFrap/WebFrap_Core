@@ -65,8 +65,8 @@ class AclModule_Maintab_View extends WgtMaintab
 
     // for paging use the default search form, to enshure to keep the order
     // and to page in search results if there was any search
-    $params->searchFormAction = 'index.php?c=Acl.Mgmt.search&dkey='.$this->domainNode->domainName;
-    $params->searchFormId = 'wgt-form-table-'.$this->domainNode->aclDomainKey.'-acl-search';
+    $params->searchFormAction = 'index.php?c=Acl.Mgmt.search&dkey='.$this->domainNode->key;
+    $params->searchFormId = 'wgt-form-table-'.$this->domainNode->key.'-acl-search';
 
     // fill the relevant data for the search form
     $params->injectSearchFormData($this);

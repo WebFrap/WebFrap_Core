@@ -142,7 +142,6 @@ class WebfrapSystem_Status_Maintab_View extends WgtMaintab
     $iconHelp     = $this->icon('control/help.png'      ,'Help');
     $iconClose    = '<i class="icon-remove-circle " ></i>';
     $iconEdit     = '<i class="icon-edit" ></i>';
-    $iconBookmark      = '<i class="icon-bookmark" ></i>';
 
     $iconNew      = $this->icon('control/add.png'      ,'Add');
     $iconClean    = $this->icon('control/clean.png'      ,'Clean');

@@ -328,7 +328,7 @@ class AclMgmt_Dset_Treetable_Element extends WgtTreetable
       $body .= '<tr class="row'.$num.'" id="'.$rowid.'" >'.NL;
 
       $body .= '<td valign="top" class="pos" name="slct['.$objid.']" style="text-align:right;" >'.$pos.'</td>'.NL;
-      $body .= '<td valign="top" >'.$this->icon('control/group.png','Group').' '.$row['role_group_name'].'</td>'.NL;
+      $body .= '<td valign="top" ><i class="icon-group" ></i> '.$row['role_group_name'].'</td>'.NL;
 
       $body .= '<td valign="top" style="text-align:right;" >'
         .$this->selectRights(
@@ -461,7 +461,7 @@ class AclMgmt_Dset_Treetable_Element extends WgtTreetable
       $body .= '<tr class="row'.$this->num.' '.$pRowid.' wgt-border-top" id="'.$rowid.'"  >'.NL;
 
       $body .= '<td valign="top" class="pos" name="slct_user['.$objid.']" style="text-align:right;" >'.$parentPos.'.'.$pos.'</td>'.NL;
-      $body .= '<td valign="top" class="ind1" >'.$this->icon('control/user.png','User').' '.$row['user'].'</td>'.NL;
+      $body .= '<td valign="top" class="ind1" ><i class="icon-user" ></i> '.$row['user'].'</td>'.NL;
       $body .= '<td valign="top" >';
 
       if (!is_null($row['group_users_vid'])) {
@@ -620,7 +620,7 @@ class AclMgmt_Dset_Treetable_Element extends WgtTreetable
       $body .= '<tr class="'.$pRowid.'" id="'.$rowid.'"  >'.NL;
 
       $body .= '<td valign="top" class="pos" name="slct_user['.$objid.']" style="text-align:right;" ></td>'.NL;
-      $body .= '<td valign="top" class="ind1" >'.$this->icon('control/user.png','User').' '.$row['user'].'</td>'.NL;
+      $body .= '<td valign="top" class="ind1" ><i class="icon-user" ></i> '.$row['user'].'</td>'.NL;
       $body .= '<td valign="top" >';
 
 

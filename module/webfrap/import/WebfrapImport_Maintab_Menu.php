@@ -41,8 +41,6 @@ class WebfrapImport_Maintab_Menu extends WgtDropmenu
 
     $iconMenu      = '<i class="icon-reorder" ></i>';
     $iconClose     = $this->view->icon('control/close_tab.png'     ,'Close');
-    $iconSearch    = $this->view->icon('control/search.png'    ,'Search');
-    $iconBookmark  = '<i class="icon-bookmark" ></i>';
 
     $entries = new TArray();
     //$entries->support  = $this->entriesSupport($params);

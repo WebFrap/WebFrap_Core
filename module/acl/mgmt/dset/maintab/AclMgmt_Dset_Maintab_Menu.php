@@ -52,9 +52,8 @@ class AclMgmt_Dset_Maintab_Menu extends WgtDropmenu
   {
 
     $iconEdit        = '<i class="icon-save" ></i>';
-    $iconBookmark    = '<i class="icon-bookmark" ></i>';
     $iconMask        = $this->view->icon('control/mask.png', 'Mask');
-    $iconListMask    = $this->view->icon('control/mask_tree.png', 'List Mask');
+    $iconListMask    = '<i class="icon-list-alt" ></i>';
 
     $access           = $params->access;
     $user            = $this->getUser();
@@ -109,7 +108,7 @@ BUTTON;
 {$codeButton}
 
   <div class="wgt-panel-control"  >
-    <button class="wcm wcm_ui_button wgtac_mask_list_rights" >{$iconListMask} {$this->view->i18n->l('List Rights','wbf.label')}</button>
+    <button class="wcm wcm_ui_button wgtac_mask_list_rights" ><i class="icon-list-alt" ></i> {$this->view->i18n->l('List Rights','wbf.label')}</button>
   </div>
 
   <div class="wgt-panel-control" >

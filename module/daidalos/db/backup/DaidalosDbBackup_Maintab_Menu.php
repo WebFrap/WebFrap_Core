@@ -41,7 +41,6 @@ class DaidalosDbBackup_Maintab_Menu extends WgtDropmenu
 
     $iconMenu          = '<i class="icon-reorder" ></i>';
     $iconClose         = '<i class="icon-remove-circle " ></i>';
-    $iconBookmark      = '<i class="icon-bookmark" ></i>';
     $iconBackup        = $this->view->icon('daidalos/backup.png' ,'Backup');
     $iconSupport       = $this->view->icon('control/support.png'  ,'Support');
     $iconFaq           = $this->view->icon('control/faq.png'      ,'Faq');

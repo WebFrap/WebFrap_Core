@@ -387,7 +387,6 @@ class AclMgmt_Qfdu_Dset_Treetable_Element extends WgtTreetable
 
     $icons = array();
     $icons['closed'] = $this->icon('control/closed.png', 'Closed');
-    $icons['dset'] = $this->icon('control/dset.png', 'Dset');
 
     // create the table body
     $body = '<tbody>'.NL;
@@ -423,7 +422,7 @@ class AclMgmt_Qfdu_Dset_Treetable_Element extends WgtTreetable
           <a
             href="maintab.php?c={$this->domainNode->domainUrl}.edit&amp;objid={$row['dset_rowid']}"
             class="wcm wcm_req_ajax" >
-            {$icons['dset']} {$row['dset_text']}
+            <i class="icon-file-alt" ></i> {$row['dset_text']}
           </a> ({$row['num_users']})
     </td>
     <td colspan="2" >&nbsp;</td>
@@ -466,7 +465,6 @@ HTML;
 
     $icons = array();
     $icons['closed'] = $this->icon('control/closed.png', 'Closed');
-    $icons['user'] = $this->icon('control/user.png', 'User');
 
     $body = '<htmlArea selector="tr#'.$this->id.'_row_'
       .$dsetId.'" action="after" ><![CDATA['.NL;
@@ -504,7 +502,7 @@ HTML;
           <a
             class="wcm wcm_req_ajax"
             href="modal.php?c=Webfrap.ContactForm.formUser&amp;user_id={$row['role_user_rowid']}&amp;d_src={$this->domainNode->domainName}" >
-            {$icons['user']} {$row['user']}</a>
+            <i class="icon-user" ></i> {$row['user']}</a>
          ({$row['num_groups']})
        </td>
        <td colspan="2" ></td>
@@ -670,7 +668,6 @@ HTML;
 
     $icons = array();
     $icons['closed'] = $this->icon('control/closed.png', 'Closed');
-    $icons['dset'] = $this->icon('control/dset.png', 'Dset');
 
     // create the table body
     $body = '';
@@ -706,7 +703,7 @@ HTML;
           <a
             href="maintab.php?c={$this->domainNode->domainUrl}.edit&amp;objid={$row['dset_rowid']}"
             class="wcm wcm_req_ajax" >
-            {$icons['dset']} {$row['dset_text']}
+            <i class="icon-file-alt" ></i> {$row['dset_text']}
           </a> ({$row['num_users']})
     </td>
     <td colspan="2" >&nbsp;</td>
@@ -814,7 +811,7 @@ HTML;
         $body .= '<tr class="row'.$this->num.' '.$pRowid.' wgt-border-top flag_partial" id="'.$rowid.'"  >'.NL;
 
         $body .= '<td valign="top" class="pos" >1</td>'.NL;
-        $body .= '<td valign="top" class="ind1" >'.$this->icon('control/user.png','User').' '.$row['name'].' (partial)</td>'.NL;
+        $body .= '<td valign="top" class="ind1" ><i class="icon-user" ></i> '.$row['name'].' (partial)</td>'.NL;
         $body .= '<td colspan="2"  ></td>'.NL;
 
         if ($this->enableNav) {
@@ -849,7 +846,7 @@ HTML;
         $body .= '<tr class="row'.$this->num.' '.$pRowid.' wgt-border-top" id="'.$rowid.'"  >'.NL;
 
         $body .= '<td valign="top" class="pos" >1</td>'.NL;
-        $body .= '<td valign="top" >'.$this->icon('control/user.png','User').' '.$row['user'].'</td>'.NL;
+        $body .= '<td valign="top" ><i class="icon-user" ></i> '.$row['user'].'</td>'.NL;
         $body .= '<td valign="top" >'
           .'<input
             type="text"
@@ -1093,7 +1090,7 @@ HTML;
         $body .= '<tr class="row'.$this->num.' '.$pRowid.' wgt-border-top flag_partial" id="'.$rowid.'"  >'.NL;
 
         $body .= '<td valign="top" class="pos" >'.$groupPos.'.'.$pos.'</td>'.NL;
-        $body .= '<td valign="top" class="ind1" >'.$this->icon('control/user.png','User').' '.$row['name'].' (partial)</td>'.NL;
+        $body .= '<td valign="top" class="ind1" ><i class="icon-user" ></i> '.$row['name'].' (partial)</td>'.NL;
         $body .= '<td colspan="2"  ></td>'.NL;
 
         if ($this->enableNav) {
@@ -1116,7 +1113,7 @@ HTML;
         $body .= '<tr class="row'.$this->num.' '.$pRowid.' wgt-border-top" id="'.$rowid.'"  >'.NL;
 
         $body .= '<td valign="top" class="pos" >'.$groupPos.'.'.$pos.'</td>'.NL;
-        $body .= '<td valign="top" >'.$this->icon('control/user.png','User').' '.$row['user'].'</td>'.NL;
+        $body .= '<td valign="top" ><i class="icon-user" ></i> '.$row['user'].'</td>'.NL;
         $body .= '<td valign="top" >'
           .'<input
             type="text"

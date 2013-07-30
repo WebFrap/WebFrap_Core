@@ -59,12 +59,6 @@ class AclModule_Maintab_Menu extends WgtDropmenu
     $iconMasks       = $this->view->icon('control/masks.png'     , 'Masks');
     $iconMask        = $this->view->icon('control/mask.png'      , 'Mask');
 
-    $iconUser        = $this->view->icon('control/user.png'      , 'User');
-    $iconGroup       = $this->view->icon('control/group.png'     , 'Group');
-    $iconDset        = $this->view->icon('control/dset.png'      , 'Dset');
-
-
-
     // load entries
     $entries = new TArray();
     $entries->support  = $this->entriesSupport($areaId, $params);
@@ -121,7 +115,7 @@ class AclModule_Maintab_Menu extends WgtDropmenu
         checked="checked" /><label
           for="{$this->id}-boxtype-group"
           class="wcm wcm_ui_tip-top"
-          tooltip="Group by group"  >{$iconGroup}</label>
+          tooltip="Group by group"  ><i class="icon-group" ></i></label>
       <input
         type="radio"
         class="{$this->id}-boxtype"
@@ -131,7 +125,7 @@ class AclModule_Maintab_Menu extends WgtDropmenu
         name="grouping"  /><label
           for="{$this->id}-boxtype-user"
           class="wcm wcm_ui_tip-top"
-          tooltip="Group by user" >{$iconUser}</label>
+          tooltip="Group by user" ><i class="icon-user" ></i></label>
       <input
         type="radio"
         class="{$this->id}-boxtype"
@@ -141,7 +135,7 @@ class AclModule_Maintab_Menu extends WgtDropmenu
         name="grouping" /><label
           for="{$this->id}-boxtype-dset"
           class="wcm wcm_ui_tip-top"
-          tooltip="Group by {$this->domainNode->label}" >{$iconDset}</label>
+          tooltip="Group by {$this->domainNode->label}" ><i class="icon-file-alt" ></i></label>
     </div>
   </div>
 

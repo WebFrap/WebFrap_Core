@@ -39,7 +39,6 @@ class WebfrapNavigation_Maintab_Menu extends WgtDropmenu
     $iconMenu         = '<i class="icon-reorder" ></i>';
     $iconClose        = '<i class="icon-remove-circle " ></i>';
     $iconEntity       = $this->view->icon('control/entity.png' , 'Entity'  );
-    $iconSearch       = $this->view->icon('control/search.png' , 'Search'  );
 
     $iconList        = '<i class="icon-remove-circle " ></i>';
     $iconIcons       = $this->view->icon('control/entity.png' , 'Icons'  );

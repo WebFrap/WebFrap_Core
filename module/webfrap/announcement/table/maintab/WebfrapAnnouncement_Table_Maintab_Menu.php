@@ -43,7 +43,6 @@ class WebfrapAnnouncement_Table_Maintab_Menu extends WgtDropmenu
     $iconMenu        = '<i class="icon-reorder" ></i>';
     $iconClose       = '<i class="icon-remove-circle " ></i>';
     $iconEntity      = $this->view->icon('control/entity.png'      ,'Entity');
-    $iconBookmark    = '<i class="icon-bookmark" ></i>';
     $iconAdd         = $this->view->icon('control/add.png'      ,'Create');
 
     $iconSupport = '<i class="icon-info-sign"></i>';

@@ -60,7 +60,6 @@ class MaintenanceDbConsistency_Maintab_Menu extends WgtDropmenu
 
     $iconMenu    = '<i class="icon-reorder" ></i>';
     $iconExecute    = $view->icon('control/exec.png', 'Send');
-    $iconBookmark  = '<i class="icon-bookmark" ></i>';
     $iconClose     = '<i class="icon-remove-circle " ></i>';
 
     $iconSupport         = $view->icon('control/support.png'      ,'Support');

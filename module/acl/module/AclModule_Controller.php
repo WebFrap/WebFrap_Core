@@ -135,16 +135,15 @@ class AclModule_Controller extends MvcController_Domain
     $domainNode  = $this->getDomainNode($request);
 
 
-    /* @var $model AclMgmt_Model  */
-    $model = $this->loadModel('AclMgmt');
+    /* @var $model AclModule_Model  */
+    $model = $this->loadModel('AclModule');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $params);
 
-    /* @var $view AclMgmt_Maintab_View */
-    $view = $response->loadView
-    (
-      $domainNode->domainName.'_acl_listing',
-      'AclMgmt',
+    /* @var $view AclModule_Maintab_View */
+    $view = $response->loadView(
+      $domainNode->key.'_acl_listing',
+      'AclModule',
       'displayListing'
     );
     $view->domainNode = $domainNode;
@@ -173,8 +172,8 @@ class AclModule_Controller extends MvcController_Domain
     $domainNode  = $this->getDomainNode($request);
 
     // load the default model
-    /* @var $model AclMgmt_Model */
-    $model   = $this->loadModel('AclMgmt');
+    /* @var $model AclModule_Model */
+    $model   = $this->loadModel('AclModule');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $params);
 
@@ -184,7 +183,7 @@ class AclModule_Controller extends MvcController_Domain
     $view    = $response->loadView
     (
       $domainNode->domainName.'acl-mgmt',
-      'AclMgmt',
+      'AclModule',
       'displaySearch'
     );
     $view->domainNode = $domainNode;
@@ -209,16 +208,16 @@ class AclModule_Controller extends MvcController_Domain
     $params  = $this->getListingFlags($request);
     $domainNode  = $this->getDomainNode($request);
 
-    /* @var $model AclMgmt_Model */
-    $model   = $this->loadModel('AclMgmt');
+    /* @var $model AclModule_Model */
+    $model   = $this->loadModel('AclModule');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $params);
 
-    /* @var $view AclMgmt_Masks_Modal_View */
+    /* @var $view AclModule_Masks_Modal_View */
     $view = $response->loadView
     (
       $domainNode->domainName.'_acl_masks_listing',
-      'AclMgmt_Masks',
+      'AclModule_Masks',
       'displayListing',
       View::MODAL
     );
@@ -246,19 +245,19 @@ class AclModule_Controller extends MvcController_Domain
     $params  = $this->getListingFlags($request);
     $domainNode  = $this->getDomainNode($request);
 
-    /* @var $model AclMgmt_Model */
-    $model =  $this->loadModel('AclMgmt');
+    /* @var $model AclModule_Model */
+    $model =  $this->loadModel('AclModule');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $params);
 
     // fetch the user parameters
     $searchKey = $request->param('key', Validator::TEXT);
 
-    /* @var $view AclMgmt_Ajax_View */
+    /* @var $view AclModule_Ajax_View */
     $view   = $response->loadView
     (
       $domainNode->domainName.'-acl-mgmt',
-      'AclMgmt',
+      'AclModule',
       'displayAutocomplete'
     );
     $view->domainNode = $domainNode;
@@ -283,8 +282,8 @@ class AclModule_Controller extends MvcController_Domain
     $params  = $this->getListingFlags($request);
     $domainNode  = $this->getDomainNode($request);
 
-    /* @var $model AclMgmt_Model */
-    $model =  $this->loadModel('AclMgmt');
+    /* @var $model AclModule_Model */
+    $model =  $this->loadModel('AclModule');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $params);
 
@@ -293,11 +292,11 @@ class AclModule_Controller extends MvcController_Domain
 
     $model->deleteGroup($objid);
 
-    /* @var $view AclMgmt_Ajax_View */
+    /* @var $view AclModule_Ajax_View */
     $view   = $response->loadView
     (
       $domainNode->domainName.'-acl-mgmt',
-      'AclMgmt',
+      'AclModule',
       'displayDeleteGroup'
     );
     $view->domainNode = $domainNode;
@@ -320,14 +319,14 @@ class AclModule_Controller extends MvcController_Domain
     $params  = $this->getListingFlags($request);
     $domainNode  = $this->getDomainNode($request);
 
-    /* @var $model AclMgmt_Model */
-    $model = $this->loadModel('AclMgmt');
+    /* @var $model AclModule_Model */
+    $model = $this->loadModel('AclModule');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $params);
 
     $view   = $response->loadView(
       $domainNode->domainName.'-acl-mgmt',
-      'AclMgmt',
+      'AclModule',
       'displayConnect'
     );
 
@@ -394,8 +393,8 @@ class AclModule_Controller extends MvcController_Domain
       );
     }
 
-    /* @var $model AclMgmt_Model */
-    $model = $this->loadModel('AclMgmt');
+    /* @var $model AclModule_Model */
+    $model = $this->loadModel('AclModule');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $params);
 
@@ -410,8 +409,8 @@ class AclModule_Controller extends MvcController_Domain
     $model->update($params);
 
     if ($subRequestAccess = $request->getSubRequest('ar')) {
-      /* @var $modelMultiAccess AclMgmt_Multi_Model */
-      $modelMultiAccess = $this->loadModel('AclMgmt_Multi');
+      /* @var $modelMultiAccess AclModule_Multi_Model */
+      $modelMultiAccess = $this->loadModel('AclModule_Multi');
       $modelMultiAccess->setRequest($subRequestAccess);
       $modelMultiAccess->setView($this->tpl);
       $modelMultiAccess->fetchUpdateData($params);
@@ -419,8 +418,8 @@ class AclModule_Controller extends MvcController_Domain
     }
 
     if ($subRequestQfdu = $request->getSubRequest('qfdu')) {
-      /* @var $modelMultiQfdu AclMgmt_Qfdu_Multi_Model */
-      $modelMultiQfdu = $this->loadModel('AclMgmt_Qfdu_Multi');
+      /* @var $modelMultiQfdu AclModule_Qfdu_Multi_Model */
+      $modelMultiQfdu = $this->loadModel('AclModule_Qfdu_Multi');
       $modelMultiQfdu->setRequest($subRequestQfdu);
       $modelMultiQfdu->setView($this->tpl);
       $modelMultiQfdu->fetchUpdateData($params);
@@ -450,8 +449,8 @@ class AclModule_Controller extends MvcController_Domain
     $params = $this->getFlags($request);
     $domainNode  = $this->getDomainNode($request);
 
-    /* @var $model AclMgmt_Model */
-    $model = $this->loadModel('AclMgmt');
+    /* @var $model AclModule_Model */
+    $model = $this->loadModel('AclModule');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $params);
 
@@ -481,8 +480,8 @@ class AclModule_Controller extends MvcController_Domain
     $params = $this->getFlags($request);
     $domainNode  = $this->getDomainNode($request);
 
-    /* @var $model AclMgmt_Model */
-    $model = $this->loadModel('AclMgmt');
+    /* @var $model AclModule_Model */
+    $model = $this->loadModel('AclModule');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $params);
 
@@ -637,7 +636,7 @@ class AclModule_Controller extends MvcController_Domain
 
     $response  = $this->getResponse();
 
-    $params = new TFlagListing($request);
+    $params = new ContextPlain($request);
 
     // per default
     $params->categories = array();
@@ -712,5 +711,5 @@ class AclModule_Controller extends MvcController_Domain
 
   }//end protected function getTabFlags */
 
-} // end class AclMgmt_Controller */
+} // end class AclModule_Controller */
 

@@ -62,9 +62,7 @@ class WebfrapStatsUsage_Maintab_View extends WgtMaintab
   {
 
     $iconMenu          = '<i class="icon-reorder" ></i>';
-    $iconClose         = '<i class="icon-remove-circle " ></i>';
-    $iconSearch        = $this->icon('control/search.png'   ,'Search'  );
-    $iconBookmark      = '<i class="icon-bookmark" ></i>';
+    $iconClose         = '<i class="icon-remove-circle" ></i>';
     $iconRefresh       = '<i class="icon-refresh" ></i>';
 
     $iconSupport   = $this->icon('control/support.png'  ,'Support');

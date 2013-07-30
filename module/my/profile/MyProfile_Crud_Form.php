@@ -618,7 +618,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
         .'&amp;key_name=embed_person&amp;suffix='.$this->suffix.'&input=wbfsys_role_user_id_person'.($this->suffix?'-'.$this->suffix:'');
 
       $inputIdPerson->setListUrl ($listUrl);
-      $inputIdPerson->setListIcon('webfrap/connect.png');
+      $inputIdPerson->setListIcon('icon-link');
       $inputIdPerson->setEntityUrl('maintab.php?c=Core.Person.edit');
       $inputIdPerson->conEntity         = $entityCorePerson;
       $inputIdPerson->refresh           = $this->refresh;
@@ -906,7 +906,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
         .'&amp;key_name=embed_enterprise_employee&amp;suffix='.$this->suffix.'&input=wbfsys_role_user_id_employee'.($this->suffix?'-'.$this->suffix:'');
 
       $inputIdEmployee->setListUrl ($listUrl);
-      $inputIdEmployee->setListIcon('webfrap/connect.png');
+      $inputIdEmployee->setListIcon('icon-link');
       $inputIdEmployee->setEntityUrl('maintab.php?c=Enterprise.Employee.edit');
       $inputIdEmployee->conEntity         = $entityEnterpriseEmployee;
       $inputIdEmployee->refresh           = $this->refresh;
@@ -1027,7 +1027,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
         .'&amp;suffix='.$this->suffix.'&input=wbfsys_role_user_m_role_create'.($this->suffix?'-'.$this->suffix:'');
 
       $inputMRoleCreate->setListUrl ($listUrl);
-      $inputMRoleCreate->setListIcon('webfrap/connect.png');
+      $inputMRoleCreate->setListIcon('icon-link');
       $inputMRoleCreate->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
       $inputMRoleCreate->conEntity         = $entityWbfsysRoleUser;
       $inputMRoleCreate->refresh           = $this->refresh;
@@ -1156,7 +1156,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
         .'&amp;suffix='.$this->suffix.'&input=wbfsys_role_user_m_role_change'.($this->suffix?'-'.$this->suffix:'');
 
       $inputMRoleChange->setListUrl ($listUrl);
-      $inputMRoleChange->setListIcon('webfrap/connect.png');
+      $inputMRoleChange->setListIcon('icon-link');
       $inputMRoleChange->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
       $inputMRoleChange->conEntity         = $entityWbfsysRoleUser;
       $inputMRoleChange->refresh           = $this->refresh;
@@ -1408,7 +1408,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
         .'&amp;suffix='.$this->suffix.'&input=embed_person_m_role_create'.($this->suffix?'-'.$this->suffix:'');
 
       $inputMRoleCreate->setListUrl ($listUrl);
-      $inputMRoleCreate->setListIcon('webfrap/connect.png');
+      $inputMRoleCreate->setListIcon('icon-link');
       $inputMRoleCreate->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
       $inputMRoleCreate->conEntity         = $entityWbfsysRoleUser;
       $inputMRoleCreate->refresh           = $this->refresh;
@@ -1537,7 +1537,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
         .'&amp;suffix='.$this->suffix.'&input=embed_person_m_role_change'.($this->suffix?'-'.$this->suffix:'');
 
       $inputMRoleChange->setListUrl ($listUrl);
-      $inputMRoleChange->setListIcon('webfrap/connect.png');
+      $inputMRoleChange->setListIcon('icon-link');
       $inputMRoleChange->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
       $inputMRoleChange->conEntity         = $entityWbfsysRoleUser;
       $inputMRoleChange->refresh           = $this->refresh;
@@ -1789,7 +1789,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
         .'&amp;suffix='.$this->suffix.'&input=embed_enterprise_employee_m_role_create'.($this->suffix?'-'.$this->suffix:'');
 
       $inputMRoleCreate->setListUrl ($listUrl);
-      $inputMRoleCreate->setListIcon('webfrap/connect.png');
+      $inputMRoleCreate->setListIcon('icon-link');
       $inputMRoleCreate->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
       $inputMRoleCreate->conEntity         = $entityWbfsysRoleUser;
       $inputMRoleCreate->refresh           = $this->refresh;
@@ -1918,7 +1918,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
         .'&amp;suffix='.$this->suffix.'&input=embed_enterprise_employee_m_role_change'.($this->suffix?'-'.$this->suffix:'');
 
       $inputMRoleChange->setListUrl ($listUrl);
-      $inputMRoleChange->setListIcon('webfrap/connect.png');
+      $inputMRoleChange->setListIcon('icon-link');
       $inputMRoleChange->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
       $inputMRoleChange->conEntity         = $entityWbfsysRoleUser;
       $inputMRoleChange->refresh           = $this->refresh;

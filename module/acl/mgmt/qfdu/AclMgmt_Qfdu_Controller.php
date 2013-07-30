@@ -902,7 +902,7 @@ class AclMgmt_Qfdu_Controller extends MvcController_Domain
 
     $response  = $this->getResponse();
 
-    $params    = new TFlagListing($request);
+    $params    = new ContextPlain($request);
 
 
     // per default

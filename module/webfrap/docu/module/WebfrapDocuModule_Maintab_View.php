@@ -108,7 +108,6 @@ class WebfrapDocuModule_Maintab_View extends WgtMaintabCustom
 
     $iconMenu = '<i class="icon-reorder" ></i>';
     $iconClose = '<i class="icon-close" ></i>';
-    $iconBookmark = '<i class="icon-bookmark" ></i>';
 
     $menu = $this->newMenu($this->id.'_dropmenu');
 

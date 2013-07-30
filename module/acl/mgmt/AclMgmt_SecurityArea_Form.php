@@ -263,7 +263,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
         .'&amp;suffix='.$this->suffix.'&amp;input='.$this->keyName.'_m_parent'.($this->suffix?'-'.$this->suffix:'');
 
       $inputMParent->setListUrl ($listUrl);
-      $inputMParent->setListIcon('control/connect.png');
+      $inputMParent->setListIcon('icon-link');
       $inputMParent->setEntityUrl('maintab.php?c=Wbfsys.SecurityArea.edit');
       $inputMParent->conEntity         = $entityWbfsysSecurityArea;
       $inputMParent->refresh           = $this->refresh;
@@ -1226,7 +1226,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
         .'&amp;suffix='.$this->suffix.'&amp;input='.$this->keyName.'_id_target'.($this->suffix?'-'.$this->suffix:'');
 
       $inputIdTarget->setListUrl ($listUrl);
-      $inputIdTarget->setListIcon('control/connect.png');
+      $inputIdTarget->setListIcon('icon-link');
       $inputIdTarget->setEntityUrl('maintab.php?c=Wbfsys.SecurityArea.edit');
       $inputIdTarget->conEntity         = $entityWbfsysSecurityArea;
       $inputIdTarget->refresh           = $this->refresh;
@@ -1552,7 +1552,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
         .'&amp;suffix='.$this->suffix.'&amp;input='.$this->keyName.'_id_source'.($this->suffix?'-'.$this->suffix:'');
 
       $inputIdSource->setListUrl ($listUrl);
-      $inputIdSource->setListIcon('control/connect.png');
+      $inputIdSource->setListIcon('icon-link');
       $inputIdSource->setEntityUrl('maintab.php?c=Wbfsys.SecurityArea.edit');
       $inputIdSource->conEntity         = $entityWbfsysSecurityArea;
       $inputIdSource->refresh           = $this->refresh;
@@ -1928,7 +1928,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
         .'&amp;suffix='.$this->suffix.'&amp;input='.$this->keyName.'_m_role_create'.($this->suffix?'-'.$this->suffix:'');
 
       $inputMRoleCreate->setListUrl ($listUrl);
-      $inputMRoleCreate->setListIcon('control/connect.png');
+      $inputMRoleCreate->setListIcon('icon-link');
       $inputMRoleCreate->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
       $inputMRoleCreate->conEntity         = $entityWbfsysRoleUser;
       $inputMRoleCreate->refresh           = $this->refresh;
@@ -2056,7 +2056,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
         .'&amp;suffix='.$this->suffix.'&amp;input='.$this->keyName.'_m_role_change'.($this->suffix?'-'.$this->suffix:'');
 
       $inputMRoleChange->setListUrl ($listUrl);
-      $inputMRoleChange->setListIcon('control/connect.png');
+      $inputMRoleChange->setListIcon('icon-link');
       $inputMRoleChange->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
       $inputMRoleChange->conEntity         = $entityWbfsysRoleUser;
       $inputMRoleChange->refresh           = $this->refresh;
@@ -2496,7 +2496,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
     $listUrl = 'modal.php?c=Wbfsys.RoleUser.selection&amp;target=wbfsys_security_area_m_role_create';
 
     $inputRole->setListUrl($listUrl);
-    $inputRole->setListIcon('control/connect.png');
+    $inputRole->setListIcon('icon-link');
     $inputRole->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.show');
     $inputRole->conEntity         = $entityWbfsysRoleUser;
     $inputRole->refresh           = $this->refresh;
@@ -2557,7 +2557,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
     $listUrl = 'modal.php?c=Wbfsys.RoleUser.selection&amp;target=wbfsys_security_area_m_role_change';
 
     $inputRole->setListUrl($listUrl);
-    $inputRole->setListIcon('control/connect.png');
+    $inputRole->setListIcon('icon-link');
     $inputRole->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.show');
     $inputRole->conEntity         = $entityWbfsysRoleUser;
     $inputRole->refresh           = $this->refresh;

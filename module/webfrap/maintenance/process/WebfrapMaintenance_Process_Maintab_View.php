@@ -100,7 +100,6 @@ class WebfrapMaintenance_Process_Maintab_View extends WgtMaintabList
 
     $i18n = $this->getI18n();
     $iconMenu      = '<i class="icon-reorder" ></i>';
-    $iconBookmark  = '<i class="icon-bookmark" ></i>';
     $iconClose     = '<i class="icon-remove-circle " ></i>';
 
     $entries = new TArray();
