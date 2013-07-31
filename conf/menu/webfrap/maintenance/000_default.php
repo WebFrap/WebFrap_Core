@@ -22,7 +22,7 @@ $this->files[] = array
   'Themes',
   'Themes',
   'maintab.php?c=Daidalos.Theme.form',
-  'utilities/colors.png',
+  'icon-picture',
 );
 
 $this->folders[] = array
@@ -162,7 +162,7 @@ $this->files[] = array
   'Editor',
   'Editor',
   'maintab.php?c=Webfrap.Editor.Workspace',
-  'utilities/editor.png',
+  'icon-keyboard',
 );
 
 $this->files[] = array
