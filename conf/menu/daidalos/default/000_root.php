@@ -23,7 +23,7 @@ if ($acl->hasRole('developer')) {
     'Database',
     'Database',
     'maintab.php?c=Daidalos.Db.listing',
-    'utilities/db.png',
+    'icon-hdd',
   );
 
   $this->files[] = array(
@@ -32,7 +32,7 @@ if ($acl->hasRole('developer')) {
     'BDL Modeller',
     'BDL Modeller',
     'maintab.php?c=Daidalos.BdlModeller.listing',
-    'utilities/modeller.png',
+    'icon-cloud',
   );
 
   $this->files[] = array(
@@ -41,7 +41,7 @@ if ($acl->hasRole('developer')) {
     'Coding Examples',
     'Coding Examples',
     'maintab.php?c=Example.Base.menu',
-    'utilities/code.png',
+    'icon-code',
   );
 
 }

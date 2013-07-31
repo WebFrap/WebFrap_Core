@@ -31,6 +31,6 @@ $this->files[] = array
     'wbf.label'
   ),
   'maintab.php?c=Webfrap.Cache.stats',
-  'utilities/cache.png',
+  'icon-hdd',
 );
 

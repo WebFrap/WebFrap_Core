@@ -23,7 +23,7 @@ $this->files[] = array
   'Logon Protocol',
   'Logon Protocol',
   'maintab.php?c=Wbfsys.ProtocolUsage.listing',
-  'utilities/protocol.png',
+  'icon-list',
 );
 
 $this->files[] = array
@@ -33,7 +33,7 @@ $this->files[] = array
   'Mesage Protocol',
   'Mesage Protocol',
   'maintab.php?c=Wbfsys.MessageLog.listing',
-  'utilities/protocol.png',
+  'icon-list',
 );
 
 $this->files[] = array
@@ -43,7 +43,7 @@ $this->files[] = array
   'Usage Protocol',
   'Usage Protocol',
   'maintab.php?c=Wbfsys.ProtocolMessage.listing',
-  'utilities/protocol.png',
+  'icon-list',
 );
 
 $this->files[] = array
@@ -53,7 +53,7 @@ $this->files[] = array
   'Error Protocol',
   'Error Protocol',
   'maintab.php?c=Wbfsys.ProtocolMessage.listing',
-  'utilities/protocol.png',
+  'icon-list',
 );
 
 $this->files[] = array
@@ -63,7 +63,7 @@ $this->files[] = array
   'Deployment Protocol',
   'Deployment Protocol',
   'maintab.php?c=Wbfsys.ProtocolMessage.listing',
-  'utilities/protocol.png',
+  'icon-list',
 );
 
 $this->files[] = array
@@ -73,7 +73,7 @@ $this->files[] = array
   'Attack Protocol',
   'Attack Protocol',
   'maintab.php?c=Wbfsys.ProtocolMessage.listing',
-  'utilities/protocol.png',
+  'icon-list',
 );
 
 $this->files[] = array
@@ -83,7 +83,7 @@ $this->files[] = array
   'Apache Logs',
   'Apache Logs',
   'maintab.php?c=Webfrap.Log_Apache.listing',
-  'logos/apache.png',
+  'icon-list',
 );
 
 $this->files[] = array
@@ -93,7 +93,7 @@ $this->files[] = array
   'PHP Error Log',
   'PHP Error Log',
   'maintab.php?c=Webfrap.Log_Php.listing',
-  'logos/php.png',
+  'icon-list',
 );
 
 $this->files[] = array
@@ -103,5 +103,5 @@ $this->files[] = array
   'PostgreSQL Error Log',
   'PostgreSQL Error Log',
   'maintab.php?c=Webfrap.Log_Postgresql.listing',
-  'logos/postgresql.png',
+  'icon-list',
 );

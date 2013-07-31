@@ -9,7 +9,7 @@ if ($acl->hasRole('developer')) {
     I18n::s('Daidalos', 'daidalos.label'  ),
     I18n::s('Daidalos', 'daidalos.label'  ),
     'maintab.php?c=Daidalos.base.menu',
-    'module/daidalos.png',
+    'icon-code',
   );
 
 }

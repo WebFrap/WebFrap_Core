@@ -7,5 +7,5 @@ $this->firstEntry = array
   '..',
   'webfrap root',
   'maintab.php?c=Webfrap.Navigation.explorer',
-  '<i class="icon-folder-close-alt icon-3x" ></i>',
+  'icon-folder-close-alt',
 );

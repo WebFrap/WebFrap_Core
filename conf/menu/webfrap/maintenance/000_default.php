@@ -32,7 +32,7 @@ $this->folders[] = array
   'Backups',
   'Backups',
   'maintab.php?c=daidalos.base.menu&amp;menu=backup',
-  'utilities/backup.png',
+  'icon-hdd',
 );
 
 $this->folders[] = array
@@ -42,7 +42,7 @@ $this->folders[] = array
   'Conf',
   'Conf',
   'maintab.php?c=Webfrap.System_Conf.overview',
-  'utilities/conf.png',
+  'icon-cog',
 );
 
 $this->folders[] = array
@@ -52,7 +52,7 @@ $this->folders[] = array
   'Semantic Index',
   'Semantic Index',
   'maintab.php?c=Maintenance.Db_Index.stats',
-  'utilities/index.png',
+  'icon-screenshot',
 );
 
 $this->folders[] = array
@@ -62,7 +62,7 @@ $this->folders[] = array
   'Package Manager',
   'Package Manager',
   'maintab.php?c=Maintenance.Packages.listAll',
-  'utilities/package_manager.png',
+  'icon-puzzle-piece',
 );
 
 $this->folders[] = array
@@ -72,7 +72,7 @@ $this->folders[] = array
   'Imports',
   'Imports',
   'maintab.php?c=Webfrap.Base.Menu&menu=imports',
-  'utilities/import.png',
+  'icon-upload-alt',
 );
 
 $this->folders[] = array
@@ -82,7 +82,7 @@ $this->folders[] = array
   'Exports',
   'Exports',
   'maintab.php?c=Webfrap.Base.Menu&menu=exports',
-  'utilities/export.png',
+  'icon-download-alt',
 );
 
 $this->folders[] = array
@@ -92,7 +92,7 @@ $this->folders[] = array
   'Core Data',
   'Core Data',
   'maintab.php?c=Webfrap.Base.Menu&menu=masterdata',
-  'utilities/master_data.png',
+  'icon-list',
 );
 
 $this->folders[] = array
@@ -102,7 +102,7 @@ $this->folders[] = array
   'Access',
   'Access',
   'maintab.php?c=Webfrap.Base.Menu&menu=access',
-  'utilities/access.png',
+  'icon-shield',
 );
 
 $this->folders[] = array
@@ -112,7 +112,7 @@ $this->folders[] = array
   'Process Manager',
   'Process Manager',
   'maintab.php?c=Webfrap.Maintenance_Process.list',
-  'utilities/process.png',
+  'icon-cogs',
 );
 
 $this->folders[] = array
@@ -122,7 +122,7 @@ $this->folders[] = array
   'Planned Tasks',
   'Planned Tasks',
   'maintab.php?c=Webfrap.TaskPlanner.list',
-  'utilities/planned_tasks.png',
+  'icon-tasks',
 );
 
 $this->folders[] = array
@@ -132,7 +132,7 @@ $this->folders[] = array
   'News',
   'News',
   'maintab.php?c=Webfrap.Announcement.listing',
-  'utilities/announcements.png',
+  'icon-comments',
 );
 
 $this->files[] = array
@@ -142,7 +142,7 @@ $this->files[] = array
   'Protocols &amp; Logs',
   'Protocols &amp; Logs',
   'maintab.php?c=Webfrap.Base.menu&amp;menu=protocols',
-  'utilities/protocol.png',
+  'icon-list',
 );
 
 $this->files[] = array
@@ -152,7 +152,7 @@ $this->files[] = array
   'Database',
   'Database',
   'maintab.php?c=Webfrap.Base.menu&amp;menu=database',
-  'utilities/db.png',
+  'icon-hdd',
 );
 
 $this->files[] = array
@@ -172,7 +172,7 @@ $this->files[] = array
   'I18n',
   'I18n',
   'maintab.php?c=Webfrap.Editor.Workspace',
-  'utilities/i18n.png',
+  'icon-copy',
 );
 
 $this->files[] = array
@@ -183,7 +183,7 @@ $this->files[] = array
   'System Components',
   'maintab.php?c=Webfrap.SystemComponents.overview',
   //'maintab.php?c=Webfrap.Datasources.explorer',
-  'utilities/structure.png',
+  'icon-th',
 );
 
 
@@ -195,7 +195,7 @@ $this->files[] = array
   'External Datasources',
   'ajax.php?c=Webfrap.Mockup.notYetImplemented',
   //'maintab.php?c=Webfrap.Datasources.explorer',
-  'utilities/services.png',
+  'icon-rss',
 );
 
 $this->files[] = array
@@ -205,6 +205,6 @@ $this->files[] = array
   'System Status',
   'System Status',
   'maintab.php?c=Webfrap.System_Status.stats',
-  'utilities/status.png',
+  'icon-cog',
 );
 

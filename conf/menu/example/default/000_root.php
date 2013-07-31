@@ -8,8 +8,7 @@ $this->crumbs = array(
 
 if ($acl->hasRole('developer')) {
 
-  $this->firstEntry = array
-  (
+  $this->firstEntry = array(
     'menu_webfrap_root',
     Wgt::MAIN_TAB,
     '..',
@@ -18,24 +17,22 @@ if ($acl->hasRole('developer')) {
     'icon-level-up',
   );
 
-  $this->files[] = array
-  (
+  $this->files[] = array(
     'menu_mod_example-wgt',
     Wgt::MAIN_TAB,
     'WGT',
     'WGT',
     'maintab.php?c=Example.Wgt.tree',
-    'utilities/wgt.png',
+    'icon-laptop',
   );
 
-  $this->files[] = array
-  (
+  $this->files[] = array(
     'menu_mod_example-tech',
     Wgt::MAIN_TAB,
     'Tech &amp; Libs',
     'Tech &amp; Libs',
     'maintab.php?c=Example.Tech.tree',
-    'utilities/wgt.png',
+    'icon-laptop',
   );
 
 }

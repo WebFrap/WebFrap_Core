@@ -31,7 +31,7 @@ $this->files[] = array
     'wbf.label'
   ),
   'maintab.php?c=Wbfsys.RoleUser.listing',
-  'module/users.png',
+  'icon-user',
 );
 
 $this->files[] = array
@@ -49,7 +49,7 @@ $this->files[] = array
     'wbf.label'
   ),
   'maintab.php?c=Wbfsys.RoleGroup.listing',
-  'module/groups.png',
+  'icon-group',
 );
 
 $this->files[] = array
@@ -67,7 +67,7 @@ $this->files[] = array
     'wbf.label'
   ),
   'maintab.php?c=Wbfsys.Profile.listing',
-  'module/profiles.png',
+  'icon-mail',
 );
 
 $this->files[] = array
@@ -77,6 +77,6 @@ $this->files[] = array
   'ACLs',
   'ACLs',
   'maintab.php?c=Daidalos.Acl.form',
-  'module/acl.png',
+  'icon-shield',
 );
 
