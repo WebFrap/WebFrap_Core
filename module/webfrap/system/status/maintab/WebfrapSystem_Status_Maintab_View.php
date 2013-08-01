@@ -137,17 +137,6 @@ class WebfrapSystem_Status_Maintab_View extends WgtMaintab
 
     $i18n         = $this->getI18n();
 
-    $iconMenu     = '<i class="icon-reorder" ></i>';
-    $iconSupport  = $this->icon('control/support.png'      ,'Support');
-    $iconHelp     = $this->icon('control/help.png'      ,'Help');
-    $iconClose    = '<i class="icon-remove-circle " ></i>';
-    $iconEdit     = '<i class="icon-edit" ></i>';
-
-    $iconNew      = $this->icon('control/add.png'      ,'Add');
-    $iconRefresh  = '<i class="icon-refresh" ></i>';
-    $iconInfo  = $this->icon('control/info.png'      ,'Info');
-    $iconWork  = $this->icon('context/work.png'      ,'Work');
-
     $menu          = $this->newMenu($this->id.'_dropmenu');
     $menu->content = <<<HTML
 
@@ -176,28 +165,28 @@ class WebfrapSystem_Status_Maintab_View extends WgtMaintab
   <button
       class="wgt-button"
       onclick="\$R.get('modal.php?c=Webfrap.System_Status.phpInfo');"
-      title="PHP Info" >{$iconInfo}</button>
+      title="PHP Info" ><i class="icon-info-sign" ></i></button>
 </div>
 
 <div class="wgt-panel-control" >
   <button
       class="wgt-button"
       onclick="\$R.get('modal.php?c=Webfrap.System_Status.showEnv');"
-      title="Server Env" >{$iconInfo}</button>
+      title="Server Env" ><i class="icon-info-sign" ></i></button>
 </div>
 
 <div class="wgt-panel-control" >
   <button
       class="wgt-button"
       onclick="\$R.get('modal.php?c=Webfrap.System_Status.showServer');"
-      title="Server Data" >{$iconInfo}</button>
+      title="Server Data" ><i class="icon-info-sign" ></i></button>
 </div>
 
 <div class="wgt-panel-control" >
   <button
       class="wgt-button"
       onclick="\$R.get('maintab.php?c=Maintenance.DbConsistency.table');"
-      title="Refresh" >{$iconWork} Consistency</button>
+      title="Refresh" ><i class="icon-cog" ></i> Consistency</button>
 </div>
 
 

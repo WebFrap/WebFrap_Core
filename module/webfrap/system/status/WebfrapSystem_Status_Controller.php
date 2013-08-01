@@ -81,8 +81,7 @@ class WebfrapSystem_Status_Controller extends MvcController
   {
 
     /* @var $view WebfrapSystem_Status_Maintab_View  */
-    $view = $response->loadView
-    (
+    $view = $response->loadView(
       'webfrap-system-stats',
       'WebfrapSystem_Status' ,
       'displayStats'
@@ -104,8 +103,7 @@ class WebfrapSystem_Status_Controller extends MvcController
   {
 
     /* @var $view WebfrapSystem_Status_Maintab_View  */
-    $view = $response->loadView
-    (
+    $view = $response->loadView(
       'webfrap-system-info',
       'WebfrapSystem_Status' ,
       'displayInfo'
@@ -124,8 +122,7 @@ class WebfrapSystem_Status_Controller extends MvcController
   {
 
     /* @var $view WebfrapSystem_Status_Modal_View  */
-    $view = $response->loadView
-    (
+    $view = $response->loadView(
       'webfrap-system-env',
       'WebfrapSystem_Status' ,
       'displayEnv'
@@ -144,8 +141,7 @@ class WebfrapSystem_Status_Controller extends MvcController
   {
 
     /* @var $view WebfrapSystem_Status_Modal_View  */
-    $view = $response->loadView
-    (
+    $view = $response->loadView(
       'webfrap-system-env',
       'WebfrapSystem_Status' ,
       'displayServer'
