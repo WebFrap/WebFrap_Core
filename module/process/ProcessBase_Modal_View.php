@@ -90,8 +90,7 @@ class ProcessBase_Modal_View extends WgtModal
   public function addMenu($objid, $params)
   {
 
-    $menu = $this->newMenu
-    (
+    $menu = $this->newMenu(
       $this->id.'_dropmenu',
       'ProcessBase'
     );
