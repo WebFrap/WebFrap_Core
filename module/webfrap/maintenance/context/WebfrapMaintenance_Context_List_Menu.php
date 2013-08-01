@@ -32,7 +32,7 @@ class WebfrapMaintenance_Context_List_Menu extends WgtSimpleListmenu
   {
     "type" : "request",
     "label": "",
-    "icon": "control/delete.png",
+    "icon": "icon-remove",
     "method": "put",
     "service": "ajax.php?c=Webfrap.Context.reset&key="
   }

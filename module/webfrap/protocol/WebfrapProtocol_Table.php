@@ -73,7 +73,7 @@ class WebfrapProtocol_Table extends WgtTable
       Wgt::ACTION_AJAX_GET,
       'delete',
       'index.php?c=Demo.Entity1.delete&amp;objid=',
-      'control/delete.png',
+      'icon-remove',
       'wcm wcm_req_del',
       'demo.entity1.label.title_delete'
     ),
