@@ -76,12 +76,9 @@ class DaidalosDbRole_Maintab_View extends WgtMaintabCustom
     $menu->id = $this->id.'_dropmenu';
 
     $iconMenu          = '<i class="icon-reorder" ></i>';
-    $iconClose         = $this->icon('control/close.png'    ,'Close'   );
-    $iconSearch        = $this->icon('control/search.png'   ,'Search'  );
-    $iconBookmark      = $this->icon('control/bookmark.png' ,'Bookmark');
+    $iconClose         = '<i class="icon-remove-circle " ></i>';
 
     $iconSupport = $this->icon('control/support.png'  ,'Support');
-    $iconBug     = $this->icon('control/bug.png'      ,'Bug');
     $iconFaq     = $this->icon('control/faq.png'      ,'Faq');
 
     $iconQuery         = $this->icon('daidalos/query.png' ,'Query');
@@ -90,7 +87,7 @@ class DaidalosDbRole_Maintab_View extends WgtMaintabCustom
     $iconRecreate      = $this->icon('daidalos/table_dump.png' ,'Refresh Wbf Views');
     $iconDeleteView    = $this->icon('daidalos/table_clean.png' ,'Delete Wbf Views');
 
-    $iconRefresh       = $this->icon('control/refresh.png' ,'Refresh');
+    $iconRefresh       = '<i class="icon-refresh" ></i>';
 
     $entries = new TArray();
 
@@ -100,7 +97,7 @@ class DaidalosDbRole_Maintab_View extends WgtMaintabCustom
   <button
     class="wcm wcm_control_dropmenu wgt-button"
     id="{$this->id}-control"
-    wgt_drop_box="{$this->id}_dropmenu"  >{$iconMenu} {$this->i18n->l('Menu','wbf.label')}</button>
+    wgt_drop_box="{$this->id}_dropmenu"  ><i class="icon-reorder" ></i> {$this->i18n->l('Menu','wbf.label')}</button>
   <var id="{$this->id}-control-cfg-dropmenu"  >{"triggerEvent":"mouseover","closeOnLeave":"true","align":"right"}</var>
 </div>
 
@@ -108,7 +105,7 @@ class DaidalosDbRole_Maintab_View extends WgtMaintabCustom
 
   <ul>
     <li>
-      <a class="wgtac_bookmark" >{$iconBookmark} {$this->i18n->l('Bookmark', 'wbf.label')}</a>
+      <a class="wgtac_bookmark" ><i class="icon-bookmark" ></i> {$this->i18n->l('Bookmark', 'wbf.label')}</a>
     </li>
   </ul>
 
@@ -127,23 +124,22 @@ class DaidalosDbRole_Maintab_View extends WgtMaintabCustom
 
   <ul>
     <li>
-      <a class="deeplink" >{$iconSupport} {$this->i18n->l('Support', 'wbf.label')}</a>
+      <a class="deeplink" ><i class="icon-question-sign" ></i> {$this->i18n->l('Support', 'wbf.label')}</a>
       <span>
       <ul>
-        <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Issue.create&amp;context=menu" >{$iconBug} {$this->i18n->l('Bug', 'wbf.label')}</a></li>
         <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Faq.create&amp;context=menu" >{$iconFaq} {$this->i18n->l('Faq', 'wbf.label')}</a></li>
       </ul>
       </span>
     </li>
     <li>
-      <a class="wgtac_close" >{$iconClose} {$this->i18n->l('Close','wbf.label')}</a>
+      <a class="wgtac_close" ><i class="icon-remove-circle" ></i> {$this->i18n->l('Close','wbf.label')}</a>
     </li>
   </ul>
 
 </div>
 
 <div class="wgt-panel-control" >
-  <button class="wgt-button wgtac_refresh" >{$iconRefresh}</button>
+  <button class="wgt-button wgtac_refresh" ><i class="icon-refresh" ></i></button>
 </div>
 
 <div class="wgt-panel-control" >

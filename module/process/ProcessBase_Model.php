@@ -90,8 +90,7 @@ class ProcessBase_Model extends Model
     $this->entityId  =  $entityId;
 
     $entityKey    = SParserString::subToCamelCase($this->entityKey);
-    $this->entity = $this->getDb()->getOrm()->get
-    (
+    $this->entity = $this->getDb()->getOrm()->get(
       $entityKey,
       $this->entityId
     );
@@ -121,8 +120,7 @@ class ProcessBase_Model extends Model
     if (!$this->entity) {
 
       $entityKey = SParserString::subToCamelCase($this->entityKey);
-      $this->entity = $this->getDb()->getOrm()->get
-      (
+      $this->entity = $this->getDb()->getOrm()->get(
         $entityKey,
         $this->entityId
       );

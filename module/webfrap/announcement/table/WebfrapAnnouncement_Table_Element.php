@@ -63,7 +63,7 @@ class WebfrapAnnouncement_Table_Element extends WgtTable
       Wgt::ACTION_BUTTON_GET,
       'Edit',
       'modal.php?c=Webfrap.Announcement.edit&amp;target_mask=WebfrapAnnouncement&amp;ltype=table&amp;objid=',
-      'control/edit.png',
+      '',
       '',
       'wbfsys.announcement.label',
       Acl::UPDATE

@@ -1,41 +1,38 @@
 <?php
 
 $this->crumbs = array(
-  array('Root',$this->interface.'?c=Webfrap.Navigation.explorer','control/desktop.png'),
-  array('Daidalos',$this->interface.'?c=Daidalos.Base.menu','control/folder.png'),
-  array('Example',$this->interface.'?c=Example.Base.menu','control/folder.png'),
+  array('Root',$this->interface.'?c=Webfrap.Navigation.explorer','icon-desktop'),
+  array('Daidalos',$this->interface.'?c=Daidalos.Base.menu','icon-folder-close-alt'),
+  array('Example',$this->interface.'?c=Example.Base.menu','icon-folder-close-alt'),
 );
 
 if ($acl->hasRole('developer')) {
 
-  $this->firstEntry = array
-  (
+  $this->firstEntry = array(
     'menu_webfrap_root',
     Wgt::MAIN_TAB,
     '..',
     'Webfrap Root',
     'maintab.php?c=Daidalos.Base.menu',
-    'places/folder_up.png',
+    'icon-level-up',
   );
 
-  $this->files[] = array
-  (
+  $this->files[] = array(
     'menu_mod_example-wgt',
     Wgt::MAIN_TAB,
     'WGT',
     'WGT',
     'maintab.php?c=Example.Wgt.tree',
-    'utilities/wgt.png',
+    'icon-laptop',
   );
 
-  $this->files[] = array
-  (
+  $this->files[] = array(
     'menu_mod_example-tech',
     Wgt::MAIN_TAB,
     'Tech &amp; Libs',
     'Tech &amp; Libs',
     'maintab.php?c=Example.Tech.tree',
-    'utilities/wgt.png',
+    'icon-laptop',
   );
 
 }

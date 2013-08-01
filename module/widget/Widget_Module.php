@@ -43,10 +43,10 @@ class Widget_Module extends Module
     $className    = ''.SParserString::subToCamelCase($name).'_Widget';
     $classNameOld = 'WgtWidget'.SParserString::subToCamelCase($name);
 
-    if (!Webfrap::classLoadable($className)) {
+    if (!Webfrap::classExists($className)) {
       $className = $classNameOld;
 
-      if (!Webfrap::classLoadable($className)) {
+      if (!Webfrap::classExists($className)) {
         $className = 'Error_Widget';
       }
     }

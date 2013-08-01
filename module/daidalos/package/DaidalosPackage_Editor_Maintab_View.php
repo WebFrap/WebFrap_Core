@@ -87,11 +87,11 @@ class DaidalosPackage_Editor_Maintab_View extends WgtMaintabCustom
 
     $i18n         = $this->getI18n();
 
-    $iconMenu     = $this->icon('control/menu.png'      ,'Menu');
+    $iconMenu     = '<i class="icon-reorder" ></i>';
     $iconSupport  = $this->icon('control/support.png'      ,'Support');
     $iconHelp     = $this->icon('control/help.png'      ,'Help');
-    $iconClose    = $this->icon('control/close.png'      ,'Close');
-    $iconSave     = $this->icon('control/save.png'      ,'Save');
+    $iconClose    = '<i class="icon-remove-circle " ></i>';
+    $iconSave     = '<i class="icon-save" ></i>';
     $iconBug      = $this->icon('control/bug.png'      ,'Bug');
 
     $iconSync      = $this->icon('control/sync.png'      ,'Sync');
@@ -101,10 +101,10 @@ class DaidalosPackage_Editor_Maintab_View extends WgtMaintabCustom
     $menu->content = <<<HTML
 <ul class="wcm wcm_ui_dropmenu wgt-dropmenu" id="{$this->id}_dropmenu" >
   <li class="wgt-root" >
-    <button class="wcm wcm_ui_button" >{$iconMenu} {$i18n->l('Menu','wbf.label')}</button>
+    <button class="wcm wcm_ui_button" ><i class="icon-reorder" ></i> {$i18n->l('Menu','wbf.label')}</button>
     <ul style="margin-top:-10px;" >
       <li class="current" >
-        <p>{$iconSupport} {$i18n->l('Support','wbf.label')}</p>
+        <p><i class="icon-question-sign" ></i> {$i18n->l('Support','wbf.label')}</p>
         <ul>
           <li>
             <a class="wcm wcm_req_ajax" href="modal.php?c=Webfrap.Bug.create&amp;context=webfrap_docu-create" >
@@ -114,12 +114,12 @@ class DaidalosPackage_Editor_Maintab_View extends WgtMaintabCustom
         </ul>
       </li>
       <li>
-        <p class="wgtac_close" >{$iconClose} {$i18n->l('Close','wbf.label')}</p>
+        <p class="wgtac_close" ><i class="icon-remove-circle" ></i> {$i18n->l('Close','wbf.label')}</p>
       </li>
     </ul>
   </li>
   <li class="wgt-root" >
-    <button class="wgt-button wgtac_save" >{$iconSave} {$this->i18n->l('Save','wbf.label')}</button>
+    <button class="wgt-button wgtac_save" ><i class="icon-save" ></i> {$this->i18n->l('Save','wbf.label')}</button>
     <ul style="margin-top:-10px;" ></ul>
   </li>
   <li class="wgt-root" >

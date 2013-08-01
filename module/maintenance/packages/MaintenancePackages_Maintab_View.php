@@ -78,23 +78,23 @@ class MaintenancePackages_Maintab_View extends WgtMaintabCustom
 
     $i18n         = $this->getI18n();
 
-    $iconMenu     = $this->icon('control/menu.png'      ,'Menu');
+    $iconMenu     = '<i class="icon-reorder" ></i>';
     $iconSupport  = $this->icon('control/support.png'      ,'Support');
     $iconHelp     = $this->icon('control/help.png'      ,'Help');
-    $iconClose    = $this->icon('control/close.png'      ,'Close');
-    $iconEdit     = $this->icon('control/edit.png'      ,'Edit');
+    $iconClose    = '<i class="icon-remove-circle " ></i>';
+    $iconEdit     = '<i class="icon-edit" ></i>';
     $iconBug      = $this->icon('control/bug.png'      ,'Bug');
 
-    $iconRefresh    = $this->icon('control/refresh.png'      ,'Refresh');
+    $iconRefresh    = '<i class="icon-refresh" ></i>';
 
     $menu          = $this->newMenu($this->id.'_dropmenu');
     $menu->content = <<<HTML
 <ul class="wcm wcm_ui_dropmenu wgt-dropmenu" id="{$this->id}_dropmenu" >
   <li class="wgt-root" >
-    <button class="wcm wcm_ui_button" >{$iconMenu} {$i18n->l('Menu','wbf.label')}</button>
+    <button class="wcm wcm_ui_button" ><i class="icon-reorder" ></i> {$i18n->l('Menu','wbf.label')}</button>
     <ul style="margin-top:-10px;" >
       <li class="current" >
-        <p>{$iconSupport} {$i18n->l('Support','wbf.label')}</p>
+        <p><i class="icon-question-sign" ></i> {$i18n->l('Support','wbf.label')}</p>
         <ul>
           <li>
             <a class="wcm wcm_req_ajax" href="modal.php?c=Webfrap.Bug.create&amp;context=webfrap_docu-create" >
@@ -104,14 +104,14 @@ class MaintenancePackages_Maintab_View extends WgtMaintabCustom
         </ul>
       </li>
       <li>
-        <p class="wgtac_close" >{$iconClose} {$i18n->l('Close','wbf.label')}</p>
+        <p class="wgtac_close" ><i class="icon-remove-circle" ></i> {$i18n->l('Close','wbf.label')}</p>
       </li>
     </ul>
   </li>
   <li class="wgt-root" >
     <button
       class="wcm wcm_ui_button wgtac_clean_cache wcm_ui_tip-top"
-      title="Clean the full cache" >{$iconRefresh} {$i18n->l('Refresh','wbf.label')}</button>
+      title="Clean the full cache" ><i class="icon-refresh" ></i> {$i18n->l('Refresh','wbf.label')}</button>
     <ul style="margin-top:-10px;" ></ul>
   </li>
 </ul>

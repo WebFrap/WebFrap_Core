@@ -4,11 +4,11 @@
 
 <div style="width:100%;position:relative;" >
 
-  <div 
-    class="behind" 
-    id="wgt-box-<?php echo $VAR->domain->aclDomainKey ?>-acl-path" 
+  <div
+    class="behind"
+    id="wgt-box-<?php echo $VAR->domain->aclDomainKey ?>-acl-path"
     style="width:100%;height:650px;z-index:1" >
-    
+
     <div
       class="wcm wcm_chart_<?php echo $VAR->graphType ?>"
       id="wgt-graph-<?php echo $VAR->domain->aclDomainKey ?>-acl-path"
@@ -24,24 +24,24 @@
   <div class="wgt-bgbox" style="position:absolute;top:0px;left:50%;width:270px;z-index:5;margin-left:-135px;" >
     <ul class="ui-corner-top wgt-bg-control wgt-border wgt-padding menu"  >
       <li>
-        <input 
-          type="radio" 
-          class="key_graphtype" <?php echo $this->isChecked( 'spacetree', $VAR->graphType );  ?> 
-          name="graphtype" 
+        <input
+          type="radio"
+          class="key_graphtype" <?php echo $this->isChecked( 'spacetree', $VAR->graphType );  ?>
+          name="graphtype"
           value="spacetree" /> <?php echo $I18N->l( 'Spacetree', 'wbf.label' ); ?>
       </li>
       <li>
-        <input 
-          type="radio" 
-          class="key_graphtype" <?php echo $this->isChecked( 'hypertree', $VAR->graphType );  ?> 
-          name="graphtype" 
+        <input
+          type="radio"
+          class="key_graphtype" <?php echo $this->isChecked( 'hypertree', $VAR->graphType );  ?>
+          name="graphtype"
           value="hypertree" /> <?php echo $I18N->l( 'Hypertree', 'wbf.label' ); ?>
       </li>
       <li>
-        <input 
-          type="radio" 
-          class="key_graphtype" <?php echo $this->isChecked( 'rgraph', $VAR->graphType );  ?> 
-          name="graphtype" 
+        <input
+          type="radio"
+          class="key_graphtype" <?php echo $this->isChecked( 'rgraph', $VAR->graphType );  ?>
+          name="graphtype"
           value="rgraph" /> <?php echo $I18N->l( 'RGraph', 'wbf.label' ); ?>
       </li>
     </ul>
@@ -53,7 +53,7 @@
       <li
         class="wgt-selectable <?php echo $this->isActive( $VAR->groupId, $group['id'] ); ?>" ><a
             class="wcm wcm_req_ajax"
-            href="maintab.php?c=Acl.Mgmt_Path.showGraph&group_id=<?php echo $group['id'] ?>&graph_type=<?php echo $VAR->graphType; ?>&dkey=<?php echo $VAR->domain->domainName; ?>" 
+            href="maintab.php?c=Acl.Mgmt_Path.showGraph&group_id=<?php echo $group['id'] ?>&graph_type=<?php echo $VAR->graphType; ?>&dkey=<?php echo $VAR->domain->domainName; ?>"
             ><?php echo $group['value'] ?></a></li>
       <?php } ?>
     </ul>
@@ -100,24 +100,24 @@
         value="" />
 
         <div>
-          <label 
-            for="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-path-name" 
+          <label
+            for="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-path-name"
             class="wgt-label" ><?php echo $I18N->l( 'Name', 'wbf.label' ); ?></label>
-          <input 
-            name="ignored" 
-            id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-path-name" 
-            readonly="readonly" 
+          <input
+            name="ignored"
+            id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-path-name"
+            readonly="readonly"
             class="large" />
         </div>
         <div>
-          <label 
-            for="<?php echo $ELEMENT->inputAccess->id ?>" 
+          <label
+            for="<?php echo $ELEMENT->inputAccess->id ?>"
             class="wgt-label" ><?php echo $I18N->l( 'Access', 'wbf.label' ); ?></label>
           <?php echo $ELEMENT->inputAccess->niceElement() ?>
         </div>
         <div>
-          <label 
-            for="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-path-description" 
+          <label
+            for="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-path-description"
             class="wgt-label" ><?php echo $I18N->l( 'Description', 'wbf.label' ); ?></label>
           <textarea
             class="large large-height"
@@ -130,11 +130,11 @@
 
       <div>
         <button class="wcm wcm_ui_button" id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-acl-path-send" >
-          <?php echo $this->icon('control/save.png','Save') ?> <?php echo $I18N->l( 'Save', 'wbf.label' ); ?>
+          <i class="icon-save" ></i> <?php echo $I18N->l( 'Save', 'wbf.label' ); ?>
         </button>
 
         <button class="wcm wcm_ui_button" id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-acl-path-drop" >
-          <?php echo $this->icon('control/delete.png','Drop') ?> <?php echo $I18N->l( 'Drop Path', 'wbf.label' ); ?>
+          <i class="icon-remove" ></i> <?php echo $I18N->l( 'Drop Path', 'wbf.label' ); ?>
         </button>
       </div>
 
@@ -168,14 +168,14 @@
   });
 
   $S('#wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-acl-path-send').click(function(){
-    
+
     if( $S('#wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-path-id_reference').val() === '' ){
-      
+
       $D.errorWindow('Error','<?php echo $I18N->l( 'Please Select and Edit a Node before Saving', 'wbf.message' ); ?>');
       return false;
     }
     else{
-      
+
       $R.form('wgt-form-<?php echo $VAR->domain->aclDomainKey ?>-acl-path');
       $UI.form.reset('wgt-form-<?php echo $VAR->domain->aclDomainKey ?>-acl-path');
     }
@@ -189,7 +189,7 @@
       return false;
     }
     else{
-      
+
       $R.del(
         'ajax.php?c=Acl.Mgmt_Path.dropPath'
           +'&delid='+$S('#wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-path-rowid').val()

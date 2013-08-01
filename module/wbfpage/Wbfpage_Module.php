@@ -31,7 +31,6 @@ class Wbfpage_Module extends Module
   public function main()
   {
 
-    $this->tplEngine->setHtmlHead('public');
     $this->tplEngine->setIndex('public/default');
 
     $this->runController();
@@ -108,13 +107,13 @@ class Wbfpage_Module extends Module
 
      $classname   = ''.ucfirst($name).'_Page';
 
-     if (!WebFrap::loadable($classname))
+     if (!WebFrap::classExists($classname))
        $classname = 'Page'.ucfirst($name);
 
     if (DEBUG)
       Debug::console('Page: '.$classname);
 
-    if (WebFrap::loadable($classname)) {
+    if (WebFrap::classExists($classname)) {
       $this->controller     = new $classname();
       $this->controllerName = $classname;
       //$this->controllerBase = $name;

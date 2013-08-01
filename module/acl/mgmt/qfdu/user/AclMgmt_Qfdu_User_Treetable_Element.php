@@ -128,7 +128,7 @@ class AclMgmt_Qfdu_User_Treetable_Element extends WgtTreetable
         Wgt::ACTION_DELETE,
         'Delete',
         'index.php?c=Acl.Mgmt_Qfdu_User.dropGroupAssignments&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',
-        'control/clean.png',
+        'icon-eraser',
         '',
         'wbf.label',
         Acl::ADMIN
@@ -138,7 +138,7 @@ class AclMgmt_Qfdu_User_Treetable_Element extends WgtTreetable
         Wgt::ACTION_BUTTON_GET,
         'Reference ACLs',
         'maintab.php?c=Acl.Mgmt_Tree.showGraph&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',
-        'control/mask_tree.png',
+        'icon-cogs',
         '',
         'wbf.inheritance',
         Acl::ADMIN
@@ -158,7 +158,7 @@ class AclMgmt_Qfdu_User_Treetable_Element extends WgtTreetable
         Wgt::ACTION_DELETE,
         'Delete',
         'index.php?c=Acl.Mgmt_Qfdu_User.dropUserAssignments&dkey='.$this->domainNode->domainName.'&amp;objid=',
-        'control/delete.png',
+        'icon-remove-sign',
         '',
         'wbf.label',
         Acl::ADMIN
@@ -173,7 +173,7 @@ class AclMgmt_Qfdu_User_Treetable_Element extends WgtTreetable
         Wgt::ACTION_DELETE,
         'Delete',
         'index.php?c=Acl.Mgmt_Qfdu_User.dropDsetAssignments&dkey='.$this->domainNode->domainName.'&amp;objid=',
-        'control/delete.png',
+        'icon-remove-sign',
         '',
         'wbf.label',
         Acl::ADMIN
@@ -183,7 +183,7 @@ class AclMgmt_Qfdu_User_Treetable_Element extends WgtTreetable
         Wgt::ACTION_BUTTON_GET,
         'Dset Rights',
         'maintab.php?c=Acl.Mgmt_Dset.listing&dkey='.$this->domainNode->domainName.'&amp;objid=',
-        'control/rights.png',
+        'icon-shield',
         '',
         'wbf.label',
         Acl::ADMIN
@@ -397,7 +397,6 @@ class AclMgmt_Qfdu_User_Treetable_Element extends WgtTreetable
 
     $icons = array();
     $icons['closed'] = $this->icon('control/closed.png', 'Closed');
-    $icons['user'] = $this->icon('control/user.png', 'User');
 
     // create the table body
     $body = '<tbody>'.NL;
@@ -430,7 +429,7 @@ class AclMgmt_Qfdu_User_Treetable_Element extends WgtTreetable
     <td valign="top" class="ind1" ><span
         class="wgt-loader"
         wgt_source_key="dsets"
-        wgt_eid="{$userId}" >{$icons['closed']}</span> {$icons['user']}
+        wgt_eid="{$userId}" >{$icons['closed']}</span> <i class="icon-user" ></i>
       <a
         class="wcm wcm_req_ajax"
         href="modal.php?c=Webfrap.ContactForm.formUser&amp;user_id={$row['role_user_rowid']}&amp;d_src={$this->domainNode->domainName}" >
@@ -481,7 +480,6 @@ HTML;
 
     $icons = array();
     $icons['closed'] = $this->icon('control/closed.png', 'Closed');
-    $icons['dset']   = $this->icon('control/dset.png', 'Dset');
 
     $body = '<htmlArea selector="tr#'.$this->id.'_row_'.$userId.'" action="after" ><![CDATA['.NL;
 
@@ -522,7 +520,7 @@ HTML;
           <a
             href="maintab.php?c={$this->domainNode->domainUrl}.edit&amp;objid={$row['dset_rowid']}"
             class="wcm wcm_req_ajax" >
-            {$icons['dset']} {$row['dset_text']}
+            <i class="icon-file-alt" ></i> {$row['dset_text']}
           </a> ({$row['num_groups']})
         </td>
 
@@ -692,7 +690,6 @@ HTML;
 
     $icons = array();
     $icons['closed'] = $this->icon('control/closed.png', 'Closed');
-    $icons['user'] = $this->icon('control/user.png', 'User');
 
     // create the table body
     $body = '';
@@ -725,7 +722,7 @@ HTML;
     <td valign="top" class="ind1" ><span
         class="wgt-loader"
         wgt_source_key="dsets"
-        wgt_eid="{$userId}" >{$icons['closed']}</span> {$icons['user']}
+        wgt_eid="{$userId}" >{$icons['closed']}</span> <i class="icon-user" ></i>
       <a
         class="wcm wcm_req_ajax"
         href="modal.php?c=Webfrap.ContactForm.formUser&amp;user_id={$row['role_user_rowid']}&amp;d_src={$this->domainNode->domainName}" >
@@ -839,7 +836,7 @@ HTML;
         $body .= '<tr class="row'.$this->num.' '.$pRowid.' wgt-border-top flag_partial" id="'.$rowid.'"  >'.NL;
 
         $body .= '<td valign="top" class="pos" >1</td>'.NL;
-        $body .= '<td valign="top" class="ind1" >'.$this->icon('control/user.png','User').' '.$row['name'].' (partial)</td>'.NL;
+        $body .= '<td valign="top" class="ind1" ><i class="icon-user" ></i> '.$row['name'].' (partial)</td>'.NL;
         $body .= '<td colspan="2"  ></td>'.NL;
 
         if ($this->enableNav) {
@@ -866,7 +863,7 @@ HTML;
         $body .= '<tr class="row'.$this->num.' '.$pRowid.' wgt-border-top" id="'.$rowid.'"  >'.NL;
 
         $body .= '<td valign="top" class="pos" >1</td>'.NL;
-        $body .= '<td valign="top" >'.$this->icon('control/user.png','User').' '.$row['user'].'</td>'.NL;
+        $body .= '<td valign="top" ><i class="icon-user" ></i> '.$row['user'].'</td>'.NL;
         $body .= '<td valign="top" >'
           .'<input
             type="text"
@@ -1030,8 +1027,6 @@ HTML;
   public function buildTableFooter()
   {
 
-    $iconClean = $this->icon('control/clean.png', 'Clean');
-    //$iconDelete = $this->icon('control/delete.png', 'Delete Selection');
     $iconExport = $this->icon('mimetypes/application-vnd.ms-excel.png', 'Export');
 
     $html = '<div class="wgt-panel wgt-border-top" >'.NL;
@@ -1040,7 +1035,7 @@ HTML;
     $html .= ' </div>';
     $html .= ' <div class="menu" style="float:left;width:150px;" >';
 
-    // <li><a>{$iconDelete} Delete Selection</a></li>
+    // <li><a><i class="icon-remove" ></i> Delete Selection</a></li>
 
     $html .=   <<<HTML
 
@@ -1055,7 +1050,7 @@ HTML;
     <ul>
       <li><a
         class="wcm wcm_req_del"
-        href="ajax.php?c=Acl.Mgmt_Qfdu.dropAllAssignments&amp;dkey={$this->domainNode->domainName}" >{$iconClean} Delete all</a></li>
+        href="ajax.php?c=Acl.Mgmt_Qfdu.dropAllAssignments&amp;dkey={$this->domainNode->domainName}" ><i class="icon-eraser" ></i> Delete all</a></li>
       <li><a
         target="_document"
         href="document.php?c=Acl.Mgmt_Qfdu_User.export&amp;dkey={$this->domainNode->domainName}" >{$iconExport} Export</a></li>
@@ -1110,7 +1105,7 @@ HTML;
         $body .= '<tr class="row'.$this->num.' '.$pRowid.' wgt-border-top flag_partial" id="'.$rowid.'"  >'.NL;
 
         $body .= '<td valign="top" class="pos" >'.$groupPos.'.'.$pos.'</td>'.NL;
-        $body .= '<td valign="top" class="ind1" >'.$this->icon('control/user.png','User').' '.$row['name'].' (partial)</td>'.NL;
+        $body .= '<td valign="top" class="ind1" ><i class="icon-user" ></i> '.$row['name'].' (partial)</td>'.NL;
         $body .= '<td colspan="2"  ></td>'.NL;
 
         if ($this->enableNav) {
@@ -1133,7 +1128,7 @@ HTML;
         $body .= '<tr class="row'.$this->num.' '.$pRowid.' wgt-border-top" id="'.$rowid.'"  >'.NL;
 
         $body .= '<td valign="top" class="pos" >'.$groupPos.'.'.$pos.'</td>'.NL;
-        $body .= '<td valign="top" >'.$this->icon('control/user.png','User').' '.$row['user'].'</td>'.NL;
+        $body .= '<td valign="top" ><i class="icon-user" ></i> '.$row['user'].'</td>'.NL;
         $body .= '<td valign="top" >'
           .'<input
             type="text"

@@ -58,7 +58,8 @@ class WebfrapDocu_Page_Maintab_View extends WgtMaintabCustom
     }
 
     $params = new TArray();
-    $this->addMenu($key, $params);
+    $params->key = $key;
+    $this->addMenu($params);
 
   }//end public function displayPage */
 
@@ -71,7 +72,7 @@ class WebfrapDocu_Page_Maintab_View extends WgtMaintabCustom
    *   string formId: the id of the form;
    * }
    */
-  public function addMenu($key, $params)
+  public function addMenu( $params)
   {
 
     $menu     = $this->newMenu
@@ -81,7 +82,7 @@ class WebfrapDocu_Page_Maintab_View extends WgtMaintabCustom
     );
 
     $menu->id = $this->id.'_dropmenu';
-    $menu->buildMenu($key, $params);
+    $menu->buildMenu($params->key, $params);
 
     $menu->injectActions($this, $params);
 

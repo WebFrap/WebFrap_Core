@@ -57,8 +57,7 @@ class WebfrapMessage_Reply_Maintab_View extends WgtMaintab
   {
 
     $iconMenu          = '<i class="icon-reorder" ></i>';
-    $iconClose         = $this->icon('control/close.png'    ,'Close'   );
-    $iconSearch        = $this->icon('control/search.png'   ,'Search'  );
+    $iconClose         = '<i class="icon-remove-circle " ></i>';
     $iconSupport   = $this->icon('control/support.png'  ,'Support');
     $iconBug       = $this->icon('control/bug.png'      ,'Bug');
     $iconFaq       = $this->icon('control/faq.png'      ,'Faq');
@@ -76,13 +75,13 @@ class WebfrapMessage_Reply_Maintab_View extends WgtMaintab
   <button
     class="wcm wcm_control_dropmenu wgt-button"
     id="{$this->id}_dropmenu-control"
-    wgt_drop_box="{$this->id}_dropmenu"  >{$iconMenu} {$this->i18n->l('Menu','wbf.label')}</button>
+    wgt_drop_box="{$this->id}_dropmenu"  ><i class="icon-reorder" ></i> {$this->i18n->l('Menu','wbf.label')}</button>
 </div>
 
 <div class="wgt-dropdownbox" id="{$this->id}_dropmenu" >
   <ul>
     <li>
-      <a class="deeplink" >{$iconSupport} {$this->i18n->l('Support', 'wbf.label')}</a>
+      <a class="deeplink" ><i class="icon-question-sign" ></i> {$this->i18n->l('Support', 'wbf.label')}</a>
       <span>
       <ul>
         <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Issue.create&amp;context=menu" >{$iconBug} {$this->i18n->l('Bug', 'wbf.label')}</a></li>
@@ -91,7 +90,7 @@ class WebfrapMessage_Reply_Maintab_View extends WgtMaintab
       </span>
     </li>
     <li>
-      <a class="wgtac_close" >{$iconClose} {$this->i18n->l('Close','wbf.label')}</a>
+      <a class="wgtac_close" ><i class="icon-remove-circle" ></i> {$this->i18n->l('Close','wbf.label')}</a>
     </li>
   </ul>
 </div>

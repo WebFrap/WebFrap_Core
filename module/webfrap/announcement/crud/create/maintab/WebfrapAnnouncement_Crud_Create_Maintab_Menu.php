@@ -97,15 +97,14 @@ HTML;
   protected function entriesSupport($params)
   {
 
-    $iconSupport         = $this->view->icon('control/support.png'      ,'Support');
-    $iconFaq         = $this->view->icon('control/faq.png'      ,'Faq');
-    $iconHelp         = $this->view->icon('control/help.png'      ,'Help');
-
+    $iconSupport = '<i class="icon-info-sign"></i>';
+    $iconFaq = '<i class="icon-question-sign"></i>';
+    $iconHelp = '<i class="icon-info"></i>';
 
     $html = <<<HTML
 
       <li>
-        <p>{$iconSupport} {$this->view->i18n->l('Support','wbf.label')}</p>
+        <p><i class="icon-question-sign" ></i> {$this->view->i18n->l('Support','wbf.label')}</p>
         <ul>
 
           <li><a class="wcm wcm_req_ajax" href="modal.php?c=Webfrap.Docu.open&amp;key=wbfsys_announcement-create" >{$iconHelp} {$this->view->i18n->l('Help','wbf.label')}</a></li>
@@ -118,6 +117,7 @@ HTML;
 HTML;
 
     return $html;
+
   }//end public function entriesSupport */
 
 }//end class WbfsysAnnouncement_Crud_Create_Maintab_Menu

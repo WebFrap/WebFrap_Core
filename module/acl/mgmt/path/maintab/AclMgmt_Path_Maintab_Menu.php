@@ -55,10 +55,8 @@ class AclMgmt_Path_Maintab_Menu extends WgtDropmenu
   {
 
     $view             = $this->view;
-    $iconMenu        = $view->icon('control/menu.png'      ,'Menu');
-    $iconEdit        = $view->icon('control/save.png'      ,'Save');
-    $iconBookmark    = $view->icon('control/bookmark.png'  ,'Bookmark');
-    $iconClose       = $view->icon('control/close.png'     ,'Close');
+    $iconMenu        = '<i class="icon-reorder" ></i>';
+    $iconEdit        = '<i class="icon-save" ></i>';
 
     $access           = $params->access;
     $user            = $this->getUser();
@@ -73,7 +71,7 @@ class AclMgmt_Path_Maintab_Menu extends WgtDropmenu
       class="wcm wcm_control_dropmenu wgt-button"
       tabindex="-1"
       id="{$this->id}-control"
-      wgt_drop_box="{$this->id}"  >{$iconMenu} {$view->i18n->l('Menu','wbf.label')}</button>
+      wgt_drop_box="{$this->id}"  ><i class="icon-reorder" ></i> {$view->i18n->l('Menu','wbf.label')}</button>
       <var id="{$this->id}-control-cfg-dropmenu"  >{"triggerEvent":"click"}</var>
   </div>
 
@@ -81,7 +79,7 @@ class AclMgmt_Path_Maintab_Menu extends WgtDropmenu
 
     <ul>
       <li>
-        <a class="wgtac_bookmark" >{$iconBookmark} {$view->i18n->l('Bookmark', 'wbf.label')}</a>
+        <a class="wgtac_bookmark" ><i class="icon-bookmark" ></i> {$view->i18n->l('Bookmark', 'wbf.label')}</a>
       </li>
     </ul>
 
@@ -91,13 +89,13 @@ class AclMgmt_Path_Maintab_Menu extends WgtDropmenu
 
     <ul>
       <li>
-        <a class="wgtac_close" >{$iconClose} {$this->view->i18n->l('Close','wbf.label')}</a>
+        <a class="wgtac_close" ><i class="icon-remove-circle" ></i> {$this->view->i18n->l('Close','wbf.label')}</a>
       </li>
     </ul>
   </div>
 
   <div class="wgt-panel-control" >
-    <button class="wcm wcm_ui_button wgtac_edit" >{$iconEdit} {$this->view->i18n->l('Save','wbf.label')}</button>
+    <button class="wcm wcm_ui_button wgtac_edit" ><i class="icon-edit" ></i> {$this->view->i18n->l('Save','wbf.label')}</button>
   </div>
 
 HTML;
@@ -112,16 +110,12 @@ HTML;
   protected function entriesSupport($objid, $params)
   {
 
-    $iconSupport  = $this->view->icon( 'control/support.png'  ,'Support');
-    $iconBug      = $this->view->icon( 'control/bug.png'      ,'Bug'  );
     $iconFaq      = $this->view->icon( 'control/faq.png'      ,'Faq'  );
-    $iconHelp     = $this->view->icon( 'control/help.png'     ,'Help');
-
 
     $html = <<<HTML
 
   <li>
-    <a class="deeplink" >{$iconSupport} {$this->view->i18n->l('Support','wbf.label')}</a>
+    <a class="deeplink" ><i class="icon-question-sign" ></i> {$this->view->i18n->l('Support','wbf.label')}</a>
     <span>
       <ul>
         <li><a

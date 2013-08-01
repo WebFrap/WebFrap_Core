@@ -42,8 +42,7 @@ class ProcessBase_Controller extends Controller
     $objid     = $request->param('objid', Validator::INT  );
     $entity    = $request->param('entity', Validator::CNAME  );
 
-    $view = $response->loadView
-    (
+    $view = $response->loadView(
       'process-base-history',
       'ProcessBase',
       'displayHistory'

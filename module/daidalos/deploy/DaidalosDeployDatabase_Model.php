@@ -113,30 +113,31 @@ class DaidalosDeployDatabase_Model extends Model
     if (!$type) {
 
       $this->syncMetadata_SecurityArea($orm, $repos, $deployRevision, $rootPath);
-      $this->syncMetadata_Desktop($orm, $repos, $deployRevision, $rootPath  );
-      $this->syncMetadata_Profile($orm, $repos, $deployRevision, $rootPath  );
-      $this->syncMetadata_Role($orm, $repos, $deployRevision, $rootPath  );
+      $this->syncMetadata_Desktop($orm, $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_Profile($orm, $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_Role($orm, $repos, $deployRevision, $rootPath);
 
-      $this->syncMetadata_Module($orm, $repos, $deployRevision, $rootPath  );
-      $this->syncMetadata_ModuleCategory($orm, $repos, $deployRevision, $rootPath  );
-      $this->syncMetadata_ModuleAccess($orm, $repos, $deployRevision, $rootPath  );
+      $this->syncMetadata_Module($orm, $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_ModuleCategory($orm, $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_ModuleAccess($orm, $repos, $deployRevision, $rootPath);
 
-      $this->syncMetadata_Entity($orm, $repos, $deployRevision, $rootPath  );
-      $this->syncMetadata_EntityRef($orm, $repos, $deployRevision, $rootPath  );
-      $this->syncMetadata_EntityAccess($orm, $repos, $deployRevision, $rootPath  );
+      $this->syncMetadata_Entity($orm, $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_EntityRef($orm, $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_EntityAccess($orm, $repos, $deployRevision, $rootPath);
 
-      $this->syncMetadata_Management($orm, $repos, $deployRevision, $rootPath  );
-      $this->syncMetadata_ManagementRef($orm, $repos, $deployRevision, $rootPath  );
-      $this->syncMetadata_ManagementElement($orm, $repos, $deployRevision, $rootPath  );
-      $this->syncMetadata_ManagementAccess($orm, $repos, $deployRevision, $rootPath  );
-      $this->syncMetadata_ManagementMaintenance($orm, $repos, $deployRevision, $rootPath  );
-      $this->syncMetadata_ManagementAcl($orm, $repos, $deployRevision, $rootPath  );
+      $this->syncMetadata_Management($orm, $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_ManagementRef($orm, $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_ManagementElement($orm, $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_ManagementAccess($orm, $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_ManagementMaintenance($orm, $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_ManagementAcl($orm, $repos, $deployRevision, $rootPath);
 
-      $this->syncMetadata_Process($orm, $repos, $deployRevision, $rootPath  );
-      $this->syncMetadata_Item($orm, $repos, $deployRevision, $rootPath  );
-      $this->syncMetadata_Widget($orm, $repos, $deployRevision, $rootPath  );
+      $this->syncMetadata_Process($orm, $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_Item($orm, $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_Widget($orm, $repos, $deployRevision, $rootPath);
+
     } else {
-      $this->syncMetadata_ManagementRef($orm, $repos, $deployRevision, $rootPath  );
+      $this->syncMetadata_ManagementRef($orm, $repos, $deployRevision, $rootPath);
     }
 
   }//end public function syncMetadata */

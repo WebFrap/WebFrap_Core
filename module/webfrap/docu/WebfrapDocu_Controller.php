@@ -65,6 +65,10 @@ class WebfrapDocu_Controller extends Controller
       'method'    => array('GET'),
       'views'      => array('maintab')
     ),
+    'root' => array(
+      'method'    => array('GET'),
+      'views'      => array('modal', 'maintab')
+    ),
   );
 
 /*//////////////////////////////////////////////////////////////////////////////
@@ -125,6 +129,7 @@ class WebfrapDocu_Controller extends Controller
     $helpPage = $orm->getByKey('WbfsysDocuHelp', $key);
 
     if (!$helpPage) {
+
       // hielfeseiten erst mal nur für existierende Masken zulassen
       $mask = $orm->getByKey('WbfsysMask', $key);
       if (!$mask) {
@@ -263,12 +268,12 @@ class WebfrapDocu_Controller extends Controller
       $response->addMessage("Saved");
 
     } catch (Exception $e) {
-      
+
       $response->addError("Failed to save the Help Page. Sorry :-(");
     }
 
     if ($request->paramExists('show')) {
-      
+
       $view = $response->loadView($key.'-help' , 'WebfrapDocu', 'displayShow',  View::SUBWINDOW);
 
       if (!$view)
@@ -330,6 +335,25 @@ class WebfrapDocu_Controller extends Controller
     $view->displayPage($key, $params);
 
   }//end public function service_page */
+
+  /**
+   * @param LibRequestHttp $request
+   * @param LibResponseHttp $response
+   * @throws LibRequest_Exception
+   */
+  public function service_root($request, $response)
+  {
+
+    $params = $this->getFlags($request);
+
+    $view = $response->loadView(
+      'webfrap-docu-viewer',
+      'WebfrapDocuRoot',
+      'displayRoot'
+    );
+    $view->displayRoot($params);
+
+  }//end public function service_root */
 
 }//end class WebfrapDocu_Controller
 

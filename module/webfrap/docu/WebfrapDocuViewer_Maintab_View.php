@@ -79,23 +79,17 @@ class WebfrapDocuViewer_Maintab_View extends WgtMaintabCustom
    *   string formId: the id of the form;
    * }
    */
-  public function addMenu($helpPage, $params)
+  public function addMenu( $params)
   {
 
-    $i18n         = $this->getI18n();
+    $i18n = $this->getI18n();
 
-    $iconMenu     = '<i class="icon-reorder" ></i>';
-    $iconSupport  = $this->icon('control/support.png'      ,'Support');
-    $iconHelp     = $this->icon('control/help.png'      ,'Help');
-    $iconClose    = $this->icon('control/close.png'      ,'Close');
-    $iconEdit     = $this->icon('control/edit.png'      ,'Edit');
-    $iconBug      = $this->icon('control/bug.png'      ,'Bug');
-    $iconBookmark      = $this->icon('control/bookmark.png'      ,'Bookmark');
-    $iconFaq      = $this->icon('control/faq.png'      ,'Faq');
+    $iconMenu = '<i class="icon-reorder" ></i>';
+    $iconClose = '<i class="icon-remove-circle " ></i>';
 
-    $menu          = $this->newMenu($this->id.'_dropmenu');
+    $menu = $this->newMenu($this->id.'_dropmenu');
 
-    $this->addActions($helpPage, $params);
+    $this->addActions($params);
 
     $menu->content = <<<HTML
 
@@ -103,27 +97,18 @@ class WebfrapDocuViewer_Maintab_View extends WgtMaintabCustom
   <button
     class="wcm wcm_control_dropmenu wgt-button"
     id="{$this->id}_dropmenu-control"
-    wgt_drop_box="{$this->id}_dropmenu"  >{$iconMenu} {$this->i18n->l('Menu','wbf.label')}</button>
+    wgt_drop_box="{$this->id}_dropmenu"  ><i class="icon-reorder" ></i> {$this->i18n->l('Menu','wbf.label')}</button>
 </div>
 
 <div class="wgt-dropdownbox" id="{$this->id}_dropmenu" >
   <ul>
     <li>
-      <a class="wgtac_bookmark" >{$iconBookmark} {$this->i18n->l('Bookmark', 'wbf.label')}</a>
+      <a class="wgtac_bookmark" ><i class="icon-bookmark" ></i> {$this->i18n->l('Bookmark', 'wbf.label')}</a>
     </li>
   </ul>
   <ul>
     <li>
-      <a class="deeplink" >{$iconSupport} {$this->i18n->l('Support', 'wbf.label')}</a>
-      <span>
-      <ul>
-        <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Issue.create&amp;context=menu" >{$iconBug} {$this->i18n->l('Bug', 'wbf.label')}</a></li>
-        <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Faq.create&amp;context=menu" >{$iconFaq} {$this->i18n->l('Faq', 'wbf.label')}</a></li>
-      </ul>
-      </span>
-    </li>
-    <li>
-      <a class="wgtac_close" >{$iconClose} {$this->i18n->l('Close','wbf.label')}</a>
+      <a class="wgtac_close" ><i class="icon-remove-circle" ></i> {$this->i18n->l('Close','wbf.label')}</a>
     </li>
   </ul>
 </div>
@@ -143,7 +128,7 @@ HTML;
    *   string formId: the id of the form;
    * }
    */
-  public function addActions($helpPage, $params)
+  public function addActions($params)
   {
 
     // add the button action for save in the window

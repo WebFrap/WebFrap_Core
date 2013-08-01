@@ -53,8 +53,7 @@ class WebfrapSearch_Controller extends Controller
     $model = $this->loadModel('WebfrapSearch');
 
     /* @var WebfrapSearch_Ajax_View */
-    $view  = $response->loadView
-    (
+    $view  = $response->loadView(
       'webfrap-search-request',
       'WebfrapSearch',
       'displaySearch'

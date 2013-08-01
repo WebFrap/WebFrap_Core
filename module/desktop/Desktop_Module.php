@@ -46,7 +46,7 @@ class Desktop_Module extends Module
 
     $classname = 'Desktop'.$this->modName.ucfirst($name);
 
-    if (WebFrap::loadable($classname)) {
+    if (WebFrap::classExists($classname)) {
       $this->controller = new $classname();
     } else {
 

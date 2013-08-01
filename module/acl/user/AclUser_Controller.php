@@ -731,7 +731,7 @@ class AclUser_Controller extends ControllerCrud
 
     $response  = $this->getResponse();
 
-    $params = new TFlagListing($request);
+    $params = new ContextPlain($request);
 
     // per default
     $params->categories = array();

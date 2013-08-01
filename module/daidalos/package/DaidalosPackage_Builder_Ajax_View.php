@@ -58,7 +58,7 @@ XML
   public function displayBuild($package, $fileName, $params)
   {
 
-    $iconDel = Wgt::icon('control/delete.png');
+    $iconDel = '<i class="icon-remove-sign" ></i>';
 
     $file    = new IoFile(PATH_GW."data/package/{$params->type}/{$package}/{$fileName}");
 

@@ -39,10 +39,8 @@ class DaidalosAcl_Maintab_Menu extends WgtDropmenu
   public function buildMenu($params)
   {
 
-    $iconMenu          = $this->view->icon('control/menu.png'     ,'Menu'   );
-    $iconClose         = $this->view->icon('control/close.png'    ,'Close'   );
-    $iconSearch        = $this->view->icon('control/search.png'   ,'Search'  );
-    $iconBookmark      = $this->view->icon('control/bookmark.png' ,'Bookmark');
+    $iconMenu          = '<i class="icon-reorder" ></i>';
+    $iconClose         = '<i class="icon-remove-circle " ></i>';
 
     $entries = new TArray();
     $entries->support  = $this->entriesSupport($params);
@@ -50,15 +48,15 @@ class DaidalosAcl_Maintab_Menu extends WgtDropmenu
     $this->content = <<<HTML
 <ul class="wgt-dropmenu" id="{$this->id}" style="z-index:500;height:16px;"  >
   <li class="wgt-root" >
-    <button class=" wgt-button" >{$iconMenu} {$this->view->i18n->l('Menu','wbf.label')}</button>
+    <button class=" wgt-button" ><i class="icon-reorder" ></i> {$this->view->i18n->l('Menu','wbf.label')}</button>
     <ul style="margin-top:-10px;" >
       <li>
-        <p class="wgtac_bookmark" >{$iconBookmark} {$this->view->i18n->l('Bookmark','wbf.label')}</p>
+        <p class="wgtac_bookmark" ><i class="icon-bookmark" ></i> {$this->view->i18n->l('Bookmark','wbf.label')}</p>
       </li>
 {$entries->support}
 {$entries->report}
       <li>
-        <p class="wgtac_close" >{$iconClose} {$this->view->i18n->l('Close','wbf.label')}</p>
+        <p class="wgtac_close" ><i class="icon-remove-circle" ></i> {$this->view->i18n->l('Close','wbf.label')}</p>
       </li>
     </ul>
   </li>
@@ -77,16 +75,13 @@ HTML;
   {
 
     $iconSupport = $this->view->icon('control/support.png'  ,'Support');
-    $iconBug     = $this->view->icon('control/bug.png'      ,'Bug');
     $iconFaq     = $this->view->icon('control/faq.png'      ,'Faq');
-    $iconHelp    = $this->view->icon('control/help.png'     ,'Help');
 
     $html = <<<HTML
 
       <li>
-        <p>{$iconSupport} Support</p>
+        <p><i class="icon-question-sign" ></i> Support</p>
         <ul>
-          <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Issue.create&amp;context=menu" >{$iconBug} Bug</a></li>
           <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Faq.create&amp;context=menu" >{$iconFaq} Faq</a></li>
         </ul>
       </li>

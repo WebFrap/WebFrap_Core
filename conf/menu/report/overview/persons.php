@@ -7,5 +7,5 @@ $this->files[] = array
   'persons',
   'persons',
   'maintab.php?c=Report.Base.persons',
-  WgtIcon::big('module/report.png'),
+  'icon-bar-chart',
 );

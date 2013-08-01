@@ -65,7 +65,7 @@ class AclMgmt_Qfdu_User_Area_View extends LibTemplateAreaView
     $params->searchFormId = 'wgt-form-table-'.$this->domainNode->aclDomainKey.'-acl-tuser-search';
 
     // fill the relevant data for the search form
-    $this->setSearchFormData($params);
+    $params->injectSearchFormData($this);
 
     // add the id to the form
     $params->formId = 'wgt-form-'.$this->domainNode->aclDomainKey.'-acl-update';

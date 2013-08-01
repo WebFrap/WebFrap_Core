@@ -99,9 +99,8 @@ class WebfrapMaintenance_Process_Maintab_View extends WgtMaintabList
     $menu->setModel($this->model);
 
     $i18n = $this->getI18n();
-    $iconMenu      = $this->icon( 'control/menu.png',  'Menu');
-    $iconBookmark  = $this->icon( 'control/bookmark.png', 'Bookmark');
-    $iconClose     = $this->icon( 'control/close.png', 'Close');
+    $iconMenu      = '<i class="icon-reorder" ></i>';
+    $iconClose     = '<i class="icon-remove-circle " ></i>';
 
     $entries = new TArray();
     $entries->support  = $this->entriesSupport( $menu);
@@ -113,18 +112,18 @@ class WebfrapMaintenance_Process_Maintab_View extends WgtMaintabList
       class="wcm wcm_control_dropmenu wgt-button"
       tabindex="-1"
       id="{$menu->id}-control"
-      wgt_drop_box="{$menu->id}"  >{$iconMenu} {$i18n->l('Menu','wbf.label')}</button>
+      wgt_drop_box="{$menu->id}"  ><i class="icon-reorder" ></i> {$i18n->l('Menu','wbf.label')}</button>
       <var id="{$menu->id}-control-cfg-dropmenu"  >{"triggerEvent":"click"}</var>
   </div>
 
   <div class="wgt-dropdownbox" id="{$menu->id}" >
     <ul>
       <li>
-        <a class="wgtac_bookmark" >{$iconBookmark} {$i18n->l('Bookmark','wbf.label')}</a>
+        <a class="wgtac_bookmark" ><i class="icon-bookmark" ></i> {$i18n->l('Bookmark','wbf.label')}</a>
       </li>
     {$entries->support}
       <li>
-        <a class="wgtac_close" >{$iconClose} {$i18n->l('Close', 'wbf.label')}</a>
+        <a class="wgtac_close" ><i class="icon-remove-circle" ></i> {$i18n->l('Close', 'wbf.label')}</a>
       </li>
     </ul>
   </div>
@@ -151,7 +150,7 @@ HTML;
     $html = <<<HTML
 
       <li>
-        <a class="deeplink" >{$iconSupport} {$this->i18n->l('Support','wbf.label')}</a>
+        <a class="deeplink" ><i class="icon-question-sign" ></i> {$this->i18n->l('Support','wbf.label')}</a>
         <span>
           <ul>
             <li><a

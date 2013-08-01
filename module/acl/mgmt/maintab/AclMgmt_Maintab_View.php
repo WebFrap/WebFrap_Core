@@ -55,7 +55,7 @@ class AclMgmt_Maintab_View extends WgtMaintab
   * add the table item
   * add the search field elements
   *
-  * @param TFlag $params
+  * @param Context $params
   * @return null / Error im Fehlerfall
   */
   public function displayListing($params)
@@ -69,7 +69,7 @@ class AclMgmt_Maintab_View extends WgtMaintab
     $params->searchFormId = 'wgt-form-table-'.$this->domainNode->aclDomainKey.'-acl-search';
 
     // fill the relevant data for the search form
-    $this->setSearchFormData($params);
+    $params->injectSearchFormData($this);
 
     // create the form action
     $params->formAction = 'index.php?c=Acl.Mgmt.updateArea&dkey='.$this->domainNode->domainName;
@@ -154,8 +154,7 @@ class AclMgmt_Maintab_View extends WgtMaintab
   public function createMenu($objid, $params)
   {
 
-    $menu     = $this->newMenu
-    (
+    $menu     = $this->newMenu(
       $this->id.'_dropmenu',
       $this->domainNode->domainAclMask
     );

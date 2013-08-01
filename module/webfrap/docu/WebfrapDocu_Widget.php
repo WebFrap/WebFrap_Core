@@ -42,7 +42,7 @@ class WebfrapDocu_Widget extends WgtWidget
 
     $profile  = $user->getProfileName();
 
-    $params   = new TFlagListing($request);
+    $params   = new ContextPlain($request);
 
     $content = '';
 
@@ -82,7 +82,7 @@ HTML;
 
     $profile  = $user->getProfileName();
 
-    $params   = new TFlagListing($request);
+    $params   = new ContextPlain($request);
 
 
     $loader = new ExtensionLoader('index', 'data/docu/');
@@ -115,7 +115,7 @@ HTML;
     $request = $this->getRequest();
 
     if (!$params)
-      $params = new TFlagListing($request);
+      $params = new ContextPlain($request);
 
     // start position of the query and size of the table
     $params->start

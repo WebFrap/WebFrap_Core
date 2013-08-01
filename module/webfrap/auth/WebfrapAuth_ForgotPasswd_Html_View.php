@@ -26,7 +26,6 @@ class WebfrapAuth_ForgotPasswd_Html_View extends LibTemplateHtmlView
 
   public function init()
   {
-    $this->setHtmlHead('public');
     $this->setIndex('public/plain');
   }
 

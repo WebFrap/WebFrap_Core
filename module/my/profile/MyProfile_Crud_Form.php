@@ -567,7 +567,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   {
     $i18n     = $this->view->i18n;
 
-    if (!Webfrap::classLoadable('CorePerson_Entity')) {
+    if (!Webfrap::classExists('CorePerson_Entity')) {
       if (DEBUG)
         Debug::console('Entity CorePerson not exists');
 
@@ -618,7 +618,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
         .'&amp;key_name=embed_person&amp;suffix='.$this->suffix.'&input=wbfsys_role_user_id_person'.($this->suffix?'-'.$this->suffix:'');
 
       $inputIdPerson->setListUrl ($listUrl);
-      $inputIdPerson->setListIcon('webfrap/connect.png');
+      $inputIdPerson->setListIcon('icon-link');
       $inputIdPerson->setEntityUrl('maintab.php?c=Core.Person.edit');
       $inputIdPerson->conEntity         = $entityCorePerson;
       $inputIdPerson->refresh           = $this->refresh;
@@ -855,7 +855,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   {
     $i18n     = $this->view->i18n;
 
-    if (!Webfrap::classLoadable('EnterpriseEmployee_Entity')) {
+    if (!Webfrap::classExists('EnterpriseEmployee_Entity')) {
       if (DEBUG)
         Debug::console('Entity EnterpriseEmployee not exists');
 
@@ -906,7 +906,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
         .'&amp;key_name=embed_enterprise_employee&amp;suffix='.$this->suffix.'&input=wbfsys_role_user_id_employee'.($this->suffix?'-'.$this->suffix:'');
 
       $inputIdEmployee->setListUrl ($listUrl);
-      $inputIdEmployee->setListIcon('webfrap/connect.png');
+      $inputIdEmployee->setListIcon('icon-link');
       $inputIdEmployee->setEntityUrl('maintab.php?c=Enterprise.Employee.edit');
       $inputIdEmployee->conEntity         = $entityEnterpriseEmployee;
       $inputIdEmployee->refresh           = $this->refresh;
@@ -976,7 +976,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   {
     $i18n     = $this->view->i18n;
 
-    if (!Webfrap::classLoadable('WbfsysRoleUser_Entity')) {
+    if (!Webfrap::classExists('WbfsysRoleUser_Entity')) {
       if (DEBUG)
         Debug::console('Entity WbfsysRoleUser not exists');
 
@@ -1027,7 +1027,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
         .'&amp;suffix='.$this->suffix.'&input=wbfsys_role_user_m_role_create'.($this->suffix?'-'.$this->suffix:'');
 
       $inputMRoleCreate->setListUrl ($listUrl);
-      $inputMRoleCreate->setListIcon('webfrap/connect.png');
+      $inputMRoleCreate->setListIcon('icon-link');
       $inputMRoleCreate->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
       $inputMRoleCreate->conEntity         = $entityWbfsysRoleUser;
       $inputMRoleCreate->refresh           = $this->refresh;
@@ -1105,7 +1105,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   {
     $i18n     = $this->view->i18n;
 
-    if (!Webfrap::classLoadable('WbfsysRoleUser_Entity')) {
+    if (!Webfrap::classExists('WbfsysRoleUser_Entity')) {
       if (DEBUG)
         Debug::console('Entity WbfsysRoleUser not exists');
 
@@ -1156,7 +1156,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
         .'&amp;suffix='.$this->suffix.'&input=wbfsys_role_user_m_role_change'.($this->suffix?'-'.$this->suffix:'');
 
       $inputMRoleChange->setListUrl ($listUrl);
-      $inputMRoleChange->setListIcon('webfrap/connect.png');
+      $inputMRoleChange->setListIcon('icon-link');
       $inputMRoleChange->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
       $inputMRoleChange->conEntity         = $entityWbfsysRoleUser;
       $inputMRoleChange->refresh           = $this->refresh;
@@ -1357,7 +1357,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   {
     $i18n     = $this->view->i18n;
 
-    if (!Webfrap::classLoadable('WbfsysRoleUser_Entity')) {
+    if (!Webfrap::classExists('WbfsysRoleUser_Entity')) {
       if (DEBUG)
         Debug::console('Entity WbfsysRoleUser not exists');
 
@@ -1408,7 +1408,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
         .'&amp;suffix='.$this->suffix.'&input=embed_person_m_role_create'.($this->suffix?'-'.$this->suffix:'');
 
       $inputMRoleCreate->setListUrl ($listUrl);
-      $inputMRoleCreate->setListIcon('webfrap/connect.png');
+      $inputMRoleCreate->setListIcon('icon-link');
       $inputMRoleCreate->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
       $inputMRoleCreate->conEntity         = $entityWbfsysRoleUser;
       $inputMRoleCreate->refresh           = $this->refresh;
@@ -1486,7 +1486,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   {
     $i18n     = $this->view->i18n;
 
-    if (!Webfrap::classLoadable('WbfsysRoleUser_Entity')) {
+    if (!Webfrap::classExists('WbfsysRoleUser_Entity')) {
       if (DEBUG)
         Debug::console('Entity WbfsysRoleUser not exists');
 
@@ -1537,7 +1537,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
         .'&amp;suffix='.$this->suffix.'&input=embed_person_m_role_change'.($this->suffix?'-'.$this->suffix:'');
 
       $inputMRoleChange->setListUrl ($listUrl);
-      $inputMRoleChange->setListIcon('webfrap/connect.png');
+      $inputMRoleChange->setListIcon('icon-link');
       $inputMRoleChange->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
       $inputMRoleChange->conEntity         = $entityWbfsysRoleUser;
       $inputMRoleChange->refresh           = $this->refresh;
@@ -1738,7 +1738,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   {
     $i18n     = $this->view->i18n;
 
-    if (!Webfrap::classLoadable('WbfsysRoleUser_Entity')) {
+    if (!Webfrap::classExists('WbfsysRoleUser_Entity')) {
       if (DEBUG)
         Debug::console('Entity WbfsysRoleUser not exists');
 
@@ -1789,7 +1789,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
         .'&amp;suffix='.$this->suffix.'&input=embed_enterprise_employee_m_role_create'.($this->suffix?'-'.$this->suffix:'');
 
       $inputMRoleCreate->setListUrl ($listUrl);
-      $inputMRoleCreate->setListIcon('webfrap/connect.png');
+      $inputMRoleCreate->setListIcon('icon-link');
       $inputMRoleCreate->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
       $inputMRoleCreate->conEntity         = $entityWbfsysRoleUser;
       $inputMRoleCreate->refresh           = $this->refresh;
@@ -1867,7 +1867,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   {
     $i18n     = $this->view->i18n;
 
-    if (!Webfrap::classLoadable('WbfsysRoleUser_Entity')) {
+    if (!Webfrap::classExists('WbfsysRoleUser_Entity')) {
       if (DEBUG)
         Debug::console('Entity WbfsysRoleUser not exists');
 
@@ -1918,7 +1918,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
         .'&amp;suffix='.$this->suffix.'&input=embed_enterprise_employee_m_role_change'.($this->suffix?'-'.$this->suffix:'');
 
       $inputMRoleChange->setListUrl ($listUrl);
-      $inputMRoleChange->setListIcon('webfrap/connect.png');
+      $inputMRoleChange->setListIcon('icon-link');
       $inputMRoleChange->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
       $inputMRoleChange->conEntity         = $entityWbfsysRoleUser;
       $inputMRoleChange->refresh           = $this->refresh;
@@ -2132,7 +2132,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
     $i18n     = $this->view->i18n;
 
     if (!isset($this->listElementData['wbfsys_role_user_level'])) {
-      if (!Webfrap::classLoadable('WbfsysSecurityLevelValue_Selectbox')) {
+      if (!Webfrap::classExists('WbfsysSecurityLevelValue_Selectbox')) {
         if (DEBUG)
           Debug::console('WbfsysSecurityLevelValue_Selectbox not exists');
 
@@ -2221,7 +2221,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
     $i18n     = $this->view->i18n;
 
     if (!isset($this->listElementData['wbfsys_role_user_profile'])) {
-      if (!Webfrap::classLoadable('WbfsysProfileValue_Selectbox')) {
+      if (!Webfrap::classExists('WbfsysProfileValue_Selectbox')) {
         if (DEBUG)
           Debug::console('WbfsysProfileValue_Selectbox not exists');
 

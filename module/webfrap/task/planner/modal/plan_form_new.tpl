@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $orm = $this->getOrm();
 $planForm = new WgtFormBuilder
@@ -10,7 +10,7 @@ $planForm = new WgtFormBuilder
 );
 $planForm->form();
 
-$iconDel = $this->icon( 'control/delete.png', "Delete" );
+$iconDel = $this->icon( 'icon-remove', "Delete" );
 
 ?>
 <div class="wgt-panel" >
@@ -20,113 +20,113 @@ $iconDel = $this->icon( 'control/delete.png', "Delete" );
 <div class="wgt-clear small" >&nbsp;</div>
 
 <div class="wgt-layout-grid bw62" >
-  
+
   <div>
 	  <?php $planForm->input
-	  ( 
-	  	'Title', 
-	  	'plan[title]', 
-	    null, 
-	    array(), 
-	    array( 
+	  (
+	  	'Title',
+	  	'plan[title]',
+	    null,
+	    array(),
+	    array(
 	    	'size' => 'xlarge',
-	      'required' => true 
-	    )  
+	      'required' => true
+	    )
 	  ); ?>
   </div>
-  
+
   <div>
     <div class="left" >
       <?php $planForm->checkbox
-      ( 
-      	'Series', 
-      	'plan[flag-series]', 
-        false, 
-        array( 
+      (
+      	'Series',
+      	'plan[flag-series]',
+        false,
+        array(
         	'class' => 'wcm wcm_control_toggle',
-        	'wgt_target' => '.wgt-box-dateplanner-series' 
+        	'wgt_target' => '.wgt-box-dateplanner-series'
       )); ?>
     </div>
     <div class="inline wgt-box-dateplanner-series" >
       <div class="left" >
         <?php $planForm->checkbox
-        ( 
-          'Advanced', 
-          'plan[flag-advanced]', 
-          false, 
-          array( 
+        (
+          'Advanced',
+          'plan[flag-advanced]',
+          false,
+          array(
             'class' => 'wcm wcm_control_toggle',
-            'wgt_target' => '.wgt-box-dateplanner-advanced' 
+            'wgt_target' => '.wgt-box-dateplanner-advanced'
         )); ?>
       </div>
       <div class="inline wgt-box-dateplanner-list" wgt_hidden="true" >
         <div class="wgt-box-dateplanner-advanced" >
         <?php $planForm->checkbox
-          ( 
-            'By week day', 
-            'plan[flag-by_day]', 
-            false, 
-            array( 
+          (
+            'By week day',
+            'plan[flag-by_day]',
+            false,
+            array(
               'class' => 'wcm wcm_control_toggle',
-              'wgt_target' => '.wgt-box-dateplanner-by_day' 
+              'wgt_target' => '.wgt-box-dateplanner-by_day'
           )); ?>
         </div>
       </div>
       <div class="inline wgt-box-dateplanner-advanced" >
         <?php $planForm->checkbox
-          ( 
-            'Liste', 
-            'plan[flag-is_list]', 
-            false, 
-            array( 
+          (
+            'Liste',
+            'plan[flag-is_list]',
+            false,
+            array(
               'class' => 'wcm wcm_control_toggle',
-              'wgt_target' => '.wgt-box-dateplanner-list' 
+              'wgt_target' => '.wgt-box-dateplanner-list'
           )); ?>
       </div>
     </div>
   </div>
-  
+
 <div class="wgt-clear small sep-bottom" >&nbsp;</div>
 <div class="wgt-clear small" >&nbsp;</div>
-  
+
   <div class="wgt-box-dateplanner-series  bw6" >
-  
+
     <div class="wgt-box-dateplanner-list" wgt_hidden="true"  >
       <div class="left" >
         <?php $planForm->richInput
-        ( 
-        	'date_timepicker', 
-        	'Start', 
+        (
+        	'date_timepicker',
+        	'Start',
         	'plan[timestamp_start]',
           null,
           array(),
           array(
             'size' => 'medium',
-            'button' => 'control/calendar.png' 
-          ) 
+            'button' => 'control/calendar.png'
+          )
         ); ?>
       </div>
       <div class="inline" >
         <?php $planForm->richInput
-        ( 
-        	'date_timepicker', 
-        	'End', 
+        (
+        	'date_timepicker',
+        	'End',
         	'plan[timestamp_end]',
           null,
           array(),
           array(
           	'size' => 'medium',
-            'button' => 'control/calendar.png' 
-          ) 
+            'button' => 'control/calendar.png'
+          )
         ); ?>
       </div>
     </div>
-    
+
     <div class="wgt-box-dateplanner-advanced left bw62" >
-      
+
       <!-- list of dates -->
       <div class="wgt-box-dateplanner-list left bw62" >
-      
+
         <div class=" left bw2" >
           <h3>List of events</h3>
           <ul id="wgt-inplist-taskp-list" class="wcm wcm_widget_inputlist" >
@@ -136,12 +136,12 @@ $iconDel = $this->icon( 'control/delete.png', "Delete" );
           {"input":"wgt-input-select_task_time"}
           </var>
         </div>
-        
+
         <div class="inline" >
           <?php $planForm->richInput
-          ( 
-            'date_timepicker', 
-            'Select', 
+          (
+            'date_timepicker',
+            'Select',
             'select_task_time',
             null,
             array(
@@ -149,12 +149,12 @@ $iconDel = $this->icon( 'control/delete.png', "Delete" );
             ),
             array(
               'size' => 'medium',
-              'button' => 'control/calendar.png' 
-            ) 
+              'button' => 'control/calendar.png'
+            )
           ); ?>
         </div>
       </div>
-  
+
       <div class="wgt-box-dateplanner-list left bw62" wgt_hidden="true" >
 
         <h3>Month</h3>
@@ -163,8 +163,8 @@ $iconDel = $this->icon( 'control/delete.png', "Delete" );
         (
           $this,
           'wgt-chm-months',
-          $planForm->asgd(), 
-          'plan[series_rule-months]', 
+          $planForm->asgd(),
+          'plan[series_rule-months]',
           array(
             array(
               "id" => "jan",
@@ -229,7 +229,7 @@ $iconDel = $this->icon( 'control/delete.png', "Delete" );
           )
         ); ?>
         </div>
-        
+
         <div class="wgt-box-dateplanner-by_day" >
           <h3>Week</h3>
           <div class="wgt-space-bottom" >
@@ -237,8 +237,8 @@ $iconDel = $this->icon( 'control/delete.png', "Delete" );
           (
             $this,
             'wgt-chm-occurrence',
-            $planForm->asgd(), 
-            'plan[series_rule-month_weeks]', 
+            $planForm->asgd(),
+            'plan[series_rule-month_weeks]',
             array(
               array(
                 "id" => "1",
@@ -264,7 +264,7 @@ $iconDel = $this->icon( 'control/delete.png', "Delete" );
           ); ?>
           </div>
         </div>
-        
+
         <div class="wgt-box-dateplanner-by_day" >
           <h3>Days</h3>
           <div class="wgt-space-bottom" >
@@ -272,8 +272,8 @@ $iconDel = $this->icon( 'control/delete.png', "Delete" );
           (
             $this,
             'wgt-chm-days',
-            $planForm->asgd(), 
-            'plan[series_rule-week_days]', 
+            $planForm->asgd(),
+            'plan[series_rule-week_days]',
             array(
               array(
                 "id" => "mo",
@@ -319,72 +319,72 @@ $iconDel = $this->icon( 'control/delete.png', "Delete" );
           <div class="left bw2 wgt-box-dateplanner-by_day" wgt_hidden="true" >
             <h3>Days</h3>
             <div style="width:200px;" >
-            <?php echo WgtTplRangeMatrix::render( 
-              $this, 
+            <?php echo WgtTplRangeMatrix::render(
+              $this,
               1,31,1,
-              'wgt-mtrx-month_day-taskplanner', 
-              'plan[series_rule-days]', 
-              $planForm->asgd() ) 
+              'wgt-mtrx-month_day-taskplanner',
+              'plan[series_rule-days]',
+              $planForm->asgd() )
             ?>
             </div>
           </div>
           <div class="inline bw2" >
             <h3>Hours</h3>
             <div style="width:180px;" >
-            <?php echo WgtTplRangeMatrix::render( 
-              $this, 
+            <?php echo WgtTplRangeMatrix::render(
+              $this,
               1,24,1,
-              'wgt-mtrx-month_day-taskplanner', 
-              'plan[series_rule-hours]', 
-              $planForm->asgd() ) 
+              'wgt-mtrx-month_day-taskplanner',
+              'plan[series_rule-hours]',
+              $planForm->asgd() )
             ?>
             </div>
           </div>
           <div class="inline bw2" >
             <h3>Minutes</h3>
             <div style="width:300px;" >
-            <?php echo WgtTplRangeMatrix::render( 
-              $this, 
+            <?php echo WgtTplRangeMatrix::render(
+              $this,
               1,60,1,
-              'wgt-mtrx-hour_min-taskplanner', 
-              'plan[series_rule-minutes]', 
-              $planForm->asgd() ) 
+              'wgt-mtrx-hour_min-taskplanner',
+              'plan[series_rule-minutes]',
+              $planForm->asgd() )
             ?>
             </div>
           </div>
         </div>
-        
+
       </div>
     </div>
 
     <div class="wgt-box-dateplanner-advanced left bw62" wgt_hidden="true" >
-      <?php $planForm->selectboxByKey( 
-      	'Type', 
-      	'plan[series_rule-id_type]', 
-      	'WebfrapTaskPlanner_Type_Selectbox', 
-        ETaskType::$labels 
+      <?php $planForm->selectboxByKey(
+      	'Type',
+      	'plan[series_rule-id_type]',
+      	'WebfrapTaskPlanner_Type_Selectbox',
+        ETaskType::$labels
       ); ?>
     </div>
-    
+
   </div>
-  
+
   <div class="wgt-box-dateplanner-series bw6"  wgt_hidden="true" >
     <?php $planForm->richInput
-      ( 
-        'date_timepicker', 
-        'Time', 
+      (
+        'date_timepicker',
+        'Time',
         'plan[series_rule-trigger_time]',
         null,
         array(),
         array(
           'size' => 'medium',
-          'button' => 'control/calendar.png' 
-        ) 
+          'button' => 'control/calendar.png'
+        )
       ); ?>
   </div>
-  
+
 </div>
-    
+
 
 <div class="wgt-clear small sep-bottom" >&nbsp;</div>
 <div class="wgt-clear small" >&nbsp;</div>
@@ -392,12 +392,12 @@ $iconDel = $this->icon( 'control/delete.png', "Delete" );
 
 <div class="wgt-box bw62"  >
 <?php $planForm->textarea
-    ( 
-      'Actions', 
+    (
+      'Actions',
       'plan[actions]',
       null,
       array(),
-      array( 'size' => 'xxlarge' 
+      array( 'size' => 'xxlarge'
     )); ?>
 </div>
 
@@ -407,12 +407,12 @@ $iconDel = $this->icon( 'control/delete.png', "Delete" );
 
   <div class="left" >
     <?php $planForm->textarea
-    ( 
-      'Description', 
+    (
+      'Description',
       'plan[description]',
       null,
       array(),
-      array( 'size' => 'xxlarge' 
+      array( 'size' => 'xxlarge'
     )); ?>
   </div>
 

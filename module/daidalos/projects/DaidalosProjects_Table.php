@@ -97,11 +97,6 @@ class DaidalosProjects_Table extends WgtTable
       $linkGenerate = '<a title="Code generieren"  class="wcm wcm_req_ajax wgt_info" href="'.$urlGenerate.'">'
         .Wgt::icon('daidalos/parser.png' , 'xsmall' , 'build').'</a>';
 
-      /*
-      $urlEdit = 'index.php?c=Genf.Bdl.edit&amp;objid='.urlencode($key);
-      $linkEdit = '<a title="Projekt editieren"  class="wcm wcm_req_ajax wgt_info" href="'.$urlEdit.'">'
-        .Wgt::icon('control/edit.png' , 'xsmall' , 'edit').'</a>';
-      */
 
       $urlDeploy = 'index.php?c=Genf.Bdl.deploy&amp;objid='.urlencode($key);
       $linkDeploy = '<a title="Deploy the Project"  class="wcm wcm_req_ajax wgt_info" href="'.$urlDeploy.'">'

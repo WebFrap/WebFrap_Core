@@ -84,23 +84,23 @@ class DaidalosPackage_Workspace_Maintab_View extends WgtMaintab
 
     $i18n         = $this->getI18n();
 
-    $iconMenu     = $this->icon('control/menu.png'      ,'Menu');
+    $iconMenu     = '<i class="icon-reorder" ></i>';
     $iconSupport  = $this->icon('control/support.png'      ,'Support');
     $iconHelp     = $this->icon('control/help.png'      ,'Help');
-    $iconClose    = $this->icon('control/close.png'      ,'Close');
+    $iconClose    = '<i class="icon-remove-circle " ></i>';;
     $iconBug      = $this->icon('control/bug.png'      ,'Bug');
     $iconAdd     = $this->icon('control/add.png'      ,'Add');
 
-    $iconRefresh    = $this->icon('control/refresh.png'      ,'Refresh');
+    $iconRefresh    = '<i class="icon-refresh" ></i>';
 
     $menu          = $this->newMenu($this->id.'_dropmenu');
     $menu->content = <<<HTML
 <ul class="wcm wcm_ui_dropmenu wgt-dropmenu" id="{$this->id}_dropmenu" >
   <li class="wgt-root" >
-    <button class="wcm wcm_ui_button" >{$iconMenu} {$i18n->l('Menu','wbf.label')}</button>
+    <button class="wcm wcm_ui_button" ><i class="icon-reorder" ></i> {$i18n->l('Menu','wbf.label')}</button>
     <ul style="margin-top:-10px;" >
       <li class="current" >
-        <p>{$iconSupport} {$i18n->l('Support','wbf.label')}</p>
+        <p><i class="icon-question-sign" ></i> {$i18n->l('Support','wbf.label')}</p>
         <ul>
           <li>
             <a class="wcm wcm_req_ajax" href="modal.php?c=Webfrap.Bug.create&amp;context=webfrap_docu-create" >
@@ -110,12 +110,12 @@ class DaidalosPackage_Workspace_Maintab_View extends WgtMaintab
         </ul>
       </li>
       <li>
-        <p class="wgtac_close" >{$iconClose} {$i18n->l('Close','wbf.label')}</p>
+        <p class="wgtac_close" ><i class="icon-remove-circle" ></i> {$i18n->l('Close','wbf.label')}</p>
       </li>
     </ul>
   </li>
   <li class="wgt-root" >
-    <button class="wgt-button wgtac_new" >{$iconAdd} {$this->i18n->l('New','wbf.label')}</button>
+    <button class="wgt-button wgtac_new" ><i class="icon-plus-sign" ></i> {$this->i18n->l('New','wbf.label')}</button>
     <ul style="margin-top:-10px;" ></ul>
   </li>
 </ul>

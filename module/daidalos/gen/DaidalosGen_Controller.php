@@ -92,14 +92,12 @@ class DaidalosGen_Controller extends Controller
 
     $resContext = $response->createContext();
 
-    $resContext->assertNotNull
-    (
+    $resContext->assertNotNull(
       'Missing the target="/path/tp/the/repo" parameter. ',
       $target
     );
 
-    $resContext->assertNotNull
-    (
+    $resContext->assertNotNull(
       'Missing the bdl_path="/path/to/the/model/" parameter. ',
       $bdlPath
     );

@@ -1,9 +1,9 @@
 <?php
 
 $this->crumbs = array(
-  array('Root', $this->interface.'?c=Webfrap.Navigation.explorer','control/desktop.png'),
-  array('System', $this->interface.'?c=Webfrap.Base.menu&amp;menu=maintenance','control/folder.png'),
-  array('Backup', $this->interface.'?c=Webfrap.Base.menu&amp;menu=access','control/folder.png'),
+  array('Root', $this->interface.'?c=Webfrap.Navigation.explorer','icon-desktop'),
+  array('System', $this->interface.'?c=Webfrap.Base.menu&amp;menu=maintenance','icon-folder-close-alt'),
+  array('Backup', $this->interface.'?c=Webfrap.Base.menu&amp;menu=access','icon-folder-close-alt'),
 );
 
 $this->firstEntry = array(
@@ -12,7 +12,7 @@ $this->firstEntry = array(
   '..',
   I18n::s('System', 'wbf.label'  ),
   'maintab.php?c=Webfrap.Base.menu&amp;menu=maintenance',
-  'places/folder_up.png',
+  'icon-level-up',
 );
 
 if ($acl->hasRole('developer')) {

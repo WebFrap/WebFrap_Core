@@ -531,7 +531,7 @@ class AclMgmt_Controller extends MvcController_Domain
 
     $response  = $this->getResponse();
 
-    $params = new TFlag();
+    $params = new ContextPlain();
 
     // the publish type, like selectbox, tree, table..
     if ($publish  = $request->param('publish', Validator::CNAME))
@@ -664,7 +664,7 @@ class AclMgmt_Controller extends MvcController_Domain
 
     $response  = $this->getResponse();
 
-    $params = new TFlagListing($request);
+    $params = new ContextPlain($request);
 
     // per default
     $params->categories = array();

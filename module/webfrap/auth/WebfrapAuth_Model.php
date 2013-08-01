@@ -185,7 +185,7 @@ class WebfrapAuth_Model extends Model
       $this->profiles[$authRole->profile] = SParserString::subToName($this->profileName);
     }
 
-    if (WebFrap::classLoadable('CorePerson_Entity')) {
+    if (Webfrap::classExists('CorePerson_Entity')) {
       if ($person = $orm->get('CorePerson', $authRole->id_person))
         $this->userData = array_merge($this->userData, $person->getData());
     }

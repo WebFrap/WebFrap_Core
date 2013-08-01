@@ -58,10 +58,9 @@ class MyProfile_Maintab_Menu extends WgtDropmenu
     $acl   = $this->getAcl();
     $view   = $this->getView();
 
-    $iconMenu    = $view->icon('control/menu.png',  'Menu');
+    $iconMenu    = '<i class="icon-reorder" ></i>';
     $iconSend    = $view->icon('message/send.png', 'Send');
-    $iconBookmark  = $view->icon('control/bookmark.png', 'Bookmark');
-    $iconClose     = $view->icon('control/close.png', 'Close');
+    $iconClose     = '<i class="icon-remove-circle " ></i>';
 
     $entries = new TArray();
     $entries->support  = $this->entriesSupport($params);
@@ -85,12 +84,12 @@ BUTTON;
     $this->content = <<<HTML
 <ul class="wcm wcm_ui_dropmenu wgt-dropmenu" id="{$this->id}" >
   <li class="wgt-root" >
-    <button class="wcm wcm_ui_button" >{$iconMenu} {$view->i18n->l('Menu','wbf.label')}</button>
+    <button class="wcm wcm_ui_button" ><i class="icon-reorder" ></i> {$view->i18n->l('Menu','wbf.label')}</button>
     <ul style="margin-top:-10px;" >
 {$entries->custom}
 {$entries->support}
       <li>
-        <p class="wgtac_close" >{$iconClose} {$view->i18n->l('Close','wbf.label')}</p>
+        <p class="wgtac_close" ><i class="icon-remove-circle" ></i> {$view->i18n->l('Close','wbf.label')}</p>
       </li>
     </ul>
   </li>
@@ -117,7 +116,7 @@ HTML;
     $html = <<<HTML
 
       <li>
-        <p>{$iconSupport} {$this->view->i18n->l('Support','wbf.label')}</p>
+        <p><i class="icon-question-sign" ></i> {$this->view->i18n->l('Support','wbf.label')}</p>
         <ul>
           <li>
             <a class="wcm wcm_req_ajax" href="modal.php?c=Webfrap.Docu.open&amp;key=wbfsys_message-create" >

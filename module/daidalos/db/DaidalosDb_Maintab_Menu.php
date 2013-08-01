@@ -41,10 +41,8 @@ class DaidalosDb_Maintab_Menu extends WgtDropmenu
 
     $view = $this->view;
 
-    $iconMenu          = $view->icon('control/menu.png'     ,'Menu'   );
-    $iconClose         = $view->icon('control/close.png'    ,'Close'   );
-    $iconSearch        = $view->icon('control/search.png'   ,'Search'  );
-    $iconBookmark      = $view->icon('control/bookmark.png' ,'Bookmark');
+    $iconMenu          = '<i class="icon-reorder" ></i>';
+    $iconClose         = '<i class="icon-remove-circle " ></i>';
     $iconQuery         = $view->icon('daidalos/query.png' ,'Query');
     $iconSupport = $view->icon('control/support.png'  ,'Support');
     $iconBug     = $view->icon('control/bug.png'      ,'Bug');
@@ -59,18 +57,18 @@ class DaidalosDb_Maintab_Menu extends WgtDropmenu
   <button
     class="wcm wcm_control_dropmenu wgt-button"
     id="{$this->id}-control"
-    wgt_drop_box="{$this->id}_dropmenu"  >{$iconMenu} {$view->i18n->l('Menu','wbf.label')}</button>
+    wgt_drop_box="{$this->id}_dropmenu"  ><i class="icon-reorder" ></i> {$view->i18n->l('Menu','wbf.label')}</button>
 </div>
 
 <div class="wgt-dropdownbox" id="{$this->id}_dropmenu" >
   <ul>
     <li>
-      <a class="wgtac_bookmark" >{$iconBookmark} {$view->i18n->l('Bookmark', 'wbf.label')}</a>
+      <a class="wgtac_bookmark" ><i class="icon-bookmark" ></i> {$view->i18n->l('Bookmark', 'wbf.label')}</a>
     </li>
   </ul>
   <ul>
     <li>
-      <a class="deeplink" >{$iconSupport} {$view->i18n->l('Support', 'wbf.label')}</a>
+      <a class="deeplink" ><i class="icon-question-sign" ></i> {$view->i18n->l('Support', 'wbf.label')}</a>
       <span>
       <ul>
         <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Issue.create&amp;context=menu" >{$iconBug} {$view->i18n->l('Bug', 'wbf.label')}</a></li>
@@ -79,7 +77,7 @@ class DaidalosDb_Maintab_Menu extends WgtDropmenu
       </span>
     </li>
     <li>
-      <a class="wgtac_close" >{$iconClose} {$view->i18n->l('Close','wbf.label')}</a>
+      <a class="wgtac_close" ><i class="icon-remove-circle" ></i> {$view->i18n->l('Close','wbf.label')}</a>
     </li>
   </ul>
 </div>

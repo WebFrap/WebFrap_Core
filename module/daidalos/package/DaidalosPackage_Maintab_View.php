@@ -78,18 +78,18 @@ class DaidalosPackage_Maintab_View extends WgtMaintab
 
     $i18n         = $this->getI18n();
 
-    $iconMenu     = $this->icon('control/menu.png'      ,'Menu');
+    $iconMenu     = '<i class="icon-reorder" ></i>';
     $iconSupport  = $this->icon('control/support.png'      ,'Support');
     $iconHelp     = $this->icon('control/help.png'      ,'Help');
-    $iconClose    = $this->icon('control/close.png'      ,'Close');
-    $iconEdit     = $this->icon('control/edit.png'      ,'Edit');
+    $iconClose    = '<i class="icon-remove-circle " ></i>';
+    $iconEdit = '<i class="icon-edit" ></i>';
 
     $iconSupport   = $this->icon('control/support.png'  ,'Support');
     $iconBug       = $this->icon('control/bug.png'      ,'Bug');
     $iconFaq       = $this->icon('control/faq.png'      ,'Faq');
     $iconHelp      = $this->icon('control/help.png'     ,'Help');
 
-    $iconRefresh    = $this->icon('control/refresh.png'      ,'Refresh');
+    $iconRefresh    = '<i class="icon-refresh" ></i>';
 
     $menu          = $this->newMenu($this->id.'_dropmenu');
     $menu->content = <<<HTML
@@ -98,7 +98,7 @@ class DaidalosPackage_Maintab_View extends WgtMaintab
   <button
     class="wcm wcm_control_dropmenu wgt-button"
     id="{$this->id}-control"
-    wgt_drop_box="{$this->id}_dropmenu"  >{$iconMenu} {$this->i18n->l('Menu','wbf.label')}</button>
+    wgt_drop_box="{$this->id}_dropmenu"  ><i class="icon-reorder" ></i> {$this->i18n->l('Menu','wbf.label')}</button>
   <var id="{$this->id}-control-cfg-dropmenu"  >{"triggerEvent":"mouseover","closeOnLeave":"true","align":"right"}</var>
 </div>
 
@@ -110,7 +110,7 @@ class DaidalosPackage_Maintab_View extends WgtMaintab
   </ul>
   <ul>
     <li>
-      <a class="deeplink" >{$iconSupport} {$this->i18n->l('Support', 'wbf.label')}</a>
+      <a class="deeplink" ><i class="icon-question-sign" ></i> {$this->i18n->l('Support', 'wbf.label')}</a>
       <span>
       <ul>
         <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Issue.create&amp;context=menu" >{$iconBug} {$this->i18n->l('Bug', 'wbf.label')}</a></li>
@@ -119,7 +119,7 @@ class DaidalosPackage_Maintab_View extends WgtMaintab
       </span>
     </li>
     <li>
-      <a class="wgtac_close" >{$iconClose} {$this->i18n->l('Close','wbf.label')}</a>
+      <a class="wgtac_close" ><i class="icon-remove-circle" ></i> {$this->i18n->l('Close','wbf.label')}</a>
     </li>
   </ul>
 </div>

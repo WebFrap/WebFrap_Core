@@ -7,5 +7,5 @@ $this->firstEntry = array
   '..',
   'webfrap root',
   'maintab.php?c=Webfrap.Navigation.explorer',
-  WgtIcon::big('places/folder.png'),
+  'icon-folder-close-alt',
 );

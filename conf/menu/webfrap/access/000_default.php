@@ -1,9 +1,9 @@
 <?php
 
 $this->crumbs = array(
-  array('Root', $this->interface.'?c=Webfrap.Navigation.explorer','control/desktop.png'),
-  array('System', $this->interface.'?c=Webfrap.Base.menu&amp;menu=maintenance','control/folder.png'),
-  array('Access', $this->interface.'?c=Webfrap.Base.menu&amp;menu=access','control/folder.png'),
+  array('Root', $this->interface.'?c=Webfrap.Navigation.explorer','icon-desktop'),
+  array('System', $this->interface.'?c=Webfrap.Base.menu&amp;menu=maintenance','icon-folder-close-alt'),
+  array('Access', $this->interface.'?c=Webfrap.Base.menu&amp;menu=access','icon-folder-close-alt'),
 );
 
 $this->firstEntry = array
@@ -13,7 +13,7 @@ $this->firstEntry = array
   '..',
   I18n::s('Root', 'wbf.label'  ),
   'maintab.php?c=Webfrap.Base.menu&amp;menu=maintenance',
-  'places/folder_up.png',
+  'icon-level-up',
 );
 
 $this->files[] = array
@@ -31,7 +31,7 @@ $this->files[] = array
     'wbf.label'
   ),
   'maintab.php?c=Wbfsys.RoleUser.listing',
-  'module/users.png',
+  'icon-user',
 );
 
 $this->files[] = array
@@ -49,7 +49,7 @@ $this->files[] = array
     'wbf.label'
   ),
   'maintab.php?c=Wbfsys.RoleGroup.listing',
-  'module/groups.png',
+  'icon-group',
 );
 
 $this->files[] = array
@@ -67,7 +67,7 @@ $this->files[] = array
     'wbf.label'
   ),
   'maintab.php?c=Wbfsys.Profile.listing',
-  'module/profiles.png',
+  'icon-mail',
 );
 
 $this->files[] = array
@@ -77,6 +77,6 @@ $this->files[] = array
   'ACLs',
   'ACLs',
   'maintab.php?c=Daidalos.Acl.form',
-  'module/acl.png',
+  'icon-shield',
 );
 

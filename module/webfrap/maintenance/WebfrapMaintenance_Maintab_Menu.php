@@ -41,11 +41,8 @@ class WebfrapMaintenance_Maintab_Menu extends WgtDropmenu
   public function buildMenu($params)
   {
 
-    $iconMenu         = $this->view->icon('control/menu.png'   , 'Menu'    );
-    $iconMisc         = $this->view->icon('control/misc.png'   , 'Misc'    );
-    $iconClose        = $this->view->icon('control/close.png'  , 'Close'   );
-    $iconEntity       = $this->view->icon('control/entity.png' , 'Entity'  );
-    $iconSearch       = $this->view->icon('control/search.png' , 'Search'  );
+    $iconMenu         = '<i class="icon-reorder" ></i>';
+    $iconClose        = '<i class="icon-remove-circle " ></i>';
 
     $entries = new TArray();
 
@@ -56,14 +53,14 @@ class WebfrapMaintenance_Maintab_Menu extends WgtDropmenu
       class="wcm wcm_control_dropmenu wgt-button"
       tabindex="-1"
       id="{$this->id}-control"
-      wgt_drop_box="{$this->id}"  >{$iconMenu} {$this->view->i18n->l('Menu','wbf.label')}</button>
+      wgt_drop_box="{$this->id}"  ><i class="icon-reorder" ></i> {$this->view->i18n->l('Menu','wbf.label')}</button>
       <var id="{$this->id}-control-cfg-dropmenu"  >{"triggerEvent":"click"}</var>
   </div>
 
   <div class="wgt-dropdownbox" id="{$this->id}" >
     <ul>
       <li>
-        <a class="wgtac_close" >{$iconClose} {$this->view->i18n->l('Close', 'wbf.label')}</a>
+        <a class="wgtac_close" ><i class="icon-remove-circle" ></i> {$this->view->i18n->l('Close', 'wbf.label')}</a>
       </li>
     </ul>
   </div>
@@ -91,7 +88,7 @@ HTML;
     $html = <<<HTML
 
       <li>
-        <p>{$iconSupport} Support</p>
+        <p><i class="icon-question-sign" ></i> Support</p>
         <ul>
           <li><a class="wcm wcm_req_ajax" href="maintab.php?c=Webfrap.Base.help&refer=webfrap-maintenance-menu" >{$iconHelp} Help</a></li>
           <li><a class="wcm wcm_req_ajax" href="maintab.php?c=Wbfsys.Issue.create&refer=webfrap-maintenance-menu" >{$iconBug} Bug</a></li>

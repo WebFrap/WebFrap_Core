@@ -11,7 +11,7 @@
     accept-charset="utf-8"
     id="<?php echo $VAR->formIdAppend?>"
     action="<?php echo $VAR->formActionAppend?>" ></form>
-    
+
   <input
     type="hidden"
     id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-qfdu-id_area"
@@ -19,10 +19,10 @@
     value="<?php echo $VAR->areaId?>"
     class="meta asgd-<?php echo $VAR->formIdAppend?>"
   />
-  
-  <div 
-    class="container" 
-    wgt_key="groups" 
+
+  <div
+    class="container"
+    wgt_key="groups"
     id="tab-box-<?php echo $VAR->domain->domainName ?>-acl-content-groups" >
 
     <!-- Assignment Panel -->
@@ -30,29 +30,29 @@
       <button
         class="wgt-button"
         id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-acl-qfdu-append"
-        onclick="$R.form('wgt-form-<?php 
-          echo $VAR->domain->aclDomainKey ?>-acl-qfdu-append');$UI.form.reset('wgt-form-<?php 
+        onclick="$R.form('wgt-form-<?php
+          echo $VAR->domain->aclDomainKey ?>-acl-qfdu-append');$UI.form.reset('wgt-form-<?php
           echo $VAR->domain->aclDomainKey ?>-acl-qfdu-append');return false;" >
-        <img src="<?php echo View::$iconsWeb ?>xsmall/control/connect.png" alt="connect" /> Append
+        <i class="icon-link " ></i> Append
       </button>
 
       <button
         class="wgt-button"
         id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-acl-qfdu-reload"
-        onclick="$R.get('ajax.php?c=Acl.Mgmt_Qfdu.tabUsers&area_id=<?php 
-          echo $VAR->areaId ?>&dkey=<?php 
-          echo $VAR->domain->domainName ?>&tabid=wgt_tab-<?php 
-          echo $VAR->domain->aclDomainKey ?>_acl_listing_tab_<?php 
+        onclick="$R.get('ajax.php?c=Acl.Mgmt_Qfdu.tabUsers&area_id=<?php
+          echo $VAR->areaId ?>&dkey=<?php
+          echo $VAR->domain->domainName ?>&tabid=wgt_tab-<?php
+          echo $VAR->domain->aclDomainKey ?>_acl_listing_tab_<?php
           echo $VAR->domain->aclDomainKey ?>-acl_qfd_users');return false;" >
-        <img src="<?php echo View::$iconsWeb ?>xsmall/control/refresh.png" alt="Reload" /> Reload
+        <i class="icon-refresh" ></i> Reload
       </button>
     </div>
 
     <!-- formular -->
     <div class="left bw61" >
-      
+
       <div class="left bw3" >
-    
+
 
         <!-- group input -->
         <div class="left" >
@@ -93,14 +93,14 @@
               id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-acl-advanced_search"
               class="wgt-button append"
               onclick="$R.get('modal.php?c=Wbfsys.RoleUser.selection&input=<?php echo $VAR->domain->aclDomainKey ?>-acl-qfdu-id_user');return false;"    >
-              <img src="<?php echo View::$iconsWeb ?>xsmall/control/search.png" alt="search" />
+              <i class="icon-search" ></i>
             </button>
           </div>
 
         </div>
-        
+
       </div>
-      
+
       <div class="inline bw3" >
 
         <!-- <?php echo $VAR->domain->label ?> Entity -->
@@ -133,10 +133,10 @@
               class="wgt-button append"
               onclick="$R.get('modal.php?c=<?php echo $VAR->domain->domainUrl ?>.selection&input=<?php echo $VAR->domain->aclDomainKey ?>-acl-qfdu-vid');return false;"
             >
-              <img src="<?php echo View::$iconsWeb ?>xsmall/control/search.png" alt="search" />
+              <i class="icon-search" ></i>
             </button>
          </div>
-         
+
        </div>
 
        <!-- Assign Full -->
@@ -158,33 +158,33 @@
 
 
      </div>
-    
+
     <div class="wgt-clear medium" >&nbsp;</div>
 
     </div>
-    
+
     <div class="left full" style="width:100%;" >
       <?php echo $ELEMENT->listingQualifiedUsers ?>
     </div>
-    
+
   </div>
-    
-  <div 
-    class="container" 
+
+  <div
+    class="container"
     style="display:none;"
-    wgt_key="users" 
+    wgt_key="users"
     id="tab-box-<?php echo $VAR->domain->domainName ?>-acl-content-users" >
-    
+
   </div>
-  
-  <div 
-    class="container" 
-    style="display:none;" 
-    wgt_key="dsets" 
+
+  <div
+    class="container"
+    style="display:none;"
+    wgt_key="dsets"
     id="tab-box-<?php echo $VAR->domain->domainName ?>-acl-content-dsets" >
-    
+
   </div>
-    
+
   <div class="wgt-clear xxsmall" ></div>
 </div>
 

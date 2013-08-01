@@ -108,11 +108,9 @@ class MaintenanceDb_Index_Search_Maintab_View extends WgtMaintabCustom
     $acl     = $this->getAcl();
     $view   = $this->getView();
 
-    $iconMenu      = $view->icon( 'control/menu.png',  'Menu');
+    $iconMenu      = '<i class="icon-reorder" ></i>';
     $iconRebuild   = $view->icon( 'maintenance/rebuild_index.png', 'Rebuild Index');
-    $iconBookmark  = $view->icon( 'control/bookmark.png', 'Bookmark');
-    $iconClose     = $view->icon( 'control/close.png', 'Close');
-    $iconSearch    = $view->icon('control/search.png','Search');
+    $iconClose     = '<i class="icon-remove-circle " ></i>';
 
     $entries = new TArray();
     $entries->support  = $this->entriesSupport($params);
@@ -121,15 +119,15 @@ class MaintenanceDb_Index_Search_Maintab_View extends WgtMaintabCustom
     $menu->content = <<<HTML
 <ul class="wcm wcm_ui_dropmenu wgt-dropmenu" id="{$this->id}" >
   <li class="wgt-root" >
-    <button class="wcm wcm_ui_button" >{$iconMenu} {$view->i18n->l('Menu','wbf.label')}</button>
+    <button class="wcm wcm_ui_button" ><i class="icon-reorder" ></i> {$view->i18n->l('Menu','wbf.label')}</button>
     <ul style="margin-top:-10px;" >
       <li>
-        <p class="wgtac_bookmark" >{$iconBookmark} {$view->i18n->l('Bookmark','wbf.label')}</p>
+        <p class="wgtac_bookmark" ><i class="icon-bookmark" ></i> {$view->i18n->l('Bookmark','wbf.label')}</p>
       </li>
 {$entries->custom}
 {$entries->support}
       <li>
-        <p class="wgtac_close" >{$iconClose} {$view->i18n->l('Close','wbf.label')}</p>
+        <p class="wgtac_close" ><i class="icon-remove-circle" ></i> {$view->i18n->l('Close','wbf.label')}</p>
       </li>
     </ul>
   </li>
@@ -145,7 +143,7 @@ class MaintenanceDb_Index_Search_Maintab_View extends WgtMaintabCustom
       class="wcm wcm_req_search wgt-no-save fparam-wgt-form-maintenance-db_index-search xxlarge"
       name="key"
       id="wgt-input-maintenance-db_index-search" />
-    <button class="wgt-button append" id="wgt-button-webfrap_navigation_search">Search {$iconSearch}</button>
+    <button class="wgt-button append" id="wgt-button-webfrap_navigation_search">Search <i class="icon-search" ></i></button>
     <ul style="margin-top:-10px;" >
     </ul>
   </li>
@@ -171,7 +169,7 @@ HTML;
     $html = <<<HTML
 
       <li>
-        <p>{$iconSupport} {$this->i18n->l('Support','wbf.label')}</p>
+        <p><i class="icon-question-sign" ></i> {$this->i18n->l('Support','wbf.label')}</p>
         <ul>
           <li><a class="wcm wcm_req_ajax" href="modal.php?c=Webfrap.Docu.open&amp;key=wbfsys_message-create" >{$iconHelp} {$this->i18n->l('Help','wbf.label')}</a></li>
           <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Issue.create&amp;context=create" >{$iconBug} {$this->i18n->l('Bug','wbf.label')}</a></li>

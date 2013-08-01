@@ -39,10 +39,8 @@ class WebfrapImport_Maintab_Menu extends WgtDropmenu
   public function buildMenu($params)
   {
 
-    $iconMenu      = $this->view->icon('control/menu.png'      ,'Menu');
+    $iconMenu      = '<i class="icon-reorder" ></i>';
     $iconClose     = $this->view->icon('control/close_tab.png'     ,'Close');
-    $iconSearch    = $this->view->icon('control/search.png'    ,'Search');
-    $iconBookmark  = $this->view->icon('control/bookmark.png'  ,'Bookmark');
 
     $entries = new TArray();
     //$entries->support  = $this->entriesSupport($params);
@@ -53,13 +51,13 @@ class WebfrapImport_Maintab_Menu extends WgtDropmenu
     <button
       class="wcm wcm_widget_dropmenu wgt-button"
       id="{$this->id}-control"
-      wgt_drop_box="{$this->id}"  >{$iconMenu} {$this->view->i18n->l('Menu','wbf.label')}</button>
+      wgt_drop_box="{$this->id}"  ><i class="icon-reorder" ></i> {$this->view->i18n->l('Menu','wbf.label')}</button>
   </div>
 
   <div class="wgt-dropdownbox" id="{$this->id}" >
     <ul>
       <li>
-        <a class="wgtac_bookmark" >{$iconBookmark} {$this->view->i18n->l('Bookmark','wbf.label')}</a>
+        <a class="wgtac_bookmark" ><i class="icon-bookmark" ></i> {$this->view->i18n->l('Bookmark','wbf.label')}</a>
       </li>
     </ul>
     <ul>
@@ -68,7 +66,7 @@ class WebfrapImport_Maintab_Menu extends WgtDropmenu
     </ul>
     <ul>
       <li>
-        <a class="wgtac_close" >{$iconClose} {$this->view->i18n->l('Close','wbf.label')}</a>
+        <a class="wgtac_close" ><i class="icon-remove-circle" ></i> {$this->view->i18n->l('Close','wbf.label')}</a>
       </li>
     </ul>
   </div>
@@ -96,7 +94,7 @@ HTML;
     $html = <<<HTML
 
       <li>
-        <a class="deeplink" >{$iconSupport} Support</a>
+        <a class="deeplink" ><i class="icon-question-sign" ></i> Support</a>
         <span>
           <ul>
             <li><a class="wcm wcm_req_ajax" href="modal.php?c=_Maintenance.help&amp;context=menu" >{$iconHelp} Help</a></li>

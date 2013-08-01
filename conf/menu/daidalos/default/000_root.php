@@ -1,8 +1,8 @@
 <?php
 
 $this->crumbs = array(
-  array('Root',$this->interface.'?c=Webfrap.Navigation.explorer','control/desktop.png'),
-  array('Daidalos',$this->interface.'?c=Daidalos.Base.menu','control/folder.png'),
+  array('Root',$this->interface.'?c=Webfrap.Navigation.explorer','icon-desktop'),
+  array('Daidalos',$this->interface.'?c=Daidalos.Base.menu','icon-folder-close-alt'),
 );
 
 
@@ -14,7 +14,7 @@ if ($acl->hasRole('developer')) {
     '..',
     'Webfrap Root',
     'maintab.php?c=Webfrap.Navigation.explorer',
-    'places/folder_up.png',
+    'icon-level-up',
   );
 
   $this->files[] = array(
@@ -23,7 +23,7 @@ if ($acl->hasRole('developer')) {
     'Database',
     'Database',
     'maintab.php?c=Daidalos.Db.listing',
-    'utilities/db.png',
+    'icon-hdd',
   );
 
   $this->files[] = array(
@@ -32,7 +32,7 @@ if ($acl->hasRole('developer')) {
     'BDL Modeller',
     'BDL Modeller',
     'maintab.php?c=Daidalos.BdlModeller.listing',
-    'utilities/modeller.png',
+    'icon-cloud',
   );
 
   $this->files[] = array(
@@ -41,7 +41,7 @@ if ($acl->hasRole('developer')) {
     'Coding Examples',
     'Coding Examples',
     'maintab.php?c=Example.Base.menu',
-    'utilities/code.png',
+    'icon-code',
   );
 
 }

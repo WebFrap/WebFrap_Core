@@ -339,10 +339,10 @@ class DaidalosProjects_Controller extends Controller
 
       $builderClass = 'LibGenfBuild'.$architecture.$version;
 
-      if (!WebFrap::classLoadable($builderClass)) {
+      if (!Webfrap::classExists($builderClass)) {
         $builderClass = 'LibGenfBuild'.$architecture;
 
-        if (!WebFrap::classLoadable($builderClass)) {
+        if (!Webfrap::classExists($builderClass)) {
           $builderClass = 'LibGenfBuild';
         }
       }
@@ -350,10 +350,10 @@ class DaidalosProjects_Controller extends Controller
     }//if
     else {
 
-      if (!WebFrap::classLoadable($builderClass)) {
+      if (!Webfrap::classExists($builderClass)) {
         $builderClass = 'LibGenfBuild'.$architecture;
 
-        if (!WebFrap::classLoadable($builderClass)) {
+        if (!Webfrap::classExists($builderClass)) {
           $builderClass = 'LibGenfBuild';
         }
       }

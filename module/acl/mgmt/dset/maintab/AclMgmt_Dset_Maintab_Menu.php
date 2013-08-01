@@ -51,11 +51,9 @@ class AclMgmt_Dset_Maintab_Menu extends WgtDropmenu
   public function buildMenu($objid, $params)
   {
 
-    $iconMenu        = $this->view->icon('control/menu.png', 'Menu');
-    $iconEdit        = $this->view->icon('control/save.png', 'Save');
-    $iconBookmark    = $this->view->icon('control/bookmark.png', 'Bookmark');
+    $iconEdit        = '<i class="icon-save" ></i>';
     $iconMask        = $this->view->icon('control/mask.png', 'Mask');
-    $iconListMask    = $this->view->icon('control/mask_tree.png', 'List Mask');
+    $iconListMask    = '<i class="icon-list-alt" ></i>';
 
     $access           = $params->access;
     $user            = $this->getUser();
@@ -110,7 +108,7 @@ BUTTON;
 {$codeButton}
 
   <div class="wgt-panel-control"  >
-    <button class="wcm wcm_ui_button wgtac_mask_list_rights" >{$iconListMask} {$this->view->i18n->l('List Rights','wbf.label')}</button>
+    <button class="wcm wcm_ui_button wgtac_mask_list_rights" ><i class="icon-list-alt" ></i> {$this->view->i18n->l('List Rights','wbf.label')}</button>
   </div>
 
   <div class="wgt-panel-control" >
@@ -129,16 +127,12 @@ HTML;
   protected function entriesSupport($objid, $params)
   {
 
-    $iconSupport  = $this->view->icon( 'control/support.png'  ,'Support');
-    $iconBug      = $this->view->icon( 'control/bug.png'      ,'Bug'  );
     $iconFaq      = $this->view->icon( 'control/faq.png'      ,'Faq'  );
-    $iconHelp     = $this->view->icon( 'control/help.png'     ,'Help');
-
 
     $html = <<<HTML
 
   <li>
-    <a class="deeplink" >{$iconSupport} {$this->view->i18n->l('Support','wbf.label')}</a>
+    <a class="deeplink" ><i class="icon-question-sign" ></i> {$this->view->i18n->l('Support','wbf.label')}</a>
     <span>
       <ul>
         <li><a

@@ -76,10 +76,8 @@ class WebfrapStats_Maintab_View extends WgtMaintab
   {
 
     $iconMenu          = '<i class="icon-reorder" ></i>';
-    $iconClose         = $this->icon('control/close.png'    ,'Close'   );
-    $iconSearch        = $this->icon('control/search.png'   ,'Search'  );
-    $iconBookmark      = $this->icon('control/bookmark.png' ,'Bookmark');
-    $iconSave          = $this->icon('control/save.png' ,'Save');
+    $iconClose         = '<i class="icon-remove-circle " ></i>';
+    $iconSave          = '<i class="icon-save" ></i>';
     $iconShow          = $this->icon('control/show.png' ,'Show');
 
     $iconSupport   = $this->icon('control/support.png'  ,'Support');
@@ -99,19 +97,19 @@ class WebfrapStats_Maintab_View extends WgtMaintab
   <button
     class="wcm wcm_control_dropmenu wgt-button"
     id="{$this->id}-control"
-    wgt_drop_box="{$this->id}_dropmenu"  >{$iconMenu} {$this->i18n->l('Menu','wbf.label')}</button>
+    wgt_drop_box="{$this->id}_dropmenu"  ><i class="icon-reorder" ></i> {$this->i18n->l('Menu','wbf.label')}</button>
   <var id="{$this->id}-control-cfg-dropmenu"  >{"triggerEvent":"mouseover","closeOnLeave":"true","align":"right"}</var>
 </div>
 
 <div class="wgt-dropdownbox" id="{$this->id}_dropmenu" >
   <ul>
     <li>
-      <a class="wgtac_bookmark" >{$iconBookmark} {$this->i18n->l('Bookmark', 'wbf.label')}</a>
+      <a class="wgtac_bookmark" ><i class="icon-bookmark" ></i> {$this->i18n->l('Bookmark', 'wbf.label')}</a>
     </li>
   </ul>
   <ul>
     <li>
-      <a class="deeplink" >{$iconSupport} {$this->i18n->l('Support', 'wbf.label')}</a>
+      <a class="deeplink" ><i class="icon-question-sign" ></i> {$this->i18n->l('Support', 'wbf.label')}</a>
       <span>
       <ul>
         <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Issue.create&amp;context=menu" >{$iconBug} {$this->i18n->l('Bug', 'wbf.label')}</a></li>
@@ -120,13 +118,13 @@ class WebfrapStats_Maintab_View extends WgtMaintab
       </span>
     </li>
     <li>
-      <a class="wgtac_close" >{$iconClose} {$this->i18n->l('Close','wbf.label')}</a>
+      <a class="wgtac_close" ><i class="icon-remove-circle" ></i> {$this->i18n->l('Close','wbf.label')}</a>
     </li>
   </ul>
 </div>
 
 <div class="wgt-panel-control" >
-  <button class="wgt-button wgtac_save" >{$iconSave} {$this->i18n->l('Save','wbf.label')}</button>
+  <button class="wgt-button wgtac_save" ><i class="icon-save" ></i> {$this->i18n->l('Save','wbf.label')}</button>
 </div>
 
 HTML;

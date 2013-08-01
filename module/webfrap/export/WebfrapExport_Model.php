@@ -42,7 +42,7 @@ class WebfrapExport_Model extends MvcModel_Domain
 
     // if the requested access container not exists, we can assume this request
     // was invalid
-    if (!Webfrap::classLoadable($className))
+    if (!Webfrap::classExists($className))
       throw new ServiceNotExists_Exception($this->domainNode->domainKey.'_'.$variant->mask);
 
     $access = new $className(null, null, $this);

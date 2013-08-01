@@ -39,13 +39,10 @@ class DaidalosDbBackup_Maintab_Menu extends WgtDropmenu
   public function buildMenu($key, $params)
   {
 
-    $iconMenu          = $this->view->icon('control/menu.png'     ,'Menu'   );
-    $iconClose         = $this->view->icon('control/close.png'    ,'Close'   );
-    $iconSearch        = $this->view->icon('control/search.png'   ,'Search'  );
-    $iconBookmark      = $this->view->icon('control/bookmark.png' ,'Bookmark');
+    $iconMenu          = '<i class="icon-reorder" ></i>';
+    $iconClose         = '<i class="icon-remove-circle " ></i>';
     $iconBackup        = $this->view->icon('daidalos/backup.png' ,'Backup');
     $iconSupport       = $this->view->icon('control/support.png'  ,'Support');
-    $iconBug           = $this->view->icon('control/bug.png'      ,'Bug');
     $iconFaq           = $this->view->icon('control/faq.png'      ,'Faq');
     $iconHelp          = $this->view->icon('control/help.png'     ,'Help');
 
@@ -58,28 +55,27 @@ class DaidalosDbBackup_Maintab_Menu extends WgtDropmenu
   <button
     class="wcm wcm_control_dropmenu wgt-button"
     id="{$this->id}-control"
-    wgt_drop_box="{$this->id}_dropmenu"  >{$iconMenu} {$this->i18n->l('Menu','wbf.label')}</button>
+    wgt_drop_box="{$this->id}_dropmenu"  ><i class="icon-reorder" ></i> {$this->i18n->l('Menu','wbf.label')}</button>
   <var id="{$this->id}-control-cfg-dropmenu"  >{"triggerEvent":"mouseover","closeOnLeave":"true","align":"right"}</var>
 </div>
 
 <div class="wgt-dropdownbox" id="{$this->id}_dropmenu" >
   <ul>
     <li>
-      <a class="wgtac_bookmark" >{$iconBookmark} {$this->i18n->l('Bookmark', 'wbf.label')}</a>
+      <a class="wgtac_bookmark" ><i class="icon-bookmark" ></i> {$this->i18n->l('Bookmark', 'wbf.label')}</a>
     </li>
   </ul>
   <ul>
     <li>
-      <a class="deeplink" >{$iconSupport} {$this->i18n->l('Support', 'wbf.label')}</a>
+      <a class="deeplink" ><i class="icon-question-sign" ></i> {$this->i18n->l('Support', 'wbf.label')}</a>
       <span>
       <ul>
-        <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Issue.create&amp;context=menu" >{$iconBug} {$this->i18n->l('Bug', 'wbf.label')}</a></li>
         <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Faq.create&amp;context=menu" >{$iconFaq} {$this->i18n->l('Faq', 'wbf.label')}</a></li>
       </ul>
       </span>
     </li>
     <li>
-      <a class="wgtac_close" >{$iconClose} {$this->i18n->l('Close','wbf.label')}</a>
+      <a class="wgtac_close" ><i class="icon-remove-circle" ></i> {$this->i18n->l('Close','wbf.label')}</a>
     </li>
   </ul>
 </div>

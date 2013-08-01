@@ -4,13 +4,13 @@
     accept-charset="utf-8"
     id="<?php echo $VAR->searchFormId?>"
     action="<?php echo $VAR->searchFormAction?>" ></form>
-    
+
   <form
     method="post"
     accept-charset="utf-8"
     id="<?php echo $VAR->formIdAppend?>"
     action="<?php echo $VAR->formActionAppend?>" ></form>
-    
+
   <input
     type="text"
     id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tuser-id_area"
@@ -21,33 +21,33 @@
 
   <!-- Assignment Panel -->
   <div class="wgt-panel"  >
-  
+
     <button
       class="wgt-button"
       id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-acl-tuser-append"
-      onclick="$R.form('wgt-form-<?php 
-        echo $VAR->domain->aclDomainKey ?>-acl-tuser-append');$UI.form.reset('wgt-form-<?php 
+      onclick="$R.form('wgt-form-<?php
+        echo $VAR->domain->aclDomainKey ?>-acl-tuser-append');$UI.form.reset('wgt-form-<?php
         echo $VAR->domain->aclDomainKey ?>-acl-tuser-append');return false;" >
-      <img src="<?php echo View::$iconsWeb ?>xsmall/control/connect.png" alt="connect" /> Append
+      <i class="icon-link" ></i> Append
     </button>
 
     <button
       class="wgt-button"
       id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-acl-tuser-reload"
-      onclick="$R.get('ajax.php?c=Acl.Mgmt_Qfdu.tabUsers&area_id=<?php 
-        echo $VAR->areaId ?>&dkey=<?php 
-        echo $VAR->domain->domainName ?>&tabid=wgt_tab-<?php 
-        echo $VAR->domain->aclDomainKey ?>_acl_listing_tab_<?php 
+      onclick="$R.get('ajax.php?c=Acl.Mgmt_Qfdu.tabUsers&area_id=<?php
+        echo $VAR->areaId ?>&dkey=<?php
+        echo $VAR->domain->domainName ?>&tabid=wgt_tab-<?php
+        echo $VAR->domain->aclDomainKey ?>_acl_listing_tab_<?php
         echo $VAR->domain->aclDomainKey ?>-acl_qfd_users');return false;" >
-      <img src="<?php echo View::$iconsWeb ?>xsmall/control/refresh.png" alt="Reload" /> Reload
+      <i class="icon-refresh" ></i> Reload
     </button>
-    
+
   </div>
-    
-    
+
+
   <!-- formular -->
   <div class="left bw61" >
-  
+
     <div class="left bw3" >
 
       <!-- user input -->
@@ -55,7 +55,7 @@
 
         <label
           class="wgt-label"
-          for="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tuser-id_user" 
+          for="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tuser-id_user"
         ><?php echo $I18N->l( 'User', 'wbf.label' ); ?></label>
 
         <div class="wgt-input medium" >
@@ -80,7 +80,7 @@
             id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-acl-advanced_search"
             class="wgt-button append"
             onclick="$R.get('modal.php?c=Wbfsys.RoleUser.selection&input=<?php echo $VAR->domain->aclDomainKey ?>-acl-tuser-id_user');return false;"    >
-            <img src="<?php echo View::$iconsWeb ?>xsmall/control/search.png" alt="search" />
+            <i class="icon-search" ></i>
           </button>
         </div>
 
@@ -91,7 +91,7 @@
 
         <label
           class="wgt-label"
-          for="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tuser-vid" 
+          for="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tuser-vid"
         ><?php echo $VAR->domain->label ?></label>
 
         <div class="wgt-input medium" >
@@ -117,21 +117,21 @@
             class="wgt-button append"
             onclick="$R.get('modal.php?c=<?php echo $VAR->domain->domainUrl ?>.selection&input=<?php echo $VAR->domain->aclDomainKey ?>-acl-tuser-vid');return false;"
           >
-            <img src="<?php echo View::$iconsWeb ?>xsmall/control/search.png" alt="search" />
+            <i class="icon-search" ></i>
           </button>
        </div>
-       
+
      </div>
-     
+
    </div>
-     
+
    <div class="inline bw3" >
-         
+
       <!-- group input -->
       <div class="left" >
         <label
           class="wgt-label"
-          for="<?php echo $ELEMENT->selectboxGroups->id ?>" 
+          for="<?php echo $ELEMENT->selectboxGroups->id ?>"
         ><?php echo $I18N->l( 'Group', 'wbf.label' ); ?></label>
         <div class="wgt-input medium" >
           <?php echo $ELEMENT->selectboxGroups->niceElement() ?>
@@ -155,19 +155,18 @@
        </div>
 
      </div>
-       
+
    </div>
 
 
 <div class="wgt-clear medium" >&nbsp;</div>
- 
+
 <?php echo $ELEMENT->listingQualifiedUsers ?>
- 
- 
+
+
 <script type="application/javascript">
 
 <?php foreach( $this->jsItems as $jsItem ){ ?>
   <?php echo $ELEMENT->$jsItem->jsCode?>
 <?php } ?>
 </script>
- 

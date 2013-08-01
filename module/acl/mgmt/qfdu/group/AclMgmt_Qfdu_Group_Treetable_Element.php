@@ -127,7 +127,7 @@ class AclMgmt_Qfdu_Group_Treetable_Element extends WgtTreetable
         Wgt::ACTION_DELETE,
         'Delete',
         'index.php?c=Acl.Mgmt_Qfdu_Group.dropGroupAssignments&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',
-        'control/delete.png',
+        'icon-remove-sign',
         '',
         'wbf.label',
         Acl::ADMIN
@@ -137,7 +137,7 @@ class AclMgmt_Qfdu_Group_Treetable_Element extends WgtTreetable
         Wgt::ACTION_BUTTON_GET,
         'Reference ACLs',
         'maintab.php?c=Acl.Mgmt_Tree.showGraph&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',
-        'control/mask_tree.png',
+        'icon-cogs',
         '',
         'wbf.inheritance',
         Acl::ADMIN
@@ -158,7 +158,7 @@ class AclMgmt_Qfdu_Group_Treetable_Element extends WgtTreetable
         Wgt::ACTION_DELETE,
         'Delete',
         'index.php?c=Acl.Mgmt_Qfdu_Group.deleteUser&amp;vtype=group&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',
-        'control/delete.png',
+        'icon-remove-sign',
         '',
         'wbf.label',
         Acl::ADMIN
@@ -168,7 +168,7 @@ class AclMgmt_Qfdu_Group_Treetable_Element extends WgtTreetable
         Wgt::ACTION_DELETE,
         'Delete',
         'index.php?c=Acl.Mgmt_Qfdu_Group.dropUserAssignments&amp;vtype=group&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',
-        'control/clean.png',
+        'icon-eraser',
         '',
         'wbf.label',
         Acl::ADMIN
@@ -183,7 +183,7 @@ class AclMgmt_Qfdu_Group_Treetable_Element extends WgtTreetable
         Wgt::ACTION_DELETE,
         'Delete',
         'index.php?c=Acl.Mgmt_Qfdu_Group.dropDsetAssignments&amp;vtype=group&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',
-        'control/delete.png',
+        'icon-remove-sign',
         '',
         'wbf.label',
         Acl::ADMIN
@@ -193,7 +193,7 @@ class AclMgmt_Qfdu_Group_Treetable_Element extends WgtTreetable
         Wgt::ACTION_BUTTON_GET,
         'Dset Rights',
         'maintab.php?c=Acl.Mgmt_Dset.listing&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',
-        'control/rights.png',
+        'icon-shield',
         '',
         'wbf.label',
         Acl::ADMIN
@@ -406,7 +406,6 @@ class AclMgmt_Qfdu_Group_Treetable_Element extends WgtTreetable
 
     $icons = array();
     $icons['closed'] = $this->icon('control/closed.png', 'Closed');
-    $icons['groups'] = $this->icon('control/group.png', 'Group');
 
     // create the table body
     $body = '<tbody>'.NL;
@@ -426,7 +425,7 @@ class AclMgmt_Qfdu_Group_Treetable_Element extends WgtTreetable
 
       $body .= '<td valign="top" colspan="3" >'
         . '<span class="wgt-loader" wgt_source_key="users" wgt_eid="'.$groupId.'" >'.$icons['closed'].'</span> '
-        . $row['role_group_name'].' ('.$row['group_assignments'].') '. $icons['groups']
+        . $row['role_group_name'].' ('.$row['group_assignments'].') <i class="icon-group" ></i>'
         . '</td>'.NL;
 
 
@@ -478,7 +477,6 @@ class AclMgmt_Qfdu_Group_Treetable_Element extends WgtTreetable
 
     $icons = array();
     $icons['closed'] = $this->icon('control/closed.png', 'Closed');
-    $icons['user'] = $this->icon('control/user.png','User');
 
     $body = '<htmlArea selector="tr#'.$this->id.'_row_'
       .$groupId.'" action="after" ><![CDATA['.NL;
@@ -505,8 +503,7 @@ class AclMgmt_Qfdu_Group_Treetable_Element extends WgtTreetable
               href="modal.php?c=Webfrap.ContactForm.formUser&amp;user_id='
                 .$row['role_user_rowid'].'&amp;d_src='.$this->domainNode->domainName.'" >'
                 .$row['user']
-                .' ('.$row['num_dsets'].') '
-                . $icons['user']
+                .' ('.$row['num_dsets'].') <i class="icon-user" ></i>'
                 .'</a>'
                 .'</td>'.NL;
         $body .= '<td colspan="2" ></td>'.NL;
@@ -536,7 +533,7 @@ class AclMgmt_Qfdu_Group_Treetable_Element extends WgtTreetable
         $body .= '<td valign="top" class="pos" >'.$context->pRowPos.'.'.$pos.'</td>'.NL;
         $body .= '<td valign="top" class="ind1" >'
           . '<span class="wgt-loader" wgt_source_key="dsets" wgt_param="&amp;group='.$groupId.'" wgt_eid="'.$userId.'" >'.$icons['closed'].'</span> '
-          . $this->icon('control/user.png','User').' '
+          . '<i class="icon-user" ></i> '
           . '<a
               class="wcm wcm_req_ajax"
               href="modal.php?c=Webfrap.ContactForm.formUser&amp;user_id='
@@ -609,8 +606,6 @@ class AclMgmt_Qfdu_Group_Treetable_Element extends WgtTreetable
     $num = 1;
 
     $icons = array();
-    $icons['dset'] = $this->icon('control/dset.png','Dset');
-
 
     foreach ($this->dataEntity as $row) {
 
@@ -623,7 +618,7 @@ class AclMgmt_Qfdu_Group_Treetable_Element extends WgtTreetable
       $body .= '<td valign="top" class="pos" >'.$context->pRowPos.'.'.$pos.'</td>'.NL;
       $body .= '<td valign="top" class="ind2" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
         .' <a href="maintab.php?c='.$this->domainNode->domainUrl.'.edit&amp;objid='.$row['dset_rowid'].'" '
-        .' class="wcm wcm_req_ajax" >'.$row['dset_text'].' '.$icons['dset'].'</a></td>'.NL;
+        .' class="wcm wcm_req_ajax" >'.$row['dset_text'].' <i class="icon-file-alt" ></i></a></td>'.NL;
 
         $body .= '<td valign="top" >'
         .'<input
@@ -817,7 +812,7 @@ class AclMgmt_Qfdu_Group_Treetable_Element extends WgtTreetable
         $body .= '<tr class="row'.$this->num.' '.$pRowid.' wgt-border-top flag_partial" id="'.$rowid.'"  >'.NL;
 
         $body .= '<td valign="top" class="pos" >1</td>'.NL;
-        $body .= '<td valign="top" class="ind1" >'.$this->icon('control/user.png','User').' '.$row['name'].' (partial)</td>'.NL;
+        $body .= '<td valign="top" class="ind1" ><i class="icon-user" ></i> '.$row['name'].' (partial)</td>'.NL;
         $body .= '<td colspan="2"  ></td>'.NL;
 
         if ($this->enableNav) {
@@ -846,7 +841,7 @@ class AclMgmt_Qfdu_Group_Treetable_Element extends WgtTreetable
         $body .= '<tr class="row'.$this->num.' '.$pRowid.' wgt-border-top" id="'.$rowid.'"  >'.NL;
 
         $body .= '<td valign="top" class="pos" >1</td>'.NL;
-        $body .= '<td valign="top" >'.$this->icon('control/user.png','User').' '.$row['user'].'</td>'.NL;
+        $body .= '<td valign="top" ><i class="icon-user" ></i> '.$row['user'].'</td>'.NL;
         $body .= '<td valign="top" >'
           .'<input
             type="text"
@@ -1014,8 +1009,6 @@ class AclMgmt_Qfdu_Group_Treetable_Element extends WgtTreetable
   public function buildTableFooter()
   {
 
-    $iconClean = $this->icon('control/clean.png', 'Clean');
-    //$iconDelete = $this->icon('control/delete.png', 'Delete Selection');
     $iconExport = $this->icon('mimetypes/application-vnd.ms-excel.png', 'Export');
 
     $html = '<div class="wgt-panel wgt-border-top" >'.NL;
@@ -1024,7 +1017,7 @@ class AclMgmt_Qfdu_Group_Treetable_Element extends WgtTreetable
     $html .= ' </div>';
     $html .= ' <div class="menu" style="float:left;width:150px;" >';
 
-    // <li><a>{$iconDelete} Delete Selection</a></li>
+    // <li><a><i class="icon-remove" ></i> Delete Selection</a></li>
 
     $html .=   <<<HTML
 
@@ -1039,7 +1032,7 @@ class AclMgmt_Qfdu_Group_Treetable_Element extends WgtTreetable
     <ul>
       <li><a
         class="wcm wcm_req_del"
-        href="ajax.php?c=Acl.Mgmt_Qfdu.dropAllAssignments&amp;dkey={$this->domainNode->domainName}" >{$iconClean} Delete all</a></li>
+        href="ajax.php?c=Acl.Mgmt_Qfdu.dropAllAssignments&amp;dkey={$this->domainNode->domainName}" ><i class="icon-eraser" ></i> Delete all</a></li>
       <li><a
         target="_document"
         href="document.php?c=Acl.Mgmt_Qfdu_Group.export&amp;dkey={$this->domainNode->domainName}" >{$iconExport} Export</a></li>
@@ -1109,7 +1102,7 @@ HTML;
         $body .= '<tr class="row'.$this->num.' '.$pRowid.' wgt-border-top flag_partial" id="'.$rowid.'"  >'.NL;
 
         $body .= '<td valign="top" class="pos" >'.$groupPos.'.'.$pos.'</td>'.NL;
-        $body .= '<td valign="top" class="ind1" >'.$this->icon('control/user.png','User').' '.$row['name'].' (partial)</td>'.NL;
+        $body .= '<td valign="top" class="ind1" ><i class="icon-user" ></i> '.$row['name'].' (partial)</td>'.NL;
         $body .= '<td colspan="2"  ></td>'.NL;
 
         if ($this->enableNav) {
@@ -1134,7 +1127,7 @@ HTML;
         $body .= '<tr class="row'.$this->num.' '.$pRowid.' wgt-border-top" id="'.$rowid.'"  >'.NL;
 
         $body .= '<td valign="top" class="pos" >'.$groupPos.'.'.$pos.'</td>'.NL;
-        $body .= '<td valign="top" >'.$this->icon('control/user.png','User').' '.$row['user'].'</td>'.NL;
+        $body .= '<td valign="top" ><i class="icon-user" ></i> '.$row['user'].'</td>'.NL;
         $body .= '<td valign="top" >'
           .'<input
             type="text"
