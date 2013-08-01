@@ -37,8 +37,7 @@ class WebfrapCache_Maintab_View extends WgtMaintabCustom
   {
 
     // fetch the i18n text for title, status and bookmark
-    $i18nText = $this->i18n->l
-    (
+    $i18nText = $this->i18n->l(
       'Cache Statistics',
       'wbf.label'
     );
