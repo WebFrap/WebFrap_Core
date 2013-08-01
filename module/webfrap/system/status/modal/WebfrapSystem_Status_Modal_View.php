@@ -39,8 +39,7 @@ class WebfrapSystem_Status_Modal_View extends WgtModal
   {
 
     // fetch the i18n text for title, status and bookmark
-    $i18nText = $this->i18n->l
-    (
+    $i18nText = $this->i18n->l(
       'PHP Info',
       'wbf.label'
     );
@@ -66,8 +65,7 @@ class WebfrapSystem_Status_Modal_View extends WgtModal
   {
 
     // fetch the i18n text for title, status and bookmark
-    $i18nText = $this->i18n->l
-    (
+    $i18nText = $this->i18n->l(
       'SERVER ENV',
       'wbf.label'
     );
@@ -93,8 +91,7 @@ class WebfrapSystem_Status_Modal_View extends WgtModal
   {
 
     // fetch the i18n text for title, status and bookmark
-    $i18nText = $this->i18n->l
-    (
+    $i18nText = $this->i18n->l(
       'SERVER Data',
       'wbf.label'
     );

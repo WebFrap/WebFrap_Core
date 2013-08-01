@@ -46,12 +46,12 @@ class WebfrapSystem_Status_Maintab_View extends WgtMaintab
    * @var WebfrapMaintenance_Metadata_List_Menu
    */
   public $metadataMenu = null;
-  
+
   /**
    * @var array
    */
   public $contextData = array();
-  
+
   /**
    * @var WebfrapMaintenance_Context_List_Menu
    */
@@ -85,14 +85,14 @@ class WebfrapSystem_Status_Maintab_View extends WgtMaintab
     $this->metadataModel = $this->loadModel('WebfrapMaintenance_Metadata');
     $this->metadataModel->loadStats();
     $this->metadataMenu = new WebfrapMaintenance_Metadata_List_Menu();
-    
-    
+
+
     $this->contextMenu = new WebfrapMaintenance_Context_List_Menu();
-    
+
     $session = $this->getSession();
-    
+
     $data = $session->getContext();
-    
+
     if (!$data){
       $this->contextData = array();
     } else {
@@ -100,7 +100,7 @@ class WebfrapSystem_Status_Maintab_View extends WgtMaintab
         $this->contextData[] = array('id'=>$key, 'value' => $value);
       }
     }
-    
+
 
     // set the window title
     $this->setTitle($i18nText);
@@ -137,19 +137,6 @@ class WebfrapSystem_Status_Maintab_View extends WgtMaintab
 
     $i18n         = $this->getI18n();
 
-    $iconMenu     = '<i class="icon-reorder" ></i>';
-    $iconSupport  = $this->icon('control/support.png'      ,'Support');
-    $iconHelp     = $this->icon('control/help.png'      ,'Help');
-    $iconClose    = $this->icon('control/close.png'      ,'Close');
-    $iconEdit     = $this->icon('control/edit.png'      ,'Edit');
-    $iconBookmark      = $this->icon('control/bookmark.png'      ,'Bookmark');
-
-    $iconNew      = $this->icon('control/add.png'      ,'Add');
-    $iconClean    = $this->icon('control/clean.png'      ,'Clean');
-    $iconRefresh  = $this->icon('control/refresh.png'      ,'Refresh');
-    $iconInfo  = $this->icon('control/info.png'      ,'Info');
-    $iconWork  = $this->icon('context/work.png'      ,'Work');
-
     $menu          = $this->newMenu($this->id.'_dropmenu');
     $menu->content = <<<HTML
 
@@ -157,19 +144,19 @@ class WebfrapSystem_Status_Maintab_View extends WgtMaintab
   <button
     class="wcm wcm_control_dropmenu wgt-button"
     id="{$this->id}-control"
-    wgt_drop_box="{$this->id}_dropmenu"  >{$iconMenu} {$this->i18n->l('Menu','wbf.label')}</button>
+    wgt_drop_box="{$this->id}_dropmenu"  ><i class="icon-reorder" ></i> {$this->i18n->l('Menu','wbf.label')}</button>
   <var id="{$this->id}-control-cfg-dropmenu"  >{"triggerEvent":"mouseover","closeOnLeave":"true","align":"right"}</var>
 </div>
 
 <div class="wgt-dropdownbox" id="{$this->id}_dropmenu" >
   <ul>
     <li>
-      <a class="wgtac_bookmark" >{$iconBookmark} {$this->i18n->l('Bookmark', 'wbf.label')}</a>
+      <a class="wgtac_bookmark" ><i class="icon-bookmark" ></i> {$this->i18n->l('Bookmark', 'wbf.label')}</a>
     </li>
   </ul>
   <ul>
     <li>
-      <a class="wgtac_close" >{$iconClose} {$this->i18n->l('Close','wbf.label')}</a>
+      <a class="wgtac_close" ><i class="icon-remove-circle" ></i> {$this->i18n->l('Close','wbf.label')}</a>
     </li>
   </ul>
 </div>
@@ -178,35 +165,35 @@ class WebfrapSystem_Status_Maintab_View extends WgtMaintab
   <button
       class="wgt-button"
       onclick="\$R.get('modal.php?c=Webfrap.System_Status.phpInfo');"
-      title="PHP Info" >{$iconInfo}</button>
+      title="PHP Info" ><i class="icon-info-sign" ></i></button>
 </div>
 
 <div class="wgt-panel-control" >
   <button
       class="wgt-button"
       onclick="\$R.get('modal.php?c=Webfrap.System_Status.showEnv');"
-      title="Server Env" >{$iconInfo}</button>
+      title="Server Env" ><i class="icon-info-sign" ></i></button>
 </div>
 
 <div class="wgt-panel-control" >
   <button
       class="wgt-button"
       onclick="\$R.get('modal.php?c=Webfrap.System_Status.showServer');"
-      title="Server Data" >{$iconInfo}</button>
+      title="Server Data" ><i class="icon-info-sign" ></i></button>
 </div>
 
 <div class="wgt-panel-control" >
   <button
       class="wgt-button"
       onclick="\$R.get('maintab.php?c=Maintenance.DbConsistency.table');"
-      title="Refresh" >{$iconWork} Consistency</button>
+      title="Refresh" ><i class="icon-cog" ></i> Consistency</button>
 </div>
 
 
 <div class="wgt-panel-control" >
   <button
       class="wcm wcm_ui_button wgtac_refresh wcm_ui_tip-top"
-      title="Refresh" >{$iconRefresh} {$this->i18n->l('Refresh','wbf.label')}</button>
+      title="Refresh" ><i class="icon-refresh" ></i> {$this->i18n->l('Refresh','wbf.label')}</button>
 </div>
 
 

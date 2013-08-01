@@ -32,7 +32,7 @@ class WebfrapMaintenance_Metadata_List_Menu extends WgtSimpleListmenu
   {
     "type" : "request",
     "label": "",
-    "icon": "control/delete.png",
+    "icon": "icon-remove",
     "method": "del",
     "service": "ajax.php?c=Webfrap.TaskPlanner.deletePlan&objid="
   }

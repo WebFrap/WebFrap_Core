@@ -1,8 +1,8 @@
-<?php 
+<?php
 
-$iconOk = $this->icon( 'context/ok.png', 'is ok' );
-$iconWarn = $this->icon( 'context/warn.png', 'warning' );
-$iconBad = $this->icon( 'context/bad.png', 'not good' );
+$iconOk = '<i class="icon-ok" ></i>';
+$iconWarn = '<i class="icon-exclamation" ></i>';
+$iconBad = '<i class="icon-minus-sign" ></i>';
 
 $phpModules = array
 (
@@ -40,18 +40,18 @@ $phpModules = array
 
 
 
-<div class="wgt-content_box inline wgt-space bw48" > 
+<div class="wgt-content_box inline wgt-space bw48" >
   <div class="head" ><h2>Filesystem</h2></div>
   <div class="content" style="height:auto;" >
     <table class="wgt-table bw45"  >
-    
+
       <thead>
         <th>Name</th>
         <th>Value</th>
         <th>Status</th>
         <th>Description</th>
       </thead>
-      
+
       <tbody>
         <tr>
           <td>Memory</td>
@@ -66,13 +66,13 @@ $phpModules = array
           <td colspan="3" ><pre><?php echo SSystem::call('df -i') ?></pre></td>
         </tr>
       </tbody>
-    
+
     </table>
   </div>
 </div>
 
-<div class="wgt-content_box inline wgt-space bw48" > 
-  <div class="head" ><h2>Caches</h2> 
+<div class="wgt-content_box inline wgt-space bw48" >
+  <div class="head" ><h2>Caches</h2>
     <div class="right" >
       <a class="wcm wcm_req_del wgt-action " href="ajax.php?c=Webfrap.Cache.CleanAll" >clean all</a>
     </div>
@@ -103,18 +103,18 @@ $phpModules = array
   </div>
 </div>
 
-<div class="wgt-content_box  inline wgt-space bw48" > 
+<div class="wgt-content_box  inline wgt-space bw48" >
   <div class="head" ><h2>PHP</h2></div>
   <div class="content" style="height:auto;" >
     <table class="wgt-table bw45"  >
-    
+
       <thead>
         <th>Name</th>
         <th>Version</th>
         <th>Status</th>
         <th>Description</th>
       </thead>
-      
+
       <tbody>
         <tr>
           <td>PHP Version</td>
@@ -131,17 +131,17 @@ $phpModules = array
         </tr>
         <?php } ?>
       </tbody>
-    
+
     </table>
   </div>
 </div>
 
-<div class="wgt-content_box  inline wgt-space bw48" > 
+<div class="wgt-content_box  inline wgt-space bw48" >
   <div class="head" ><h2>Metadata</h2>
     <div class="right" >
-      <a 
-        class="wcm wcm_req_del wgt-action" 
-        title="Please confirm to clean the deprecated Metadata." 
+      <a
+        class="wcm wcm_req_del wgt-action"
+        title="Please confirm to clean the deprecated Metadata."
         href="modal.php?c=Webfrap.Maintenance_Metadata.cleanAll" >clean all</a>
     </div>
   </div>
@@ -174,12 +174,12 @@ $phpModules = array
 
 </div>
 
-<div class="wgt-content_box  inline wgt-space bw48" > 
+<div class="wgt-content_box  inline wgt-space bw48" >
   <div class="head" ><h2>Contexts</h2>
     <div class="right" >
-      <a 
-        class="wcm wcm_req_del wgt-action" 
-        title="Please confirm to clean the Contexts" 
+      <a
+        class="wcm wcm_req_del wgt-action"
+        title="Please confirm to clean the Contexts"
         href="modal.php?c=Webfrap.Context.resetAll" >clean all</a>
     </div>
   </div>
