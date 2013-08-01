@@ -35,18 +35,15 @@ class WebfrapCache_ListMenu
     if (isset($cDir->display)) {
       foreach ($cDir->display as $action) {
         switch ($action) {
-          case 'created':
-          {
+          case 'created': {
             $code[] = "Updated: ".SFilesystem::timeChanged(PATH_GW.'cache/'.$cDir->dir);
             break;
           }
-          case 'size':
-          {
+          case 'size': {
             $code[] = "Size: ".SFilesystem::getFolderSize(PATH_GW.'cache/'.$cDir->dir);
             break;
           }
-          case 'num_files':
-          {
+          case 'num_files': {
             $code[] = "Files: ".SFilesystem::countFiles(PATH_GW.'cache/'.$cDir->dir);
             break;
           }
@@ -68,8 +65,7 @@ class WebfrapCache_ListMenu
     if (isset($cDir->actions)) {
       foreach ($cDir->actions as $action) {
         switch ($action->type) {
-          case 'request':
-          {
+          case 'request': {
             $code[] = <<<CODE
 
 <button
