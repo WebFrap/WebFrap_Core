@@ -38,15 +38,13 @@ class WebfrapInfo_Controller extends ControllerCrud
     $params = $this->getFlags($request);
 
     // laden der passenden subview
-    $view = $response->loadView
-    (
+    $view = $response->loadView(
       'webfrap_legend',
       'WebfrapInfo'
     );
 
     if (!$view) {
-      return new Error
-      (
+      return new Error(
         'The requested Viewtype not exists',
         Response::NOT_IMPLEMENTED
       );
