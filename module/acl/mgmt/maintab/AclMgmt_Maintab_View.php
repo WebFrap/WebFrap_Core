@@ -122,10 +122,14 @@ class AclMgmt_Maintab_View extends WgtMaintab
     $ui = $this->loadUi('AclMgmt');
     $ui->setModel($this->model);
     $ui->domainNode = $this->domainNode;
+    
+    $areaKeys = array();
+    $areaKeys[] = $this->domainNode->modAclKey;
+    $areaKeys[] = $this->domainNode->aclKey;
 
     // inject the table item in the template system
     $ui->createListItem(
-      $this->model->search($areaId, $access, $params),
+      $this->model->search($areaKeys, $access, $params),
       $access,
       $params
     );
