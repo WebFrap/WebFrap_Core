@@ -105,11 +105,11 @@
 
       <div>
         <button class="wcm wcm_ui_button" id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-acl-path-send" >
-          <?php echo $this->icon('control/save.png','Save') ?> <?php echo $I18N->l( 'Save', 'wbf.label' ); ?>
+          <i class="icon-save" ></i> <?php echo $I18N->l( 'Save', 'wbf.label' ); ?>
         </button>
 
         <button class="wcm wcm_ui_button" id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-acl-path-drop" >
-          <?php echo $this->icon('control/delete.png','Drop') ?> <?php echo $I18N->l( 'Drop Path', 'wbf.label' ); ?>
+          <i class="icon-remove" ></i> <?php echo $I18N->l( 'Drop Path', 'wbf.label' ); ?>
         </button>
       </div>
 

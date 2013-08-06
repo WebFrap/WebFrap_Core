@@ -49,98 +49,39 @@ class AclMgmt_Controller extends MvcController_Domain
    *
    * @var array
    */
-  protected $options           = array
-  (
-    'listing' => array
-    (
+  protected $options = array(
+    'listing' => array(
       'method'    => array('GET'),
       'views'      => array('maintab')
     ),
-    'search' => array
-    (
+    'search' => array(
       'method'    => array('GET'),
       'views'      => array('ajax')
     ),
-    'loadgroups' => array
-    (
+    'loadgroups' => array(
       'method'    => array('GET'),
       'views'      => array('ajax')
     ),
-    'appendgroup' => array
-    (
+    'appendgroup' => array(
       'method'    => array('PUT', 'POST'),
       'views'      => array('ajax')
     ),
-    'deletegroup' => array
-    (
+    'deletegroup' => array(
       'method'    => array('DELETE'),
       'views'      => array('ajax')
     ),
-    'updatearea' => array
-    (
+    'updatearea' => array(
       'method'    => array('PUT', 'POST'),
       'views'      => array('ajax')
     ),
-    'pushtoentity' => array
-    (
+    'pushtoentity' => array(
       'method'    => array('PUT', 'POST'),
       'views'      => array('ajax')
     ),
-    'pullfromentity' => array
-    (
+    'pullfromentity' => array(
       'method'    => array('PUT', 'POST'),
       'views'      => array('ajax')
     ),
-    'tabqualifiedusers' => array
-    (
-      'method'    => array('GET'),
-      'views'      => array('ajax')
-    ),
-    'searchqfdusers' => array
-    (
-      'method'    => array('GET'),
-      'views'      => array('ajax')
-    ),
-    'loadqfdusers' => array
-    (
-      'method'    => array('GET'),
-      'views'      => array('ajax')
-    ),
-    'loadqfduentity' => array
-    (
-      'method'    => array('GET'),
-      'views'      => array('ajax')
-    ),
-    'appendqfduser' => array
-    (
-      'method'    => array('PUT', 'POST'),
-      'views'      => array('ajax')
-    ),
-    'cleanqfdugroup' => array
-    (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
-    ),
-    'deleteqfduser' => array
-    (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
-    ),
-    'cleanqfduser' => array
-    (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
-    ),
-    'deleteqfdudataset' => array
-    (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
-    ),
-    'emptyqfduusers' => array
-    (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
-    )
 
   );
 
@@ -168,8 +109,7 @@ class AclMgmt_Controller extends MvcController_Domain
     $model->checkAccess($domainNode, $params);
 
     /* @var $view AclMgmt_Maintab_View */
-    $view = $response->loadView
-    (
+    $view = $response->loadView(
       $domainNode->domainName.'_acl_listing',
       'AclMgmt',
       'displayListing'
@@ -208,8 +148,7 @@ class AclMgmt_Controller extends MvcController_Domain
     $areaId  = $model->getAreaId();
 
     // this can only be an ajax request, so we can directly load the ajax view
-    $view    = $response->loadView
-    (
+    $view    = $response->loadView(
       $domainNode->domainName.'acl-mgmt',
       'AclMgmt',
       'displaySearch'
@@ -242,8 +181,7 @@ class AclMgmt_Controller extends MvcController_Domain
     $model->checkAccess($domainNode, $params);
 
     /* @var $view AclMgmt_Masks_Modal_View */
-    $view = $response->loadView
-    (
+    $view = $response->loadView(
       $domainNode->domainName.'_acl_masks_listing',
       'AclMgmt_Masks',
       'displayListing',
@@ -282,8 +220,7 @@ class AclMgmt_Controller extends MvcController_Domain
     $searchKey = $request->param('key', Validator::TEXT);
 
     /* @var $view AclMgmt_Ajax_View */
-    $view   = $response->loadView
-    (
+    $view   = $response->loadView(
       $domainNode->domainName.'-acl-mgmt',
       'AclMgmt',
       'displayAutocomplete'
@@ -321,8 +258,7 @@ class AclMgmt_Controller extends MvcController_Domain
     $model->deleteGroup($objid);
 
     /* @var $view AclMgmt_Ajax_View */
-    $view   = $response->loadView
-    (
+    $view   = $response->loadView(
       $domainNode->domainName.'-acl-mgmt',
       'AclMgmt',
       'displayDeleteGroup'
@@ -662,79 +598,7 @@ class AclMgmt_Controller extends MvcController_Domain
   protected function getTabFlags($request)
   {
 
-    $response  = $this->getResponse();
-
-    $params = new ContextPlain($request);
-
-    // per default
-    $params->categories = array();
-
-    // listing type
-    if ($ltype   = $request->param('ltype', Validator::CNAME))
-      $params->ltype    = $ltype;
-
-    // context type
-    if ($context = $request->param('context', Validator::CNAME))
-      $params->context    = $context;
-
-    // start position of the query and size of the table
-    $params->start
-      = $request->param('start', Validator::INT);
-
-    // stepsite for query (limit) and the table
-    if (!$params->qsize = $request->param('qsize', Validator::INT))
-      $params->qsize = Wgt::$defListSize;
-
-    // order for the multi display element
-    $params->order
-      = $request->param('order', Validator::CNAME);
-
-    // target for a callback function
-    $params->target
-      = $request->param('target', Validator::CKEY  );
-
-    // target for some ui element
-    $params->targetId
-      = $request->param('target_id', Validator::CKEY  );
-
-    // target for some ui element
-    $params->tabId
-      = $request->param('tabid', Validator::CKEY  );
-
-    // flag for beginning seach filter
-    if ($text = $request->param('begin', Validator::TEXT  )) {
-      // whatever is comming... take the first char
-      $params->begin = $text[0];
-    }
-
-    // exclude whatever
-    $params->exclude
-      = $request->param('exclude', Validator::CKEY  );
-
-    // the activ id, mostly needed in exlude calls
-    $params->objid
-      = $request->param('objid', Validator::EID  );
-
-    // startpunkt des pfades für die acls
-    if ($aclRoot = $request->param('a_root', Validator::CKEY))
-      $params->aclRoot    = $aclRoot;
-
-    // die id des Datensatzes von dem aus der Pfad gestartet wurde
-    if ($aclRootId = $request->param('a_root_id', Validator::INT))
-      $params->aclRootId    = $aclRootId;
-
-    // der key des knotens auf dem wir uns im pfad gerade befinden
-    if ($aclKey = $request->param('a_key', Validator::CKEY))
-      $params->aclKey    = $aclKey;
-
-    // der name des knotens
-    if ($aclNode = $request->param('a_node', Validator::CKEY))
-      $params->aclNode    = $aclNode;
-
-    // an welchem punkt des pfades befinden wir uns?
-    if ($aclLevel = $request->param('a_level', Validator::INT))
-      $params->aclLevel  = $aclLevel;
-
+    $params = new ContextListing($request);
     return $params;
 
   }//end protected function getTabFlags */

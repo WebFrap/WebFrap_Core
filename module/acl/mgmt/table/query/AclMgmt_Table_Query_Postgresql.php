@@ -42,7 +42,7 @@ class AclMgmt_Table_Query_Postgresql extends LibSqlQuery
    *
    * @throws LibDb_Exception
    */
-  public function fetch($areaId, $condition = null, $params = null)
+  public function fetch($areaKeys, $condition = null, $params = null)
   {
 
     if (!$params)
@@ -65,7 +65,11 @@ class AclMgmt_Table_Query_Postgresql extends LibSqlQuery
     $this->appendConditions($criteria, $condition, $params  );
     $this->checkLimitAndOrder($criteria, $params);
 
-    $criteria->where("security_access.id_area={$areaId} and security_access.partial = 0");
+    //$criteria->where("security_access.id_area={$areaId} and security_access.partial = 0");
+    
+    $keys = "UPPER('".implode("'), UPPER('",$areaKeys)."')";
+    
+    $criteria->where("upper(area.access_key) IN({$keys}) and security_access.partial = 0");
 
     // Run Query und save the result
     $this->result    = $db->orm->select($criteria);
@@ -90,6 +94,7 @@ class AclMgmt_Table_Query_Postgresql extends LibSqlQuery
     // take care for the getEntryData method on the model
     $cols = array(
       'security_access.rowid as "security_access_rowid"',
+      'area.access_key as area_key',
       'security_access.access_level as "security_access_access_level"',
       'security_access.ref_access_level as "security_access_ref_access_level"',
       'security_access.meta_level as "security_access_meta_level"',
@@ -105,6 +110,7 @@ class AclMgmt_Table_Query_Postgresql extends LibSqlQuery
     $criteria->select($cols);
     $criteria->groupBy('role_group.rowid');
     $criteria->groupBy('role_group.name');
+    $criteria->groupBy('area.access_key');
     $criteria->groupBy('security_access.rowid');
     $criteria->groupBy('security_access.access_level');
     $criteria->groupBy('security_access.ref_access_level');
@@ -147,6 +153,15 @@ class AclMgmt_Table_Query_Postgresql extends LibSqlQuery
       'group_users'
     );
 
+    $criteria->leftJoinOn (
+      'security_access',
+      'id_area',
+      'wbfsys_security_area',
+      'rowid',
+      null,
+      'area'
+    );
+
   }//end public function setTables */
 
   /** inject conditions in the criteria object
@@ -186,33 +201,9 @@ class AclMgmt_Table_Query_Postgresql extends LibSqlQuery
 
     }//end if
 
-    if ($params->begin) {
-      $this->checkCharBegin($criteria, $params);
-    }
-
   }//end public function appendConditions */
 
- /** check the begin flag to filter entries by their first char
-   *
-   * @param LibSqlCriteria $criteria
-   * @param TFlag $params
-   * @return void
-   */
-  public function checkCharBegin($criteria, $params)
-  {
 
-    // filter for a beginning char
-    if ($params->begin) {
-
-      if ('?' == $params->begin) {
-        $criteria->where("role_group.name ~* '^[^a-zA-Z]'");
-      } else {
-        $criteria->where("upper(substr(role_group.name,1,1)) = '".strtoupper($params->begin)."'");
-      }
-
-    }
-
-  }//end public function checkCharBegin */
 
  /** check for limits, offset and order
    *
