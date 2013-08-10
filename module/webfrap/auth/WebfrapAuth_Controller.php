@@ -39,50 +39,40 @@ class WebfrapAuth_Controller extends Controller
    *
    * @var array
    */
-  protected $options = array
-  (
-    'form' => array
-    (
+  protected $options = array(
+    'form' => array(
       'method'    => array('GET'),
       'views'      => array('maintab', 'html')
     ),
-    'login' => array
-    (
+    'login' => array(
       'method'    => array('POST'),
       'views'      => array('ajax', 'html')
     ),
-    'logout' => array
-    (
+    'logout' => array(
       'method'    => array('GET'),
       'views'      => array('ajax', 'maintab', 'html')
     ),
-    'formresetpasswd' => array
-    (
+    'formresetpasswd' => array(
       'method'    => array('GET'),
       'views'      => array('maintab', 'html')
     ),
-    'resetpasswd' => array
-    (
+    'resetpasswd' => array(
       'method'    => array('PUT', 'POST'),
       'views'      => array('ajax', 'html')
     ),
-    'formchangepasswd' => array
-    (
+    'formchangepasswd' => array(
       'method'    => array('GET'),
       'views'      => array('maintab', 'html')
     ),
-    'changepasswd' => array
-    (
+    'changepasswd' => array(
       'method'    => array('PUT', 'POST'),
       'views'      => array('ajax', 'html')
     ),
-    'formforgotpasswd' => array
-    (
+    'formforgotpasswd' => array(
       'method'    => array('GET'),
       'views'      => array('maintab', 'html')
     ),
-    'forgotpasswd' => array
-    (
+    'forgotpasswd' => array(
       'method'    => array('PUT', 'POST'),
       'views'      => array('ajax', 'html')
     ),
@@ -104,13 +94,12 @@ class WebfrapAuth_Controller extends Controller
       View::$sendBody = true;
 
     $this->view->setTitle(Conf::status('default.title').' Login');
-    $this->view->setIndex('login'  );
+    $this->view->setIndex('login');
     $this->view->setTemplate('webfrap/auth/form_login', true  );
 
     $inputLoginname = $this->view->newInput('inputLoginname' , 'Input');
     $inputLoginname->addAttributes
-    (array
-    (
+    (array(
       'name'  => 'name',
       'type'  => 'text',
       'class' => 'medium'
@@ -118,8 +107,7 @@ class WebfrapAuth_Controller extends Controller
 
     $inputPasswd = $this->view->newInput('inputPasswd' , 'Input');
     $inputPasswd->addAttributes
-    (array
-    (
+    (array(
       'name'  => 'password',
       'type'  => 'password',
       'class' => 'medium'
@@ -160,27 +148,24 @@ class WebfrapAuth_Controller extends Controller
 
       try {
         if (!$authRole = $orm->get('WbfsysRoleUser', "UPPER(name) = UPPER('{$userName}')")) {
-          $response->addError('User '.$userName.' not exists');
 
+          $response->addError('User '.$userName.' not exists');
           return false;
         }
       } catch (LibDb_Exception $exc) {
-        $response->addError('Error in the query to fetch the data for user: '.$userName);
 
+        $response->addError('Error in the query to fetch the data for user: '.$userName);
         return false;
       }
 
-      if
-      (
+      if (
         defined('WBF_AUTH_TYPE')
           && 2 == WBF_AUTH_TYPE && ($userName != 'admin')
           && !$authRole->non_cert_login
-      )
-      {
-        $response->addError
-        (
+      ) {
+        $response->addError(
           'Login Via Password is not permitted, you need a valid X509 SSO Certificate'
-         );
+        );
         $this->service_form($request, $response);
 
         return;
@@ -202,12 +187,12 @@ class WebfrapAuth_Controller extends Controller
       } else {
 
         $conf = Conf::get('view');
-
         $this->view->setIndex($conf['index.login']);
-
         $this->view->message->addError('Failed to login');
       }
+
     } else {
+
       $conf = Conf::get('view');
       $this->view->setIndex($conf['index.login']);
       $this->view->message->addError('Login Failed');
@@ -297,19 +282,16 @@ class WebfrapAuth_Controller extends Controller
       if ($pwdNew ==  $pwdCheck) {
 
         $user->changePasswd($pwdNew);
-        $response->addMessage
-        (
+        $response->addMessage(
           $response->i18n->l('Successfully changed password!','wbf.message')
         );
       } else {
-        $response->addError
-        (
+        $response->addError(
           $response->i18n->l('The both passwords are not equal!','wbf.message')
         );
       }
     } else {
-      $response->addError
-      (
+      $response->addError(
         $response->i18n->l('The old password is wrong!','wbf.message')
       );
     }
@@ -337,22 +319,21 @@ class WebfrapAuth_Controller extends Controller
     $i18n = $this->getI18n();
 
     if ($auth->verificate($user->getData('name'), $oldPwd)) {
-      if ($pwdNew ==  $pwdCheck) {
+      if ($pwdNew == $pwdCheck) {
 
         $user->changePasswd($pwdNew);
-        $response->addMessage
-        (
+        $response->addMessage(
           $response->i18n->l('Successfully changed password!','wbf.message')
         );
       } else {
-        $response->addError
-        (
+
+        $response->addError(
           $response->i18n->l('The both passwords are not equal!','wbf.message')
         );
       }
     } else {
-      $response->addError
-      (
+
+      $response->addError(
         $response->i18n->l('The old password is wrong!','wbf.message')
       );
     }
@@ -376,20 +357,20 @@ class WebfrapAuth_Controller extends Controller
 
     $model = $this->loadModel('WebfrapAuth');
 
-    $view = $response->loadView
-    (
+    $view = $response->loadView(
       'webfrap_auth-forgot_passwd',
       'WebfrapAuth_ForgotPasswd'
     );
 
     try {
+
       if ($userName) {
 
         $user = $model->getUserByName($userName);
 
         if (!$user) {
-          $view->displayError
-          (
+
+          $view->displayError(
             "Der von dir angebene Benutzername ".SValid::text($userName)." existiert nicht! Hast du dich vielleicht vertippt?"
           );
 
@@ -398,8 +379,7 @@ class WebfrapAuth_Controller extends Controller
 
         $model->startResetProcess($user);
 
-        $view->displaySuccess
-        (
+        $view->displaySuccess(
           "Es wurde eine E-Mail an die von dir hinterlegte Kontaktadresse verschickt.
             Bitte folge den Anweisungen in der E-Mail um das Zurücksetzen abzuschliesen."
         );
@@ -409,8 +389,7 @@ class WebfrapAuth_Controller extends Controller
         $user = $model->getUserByEmail($eMail);
 
         if (!$user) {
-          $view->displayError
-          (
+          $view->displayError(
             "Die von dir angegebene E-Mail ".SValid::text($eMail)." existiert nicht! Hast du dich vielleicht vertippt?"
           );
 
@@ -419,20 +398,20 @@ class WebfrapAuth_Controller extends Controller
 
         $model->startResetProcess($user);
 
-        $view->displaySuccess
-        (
+        $view->displaySuccess(
           "Es wurde eine E-Mail an die von dir hinterlegte Kontaktadresse verschickt.
             Bitte folge den Anweisungen in der E-Mail um das Zurücksetzen abzuschliesen."
         );
 
       } else {
-        $view->displayError
-        (
+
+        $view->displayError(
           "Zu Zurücksetzen des Passworts wird entweder ihr Benutzername, oder die E-Mail Adresse mit der sie
           sich angemeldet haben benötigt. Solltest du beide vergessen haben wende dich bitte an den Support."
         );
       }
     } catch (WebfrapSys_Exception $e) {
+
       $view->displayError($e->getMessage());
     }
 
@@ -452,8 +431,7 @@ class WebfrapAuth_Controller extends Controller
     $user = $this->getUser();
 
     $user->logout();
-    $response->addMessage
-    (
+    $response->addMessage(
       $response->i18n->l('User logged out', 'wbf.message')
     );
 
