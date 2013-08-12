@@ -620,7 +620,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputIdPerson->setListUrl ($listUrl);
       $inputIdPerson->setListIcon('icon-link');
       $inputIdPerson->setEntityUrl('maintab.php?c=Core.Person.edit');
-      $inputIdPerson->conEntity         = $entityCorePerson;
+      $inputIdPerson->conEntity = $entityCorePerson;
       $inputIdPerson->refresh = $this->refresh;
       $inputIdPerson->serializeElement = $this->sendElement;
 
@@ -908,7 +908,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputIdEmployee->setListUrl ($listUrl);
       $inputIdEmployee->setListIcon('icon-link');
       $inputIdEmployee->setEntityUrl('maintab.php?c=Enterprise.Employee.edit');
-      $inputIdEmployee->conEntity         = $entityEnterpriseEmployee;
+      $inputIdEmployee->conEntity = $entityEnterpriseEmployee;
       $inputIdEmployee->refresh = $this->refresh;
       $inputIdEmployee->serializeElement = $this->sendElement;
 
@@ -1029,7 +1029,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMRoleCreate->setListUrl ($listUrl);
       $inputMRoleCreate->setListIcon('icon-link');
       $inputMRoleCreate->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
-      $inputMRoleCreate->conEntity         = $entityWbfsysRoleUser;
+      $inputMRoleCreate->conEntity = $entityWbfsysRoleUser;
       $inputMRoleCreate->refresh = $this->refresh;
       $inputMRoleCreate->serializeElement = $this->sendElement;
 
@@ -1158,7 +1158,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMRoleChange->setListUrl ($listUrl);
       $inputMRoleChange->setListIcon('icon-link');
       $inputMRoleChange->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
-      $inputMRoleChange->conEntity         = $entityWbfsysRoleUser;
+      $inputMRoleChange->conEntity = $entityWbfsysRoleUser;
       $inputMRoleChange->refresh = $this->refresh;
       $inputMRoleChange->serializeElement = $this->sendElement;
 
@@ -1410,7 +1410,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMRoleCreate->setListUrl ($listUrl);
       $inputMRoleCreate->setListIcon('icon-link');
       $inputMRoleCreate->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
-      $inputMRoleCreate->conEntity         = $entityWbfsysRoleUser;
+      $inputMRoleCreate->conEntity = $entityWbfsysRoleUser;
       $inputMRoleCreate->refresh = $this->refresh;
       $inputMRoleCreate->serializeElement = $this->sendElement;
 
@@ -1539,7 +1539,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMRoleChange->setListUrl ($listUrl);
       $inputMRoleChange->setListIcon('icon-link');
       $inputMRoleChange->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
-      $inputMRoleChange->conEntity         = $entityWbfsysRoleUser;
+      $inputMRoleChange->conEntity = $entityWbfsysRoleUser;
       $inputMRoleChange->refresh = $this->refresh;
       $inputMRoleChange->serializeElement = $this->sendElement;
 
@@ -1791,7 +1791,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMRoleCreate->setListUrl ($listUrl);
       $inputMRoleCreate->setListIcon('icon-link');
       $inputMRoleCreate->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
-      $inputMRoleCreate->conEntity         = $entityWbfsysRoleUser;
+      $inputMRoleCreate->conEntity = $entityWbfsysRoleUser;
       $inputMRoleCreate->refresh = $this->refresh;
       $inputMRoleCreate->serializeElement = $this->sendElement;
 
@@ -1920,7 +1920,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMRoleChange->setListUrl ($listUrl);
       $inputMRoleChange->setListIcon('icon-link');
       $inputMRoleChange->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
-      $inputMRoleChange->conEntity         = $entityWbfsysRoleUser;
+      $inputMRoleChange->conEntity = $entityWbfsysRoleUser;
       $inputMRoleChange->refresh = $this->refresh;
       $inputMRoleChange->serializeElement = $this->sendElement;
 

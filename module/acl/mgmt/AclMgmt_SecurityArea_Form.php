@@ -265,7 +265,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
       $inputMParent->setListUrl ($listUrl);
       $inputMParent->setListIcon('icon-link');
       $inputMParent->setEntityUrl('maintab.php?c=Wbfsys.SecurityArea.edit');
-      $inputMParent->conEntity         = $entityWbfsysSecurityArea;
+      $inputMParent->conEntity = $entityWbfsysSecurityArea;
       $inputMParent->refresh = $this->refresh;
       $inputMParent->serializeElement = $this->sendElement;
 
@@ -1228,7 +1228,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
       $inputIdTarget->setListUrl ($listUrl);
       $inputIdTarget->setListIcon('icon-link');
       $inputIdTarget->setEntityUrl('maintab.php?c=Wbfsys.SecurityArea.edit');
-      $inputIdTarget->conEntity         = $entityWbfsysSecurityArea;
+      $inputIdTarget->conEntity = $entityWbfsysSecurityArea;
       $inputIdTarget->refresh = $this->refresh;
       $inputIdTarget->serializeElement = $this->sendElement;
 
@@ -1554,7 +1554,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
       $inputIdSource->setListUrl ($listUrl);
       $inputIdSource->setListIcon('icon-link');
       $inputIdSource->setEntityUrl('maintab.php?c=Wbfsys.SecurityArea.edit');
-      $inputIdSource->conEntity         = $entityWbfsysSecurityArea;
+      $inputIdSource->conEntity = $entityWbfsysSecurityArea;
       $inputIdSource->refresh = $this->refresh;
       $inputIdSource->serializeElement = $this->sendElement;
 
@@ -1930,7 +1930,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
       $inputMRoleCreate->setListUrl ($listUrl);
       $inputMRoleCreate->setListIcon('icon-link');
       $inputMRoleCreate->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
-      $inputMRoleCreate->conEntity         = $entityWbfsysRoleUser;
+      $inputMRoleCreate->conEntity = $entityWbfsysRoleUser;
       $inputMRoleCreate->refresh = $this->refresh;
       $inputMRoleCreate->serializeElement = $this->sendElement;
 
@@ -2058,7 +2058,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
       $inputMRoleChange->setListUrl ($listUrl);
       $inputMRoleChange->setListIcon('icon-link');
       $inputMRoleChange->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
-      $inputMRoleChange->conEntity         = $entityWbfsysRoleUser;
+      $inputMRoleChange->conEntity = $entityWbfsysRoleUser;
       $inputMRoleChange->refresh = $this->refresh;
       $inputMRoleChange->serializeElement = $this->sendElement;
 
@@ -2498,7 +2498,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
     $inputRole->setListUrl($listUrl);
     $inputRole->setListIcon('icon-link');
     $inputRole->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.show');
-    $inputRole->conEntity         = $entityWbfsysRoleUser;
+    $inputRole->conEntity = $entityWbfsysRoleUser;
     $inputRole->refresh = $this->refresh;
     $inputRole->serializeElement = $this->sendElement;
 
@@ -2559,7 +2559,7 @@ class AclMgmt_SecurityArea_Form extends WgtForm
     $inputRole->setListUrl($listUrl);
     $inputRole->setListIcon('icon-link');
     $inputRole->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.show');
-    $inputRole->conEntity         = $entityWbfsysRoleUser;
+    $inputRole->conEntity = $entityWbfsysRoleUser;
     $inputRole->refresh = $this->refresh;
     $inputRole->serializeElement = $this->sendElement;
 
