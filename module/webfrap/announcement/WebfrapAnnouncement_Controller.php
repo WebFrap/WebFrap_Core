@@ -281,7 +281,7 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
           'wbf.message',
           array(
             'resource'  => $response->i18n->l('Announcement', 'wbfsys.announcement.label'),
-            'id'        => $objid
+            'id' => $objid
           )
         ),
         Response::NOT_FOUND
@@ -310,7 +310,7 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
           'wbf.message',
           array(
             'resource'  => $response->i18n->l('Announcement', 'wbfsys.announcement.label'),
-            'id'        => $objid
+            'id' => $objid
           )
         ),
         Response::FORBIDDEN
@@ -583,7 +583,7 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
           array
           (
             'resource'  => $response->i18n->l('Announcement', 'wbfsys.announcement.label'),
-            'id'        => $objid
+            'id' => $objid
           )
         ),
         Response::NOT_FOUND
@@ -612,7 +612,7 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
           array
           (
             'resource'  => $response->i18n->l('Announcement', 'wbfsys.announcement.label'),
-            'id'        => $objid
+            'id' => $objid
           )
         ),
         Response::FORBIDDEN
@@ -829,7 +829,7 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
           array
           (
             'resource'  => $response->i18n->l('Announcement', 'wbfsys.announcement.label'),
-            'id'        => $objid
+            'id' => $objid
           )
         ),
         Response::NOT_FOUND
@@ -859,7 +859,7 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
           array
           (
             'resource'  => $response->i18n->l('Announcement', 'wbfsys.announcement.label'),
-            'id'        => $objid
+            'id' => $objid
           )
         ),
         Response::FORBIDDEN

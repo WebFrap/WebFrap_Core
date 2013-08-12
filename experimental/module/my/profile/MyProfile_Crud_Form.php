@@ -532,10 +532,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'wbfsys_role_user[name]',
-          'id'        => 'wgt-input-my_profile_name'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Name (Role User)', 'wbfsys.role_user.label'),
+          'name' => 'wbfsys_role_user[name]',
+          'id' => 'wgt-input-my_profile_name'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Name (Role User)', 'wbfsys.role_user.label'),
           'maxlength' => $this->entity->maxSize('name'),
         )
       );
@@ -598,10 +598,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputIdPerson->addAttributes(array
       (
         'readonly'  => 'readonly',
-        'name'      => 'wbfsys_role_user[id_person]',
-        'id'        => 'wgt-input-my_profile_id_person'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-        'title'     => $i18n->l('Insert value for Person (Role User)', 'wbfsys.role_user.label'),
+        'name' => 'wbfsys_role_user[id_person]',
+        'id' => 'wgt-input-my_profile_id_person'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+        'title' => $i18n->l('Insert value for Person (Role User)', 'wbfsys.role_user.label'),
       ));
 
       if ($this->assignedForm)
@@ -653,10 +653,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'wbfsys_role_user[rowid]',
-          'id'        => 'wgt-input-my_profile_rowid'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip valid_required medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Rowid (Role User)', 'wbfsys.role_user.label'),
+          'name' => 'wbfsys_role_user[rowid]',
+          'id' => 'wgt-input-my_profile_rowid'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip valid_required medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Rowid (Role User)', 'wbfsys.role_user.label'),
         )
       );
       $inputRowid->setWidth('medium');
@@ -694,10 +694,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'embed_person[firstname]',
-          'id'        => 'wgt-input-embed_person_firstname'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Firstname (Person)', 'core.person.label'),
+          'name' => 'embed_person[firstname]',
+          'id' => 'wgt-input-embed_person_firstname'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Firstname (Person)', 'core.person.label'),
           'maxlength' => $this->entityEmbedPerson->maxSize('firstname'),
         )
       );
@@ -736,10 +736,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'embed_person[lastname]',
-          'id'        => 'wgt-input-embed_person_lastname'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Lastname (Person)', 'core.person.label'),
+          'name' => 'embed_person[lastname]',
+          'id' => 'wgt-input-embed_person_lastname'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Lastname (Person)', 'core.person.label'),
           'maxlength' => $this->entityEmbedPerson->maxSize('lastname'),
         )
       );
@@ -778,10 +778,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'embed_person[academic_title]',
-          'id'        => 'wgt-input-embed_person_academic_title'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Academic Title (Person)', 'core.person.label'),
+          'name' => 'embed_person[academic_title]',
+          'id' => 'wgt-input-embed_person_academic_title'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Academic Title (Person)', 'core.person.label'),
           'maxlength' => $this->entityEmbedPerson->maxSize('academic_title'),
         )
       );
@@ -820,10 +820,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'embed_person[noblesse_title]',
-          'id'        => 'wgt-input-embed_person_noblesse_title'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Noblesse Title (Person)', 'core.person.label'),
+          'name' => 'embed_person[noblesse_title]',
+          'id' => 'wgt-input-embed_person_noblesse_title'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Noblesse Title (Person)', 'core.person.label'),
           'maxlength' => $this->entityEmbedPerson->maxSize('noblesse_title'),
         )
       );
@@ -886,10 +886,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputIdEmployee->addAttributes(array
       (
         'readonly'  => 'readonly',
-        'name'      => 'wbfsys_role_user[id_employee]',
-        'id'        => 'wgt-input-my_profile_id_employee'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-        'title'     => $i18n->l('Insert value for Employee (Role User)', 'wbfsys.role_user.label'),
+        'name' => 'wbfsys_role_user[id_employee]',
+        'id' => 'wgt-input-my_profile_id_employee'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+        'title' => $i18n->l('Insert value for Employee (Role User)', 'wbfsys.role_user.label'),
       ));
 
       if ($this->assignedForm)
@@ -941,10 +941,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'wbfsys_role_user[m_time_created]',
-          'id'        => 'wgt-input-my_profile_m_time_created'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip small'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Time Created (Role User)', 'wbfsys.role_user.label'),
+          'name' => 'wbfsys_role_user[m_time_created]',
+          'id' => 'wgt-input-my_profile_m_time_created'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip small'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Time Created (Role User)', 'wbfsys.role_user.label'),
           'maxlength' => $this->entity->maxSize('m_time_created'),
         )
       );
@@ -1007,10 +1007,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMRoleCreate->addAttributes(array
       (
         'readonly'  => 'readonly',
-        'name'      => 'wbfsys_role_user[m_role_create]',
-        'id'        => 'wgt-input-my_profile_m_role_create'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-        'title'     => $i18n->l('Insert value for Role Create (Role User)', 'wbfsys.role_user.label'),
+        'name' => 'wbfsys_role_user[m_role_create]',
+        'id' => 'wgt-input-my_profile_m_role_create'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+        'title' => $i18n->l('Insert value for Role Create (Role User)', 'wbfsys.role_user.label'),
       ));
 
       if ($this->assignedForm)
@@ -1070,10 +1070,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'wbfsys_role_user[m_time_changed]',
-          'id'        => 'wgt-input-my_profile_m_time_changed'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip small'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Time Changed (Role User)', 'wbfsys.role_user.label'),
+          'name' => 'wbfsys_role_user[m_time_changed]',
+          'id' => 'wgt-input-my_profile_m_time_changed'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip small'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Time Changed (Role User)', 'wbfsys.role_user.label'),
           'maxlength' => $this->entity->maxSize('m_time_changed'),
         )
       );
@@ -1136,10 +1136,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMRoleChange->addAttributes(array
       (
         'readonly'  => 'readonly',
-        'name'      => 'wbfsys_role_user[m_role_change]',
-        'id'        => 'wgt-input-my_profile_m_role_change'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-        'title'     => $i18n->l('Insert value for Role Change (Role User)', 'wbfsys.role_user.label'),
+        'name' => 'wbfsys_role_user[m_role_change]',
+        'id' => 'wgt-input-my_profile_m_role_change'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+        'title' => $i18n->l('Insert value for Role Change (Role User)', 'wbfsys.role_user.label'),
       ));
 
       if ($this->assignedForm)
@@ -1199,10 +1199,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'wbfsys_role_user[m_version]',
-          'id'        => 'wgt-input-my_profile_m_version'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip valid_int medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Version (Role User)', 'wbfsys.role_user.label'),
+          'name' => 'wbfsys_role_user[m_version]',
+          'id' => 'wgt-input-my_profile_m_version'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip valid_int medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Version (Role User)', 'wbfsys.role_user.label'),
         )
       );
       $inputMVersion->setWidth('medium');
@@ -1240,10 +1240,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'wbfsys_role_user[m_uuid]',
-          'id'        => 'wgt-input-my_profile_m_uuid'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Uuid (Role User)', 'wbfsys.role_user.label'),
+          'name' => 'wbfsys_role_user[m_uuid]',
+          'id' => 'wgt-input-my_profile_m_uuid'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Uuid (Role User)', 'wbfsys.role_user.label'),
         )
       );
       $inputMUuid->setWidth('medium');
@@ -1281,10 +1281,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'embed_person[rowid]',
-          'id'        => 'wgt-input-embed_person_rowid'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip valid_required medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Rowid (Person)', 'core.person.label'),
+          'name' => 'embed_person[rowid]',
+          'id' => 'wgt-input-embed_person_rowid'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip valid_required medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Rowid (Person)', 'core.person.label'),
         )
       );
       $inputRowid->setWidth('medium');
@@ -1322,10 +1322,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'embed_person[m_time_created]',
-          'id'        => 'wgt-input-embed_person_m_time_created'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip small'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Time Created (Person)', 'core.person.label'),
+          'name' => 'embed_person[m_time_created]',
+          'id' => 'wgt-input-embed_person_m_time_created'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip small'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Time Created (Person)', 'core.person.label'),
           'maxlength' => $this->entityEmbedPerson->maxSize('m_time_created'),
         )
       );
@@ -1388,10 +1388,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMRoleCreate->addAttributes(array
       (
         'readonly'  => 'readonly',
-        'name'      => 'embed_person[m_role_create]',
-        'id'        => 'wgt-input-embed_person_m_role_create'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-        'title'     => $i18n->l('Insert value for Role Create (Person)', 'core.person.label'),
+        'name' => 'embed_person[m_role_create]',
+        'id' => 'wgt-input-embed_person_m_role_create'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+        'title' => $i18n->l('Insert value for Role Create (Person)', 'core.person.label'),
       ));
 
       if ($this->assignedForm)
@@ -1451,10 +1451,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'embed_person[m_time_changed]',
-          'id'        => 'wgt-input-embed_person_m_time_changed'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip small'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Time Changed (Person)', 'core.person.label'),
+          'name' => 'embed_person[m_time_changed]',
+          'id' => 'wgt-input-embed_person_m_time_changed'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip small'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Time Changed (Person)', 'core.person.label'),
           'maxlength' => $this->entityEmbedPerson->maxSize('m_time_changed'),
         )
       );
@@ -1517,10 +1517,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMRoleChange->addAttributes(array
       (
         'readonly'  => 'readonly',
-        'name'      => 'embed_person[m_role_change]',
-        'id'        => 'wgt-input-embed_person_m_role_change'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-        'title'     => $i18n->l('Insert value for Role Change (Person)', 'core.person.label'),
+        'name' => 'embed_person[m_role_change]',
+        'id' => 'wgt-input-embed_person_m_role_change'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+        'title' => $i18n->l('Insert value for Role Change (Person)', 'core.person.label'),
       ));
 
       if ($this->assignedForm)
@@ -1580,10 +1580,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'embed_person[m_version]',
-          'id'        => 'wgt-input-embed_person_m_version'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip valid_int medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Version (Person)', 'core.person.label'),
+          'name' => 'embed_person[m_version]',
+          'id' => 'wgt-input-embed_person_m_version'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip valid_int medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Version (Person)', 'core.person.label'),
         )
       );
       $inputMVersion->setWidth('medium');
@@ -1621,10 +1621,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'embed_person[m_uuid]',
-          'id'        => 'wgt-input-embed_person_m_uuid'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Uuid (Person)', 'core.person.label'),
+          'name' => 'embed_person[m_uuid]',
+          'id' => 'wgt-input-embed_person_m_uuid'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Uuid (Person)', 'core.person.label'),
         )
       );
       $inputMUuid->setWidth('medium');
@@ -1662,10 +1662,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'embed_enterprise_employee[rowid]',
-          'id'        => 'wgt-input-embed_enterprise_employee_rowid'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip valid_required medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Rowid (Employee)', 'enterprise.employee.label'),
+          'name' => 'embed_enterprise_employee[rowid]',
+          'id' => 'wgt-input-embed_enterprise_employee_rowid'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip valid_required medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Rowid (Employee)', 'enterprise.employee.label'),
         )
       );
       $inputRowid->setWidth('medium');
@@ -1703,10 +1703,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'embed_enterprise_employee[m_time_created]',
-          'id'        => 'wgt-input-embed_enterprise_employee_m_time_created'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip small'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Time Created (Employee)', 'enterprise.employee.label'),
+          'name' => 'embed_enterprise_employee[m_time_created]',
+          'id' => 'wgt-input-embed_enterprise_employee_m_time_created'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip small'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Time Created (Employee)', 'enterprise.employee.label'),
           'maxlength' => $this->entityEmbedEnterpriseEmployee->maxSize('m_time_created'),
         )
       );
@@ -1769,10 +1769,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMRoleCreate->addAttributes(array
       (
         'readonly'  => 'readonly',
-        'name'      => 'embed_enterprise_employee[m_role_create]',
-        'id'        => 'wgt-input-embed_enterprise_employee_m_role_create'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-        'title'     => $i18n->l('Insert value for Role Create (Employee)', 'enterprise.employee.label'),
+        'name' => 'embed_enterprise_employee[m_role_create]',
+        'id' => 'wgt-input-embed_enterprise_employee_m_role_create'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+        'title' => $i18n->l('Insert value for Role Create (Employee)', 'enterprise.employee.label'),
       ));
 
       if ($this->assignedForm)
@@ -1832,10 +1832,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'embed_enterprise_employee[m_time_changed]',
-          'id'        => 'wgt-input-embed_enterprise_employee_m_time_changed'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip small'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Time Changed (Employee)', 'enterprise.employee.label'),
+          'name' => 'embed_enterprise_employee[m_time_changed]',
+          'id' => 'wgt-input-embed_enterprise_employee_m_time_changed'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip small'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Time Changed (Employee)', 'enterprise.employee.label'),
           'maxlength' => $this->entityEmbedEnterpriseEmployee->maxSize('m_time_changed'),
         )
       );
@@ -1898,10 +1898,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMRoleChange->addAttributes(array
       (
         'readonly'  => 'readonly',
-        'name'      => 'embed_enterprise_employee[m_role_change]',
-        'id'        => 'wgt-input-embed_enterprise_employee_m_role_change'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-        'title'     => $i18n->l('Insert value for Role Change (Employee)', 'enterprise.employee.label'),
+        'name' => 'embed_enterprise_employee[m_role_change]',
+        'id' => 'wgt-input-embed_enterprise_employee_m_role_change'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+        'title' => $i18n->l('Insert value for Role Change (Employee)', 'enterprise.employee.label'),
       ));
 
       if ($this->assignedForm)
@@ -1961,10 +1961,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'embed_enterprise_employee[m_version]',
-          'id'        => 'wgt-input-embed_enterprise_employee_m_version'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip valid_int medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Version (Employee)', 'enterprise.employee.label'),
+          'name' => 'embed_enterprise_employee[m_version]',
+          'id' => 'wgt-input-embed_enterprise_employee_m_version'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip valid_int medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Version (Employee)', 'enterprise.employee.label'),
         )
       );
       $inputMVersion->setWidth('medium');
@@ -2002,10 +2002,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'embed_enterprise_employee[m_uuid]',
-          'id'        => 'wgt-input-embed_enterprise_employee_m_uuid'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Uuid (Employee)', 'enterprise.employee.label'),
+          'name' => 'embed_enterprise_employee[m_uuid]',
+          'id' => 'wgt-input-embed_enterprise_employee_m_uuid'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Uuid (Employee)', 'enterprise.employee.label'),
         )
       );
       $inputMUuid->setWidth('medium');
@@ -2042,10 +2042,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'embed_person[photo]',
-          'id'        => 'wgt-input-embed_person_photo'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium',
-          'title'     => $i18n->l('Insert value for Photo (Person)', 'core.person.label'),
+          'name' => 'embed_person[photo]',
+          'id' => 'wgt-input-embed_person_photo'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium',
+          'title' => $i18n->l('Insert value for Photo (Person)', 'core.person.label'),
         )
       );
       $inputPhoto->setWidth('medium');
@@ -2100,10 +2100,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'wbfsys_role_user[password]',
-          'id'        => 'wgt-input-my_profile_password'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip valid_password medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Password (Role User)', 'wbfsys.role_user.label'),
+          'name' => 'wbfsys_role_user[password]',
+          'id' => 'wgt-input-my_profile_password'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip valid_password medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Password (Role User)', 'wbfsys.role_user.label'),
           'maxlength' => $this->entity->maxSize('password'),
         )
       );
@@ -2149,10 +2149,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'wbfsys_role_user[level]',
-          'id'        => 'wgt-input-my_profile_level'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Access Level (Role User)', 'wbfsys.role_user.label'),
+          'name' => 'wbfsys_role_user[level]',
+          'id' => 'wgt-input-my_profile_level'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Access Level (Role User)', 'wbfsys.role_user.label'),
         )
       );
       $inputLevel->setWidth('medium');
@@ -2238,10 +2238,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'wbfsys_role_user[profile]',
-          'id'        => 'wgt-input-my_profile_profile'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Profile (Role User)', 'wbfsys.role_user.label'),
+          'name' => 'wbfsys_role_user[profile]',
+          'id' => 'wgt-input-my_profile_profile'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Profile (Role User)', 'wbfsys.role_user.label'),
         )
       );
       $inputProfile->setWidth('medium');
@@ -2316,10 +2316,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'wbfsys_role_user[inactive]',
-          'id'        => 'wgt-input-my_profile_inactive'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Inactive (Role User)', 'wbfsys.role_user.label'),
+          'name' => 'wbfsys_role_user[inactive]',
+          'id' => 'wgt-input-my_profile_inactive'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Inactive (Role User)', 'wbfsys.role_user.label'),
         )
       );
       $inputInactive->setWidth('medium');
@@ -2357,10 +2357,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'wbfsys_role_user[non_cert_login]',
-          'id'        => 'wgt-input-my_profile_non_cert_login'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for No Cert required (Role User)', 'wbfsys.role_user.label'),
+          'name' => 'wbfsys_role_user[non_cert_login]',
+          'id' => 'wgt-input-my_profile_non_cert_login'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for No Cert required (Role User)', 'wbfsys.role_user.label'),
         )
       );
       $inputNonCertLogin->setWidth('medium');
@@ -2400,7 +2400,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
         (
           'name'  => 'wbfsys_role_user[description]',
           'id'    => 'wgt-input-my_profile_description'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip large medium-height'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'class' => 'wcm wcm_ui_tip large medium-height'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
           'title' => $i18n->l('Insert value for Description (Role User)', 'wbfsys.role_user.label'),
         )
       );

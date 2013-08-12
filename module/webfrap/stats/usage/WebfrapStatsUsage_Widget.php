@@ -67,10 +67,10 @@ class WebfrapStatsUsage_Widget extends WgtWidget
     $selectbox = $view->newItem('tmp','Selectbox');
     $selectbox->addAttributes(array
     (
-      'name'      => 'entity',
-      'id'        => 'wgt_selectbox-widget-entities',
+      'name' => 'entity',
+      'id' => 'wgt_selectbox-widget-entities',
       //'onchange'  => '',
-      'class'     => 'medium cursor',
+      'class' => 'medium cursor',
     ));
     $selectbox->setWidth('medium');
     $selectbox->setFirstfree('Select an Entity');

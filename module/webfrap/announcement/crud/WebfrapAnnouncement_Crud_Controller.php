@@ -384,7 +384,7 @@ class WebfrapAnnouncement_Crud_Controller extends ControllerCrud
           array
           (
             'resource'  => $response->i18n->l('Announcement', 'wbfsys.announcement.label'),
-            'id'        => $objid
+            'id' => $objid
           )
         ),
         Response::NOT_FOUND
@@ -413,7 +413,7 @@ class WebfrapAnnouncement_Crud_Controller extends ControllerCrud
           array
           (
             'resource'  => $response->i18n->l('Announcement', 'wbfsys.announcement.label'),
-            'id'        => $objid
+            'id' => $objid
           )
         ),
         Response::FORBIDDEN

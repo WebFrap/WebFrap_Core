@@ -156,7 +156,7 @@ class AclMgmt_Dset_Controller extends MvcController_Domain
               $domainNode->domainName,
               $domainNode->domainI18n.'.label'
             ),
-            'id'        => $objid
+            'id' => $objid
           )
         ),
         Response::NOT_FOUND
