@@ -266,8 +266,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
       $inputMParent->setListIcon('icon-link');
       $inputMParent->setEntityUrl('maintab.php?c=Wbfsys.SecurityArea.edit');
       $inputMParent->conEntity         = $entityWbfsysSecurityArea;
-      $inputMParent->refresh           = $this->refresh;
-      $inputMParent->serializeElement  = $this->sendElement;
+      $inputMParent->refresh = $this->refresh;
+      $inputMParent->serializeElement = $this->sendElement;
 
         $inputMParent->setAutocomplete
         (
@@ -322,8 +322,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
         $this->entity->required('label')
       );
 
-      $inputLabel->refresh           = $this->refresh;
-      $inputLabel->serializeElement  = $this->sendElement;
+      $inputLabel->refresh = $this->refresh;
+      $inputLabel->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -381,8 +381,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
       $acl = $this->getAcl();
 
       if ($acl->access('mod-wbfsys>mod-wbfsys-cat-core_data:insert')) {
-        $inputIdRefListing->refresh           = $this->refresh;
-        $inputIdRefListing->serializeElement  = $this->sendElement;
+        $inputIdRefListing->refresh = $this->refresh;
+        $inputIdRefListing->serializeElement = $this->sendElement;
         $inputIdRefListing->editUrl = 'index.php?c=Wbfsys.SecurityLevel.listing&amp;target='.$this->namespace.'&amp;field=id_ref_listing&amp;publish=selectbox&amp;suffix='.$this->suffix.'&amp;input_id=wgt-input-'.$this->keyName.'_id_ref_listing'.$this->suffix;
       }
       // set an empty first entry
@@ -448,8 +448,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
       $acl = $this->getAcl();
 
       if ($acl->access('mod-wbfsys>mod-wbfsys-cat-core_data:insert')) {
-        $inputIdRefAccess->refresh           = $this->refresh;
-        $inputIdRefAccess->serializeElement  = $this->sendElement;
+        $inputIdRefAccess->refresh = $this->refresh;
+        $inputIdRefAccess->serializeElement = $this->sendElement;
         $inputIdRefAccess->editUrl = 'index.php?c=Wbfsys.SecurityLevel.listing&amp;target='.$this->namespace.'&amp;field=id_ref_access&amp;publish=selectbox&amp;suffix='.$this->suffix.'&amp;input_id=wgt-input-'.$this->keyName.'_id_ref_access'.$this->suffix;
       }
       // set an empty first entry
@@ -515,8 +515,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
       $acl = $this->getAcl();
 
       if ($acl->access('mod-wbfsys>mod-wbfsys-cat-core_data:insert')) {
-        $inputIdRefInsert->refresh           = $this->refresh;
-        $inputIdRefInsert->serializeElement  = $this->sendElement;
+        $inputIdRefInsert->refresh = $this->refresh;
+        $inputIdRefInsert->serializeElement = $this->sendElement;
         $inputIdRefInsert->editUrl = 'index.php?c=Wbfsys.SecurityLevel.listing&amp;target='.$this->namespace.'&amp;field=id_ref_insert&amp;publish=selectbox&amp;suffix='.$this->suffix.'&amp;input_id=wgt-input-'.$this->keyName.'_id_ref_insert'.$this->suffix;
       }
       // set an empty first entry
@@ -582,8 +582,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
       $acl = $this->getAcl();
 
       if ($acl->access('mod-wbfsys>mod-wbfsys-cat-core_data:insert')) {
-        $inputIdRefUpdate->refresh           = $this->refresh;
-        $inputIdRefUpdate->serializeElement  = $this->sendElement;
+        $inputIdRefUpdate->refresh = $this->refresh;
+        $inputIdRefUpdate->serializeElement = $this->sendElement;
         $inputIdRefUpdate->editUrl = 'index.php?c=Wbfsys.SecurityLevel.listing&amp;target='.$this->namespace.'&amp;field=id_ref_update&amp;publish=selectbox&amp;suffix='.$this->suffix.'&amp;input_id=wgt-input-'.$this->keyName.'_id_ref_update'.$this->suffix;
       }
       // set an empty first entry
@@ -649,8 +649,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
       $acl = $this->getAcl();
 
       if ($acl->access('mod-wbfsys>mod-wbfsys-cat-core_data:insert')) {
-        $inputIdRefDelete->refresh           = $this->refresh;
-        $inputIdRefDelete->serializeElement  = $this->sendElement;
+        $inputIdRefDelete->refresh = $this->refresh;
+        $inputIdRefDelete->serializeElement = $this->sendElement;
         $inputIdRefDelete->editUrl = 'index.php?c=Wbfsys.SecurityLevel.listing&amp;target='.$this->namespace.'&amp;field=id_ref_delete&amp;publish=selectbox&amp;suffix='.$this->suffix.'&amp;input_id=wgt-input-'.$this->keyName.'_id_ref_delete'.$this->suffix;
       }
       // set an empty first entry
@@ -716,8 +716,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
       $acl = $this->getAcl();
 
       if ($acl->access('mod-wbfsys>mod-wbfsys-cat-core_data:insert')) {
-        $inputIdRefAdmin->refresh           = $this->refresh;
-        $inputIdRefAdmin->serializeElement  = $this->sendElement;
+        $inputIdRefAdmin->refresh = $this->refresh;
+        $inputIdRefAdmin->serializeElement = $this->sendElement;
         $inputIdRefAdmin->editUrl = 'index.php?c=Wbfsys.SecurityLevel.listing&amp;target='.$this->namespace.'&amp;field=id_ref_admin&amp;publish=selectbox&amp;suffix='.$this->suffix.'&amp;input_id=wgt-input-'.$this->keyName.'_id_ref_admin'.$this->suffix;
       }
       // set an empty first entry
@@ -783,8 +783,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
       $acl = $this->getAcl();
 
       if ($acl->access('mod-wbfsys>mod-wbfsys-cat-core_data:insert')) {
-        $inputIdLevelListing->refresh           = $this->refresh;
-        $inputIdLevelListing->serializeElement  = $this->sendElement;
+        $inputIdLevelListing->refresh = $this->refresh;
+        $inputIdLevelListing->serializeElement = $this->sendElement;
         $inputIdLevelListing->editUrl = 'index.php?c=Wbfsys.SecurityLevel.listing&amp;target='.$this->namespace.'&amp;field=id_level_listing&amp;publish=selectbox&amp;suffix='.$this->suffix.'&amp;input_id=wgt-input-'.$this->keyName.'_id_level_listing'.$this->suffix;
       }
       // set an empty first entry
@@ -850,8 +850,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
       $acl = $this->getAcl();
 
       if ($acl->access('mod-wbfsys>mod-wbfsys-cat-core_data:insert')) {
-        $inputIdLevelAccess->refresh           = $this->refresh;
-        $inputIdLevelAccess->serializeElement  = $this->sendElement;
+        $inputIdLevelAccess->refresh = $this->refresh;
+        $inputIdLevelAccess->serializeElement = $this->sendElement;
         $inputIdLevelAccess->editUrl = 'index.php?c=Wbfsys.SecurityLevel.listing&amp;target='.$this->namespace.'&amp;field=id_level_access&amp;publish=selectbox&amp;suffix='.$this->suffix.'&amp;input_id=wgt-input-'.$this->keyName.'_id_level_access'.$this->suffix;
       }
       // set an empty first entry
@@ -917,8 +917,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
       $acl = $this->getAcl();
 
       if ($acl->access('mod-wbfsys>mod-wbfsys-cat-core_data:insert')) {
-        $inputIdLevelInsert->refresh           = $this->refresh;
-        $inputIdLevelInsert->serializeElement  = $this->sendElement;
+        $inputIdLevelInsert->refresh = $this->refresh;
+        $inputIdLevelInsert->serializeElement = $this->sendElement;
         $inputIdLevelInsert->editUrl = 'index.php?c=Wbfsys.SecurityLevel.listing&amp;target='.$this->namespace.'&amp;field=id_level_insert&amp;publish=selectbox&amp;suffix='.$this->suffix.'&amp;input_id=wgt-input-'.$this->keyName.'_id_level_insert'.$this->suffix;
       }
       // set an empty first entry
@@ -984,8 +984,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
       $acl = $this->getAcl();
 
       if ($acl->access('mod-wbfsys>mod-wbfsys-cat-core_data:insert')) {
-        $inputIdLevelUpdate->refresh           = $this->refresh;
-        $inputIdLevelUpdate->serializeElement  = $this->sendElement;
+        $inputIdLevelUpdate->refresh = $this->refresh;
+        $inputIdLevelUpdate->serializeElement = $this->sendElement;
         $inputIdLevelUpdate->editUrl = 'index.php?c=Wbfsys.SecurityLevel.listing&amp;target='.$this->namespace.'&amp;field=id_level_update&amp;publish=selectbox&amp;suffix='.$this->suffix.'&amp;input_id=wgt-input-'.$this->keyName.'_id_level_update'.$this->suffix;
       }
       // set an empty first entry
@@ -1051,8 +1051,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
       $acl = $this->getAcl();
 
       if ($acl->access('mod-wbfsys>mod-wbfsys-cat-core_data:insert')) {
-        $inputIdLevelDelete->refresh           = $this->refresh;
-        $inputIdLevelDelete->serializeElement  = $this->sendElement;
+        $inputIdLevelDelete->refresh = $this->refresh;
+        $inputIdLevelDelete->serializeElement = $this->sendElement;
         $inputIdLevelDelete->editUrl = 'index.php?c=Wbfsys.SecurityLevel.listing&amp;target='.$this->namespace.'&amp;field=id_level_delete&amp;publish=selectbox&amp;suffix='.$this->suffix.'&amp;input_id=wgt-input-'.$this->keyName.'_id_level_delete'.$this->suffix;
       }
       // set an empty first entry
@@ -1118,8 +1118,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
       $acl = $this->getAcl();
 
       if ($acl->access('mod-wbfsys>mod-wbfsys-cat-core_data:insert')) {
-        $inputIdLevelAdmin->refresh           = $this->refresh;
-        $inputIdLevelAdmin->serializeElement  = $this->sendElement;
+        $inputIdLevelAdmin->refresh = $this->refresh;
+        $inputIdLevelAdmin->serializeElement = $this->sendElement;
         $inputIdLevelAdmin->editUrl = 'index.php?c=Wbfsys.SecurityLevel.listing&amp;target='.$this->namespace.'&amp;field=id_level_admin&amp;publish=selectbox&amp;suffix='.$this->suffix.'&amp;input_id=wgt-input-'.$this->keyName.'_id_level_admin'.$this->suffix;
       }
       // set an empty first entry
@@ -1164,8 +1164,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
 
       $inputVid->setReadOnly($this->isReadOnly('vid'));
       $inputVid->setData($this->entity->getSecure('vid'));
-      $inputVid->refresh           = $this->refresh;
-      $inputVid->serializeElement  = $this->sendElement;
+      $inputVid->refresh = $this->refresh;
+      $inputVid->serializeElement = $this->sendElement;
 
   }//end public function input_vid */
 
@@ -1229,8 +1229,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
       $inputIdTarget->setListIcon('icon-link');
       $inputIdTarget->setEntityUrl('maintab.php?c=Wbfsys.SecurityArea.edit');
       $inputIdTarget->conEntity         = $entityWbfsysSecurityArea;
-      $inputIdTarget->refresh           = $this->refresh;
-      $inputIdTarget->serializeElement  = $this->sendElement;
+      $inputIdTarget->refresh = $this->refresh;
+      $inputIdTarget->serializeElement = $this->sendElement;
 
         $inputIdTarget->setAutocomplete
         (
@@ -1299,8 +1299,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
       $acl = $this->getAcl();
 
       if ($acl->access('mod-wbfsys>mgmt-wbfsys_security_area_type:insert')) {
-        $inputIdType->refresh           = $this->refresh;
-        $inputIdType->serializeElement  = $this->sendElement;
+        $inputIdType->refresh = $this->refresh;
+        $inputIdType->serializeElement = $this->sendElement;
         $inputIdType->editUrl = 'index.php?c=Wbfsys.SecurityAreaType.listing&amp;target='.$this->namespace.'&amp;field=id_type&amp;publish=selectbox&amp;suffix='.$this->suffix.'&amp;input_id=wgt-input-'.$this->keyName.'_id_type'.$this->suffix;
       }
       // set an empty first entry
@@ -1351,8 +1351,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
         $this->entity->required('access_key')
       );
 
-      $inputAccessKey->refresh           = $this->refresh;
-      $inputAccessKey->serializeElement  = $this->sendElement;
+      $inputAccessKey->refresh = $this->refresh;
+      $inputAccessKey->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1395,8 +1395,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
         $this->entity->required('type_key')
       );
 
-      $inputTypeKey->refresh           = $this->refresh;
-      $inputTypeKey->serializeElement  = $this->sendElement;
+      $inputTypeKey->refresh = $this->refresh;
+      $inputTypeKey->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1439,8 +1439,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
         $this->entity->required('parent_key')
       );
 
-      $inputParentKey->refresh           = $this->refresh;
-      $inputParentKey->serializeElement  = $this->sendElement;
+      $inputParentKey->refresh = $this->refresh;
+      $inputParentKey->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1483,8 +1483,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
         $this->entity->required('source_key')
       );
 
-      $inputSourceKey->refresh           = $this->refresh;
-      $inputSourceKey->serializeElement  = $this->sendElement;
+      $inputSourceKey->refresh = $this->refresh;
+      $inputSourceKey->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1555,8 +1555,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
       $inputIdSource->setListIcon('icon-link');
       $inputIdSource->setEntityUrl('maintab.php?c=Wbfsys.SecurityArea.edit');
       $inputIdSource->conEntity         = $entityWbfsysSecurityArea;
-      $inputIdSource->refresh           = $this->refresh;
-      $inputIdSource->serializeElement  = $this->sendElement;
+      $inputIdSource->refresh = $this->refresh;
+      $inputIdSource->serializeElement = $this->sendElement;
 
         $inputIdSource->setAutocomplete
         (
@@ -1611,8 +1611,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
         $this->entity->required('parent_path')
       );
 
-      $inputParentPath->refresh           = $this->refresh;
-      $inputParentPath->serializeElement  = $this->sendElement;
+      $inputParentPath->refresh = $this->refresh;
+      $inputParentPath->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1654,8 +1654,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
         $this->entity->required('revision')
       );
 
-      $inputRevision->refresh           = $this->refresh;
-      $inputRevision->serializeElement  = $this->sendElement;
+      $inputRevision->refresh = $this->refresh;
+      $inputRevision->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1697,8 +1697,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
         $this->entity->required('flag_system')
       );
 
-      $inputFlagSystem->refresh           = $this->refresh;
-      $inputFlagSystem->serializeElement  = $this->sendElement;
+      $inputFlagSystem->refresh = $this->refresh;
+      $inputFlagSystem->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1741,8 +1741,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
         $this->entity->required('description')
       );
 
-      $inputDescription->refresh           = $this->refresh;
-      $inputDescription->serializeElement  = $this->sendElement;
+      $inputDescription->refresh = $this->refresh;
+      $inputDescription->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1779,8 +1779,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
 
       $inputIdVidEntity->setReadOnly($this->isReadOnly('id_vid_entity'));
       $inputIdVidEntity->setData($this->entity->getSecure('id_vid_entity'));
-      $inputIdVidEntity->refresh           = $this->refresh;
-      $inputIdVidEntity->serializeElement  = $this->sendElement;
+      $inputIdVidEntity->refresh = $this->refresh;
+      $inputIdVidEntity->serializeElement = $this->sendElement;
 
   }//end public function input_id_vid_entity */
 
@@ -1815,8 +1815,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
         $this->entity->required('rowid')
       );
 
-      $inputRowid->refresh           = $this->refresh;
-      $inputRowid->serializeElement  = $this->sendElement;
+      $inputRowid->refresh = $this->refresh;
+      $inputRowid->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1859,8 +1859,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
         $this->entity->required('m_time_created')
       );
 
-      $inputMTimeCreated->refresh           = $this->refresh;
-      $inputMTimeCreated->serializeElement  = $this->sendElement;
+      $inputMTimeCreated->refresh = $this->refresh;
+      $inputMTimeCreated->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1931,8 +1931,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
       $inputMRoleCreate->setListIcon('icon-link');
       $inputMRoleCreate->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
       $inputMRoleCreate->conEntity         = $entityWbfsysRoleUser;
-      $inputMRoleCreate->refresh           = $this->refresh;
-      $inputMRoleCreate->serializeElement  = $this->sendElement;
+      $inputMRoleCreate->refresh = $this->refresh;
+      $inputMRoleCreate->serializeElement = $this->sendElement;
 
         $inputMRoleCreate->setAutocomplete
         (
@@ -1987,8 +1987,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
         $this->entity->required('m_time_changed')
       );
 
-      $inputMTimeChanged->refresh           = $this->refresh;
-      $inputMTimeChanged->serializeElement  = $this->sendElement;
+      $inputMTimeChanged->refresh = $this->refresh;
+      $inputMTimeChanged->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -2059,8 +2059,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
       $inputMRoleChange->setListIcon('icon-link');
       $inputMRoleChange->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
       $inputMRoleChange->conEntity         = $entityWbfsysRoleUser;
-      $inputMRoleChange->refresh           = $this->refresh;
-      $inputMRoleChange->serializeElement  = $this->sendElement;
+      $inputMRoleChange->refresh = $this->refresh;
+      $inputMRoleChange->serializeElement = $this->sendElement;
 
         $inputMRoleChange->setAutocomplete
         (
@@ -2114,8 +2114,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
         $this->entity->required('m_version')
       );
 
-      $inputMVersion->refresh           = $this->refresh;
-      $inputMVersion->serializeElement  = $this->sendElement;
+      $inputMVersion->refresh = $this->refresh;
+      $inputMVersion->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -2157,8 +2157,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
         $this->entity->required('m_uuid')
       );
 
-      $inputMUuid->refresh           = $this->refresh;
-      $inputMUuid->serializeElement  = $this->sendElement;
+      $inputMUuid->refresh = $this->refresh;
+      $inputMUuid->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -2205,8 +2205,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
         $this->entity->required('label')
       );
 
-      $inputLabel->refresh           = $this->refresh;
-      $inputLabel->serializeElement  = $this->sendElement;
+      $inputLabel->refresh = $this->refresh;
+      $inputLabel->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -2310,8 +2310,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
         $this->entity->required('access_key')
       );
 
-      $inputAccessKey->refresh           = $this->refresh;
-      $inputAccessKey->serializeElement  = $this->sendElement;
+      $inputAccessKey->refresh = $this->refresh;
+      $inputAccessKey->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -2354,8 +2354,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
         $this->entity->required('type_key')
       );
 
-      $inputTypeKey->refresh           = $this->refresh;
-      $inputTypeKey->serializeElement  = $this->sendElement;
+      $inputTypeKey->refresh = $this->refresh;
+      $inputTypeKey->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -2398,8 +2398,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
         $this->entity->required('parent_key')
       );
 
-      $inputParentKey->refresh           = $this->refresh;
-      $inputParentKey->serializeElement  = $this->sendElement;
+      $inputParentKey->refresh = $this->refresh;
+      $inputParentKey->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -2442,8 +2442,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
         $this->entity->required('source_key')
       );
 
-      $inputSourceKey->refresh           = $this->refresh;
-      $inputSourceKey->serializeElement  = $this->sendElement;
+      $inputSourceKey->refresh = $this->refresh;
+      $inputSourceKey->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -2499,8 +2499,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
     $inputRole->setListIcon('icon-link');
     $inputRole->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.show');
     $inputRole->conEntity         = $entityWbfsysRoleUser;
-    $inputRole->refresh           = $this->refresh;
-    $inputRole->serializeElement  = $this->sendElement;
+    $inputRole->refresh = $this->refresh;
+    $inputRole->serializeElement = $this->sendElement;
 
     $inputRole->view = $this->view;
     $inputRole->buildJavascript('wgt-input-'.$this->keyName.'_m_role_create');
@@ -2560,8 +2560,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
     $inputRole->setListIcon('icon-link');
     $inputRole->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.show');
     $inputRole->conEntity         = $entityWbfsysRoleUser;
-    $inputRole->refresh           = $this->refresh;
-    $inputRole->serializeElement  = $this->sendElement;
+    $inputRole->refresh = $this->refresh;
+    $inputRole->serializeElement = $this->sendElement;
 
     $inputRole->view = $this->view;
     $inputRole->buildJavascript('wgt-input-'.$this->keyName.'_m_role_change');
@@ -2603,8 +2603,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
     (
       $this->view->i18n->l('Created Before','wbf.label')
     );
-    $inputDate->refresh           = $this->refresh;
-    $inputDate->serializeElement  = $this->sendElement;
+    $inputDate->refresh = $this->refresh;
+    $inputDate->serializeElement = $this->sendElement;
 
     // activate the category
     $this->view->addVar
@@ -2642,8 +2642,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
     (
       $this->view->i18n->l('Created After','wbf.label')
     );
-    $inputDate->refresh           = $this->refresh;
-    $inputDate->serializeElement  = $this->sendElement;
+    $inputDate->refresh = $this->refresh;
+    $inputDate->serializeElement = $this->sendElement;
 
     // activate the category
     $this->view->addVar
@@ -2681,8 +2681,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
     (
       $this->view->i18n->l('Changed Before','wbf.label')
     );
-    $inputDate->refresh           = $this->refresh;
-    $inputDate->serializeElement  = $this->sendElement;
+    $inputDate->refresh = $this->refresh;
+    $inputDate->serializeElement = $this->sendElement;
 
     // activate the category
     $this->view->addVar
@@ -2720,8 +2720,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
     (
       $this->view->i18n->l('Changed After','wbf.label')
     );
-    $inputDate->refresh           = $this->refresh;
-    $inputDate->serializeElement  = $this->sendElement;
+    $inputDate->refresh = $this->refresh;
+    $inputDate->serializeElement = $this->sendElement;
 
     // activate the category
     $this->view->addVar
@@ -2759,8 +2759,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
     (
       $this->view->i18n->l('IDI','wbf.label')
     );
-    $inputRowid->refresh           = $this->refresh;
-    $inputRowid->serializeElement  = $this->sendElement;
+    $inputRowid->refresh = $this->refresh;
+    $inputRowid->serializeElement = $this->sendElement;
 
     // activate the category
     $this->view->addVar
@@ -2798,8 +2798,8 @@ class AclMgmt_SecurityArea_Form extends WgtForm
     (
       $this->view->i18n->l('UUID','wbf.label')
     );
-    $input->refresh           = $this->refresh;
-    $input->serializeElement  = $this->sendElement;
+    $input->refresh = $this->refresh;
+    $input->serializeElement = $this->sendElement;
 
     // activate the category
     $this->view->addVar

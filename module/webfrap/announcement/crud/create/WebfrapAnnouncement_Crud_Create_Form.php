@@ -242,8 +242,8 @@ class WebfrapAnnouncement_Crud_Create_Form extends WgtCrudForm
       $inputTitle->setData($this->entity->getSecure('title'));
       $inputTitle->setLabel($i18n->l('Title', 'wbfsys.announcement.label'));
 
-      $inputTitle->refresh           = $this->refresh;
-      $inputTitle->serializeElement  = $this->sendElement;
+      $inputTitle->refresh = $this->refresh;
+      $inputTitle->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -278,8 +278,8 @@ class WebfrapAnnouncement_Crud_Create_Form extends WgtCrudForm
       $inputDateStart->setData($this->entity->getDate('date_start'));
       $inputDateStart->setLabel($i18n->l('Start Date', 'wbfsys.announcement.label'));
 
-      $inputDateStart->refresh           = $this->refresh;
-      $inputDateStart->serializeElement  = $this->sendElement;
+      $inputDateStart->refresh = $this->refresh;
+      $inputDateStart->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -358,8 +358,8 @@ class WebfrapAnnouncement_Crud_Create_Form extends WgtCrudForm
       $inputImportance->setActive($this->entity->getSecure('importance'));
       $inputImportance->setLabel($i18n->l('Importance', 'wbfsys.announcement.label'));
 
-      $inputImportance->refresh           = $this->refresh;
-      $inputImportance->serializeElement  = $this->sendElement;
+      $inputImportance->refresh = $this->refresh;
+      $inputImportance->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -394,8 +394,8 @@ class WebfrapAnnouncement_Crud_Create_Form extends WgtCrudForm
       $inputMessage->setLabel($i18n->l('Message', 'wbfsys.announcement.label'));
       $inputMessage->setMode('rich_text');
 
-      $inputMessage->refresh           = $this->refresh;
-      $inputMessage->serializeElement  = $this->sendElement;
+      $inputMessage->refresh = $this->refresh;
+      $inputMessage->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -430,8 +430,8 @@ class WebfrapAnnouncement_Crud_Create_Form extends WgtCrudForm
       $inputDateEnd->setData($this->entity->getDate('date_end'));
       $inputDateEnd->setLabel($i18n->l('End Date', 'wbfsys.announcement.label'));
 
-      $inputDateEnd->refresh           = $this->refresh;
-      $inputDateEnd->serializeElement  = $this->sendElement;
+      $inputDateEnd->refresh = $this->refresh;
+      $inputDateEnd->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -465,8 +465,8 @@ class WebfrapAnnouncement_Crud_Create_Form extends WgtCrudForm
       $inputMUuid->setData($this->entity->getSecure('m_uuid'));
       $inputMUuid->setLabel($i18n->l('Uuid', 'wbfsys.announcement.label'));
 
-      $inputMUuid->refresh           = $this->refresh;
-      $inputMUuid->serializeElement  = $this->sendElement;
+      $inputMUuid->refresh = $this->refresh;
+      $inputMUuid->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar

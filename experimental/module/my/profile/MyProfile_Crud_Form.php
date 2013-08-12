@@ -546,8 +546,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputName->setData($this->entity->getSecure('name'));
       $inputName->setLabel($i18n->l('Name', 'wbfsys.role_user.label'));
 
-      $inputName->refresh           = $this->refresh;
-      $inputName->serializeElement  = $this->sendElement;
+      $inputName->refresh = $this->refresh;
+      $inputName->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -621,8 +621,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputIdPerson->setListIcon('icon-link');
       $inputIdPerson->setEntityUrl('maintab.php?c=Core.Person.edit');
       $inputIdPerson->conEntity         = $entityCorePerson;
-      $inputIdPerson->refresh           = $this->refresh;
-      $inputIdPerson->serializeElement  = $this->sendElement;
+      $inputIdPerson->refresh = $this->refresh;
+      $inputIdPerson->serializeElement = $this->sendElement;
 
       $inputIdPerson->view = $this->view;
       $inputIdPerson->buildJavascript('wgt-input-my_profile_id_person'.($this->suffix?'-'.$this->suffix:''));
@@ -666,8 +666,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputRowid->setData($this->entity->getId());
       $inputRowid->setLabel($i18n->l('Rowid', 'wbfsys.role_user.label'));
 
-      $inputRowid->refresh           = $this->refresh;
-      $inputRowid->serializeElement  = $this->sendElement;
+      $inputRowid->refresh = $this->refresh;
+      $inputRowid->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -708,8 +708,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputFirstname->setData($this->entityEmbedPerson->getSecure('firstname'));
       $inputFirstname->setLabel($i18n->l('Firstname', 'core.person.label'));
 
-      $inputFirstname->refresh           = $this->refresh;
-      $inputFirstname->serializeElement  = $this->sendElement;
+      $inputFirstname->refresh = $this->refresh;
+      $inputFirstname->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -750,8 +750,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputLastname->setData($this->entityEmbedPerson->getSecure('lastname'));
       $inputLastname->setLabel($i18n->l('Lastname', 'core.person.label'));
 
-      $inputLastname->refresh           = $this->refresh;
-      $inputLastname->serializeElement  = $this->sendElement;
+      $inputLastname->refresh = $this->refresh;
+      $inputLastname->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -792,8 +792,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputAcademicTitle->setData($this->entityEmbedPerson->getSecure('academic_title'));
       $inputAcademicTitle->setLabel($i18n->l('Academic Title', 'core.person.label'));
 
-      $inputAcademicTitle->refresh           = $this->refresh;
-      $inputAcademicTitle->serializeElement  = $this->sendElement;
+      $inputAcademicTitle->refresh = $this->refresh;
+      $inputAcademicTitle->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -834,8 +834,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputNoblesseTitle->setData($this->entityEmbedPerson->getSecure('noblesse_title'));
       $inputNoblesseTitle->setLabel($i18n->l('Noblesse Title', 'core.person.label'));
 
-      $inputNoblesseTitle->refresh           = $this->refresh;
-      $inputNoblesseTitle->serializeElement  = $this->sendElement;
+      $inputNoblesseTitle->refresh = $this->refresh;
+      $inputNoblesseTitle->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -909,8 +909,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputIdEmployee->setListIcon('icon-link');
       $inputIdEmployee->setEntityUrl('maintab.php?c=Enterprise.Employee.edit');
       $inputIdEmployee->conEntity         = $entityEnterpriseEmployee;
-      $inputIdEmployee->refresh           = $this->refresh;
-      $inputIdEmployee->serializeElement  = $this->sendElement;
+      $inputIdEmployee->refresh = $this->refresh;
+      $inputIdEmployee->serializeElement = $this->sendElement;
 
       $inputIdEmployee->view = $this->view;
       $inputIdEmployee->buildJavascript('wgt-input-my_profile_id_employee'.($this->suffix?'-'.$this->suffix:''));
@@ -955,8 +955,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMTimeCreated->setData($this->entity->getDate('m_time_created'));
       $inputMTimeCreated->setLabel($i18n->l('Time Created', 'wbfsys.role_user.label'));
 
-      $inputMTimeCreated->refresh           = $this->refresh;
-      $inputMTimeCreated->serializeElement  = $this->sendElement;
+      $inputMTimeCreated->refresh = $this->refresh;
+      $inputMTimeCreated->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1030,8 +1030,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMRoleCreate->setListIcon('icon-link');
       $inputMRoleCreate->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
       $inputMRoleCreate->conEntity         = $entityWbfsysRoleUser;
-      $inputMRoleCreate->refresh           = $this->refresh;
-      $inputMRoleCreate->serializeElement  = $this->sendElement;
+      $inputMRoleCreate->refresh = $this->refresh;
+      $inputMRoleCreate->serializeElement = $this->sendElement;
 
         $inputMRoleCreate->setAutocomplete
         (
@@ -1084,8 +1084,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMTimeChanged->setData($this->entity->getDate('m_time_changed'));
       $inputMTimeChanged->setLabel($i18n->l('Time Changed', 'wbfsys.role_user.label'));
 
-      $inputMTimeChanged->refresh           = $this->refresh;
-      $inputMTimeChanged->serializeElement  = $this->sendElement;
+      $inputMTimeChanged->refresh = $this->refresh;
+      $inputMTimeChanged->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1159,8 +1159,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMRoleChange->setListIcon('icon-link');
       $inputMRoleChange->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
       $inputMRoleChange->conEntity         = $entityWbfsysRoleUser;
-      $inputMRoleChange->refresh           = $this->refresh;
-      $inputMRoleChange->serializeElement  = $this->sendElement;
+      $inputMRoleChange->refresh = $this->refresh;
+      $inputMRoleChange->serializeElement = $this->sendElement;
 
         $inputMRoleChange->setAutocomplete
         (
@@ -1212,8 +1212,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMVersion->setData($this->entity->getSecure('m_version'));
       $inputMVersion->setLabel($i18n->l('Version', 'wbfsys.role_user.label'));
 
-      $inputMVersion->refresh           = $this->refresh;
-      $inputMVersion->serializeElement  = $this->sendElement;
+      $inputMVersion->refresh = $this->refresh;
+      $inputMVersion->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1253,8 +1253,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMUuid->setData($this->entity->getSecure('m_uuid'));
       $inputMUuid->setLabel($i18n->l('Uuid', 'wbfsys.role_user.label'));
 
-      $inputMUuid->refresh           = $this->refresh;
-      $inputMUuid->serializeElement  = $this->sendElement;
+      $inputMUuid->refresh = $this->refresh;
+      $inputMUuid->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1294,8 +1294,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputRowid->setData($this->entityEmbedPerson->getId());
       $inputRowid->setLabel($i18n->l('Rowid', 'core.person.label'));
 
-      $inputRowid->refresh           = $this->refresh;
-      $inputRowid->serializeElement  = $this->sendElement;
+      $inputRowid->refresh = $this->refresh;
+      $inputRowid->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1336,8 +1336,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMTimeCreated->setData($this->entityEmbedPerson->getDate('m_time_created'));
       $inputMTimeCreated->setLabel($i18n->l('Time Created', 'core.person.label'));
 
-      $inputMTimeCreated->refresh           = $this->refresh;
-      $inputMTimeCreated->serializeElement  = $this->sendElement;
+      $inputMTimeCreated->refresh = $this->refresh;
+      $inputMTimeCreated->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1411,8 +1411,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMRoleCreate->setListIcon('icon-link');
       $inputMRoleCreate->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
       $inputMRoleCreate->conEntity         = $entityWbfsysRoleUser;
-      $inputMRoleCreate->refresh           = $this->refresh;
-      $inputMRoleCreate->serializeElement  = $this->sendElement;
+      $inputMRoleCreate->refresh = $this->refresh;
+      $inputMRoleCreate->serializeElement = $this->sendElement;
 
         $inputMRoleCreate->setAutocomplete
         (
@@ -1465,8 +1465,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMTimeChanged->setData($this->entityEmbedPerson->getDate('m_time_changed'));
       $inputMTimeChanged->setLabel($i18n->l('Time Changed', 'core.person.label'));
 
-      $inputMTimeChanged->refresh           = $this->refresh;
-      $inputMTimeChanged->serializeElement  = $this->sendElement;
+      $inputMTimeChanged->refresh = $this->refresh;
+      $inputMTimeChanged->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1540,8 +1540,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMRoleChange->setListIcon('icon-link');
       $inputMRoleChange->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
       $inputMRoleChange->conEntity         = $entityWbfsysRoleUser;
-      $inputMRoleChange->refresh           = $this->refresh;
-      $inputMRoleChange->serializeElement  = $this->sendElement;
+      $inputMRoleChange->refresh = $this->refresh;
+      $inputMRoleChange->serializeElement = $this->sendElement;
 
         $inputMRoleChange->setAutocomplete
         (
@@ -1593,8 +1593,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMVersion->setData($this->entityEmbedPerson->getSecure('m_version'));
       $inputMVersion->setLabel($i18n->l('Version', 'core.person.label'));
 
-      $inputMVersion->refresh           = $this->refresh;
-      $inputMVersion->serializeElement  = $this->sendElement;
+      $inputMVersion->refresh = $this->refresh;
+      $inputMVersion->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1634,8 +1634,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMUuid->setData($this->entityEmbedPerson->getSecure('m_uuid'));
       $inputMUuid->setLabel($i18n->l('Uuid', 'core.person.label'));
 
-      $inputMUuid->refresh           = $this->refresh;
-      $inputMUuid->serializeElement  = $this->sendElement;
+      $inputMUuid->refresh = $this->refresh;
+      $inputMUuid->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1675,8 +1675,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputRowid->setData($this->entityEmbedEnterpriseEmployee->getId());
       $inputRowid->setLabel($i18n->l('Rowid', 'enterprise.employee.label'));
 
-      $inputRowid->refresh           = $this->refresh;
-      $inputRowid->serializeElement  = $this->sendElement;
+      $inputRowid->refresh = $this->refresh;
+      $inputRowid->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1717,8 +1717,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMTimeCreated->setData($this->entityEmbedEnterpriseEmployee->getDate('m_time_created'));
       $inputMTimeCreated->setLabel($i18n->l('Time Created', 'enterprise.employee.label'));
 
-      $inputMTimeCreated->refresh           = $this->refresh;
-      $inputMTimeCreated->serializeElement  = $this->sendElement;
+      $inputMTimeCreated->refresh = $this->refresh;
+      $inputMTimeCreated->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1792,8 +1792,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMRoleCreate->setListIcon('icon-link');
       $inputMRoleCreate->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
       $inputMRoleCreate->conEntity         = $entityWbfsysRoleUser;
-      $inputMRoleCreate->refresh           = $this->refresh;
-      $inputMRoleCreate->serializeElement  = $this->sendElement;
+      $inputMRoleCreate->refresh = $this->refresh;
+      $inputMRoleCreate->serializeElement = $this->sendElement;
 
         $inputMRoleCreate->setAutocomplete
         (
@@ -1846,8 +1846,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMTimeChanged->setData($this->entityEmbedEnterpriseEmployee->getDate('m_time_changed'));
       $inputMTimeChanged->setLabel($i18n->l('Time Changed', 'enterprise.employee.label'));
 
-      $inputMTimeChanged->refresh           = $this->refresh;
-      $inputMTimeChanged->serializeElement  = $this->sendElement;
+      $inputMTimeChanged->refresh = $this->refresh;
+      $inputMTimeChanged->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1921,8 +1921,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMRoleChange->setListIcon('icon-link');
       $inputMRoleChange->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
       $inputMRoleChange->conEntity         = $entityWbfsysRoleUser;
-      $inputMRoleChange->refresh           = $this->refresh;
-      $inputMRoleChange->serializeElement  = $this->sendElement;
+      $inputMRoleChange->refresh = $this->refresh;
+      $inputMRoleChange->serializeElement = $this->sendElement;
 
         $inputMRoleChange->setAutocomplete
         (
@@ -1974,8 +1974,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMVersion->setData($this->entityEmbedEnterpriseEmployee->getSecure('m_version'));
       $inputMVersion->setLabel($i18n->l('Version', 'enterprise.employee.label'));
 
-      $inputMVersion->refresh           = $this->refresh;
-      $inputMVersion->serializeElement  = $this->sendElement;
+      $inputMVersion->refresh = $this->refresh;
+      $inputMVersion->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -2015,8 +2015,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMUuid->setData($this->entityEmbedEnterpriseEmployee->getSecure('m_uuid'));
       $inputMUuid->setLabel($i18n->l('Uuid', 'enterprise.employee.label'));
 
-      $inputMUuid->refresh           = $this->refresh;
-      $inputMUuid->serializeElement  = $this->sendElement;
+      $inputMUuid->refresh = $this->refresh;
+      $inputMUuid->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -2169,8 +2169,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $acl = $this->getAcl();
 
       if ($acl->access('mod-wbfsys>mgmt-wbfsys_security_level:insert')) {
-        $inputLevel->refresh           = $this->refresh;
-        $inputLevel->serializeElement  = $this->sendElement;
+        $inputLevel->refresh = $this->refresh;
+        $inputLevel->serializeElement = $this->sendElement;
         $inputLevel->editUrl = 'index.php?c=Wbfsys.SecurityLevel.listing&amp;target='.$this->namespace.'&amp;field=level&amp;publish=selectbox&amp;suffix='.$this->suffix.'&amp;input_id=wgt-input-my_profile_level'.$this->suffix;
       }
       // set an empty first entry
@@ -2258,8 +2258,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $acl = $this->getAcl();
 
       if ($acl->access('mod-wbfsys>mgmt-wbfsys_profile:insert')) {
-        $inputProfile->refresh           = $this->refresh;
-        $inputProfile->serializeElement  = $this->sendElement;
+        $inputProfile->refresh = $this->refresh;
+        $inputProfile->serializeElement = $this->sendElement;
         $inputProfile->editUrl = 'index.php?c=Wbfsys.Profile.listing&amp;target='.$this->namespace.'&amp;field=profile&amp;publish=selectbox&amp;suffix='.$this->suffix.'&amp;input_id=wgt-input-my_profile_profile'.$this->suffix;
       }
       // set an empty first entry
@@ -2329,8 +2329,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputInactive->setActive($this->entity->getBoolean('inactive'));
       $inputInactive->setLabel($i18n->l('Inactive', 'wbfsys.role_user.label'));
 
-      $inputInactive->refresh           = $this->refresh;
-      $inputInactive->serializeElement  = $this->sendElement;
+      $inputInactive->refresh = $this->refresh;
+      $inputInactive->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -2370,8 +2370,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputNonCertLogin->setActive($this->entity->getBoolean('non_cert_login'));
       $inputNonCertLogin->setLabel($i18n->l('No Cert required', 'wbfsys.role_user.label'));
 
-      $inputNonCertLogin->refresh           = $this->refresh;
-      $inputNonCertLogin->serializeElement  = $this->sendElement;
+      $inputNonCertLogin->refresh = $this->refresh;
+      $inputNonCertLogin->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -2412,8 +2412,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputDescription->setData($this->entity->getSecure('description'));
       $inputDescription->setLabel($i18n->l('Description', 'wbfsys.role_user.label'));
 
-      $inputDescription->refresh           = $this->refresh;
-      $inputDescription->serializeElement  = $this->sendElement;
+      $inputDescription->refresh = $this->refresh;
+      $inputDescription->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
