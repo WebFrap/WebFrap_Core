@@ -105,7 +105,7 @@ class AclMgmt_Qfdu_Dset_Treetable_Element extends WgtTreetable
       if ($name)
         $view->addElement($name, $this);
     } else {
-      $this->i18n     = I18n::getActive();
+      $this->i18n = I18n::getActive();
     }
 
     $this->loadUrl();

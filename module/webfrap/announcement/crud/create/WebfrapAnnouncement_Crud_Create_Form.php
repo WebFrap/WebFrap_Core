@@ -187,7 +187,7 @@ class WebfrapAnnouncement_Crud_Create_Form extends WgtCrudForm
   {
 
     $params  = $this->checkNamedParams($params);
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
     // add the entity to the view
     $this->view->addVar('entity', $this->entity);

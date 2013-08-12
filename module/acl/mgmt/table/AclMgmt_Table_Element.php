@@ -77,7 +77,7 @@ class AclMgmt_Table_Element extends WgtTable
       if ($name)
         $view->addElement($name, $this);
     } else {
-      $this->i18n     = I18n::getActive();
+      $this->i18n = I18n::getActive();
     }
 
     $this->loadUrl();

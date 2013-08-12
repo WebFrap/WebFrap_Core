@@ -438,7 +438,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   {
 
     $params  = $this->checkNamedParams($params);
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
     if ($params->access)
       $this->access = $params->access;
@@ -523,7 +523,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_Name($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui:text
       $inputName = $this->view->newInput('inputWbfsysRoleUserName' , 'Text');
@@ -565,7 +565,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_IdPerson($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
     if (!Webfrap::classExists('CorePerson_Entity')) {
       if (DEBUG)
@@ -644,7 +644,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_Rowid($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui: guess
       $inputRowid = $this->view->newInput('inputMyProfileRowid' , 'int');
@@ -685,7 +685,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedPerson_Firstname($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui:text
       $inputFirstname = $this->view->newInput('inputEmbedPersonFirstname' , 'Text');
@@ -727,7 +727,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedPerson_Lastname($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui:text
       $inputLastname = $this->view->newInput('inputEmbedPersonLastname' , 'Text');
@@ -769,7 +769,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedPerson_AcademicTitle($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui:text
       $inputAcademicTitle = $this->view->newInput('inputEmbedPersonAcademicTitle' , 'Text');
@@ -811,7 +811,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedPerson_NoblesseTitle($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui:text
       $inputNoblesseTitle = $this->view->newInput('inputEmbedPersonNoblesseTitle' , 'Text');
@@ -853,7 +853,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_IdEmployee($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
     if (!Webfrap::classExists('EnterpriseEmployee_Entity')) {
       if (DEBUG)
@@ -932,7 +932,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_MTimeCreated($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui:date
       $inputMTimeCreated = $this->view->newInput('inputMyProfileMTimeCreated' , 'Date');
@@ -974,7 +974,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_MRoleCreate($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
     if (!Webfrap::classExists('WbfsysRoleUser_Entity')) {
       if (DEBUG)
@@ -1061,7 +1061,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_MTimeChanged($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui:date
       $inputMTimeChanged = $this->view->newInput('inputWbfsysRoleUserMTimeChanged' , 'Date');
@@ -1103,7 +1103,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_MRoleChange($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
     if (!Webfrap::classExists('WbfsysRoleUser_Entity')) {
       if (DEBUG)
@@ -1190,7 +1190,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_MVersion($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui: guess
       $inputMVersion = $this->view->newInput('inputWbfsysRoleUserMVersion' , 'int');
@@ -1231,7 +1231,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_MUuid($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui: guess
       $inputMUuid = $this->view->newInput('inputWbfsysRoleUserMUuid' , 'Text');
@@ -1272,7 +1272,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedPerson_Rowid($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui: guess
       $inputRowid = $this->view->newInput('inputEmbedPersonRowid' , 'int');
@@ -1313,7 +1313,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedPerson_MTimeCreated($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui:date
       $inputMTimeCreated = $this->view->newInput('inputEmbedPersonMTimeCreated' , 'Date');
@@ -1355,7 +1355,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedPerson_MRoleCreate($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
     if (!Webfrap::classExists('WbfsysRoleUser_Entity')) {
       if (DEBUG)
@@ -1442,7 +1442,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedPerson_MTimeChanged($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui:date
       $inputMTimeChanged = $this->view->newInput('inputEmbedPersonMTimeChanged' , 'Date');
@@ -1484,7 +1484,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedPerson_MRoleChange($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
     if (!Webfrap::classExists('WbfsysRoleUser_Entity')) {
       if (DEBUG)
@@ -1571,7 +1571,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedPerson_MVersion($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui: guess
       $inputMVersion = $this->view->newInput('inputEmbedPersonMVersion' , 'int');
@@ -1612,7 +1612,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedPerson_MUuid($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui: guess
       $inputMUuid = $this->view->newInput('inputEmbedPersonMUuid' , 'Text');
@@ -1653,7 +1653,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedEnterpriseEmployee_Rowid($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui: guess
       $inputRowid = $this->view->newInput('inputEmbedEnterpriseEmployeeRowid' , 'int');
@@ -1694,7 +1694,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedEnterpriseEmployee_MTimeCreated($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui:date
       $inputMTimeCreated = $this->view->newInput('inputEmbedEnterpriseEmployeeMTimeCreated' , 'Date');
@@ -1736,7 +1736,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedEnterpriseEmployee_MRoleCreate($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
     if (!Webfrap::classExists('WbfsysRoleUser_Entity')) {
       if (DEBUG)
@@ -1823,7 +1823,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedEnterpriseEmployee_MTimeChanged($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui:date
       $inputMTimeChanged = $this->view->newInput('inputEmbedEnterpriseEmployeeMTimeChanged' , 'Date');
@@ -1865,7 +1865,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedEnterpriseEmployee_MRoleChange($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
     if (!Webfrap::classExists('WbfsysRoleUser_Entity')) {
       if (DEBUG)
@@ -1952,7 +1952,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedEnterpriseEmployee_MVersion($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui: guess
       $inputMVersion = $this->view->newInput('inputEmbedEnterpriseEmployeeMVersion' , 'int');
@@ -1993,7 +1993,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedEnterpriseEmployee_MUuid($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui: guess
       $inputMUuid = $this->view->newInput('inputEmbedEnterpriseEmployeeMUuid' , 'Text');
@@ -2034,7 +2034,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedPerson_Photo($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //p: input file image
       $inputPhoto = $this->view->newInput('inputEmbedPersonPhoto', 'FileImage');
@@ -2091,7 +2091,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_Password($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui:password
       $inputPassword = $this->view->newInput('inputWbfsysRoleUserPassword', 'Password');
@@ -2129,7 +2129,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_Level($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
     if (!isset($this->listElementData['wbfsys_role_user_level'])) {
       if (!Webfrap::classExists('WbfsysSecurityLevelValue_Selectbox')) {
@@ -2218,7 +2218,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_Profile($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
     if (!isset($this->listElementData['wbfsys_role_user_profile'])) {
       if (!Webfrap::classExists('WbfsysProfileValue_Selectbox')) {
@@ -2307,7 +2307,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_Inactive($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui:Checkbox
       $inputInactive = $this->view->newInput('inputWbfsysRoleUserInactive', 'Checkbox');
@@ -2348,7 +2348,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_NonCertLogin($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui:Checkbox
       $inputNonCertLogin = $this->view->newInput('inputWbfsysRoleUserNonCertLogin', 'Checkbox');
@@ -2389,7 +2389,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_Description($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //p: textarea
       $inputDescription = $this->view->newInput('inputWbfsysRoleUserDescription', 'Textarea');
