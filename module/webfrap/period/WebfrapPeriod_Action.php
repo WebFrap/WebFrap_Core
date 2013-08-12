@@ -37,6 +37,29 @@ class WebfrapPeriod_Action extends Action
      $this->env = $env;
 
   }//end public function __construct */
+  
+  /**
+   * @param Entity $entity
+   * @param TFlag $params
+   * @param BaseChild $env
+   *
+   * @throws LibActionBreak_Exception bei so schwerwiegenden Fehlern, dass
+   *  der komplette Programmfluss abgebrochen werden sollte
+   *
+   * @throws LibAction_Exception Bei Fehlern die jedoch nicht so schwer sind
+   *  um den Fortlauf des Programms zu gefährden
+   *
+   */
+  public function freeze($entity, $params, $env)
+  {
+  
+    $this->env = $env;
+     
+    $periodManager = new LibPeriodManager($this->env);
+    $periodManager->freeze($entity);
+     
+  }//end public function close */
+  
 
   /**
    * @param Entity $entity
