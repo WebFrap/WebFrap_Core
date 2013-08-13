@@ -42,7 +42,6 @@ class WebfrapPeriod_Action extends Action
   /**
    * @param Entity $entity
    * @param TFlag $params
-   * @param BaseChild $env
    *
    * @throws LibActionBreak_Exception bei so schwerwiegenden Fehlern, dass
    *  der komplette Programmfluss abgebrochen werden sollte
@@ -51,21 +50,29 @@ class WebfrapPeriod_Action extends Action
    *  um den Fortlauf des Programms zu gefährden
    *
    */
-  public function initialize($entity, $params, $env)
+  public function initialize($entity, $params)
   {
+
+    $message = $this->env->getMessage();
   
-    $this->env = $env;
-     
-    $periodManager = new LibPeriodManager($this->env);
-    $periodManager->initialize($entity);
-     
+    try {
+      
+      $periodManager = new LibPeriodManager($this->env);
+      $periodManager->initialize($entity);
+        
+      $message->addMessage( 'Successfully initialized the Period' );
+      
+    } catch (Exception $exc) {
+      
+      $message->addError( 'Failed to initialize the period' );
+      
+    }
   
   }//end public function initialize */
   
   /**
    * @param Entity $entity
    * @param TFlag $params
-   * @param BaseChild $env
    *
    * @throws LibActionBreak_Exception bei so schwerwiegenden Fehlern, dass
    *  der komplette Programmfluss abgebrochen werden sollte
@@ -74,11 +81,9 @@ class WebfrapPeriod_Action extends Action
    *  um den Fortlauf des Programms zu gefährden
    *
    */
-  public function freeze($entity, $params, $env)
+  public function freeze($entity, $params)
   {
   
-    $this->env = $env;
-     
     $periodManager = new LibPeriodManager($this->env);
     $periodManager->freeze($entity);
      
@@ -89,7 +94,6 @@ class WebfrapPeriod_Action extends Action
   /**
    * @param Entity $entity
    * @param TFlag $params
-   * @param BaseChild $env
    *
    * @throws LibActionBreak_Exception bei so schwerwiegenden Fehlern, dass
    *  der komplette Programmfluss abgebrochen werden sollte
@@ -98,11 +102,9 @@ class WebfrapPeriod_Action extends Action
    *  um den Fortlauf des Programms zu gefährden
    *
    */
-  public function close($entity, $params, $env)
+  public function close($entity, $params)
   {
   
-    $this->env = $env;
-     
     /* @var $model WebfrapPeriod_Action_Model */
     $model = $this->loadModel('WebfrapPeriod_Action');
     $actions = $model->getActionsByStatus($entity->getId(), EWbfsysPeriodEventType::CLOSE );
@@ -112,7 +114,6 @@ class WebfrapPeriod_Action extends Action
   /**
    * @param Entity $entity
    * @param TFlag $params
-   * @param BaseChild $env
    *
    * @throws LibActionBreak_Exception bei so schwerwiegenden Fehlern, dass
    *  der komplette Programmfluss abgebrochen werden sollte
@@ -121,11 +122,9 @@ class WebfrapPeriod_Action extends Action
    *  um den Fortlauf des Programms zu gefährden
    *
    */
-  public function archive($entity, $params, $env)
+  public function archive($entity, $params)
   {
 
-     $this->env = $env;
-     
      /* @var $model WebfrapPeriod_Action_Model */
      $model = $this->loadModel('WebfrapPeriod_Action');
      $actions = $model->getActionsByStatus($entity->getId(), EWbfsysPeriodEventType::ARCHIVE );
