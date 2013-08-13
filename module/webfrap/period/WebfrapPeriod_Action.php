@@ -38,6 +38,30 @@ class WebfrapPeriod_Action extends Action
 
   }//end public function __construct */
   
+
+  /**
+   * @param Entity $entity
+   * @param TFlag $params
+   * @param BaseChild $env
+   *
+   * @throws LibActionBreak_Exception bei so schwerwiegenden Fehlern, dass
+   *  der komplette Programmfluss abgebrochen werden sollte
+   *
+   * @throws LibAction_Exception Bei Fehlern die jedoch nicht so schwer sind
+   *  um den Fortlauf des Programms zu gefährden
+   *
+   */
+  public function initialize($entity, $params, $env)
+  {
+  
+    $this->env = $env;
+     
+    $periodManager = new LibPeriodManager($this->env);
+    $periodManager->initialize($entity);
+     
+  
+  }//end public function initialize */
+  
   /**
    * @param Entity $entity
    * @param TFlag $params
@@ -61,29 +85,6 @@ class WebfrapPeriod_Action extends Action
   }//end public function close */
   
 
-  /**
-   * @param Entity $entity
-   * @param TFlag $params
-   * @param BaseChild $env
-   *
-   * @throws LibActionBreak_Exception bei so schwerwiegenden Fehlern, dass
-   *  der komplette Programmfluss abgebrochen werden sollte
-   *
-   * @throws LibAction_Exception Bei Fehlern die jedoch nicht so schwer sind
-   *  um den Fortlauf des Programms zu gefährden
-   *
-   */
-  public function initialize($entity, $params, $env)
-  {
-
-     $this->env = $env;
-     
-     /* @var $model WebfrapPeriod_Action_Model */
-     $model = $this->loadModel('WebfrapPeriod_Action');
-     $actions = $model->getActionsByStatus($entity->getId(), EWbfsysPeriodEventType::INITIALIZE );
-     
-
-  }//end public function initialize */
   
   /**
    * @param Entity $entity

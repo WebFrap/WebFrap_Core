@@ -124,7 +124,7 @@ class AclMgmt_Qfdu_Group_Treetable_Element extends WgtTreetable
     (
       'delete'  => array
       (
-        Wgt::ACTION_DELETE,
+        Wgt::ACTION_BUTTON_DELETE,
         'Delete',
         'index.php?c=Acl.Mgmt_Qfdu_Group.dropGroupAssignments&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',
         'icon-remove-sign',
@@ -155,7 +155,7 @@ class AclMgmt_Qfdu_Group_Treetable_Element extends WgtTreetable
       /*
       'delete'  => array
       (
-        Wgt::ACTION_DELETE,
+        Wgt::ACTION_BUTTON_DELETE,
         'Delete',
         'index.php?c=Acl.Mgmt_Qfdu_Group.deleteUser&amp;vtype=group&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',
         'icon-remove-sign',
@@ -165,7 +165,7 @@ class AclMgmt_Qfdu_Group_Treetable_Element extends WgtTreetable
       ),*/
       'delete'  => array
       (
-        Wgt::ACTION_DELETE,
+        Wgt::ACTION_BUTTON_DELETE,
         'Delete',
         'index.php?c=Acl.Mgmt_Qfdu_Group.dropUserAssignments&amp;vtype=group&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',
         'icon-eraser',
@@ -180,7 +180,7 @@ class AclMgmt_Qfdu_Group_Treetable_Element extends WgtTreetable
     (
       'delete'  => array
       (
-        Wgt::ACTION_DELETE,
+        Wgt::ACTION_BUTTON_DELETE,
         'Delete',
         'index.php?c=Acl.Mgmt_Qfdu_Group.dropDsetAssignments&amp;vtype=group&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',
         'icon-remove-sign',
