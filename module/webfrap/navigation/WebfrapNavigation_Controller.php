@@ -85,7 +85,7 @@ class WebfrapNavigation_Controller extends ControllerCrud
   {
 
     // laden der mvc/utils adapter Objekte
-    $user      = $this->getUser();
+    $user  = $this->getUser();
 
     // load request parameters an interpret as flags
     $params = $this->getListingFlags($request);
@@ -154,7 +154,7 @@ class WebfrapNavigation_Controller extends ControllerCrud
   {
 
     // laden der mvc/utils adapter Objekte
-    $user      = $this->getUser();
+    $user  = $this->getUser();
 
     // load request parameters an interpret as flags
     $params = $this->getListingFlags($request);

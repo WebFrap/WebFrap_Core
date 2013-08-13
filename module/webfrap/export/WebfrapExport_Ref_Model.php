@@ -37,7 +37,7 @@ class WebfrapExport_Ref_Model extends MvcModel_Domain
   public function injectAccessContainer($variant, $context, $refNode, $refId)
   {
 
-    $user      = $this->getUser();
+    $user  = $this->getUser();
 
     $classKey  = $this->domainNode->domainKey.'_Ref_'.$refNode->mask.'_'.$variant->mask;
     $className = $classKey.'_Access';

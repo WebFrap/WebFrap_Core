@@ -147,7 +147,7 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
   {
 
     // resource laden
-    $user      = $this->getUser();
+    $user  = $this->getUser();
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
     $params  = $this->getFormFlags($request);
@@ -246,7 +246,7 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
   {
 
     // resource laden
-    $user      = $this->getUser();
+    $user  = $this->getUser();
 
     // Die ID ist Plicht.
     // Ohne diese können wir keinen Datensatz identifizieren und somit auch
@@ -381,7 +381,7 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
   {
 
     // resource laden
-    $user      = $this->getUser();
+    $user  = $this->getUser();
 
     // create named params object
     $params = $this->getCrudFlags($request);
@@ -520,7 +520,7 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
   {
 
     // resource laden
-    $user      = $this->getUser();
+    $user  = $this->getUser();
 
     // prüfen ob die verwendete HTTP Methode für diesen service
     // überhaupt erlaub ist
@@ -711,7 +711,7 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
     // resource laden
     $request   = $this->getRequest();
     $response  = $this->getResponse();
-    $user      = $this->getUser();
+    $user  = $this->getUser();
 
     // laden der passenden subview
     $view = $response->loadView
@@ -768,7 +768,7 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
   {
 
     // resource laden
-    $user      = $this->getUser();
+    $user  = $this->getUser();
 
     // prüfen ob die verwendete HTTP Methode für diesen service
     // überhaupt erlaub ist
@@ -959,7 +959,7 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
   {
 
     // resource laden
-    $user      = $this->getUser();
+    $user  = $this->getUser();
 
     // load request parameters an interpret as flags
     $params  = $this->getListingFlags($request);
@@ -1100,7 +1100,7 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
   {
 
     // resource laden
-    $user      = $this->getUser();
+    $user  = $this->getUser();
 
 
     // laden der steuerungs parameter

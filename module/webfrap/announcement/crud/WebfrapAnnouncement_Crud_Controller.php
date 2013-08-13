@@ -54,7 +54,7 @@ class WebfrapAnnouncement_Crud_Controller extends ControllerCrud
   {
 
     // resource laden
-    $user      = $this->getUser();
+    $user  = $this->getUser();
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
     $params  = $this->getFormFlags($request);
@@ -179,7 +179,7 @@ class WebfrapAnnouncement_Crud_Controller extends ControllerCrud
   {
 
     // resource laden
-    $user      = $this->getUser();
+    $user  = $this->getUser();
 
     // create named params object
     $params = $this->getCrudFlags($request);
@@ -323,7 +323,7 @@ class WebfrapAnnouncement_Crud_Controller extends ControllerCrud
   {
 
     // resource laden
-    $user      = $this->getUser();
+    $user  = $this->getUser();
 
     // prüfen ob die verwendete HTTP Methode für diesen service
     // überhaupt erlaub ist

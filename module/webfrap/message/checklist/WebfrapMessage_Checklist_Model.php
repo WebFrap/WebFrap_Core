@@ -36,7 +36,7 @@ class WebfrapMessage_Checklist_Model extends Model
 
     $orm       = $this->getOrm();
     $db        = $this->getDb();
-    $user      = $this->getUser();
+    $user  = $this->getUser();
     $response  = $this->getResponse();
     
     $savedIds = array();
