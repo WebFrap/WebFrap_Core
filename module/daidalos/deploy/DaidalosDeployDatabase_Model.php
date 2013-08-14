@@ -112,706 +112,75 @@ class DaidalosDeployDatabase_Model extends Model
 
     if (!$type) {
 
-      $this->syncMetadata_SecurityArea($orm, $repos, $deployRevision, $rootPath);
-      $this->syncMetadata_Desktop($orm, $repos, $deployRevision, $rootPath);
-      $this->syncMetadata_Profile($orm, $repos, $deployRevision, $rootPath);
-      $this->syncMetadata_Role($orm, $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_ByType( 'security_area', $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_ByType( 'desktop',$repos, $deployRevision, $rootPath);
+      $this->syncMetadata_ByType( 'profile', $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_ByType( 'role',$repos, $deployRevision, $rootPath);
 
-      $this->syncMetadata_Module($orm, $repos, $deployRevision, $rootPath);
-      $this->syncMetadata_ModuleCategory($orm, $repos, $deployRevision, $rootPath);
-      $this->syncMetadata_ModuleAccess($orm, $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_ByType( 'module', $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_ByType( 'module_category', $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_ByType( 'module_access', $repos, $deployRevision, $rootPath);
 
-      $this->syncMetadata_Entity($orm, $repos, $deployRevision, $rootPath);
-      $this->syncMetadata_EntityRef($orm, $repos, $deployRevision, $rootPath);
-      $this->syncMetadata_EntityAccess($orm, $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_ByType( 'entity', $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_ByType( 'entity_ref', $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_ByType( 'entity_access', $repos, $deployRevision, $rootPath);
 
-      $this->syncMetadata_Management($orm, $repos, $deployRevision, $rootPath);
-      $this->syncMetadata_ManagementRef($orm, $repos, $deployRevision, $rootPath);
-      $this->syncMetadata_ManagementElement($orm, $repos, $deployRevision, $rootPath);
-      $this->syncMetadata_ManagementAccess($orm, $repos, $deployRevision, $rootPath);
-      $this->syncMetadata_ManagementMaintenance($orm, $repos, $deployRevision, $rootPath);
-      $this->syncMetadata_ManagementAcl($orm, $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_ByType( 'management', $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_ByType( 'management_ref', $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_ByType( 'management_element', $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_ByType( 'management_access', $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_ByType( 'management_maintenance', $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_ByType( 'management_acl', $repos, $deployRevision, $rootPath);
 
-      $this->syncMetadata_Process($orm, $repos, $deployRevision, $rootPath);
-      $this->syncMetadata_Item($orm, $repos, $deployRevision, $rootPath);
-      $this->syncMetadata_Widget($orm, $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_ByType( 'process', $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_ByType( 'item', $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_ByType( 'widget', $repos, $deployRevision, $rootPath);
+      $this->syncMetadata_ByType( 'period', $repos, $deployRevision, $rootPath);
 
     } else {
-      $this->syncMetadata_ManagementRef($orm, $repos, $deployRevision, $rootPath);
+      
+      $this->syncMetadata_ByType( 'management_ref', $repos, $deployRevision, $rootPath);
     }
 
   }//end public function syncMetadata */
 
+
+  
   /**
    * @param LibDbOrm $orm
    * @param array $modules
    * @param int $deployRevision
    * @param string $rootPath
    */
-  public function syncMetadata_SecurityArea($orm, $modules, $deployRevision, $rootPath  )
+  public function syncMetadata_ByType( $type, $modules, $deployRevision, $rootPath  )
   {
-
-    $orm  = $this->getOrm();
+  
+    $orm = $this->getOrm();
     $user = $this->getUser();
     $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
-
-    $this->protocol->paragraph('Security Area');
-
+    $aclManager = $acl->getManager();
+    $respsonse = $this->getResponse();
+  
+    $this->protocol->paragraph( SParserString::subToName($type) );
+  
     foreach ($modules as $module) {
-      $folder = new LibFilesystemFolder($rootPath.$module.'/data/metadata/security_area/');
-
+      
+      $folder = new LibFilesystemFolder($rootPath.$module.'/data/metadata/'.$type.'/');
       $files = $folder->getFilesByEnding('.php');
-
+  
       foreach ($files as $file)
         include $file;
-
-      $folder = new LibFilesystemFolder($rootPath.$module.'/sandbox/data/metadata/security_area/');
-
+  
+      $folder = new LibFilesystemFolder($rootPath.$module.'/sandbox/data/metadata/'.$type.'/');
+  
       $files = $folder->getFilesByEnding('.php');
-
+  
       foreach ($files as $file)
         include $file;
-
+  
     }
-
-  }//end public function syncMetadata_SecurityArea */
-
-  /**
-   * @param LibDbOrm $orm
-   * @param array $modules
-   * @param int $deployRevision
-   * @param string $rootPath
-   */
-  public function syncMetadata_Module($orm, $modules, $deployRevision, $rootPath  )
-  {
-
-    $orm  = $this->getOrm();
-    $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
-
-    $this->protocol->paragraph('Module');
-
-    foreach ($modules as $module) {
-      $folder = new LibFilesystemFolder($rootPath.$module.'/data/metadata/module/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-      $folder = new LibFilesystemFolder($rootPath.$module.'/sandbox/data/metadata/module/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-    }
-  }//end public function syncMetadata_Module */
-
-  /**
-   * @param LibDbOrm $orm
-   * @param array $modules
-   * @param int $deployRevision
-   * @param string $rootPath
-   */
-  public function syncMetadata_ModuleAccess($orm, $modules, $deployRevision, $rootPath  )
-  {
-
-    $orm  = $this->getOrm();
-    $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
-
-    $this->protocol->paragraph('Module Access');
-
-    foreach ($modules as $module) {
-      $folder = new LibFilesystemFolder($rootPath.$module.'/data/metadata/module_access/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-      $folder = new LibFilesystemFolder($rootPath.$module.'/sandbox/data/metadata/module_access/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-    }
-  }//end public function syncMetadata_ModuleAccess */
-
-  /**
-   * @param LibDbOrm $orm
-   * @param array $modules
-   * @param int $deployRevision
-   * @param string $rootPath
-   */
-  public function syncMetadata_ModuleCategory($orm, $modules, $deployRevision, $rootPath  )
-  {
-
-    $orm  = $this->getOrm();
-    $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
-
-    $this->protocol->paragraph('Module Category');
-
-    foreach ($modules as $module) {
-      $folder = new LibFilesystemFolder($rootPath.$module.'/data/metadata/module_category/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-      $folder = new LibFilesystemFolder($rootPath.$module.'/sandbox/data/metadata/module_category/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-    }
-  }//end public function syncMetadata_ModuleCategory */
-
-  /**
-   * @param LibDbOrm $orm
-   * @param array $modules
-   * @param int $deployRevision
-   * @param string $rootPath
-   */
-  public function syncMetadata_Entity($orm, $modules, $deployRevision, $rootPath  )
-  {
-
-    $orm  = $this->getOrm();
-    $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
-
-    $this->protocol->paragraph('Entity');
-
-    foreach ($modules as $module) {
-      $folder = new LibFilesystemFolder($rootPath.$module.'/data/metadata/entity/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-      $folder = new LibFilesystemFolder($rootPath.$module.'/sandbox/data/metadata/entity/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-    }
-
-  }//end public function syncMetadata_Entity */
-
-  /**
-   * @param LibDbOrm $orm
-   * @param array $modules
-   * @param int $deployRevision
-   * @param string $rootPath
-   */
-  public function syncMetadata_EntityAccess($orm, $modules, $deployRevision, $rootPath  )
-  {
-
-    $orm  = $this->getOrm();
-    $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
-
-    $this->protocol->paragraph('Entity Access');
-
-    foreach ($modules as $module) {
-      $folder = new LibFilesystemFolder($rootPath.$module.'/data/metadata/entity_access/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-      $folder = new LibFilesystemFolder($rootPath.$module.'/sandbox/data/metadata/entity_access/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-    }
-
-  }//end public function syncMetadata_EntityAccess */
-
-  /**
-   * @param LibDbOrm $orm
-   * @param array $modules
-   * @param int $deployRevision
-   * @param string $rootPath
-   */
-  public function syncMetadata_EntityRef($orm, $modules, $deployRevision, $rootPath  )
-  {
-
-    $orm  = $this->getOrm();
-    $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
-
-    $this->protocol->paragraph('Entity Ref');
-
-    foreach ($modules as $module) {
-      $folder = new LibFilesystemFolder($rootPath.$module.'/data/metadata/entity_ref/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-      $folder = new LibFilesystemFolder($rootPath.$module.'/sandbox/data/metadata/entity_ref/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-    }
-  }//end public function syncMetadata_EntityRef */
-
-  /**
-   * @param LibDbOrm $orm
-   * @param array $modules
-   * @param int $deployRevision
-   * @param string $rootPath
-   */
-  public function syncMetadata_Management($orm, $modules, $deployRevision, $rootPath  )
-  {
-
-    $orm  = $this->getOrm();
-    $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
-
-    $this->protocol->paragraph('Management');
-
-    foreach ($modules as $module) {
-      $folder = new LibFilesystemFolder($rootPath.$module.'/data/metadata/management/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-      $folder = new LibFilesystemFolder($rootPath.$module.'/sandbox/data/metadata/management/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-    }
-  }//end public function syncMetadata_Management */
-
-  /**
-   * @param LibDbOrm $orm
-   * @param array $modules
-   * @param int $deployRevision
-   * @param string $rootPath
-   */
-  public function syncMetadata_ManagementMaintenance($orm, $modules, $deployRevision, $rootPath  )
-  {
-
-    $orm  = $this->getOrm();
-    $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
-
-    $this->protocol->paragraph('Management Maintenance');
-
-    foreach ($modules as $module) {
-      $folder = new LibFilesystemFolder($rootPath.$module.'/data/metadata/management_maintenance/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-      $folder = new LibFilesystemFolder($rootPath.$module.'/sandbox/data/metadata/management_maintenance/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-    }
-  }//end public function syncMetadata_ManagementMaintenance */
-
-  /**
-   * @param LibDbOrm $orm
-   * @param array $modules
-   * @param int $deployRevision
-   * @param string $rootPath
-   */
-  public function syncMetadata_ManagementAcl($orm, $modules, $deployRevision, $rootPath  )
-  {
-
-    $orm  = $this->getOrm();
-    $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
-
-    $this->protocol->paragraph('Management Acl');
-
-    foreach ($modules as $module) {
-      $folder = new LibFilesystemFolder($rootPath.$module.'/data/metadata/management_acl/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-      $folder = new LibFilesystemFolder($rootPath.$module.'/sandbox/data/metadata/management_acl/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-    }
-  }//end public function syncMetadata_ManagementAcl */
-
-  /**
-   * @param LibDbOrm $orm
-   * @param array $modules
-   * @param int $deployRevision
-   * @param string $rootPath
-   */
-  public function syncMetadata_ManagementAccess($orm, $modules, $deployRevision, $rootPath  )
-  {
-
-    $orm  = $this->getOrm();
-    $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
-
-    $this->protocol->paragraph('Management Access');
-
-    foreach ($modules as $module) {
-      $folder = new LibFilesystemFolder($rootPath.$module.'/data/metadata/management_access/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-      $folder = new LibFilesystemFolder($rootPath.$module.'/sandbox/data/metadata/management_access/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-    }
-
-  }//end public function syncMetadata_ManagementAccess */
-
-  /**
-   * @param LibDbOrm $orm
-   * @param array $modules
-   * @param int $deployRevision
-   * @param string $rootPath
-   */
-  public function syncMetadata_ManagementRef($orm, $modules, $deployRevision, $rootPath  )
-  {
-
-    $orm  = $this->getOrm();
-    $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
-
-    $this->protocol->paragraph('Management Ref');
-
-    foreach ($modules as $module) {
-      $folder = new LibFilesystemFolder($rootPath.$module.'/data/metadata/management_ref/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-      $folder = new LibFilesystemFolder($rootPath.$module.'/sandbox/data/metadata/management_ref/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-    }
-  }//end public function syncMetadata_ManagementRef */
-
-  /**
-   * @param LibDbOrm $orm
-   * @param array $modules
-   * @param int $deployRevision
-   * @param string $rootPath
-   */
-  public function syncMetadata_ManagementElement($orm, $modules, $deployRevision, $rootPath  )
-  {
-
-    $orm  = $this->getOrm();
-    $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
-
-    $this->protocol->paragraph('Management Element');
-
-    foreach ($modules as $module) {
-      $folder = new LibFilesystemFolder($rootPath.$module.'/data/metadata/management_element/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-      $folder = new LibFilesystemFolder($rootPath.$module.'/sandbox/data/metadata/management_element/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-    }
-  }//end public function syncMetadata_ManagementElement */
-
-  /**
-   * @param LibDbOrm $orm
-   * @param array $modules
-   * @param int $deployRevision
-   * @param string $rootPath
-   */
-  public function syncMetadata_Profile($orm, $modules, $deployRevision, $rootPath  )
-  {
-
-    $orm  = $this->getOrm();
-    $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
-
-    $this->protocol->paragraph('Profile');
-
-    foreach ($modules as $module) {
-      $folder = new LibFilesystemFolder($rootPath.$module.'/data/metadata/profile/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-      $folder = new LibFilesystemFolder($rootPath.$module.'/sandbox/data/metadata/profile/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-    }
-  }//end public function syncMetadata_Profile */
-
-  /**
-   * @param LibDbOrm $orm
-   * @param array $modules
-   * @param int $deployRevision
-   * @param string $rootPath
-   */
-  public function syncMetadata_Process($orm, $modules, $deployRevision, $rootPath  )
-  {
-
-    $orm  = $this->getOrm();
-    $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
-
-    $this->protocol->paragraph('Process');
-
-    foreach ($modules as $module) {
-      $folder = new LibFilesystemFolder($rootPath.$module.'/data/metadata/process/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-      $folder = new LibFilesystemFolder($rootPath.$module.'/sandbox/data/metadata/process/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-    }
-  }//end public function syncMetadata_Process */
-
-  /**
-   * @param LibDbOrm $orm
-   * @param array $modules
-   * @param int $deployRevision
-   * @param string $rootPath
-   */
-  public function syncMetadata_Role($orm, $modules, $deployRevision, $rootPath  )
-  {
-
-    $orm  = $this->getOrm();
-    $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
-
-    $this->protocol->paragraph('Role');
-
-    foreach ($modules as $module) {
-      $folder = new LibFilesystemFolder($rootPath.$module.'/data/metadata/role/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-      $folder = new LibFilesystemFolder($rootPath.$module.'/sandbox/data/metadata/role/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-    }
-  }//end public function syncMetadata_Role */
-
-  /**
-   * @param LibDbOrm $orm
-   * @param array $modules
-   * @param int $deployRevision
-   * @param string $rootPath
-   */
-  public function syncMetadata_Widget($orm, $modules, $deployRevision, $rootPath  )
-  {
-
-    $orm  = $this->getOrm();
-    $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
-
-    $this->protocol->paragraph('Widget');
-
-    foreach ($modules as $module) {
-      $folder = new LibFilesystemFolder($rootPath.$module.'/data/metadata/widget/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-      $folder = new LibFilesystemFolder($rootPath.$module.'/sandbox/data/metadata/widget/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-    }
-
-  }//end public function syncMetadata_Widget */
-
-  /**
-   * @param LibDbOrm $orm
-   * @param array $modules
-   * @param int $deployRevision
-   * @param string $rootPath
-   */
-  public function syncMetadata_Desktop($orm, $modules, $deployRevision, $rootPath  )
-  {
-
-    $orm  = $this->getOrm();
-    $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
-
-    $this->protocol->paragraph('Desktop');
-
-    foreach ($modules as $module) {
-      $folder = new LibFilesystemFolder($rootPath.$module.'/data/metadata/desktop/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-      $folder = new LibFilesystemFolder($rootPath.$module.'/sandbox/data/metadata/desktop/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-    }
-
-  }//end public function syncMetadata_Desktop */
-
-  /**
-   * @param LibDbOrm $orm
-   * @param array $modules
-   * @param int $deployRevision
-   * @param string $rootPath
-   */
-  public function syncMetadata_Item($orm, $modules, $deployRevision, $rootPath  )
-  {
-
-    $orm  = $this->getOrm();
-    $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
-
-    $this->protocol->paragraph('Item');
-
-    foreach ($modules as $module) {
-      $folder = new LibFilesystemFolder($rootPath.$module.'/data/metadata/item/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-      $folder = new LibFilesystemFolder($rootPath.$module.'/sandbox/data/metadata/item/');
-
-      $files = $folder->getFilesByEnding('.php');
-
-      foreach ($files as $file)
-        include $file;
-
-    }
-
-  }//end public function syncMetadata_Desktop */
+  
+  }//end public function syncMetadata_Periods */
 
 /*//////////////////////////////////////////////////////////////////////////////
 // Methoden
@@ -897,8 +266,10 @@ class DaidalosDeployDatabase_Model extends Model
       foreach ($files as $file) {
 
         try {
+          
           include $file;
         } catch (LibDb_Exception $e) {
+          
           $response->addError($e->getMessage());
         }
 
