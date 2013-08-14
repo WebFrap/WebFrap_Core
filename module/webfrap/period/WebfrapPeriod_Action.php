@@ -84,12 +84,55 @@ class WebfrapPeriod_Action extends Action
   public function freeze($entity, $params)
   {
   
-    $periodManager = new LibPeriodManager($this->env);
-    $periodManager->freeze($entity);
+    
+    $message = $this->env->getMessage();
+    
+    try {
+    
+      $periodManager = new LibPeriodManager($this->env);
+      $periodManager->freeze($entity);
+    
+      $message->addMessage( 'Successfully frozen the atual Period' );
+    
+    } catch (Exception $exc) {
+    
+      $message->addError( 'Failed to freeze the actual period' );
+    
+    }
      
-  }//end public function close */
+  }//end public function freeze */
   
-
+  /**
+   * @param Entity $entity
+   * @param TFlag $params
+   *
+   * @throws LibActionBreak_Exception bei so schwerwiegenden Fehlern, dass
+   *  der komplette Programmfluss abgebrochen werden sollte
+   *
+   * @throws LibAction_Exception Bei Fehlern die jedoch nicht so schwer sind
+   *  um den Fortlauf des Programms zu gefährden
+   *
+   */
+  public function next($entity, $params)
+  {
+  
+  
+    $message = $this->env->getMessage();
+  
+    try {
+  
+      $periodManager = new LibPeriodManager($this->env);
+      $periodManager->next($entity);
+  
+      $message->addMessage( 'Successfully switched to the next Period' );
+  
+    } catch (Exception $exc) {
+  
+      $message->addError( 'Failed to switch to the next period' );
+  
+    }
+     
+  }//end public function next */
   
   /**
    * @param Entity $entity
@@ -105,9 +148,20 @@ class WebfrapPeriod_Action extends Action
   public function close($entity, $params)
   {
   
-    /* @var $model WebfrapPeriod_Action_Model */
-    $model = $this->loadModel('WebfrapPeriod_Action');
-    $actions = $model->getActionsByStatus($entity->getId(), EWbfsysPeriodEventType::CLOSE );
+    $message = $this->env->getMessage();
+    
+    try {
+    
+      $periodManager = new LibPeriodManager($this->env);
+      $periodManager->close($entity);
+    
+      $message->addMessage( 'Successfully closed the actual Period' );
+    
+    } catch (Exception $exc) {
+    
+      $message->addError( 'Failed to close the actual period' );
+    
+    }
      
   }//end public function close */
 
