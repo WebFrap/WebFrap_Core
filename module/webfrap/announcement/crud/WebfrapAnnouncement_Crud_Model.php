@@ -100,7 +100,7 @@ class WebfrapAnnouncement_Crud_Model extends Model
           (
             'resource'  => $response->i18n->l('Announcement', 'wbfsys.announcement.label'),
             'key_type'  => $keyType,
-            'id'        => $searchId
+            'id' => $searchId
           )
         ),
         Response::NOT_FOUND

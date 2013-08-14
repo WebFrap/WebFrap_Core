@@ -105,7 +105,7 @@ class AclMgmt_Qfdu_Dset_Treetable_Element extends WgtTreetable
       if ($name)
         $view->addElement($name, $this);
     } else {
-      $this->i18n     = I18n::getActive();
+      $this->i18n = I18n::getActive();
     }
 
     $this->loadUrl();
@@ -123,7 +123,7 @@ class AclMgmt_Qfdu_Dset_Treetable_Element extends WgtTreetable
 
     $this->url['group']      = array(
       'delete'  => array(
-        Wgt::ACTION_DELETE,
+        Wgt::ACTION_BUTTON_DELETE,
         'Delete',
         'index.php?c=Acl.Mgmt_Qfdu.cleanGroup&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',
         'icon-eraser',
@@ -149,7 +149,7 @@ class AclMgmt_Qfdu_Dset_Treetable_Element extends WgtTreetable
 
     $this->url['user']  = array(
       'delete'  => array(
-        Wgt::ACTION_DELETE,
+        Wgt::ACTION_BUTTON_DELETE,
         'Delete',
         'ajax.php?c=Acl.Mgmt_Qfdu.deleteUser&dkey='.$this->domainNode->domainName.'&amp;objid=',
         'icon-remove-sign',
@@ -159,7 +159,7 @@ class AclMgmt_Qfdu_Dset_Treetable_Element extends WgtTreetable
       ),
       'clean'  => array
       (
-        Wgt::ACTION_DELETE,
+        Wgt::ACTION_BUTTON_DELETE,
         'Delete',
         'ajax.php?c=Acl.Mgmt_Qfdu.cleanUser&dkey='.$this->domainNode->domainName.'&amp;objid=',
         'icon-eraser',
@@ -174,7 +174,7 @@ class AclMgmt_Qfdu_Dset_Treetable_Element extends WgtTreetable
     (
       'delete'  => array
       (
-        Wgt::ACTION_DELETE,
+        Wgt::ACTION_BUTTON_DELETE,
         'Delete',
         'ajax.php?c=Acl.Mgmt_Qfdu.deleteDataset&amp;area_id='.$this->areaId.'&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',
         'icon-remove-sign',

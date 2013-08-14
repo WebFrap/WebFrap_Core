@@ -156,7 +156,7 @@ class AclMgmt_Dset_Controller extends MvcController_Domain
               $domainNode->domainName,
               $domainNode->domainI18n.'.label'
             ),
-            'id'        => $objid
+            'id' => $objid
           )
         ),
         Response::NOT_FOUND
@@ -482,8 +482,8 @@ class AclMgmt_Dset_Controller extends MvcController_Domain
       $params->target    = $target;
 
     // mask key
-    if ($mask = $request->param('mask', Validator::CNAME))
-      $params->mask  = $mask;
+    if ($mask = $request->param('target_mask', Validator::CNAME))
+      $params->targetMask  = $mask;
 
     // mask key
     if ($viewType = $request->param('view', Validator::CNAME))

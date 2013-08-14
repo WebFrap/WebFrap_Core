@@ -438,7 +438,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   {
 
     $params  = $this->checkNamedParams($params);
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
     if ($params->access)
       $this->access = $params->access;
@@ -523,7 +523,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_Name($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui:text
       $inputName = $this->view->newInput('inputWbfsysRoleUserName' , 'Text');
@@ -532,10 +532,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'wbfsys_role_user[name]',
-          'id'        => 'wgt-input-my_profile_name'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Name (Role User)', 'wbfsys.role_user.label'),
+          'name' => 'wbfsys_role_user[name]',
+          'id' => 'wgt-input-my_profile_name'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Name (Role User)', 'wbfsys.role_user.label'),
           'maxlength' => $this->entity->maxSize('name'),
         )
       );
@@ -546,8 +546,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputName->setData($this->entity->getSecure('name'));
       $inputName->setLabel($i18n->l('Name', 'wbfsys.role_user.label'));
 
-      $inputName->refresh           = $this->refresh;
-      $inputName->serializeElement  = $this->sendElement;
+      $inputName->refresh = $this->refresh;
+      $inputName->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -565,7 +565,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_IdPerson($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
     if (!Webfrap::classExists('CorePerson_Entity')) {
       if (DEBUG)
@@ -598,10 +598,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputIdPerson->addAttributes(array
       (
         'readonly'  => 'readonly',
-        'name'      => 'wbfsys_role_user[id_person]',
-        'id'        => 'wgt-input-my_profile_id_person'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-        'title'     => $i18n->l('Insert value for Person (Role User)', 'wbfsys.role_user.label'),
+        'name' => 'wbfsys_role_user[id_person]',
+        'id' => 'wgt-input-my_profile_id_person'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+        'title' => $i18n->l('Insert value for Person (Role User)', 'wbfsys.role_user.label'),
       ));
 
       if ($this->assignedForm)
@@ -620,9 +620,9 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputIdPerson->setListUrl ($listUrl);
       $inputIdPerson->setListIcon('icon-link');
       $inputIdPerson->setEntityUrl('maintab.php?c=Core.Person.edit');
-      $inputIdPerson->conEntity         = $entityCorePerson;
-      $inputIdPerson->refresh           = $this->refresh;
-      $inputIdPerson->serializeElement  = $this->sendElement;
+      $inputIdPerson->conEntity = $entityCorePerson;
+      $inputIdPerson->refresh = $this->refresh;
+      $inputIdPerson->serializeElement = $this->sendElement;
 
       $inputIdPerson->view = $this->view;
       $inputIdPerson->buildJavascript('wgt-input-my_profile_id_person'.($this->suffix?'-'.$this->suffix:''));
@@ -644,7 +644,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_Rowid($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui: guess
       $inputRowid = $this->view->newInput('inputMyProfileRowid' , 'int');
@@ -653,10 +653,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'wbfsys_role_user[rowid]',
-          'id'        => 'wgt-input-my_profile_rowid'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip valid_required medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Rowid (Role User)', 'wbfsys.role_user.label'),
+          'name' => 'wbfsys_role_user[rowid]',
+          'id' => 'wgt-input-my_profile_rowid'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip valid_required medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Rowid (Role User)', 'wbfsys.role_user.label'),
         )
       );
       $inputRowid->setWidth('medium');
@@ -666,8 +666,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputRowid->setData($this->entity->getId());
       $inputRowid->setLabel($i18n->l('Rowid', 'wbfsys.role_user.label'));
 
-      $inputRowid->refresh           = $this->refresh;
-      $inputRowid->serializeElement  = $this->sendElement;
+      $inputRowid->refresh = $this->refresh;
+      $inputRowid->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -685,7 +685,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedPerson_Firstname($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui:text
       $inputFirstname = $this->view->newInput('inputEmbedPersonFirstname' , 'Text');
@@ -694,10 +694,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'embed_person[firstname]',
-          'id'        => 'wgt-input-embed_person_firstname'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Firstname (Person)', 'core.person.label'),
+          'name' => 'embed_person[firstname]',
+          'id' => 'wgt-input-embed_person_firstname'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Firstname (Person)', 'core.person.label'),
           'maxlength' => $this->entityEmbedPerson->maxSize('firstname'),
         )
       );
@@ -708,8 +708,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputFirstname->setData($this->entityEmbedPerson->getSecure('firstname'));
       $inputFirstname->setLabel($i18n->l('Firstname', 'core.person.label'));
 
-      $inputFirstname->refresh           = $this->refresh;
-      $inputFirstname->serializeElement  = $this->sendElement;
+      $inputFirstname->refresh = $this->refresh;
+      $inputFirstname->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -727,7 +727,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedPerson_Lastname($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui:text
       $inputLastname = $this->view->newInput('inputEmbedPersonLastname' , 'Text');
@@ -736,10 +736,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'embed_person[lastname]',
-          'id'        => 'wgt-input-embed_person_lastname'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Lastname (Person)', 'core.person.label'),
+          'name' => 'embed_person[lastname]',
+          'id' => 'wgt-input-embed_person_lastname'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Lastname (Person)', 'core.person.label'),
           'maxlength' => $this->entityEmbedPerson->maxSize('lastname'),
         )
       );
@@ -750,8 +750,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputLastname->setData($this->entityEmbedPerson->getSecure('lastname'));
       $inputLastname->setLabel($i18n->l('Lastname', 'core.person.label'));
 
-      $inputLastname->refresh           = $this->refresh;
-      $inputLastname->serializeElement  = $this->sendElement;
+      $inputLastname->refresh = $this->refresh;
+      $inputLastname->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -769,7 +769,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedPerson_AcademicTitle($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui:text
       $inputAcademicTitle = $this->view->newInput('inputEmbedPersonAcademicTitle' , 'Text');
@@ -778,10 +778,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'embed_person[academic_title]',
-          'id'        => 'wgt-input-embed_person_academic_title'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Academic Title (Person)', 'core.person.label'),
+          'name' => 'embed_person[academic_title]',
+          'id' => 'wgt-input-embed_person_academic_title'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Academic Title (Person)', 'core.person.label'),
           'maxlength' => $this->entityEmbedPerson->maxSize('academic_title'),
         )
       );
@@ -792,8 +792,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputAcademicTitle->setData($this->entityEmbedPerson->getSecure('academic_title'));
       $inputAcademicTitle->setLabel($i18n->l('Academic Title', 'core.person.label'));
 
-      $inputAcademicTitle->refresh           = $this->refresh;
-      $inputAcademicTitle->serializeElement  = $this->sendElement;
+      $inputAcademicTitle->refresh = $this->refresh;
+      $inputAcademicTitle->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -811,7 +811,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedPerson_NoblesseTitle($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui:text
       $inputNoblesseTitle = $this->view->newInput('inputEmbedPersonNoblesseTitle' , 'Text');
@@ -820,10 +820,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'embed_person[noblesse_title]',
-          'id'        => 'wgt-input-embed_person_noblesse_title'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Noblesse Title (Person)', 'core.person.label'),
+          'name' => 'embed_person[noblesse_title]',
+          'id' => 'wgt-input-embed_person_noblesse_title'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Noblesse Title (Person)', 'core.person.label'),
           'maxlength' => $this->entityEmbedPerson->maxSize('noblesse_title'),
         )
       );
@@ -834,8 +834,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputNoblesseTitle->setData($this->entityEmbedPerson->getSecure('noblesse_title'));
       $inputNoblesseTitle->setLabel($i18n->l('Noblesse Title', 'core.person.label'));
 
-      $inputNoblesseTitle->refresh           = $this->refresh;
-      $inputNoblesseTitle->serializeElement  = $this->sendElement;
+      $inputNoblesseTitle->refresh = $this->refresh;
+      $inputNoblesseTitle->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -853,7 +853,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_IdEmployee($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
     if (!Webfrap::classExists('EnterpriseEmployee_Entity')) {
       if (DEBUG)
@@ -886,10 +886,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputIdEmployee->addAttributes(array
       (
         'readonly'  => 'readonly',
-        'name'      => 'wbfsys_role_user[id_employee]',
-        'id'        => 'wgt-input-my_profile_id_employee'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-        'title'     => $i18n->l('Insert value for Employee (Role User)', 'wbfsys.role_user.label'),
+        'name' => 'wbfsys_role_user[id_employee]',
+        'id' => 'wgt-input-my_profile_id_employee'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+        'title' => $i18n->l('Insert value for Employee (Role User)', 'wbfsys.role_user.label'),
       ));
 
       if ($this->assignedForm)
@@ -908,9 +908,9 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputIdEmployee->setListUrl ($listUrl);
       $inputIdEmployee->setListIcon('icon-link');
       $inputIdEmployee->setEntityUrl('maintab.php?c=Enterprise.Employee.edit');
-      $inputIdEmployee->conEntity         = $entityEnterpriseEmployee;
-      $inputIdEmployee->refresh           = $this->refresh;
-      $inputIdEmployee->serializeElement  = $this->sendElement;
+      $inputIdEmployee->conEntity = $entityEnterpriseEmployee;
+      $inputIdEmployee->refresh = $this->refresh;
+      $inputIdEmployee->serializeElement = $this->sendElement;
 
       $inputIdEmployee->view = $this->view;
       $inputIdEmployee->buildJavascript('wgt-input-my_profile_id_employee'.($this->suffix?'-'.$this->suffix:''));
@@ -932,7 +932,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_MTimeCreated($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui:date
       $inputMTimeCreated = $this->view->newInput('inputMyProfileMTimeCreated' , 'Date');
@@ -941,10 +941,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'wbfsys_role_user[m_time_created]',
-          'id'        => 'wgt-input-my_profile_m_time_created'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip small'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Time Created (Role User)', 'wbfsys.role_user.label'),
+          'name' => 'wbfsys_role_user[m_time_created]',
+          'id' => 'wgt-input-my_profile_m_time_created'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip small'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Time Created (Role User)', 'wbfsys.role_user.label'),
           'maxlength' => $this->entity->maxSize('m_time_created'),
         )
       );
@@ -955,8 +955,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMTimeCreated->setData($this->entity->getDate('m_time_created'));
       $inputMTimeCreated->setLabel($i18n->l('Time Created', 'wbfsys.role_user.label'));
 
-      $inputMTimeCreated->refresh           = $this->refresh;
-      $inputMTimeCreated->serializeElement  = $this->sendElement;
+      $inputMTimeCreated->refresh = $this->refresh;
+      $inputMTimeCreated->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -974,7 +974,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_MRoleCreate($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
     if (!Webfrap::classExists('WbfsysRoleUser_Entity')) {
       if (DEBUG)
@@ -1007,10 +1007,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMRoleCreate->addAttributes(array
       (
         'readonly'  => 'readonly',
-        'name'      => 'wbfsys_role_user[m_role_create]',
-        'id'        => 'wgt-input-my_profile_m_role_create'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-        'title'     => $i18n->l('Insert value for Role Create (Role User)', 'wbfsys.role_user.label'),
+        'name' => 'wbfsys_role_user[m_role_create]',
+        'id' => 'wgt-input-my_profile_m_role_create'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+        'title' => $i18n->l('Insert value for Role Create (Role User)', 'wbfsys.role_user.label'),
       ));
 
       if ($this->assignedForm)
@@ -1029,9 +1029,9 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMRoleCreate->setListUrl ($listUrl);
       $inputMRoleCreate->setListIcon('icon-link');
       $inputMRoleCreate->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
-      $inputMRoleCreate->conEntity         = $entityWbfsysRoleUser;
-      $inputMRoleCreate->refresh           = $this->refresh;
-      $inputMRoleCreate->serializeElement  = $this->sendElement;
+      $inputMRoleCreate->conEntity = $entityWbfsysRoleUser;
+      $inputMRoleCreate->refresh = $this->refresh;
+      $inputMRoleCreate->serializeElement = $this->sendElement;
 
         $inputMRoleCreate->setAutocomplete
         (
@@ -1061,7 +1061,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_MTimeChanged($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui:date
       $inputMTimeChanged = $this->view->newInput('inputWbfsysRoleUserMTimeChanged' , 'Date');
@@ -1070,10 +1070,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'wbfsys_role_user[m_time_changed]',
-          'id'        => 'wgt-input-my_profile_m_time_changed'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip small'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Time Changed (Role User)', 'wbfsys.role_user.label'),
+          'name' => 'wbfsys_role_user[m_time_changed]',
+          'id' => 'wgt-input-my_profile_m_time_changed'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip small'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Time Changed (Role User)', 'wbfsys.role_user.label'),
           'maxlength' => $this->entity->maxSize('m_time_changed'),
         )
       );
@@ -1084,8 +1084,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMTimeChanged->setData($this->entity->getDate('m_time_changed'));
       $inputMTimeChanged->setLabel($i18n->l('Time Changed', 'wbfsys.role_user.label'));
 
-      $inputMTimeChanged->refresh           = $this->refresh;
-      $inputMTimeChanged->serializeElement  = $this->sendElement;
+      $inputMTimeChanged->refresh = $this->refresh;
+      $inputMTimeChanged->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1103,7 +1103,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_MRoleChange($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
     if (!Webfrap::classExists('WbfsysRoleUser_Entity')) {
       if (DEBUG)
@@ -1136,10 +1136,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMRoleChange->addAttributes(array
       (
         'readonly'  => 'readonly',
-        'name'      => 'wbfsys_role_user[m_role_change]',
-        'id'        => 'wgt-input-my_profile_m_role_change'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-        'title'     => $i18n->l('Insert value for Role Change (Role User)', 'wbfsys.role_user.label'),
+        'name' => 'wbfsys_role_user[m_role_change]',
+        'id' => 'wgt-input-my_profile_m_role_change'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+        'title' => $i18n->l('Insert value for Role Change (Role User)', 'wbfsys.role_user.label'),
       ));
 
       if ($this->assignedForm)
@@ -1158,9 +1158,9 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMRoleChange->setListUrl ($listUrl);
       $inputMRoleChange->setListIcon('icon-link');
       $inputMRoleChange->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
-      $inputMRoleChange->conEntity         = $entityWbfsysRoleUser;
-      $inputMRoleChange->refresh           = $this->refresh;
-      $inputMRoleChange->serializeElement  = $this->sendElement;
+      $inputMRoleChange->conEntity = $entityWbfsysRoleUser;
+      $inputMRoleChange->refresh = $this->refresh;
+      $inputMRoleChange->serializeElement = $this->sendElement;
 
         $inputMRoleChange->setAutocomplete
         (
@@ -1190,7 +1190,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_MVersion($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui: guess
       $inputMVersion = $this->view->newInput('inputWbfsysRoleUserMVersion' , 'int');
@@ -1199,10 +1199,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'wbfsys_role_user[m_version]',
-          'id'        => 'wgt-input-my_profile_m_version'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip valid_int medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Version (Role User)', 'wbfsys.role_user.label'),
+          'name' => 'wbfsys_role_user[m_version]',
+          'id' => 'wgt-input-my_profile_m_version'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip valid_int medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Version (Role User)', 'wbfsys.role_user.label'),
         )
       );
       $inputMVersion->setWidth('medium');
@@ -1212,8 +1212,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMVersion->setData($this->entity->getSecure('m_version'));
       $inputMVersion->setLabel($i18n->l('Version', 'wbfsys.role_user.label'));
 
-      $inputMVersion->refresh           = $this->refresh;
-      $inputMVersion->serializeElement  = $this->sendElement;
+      $inputMVersion->refresh = $this->refresh;
+      $inputMVersion->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1231,7 +1231,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_MUuid($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui: guess
       $inputMUuid = $this->view->newInput('inputWbfsysRoleUserMUuid' , 'Text');
@@ -1240,10 +1240,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'wbfsys_role_user[m_uuid]',
-          'id'        => 'wgt-input-my_profile_m_uuid'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Uuid (Role User)', 'wbfsys.role_user.label'),
+          'name' => 'wbfsys_role_user[m_uuid]',
+          'id' => 'wgt-input-my_profile_m_uuid'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Uuid (Role User)', 'wbfsys.role_user.label'),
         )
       );
       $inputMUuid->setWidth('medium');
@@ -1253,8 +1253,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMUuid->setData($this->entity->getSecure('m_uuid'));
       $inputMUuid->setLabel($i18n->l('Uuid', 'wbfsys.role_user.label'));
 
-      $inputMUuid->refresh           = $this->refresh;
-      $inputMUuid->serializeElement  = $this->sendElement;
+      $inputMUuid->refresh = $this->refresh;
+      $inputMUuid->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1272,7 +1272,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedPerson_Rowid($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui: guess
       $inputRowid = $this->view->newInput('inputEmbedPersonRowid' , 'int');
@@ -1281,10 +1281,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'embed_person[rowid]',
-          'id'        => 'wgt-input-embed_person_rowid'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip valid_required medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Rowid (Person)', 'core.person.label'),
+          'name' => 'embed_person[rowid]',
+          'id' => 'wgt-input-embed_person_rowid'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip valid_required medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Rowid (Person)', 'core.person.label'),
         )
       );
       $inputRowid->setWidth('medium');
@@ -1294,8 +1294,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputRowid->setData($this->entityEmbedPerson->getId());
       $inputRowid->setLabel($i18n->l('Rowid', 'core.person.label'));
 
-      $inputRowid->refresh           = $this->refresh;
-      $inputRowid->serializeElement  = $this->sendElement;
+      $inputRowid->refresh = $this->refresh;
+      $inputRowid->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1313,7 +1313,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedPerson_MTimeCreated($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui:date
       $inputMTimeCreated = $this->view->newInput('inputEmbedPersonMTimeCreated' , 'Date');
@@ -1322,10 +1322,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'embed_person[m_time_created]',
-          'id'        => 'wgt-input-embed_person_m_time_created'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip small'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Time Created (Person)', 'core.person.label'),
+          'name' => 'embed_person[m_time_created]',
+          'id' => 'wgt-input-embed_person_m_time_created'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip small'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Time Created (Person)', 'core.person.label'),
           'maxlength' => $this->entityEmbedPerson->maxSize('m_time_created'),
         )
       );
@@ -1336,8 +1336,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMTimeCreated->setData($this->entityEmbedPerson->getDate('m_time_created'));
       $inputMTimeCreated->setLabel($i18n->l('Time Created', 'core.person.label'));
 
-      $inputMTimeCreated->refresh           = $this->refresh;
-      $inputMTimeCreated->serializeElement  = $this->sendElement;
+      $inputMTimeCreated->refresh = $this->refresh;
+      $inputMTimeCreated->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1355,7 +1355,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedPerson_MRoleCreate($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
     if (!Webfrap::classExists('WbfsysRoleUser_Entity')) {
       if (DEBUG)
@@ -1388,10 +1388,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMRoleCreate->addAttributes(array
       (
         'readonly'  => 'readonly',
-        'name'      => 'embed_person[m_role_create]',
-        'id'        => 'wgt-input-embed_person_m_role_create'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-        'title'     => $i18n->l('Insert value for Role Create (Person)', 'core.person.label'),
+        'name' => 'embed_person[m_role_create]',
+        'id' => 'wgt-input-embed_person_m_role_create'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+        'title' => $i18n->l('Insert value for Role Create (Person)', 'core.person.label'),
       ));
 
       if ($this->assignedForm)
@@ -1410,9 +1410,9 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMRoleCreate->setListUrl ($listUrl);
       $inputMRoleCreate->setListIcon('icon-link');
       $inputMRoleCreate->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
-      $inputMRoleCreate->conEntity         = $entityWbfsysRoleUser;
-      $inputMRoleCreate->refresh           = $this->refresh;
-      $inputMRoleCreate->serializeElement  = $this->sendElement;
+      $inputMRoleCreate->conEntity = $entityWbfsysRoleUser;
+      $inputMRoleCreate->refresh = $this->refresh;
+      $inputMRoleCreate->serializeElement = $this->sendElement;
 
         $inputMRoleCreate->setAutocomplete
         (
@@ -1442,7 +1442,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedPerson_MTimeChanged($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui:date
       $inputMTimeChanged = $this->view->newInput('inputEmbedPersonMTimeChanged' , 'Date');
@@ -1451,10 +1451,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'embed_person[m_time_changed]',
-          'id'        => 'wgt-input-embed_person_m_time_changed'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip small'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Time Changed (Person)', 'core.person.label'),
+          'name' => 'embed_person[m_time_changed]',
+          'id' => 'wgt-input-embed_person_m_time_changed'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip small'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Time Changed (Person)', 'core.person.label'),
           'maxlength' => $this->entityEmbedPerson->maxSize('m_time_changed'),
         )
       );
@@ -1465,8 +1465,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMTimeChanged->setData($this->entityEmbedPerson->getDate('m_time_changed'));
       $inputMTimeChanged->setLabel($i18n->l('Time Changed', 'core.person.label'));
 
-      $inputMTimeChanged->refresh           = $this->refresh;
-      $inputMTimeChanged->serializeElement  = $this->sendElement;
+      $inputMTimeChanged->refresh = $this->refresh;
+      $inputMTimeChanged->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1484,7 +1484,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedPerson_MRoleChange($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
     if (!Webfrap::classExists('WbfsysRoleUser_Entity')) {
       if (DEBUG)
@@ -1517,10 +1517,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMRoleChange->addAttributes(array
       (
         'readonly'  => 'readonly',
-        'name'      => 'embed_person[m_role_change]',
-        'id'        => 'wgt-input-embed_person_m_role_change'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-        'title'     => $i18n->l('Insert value for Role Change (Person)', 'core.person.label'),
+        'name' => 'embed_person[m_role_change]',
+        'id' => 'wgt-input-embed_person_m_role_change'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+        'title' => $i18n->l('Insert value for Role Change (Person)', 'core.person.label'),
       ));
 
       if ($this->assignedForm)
@@ -1539,9 +1539,9 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMRoleChange->setListUrl ($listUrl);
       $inputMRoleChange->setListIcon('icon-link');
       $inputMRoleChange->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
-      $inputMRoleChange->conEntity         = $entityWbfsysRoleUser;
-      $inputMRoleChange->refresh           = $this->refresh;
-      $inputMRoleChange->serializeElement  = $this->sendElement;
+      $inputMRoleChange->conEntity = $entityWbfsysRoleUser;
+      $inputMRoleChange->refresh = $this->refresh;
+      $inputMRoleChange->serializeElement = $this->sendElement;
 
         $inputMRoleChange->setAutocomplete
         (
@@ -1571,7 +1571,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedPerson_MVersion($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui: guess
       $inputMVersion = $this->view->newInput('inputEmbedPersonMVersion' , 'int');
@@ -1580,10 +1580,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'embed_person[m_version]',
-          'id'        => 'wgt-input-embed_person_m_version'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip valid_int medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Version (Person)', 'core.person.label'),
+          'name' => 'embed_person[m_version]',
+          'id' => 'wgt-input-embed_person_m_version'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip valid_int medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Version (Person)', 'core.person.label'),
         )
       );
       $inputMVersion->setWidth('medium');
@@ -1593,8 +1593,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMVersion->setData($this->entityEmbedPerson->getSecure('m_version'));
       $inputMVersion->setLabel($i18n->l('Version', 'core.person.label'));
 
-      $inputMVersion->refresh           = $this->refresh;
-      $inputMVersion->serializeElement  = $this->sendElement;
+      $inputMVersion->refresh = $this->refresh;
+      $inputMVersion->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1612,7 +1612,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedPerson_MUuid($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui: guess
       $inputMUuid = $this->view->newInput('inputEmbedPersonMUuid' , 'Text');
@@ -1621,10 +1621,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'embed_person[m_uuid]',
-          'id'        => 'wgt-input-embed_person_m_uuid'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Uuid (Person)', 'core.person.label'),
+          'name' => 'embed_person[m_uuid]',
+          'id' => 'wgt-input-embed_person_m_uuid'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Uuid (Person)', 'core.person.label'),
         )
       );
       $inputMUuid->setWidth('medium');
@@ -1634,8 +1634,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMUuid->setData($this->entityEmbedPerson->getSecure('m_uuid'));
       $inputMUuid->setLabel($i18n->l('Uuid', 'core.person.label'));
 
-      $inputMUuid->refresh           = $this->refresh;
-      $inputMUuid->serializeElement  = $this->sendElement;
+      $inputMUuid->refresh = $this->refresh;
+      $inputMUuid->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1653,7 +1653,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedEnterpriseEmployee_Rowid($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui: guess
       $inputRowid = $this->view->newInput('inputEmbedEnterpriseEmployeeRowid' , 'int');
@@ -1662,10 +1662,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'embed_enterprise_employee[rowid]',
-          'id'        => 'wgt-input-embed_enterprise_employee_rowid'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip valid_required medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Rowid (Employee)', 'enterprise.employee.label'),
+          'name' => 'embed_enterprise_employee[rowid]',
+          'id' => 'wgt-input-embed_enterprise_employee_rowid'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip valid_required medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Rowid (Employee)', 'enterprise.employee.label'),
         )
       );
       $inputRowid->setWidth('medium');
@@ -1675,8 +1675,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputRowid->setData($this->entityEmbedEnterpriseEmployee->getId());
       $inputRowid->setLabel($i18n->l('Rowid', 'enterprise.employee.label'));
 
-      $inputRowid->refresh           = $this->refresh;
-      $inputRowid->serializeElement  = $this->sendElement;
+      $inputRowid->refresh = $this->refresh;
+      $inputRowid->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1694,7 +1694,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedEnterpriseEmployee_MTimeCreated($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui:date
       $inputMTimeCreated = $this->view->newInput('inputEmbedEnterpriseEmployeeMTimeCreated' , 'Date');
@@ -1703,10 +1703,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'embed_enterprise_employee[m_time_created]',
-          'id'        => 'wgt-input-embed_enterprise_employee_m_time_created'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip small'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Time Created (Employee)', 'enterprise.employee.label'),
+          'name' => 'embed_enterprise_employee[m_time_created]',
+          'id' => 'wgt-input-embed_enterprise_employee_m_time_created'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip small'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Time Created (Employee)', 'enterprise.employee.label'),
           'maxlength' => $this->entityEmbedEnterpriseEmployee->maxSize('m_time_created'),
         )
       );
@@ -1717,8 +1717,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMTimeCreated->setData($this->entityEmbedEnterpriseEmployee->getDate('m_time_created'));
       $inputMTimeCreated->setLabel($i18n->l('Time Created', 'enterprise.employee.label'));
 
-      $inputMTimeCreated->refresh           = $this->refresh;
-      $inputMTimeCreated->serializeElement  = $this->sendElement;
+      $inputMTimeCreated->refresh = $this->refresh;
+      $inputMTimeCreated->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1736,7 +1736,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedEnterpriseEmployee_MRoleCreate($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
     if (!Webfrap::classExists('WbfsysRoleUser_Entity')) {
       if (DEBUG)
@@ -1769,10 +1769,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMRoleCreate->addAttributes(array
       (
         'readonly'  => 'readonly',
-        'name'      => 'embed_enterprise_employee[m_role_create]',
-        'id'        => 'wgt-input-embed_enterprise_employee_m_role_create'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-        'title'     => $i18n->l('Insert value for Role Create (Employee)', 'enterprise.employee.label'),
+        'name' => 'embed_enterprise_employee[m_role_create]',
+        'id' => 'wgt-input-embed_enterprise_employee_m_role_create'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+        'title' => $i18n->l('Insert value for Role Create (Employee)', 'enterprise.employee.label'),
       ));
 
       if ($this->assignedForm)
@@ -1791,9 +1791,9 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMRoleCreate->setListUrl ($listUrl);
       $inputMRoleCreate->setListIcon('icon-link');
       $inputMRoleCreate->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
-      $inputMRoleCreate->conEntity         = $entityWbfsysRoleUser;
-      $inputMRoleCreate->refresh           = $this->refresh;
-      $inputMRoleCreate->serializeElement  = $this->sendElement;
+      $inputMRoleCreate->conEntity = $entityWbfsysRoleUser;
+      $inputMRoleCreate->refresh = $this->refresh;
+      $inputMRoleCreate->serializeElement = $this->sendElement;
 
         $inputMRoleCreate->setAutocomplete
         (
@@ -1823,7 +1823,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedEnterpriseEmployee_MTimeChanged($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui:date
       $inputMTimeChanged = $this->view->newInput('inputEmbedEnterpriseEmployeeMTimeChanged' , 'Date');
@@ -1832,10 +1832,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'embed_enterprise_employee[m_time_changed]',
-          'id'        => 'wgt-input-embed_enterprise_employee_m_time_changed'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip small'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Time Changed (Employee)', 'enterprise.employee.label'),
+          'name' => 'embed_enterprise_employee[m_time_changed]',
+          'id' => 'wgt-input-embed_enterprise_employee_m_time_changed'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip small'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Time Changed (Employee)', 'enterprise.employee.label'),
           'maxlength' => $this->entityEmbedEnterpriseEmployee->maxSize('m_time_changed'),
         )
       );
@@ -1846,8 +1846,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMTimeChanged->setData($this->entityEmbedEnterpriseEmployee->getDate('m_time_changed'));
       $inputMTimeChanged->setLabel($i18n->l('Time Changed', 'enterprise.employee.label'));
 
-      $inputMTimeChanged->refresh           = $this->refresh;
-      $inputMTimeChanged->serializeElement  = $this->sendElement;
+      $inputMTimeChanged->refresh = $this->refresh;
+      $inputMTimeChanged->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1865,7 +1865,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedEnterpriseEmployee_MRoleChange($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
     if (!Webfrap::classExists('WbfsysRoleUser_Entity')) {
       if (DEBUG)
@@ -1898,10 +1898,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMRoleChange->addAttributes(array
       (
         'readonly'  => 'readonly',
-        'name'      => 'embed_enterprise_employee[m_role_change]',
-        'id'        => 'wgt-input-embed_enterprise_employee_m_role_change'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-        'title'     => $i18n->l('Insert value for Role Change (Employee)', 'enterprise.employee.label'),
+        'name' => 'embed_enterprise_employee[m_role_change]',
+        'id' => 'wgt-input-embed_enterprise_employee_m_role_change'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+        'title' => $i18n->l('Insert value for Role Change (Employee)', 'enterprise.employee.label'),
       ));
 
       if ($this->assignedForm)
@@ -1920,9 +1920,9 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMRoleChange->setListUrl ($listUrl);
       $inputMRoleChange->setListIcon('icon-link');
       $inputMRoleChange->setEntityUrl('maintab.php?c=Wbfsys.RoleUser.edit');
-      $inputMRoleChange->conEntity         = $entityWbfsysRoleUser;
-      $inputMRoleChange->refresh           = $this->refresh;
-      $inputMRoleChange->serializeElement  = $this->sendElement;
+      $inputMRoleChange->conEntity = $entityWbfsysRoleUser;
+      $inputMRoleChange->refresh = $this->refresh;
+      $inputMRoleChange->serializeElement = $this->sendElement;
 
         $inputMRoleChange->setAutocomplete
         (
@@ -1952,7 +1952,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedEnterpriseEmployee_MVersion($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui: guess
       $inputMVersion = $this->view->newInput('inputEmbedEnterpriseEmployeeMVersion' , 'int');
@@ -1961,10 +1961,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'embed_enterprise_employee[m_version]',
-          'id'        => 'wgt-input-embed_enterprise_employee_m_version'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip valid_int medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Version (Employee)', 'enterprise.employee.label'),
+          'name' => 'embed_enterprise_employee[m_version]',
+          'id' => 'wgt-input-embed_enterprise_employee_m_version'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip valid_int medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Version (Employee)', 'enterprise.employee.label'),
         )
       );
       $inputMVersion->setWidth('medium');
@@ -1974,8 +1974,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMVersion->setData($this->entityEmbedEnterpriseEmployee->getSecure('m_version'));
       $inputMVersion->setLabel($i18n->l('Version', 'enterprise.employee.label'));
 
-      $inputMVersion->refresh           = $this->refresh;
-      $inputMVersion->serializeElement  = $this->sendElement;
+      $inputMVersion->refresh = $this->refresh;
+      $inputMVersion->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -1993,7 +1993,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedEnterpriseEmployee_MUuid($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui: guess
       $inputMUuid = $this->view->newInput('inputEmbedEnterpriseEmployeeMUuid' , 'Text');
@@ -2002,10 +2002,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'embed_enterprise_employee[m_uuid]',
-          'id'        => 'wgt-input-embed_enterprise_employee_m_uuid'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Uuid (Employee)', 'enterprise.employee.label'),
+          'name' => 'embed_enterprise_employee[m_uuid]',
+          'id' => 'wgt-input-embed_enterprise_employee_m_uuid'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Uuid (Employee)', 'enterprise.employee.label'),
         )
       );
       $inputMUuid->setWidth('medium');
@@ -2015,8 +2015,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputMUuid->setData($this->entityEmbedEnterpriseEmployee->getSecure('m_uuid'));
       $inputMUuid->setLabel($i18n->l('Uuid', 'enterprise.employee.label'));
 
-      $inputMUuid->refresh           = $this->refresh;
-      $inputMUuid->serializeElement  = $this->sendElement;
+      $inputMUuid->refresh = $this->refresh;
+      $inputMUuid->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -2034,7 +2034,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_EmbedPerson_Photo($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //p: input file image
       $inputPhoto = $this->view->newInput('inputEmbedPersonPhoto', 'FileImage');
@@ -2042,10 +2042,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'embed_person[photo]',
-          'id'        => 'wgt-input-embed_person_photo'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium',
-          'title'     => $i18n->l('Insert value for Photo (Person)', 'core.person.label'),
+          'name' => 'embed_person[photo]',
+          'id' => 'wgt-input-embed_person_photo'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium',
+          'title' => $i18n->l('Insert value for Photo (Person)', 'core.person.label'),
         )
       );
       $inputPhoto->setWidth('medium');
@@ -2091,7 +2091,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_Password($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui:password
       $inputPassword = $this->view->newInput('inputWbfsysRoleUserPassword', 'Password');
@@ -2100,10 +2100,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'wbfsys_role_user[password]',
-          'id'        => 'wgt-input-my_profile_password'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip valid_password medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Password (Role User)', 'wbfsys.role_user.label'),
+          'name' => 'wbfsys_role_user[password]',
+          'id' => 'wgt-input-my_profile_password'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip valid_password medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Password (Role User)', 'wbfsys.role_user.label'),
           'maxlength' => $this->entity->maxSize('password'),
         )
       );
@@ -2129,7 +2129,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_Level($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
     if (!isset($this->listElementData['wbfsys_role_user_level'])) {
       if (!Webfrap::classExists('WbfsysSecurityLevelValue_Selectbox')) {
@@ -2149,10 +2149,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'wbfsys_role_user[level]',
-          'id'        => 'wgt-input-my_profile_level'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Access Level (Role User)', 'wbfsys.role_user.label'),
+          'name' => 'wbfsys_role_user[level]',
+          'id' => 'wgt-input-my_profile_level'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Access Level (Role User)', 'wbfsys.role_user.label'),
         )
       );
       $inputLevel->setWidth('medium');
@@ -2169,8 +2169,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $acl = $this->getAcl();
 
       if ($acl->access('mod-wbfsys>mgmt-wbfsys_security_level:insert')) {
-        $inputLevel->refresh           = $this->refresh;
-        $inputLevel->serializeElement  = $this->sendElement;
+        $inputLevel->refresh = $this->refresh;
+        $inputLevel->serializeElement = $this->sendElement;
         $inputLevel->editUrl = 'index.php?c=Wbfsys.SecurityLevel.listing&amp;target='.$this->namespace.'&amp;field=level&amp;publish=selectbox&amp;suffix='.$this->suffix.'&amp;input_id=wgt-input-my_profile_level'.$this->suffix;
       }
       // set an empty first entry
@@ -2218,7 +2218,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_Profile($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
     if (!isset($this->listElementData['wbfsys_role_user_profile'])) {
       if (!Webfrap::classExists('WbfsysProfileValue_Selectbox')) {
@@ -2238,10 +2238,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'wbfsys_role_user[profile]',
-          'id'        => 'wgt-input-my_profile_profile'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Profile (Role User)', 'wbfsys.role_user.label'),
+          'name' => 'wbfsys_role_user[profile]',
+          'id' => 'wgt-input-my_profile_profile'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Profile (Role User)', 'wbfsys.role_user.label'),
         )
       );
       $inputProfile->setWidth('medium');
@@ -2258,8 +2258,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $acl = $this->getAcl();
 
       if ($acl->access('mod-wbfsys>mgmt-wbfsys_profile:insert')) {
-        $inputProfile->refresh           = $this->refresh;
-        $inputProfile->serializeElement  = $this->sendElement;
+        $inputProfile->refresh = $this->refresh;
+        $inputProfile->serializeElement = $this->sendElement;
         $inputProfile->editUrl = 'index.php?c=Wbfsys.Profile.listing&amp;target='.$this->namespace.'&amp;field=profile&amp;publish=selectbox&amp;suffix='.$this->suffix.'&amp;input_id=wgt-input-my_profile_profile'.$this->suffix;
       }
       // set an empty first entry
@@ -2307,7 +2307,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_Inactive($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui:Checkbox
       $inputInactive = $this->view->newInput('inputWbfsysRoleUserInactive', 'Checkbox');
@@ -2316,10 +2316,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'wbfsys_role_user[inactive]',
-          'id'        => 'wgt-input-my_profile_inactive'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Inactive (Role User)', 'wbfsys.role_user.label'),
+          'name' => 'wbfsys_role_user[inactive]',
+          'id' => 'wgt-input-my_profile_inactive'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Inactive (Role User)', 'wbfsys.role_user.label'),
         )
       );
       $inputInactive->setWidth('medium');
@@ -2329,8 +2329,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputInactive->setActive($this->entity->getBoolean('inactive'));
       $inputInactive->setLabel($i18n->l('Inactive', 'wbfsys.role_user.label'));
 
-      $inputInactive->refresh           = $this->refresh;
-      $inputInactive->serializeElement  = $this->sendElement;
+      $inputInactive->refresh = $this->refresh;
+      $inputInactive->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -2348,7 +2348,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_NonCertLogin($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //tpl: class ui:Checkbox
       $inputNonCertLogin = $this->view->newInput('inputWbfsysRoleUserNonCertLogin', 'Checkbox');
@@ -2357,10 +2357,10 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'wbfsys_role_user[non_cert_login]',
-          'id'        => 'wgt-input-my_profile_non_cert_login'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for No Cert required (Role User)', 'wbfsys.role_user.label'),
+          'name' => 'wbfsys_role_user[non_cert_login]',
+          'id' => 'wgt-input-my_profile_non_cert_login'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for No Cert required (Role User)', 'wbfsys.role_user.label'),
         )
       );
       $inputNonCertLogin->setWidth('medium');
@@ -2370,8 +2370,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputNonCertLogin->setActive($this->entity->getBoolean('non_cert_login'));
       $inputNonCertLogin->setLabel($i18n->l('No Cert required', 'wbfsys.role_user.label'));
 
-      $inputNonCertLogin->refresh           = $this->refresh;
-      $inputNonCertLogin->serializeElement  = $this->sendElement;
+      $inputNonCertLogin->refresh = $this->refresh;
+      $inputNonCertLogin->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -2389,7 +2389,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   */
   public function input_MyProfile_Description($params)
   {
-    $i18n     = $this->view->i18n;
+    $i18n = $this->view->i18n;
 
       //p: textarea
       $inputDescription = $this->view->newInput('inputWbfsysRoleUserDescription', 'Textarea');
@@ -2400,7 +2400,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
         (
           'name'  => 'wbfsys_role_user[description]',
           'id'    => 'wgt-input-my_profile_description'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip large medium-height'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'class' => 'wcm wcm_ui_tip large medium-height'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
           'title' => $i18n->l('Insert value for Description (Role User)', 'wbfsys.role_user.label'),
         )
       );
@@ -2412,8 +2412,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $inputDescription->setData($this->entity->getSecure('description'));
       $inputDescription->setLabel($i18n->l('Description', 'wbfsys.role_user.label'));
 
-      $inputDescription->refresh           = $this->refresh;
-      $inputDescription->serializeElement  = $this->sendElement;
+      $inputDescription->refresh = $this->refresh;
+      $inputDescription->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
