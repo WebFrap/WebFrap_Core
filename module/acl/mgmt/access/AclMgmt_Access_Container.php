@@ -94,12 +94,12 @@ class AclMgmt_Access_Container extends LibAclPermission
     // wenn keine acl root übergeben wird, da befinden wir uns an dem
     // startpunkt für einen potentiell vorhandenen rechte pfad
     if (is_null($params->aclRoot)  ) {
-      $params->isAclRoot     = true;
-      $params->aclRoot       = $this->domainNode->aclBaseKey;
-      $params->aclRootId     = null;
-      $params->aclKey        = $this->domainNode->aclBaseKey;
-      $params->aclNode       = $this->domainNode->aclBaseKey;
-      $params->aclLevel      = 1;
+      $params->isAclRoot = true;
+      $params->aclRoot = $this->domainNode->aclBaseKey;
+      $params->aclRootId = null;
+      $params->aclKey = $this->domainNode->aclBaseKey;
+      $params->aclNode = $this->domainNode->aclBaseKey;
+      $params->aclLevel = 1;
     }
 
     // wenn wir in keinem pfad sind nehmen wir einfach die normalen

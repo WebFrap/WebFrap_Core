@@ -41,12 +41,12 @@ class MaintenanceEntity_Listing_Access extends LibAclPermission
     // um potentielle fehler abzufangen wird auch direkt der richtige Root gesetzt
     // nicht das hier einer einen falschen pfad injected
     if (is_null($params->aclRoot) || 1 == $params->aclLevel  ) {
-      $params->isAclRoot     = true;
-      $params->aclRoot       = 'mgmt-enterprise_company';
-      $params->aclRootId     = null;
-      $params->aclKey        = 'mgmt-enterprise_company';
-      $params->aclNode       = 'mgmt-enterprise_company';
-      $params->aclLevel      = 1;
+      $params->isAclRoot = true;
+      $params->aclRoot = 'mgmt-enterprise_company';
+      $params->aclRootId = null;
+      $params->aclKey = 'mgmt-enterprise_company';
+      $params->aclNode = 'mgmt-enterprise_company';
+      $params->aclLevel = 1;
     }
 
     // wenn wir in keinem pfad sind nehmen wir einfach die normalen

@@ -36,7 +36,7 @@ class WebfrapAnnouncement_Crud_Access_Update extends LibAclPermission
     // wenn keine pfadinformationen übergeben werden oder wir in level 1 sind
     // dann befinden wir uns im root und brauchen keine pfadafrage
     if (is_null($params->aclRoot) || 1 == $params->aclLevel) {
-      $params->isAclRoot     = true;
+      $params->isAclRoot = true;
     }
 
     // wenn keine root übergeben wird oder wir in level 1 sind
@@ -44,12 +44,12 @@ class WebfrapAnnouncement_Crud_Access_Update extends LibAclPermission
     // um potentielle fehler abzufangen wird auch direkt der richtige Root gesetzt
     // nicht das hier einer einen falschen pfad injected
     if (is_null($params->aclRoot) || 1 == $params->aclLevel) {
-      $params->isAclRoot     = true;
-      $params->aclRoot       = 'mgmt-wbfsys_announcement';
-      $params->aclRootId     = null;
-      $params->aclKey        = 'mgmt-wbfsys_announcement';
-      $params->aclNode       = 'mgmt-wbfsys_announcement';
-      $params->aclLevel      = 1;
+      $params->isAclRoot = true;
+      $params->aclRoot = 'mgmt-wbfsys_announcement';
+      $params->aclRootId = null;
+      $params->aclKey = 'mgmt-wbfsys_announcement';
+      $params->aclNode = 'mgmt-wbfsys_announcement';
+      $params->aclLevel = 1;
     }
 
     // wenn wir in keinem pfad sind nehmen wir einfach die normalen
