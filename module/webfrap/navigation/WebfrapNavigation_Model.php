@@ -31,8 +31,8 @@ class WebfrapNavigation_Model extends Model
   public function searchEntriesAutocomplete($key, $params)
   {
 
-    $db     = $this->getDb();
-    $query  = $db->newQuery('WebfrapNavigation');
+    $db = $this->getDb();
+    $query = $db->newQuery('WebfrapNavigation');
 
     $query->fetchEntriesByKey
     (

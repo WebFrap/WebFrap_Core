@@ -35,16 +35,16 @@ class WebfrapProtocol_Widget extends WgtWidget
   public function asTab($containerId, $tabId, $tabSize = 'medium')
   {
 
-    $user     = $this->getUser();
-    $view     = $this->getView();
+    $user = $this->getUser();
+    $view = $this->getView();
 
-    $profile  = $user->getProfileName();
+    $profile = $user->getProfileName();
 
-    $params         = new TArray();
-    $params->qsize  = 25;
+    $params = new TArray();
+    $params->qsize = 25;
 
-    $db     = $this->getDb();
-    $query  = $db->newQuery('WebfrapProtocol');
+    $db = $this->getDb();
+    $query = $db->newQuery('WebfrapProtocol');
 
     $params->order = array
     (
@@ -91,13 +91,13 @@ HTML;
   public function runReload($view, $tabSize = 'medium')
   {
 
-    $condition    = array();
+    $condition = array();
 
-    $httpRequest  = $this->getRequest();
-    $db           = $this->getDb();
-    $orm          = $db->getOrm();
+    $httpRequest = $this->getRequest();
+    $db = $this->getDb();
+    $orm = $db->getOrm();
     $view->getI18n();
-    $params       = $this->getSearchFlags();
+    $params = $this->getSearchFlags();
 
     /*
     if ($httpRequest->method('POST')  ) {
@@ -105,7 +105,7 @@ HTML;
         $condition['free'] = $free;
 
       if (!$fieldsWbfsysProtocolMessage = $this->getRegisterd('search_fields_wbfsys_protocol_message')) {
-         $fieldsWbfsysProtocolMessage   = $orm->getSearchCols('WbfsysProtocolMessage');
+         $fieldsWbfsysProtocolMessage = $orm->getSearchCols('WbfsysProtocolMessage');
       }
 
       if ($refs = $httpRequest->dataSearchIds('search_wbfsys_protocol_message')) {
@@ -116,7 +116,7 @@ HTML;
         ));
       }
 
-      $filterWbfsysProtocolMessage     = $httpRequest->checkSearchInput
+      $filterWbfsysProtocolMessage = $httpRequest->checkSearchInput
       (
         $orm->getValidationData('WbfsysProtocolMessage', $fieldsWbfsysProtocolMessage),
         $orm->getErrorMessages('WbfsysProtocolMessage'  ),
@@ -168,14 +168,14 @@ HTML;
     $table->setData($query);
 
     // set the offset to set the paging menu correct
-    $table->start    = $params->start;
+    $table->start = $params->start;
 
     // set the position for the size menu
     $table->stepSize = $params->qsize;
 
     // check if there is a filter for the first char
     if ($params->begin)
-      $table->begin    = $params->begin;
+      $table->begin = $params->begin;
 
     // if there is a given tableId for the html id of the the table replace
     // the default id with it
@@ -198,7 +198,7 @@ HTML;
     $table->setPagingId('wgt-form-widget_protocol-search');
 
     // refresh the table in ajax requests
-    $table->refresh    = true;
+    $table->refresh = true;
 
     // the table should only replace the content inside of the container
     // but not the container itself
@@ -222,7 +222,7 @@ HTML;
 
     // start position of the query and size of the table
     $flowFlags->start
-      = $this->request->get('start', Validator::INT);
+ = $this->request->get('start', Validator::INT);
 
     // stepsite for query (limit) and the table
     if (!$flowFlags->qsize = $this->request->get('qsize', Validator::INT))
@@ -230,15 +230,15 @@ HTML;
 
     // order for the multi display element
     $flowFlags->order
-      = $this->request->get('order', Validator::CNAME);
+ = $this->request->get('order', Validator::CNAME);
 
     // target for a callback function
     $flowFlags->target
-      = $this->request->get('target', Validator::CKEY  );
+ = $this->request->get('target', Validator::CKEY  );
 
     // target for some ui element
     $flowFlags->targetId
-      = $this->request->get('targetId', Validator::CKEY  );
+ = $this->request->get('targetId', Validator::CKEY  );
 
     // flag for beginning seach filter
     if ($text = $this->request->get('begin', Validator::TEXT  )) {

@@ -131,8 +131,8 @@ class DaidalosPackage_Model extends Model
   public function buildPackage($packageName, $packageKey, $type = 'module')
   {
 
-    $pFile      = $this->getPackageFile($packageName, $type);
-    $folders    = $pFile->getFolders(true);
+    $pFile = $this->getPackageFile($packageName, $type);
+    $folders = $pFile->getFolders(true);
     $components = $pFile->getComponentIterator();
 
     $path = PATH_GW.'data/package/'.$type.'/'.$packageName.'/'.$packageName.'-'.$packageKey.'.package' ;

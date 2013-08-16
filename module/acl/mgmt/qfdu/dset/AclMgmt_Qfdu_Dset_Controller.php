@@ -49,50 +49,50 @@ class AclMgmt_Qfdu_Dset_Controller extends AclMgmt_Controller
    *
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
 
     'search' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
     'loadusers' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
     'loaddsets' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
     'append' => array
     (
-      'method'    => array('PUT', 'POST'),
-      'views'      => array('ajax')
+      'method' => array('PUT', 'POST'),
+      'views' => array('ajax')
     ),
     'export' => array
     (
-      'method'    => array('GET'),
-      //'views'      => array('document')
+      'method' => array('GET'),
+      //'views' => array('document')
     ),
 
     // dropping of assignments
     'dropgroupassignments' => array
     (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
     'dropuserassignments' => array
     (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
     'dropdsetassignments' => array
     (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
 
   );
@@ -113,11 +113,11 @@ class AclMgmt_Qfdu_Dset_Controller extends AclMgmt_Controller
 
     // load the flow flags
     $context = $this->getListingFlags($request);
-    $domainNode  = $this->getDomainNode($request);
+    $domainNode = $this->getDomainNode($request);
 
     // load the default model
     /* @var $model AclMgmt_Qfdu_Model */
-    $model  = $this->loadModel('AclMgmt_Qfdu');
+    $model = $this->loadModel('AclMgmt_Qfdu');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $context);
 
@@ -125,7 +125,7 @@ class AclMgmt_Qfdu_Dset_Controller extends AclMgmt_Controller
     $context->areaId = $areaId;
 
     // this can only be an ajax request, so we can directly load the ajax view
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       $domainNode->domainName.'-mgmt-acl',
       'AclMgmt_Qfdu_Dset',
@@ -150,10 +150,10 @@ class AclMgmt_Qfdu_Dset_Controller extends AclMgmt_Controller
 
     // load request parameters an interpret as flags
     $params = $this->getListingFlags($request);
-    $domainNode  = $this->getDomainNode($request);
+    $domainNode = $this->getDomainNode($request);
 
     /* @var $model AclMgmt_Qfdu_Model */
-    $model  = $this->loadModel('AclMgmt_Qfdu');
+    $model = $this->loadModel('AclMgmt_Qfdu');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $params);
 
@@ -161,7 +161,7 @@ class AclMgmt_Qfdu_Dset_Controller extends AclMgmt_Controller
     $areaId = $model->getAreaId();
     $params->areaId = $areaId;
 
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       $domainNode->domainName.'-mgmt-acl',
       'AclMgmt_Qfdu_Dset',
@@ -208,18 +208,18 @@ class AclMgmt_Qfdu_Dset_Controller extends AclMgmt_Controller
   {
 
     // load the flow flags
-    $context      = new ContextListing($request);
-    $domainNode  = $this->getDomainNode($request);
+    $context = new ContextListing($request);
+    $domainNode = $this->getDomainNode($request);
 
     // load the default model
     /* @var $model AclMgmt_Qfdu_Model */
-    $model  = $this->loadModel('AclMgmt_Qfdu');
+    $model = $this->loadModel('AclMgmt_Qfdu');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $context);
 
     $context->areaId = $model->getAreaId();
 
-    $groupId         = $request->param('objid', Validator::EID);
+    $groupId = $request->param('objid', Validator::EID);
     $context->pRowId = $request->param('p_row_id', Validator::CKEY);
     $context->pRowPos = $request->param('p_row_pos', Validator::TEXT);
 
@@ -233,7 +233,7 @@ class AclMgmt_Qfdu_Dset_Controller extends AclMgmt_Controller
 
     // this can only be an ajax request, so we can directly load the ajax view
     /* @var $view AclMgmt_Qfdu_Ajax_View */
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       $domainNode->domainName.'-mgmt-acl',
       'AclMgmt_Qfdu',
@@ -257,19 +257,19 @@ class AclMgmt_Qfdu_Dset_Controller extends AclMgmt_Controller
   {
 
     // load the flow flags
-    $context      = new ContextListing($request);
-    $domainNode  = $this->getDomainNode($request);
+    $context = new ContextListing($request);
+    $domainNode = $this->getDomainNode($request);
 
     // load the default model
     /* @var $model AclMgmt_Qfdu_Model */
-    $model  = $this->loadModel('AclMgmt_Qfdu');
+    $model = $this->loadModel('AclMgmt_Qfdu');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $context);
 
     $context->areaId = $model->getAreaId();
 
-    $userId          = $request->param('objid', Validator::EID);
-    $groupId         = $request->param('group', Validator::EID);
+    $userId = $request->param('objid', Validator::EID);
+    $groupId = $request->param('group', Validator::EID);
     $context->pRowId = $request->param('p_row_id', Validator::CKEY);
     $context->pRowPos = $request->param('p_row_pos', Validator::TEXT);
 
@@ -284,7 +284,7 @@ class AclMgmt_Qfdu_Dset_Controller extends AclMgmt_Controller
 
     // this can only be an ajax request, so we can directly load the ajax view
     /* @var $view AclMgmt_Qfdu_Ajax_View */
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       $domainNode->domainName.'-mgmt-acl',
       'AclMgmt_Qfdu',
@@ -309,15 +309,15 @@ class AclMgmt_Qfdu_Dset_Controller extends AclMgmt_Controller
 
     // load the flow flags
     $context = $this->getListingFlags($request);
-    $domainNode  = $this->getDomainNode($request);
+    $domainNode = $this->getDomainNode($request);
 
     // load the default model
     /* @var $model AclMgmt_Qfdu_Model */
-    $model  = $this->loadModel('AclMgmt_Qfdu');
+    $model = $this->loadModel('AclMgmt_Qfdu');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $context);
 
-    $user   = $this->getUser();
+    $user = $this->getUser();
     $areaId = $model->getAreaId();
 
     $document = new AclMgmt_Qfdu_Dset_Export_Document($this, 'Acl by '.$domainNode->pLabel);
@@ -350,7 +350,7 @@ class AclMgmt_Qfdu_Dset_Controller extends AclMgmt_Controller
   public function service_dropGroupAssignments($request, $response)
   {
 
-    $domainNode  = $this->getDomainNode($request);
+    $domainNode = $this->getDomainNode($request);
 
 
     // interpret the given user parameters
@@ -393,13 +393,13 @@ class AclMgmt_Qfdu_Dset_Controller extends AclMgmt_Controller
   public function service_dropUserAssignments($request, $response)
   {
 
-    $domainNode  = $this->getDomainNode($request);
+    $domainNode = $this->getDomainNode($request);
 
     $rqCont = $response->createContext();
     $request->setResponse($rqCont);
 
     $groupId = $request->param('group_id', Validator::EID);
-    $userId  = $request->param('user_id',  Validator::EID);
+    $userId = $request->param('user_id',  Validator::EID);
     $request->resetResponse();
 
     // did we receive an id of an object that should be deleted
@@ -466,7 +466,7 @@ class AclMgmt_Qfdu_Dset_Controller extends AclMgmt_Controller
   public function service_dropDsetAssignments($request, $response)
   {
 
-    $domainNode  = $this->getDomainNode($request);
+    $domainNode = $this->getDomainNode($request);
 
     // did we receive an id of an object that should be deleted
     if (!$objid = $request->param('objid', Validator::EID)) {
@@ -487,7 +487,7 @@ class AclMgmt_Qfdu_Dset_Controller extends AclMgmt_Controller
     }
 
     // interpret the given user parameters
-    $params          = $this->getCrudFlags($request);
+    $params = $this->getCrudFlags($request);
 
     /* @var $model AclMgmt_Qfdu_Model */
     $model = $this->loadModel('AclMgmt_Qfdu');

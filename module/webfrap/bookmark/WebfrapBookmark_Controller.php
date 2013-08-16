@@ -27,12 +27,12 @@ class WebfrapBookmark_Controller extends Controller
   /**
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'add' => array
     (
-      'method'  => array('POST'),
-      'views'   => array('ajax')
+      'method' => array('POST'),
+      'views' => array('ajax')
     ),
   );
 

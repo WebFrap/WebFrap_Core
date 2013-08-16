@@ -49,8 +49,8 @@ class WebfrapAnnouncement_Table_Query extends LibSqlQuery
     if (!$params)
       $params = new TFlag();
 
-    $this->sourceSize  = null;
-    $db                = $this->getDb();
+    $this->sourceSize = null;
+    $db = $this->getDb();
 
     if (!$this->criteria) {
       $criteria = $db->orm->newCriteria();
@@ -68,7 +68,7 @@ class WebfrapAnnouncement_Table_Query extends LibSqlQuery
     $this->appendFilter($criteria, $condition, $params);
 
     // Run Query und save the result
-    $this->result    = $db->orm->select($criteria);
+    $this->result = $db->orm->select($criteria);
 
     if ($params->loadFullSize)
       $this->calcQuery = $criteria->count('count(wbfsys_announcement.'.Db::PK.') as '.Db::Q_SIZE);

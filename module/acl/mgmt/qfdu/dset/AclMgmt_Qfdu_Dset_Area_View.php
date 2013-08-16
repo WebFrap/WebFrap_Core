@@ -103,8 +103,8 @@ class AclMgmt_Qfdu_Dset_Area_View extends LibTemplateAreaView
     $selectboxGroups = new WgtSelectbox('selectboxGroups', $this);
     $selectboxGroups->setData($this->model->getAreaGroups($areaId, $params));
     $selectboxGroups->addAttributes(array(
-      'id'    => 'wgt-input-'.$this->domainNode->aclDomainKey.'-acl-dset-id_group',
-      'name'  => 'group_users[id_group]',
+      'id' => 'wgt-input-'.$this->domainNode->aclDomainKey.'-acl-dset-id_group',
+      'name' => 'group_users[id_group]',
       'class' => 'medium asgd-'.$params->formIdAppend
     ));
 

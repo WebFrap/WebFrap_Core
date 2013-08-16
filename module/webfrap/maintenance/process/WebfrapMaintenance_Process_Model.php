@@ -41,7 +41,7 @@ class WebfrapMaintenance_Process_Model extends MvcModel_Domain
   /**
    * @var DomainNode
    */
-  public $domainNode  = null;
+  public $domainNode = null;
 
 /*//////////////////////////////////////////////////////////////////////////////
 // Methoden
@@ -181,18 +181,18 @@ SQL;
 
     $newNode = $orm->get('WbfsysProcessNode', $idNew);
 
-    $step           = $this->db->orm->newEntity('WbfsysProcessStep');
-    $step->id_from  = $this->processStatus->id_actual_node;
-    $step->id_to    = $idNew;
+    $step = $this->db->orm->newEntity('WbfsysProcessStep');
+    $step->id_from = $this->processStatus->id_actual_node;
+    $step->id_to = $idNew;
 
     $step->id_process_instance = $this->processStatus;
-    $step->comment    = $comment;
+    $step->comment = $comment;
 
     $orm->insert($step);
 
     // danach wir der aktuelle Status des Knotens upgedatet
-    $this->processStatus->id_last_node    = $this->processStatus->id_actual_node;
-    $this->processStatus->id_actual_node  = $newNode;
+    $this->processStatus->id_last_node = $this->processStatus->id_actual_node;
+    $this->processStatus->id_actual_node = $newNode;
     $this->processStatus->actual_node_key = $newNode->access_key;
 
     if ($newNode->m_order > $this->processStatus->value_highest_node) {
@@ -206,14 +206,14 @@ SQL;
     } else {
       // keine phase, sollte nur dann der fall sein wenn Prozesse keine
       // übergeordneten phasen haben
-      $this->processStatus->id_phase  = null;
+      $this->processStatus->id_phase = null;
       $this->processStatus->phase_key = null;
     }
 
     // prüfen ob der Prozess geschlossen werden soll
     if ($closeProcess) {
       if ($newNode->is_end_node) {
-        $this->processStatus->id_end_node  = $newNode;
+        $this->processStatus->id_end_node = $newNode;
       }
     }
 

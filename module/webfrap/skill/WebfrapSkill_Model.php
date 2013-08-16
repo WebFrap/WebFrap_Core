@@ -45,7 +45,7 @@ class WebfrapSkill_Model extends Model
   public function addTag($skillName)
   {
 
-    $orm       = $this->getOrm();
+    $orm = $this->getOrm();
     $skillNode = $orm->getWhere("CoreSkill",  "name ilike '".$orm->escape($skillName)."' ");
 
     if ($skillNode) {
@@ -53,7 +53,7 @@ class WebfrapSkill_Model extends Model
     } else {
       $skillNode = $orm->newEntity("CoreSkill");
       $skillNode->name = $skillName;
-      $skillNode->access_key  = SFormatStrings::nameToAccessKey($skillName);
+      $skillNode->access_key = SFormatStrings::nameToAccessKey($skillName);
       $skillNode = $orm->insertIfNotExists($skillNode, array('name'));
 
       return $skillNode;
@@ -70,11 +70,11 @@ class WebfrapSkill_Model extends Model
   public function addConnection($skillId, $objid)
   {
 
-    $orm    = $this->getOrm();
+    $orm = $this->getOrm();
     $skillRef = $orm->newEntity('CoreSkillRequirement');
 
-    $skillRef->id_skill  = (string) $skillId;
-    $skillRef->vid     = $objid;
+    $skillRef->id_skill = (string) $skillId;
+    $skillRef->vid = $objid;
 
     if (!$skillRef->id_skill) {
       throw new LibDb_Exception("Missing Skill Id");
@@ -91,7 +91,7 @@ class WebfrapSkill_Model extends Model
   public function cleanDsetTags($objid)
   {
 
-    $orm    = $this->getOrm();
+    $orm = $this->getOrm();
     $orm->deleteWhere('CoreSkillRequirement', "vid=".$objid);
 
   }//end public function cleanDsetTags */
@@ -103,7 +103,7 @@ class WebfrapSkill_Model extends Model
   public function disconnect($objid)
   {
 
-    $orm    = $this->getOrm();
+    $orm = $this->getOrm();
     $orm->delete('CoreSkillRequirement', $objid);
 
   }//end public function disconnect */

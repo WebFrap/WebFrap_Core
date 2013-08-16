@@ -28,21 +28,21 @@ class DaidalosAcl_Controller extends Controller
   /**
    * @var array
    */
-  protected $options           = array(
+  protected $options = array(
 
     'form' => array(
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
 
     'updateacl' => array(
-      'method'    => array('POST','PUT'),
-      'views'      => array('ajax')
+      'method' => array('POST','PUT'),
+      'views' => array('ajax')
     ),
 
     'deactivateallusers' => array(
-      'method'    => array('POST','PUT'),
-      'views'      => array('ajax')
+      'method' => array('POST','PUT'),
+      'views' => array('ajax')
     ),
 
   );
@@ -59,9 +59,9 @@ class DaidalosAcl_Controller extends Controller
 
     $params = $this->getFlags($this->getRequest());
 
-    $view   = $response->loadView('wgt-view-daidalos_acl-form', 'DaidalosAcl');
+    $view = $response->loadView('wgt-view-daidalos_acl-form', 'DaidalosAcl');
 
-    $model  = $this->loadModel('DaidalosAcl');
+    $model = $this->loadModel('DaidalosAcl');
 
     $view->setModel($model);
     $view->displayForm($params);
@@ -76,7 +76,7 @@ class DaidalosAcl_Controller extends Controller
 
     $params = $this->getFlags($this->getRequest());
 
-    $model  = $this->loadModel('DaidalosAcl');
+    $model = $this->loadModel('DaidalosAcl');
     $model->updateArea($this->getRequest());
 
   }//end public function service_updateAcl */
@@ -87,8 +87,8 @@ class DaidalosAcl_Controller extends Controller
   public function service_deactivateAllUsers($request, $response)
   {
 
-    $params   = $this->getFlags($this->getRequest());
-    $model    = $this->loadModel('DaidalosAcl');
+    $params = $this->getFlags($this->getRequest());
+    $model = $this->loadModel('DaidalosAcl');
 
     $model->dissableAllUsers();
 

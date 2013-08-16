@@ -40,12 +40,12 @@ class WebfrapAnnouncement_Table_Access extends LibAclPermission
     // um potentielle fehler abzufangen wird auch direkt der richtige Root gesetzt
     // nicht das hier einer einen falschen pfad injected
     if (is_null($params->aclRoot) || 1 == $params->aclLevel  ) {
-      $params->isAclRoot     = true;
-      $params->aclRoot       = 'mgmt-wbfsys_announcement';
-      $params->aclRootId     = null;
-      $params->aclKey        = 'mgmt-wbfsys_announcement';
-      $params->aclNode       = 'mgmt-wbfsys_announcement';
-      $params->aclLevel      = 1;
+      $params->isAclRoot = true;
+      $params->aclRoot = 'mgmt-wbfsys_announcement';
+      $params->aclRootId = null;
+      $params->aclKey = 'mgmt-wbfsys_announcement';
+      $params->aclNode = 'mgmt-wbfsys_announcement';
+      $params->aclLevel = 1;
     }
 
     // wenn wir in keinem pfad sind nehmen wir einfach die normalen
@@ -88,14 +88,14 @@ class WebfrapAnnouncement_Table_Access extends LibAclPermission
   {
 
     // laden der mvc/utils adapter Objekte
-    $acl  = $this->getAcl();
+    $acl = $this->getAcl();
     $user = $this->getUser();
-    $orm  = $this->getDb()->getOrm();
+    $orm = $this->getDb()->getOrm();
 
-    $userId    = $user->getId();
+    $userId = $user->getId();
 
     // erstellen der Acl criteria und befüllen mit den relevanten cols
-    $criteria  = $orm->newCriteria();
+    $criteria = $orm->newCriteria();
 
     $criteria->select(array('wbfsys_announcement.rowid as rowid')  );
 

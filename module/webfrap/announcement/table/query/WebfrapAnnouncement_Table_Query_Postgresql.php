@@ -49,8 +49,8 @@ class WebfrapAnnouncement_Table_Query_Postgresql extends LibSqlQuery
     if (!$params)
       $params = new TFlag();
 
-    $this->sourceSize  = null;
-    $db                = $this->getDb();
+    $this->sourceSize = null;
+    $db = $this->getDb();
 
     if (!$this->criteria) {
       $criteria = $db->orm->newCriteria();
@@ -68,7 +68,7 @@ class WebfrapAnnouncement_Table_Query_Postgresql extends LibSqlQuery
     $criteria->where(" UPPER(wbfsys_announcement_channel.access_key) = UPPER('wbf_global') ");
 
     // Run Query und save the result
-    $this->result    = $db->orm->select($criteria);
+    $this->result = $db->orm->select($criteria);
 
     if ($params->loadFullSize)
       $this->calcQuery = $criteria->count('count(wbfsys_announcement.'.Db::PK.') as '.Db::Q_SIZE);

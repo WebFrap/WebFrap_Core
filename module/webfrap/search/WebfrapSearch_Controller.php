@@ -28,12 +28,12 @@ class WebfrapSearch_Controller extends Controller
    * Die Options zum definieren der Zugriffsparameter
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'search' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
   );
 
@@ -53,7 +53,7 @@ class WebfrapSearch_Controller extends Controller
     $model = $this->loadModel('WebfrapSearch');
 
     /* @var WebfrapSearch_Ajax_View */
-    $view  = $response->loadView(
+    $view = $response->loadView(
       'webfrap-search-request',
       'WebfrapSearch',
       'displaySearch'

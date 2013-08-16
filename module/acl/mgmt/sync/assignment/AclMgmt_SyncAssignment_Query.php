@@ -43,8 +43,8 @@ class AclMgmt_SyncAssignment_Query extends LibSqlQuery
   public function fetch($areaId)
   {
 
-    $this->sourceSize  = null;
-    $db                = $this->getDb();
+    $this->sourceSize = null;
+    $db = $this->getDb();
 
     if (!$this->criteria) {
       $criteria = $db->orm->newCriteria();
@@ -70,7 +70,7 @@ class AclMgmt_SyncAssignment_Query extends LibSqlQuery
     );
 
     // Run Query und save the result
-    $this->result  = $db->orm->select($criteria);
+    $this->result = $db->orm->select($criteria);
 
   }//end public function fetch */
 

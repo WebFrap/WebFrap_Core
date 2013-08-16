@@ -35,7 +35,7 @@ class WebfrapMessage_Ajax_View extends LibTemplatePlain
   public function displaySearch($params)
   {
 
-    $params->qsize  = 25;
+    $params->qsize = 25;
 
     // die query muss für das paging und eine korrekte anzeige
     // die anzahl der gefundenen datensätze ermitteln
@@ -58,7 +58,7 @@ class WebfrapMessage_Ajax_View extends LibTemplatePlain
 
     // set refresh to true, to embed the content of this element inside
     // of the ajax.tpl index as "htmlarea"
-    $table->refresh    = true;
+    $table->refresh = true;
 
     // the table should only replace the content inside of the container
     // but not the container itself

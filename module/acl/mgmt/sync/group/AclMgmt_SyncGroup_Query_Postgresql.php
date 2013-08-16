@@ -43,8 +43,8 @@ class AclMgmt_SyncGroup_Query_Postgresql extends LibSqlQuery
   public function fetch($areaId)
   {
 
-    $this->sourceSize  = null;
-    $db                = $this->getDb();
+    $this->sourceSize = null;
+    $db = $this->getDb();
 
     if (!$this->criteria) {
       $criteria = $db->orm->newCriteria();
@@ -67,7 +67,7 @@ class AclMgmt_SyncGroup_Query_Postgresql extends LibSqlQuery
     $criteria->where("id_area={$areaId} and partial = 0");
 
     // Run Query und save the result
-    $this->result    = $db->orm->select($criteria);
+    $this->result = $db->orm->select($criteria);
 
   }//end public function fetch */
 

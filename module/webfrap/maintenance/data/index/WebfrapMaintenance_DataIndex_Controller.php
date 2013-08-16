@@ -44,17 +44,17 @@ class WebfrapMaintenance_DataIndex_Controller extends Controller
    *
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'stats' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
     'subtree' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
   );
 

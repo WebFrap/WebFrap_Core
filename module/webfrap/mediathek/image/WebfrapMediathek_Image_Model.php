@@ -47,7 +47,7 @@ class WebfrapMediathek_Image_Model extends Model
     $imageNode->file_hash = $checkSum;
     $imageNode->file_size = $fileSize;
 
-    $imageNode->width  = $imgAdapter->width;
+    $imageNode->width = $imgAdapter->width;
     $imageNode->height = $imgAdapter->height;
 
     $imageNode->mimetype = $imgAdapter->type;
@@ -98,11 +98,11 @@ class WebfrapMediathek_Image_Model extends Model
       $imgAdapter = LibImage::newAdapter();
       $imgAdapter->open($file->getTempname());
 
-      $imageNode->width  = $imgAdapter->width;
+      $imageNode->width = $imgAdapter->width;
       $imageNode->height = $imgAdapter->height;
       $imageNode->mimetype = $imgAdapter->type;
 
-      $fileId   = $imageNode->getId();
+      $fileId = $imageNode->getId();
       $filePath = SParserString::idToPath($fileId);
 
       $tumbPath = PATH_GW.'data/thumbs/wbfsys_image/file/'.$filePath.'/'.$fileId.'/';
@@ -155,14 +155,14 @@ class WebfrapMediathek_Image_Model extends Model
   public function delete($imgId)
   {
 
-    $orm    = $this->getOrm();
+    $orm = $this->getOrm();
 
     // löschen der varianten
     $imgVariants = $orm->getListWhere('WbfsysImageVariant', "id_image = {$imgId}");
 
     foreach ($imgVariants as $variant) {
       $variantId = $variant->getId();
-      $filePath  = PATH_GW.'data/uploads/wbfsys_image_variant/file/'.SParserString::idToPath($variantId).$variantId;
+      $filePath = PATH_GW.'data/uploads/wbfsys_image_variant/file/'.SParserString::idToPath($variantId).$variantId;
 
       // löschen des hochgeladenen files
       SFilesystem::delete($filePath);

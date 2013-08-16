@@ -38,7 +38,7 @@ class AclMgmt_Qfdu_User_Treetable_Element extends WgtTreetable
    *
    * @var string $id
    */
-  public $id       = 'wgt-treetable-mgmt-acl-list-tuser';
+  public $id = 'wgt-treetable-mgmt-acl-list-tuser';
 
   /**
    * the html id of the table tag, this id can be used to replace the table
@@ -46,34 +46,34 @@ class AclMgmt_Qfdu_User_Treetable_Element extends WgtTreetable
    *
    * @var string $id
    */
-  public $areaId   = null;
+  public $areaId = null;
 
   /**
    * the most likley class of a given query object
    *
    * @var AclMgmt_Table_Query
    */
-  public $dataGroup   = null;
+  public $dataGroup = null;
 
   /**
    * the most likley class of a given query object
    *
    * @var array
    */
-  public $dataUser    = array();
+  public $dataUser = array();
 
   /**
    * the most likley class of a given query object
    *
    * @var array
    */
-  public $dataEntity  = array();
+  public $dataEntity = array();
 
 
   /**
    * @var DomainNode
    */
-  public $domainNode  = null;
+  public $domainNode = null;
 
   /**
    * Ist kein Single menu
@@ -91,7 +91,7 @@ class AclMgmt_Qfdu_User_Treetable_Element extends WgtTreetable
   {
 
     $this->domainNode = $domainNode;
-    $this->name     = $name;
+    $this->name = $name;
     $this->stepSize = Wgt::$defListSize;
 
     // when a view is given we asume that the element should be injected
@@ -106,7 +106,7 @@ class AclMgmt_Qfdu_User_Treetable_Element extends WgtTreetable
       if ($name)
         $view->addElement($name, $this);
     } else {
-      $this->i18n     = I18n::getActive();
+      $this->i18n = I18n::getActive();
     }
 
     $this->loadUrl();
@@ -121,9 +121,9 @@ class AclMgmt_Qfdu_User_Treetable_Element extends WgtTreetable
 
     $this->id = 'wgt-treetable-'.$this->domainNode->domainName.'-acl-tuser';
 
-    $this->url['group']      = array
+    $this->url['group'] = array
     (
-      'delete'  => array
+      'delete' => array
       (
         Wgt::ACTION_DELETE,
         'Delete',
@@ -133,7 +133,7 @@ class AclMgmt_Qfdu_User_Treetable_Element extends WgtTreetable
         'wbf.label',
         Acl::ADMIN
       ),
-      'tree'  => array
+      'tree' => array
       (
         Wgt::ACTION_BUTTON_GET,
         'Reference ACLs',
@@ -143,7 +143,7 @@ class AclMgmt_Qfdu_User_Treetable_Element extends WgtTreetable
         'wbf.inheritance',
         Acl::ADMIN
       ),
-      'sep'  => array
+      'sep' => array
       (
         Wgt::ACTION_SEP
       ),
@@ -151,9 +151,9 @@ class AclMgmt_Qfdu_User_Treetable_Element extends WgtTreetable
     );
     $this->actions['group'] = array('tree', 'sep', 'delete');
 
-    $this->url['user']  = array
+    $this->url['user'] = array
     (
-      'delete'  => array
+      'delete' => array
       (
         Wgt::ACTION_DELETE,
         'Delete',
@@ -166,9 +166,9 @@ class AclMgmt_Qfdu_User_Treetable_Element extends WgtTreetable
     );
     $this->actions['user'] = array('delete');
 
-    $this->url['dset']  = array
+    $this->url['dset'] = array
     (
-      'delete'  => array
+      'delete' => array
       (
         Wgt::ACTION_DELETE,
         'Delete',
@@ -178,7 +178,7 @@ class AclMgmt_Qfdu_User_Treetable_Element extends WgtTreetable
         'wbf.label',
         Acl::ADMIN
       ),
-      'dset_mask'  => array
+      'dset_mask' => array
       (
         Wgt::ACTION_BUTTON_GET,
         'Dset Rights',
@@ -188,7 +188,7 @@ class AclMgmt_Qfdu_User_Treetable_Element extends WgtTreetable
         'wbf.label',
         Acl::ADMIN
       ),
-      'sep'  => array
+      'sep' => array
       (
         Wgt::ACTION_SEP
       ),
@@ -216,9 +216,9 @@ class AclMgmt_Qfdu_User_Treetable_Element extends WgtTreetable
       return;
 
     if (is_object($data)) {
-      $this->data       = $data;
-      $this->dataSize   = $data->getSourceSize();
-      //$this->dataUser   = $data->users;
+      $this->data = $data;
+      $this->dataSize = $data->getSourceSize();
+      //$this->dataUser = $data->users;
       //$this->dataEntity = $data->datasets;
     } else {
       $this->data = $data;
@@ -238,9 +238,9 @@ class AclMgmt_Qfdu_User_Treetable_Element extends WgtTreetable
       return;
 
     if (is_object($data) && $count) {
-      $this->dataUser   = $data;
-      $this->dataSize   = $data->getSourceSize();
-      //$this->dataUser   = $data->users;
+      $this->dataUser = $data;
+      $this->dataSize = $data->getSourceSize();
+      //$this->dataUser = $data->users;
       //$this->dataEntity = $data->datasets;
     } else {
       $this->dataUser = $data;
@@ -257,7 +257,7 @@ class AclMgmt_Qfdu_User_Treetable_Element extends WgtTreetable
   {
 
     $this->dataEntity = $data;
-    //$this->dataSize   = $data->getSourceSize();
+    //$this->dataSize = $data->getSourceSize();
 
   }//end public function setDsetData */
 
@@ -270,7 +270,7 @@ class AclMgmt_Qfdu_User_Treetable_Element extends WgtTreetable
   {
 
     $this->dataGroup = $data;
-    //$this->dataSize   = $data->getSourceSize();
+    //$this->dataSize = $data->getSourceSize();
 
   }//end public function setGroupData */
 
@@ -406,12 +406,12 @@ class AclMgmt_Qfdu_User_Treetable_Element extends WgtTreetable
 
     foreach ($this->dataUser as  $row) {
 
-        $userId     = $row['role_user_rowid'];
-        $objid      = $userId;
-        $rowid      = $this->id.'_row_'.$userId;
+        $userId = $row['role_user_rowid'];
+        $objid = $userId;
+        $rowid = $this->id.'_row_'.$userId;
 
         if ($this->enableNav) {
-          $navigation  = $this->rowMenu
+          $navigation = $this->rowMenu
           (
             '0&user_id='.$userId,
             $row,
@@ -488,14 +488,14 @@ HTML;
 
     foreach ($this->dataEntity as $row) {
 
-      $objid       = $row['dset_rowid'];
-      $dsetId      = $row['dset_rowid'];
-      $rowid       = $this->id.'_row_'.$userId.'_'.$dsetId;
-      $pRowid      = 'c-'.$this->id.'_row_'.$userId.' user-'.$userId;
+      $objid = $row['dset_rowid'];
+      $dsetId = $row['dset_rowid'];
+      $rowid = $this->id.'_row_'.$userId.'_'.$dsetId;
+      $pRowid = 'c-'.$this->id.'_row_'.$userId.' user-'.$userId;
 
 
       if ($this->enableNav) {
-        $navigation  = $this->rowMenu
+        $navigation = $this->rowMenu
         (
           '0&dset_id='.$dsetId.'&user_id='.$userId,
           $row,
@@ -562,20 +562,20 @@ HTML;
 
     foreach ($this->dataGroup as  $row) {
 
-      $objid      = $row['group_users_rowid'];
-      $groupId    = $row['role_group_rowid'];
+      $objid = $row['group_users_rowid'];
+      $groupId = $row['role_group_rowid'];
 
-      $rowid      = $this->id.'_row_'.$userId.'_'.$dsetId.'_'.$groupId;
-      $pRowid     = 'c-'.$this->id.'_row_'.$userId.'_'.$dsetId.' user-'.$userId.' dset-'.$dsetId;
+      $rowid = $this->id.'_row_'.$userId.'_'.$dsetId.'_'.$groupId;
+      $pRowid = 'c-'.$this->id.'_row_'.$userId.'_'.$dsetId.' user-'.$userId.' dset-'.$dsetId;
 
-      $dateStart  = '' != trim($row['group_users_date_start'])
+      $dateStart = '' != trim($row['group_users_date_start'])
         ? $this->view->i18n->date($row['group_users_date_start'])
         : '';
-      $dateEnd    = '' != trim($row['group_users_date_end'])
+      $dateEnd = '' != trim($row['group_users_date_end'])
         ? $this->view->i18n->date($row['group_users_date_end'])
         : '';
 
-      $navigation  = $this->rowMenu
+      $navigation = $this->rowMenu
       (
         $objid.'&dset_id='.$dsetId.'&user_id='.$userId.'&area_id='.$this->areaId,
         $row,
@@ -699,12 +699,12 @@ HTML;
 
     foreach ($this->dataUser as  $row) {
 
-        $userId     = $row['role_user_rowid'];
-        $objid      = $userId;
-        $rowid      = $this->id.'_row_'.$userId;
+        $userId = $row['role_user_rowid'];
+        $objid = $userId;
+        $rowid = $this->id.'_row_'.$userId;
 
         if ($this->enableNav) {
-          $navigation  = $this->rowMenu
+          $navigation = $this->rowMenu
           (
             '0&user_id='.$userId,
             $row,
@@ -778,8 +778,8 @@ HTML;
 
     foreach ($this->data as $key => $row) {
 
-      $objid       = $key;
-      $rowid       = $this->id.'_row_'.$objid;
+      $objid = $key;
+      $rowid = $this->id.'_row_'.$objid;
 
       $body = '<htmlArea selector="table#'.$this->id.'-table>tbody" action="prepend" check="#'.$rowid.'" not="true" ><![CDATA['.NL;
       $body .= '<tr class="title" id="'.$rowid.'" >'.NL;
@@ -787,7 +787,7 @@ HTML;
       $body .= '<td valign="top" class="pos" >1</td>'.NL;
       $body .= '<td valign="top" colspan="3" >'.$row['role_group_name'].'</td>'.NL;
 
-      $navigation  = $this->rowMenu
+      $navigation = $this->rowMenu
       (
         $objid.'&group_id='.$key,
         $row
@@ -824,10 +824,10 @@ HTML;
     foreach ($childs as $key => $row) {
 
       if (isset($row['id'])) {
-        $userId     = $row['id'];
-        $objid      = $userId;
-        $rowid      = $this->id.'_row_'.$groupId.'_'.$userId;
-        $pRowid     = 'child-of-'.$this->id.'_row_'.$groupId.' group-'.$groupId;
+        $userId = $row['id'];
+        $objid = $userId;
+        $rowid = $this->id.'_row_'.$groupId.'_'.$userId;
+        $pRowid = 'child-of-'.$this->id.'_row_'.$groupId.' group-'.$groupId;
 
         $body .= '<htmlArea selector="tr.#'.$this->id.'_row_'
           .$groupId.'" action="after" check="#'
@@ -840,7 +840,7 @@ HTML;
         $body .= '<td colspan="2"  ></td>'.NL;
 
         if ($this->enableNav) {
-          $navigation  = $this->buildCustomButtons
+          $navigation = $this->buildCustomButtons
           (
             $this->userButtons,
             array('clean'),
@@ -852,10 +852,10 @@ HTML;
         $body .= '</tr>]]></htmlArea>'.NL;
       } else {
 
-        $userId     = $row['role_user_rowid'];
-        $objid      = $row['group_users_rowid'];
-        $rowid      = $this->id.'_row_'.$groupId.'_'.$userId;
-        $pRowid     = 'child-of-'.$this->id.'_row_'.$groupId.' group-'.$groupId;
+        $userId = $row['role_user_rowid'];
+        $objid = $row['group_users_rowid'];
+        $rowid = $this->id.'_row_'.$groupId.'_'.$userId;
+        $pRowid = 'child-of-'.$this->id.'_row_'.$groupId.' group-'.$groupId;
 
         $body .= '<htmlArea selector="tr.#'.$this->id.'_row_'.$groupId
           .'" action="after" else="replace" check="#'.$rowid.'" not="true"  ><![CDATA['.NL;
@@ -892,7 +892,7 @@ HTML;
 
 
         if ($this->enableNav) {
-          $navigation  = $this->buildCustomButtons
+          $navigation = $this->buildCustomButtons
           (
             $this->userButtons,
             array('clean','delete'),
@@ -933,9 +933,9 @@ HTML;
 
     foreach ($childs as $row) {
 
-      $objid       = $row['group_users_rowid'];
-      $rowid       = $this->id.'_row_'.$objid;
-      $pRowid      = 'child-of-'.$this->id.'_row_'.$groupId.'_'.$userId.' user-'.$userId.' group-'.$groupId;
+      $objid = $row['group_users_rowid'];
+      $rowid = $this->id.'_row_'.$objid;
+      $pRowid = 'child-of-'.$this->id.'_row_'.$groupId.'_'.$userId.' user-'.$userId.' group-'.$groupId;
 
       $body = '<htmlArea selector="tr#'.$this->id.'_row_'.$groupId.'_'
         .$userId.'" action="after" check="#'.$rowid
@@ -974,7 +974,7 @@ HTML;
         .'</td>'.NL;
 
       if ($this->enableNav) {
-        $navigation  = $this->buildCustomButtons
+        $navigation = $this->buildCustomButtons
         (
           $this->datasetButtons,
           $this->datasetActions,
@@ -1099,8 +1099,8 @@ HTML;
     foreach ($childs as $userId => $row) {
 
       if (isset($row['id'])) {
-        $rowid      = $this->id.'_row_'.$groupId.'_'.$userId;
-        $pRowid     = 'child-of-'.$this->id.'_row_'.$groupId.' group-'.$groupId;
+        $rowid = $this->id.'_row_'.$groupId.'_'.$userId;
+        $pRowid = 'child-of-'.$this->id.'_row_'.$groupId.' group-'.$groupId;
 
         $body .= '<tr class="row'.$this->num.' '.$pRowid.' wgt-border-top flag_partial" id="'.$rowid.'"  >'.NL;
 
@@ -1109,7 +1109,7 @@ HTML;
         $body .= '<td colspan="2"  ></td>'.NL;
 
         if ($this->enableNav) {
-          $navigation  = $this->buildCustomButtons
+          $navigation = $this->buildCustomButtons
           (
             $this->userButtons,
             array('clean'),
@@ -1120,9 +1120,9 @@ HTML;
 
         $body .= '</tr>'.NL;
       } else {
-        $objid      = $row['group_users_rowid'];
-        $rowid      = $this->id.'_row_'.$groupId.'_'.$userId;
-        $pRowid     = 'child-of-'.$this->id.'_row_'.$groupId.' group-'.$groupId;
+        $objid = $row['group_users_rowid'];
+        $rowid = $this->id.'_row_'.$groupId.'_'.$userId;
+        $pRowid = 'child-of-'.$this->id.'_row_'.$groupId.' group-'.$groupId;
 
 
         $body .= '<tr class="row'.$this->num.' '.$pRowid.' wgt-border-top" id="'.$rowid.'"  >'.NL;
@@ -1158,7 +1158,7 @@ HTML;
 
         if ($this->enableNav) {
 
-          $navigation  = $this->buildCustomButtons
+          $navigation = $this->buildCustomButtons
           (
             $this->userButtons,
             array('clean','delete'),
@@ -1200,13 +1200,13 @@ HTML;
 
     $body = '';
 
-    $pos  = 1;
+    $pos = 1;
 
     foreach ($childs as $row) {
 
-      $objid       = $row['group_users_rowid'];
-      $rowid       = $this->id.'_row_'.$objid;
-      $pRowid      = 'child-of-'.$this->id.'_row_'.$groupId.'_'.$userId.' user-'.$userId.' group-'.$groupId;
+      $objid = $row['group_users_rowid'];
+      $rowid = $this->id.'_row_'.$objid;
+      $pRowid = 'child-of-'.$this->id.'_row_'.$groupId.'_'.$userId.' user-'.$userId.' group-'.$groupId;
 
       $body .= '<tr class="row'.$this->num.' '.$pRowid.'" id="'.$rowid.'" >'.NL;
 
@@ -1241,7 +1241,7 @@ HTML;
         .'</td>'.NL;
 
       if ($this->enableNav) {
-        $navigation  = $this->buildCustomButtons
+        $navigation = $this->buildCustomButtons
         (
           $this->datasetButtons,
           $this->datasetActions,

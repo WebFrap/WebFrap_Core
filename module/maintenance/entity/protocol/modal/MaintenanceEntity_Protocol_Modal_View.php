@@ -33,13 +33,13 @@ class MaintenanceEntity_Protocol_Modal_View extends WgtModal
    * Die Breite des Modal Elements
    * @var int in px
    */
-  public $width   = 950 ;
+  public $width = 950 ;
 
   /**
    * Die Höhe des Modal Elements
    * @var int in px
    */
-  public $height   = 650 ;
+  public $height = 650 ;
 
 /*//////////////////////////////////////////////////////////////////////////////
 // Display Methodes

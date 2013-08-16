@@ -34,15 +34,15 @@ class WebfrapDocu_Widget extends WgtWidget
   {
 
     // laden der mvc/utils adapter Objekte
-    $user     = $this->getUser();
-    $view     = $this->getView();
-    $acl      = $this->getAcl();
-    $db       = $this->getDb();
-    $request  = $this->getRequest();
+    $user = $this->getUser();
+    $view = $this->getView();
+    $acl = $this->getAcl();
+    $db = $this->getDb();
+    $request = $this->getRequest();
 
-    $profile  = $user->getProfileName();
+    $profile = $user->getProfileName();
 
-    $params   = new ContextPlain($request);
+    $params = new ContextPlain($request);
 
     $content = '';
 
@@ -74,15 +74,15 @@ HTML;
   public function embed($tabId, $tabSize = 'medium')
   {
     // laden der mvc/utils adapter Objekte
-    $user     = $this->getUser();
-    $view     = $this->getView();
-    $acl      = $this->getAcl();
-    $db       = $this->getDb();
-    $request  = $this->getRequest();
+    $user = $this->getUser();
+    $view = $this->getView();
+    $acl = $this->getAcl();
+    $db = $this->getDb();
+    $request = $this->getRequest();
 
-    $profile  = $user->getProfileName();
+    $profile = $user->getProfileName();
 
-    $params   = new ContextPlain($request);
+    $params = new ContextPlain($request);
 
 
     $loader = new ExtensionLoader('index', 'data/docu/');
@@ -119,7 +119,7 @@ HTML;
 
     // start position of the query and size of the table
     $params->start
-      = $request->param('start', Validator::INT);
+ = $request->param('start', Validator::INT);
 
     // stepsite for query (limit) and the table
     if (!$params->qsize = $request->param('qsize', Validator::INT))
@@ -127,20 +127,20 @@ HTML;
 
     // order for the multi display element
     $params->order
-      = $request->param('order', Validator::CNAME);
+ = $request->param('order', Validator::CNAME);
 
     // target for a callback function
     $params->target
-      = $request->param('target', Validator::CKEY  );
+ = $request->param('target', Validator::CKEY  );
 
     // target for some ui element
     $params->targetId
-      = $request->param('target_id', Validator::CKEY  );
+ = $request->param('target_id', Validator::CKEY  );
 
     // append ist das flag um in listenelementen die einträge
     // anhängen zu lassen anstelle den body zu pagen
     if ($append = $request->param('append', Validator::BOOLEAN))
-      $params->append  = $append;
+      $params->append = $append;
 
     // flag for beginning seach filter
     if ($text = $request->param('begin', Validator::TEXT)) {

@@ -32,51 +32,51 @@ class WebfrapAttachment_Request extends ContextListing
 
     // startpunkt des pfades für die acls
     if ($aclRoot = $request->param('a_root', Validator::CKEY))
-      $this->aclRoot    = $aclRoot;
+      $this->aclRoot = $aclRoot;
 
     // die id des Datensatzes von dem aus der Pfad gestartet wurde
     if ($aclRootId = $request->param('a_root_id', Validator::INT))
-      $this->aclRootId    = $aclRootId;
+      $this->aclRootId = $aclRootId;
 
     // der key des knotens auf dem wir uns im pfad gerade befinden
     if ($aclKey = $request->param('a_key', Validator::CKEY))
-      $this->aclKey    = $aclKey;
+      $this->aclKey = $aclKey;
 
     // der name des knotens
     if ($aclNode = $request->param('a_node', Validator::CKEY))
-      $this->aclNode    = $aclNode;
+      $this->aclNode = $aclNode;
 
     // an welchem punkt des pfades befinden wir uns?
     if ($aclLevel = $request->param('a_level', Validator::INT))
-      $this->aclLevel  = $aclLevel;
+      $this->aclLevel = $aclLevel;
 
     // Attachment stuff
     /////////////////
 
     // an welchem punkt des pfades befinden wir uns?
     if ($element = $request->param('element', Validator::CKEY))
-      $this->element  = $element;
+      $this->element = $element;
 
     if ($refId = $request->param('refid', Validator::EID))
-      $this->refId  = $refId;
+      $this->refId = $refId;
 
     if ($refMask = $request->param('ref_mask', Validator::CKEY))
-      $this->refMask  = $refMask;
+      $this->refMask = $refMask;
 
     if ($refField = $request->param('ref_field', Validator::CKEY))
-      $this->refField  = $refField;
+      $this->refField = $refField;
 
     if ($maskFilter = $request->param('mask_filter', Validator::CKEY))
-      $this->maskFilter  = $maskFilter;
+      $this->maskFilter = $maskFilter;
 
     if ($typeFilter = $request->param('type_filter', Validator::CKEY))
-      $this->typeFilter  = $typeFilter;
+      $this->typeFilter = $typeFilter;
 
     
     // listing stuff
     // start position of the query and size of the table
     $this->offset
-	    = $request->param('offset', Validator::INT);
+	 = $request->param('offset', Validator::INT);
 
     
     // stepsite for query (limit) and the table

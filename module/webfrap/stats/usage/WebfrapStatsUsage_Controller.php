@@ -30,12 +30,12 @@ class WebfrapStatsUsage_Controller extends Controller
   /**
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'show' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
   );
 

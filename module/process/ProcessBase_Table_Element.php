@@ -31,32 +31,32 @@ class ProcessBase_Table_Element extends WgtTable
   /**
    * @var string $id
    */
-  public $id       = 'wgt-table-process-base-history';
+  public $id = 'wgt-table-process-base-history';
 
   /**
    * @var array
    */
-  public $classes  = array('full');
+  public $classes = array('full');
 
   /**
    * the most likley class of a given query object
    *
    * @var ProcesBase_Query
    */
-  public $data       = null;
+  public $data = null;
 
   /**
    *
    * @var array
    */
-  public $url      = array
+  public $url = array
   (
-    'paging'  => array
+    'paging' => array
     (
       Wgt::ACTION_PAGING ,
       'index.php?c=Widget.UserTask.reload'
     ),
-    'checkbox'  => array
+    'checkbox' => array
     (
       Wgt::ACTION_CHECKBOX,
       'select',
@@ -121,8 +121,8 @@ class ProcessBase_Table_Element extends WgtTable
     $num = 1;
     foreach ($this->data as $key => $row) {
 
-      $objid       = $row['rowid'];
-      $rowid       = $this->id.'_row_'.$objid;
+      $objid = $row['rowid'];
+      $rowid = $this->id.'_row_'.$objid;
 
       $body .= '<tr class="row'.$num.'" id="'.$rowid.'" >'.NL;
       $body .= '<td valign="top" class="pos" >'.$pos.'</td>'.NL;

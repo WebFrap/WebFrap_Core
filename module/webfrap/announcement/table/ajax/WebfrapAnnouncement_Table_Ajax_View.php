@@ -38,7 +38,7 @@ class WebfrapAnnouncement_Table_Ajax_View extends LibTemplateAjaxView
 
     $access = $params->access;
 
-    $ui    = $this->loadUi('WebfrapAnnouncement_Table');
+    $ui = $this->loadUi('WebfrapAnnouncement_Table');
     $ui->setModel($this->model);
     $ui->createListItem
     (

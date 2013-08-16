@@ -33,13 +33,13 @@ class WebfrapMediathek_Video_Modal_View extends WgtModal
    * Die Breite des Modal Elements
    * @var int in px
    */
-  public $width   = 600 ;
+  public $width = 600 ;
 
   /**
    * Die Höhe des Modal Elements
    * @var int in px
    */
-  public $height   = 300 ;
+  public $height = 300 ;
 
 /*//////////////////////////////////////////////////////////////////////////////
 // Display Methodes
@@ -91,9 +91,9 @@ class WebfrapMediathek_Video_Modal_View extends WgtModal
     $this->setTemplate('webfrap/attachment/modal/form_edit_file');
 
     $this->addVars(array(
-      'attachmentId'   => $attachId,
-      'refId'      => $refId,
-      'file'       => $fileNode,
+      'attachmentId' => $attachId,
+      'refId' => $refId,
+      'file' => $fileNode,
       'elementKey' => $elementId,
     ));
 

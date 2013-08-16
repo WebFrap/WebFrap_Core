@@ -44,12 +44,12 @@ class WebfrapSystem_Conf_Controller extends MvcController
    *
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'overview' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     )
   );
 

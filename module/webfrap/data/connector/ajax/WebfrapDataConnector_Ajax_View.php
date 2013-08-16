@@ -44,8 +44,8 @@ class WebfrapDataConnector_Ajax_View extends LibTemplateAjaxView
     $menuBuilder = new WgtMenuBuilder_SplitButton($this);
     $menuBuilder->actions = array('connect');
     
-    $menuBuilder->buttons  = array(
-      'connect'    => array(
+    $menuBuilder->buttons = array(
+      'connect' => array(
         Wgt::ACTION_JS,
         'Connect',
         '$S(\'#'.$searchReq->cbElement.'\').trigger(\'connect\',[\'{$id}\'])',
@@ -57,7 +57,7 @@ class WebfrapDataConnector_Ajax_View extends LibTemplateAjaxView
     
     
     $html = '';
-    $pos  = 1;
+    $pos = 1;
     
     foreach ($result as $row) {
 

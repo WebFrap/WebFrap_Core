@@ -60,10 +60,10 @@ XML
 
     $iconDel = '<i class="icon-remove-sign" ></i>';
 
-    $file    = new IoFile(PATH_GW."data/package/{$params->type}/{$package}/{$fileName}");
+    $file = new IoFile(PATH_GW."data/package/{$params->type}/{$package}/{$fileName}");
 
-    $fDate   = date('Y-m-d H:i:s', $file->getTimeCreated());
-    $fSize   = $file->getSize('mb');
+    $fDate = date('Y-m-d H:i:s', $file->getTimeCreated());
+    $fSize = $file->getSize('mb');
 
     $fHash = md5($fileName);
 

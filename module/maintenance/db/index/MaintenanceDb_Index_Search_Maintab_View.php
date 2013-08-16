@@ -80,8 +80,8 @@ class MaintenanceDb_Index_Search_Maintab_View extends WgtMaintabCustom
     $this->setTemplate('maintenance/db/index/maintab/search_form', true);
 
     // Setzen von Viewspezifischen Control Flags
-    $params->viewType  = 'maintab';
-    $params->viewId    = $this->getId();
+    $params->viewType = 'maintab';
+    $params->viewId = $this->getId();
 
     // Menü und Javascript Logik erstellen
     $this->addMenu($params);
@@ -105,17 +105,17 @@ class MaintenanceDb_Index_Search_Maintab_View extends WgtMaintabCustom
   {
 
     // laden der mvc/utils adapter Objekte
-    $acl     = $this->getAcl();
-    $view   = $this->getView();
+    $acl = $this->getAcl();
+    $view = $this->getView();
 
-    $iconMenu      = '<i class="icon-reorder" ></i>';
-    $iconRebuild   = $view->icon( 'maintenance/rebuild_index.png', 'Rebuild Index');
-    $iconClose     = '<i class="icon-remove-circle " ></i>';
+    $iconMenu = '<i class="icon-reorder" ></i>';
+    $iconRebuild = $view->icon( 'maintenance/rebuild_index.png', 'Rebuild Index');
+    $iconClose = '<i class="icon-remove-circle " ></i>';
 
     $entries = new TArray();
-    $entries->support  = $this->entriesSupport($params);
+    $entries->support = $this->entriesSupport($params);
 
-    $menu          = $this->newMenu($this->id.'_dropmenu');
+    $menu = $this->newMenu($this->id.'_dropmenu');
     $menu->content = <<<HTML
 <ul class="wcm wcm_ui_dropmenu wgt-dropmenu" id="{$this->id}" >
   <li class="wgt-root" >
@@ -161,10 +161,10 @@ HTML;
   protected function entriesSupport($params)
   {
 
-    $iconSupport    = $this->icon('control/support.png'  ,'Support');
-    $iconBug        = $this->icon('control/bug.png'     ,'Bug');
-    $iconFaq        = $this->icon('control/faq.png'     ,'Faq');
-    $iconHelp       = $this->icon('control/help.png'    ,'Help');
+    $iconSupport = $this->icon('control/support.png'  ,'Support');
+    $iconBug = $this->icon('control/bug.png'     ,'Bug');
+    $iconFaq = $this->icon('control/faq.png'     ,'Faq');
+    $iconHelp = $this->icon('control/help.png'    ,'Help');
 
     $html = <<<HTML
 

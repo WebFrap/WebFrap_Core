@@ -54,15 +54,15 @@ class WebfrapMediathek_Model extends Model
     $orm = $this->getOrm();
 
     $appendLabel = '';
-    $appendKey   = '';
+    $appendKey = '';
 
     if ($dataNode) {
       $appendLabel = ' '.$dataNode->getId();
-      $appendKey   = '-'.$dataNode->getId();
+      $appendKey = '-'.$dataNode->getId();
     }
 
     $mediathek = $orm->newEntity('WbfsysMediathek');
-    $mediathek->name      = $domainNode->label.$appendLabel;
+    $mediathek->name = $domainNode->label.$appendLabel;
     $mediathek->access_key = $domainNode->domainName.$appendKey;
 
     if ($dataNode)
@@ -74,7 +74,7 @@ class WebfrapMediathek_Model extends Model
     $mediathek = $orm->insert($mediathek);
 
     $this->nodeMediathek = $mediathek;
-    $this->mediaId      = $mediathek->getId();
+    $this->mediaId = $mediathek->getId();
 
     return $mediathek;
 
@@ -108,8 +108,8 @@ class WebfrapMediathek_Model extends Model
     if (is_null($mediathek)) {
       $mediathek = $this->autoSetupMediathek($domainNode, $dataNode);
     } else {
-      $this->mediaId       = $mediathek->getId();
-      $this->nodeMediathek  = $mediathek;
+      $this->mediaId = $mediathek->getId();
+      $this->nodeMediathek = $mediathek;
     }
 
     return $this->nodeMediathek;
@@ -129,8 +129,8 @@ class WebfrapMediathek_Model extends Model
     if (is_null($mediathek))
       return $mediathek;
 
-    $this->mediaId       = $mediathek->getId();
-    $this->nodeMediathek  = $mediathek;
+    $this->mediaId = $mediathek->getId();
+    $this->nodeMediathek = $mediathek;
 
     return $this->nodeMediathek;
 
@@ -152,7 +152,7 @@ class WebfrapMediathek_Model extends Model
 
     $db = $this->getDb();
 
-    $condEntry  = '';
+    $condEntry = '';
     $condMedia = '';
 
     if ($mediaId) {
@@ -243,7 +243,7 @@ SQL;
 
     $db = $this->getDb();
 
-    $condEntry  = '';
+    $condEntry = '';
     $condMedia = '';
 
     if ($mediaId) {
@@ -330,7 +330,7 @@ SQL;
 
     $db = $this->getDb();
 
-    $condEntry  = '';
+    $condEntry = '';
     $condMedia = '';
 
     if ($mediaId) {
@@ -415,7 +415,7 @@ SQL;
 
     $db = $this->getDb();
 
-    $condEntry  = '';
+    $condEntry = '';
     $condMedia = '';
 
     if ($mediaId) {
@@ -499,7 +499,7 @@ SQL;
 
     $db = $this->getDb();
 
-    $condEntry  = '';
+    $condEntry = '';
     $condMedia = '';
 
     if ($mediaId) {

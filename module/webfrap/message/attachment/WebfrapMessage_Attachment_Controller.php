@@ -39,24 +39,24 @@ class WebfrapMessage_Attachment_Controller extends Controller
 
     // message logic
     'formnew' => array(
-      'method'    => array('GET'),
-      'views'      => array('modal')
+      'method' => array('GET'),
+      'views' => array('modal')
     ),
     'formedit' => array(
-      'method'    => array('GET'),
-      'views'      => array('modal')
+      'method' => array('GET'),
+      'views' => array('modal')
     ),
     'insert' => array(
-      'method'    => array('POST'),
-      'views'      => array('ajax')
+      'method' => array('POST'),
+      'views' => array('ajax')
     ),
     'update' => array(
-      'method'    => array('POST'),
-      'views'      => array('ajax')
+      'method' => array('POST'),
+      'views' => array('ajax')
     ),
     'delete' => array(
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
 
   );
@@ -76,7 +76,7 @@ class WebfrapMessage_Attachment_Controller extends Controller
   {
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params  = $this->getFlags($request);
+    $params = $this->getFlags($request);
 
     $model = $this->loadModel('WebfrapMessage');
     $model->loadTableAccess($params);
@@ -95,7 +95,7 @@ class WebfrapMessage_Attachment_Controller extends Controller
     }
 
     /* @var $view WebfrapMessage_Attachment_Modal_View */
-    $view   = $response->loadView(
+    $view = $response->loadView(
       'form-messages-attachment-new',
       'WebfrapMessage_Attachment',
       'displayCreate'
@@ -134,7 +134,7 @@ class WebfrapMessage_Attachment_Controller extends Controller
     }
 
     /* @var $view WebfrapMessage_Attachment_Modal_View */
-    $view   = $response->loadView(
+    $view = $response->loadView(
       'form-messages-attachment-insert',
       'WebfrapMessage_Attachment',
       'displayInsert'
@@ -162,7 +162,7 @@ class WebfrapMessage_Attachment_Controller extends Controller
   {
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params  = $this->getFlags($request);
+    $params = $this->getFlags($request);
 
     $model = $this->loadModel('WebfrapMessage');
     $model->loadTableAccess($params);
@@ -181,7 +181,7 @@ class WebfrapMessage_Attachment_Controller extends Controller
     }
 
     /* @var $view WebfrapMessage_Attachment_Ajax_View */
-    $view   = $response->loadView(
+    $view = $response->loadView(
       'form-messages-attachment-delete',
       'WebfrapMessage_Attachment',
       'displayDelete'

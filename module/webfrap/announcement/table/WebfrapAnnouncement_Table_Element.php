@@ -33,7 +33,7 @@ class WebfrapAnnouncement_Table_Element extends WgtTable
    *
    * @var string $id
    */
-  public $id   = 'wgt_table-webfrap_announcement';
+  public $id = 'wgt_table-webfrap_announcement';
 
   /**
    * the most likley class of a given query object
@@ -47,7 +47,7 @@ class WebfrapAnnouncement_Table_Element extends WgtTable
    *
    * @var string $namespace
    */
-  public $namespace   = 'WebfrapAnnouncement';
+  public $namespace = 'WebfrapAnnouncement';
 
   /**
    * list with all actions for the listed datarows
@@ -56,9 +56,9 @@ class WebfrapAnnouncement_Table_Element extends WgtTable
    * manually wich actions are used with: Wgt::addActions
    * @var array
    */
-  public $url  = array
+  public $url = array
   (
-    'edit'    => array
+    'edit' => array
     (
       Wgt::ACTION_BUTTON_GET,
       'Edit',
@@ -69,7 +69,7 @@ class WebfrapAnnouncement_Table_Element extends WgtTable
       Acl::UPDATE
     ),
 
-    'delete'  => array
+    'delete' => array
     (
       Wgt::ACTION_DELETE,
       'Delete',
@@ -79,11 +79,11 @@ class WebfrapAnnouncement_Table_Element extends WgtTable
       'wbfsys.announcement.label',
       Acl::DELETE
     ),
-    'sep'  => array
+    'sep' => array
     (
       Wgt::ACTION_SEP
     ),
-    'checkbox'  => array
+    'checkbox' => array
     (
       Wgt::ACTION_CHECKBOX,
       'select',
@@ -203,8 +203,8 @@ class WebfrapAnnouncement_Table_Element extends WgtTable
 
     foreach ($this->data as $key => $row) {
 
-      $objid       = $row['wbfsys_announcement_rowid'];
-      $rowid       = $this->id.'_row_'.$objid;
+      $objid = $row['wbfsys_announcement_rowid'];
+      $rowid = $this->id.'_row_'.$objid;
 
       $body .= <<<HTML
     <tr
@@ -221,12 +221,12 @@ HTML;
       $body .= '<td valign="top" >'.Validator::sanitizeHtml($row['wbfsys_announcement_channel_name']).'</td>'.NL;
 
       // importance
-      $prioIcon  = '';
+      $prioIcon = '';
       $prioLabel = '';
 
       if ($row['wbfsys_announcement_importance']) {
         $prioLabel = $priorityContainer->getLabel($row['wbfsys_announcement_importance']);
-        $prioIcon  = $this->icon
+        $prioIcon = $this->icon
         (
           $priorityContainer->getIcon($row['wbfsys_announcement_importance']),
           $prioLabel
@@ -247,7 +247,7 @@ HTML;
         : '&nbsp;').'</td>'.NL;
 
       if ($this->enableNav) {
-        $navigation  = $this->rowMenu
+        $navigation = $this->rowMenu
           (
             $objid,
             $row
@@ -358,13 +358,13 @@ HTML;
       $body .= '<td valign="top" >'.Validator::sanitizeHtml($row['wbfsys_announcement_channel_name']).'</td>'.NL;
 
       // importance
-      $prioIcon  = '';
+      $prioIcon = '';
       $prioLabel = '';
 
       if ($row['wbfsys_announcement_importance']) {
         $priorityContainer = new WgtInputPriority('l-prio-dp');
         $prioLabel = $priorityContainer->getLabel($row['wbfsys_announcement_importance']);
-        $prioIcon  = $this->icon
+        $prioIcon = $this->icon
         (
           $priorityContainer->getIcon($row['wbfsys_announcement_importance']),
           $prioLabel
@@ -386,7 +386,7 @@ HTML;
 
       if ($this->enableNav) {
 
-        $navigation  = $this->rowMenu
+        $navigation = $this->rowMenu
           (
             $objid,
             $row

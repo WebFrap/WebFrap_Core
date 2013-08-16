@@ -40,15 +40,15 @@ class WebfrapMaintenance_DataIndex_Stats_Maintab_Menu extends WgtDropmenu
   {
 
     // laden der mvc/utils adapter Objekte
-    $acl     = $this->getAcl();
-    $view   = $this->getView();
+    $acl = $this->getAcl();
+    $view = $this->getView();
 
-    $iconMenu      = '<i class="icon-reorder" ></i>';
-    $iconRebuild   = $view->icon( 'maintenance/rebuild_index.png', 'Rebuild Index');
-    $iconClose     = '<i class="icon-remove-circle " ></i>';
+    $iconMenu = '<i class="icon-reorder" ></i>';
+    $iconRebuild = $view->icon( 'maintenance/rebuild_index.png', 'Rebuild Index');
+    $iconClose = '<i class="icon-remove-circle " ></i>';
 
     $entries = new TArray();
-    $entries->support  = $this->entriesSupport($params);
+    $entries->support = $this->entriesSupport($params);
 
     // prüfen ob der aktuelle benutzer überhaupt neue einträge anlegen darf
     if ($params->access->maintenance) {
@@ -101,10 +101,10 @@ HTML;
   protected function entriesSupport($params)
   {
 
-    $iconSupport    = $this->view->icon('control/support.png'  ,'Support');
-    $iconBug        = $this->view->icon('control/bug.png'     ,'Bug');
-    $iconFaq        = $this->view->icon('control/faq.png'     ,'Faq');
-    $iconHelp       = $this->view->icon('control/help.png'    ,'Help');
+    $iconSupport = $this->view->icon('control/support.png'  ,'Support');
+    $iconBug = $this->view->icon('control/bug.png'     ,'Bug');
+    $iconFaq = $this->view->icon('control/faq.png'     ,'Faq');
+    $iconHelp = $this->view->icon('control/help.png'    ,'Help');
 
     $html = <<<HTML
 

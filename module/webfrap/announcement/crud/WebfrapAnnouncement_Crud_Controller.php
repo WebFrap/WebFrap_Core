@@ -54,10 +54,10 @@ class WebfrapAnnouncement_Crud_Controller extends ControllerCrud
   {
 
     // resource laden
-    $user      = $this->getUser();
+    $user = $this->getUser();
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params  = $this->getFormFlags($request);
+    $params = $this->getFormFlags($request);
 
     // der contextKey wird benötigt um potentielle Konflikte in der UI
     // bei der Anzeige von mehreren Windows oder Tabs zu vermeiden
@@ -179,7 +179,7 @@ class WebfrapAnnouncement_Crud_Controller extends ControllerCrud
   {
 
     // resource laden
-    $user      = $this->getUser();
+    $user = $this->getUser();
 
     // create named params object
     $params = $this->getCrudFlags($request);
@@ -323,7 +323,7 @@ class WebfrapAnnouncement_Crud_Controller extends ControllerCrud
   {
 
     // resource laden
-    $user      = $this->getUser();
+    $user = $this->getUser();
 
     // prüfen ob die verwendete HTTP Methode für diesen service
     // überhaupt erlaub ist
@@ -339,7 +339,7 @@ class WebfrapAnnouncement_Crud_Controller extends ControllerCrud
           array
           (
             'method' => $request->method(),
-            'use'    => 'DELETE'
+            'use' => 'DELETE'
           )
         ),
         Error::METHOD_NOT_ALLOWED
@@ -383,8 +383,8 @@ class WebfrapAnnouncement_Crud_Controller extends ControllerCrud
           'wbf.message',
           array
           (
-            'resource'  => $response->i18n->l('Announcement', 'wbfsys.announcement.label'),
-            'id'        => $objid
+            'resource' => $response->i18n->l('Announcement', 'wbfsys.announcement.label'),
+            'id' => $objid
           )
         ),
         Response::NOT_FOUND
@@ -412,8 +412,8 @@ class WebfrapAnnouncement_Crud_Controller extends ControllerCrud
           'wbf.message',
           array
           (
-            'resource'  => $response->i18n->l('Announcement', 'wbfsys.announcement.label'),
-            'id'        => $objid
+            'resource' => $response->i18n->l('Announcement', 'wbfsys.announcement.label'),
+            'id' => $objid
           )
         ),
         Response::FORBIDDEN

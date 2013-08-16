@@ -30,12 +30,12 @@ class WebfrapStats_Controller extends Controller
   /**
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'open' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
   );
 
@@ -51,9 +51,9 @@ class WebfrapStats_Controller extends Controller
   public function service_open($request, $response)
   {
 
-    $idContainer  = $request->param('container', Validator::EID);
-    $nodeKey      = $request->param('node', Validator::TEXT);
-    $objid        = $request->param('objid', Validator::EID);
+    $idContainer = $request->param('container', Validator::EID);
+    $nodeKey = $request->param('node', Validator::TEXT);
+    $objid = $request->param('objid', Validator::EID);
 
     /* @var $view WebfrapKnowhowNode_Maintab_View  */
     $view = $response->loadView

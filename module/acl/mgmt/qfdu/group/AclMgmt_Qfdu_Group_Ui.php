@@ -67,7 +67,7 @@ class AclMgmt_Qfdu_Group_Ui extends MvcUi
       $this->view
     );
 
-    $listObj->areaId   = $areaId;
+    $listObj->areaId = $areaId;
     $listObj->domainNode = $this->domainNode;
 
     // use the query as datasource for the table
@@ -78,14 +78,14 @@ class AclMgmt_Qfdu_Group_Ui extends MvcUi
     $listObj->setAccessPath($params, $params->aclKey, $params->aclNode);
 
     // set the offset to set the paging menu correct
-    $listObj->start    = $params->start;
+    $listObj->start = $params->start;
 
     // set the position for the size menu
     $listObj->stepSize = $params->qsize;
 
     // check if there is a filter for the first char
     if ($params->begin)
-      $listObj->begin  = $params->begin;
+      $listObj->begin = $params->begin;
 
     // if there is a given tableId for the html id of the the table replace
     // the default id with it
@@ -108,7 +108,7 @@ class AclMgmt_Qfdu_Group_Ui extends MvcUi
 
     if ($params->ajax) {
       // refresh the table in ajax requests
-      $listObj->refresh    = true;
+      $listObj->refresh = true;
 
       // the table should only replace the content inside of the container
       // but not the container itself
@@ -117,7 +117,7 @@ class AclMgmt_Qfdu_Group_Ui extends MvcUi
       // create the panel
       $tabPanel = new WgtPanelTable($listObj);
 
-      $tabPanel->title      = $this->view->i18n->l
+      $tabPanel->title = $this->view->i18n->l
       (
         'Qualified User Access for {@label@}',
         'wbf.label',
@@ -126,7 +126,7 @@ class AclMgmt_Qfdu_Group_Ui extends MvcUi
           'label' => $this->domainNode->label
         )
       );
-      $tabPanel->searchKey  = $this->domainNode->domainName.'_acl_qfdu';
+      $tabPanel->searchKey = $this->domainNode->domainName.'_acl_qfdu';
     }
 
 
@@ -407,7 +407,7 @@ JSCODE;
 
     $itemId = 'wgt-treetable-'.$this->domainNode->domainName.'-acl-tgroup';
 
-    $userRowId  = "{$itemId}_row_{$asgData->groupId}_{$asgData->userId}";
+    $userRowId = "{$itemId}_row_{$asgData->groupId}_{$asgData->userId}";
     $groupRowId = "{$itemId}_row_{$asgData->groupId}";
 
     $code = <<<JSCODE
@@ -438,8 +438,8 @@ JSCODE;
 
     $itemId = 'wgt-treetable-'.$this->domainNode->domainName.'-acl-tgroup';
 
-    $dsetRowId  = "{$itemId}_row_{$asgData->groupId}_{$asgData->userId}_{$asgData->dsetId}";
-    $userRowId  = "{$itemId}_row_{$asgData->groupId}_{$asgData->userId}";
+    $dsetRowId = "{$itemId}_row_{$asgData->groupId}_{$asgData->userId}_{$asgData->dsetId}";
+    $userRowId = "{$itemId}_row_{$asgData->groupId}_{$asgData->userId}";
     $groupRowId = "{$itemId}_row_{$asgData->groupId}";
 
     $code = <<<JSCODE

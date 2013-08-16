@@ -38,10 +38,10 @@ class WebfrapProtocol_Query extends LibSqlQuery
   public function fetchFullProtocol( $params)
   {
 
-    $this->sourceSize   = null;
-    $db                 = $this->getDb();
+    $this->sourceSize = null;
+    $db = $this->getDb();
 
-    $criteria           = $db->orm->newCriteria();
+    $criteria = $db->orm->newCriteria();
 
     $cols = array
     (
@@ -70,8 +70,8 @@ class WebfrapProtocol_Query extends LibSqlQuery
     $this->checkLimitAndOrder($criteria, $params);
 
     // Run Query und save the result
-    $this->result     = $db->orm->select($criteria);
-    $this->calcQuery  = $criteria->count('count(wbfsys_protocol_message.'.Db::PK.') as '.Db::Q_SIZE);
+    $this->result = $db->orm->select($criteria);
+    $this->calcQuery = $criteria->count('count(wbfsys_protocol_message.'.Db::PK.') as '.Db::Q_SIZE);
 
   }//end public function fetchFullProtocol */
 
@@ -86,11 +86,11 @@ class WebfrapProtocol_Query extends LibSqlQuery
   public function fetchEntityProtocol($entityKey , $params)
   {
 
-    $this->sourceSize   = null;
-    $db                 = $this->getDb();
+    $this->sourceSize = null;
+    $db = $this->getDb();
 
-    $entityId           = $db->orm->getResourceId($entityKey);
-    $criteria           = $db->orm->newCriteria();
+    $entityId = $db->orm->getResourceId($entityKey);
+    $criteria = $db->orm->newCriteria();
 
     $cols = array
     (
@@ -122,8 +122,8 @@ class WebfrapProtocol_Query extends LibSqlQuery
     $this->checkLimitAndOrder($criteria, $params);
 
     // Run Query und save the result
-    $this->result     = $db->orm->select($criteria);
-    $this->calcQuery  = $criteria->count('count(wbfsys_protocol_message.'.Db::PK.') as '.Db::Q_SIZE);
+    $this->result = $db->orm->select($criteria);
+    $this->calcQuery = $criteria->count('count(wbfsys_protocol_message.'.Db::PK.') as '.Db::Q_SIZE);
 
   }//end public function fetchEntityProtocol */
 
@@ -138,11 +138,11 @@ class WebfrapProtocol_Query extends LibSqlQuery
   public function fetchDatasetProtocol($entityKey, $objid, $params)
   {
 
-    $this->sourceSize   = null;
-    $db                 = $this->getDb();
+    $this->sourceSize = null;
+    $db = $this->getDb();
 
-    $entityId           = $db->orm->getResourceId($entityKey);
-    $criteria           = $db->orm->newCriteria();
+    $entityId = $db->orm->getResourceId($entityKey);
+    $criteria = $db->orm->newCriteria();
 
     $cols = array
     (
@@ -174,8 +174,8 @@ class WebfrapProtocol_Query extends LibSqlQuery
     $this->checkLimitAndOrder($criteria, $params);
 
     // Run Query und save the result
-    $this->result     = $db->orm->select($criteria);
-    $this->calcQuery  = $criteria->count('count(wbfsys_protocol_message.'.Db::PK.') as '.Db::Q_SIZE);
+    $this->result = $db->orm->select($criteria);
+    $this->calcQuery = $criteria->count('count(wbfsys_protocol_message.'.Db::PK.') as '.Db::Q_SIZE);
 
   }//end public function fetchDatasetProtocol */
 

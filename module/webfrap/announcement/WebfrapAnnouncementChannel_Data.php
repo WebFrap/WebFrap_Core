@@ -44,7 +44,7 @@ class WebfrapAnnouncementChannel_Data extends DataContainer
   {
 
     $orm = $this->getOrm();
-    $this->sysUsers   = $orm->getIds("WbfsysRoleUser", "rowid>0");
+    $this->sysUsers = $orm->getIds("WbfsysRoleUser", "rowid>0");
 
     $this->createGlobal();
     $this->createUserChannel();
@@ -72,13 +72,13 @@ class WebfrapAnnouncementChannel_Data extends DataContainer
       $orm->save($channel);
     }
 
-    $channelId  = $channel->getId(); // performance... lol
+    $channelId = $channel->getId(); // performance... lol
 
     foreach ($this->sysUsers as $sysUser) {
       if (!$subscription = $orm->get('WbfsysAnnouncementChannelSubscription', 'id_channel = '.$channelId.' and id_role = '.$sysUser)) {
         $subscription = $orm->newEntity('WbfsysAnnouncementChannelSubscription');
-        $subscription->id_channel  = $channelId;
-        $subscription->id_role     = $sysUser;
+        $subscription->id_channel = $channelId;
+        $subscription->id_role = $sysUser;
         $orm->save($subscription);
       }
     }
@@ -106,8 +106,8 @@ class WebfrapAnnouncementChannel_Data extends DataContainer
 
         // den eigenen Message Channel Subscriben
         $uCSubscription = $orm->newEntity('WbfsysAnnouncementChannelSubscription');
-        $uCSubscription->id_channel  = $userChannel->getId();
-        $uCSubscription->id_role     = $sysUser;
+        $uCSubscription->id_channel = $userChannel->getId();
+        $uCSubscription->id_role = $sysUser;
         $orm->save($uCSubscription);
       }
 
@@ -124,7 +124,7 @@ class WebfrapAnnouncementChannel_Data extends DataContainer
     $orm = $this->getOrm();
 
     // Announcement Channel für alle Entities erstellen
-    $sysEntities   = $orm->getAll("WbfsysEntity", "rowid>0");
+    $sysEntities = $orm->getAll("WbfsysEntity", "rowid>0");
 
     foreach ($sysEntities as $sysEntity) {
       if (!$entityChannel = $orm->getByKey('WbfsysAnnouncementChannel', 'entity_'.$sysEntity->access_key)) {
@@ -148,7 +148,7 @@ class WebfrapAnnouncementChannel_Data extends DataContainer
     $orm = $this->getOrm();
 
     // Announcement Channel für alle Entities erstellen
-    $sysRoles   = $orm->getAll("WbfsysRoleGroup", "rowid>0");
+    $sysRoles = $orm->getAll("WbfsysRoleGroup", "rowid>0");
 
     foreach ($sysRoles as $sysRole) {
       if (!$groupChannel = $orm->getByKey('WbfsysAnnouncementChannel', 'group_'.$sysRole->access_key)) {

@@ -30,19 +30,19 @@ class WebfrapNavigation_Controller extends ControllerCrud
   /**
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'explorer' => array(
-      'method'  => array('GET'),
-      'views'   => array('maintab', 'modal')
+      'method' => array('GET'),
+      'views' => array('maintab', 'modal')
     ),
     'search' => array(
-      'method'  => array('GET'),
-      'views'   => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
     'searchlist' => array(
-      'method'  => array('GET'),
-      'views'   => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
   );
 
@@ -64,7 +64,7 @@ class WebfrapNavigation_Controller extends ControllerCrud
       'display'
     );
 
-    $params   = new TArray();
+    $params = new TArray();
     $menuType = $request->param('mtype', Validator::CNAME);
 
     if ($menuType)
@@ -85,7 +85,7 @@ class WebfrapNavigation_Controller extends ControllerCrud
   {
 
     // laden der mvc/utils adapter Objekte
-    $user      = $this->getUser();
+    $user = $this->getUser();
 
     // load request parameters an interpret as flags
     $params = $this->getListingFlags($request);
@@ -105,7 +105,7 @@ class WebfrapNavigation_Controller extends ControllerCrud
           'wbf.message',
           array
           (
-            'resource'  => $response->i18n->l('Ban','wbfsys.ban.label')
+            'resource' => $response->i18n->l('Ban','wbfsys.ban.label')
           )
         ),
         Response::FORBIDDEN
@@ -118,11 +118,11 @@ class WebfrapNavigation_Controller extends ControllerCrud
     $params->access = $access;
     */
 
-    $searchKey  = $this->request->param('key', Validator::TEXT);
+    $searchKey = $this->request->param('key', Validator::TEXT);
 
     $model = $this->loadModel('WebfrapNavigation');
 
-    $view   = $this->tplEngine->loadView('WebfrapNavigation_Ajax');
+    $view = $this->tplEngine->loadView('WebfrapNavigation_Ajax');
     $view->setModel($model);
 
     $error = $view->displayAutocomplete($searchKey, $params);
@@ -154,7 +154,7 @@ class WebfrapNavigation_Controller extends ControllerCrud
   {
 
     // laden der mvc/utils adapter Objekte
-    $user      = $this->getUser();
+    $user = $this->getUser();
 
     // load request parameters an interpret as flags
     $params = $this->getListingFlags($request);
@@ -174,7 +174,7 @@ class WebfrapNavigation_Controller extends ControllerCrud
           'wbf.message',
           array
           (
-            'resource'  => $response->i18n->l('Ban','wbfsys.ban.label')
+            'resource' => $response->i18n->l('Ban','wbfsys.ban.label')
           )
         ),
         Response::FORBIDDEN
@@ -187,11 +187,11 @@ class WebfrapNavigation_Controller extends ControllerCrud
     $params->access = $access;
     */
 
-    $searchKey  = $this->request->param('key', Validator::TEXT);
+    $searchKey = $this->request->param('key', Validator::TEXT);
 
     $model = $this->loadModel('WebfrapNavigation');
 
-    $view   = $this->tplEngine->loadView('WebfrapNavigation_Ajax');
+    $view = $this->tplEngine->loadView('WebfrapNavigation_Ajax');
     $view->setModel($model);
 
     $error = $view->displayNavlist($searchKey, $params);

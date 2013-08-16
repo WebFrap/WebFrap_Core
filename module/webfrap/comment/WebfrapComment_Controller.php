@@ -30,27 +30,27 @@ class WebfrapComment_Controller extends Controller
   /**
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'save' => array
     (
-      'method'    => array('POST','PUT'),
-      'views'      => array('ajax')
+      'method' => array('POST','PUT'),
+      'views' => array('ajax')
     ),
     'autocomplete' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
     'disconnect' => array
     (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
     'overlaydset' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
 
   );
@@ -78,13 +78,13 @@ class WebfrapComment_Controller extends Controller
       throw new PermissionDenied_Exception();
     }
 
-    $refId   = $context->refId;
+    $refId = $context->refId;
 
     // data
-    $title   = $request->data('title', Validator::TEXT);
+    $title = $request->data('title', Validator::TEXT);
     $comment = $request->data('content', Validator::TEXT);
-    $parent  = $request->data('parent', Validator::EID);
-    $rowid   = $request->data('rowid', Validator::EID);
+    $parent = $request->data('parent', Validator::EID);
+    $rowid = $request->data('rowid', Validator::EID);
 
     $respContext = $response->createContext();
 
@@ -141,7 +141,7 @@ class WebfrapComment_Controller extends Controller
       throw new PermissionDenied_Exception();
     }
 
-    $key      = $request->param('key', Validator::TEXT);
+    $key = $request->param('key', Validator::TEXT);
 
       // sicher stellen, dass alle benötigten Informationen vorhanden sind
     if (!$key || !$context->refId) {
@@ -176,7 +176,7 @@ class WebfrapComment_Controller extends Controller
       throw new PermissionDenied_Exception();
     }
 
-    $id       = $request->param('objid', Validator::EID);
+    $id = $request->param('objid', Validator::EID);
     $model->delete($id);
 
   }//end public function service_disconnect */
@@ -189,9 +189,9 @@ class WebfrapComment_Controller extends Controller
   public function service_overlayDset($request, $response)
   {
 
-    $element  = $request->param('element', Validator::EID);
-    $dKey     = $request->param('dkey', Validator::TEXT);
-    $objid    = $request->param('objid', Validator::EID);
+    $element = $request->param('element', Validator::EID);
+    $dKey = $request->param('dkey', Validator::TEXT);
+    $objid = $request->param('objid', Validator::EID);
 
     /* @var $view WebfrapHistory_Ajax_View  */
     $view = $response->loadView

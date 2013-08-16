@@ -35,12 +35,12 @@ class ProcessBase_Controller extends Controller
   public function service_showHistory($request, $response)
   {
 
-    $request  = $this->getRequest();
+    $request = $this->getRequest();
     $response = $this->getResponse();
 
     $processId = $request->param('process', Validator::INT  );
-    $objid     = $request->param('objid', Validator::INT  );
-    $entity    = $request->param('entity', Validator::CNAME  );
+    $objid = $request->param('objid', Validator::INT  );
+    $entity = $request->param('entity', Validator::CNAME  );
 
     $view = $response->loadView(
       'process-base-history',

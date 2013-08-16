@@ -36,13 +36,13 @@ class MaintenanceEntity_Stats_Modal_View extends WgtModal
    * Die Breite des Modal Elements
    * @var int in px
    */
-  public $width   = 950 ;
+  public $width = 950 ;
 
   /**
    * Die Höhe des Modal Elements
    * @var int in px
    */
-  public $height   = 720 ;
+  public $height = 720 ;
 
 /*//////////////////////////////////////////////////////////////////////////////
 // Display Methodes

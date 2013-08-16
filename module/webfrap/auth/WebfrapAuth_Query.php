@@ -32,7 +32,7 @@ class WebfrapAuth_Query extends LibSqlQuery
   public function dataUserByEmail($email  )
   {
 
-    $db       = $this->getDb();
+    $db = $this->getDb();
     $criteria = $db->orm->newCriteria();
     $criteria->select('wbfsys_role_user.*')->from('wbfsys_role_user');
 

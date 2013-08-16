@@ -117,14 +117,14 @@ class AclMgmt_Ui extends MvcUi
     $table->setSearchKey($this->domainNode->aclDomainKey.'-acl');
 
     // set the offset to set the paging menu correct
-    $table->start    = $params->start;
+    $table->start = $params->start;
 
     // set the position for the size menu
     $table->stepSize = $params->qsize;
 
     // check if there is a filter for the first char
     if ($params->begin)
-      $table->begin  = $params->begin;
+      $table->begin = $params->begin;
 
     // if there is a given tableId for the html id of the the table replace
     // the default id with it
@@ -138,7 +138,7 @@ class AclMgmt_Ui extends MvcUi
 
     if ($params->ajax) {
       // refresh the table in ajax requests
-      $table->refresh    = true;
+      $table->refresh = true;
 
       // the table should only replace the content inside of the container
       // but not the container itself
@@ -157,7 +157,7 @@ class AclMgmt_Ui extends MvcUi
         'label' => $view->i18n->l($this->domainNode->label, $this->domainNode->domainI18n.'.label')
       )
     );
-    $tabPanel->searchKey  = $this->domainNode->aclDomainKey.'_acl';
+    $tabPanel->searchKey = $this->domainNode->aclDomainKey.'_acl';
 
 
     if ($params->append) {
@@ -272,10 +272,10 @@ WGTJS;
   public function searchForm()
   {
 
-    $entityWbfsysSecurityAccess  = $this->model->getEntityWbfsysSecurityAccess();
-    $fieldsWbfsysSecurityAccess  = $entityWbfsysSecurityAccess->getSearchCols();
+    $entityWbfsysSecurityAccess = $this->model->getEntityWbfsysSecurityAccess();
+    $fieldsWbfsysSecurityAccess = $entityWbfsysSecurityAccess->getSearchCols();
 
-    $formWbfsysSecurityAccess    = $this->view->newForm('WbfsysSecurityAccess');
+    $formWbfsysSecurityAccess = $this->view->newForm('WbfsysSecurityAccess');
     $formWbfsysSecurityAccess->setNamespace('WbfsysSecurityAccess');
     $formWbfsysSecurityAccess->setPrefix('WbfsysSecurityAccess');
     $formWbfsysSecurityAccess->setKeyName('security_access');

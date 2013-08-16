@@ -44,32 +44,32 @@ class MaintenanceDb_Index_Controller extends Controller
    *
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'stats' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
     'recalcall' => array
     (
-      'method'    => array('PUT'),
-      'views'      => array('ajax')
+      'method' => array('PUT'),
+      'views' => array('ajax')
     ),
     'recalcentity' => array
     (
-      'method'    => array('PUT'),
-      'views'      => array('ajax')
+      'method' => array('PUT'),
+      'views' => array('ajax')
     ),
     'searchform' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
     'search' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
   );
 

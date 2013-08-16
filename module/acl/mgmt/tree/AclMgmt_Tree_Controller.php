@@ -48,27 +48,27 @@ class AclMgmt_Tree_Controller extends ControllerCrud
    *
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'showgraph' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
     'reload' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
     'savepath' => array
     (
-      'method'    => array('POST'),
-      'views'      => array('maintab')
+      'method' => array('POST'),
+      'views' => array('maintab')
     ),
     'droppath' => array
     (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax','maintab')
+      'method' => array('DELETE'),
+      'views' => array('ajax','maintab')
     ),
   );
 
@@ -86,8 +86,8 @@ class AclMgmt_Tree_Controller extends ControllerCrud
   {
 
     // load request parameters an interpret as flags
-    $params      = $this->getListingFlags($request);
-    $domainNode  = $this->getDomainNode($request);
+    $params = $this->getListingFlags($request);
+    $domainNode = $this->getDomainNode($request);
 
     /* @var $model AclMgmt_Tree_Model */
     $model = $this->loadModel('AclMgmt_Tree');
@@ -126,8 +126,8 @@ class AclMgmt_Tree_Controller extends ControllerCrud
   {
 
     // load request parameters an interpret as flags
-    $params      = $this->getListingFlags($request);
-    $domainNode  = $this->getDomainNode($request);
+    $params = $this->getListingFlags($request);
+    $domainNode = $this->getDomainNode($request);
 
     /* @var $model AclMgmt_Tree_Model  */
     $model = $this->loadModel('AclMgmt_Tree');
@@ -167,11 +167,11 @@ class AclMgmt_Tree_Controller extends ControllerCrud
   public function service_savePath($request, $response)
   {
 
-    $domainNode  = $this->getDomainNode($request);
+    $domainNode = $this->getDomainNode($request);
 
 
     // load request parameters an interpret as flags
-    $params   = $this->getListingFlags($request);
+    $params = $this->getListingFlags($request);
     $params->graphType = $request->param('graph_type', Validator::CNAME);
 
     $objid = $request->data('objid', Validator::INT);
@@ -213,15 +213,15 @@ class AclMgmt_Tree_Controller extends ControllerCrud
   public function service_dropPath($request, $response  )
   {
 
-    $domainNode  = $this->getDomainNode($request);
+    $domainNode = $this->getDomainNode($request);
 
     // load request parameters an interpret as flags
-    $params  = $this->getListingFlags($request);
+    $params = $this->getListingFlags($request);
 
     $params->graphType = $request->param('graph_type', Validator::CNAME);
 
-    $objid    = $request->param('delid', Validator::EID);
-    $groupId  = $request->param('group_id', Validator::EID);
+    $objid = $request->param('delid', Validator::EID);
+    $groupId = $request->param('group_id', Validator::EID);
 
     if (!$objid) {
       throw new InvalidRequest_Exception
@@ -258,7 +258,7 @@ class AclMgmt_Tree_Controller extends ControllerCrud
   protected function getDomainNode($request)
   {
 
-    $domainKey   = $request->param('dkey', Validator::CKEY);
+    $domainKey = $request->param('dkey', Validator::CKEY);
     if (!$domainKey) {
       throw new InvalidRequest_Exception
       (
@@ -267,7 +267,7 @@ class AclMgmt_Tree_Controller extends ControllerCrud
       );
     }
 
-    $domainNode  = DomainNode::getNode($domainKey);
+    $domainNode = DomainNode::getNode($domainKey);
 
     if (!$domainNode) {
       throw new InvalidRequest_Exception

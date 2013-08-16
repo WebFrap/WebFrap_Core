@@ -39,11 +39,11 @@ class WebfrapImport_Maintab_Menu extends WgtDropmenu
   public function buildMenu($params)
   {
 
-    $iconMenu      = '<i class="icon-reorder" ></i>';
-    $iconClose     = $this->view->icon('control/close_tab.png'     ,'Close');
+    $iconMenu = '<i class="icon-reorder" ></i>';
+    $iconClose = $this->view->icon('control/close_tab.png'     ,'Close');
 
     $entries = new TArray();
-    //$entries->support  = $this->entriesSupport($params);
+    //$entries->support = $this->entriesSupport($params);
 
     $this->content = <<<HTML
 
@@ -85,10 +85,10 @@ HTML;
   protected function entriesSupport($params)
   {
 
-    $iconSupport   = $this->view->icon('control/support.png'  ,'Support');
-    $iconBug       = $this->view->icon('control/bug.png'      ,'Bug');
-    $iconFaq       = $this->view->icon('control/faq.png'      ,'Faq');
-    $iconHelp      = $this->view->icon('control/help.png'     ,'Help');
+    $iconSupport = $this->view->icon('control/support.png'  ,'Support');
+    $iconBug = $this->view->icon('control/bug.png'      ,'Bug');
+    $iconFaq = $this->view->icon('control/faq.png'      ,'Faq');
+    $iconHelp = $this->view->icon('control/help.png'     ,'Help');
 
 
     $html = <<<HTML

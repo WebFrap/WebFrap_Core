@@ -65,9 +65,9 @@ class WebfrapSettings_Search_Model extends Model
   public function saveSearch($rqtData)
   {
 
-    $db     = $this->getDb();
-    $user   = $this->getUser();
-    $cache  = $this->getL1Cache();
+    $db = $this->getDb();
+    $user = $this->getUser();
+    $cache = $this->getL1Cache();
 
     $settingsLoader = new LibUserSettings($db, $user, $cache);
     
@@ -280,9 +280,9 @@ SQL;
   public function loadSettings()
   {
 
-    $db     = $this->getDb();
-    $user   = $this->getUser();
-    $cache  = $this->getL1Cache();
+    $db = $this->getDb();
+    $user = $this->getUser();
+    $cache = $this->getL1Cache();
 
     $settingsLoader = new LibUserSettings($db, $user, $cache);
 
@@ -296,9 +296,9 @@ SQL;
   public function saveSettings($settings)
   {
 
-    $db     = $this->getDb();
-    $user   = $this->getUser();
-    $cache  = $this->getL1Cache();
+    $db = $this->getDb();
+    $user = $this->getUser();
+    $cache = $this->getL1Cache();
 
     $settingsLoader = new LibUserSettings($db, $user, $cache);
     $settingsLoader->saveSetting(EUserSettingType::MESSAGES, $settings);

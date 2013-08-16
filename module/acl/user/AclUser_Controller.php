@@ -49,92 +49,92 @@ class AclUser_Controller extends ControllerCrud
    *
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'listing' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
     'search' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
     'loadgroups' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
     'appendgroup' => array
     (
-      'method'    => array('PUT', 'POST'),
-      'views'      => array('ajax')
+      'method' => array('PUT', 'POST'),
+      'views' => array('ajax')
     ),
     'updatearea' => array
     (
-      'method'    => array('PUT', 'POST'),
-      'views'      => array('ajax')
+      'method' => array('PUT', 'POST'),
+      'views' => array('ajax')
     ),
     'pushtoentity' => array
     (
-      'method'    => array('PUT', 'POST'),
-      'views'      => array('ajax')
+      'method' => array('PUT', 'POST'),
+      'views' => array('ajax')
     ),
     'pullfromentity' => array
     (
-      'method'    => array('PUT', 'POST'),
-      'views'      => array('ajax')
+      'method' => array('PUT', 'POST'),
+      'views' => array('ajax')
     ),
     'tabqualifiedusers' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
     'searchqfdusers' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
     'loadqfdusers' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
     'loadqfduentity' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
     'appendqfduser' => array
     (
-      'method'    => array('PUT', 'POST'),
-      'views'      => array('ajax')
+      'method' => array('PUT', 'POST'),
+      'views' => array('ajax')
     ),
     'cleanqfdugroup' => array
     (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
     'deleteqfduser' => array
     (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
     'cleanqfduser' => array
     (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
     'deleteqfdudataset' => array
     (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
     'emptyqfduusers' => array
     (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     )
 
   );
@@ -153,8 +153,8 @@ class AclUser_Controller extends ControllerCrud
   {
 
     // load request parameters an interpret as flags
-    $params      = $this->getListingFlags($request);
-    $domainNode  = $this->getDomainNode($request);
+    $params = $this->getListingFlags($request);
+    $domainNode = $this->getDomainNode($request);
 
 
     /* @var $model AclMgmt_Model  */
@@ -191,19 +191,19 @@ class AclUser_Controller extends ControllerCrud
   {
 
     // load request parameters an interpret as flags
-    $params  = $this->getListingFlags($request);
-    $domainNode  = $this->getDomainNode($request);
+    $params = $this->getListingFlags($request);
+    $domainNode = $this->getDomainNode($request);
 
     // load the default model
     /* @var $model AclMgmt_Model */
-    $model   = $this->loadModel('AclMgmt');
+    $model = $this->loadModel('AclMgmt');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $params);
 
-    $areaId  = $model->getAreaId();
+    $areaId = $model->getAreaId();
 
     // this can only be an ajax request, so we can directly load the ajax view
-    $view    = $response->loadView
+    $view = $response->loadView
     (
       $domainNode->domainName.'acl-mgmt',
       'AclMgmt',
@@ -228,11 +228,11 @@ class AclUser_Controller extends ControllerCrud
   {
 
     // load request parameters an interpret as flags
-    $params  = $this->getListingFlags($request);
-    $domainNode  = $this->getDomainNode($request);
+    $params = $this->getListingFlags($request);
+    $domainNode = $this->getDomainNode($request);
 
     /* @var $model AclMgmt_Model */
-    $model   = $this->loadModel('AclMgmt');
+    $model = $this->loadModel('AclMgmt');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $params);
 
@@ -265,8 +265,8 @@ class AclUser_Controller extends ControllerCrud
   {
 
     // load request parameters an interpret as flags
-    $params  = $this->getListingFlags($request);
-    $domainNode  = $this->getDomainNode($request);
+    $params = $this->getListingFlags($request);
+    $domainNode = $this->getDomainNode($request);
 
     /* @var $model AclMgmt_Model */
     $model =  $this->loadModel('AclMgmt');
@@ -277,7 +277,7 @@ class AclUser_Controller extends ControllerCrud
     $searchKey = $request->param('key', Validator::TEXT);
 
     /* @var $view AclMgmt_Ajax_View */
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       $domainNode->domainName.'-acl-mgmt',
       'AclMgmt',
@@ -302,15 +302,15 @@ class AclUser_Controller extends ControllerCrud
   {
 
     // load request parameters an interpret as flags
-    $params  = $this->getListingFlags($request);
-    $domainNode  = $this->getDomainNode($request);
+    $params = $this->getListingFlags($request);
+    $domainNode = $this->getDomainNode($request);
 
     /* @var $model AclMgmt_Model */
     $model = $this->loadModel('AclMgmt');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $params);
 
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       $domainNode->domainName.'-acl-mgmt',
       'AclMgmt',
@@ -365,7 +365,7 @@ class AclUser_Controller extends ControllerCrud
   public function service_updateArea($request, $response)
   {
 
-    $domainNode  = $this->getDomainNode($request);
+    $domainNode = $this->getDomainNode($request);
 
     // interpret the parameters from the request
     $params = $this->getCrudFlags($request);
@@ -442,7 +442,7 @@ class AclUser_Controller extends ControllerCrud
 
     // interpret the parameters from the request
     $params = $this->getFlags($request);
-    $domainNode  = $this->getDomainNode($request);
+    $domainNode = $this->getDomainNode($request);
 
     /* @var $model AclMgmt_Model */
     $model = $this->loadModel('AclMgmt');
@@ -473,7 +473,7 @@ class AclUser_Controller extends ControllerCrud
 
     // interpret the parameters from the request
     $params = $this->getFlags($request);
-    $domainNode  = $this->getDomainNode($request);
+    $domainNode = $this->getDomainNode($request);
 
     /* @var $model AclMgmt_Model */
     $model = $this->loadModel('AclMgmt');
@@ -501,7 +501,7 @@ class AclUser_Controller extends ControllerCrud
   protected function getDomainNode($request)
   {
 
-    $domainKey   = $request->param('dkey', Validator::CKEY);
+    $domainKey = $request->param('dkey', Validator::CKEY);
     if (!$domainKey) {
       throw new InvalidRequest_Exception
       (
@@ -510,7 +510,7 @@ class AclUser_Controller extends ControllerCrud
       );
     }
 
-    $domainNode  = DomainNode::getNode($domainKey);
+    $domainNode = DomainNode::getNode($domainKey);
 
     if (!$domainNode) {
       throw new InvalidRequest_Exception
@@ -531,49 +531,49 @@ class AclUser_Controller extends ControllerCrud
   protected function getListingFlags($request)
   {
 
-    $response  = $this->getResponse();
+    $response = $this->getResponse();
 
     $params = new TFlag();
 
     // the publish type, like selectbox, tree, table..
-    if ($publish  = $request->param('publish', Validator::CNAME))
-      $params->publish   = $publish;
+    if ($publish = $request->param('publish', Validator::CNAME))
+      $params->publish = $publish;
 
     // listing type
-    if ($ltype   = $request->param('ltype', Validator::CNAME))
-      $params->ltype    = $ltype;
+    if ($ltype = $request->param('ltype', Validator::CNAME))
+      $params->ltype = $ltype;
 
     // input type
     if ($input = $request->param('input', Validator::CKEY))
-      $params->input    = $input;
+      $params->input = $input;
 
     // input type
     if ($suffix = $request->param('suffix', Validator::CKEY))
-      $params->suffix    = $suffix;
+      $params->suffix = $suffix;
 
     // append entries
     if ($append = $request->param('append', Validator::BOOLEAN))
-      $params->append    = $append;
+      $params->append = $append;
 
     // startpunkt des pfades für die acls
     if ($aclRoot = $request->param('a_root', Validator::CKEY))
-      $params->aclRoot    = $aclRoot;
+      $params->aclRoot = $aclRoot;
 
     // die id des Datensatzes von dem aus der Pfad gestartet wurde
     if ($aclRootId = $request->param('a_root_id', Validator::INT))
-      $params->aclRootId    = $aclRootId;
+      $params->aclRootId = $aclRootId;
 
     // der key des knotens auf dem wir uns im pfad gerade befinden
     if ($aclKey = $request->param('a_key', Validator::CKEY))
-      $params->aclKey    = $aclKey;
+      $params->aclKey = $aclKey;
 
     // der name des knotens
     if ($aclNode = $request->param('a_node', Validator::CKEY))
-      $params->aclNode    = $aclNode;
+      $params->aclNode = $aclNode;
 
     // an welchem punkt des pfades befinden wir uns?
     if ($aclLevel = $request->param('a_level', Validator::INT))
-      $params->aclLevel  = $aclLevel;
+      $params->aclLevel = $aclLevel;
 
     // per default
     $params->categories = array();
@@ -582,25 +582,25 @@ class AclUser_Controller extends ControllerCrud
 
       // fieldname of the calling selectbox
       $params->field
-        = $request->param('field', Validator::CNAME);
+ = $request->param('field', Validator::CNAME);
 
       // html id of the calling selectbox
       $params->inputId
-        = $request->param('input_id', Validator::CKEY);
+ = $request->param('input_id', Validator::CKEY);
 
       // html id of the table
       $params->targetId
-        = $request->param('target_id', Validator::CKEY);
+ = $request->param('target_id', Validator::CKEY);
 
       // html id of the calling selectbox
       $params->target
-        = str_replace('_','.',$request->param('target',Validator::CKEY));
+ = str_replace('_','.',$request->param('target',Validator::CKEY));
 
     } else {
 
       // start position of the query and size of the table
       $params->start
-        = $request->param('start', Validator::INT);
+ = $request->param('start', Validator::INT);
 
       // stepsite for query (limit) and the table
       if (!$params->qsize = $request->param('qsize', Validator::INT))
@@ -608,15 +608,15 @@ class AclUser_Controller extends ControllerCrud
 
       // order for the multi display element
       $params->order
-        = $request->param('order', Validator::CNAME);
+ = $request->param('order', Validator::CNAME);
 
       // target for a callback function
       $params->target
-        = $request->param('target', Validator::CKEY  );
+ = $request->param('target', Validator::CKEY  );
 
       // target for some ui element
       $params->targetId
-        = $request->param('target_id', Validator::CKEY  );
+ = $request->param('target_id', Validator::CKEY  );
 
       // flag for beginning seach filter
       if ($text = $request->param('begin', Validator::TEXT  )) {
@@ -627,19 +627,19 @@ class AclUser_Controller extends ControllerCrud
       // the model should add all inputs in the ajax request, not just the text
       // converts per default to false, thats ok here
       $params->fullLoad
-        = $request->param('full_load', Validator::BOOLEAN);
+ = $request->param('full_load', Validator::BOOLEAN);
 
       // exclude whatever
       $params->exclude
-        = $request->param('exclude', Validator::CKEY  );
+ = $request->param('exclude', Validator::CKEY  );
 
       // keyname to tageting ui elements
       $params->keyName
-        = $request->param('key_name', Validator::CKEY  );
+ = $request->param('key_name', Validator::CKEY  );
 
       // the activ id, mostly needed in exlude calls
       $params->objid
-        = $request->param('objid', Validator::EID  );
+ = $request->param('objid', Validator::EID  );
 
     }
 
@@ -654,66 +654,66 @@ class AclUser_Controller extends ControllerCrud
   protected function getCrudFlags($request)
   {
 
-    $response  = $this->getResponse();
+    $response = $this->getResponse();
 
     // create named parameters object
     $params = new TFlag();
 
     // the publish type, like selectbox, tree, table..
-    if ($publish  = $request->param('publish', Validator::CNAME))
-      $params->publish   = $publish;
+    if ($publish = $request->param('publish', Validator::CNAME))
+      $params->publish = $publish;
 
     // listing type
-    if ($ltype   = $request->param('ltype', Validator::CNAME))
-      $params->ltype    = $ltype;
+    if ($ltype = $request->param('ltype', Validator::CNAME))
+      $params->ltype = $ltype;
 
     // context
-    if ($context   = $request->param('context', Validator::CNAME))
-      $params->context    = $context;
+    if ($context = $request->param('context', Validator::CNAME))
+      $params->context = $context;
 
     // if of the target element, can be a table, a tree or whatever
     if ($targetId = $request->param('target_id', Validator::CKEY))
-      $params->targetId  = $targetId;
+      $params->targetId = $targetId;
 
     // callback for a target function in thr browser
-    if ($target   = $request->param('target', Validator::CNAME))
-      $params->target    = $target;
+    if ($target = $request->param('target', Validator::CNAME))
+      $params->target = $target;
 
     // mask key
     if ($mask = $request->param('mask', Validator::CNAME))
-      $params->mask  = $mask;
+      $params->mask = $mask;
 
     // mask key
     if ($viewType = $request->param('view', Validator::CNAME))
-      $params->viewType  = $viewType;
+      $params->viewType = $viewType;
 
     // mask key
     if ($viewId = $request->param('view_id', Validator::CKEY))
-      $params->viewId  = $viewId;
+      $params->viewId = $viewId;
 
     // refid
     if ($refid = $request->param('refid', Validator::INT))
-      $params->refId  = $refid;
+      $params->refId = $refid;
 
     // startpunkt des pfades für die acls
     if ($aclRoot = $request->param('a_root', Validator::CKEY))
-      $params->aclRoot    = $aclRoot;
+      $params->aclRoot = $aclRoot;
 
     // die id des Datensatzes von dem aus der Pfad gestartet wurde
     if ($aclRootId = $request->param('a_root_id', Validator::INT))
-      $params->aclRootId    = $aclRootId;
+      $params->aclRootId = $aclRootId;
 
     // der key des knotens auf dem wir uns im pfad gerade befinden
     if ($aclKey = $request->param('a_key', Validator::CKEY))
-      $params->aclKey    = $aclKey;
+      $params->aclKey = $aclKey;
 
     // der name des knotens
     if ($aclNode = $request->param('a_node', Validator::CKEY))
-      $params->aclNode    = $aclNode;
+      $params->aclNode = $aclNode;
 
     // an welchem punkt des pfades befinden wir uns?
     if ($aclLevel = $request->param('a_level', Validator::INT))
-      $params->aclLevel  = $aclLevel;
+      $params->aclLevel = $aclLevel;
 
     // per default
     $params->categories = array();
@@ -729,7 +729,7 @@ class AclUser_Controller extends ControllerCrud
   protected function getTabFlags($request)
   {
 
-    $response  = $this->getResponse();
+    $response = $this->getResponse();
 
     $params = new ContextPlain($request);
 
@@ -737,16 +737,16 @@ class AclUser_Controller extends ControllerCrud
     $params->categories = array();
 
     // listing type
-    if ($ltype   = $request->param('ltype', Validator::CNAME))
-      $params->ltype    = $ltype;
+    if ($ltype = $request->param('ltype', Validator::CNAME))
+      $params->ltype = $ltype;
 
     // context type
     if ($context = $request->param('context', Validator::CNAME))
-      $params->context    = $context;
+      $params->context = $context;
 
     // start position of the query and size of the table
     $params->start
-      = $request->param('start', Validator::INT);
+ = $request->param('start', Validator::INT);
 
     // stepsite for query (limit) and the table
     if (!$params->qsize = $request->param('qsize', Validator::INT))
@@ -754,19 +754,19 @@ class AclUser_Controller extends ControllerCrud
 
     // order for the multi display element
     $params->order
-      = $request->param('order', Validator::CNAME);
+ = $request->param('order', Validator::CNAME);
 
     // target for a callback function
     $params->target
-      = $request->param('target', Validator::CKEY  );
+ = $request->param('target', Validator::CKEY  );
 
     // target for some ui element
     $params->targetId
-      = $request->param('target_id', Validator::CKEY  );
+ = $request->param('target_id', Validator::CKEY  );
 
     // target for some ui element
     $params->tabId
-      = $request->param('tabid', Validator::CKEY  );
+ = $request->param('tabid', Validator::CKEY  );
 
     // flag for beginning seach filter
     if ($text = $request->param('begin', Validator::TEXT  )) {
@@ -776,31 +776,31 @@ class AclUser_Controller extends ControllerCrud
 
     // exclude whatever
     $params->exclude
-      = $request->param('exclude', Validator::CKEY  );
+ = $request->param('exclude', Validator::CKEY  );
 
     // the activ id, mostly needed in exlude calls
     $params->objid
-      = $request->param('objid', Validator::EID  );
+ = $request->param('objid', Validator::EID  );
 
     // startpunkt des pfades für die acls
     if ($aclRoot = $request->param('a_root', Validator::CKEY))
-      $params->aclRoot    = $aclRoot;
+      $params->aclRoot = $aclRoot;
 
     // die id des Datensatzes von dem aus der Pfad gestartet wurde
     if ($aclRootId = $request->param('a_root_id', Validator::INT))
-      $params->aclRootId    = $aclRootId;
+      $params->aclRootId = $aclRootId;
 
     // der key des knotens auf dem wir uns im pfad gerade befinden
     if ($aclKey = $request->param('a_key', Validator::CKEY))
-      $params->aclKey    = $aclKey;
+      $params->aclKey = $aclKey;
 
     // der name des knotens
     if ($aclNode = $request->param('a_node', Validator::CKEY))
-      $params->aclNode    = $aclNode;
+      $params->aclNode = $aclNode;
 
     // an welchem punkt des pfades befinden wir uns?
     if ($aclLevel = $request->param('a_level', Validator::INT))
-      $params->aclLevel  = $aclLevel;
+      $params->aclLevel = $aclLevel;
 
     return $params;
 

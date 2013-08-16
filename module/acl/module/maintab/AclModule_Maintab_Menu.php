@@ -52,16 +52,16 @@ class AclModule_Maintab_Menu extends WgtDropmenu
   public function buildMenu($areaId, $params)
   {
 
-    $access           = $params->access;
-    $user            = $this->getUser();
+    $access = $params->access;
+    $user = $this->getUser();
 
     // first create icons
-    $iconMasks       = $this->view->icon('control/masks.png'     , 'Masks');
-    $iconMask        = $this->view->icon('control/mask.png'      , 'Mask');
+    $iconMasks = $this->view->icon('control/masks.png'     , 'Masks');
+    $iconMask = $this->view->icon('control/mask.png'      , 'Mask');
 
     // load entries
     $entries = new TArray();
-    $entries->support  = $this->entriesSupport($areaId, $params);
+    $entries->support = $this->entriesSupport($areaId, $params);
 
     // assemble all parts to the menu markup
     $this->content = <<<HTML
@@ -153,8 +153,8 @@ HTML;
   {
 
     // first create icons
-    $iconSupport  = $this->view->icon( 'control/support.png' ,'Support');
-    $iconHelp     = '<i class="icon-info-sign" ></i>';
+    $iconSupport = $this->view->icon( 'control/support.png' ,'Support');
+    $iconHelp = '<i class="icon-info-sign" ></i>';
 
     // assemble al parts to the html submenu
     $html = <<<HTML

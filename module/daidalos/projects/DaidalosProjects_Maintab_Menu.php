@@ -43,7 +43,7 @@ class DaidalosProjects_Maintab_Menu extends WgtDropmenu
     $iconClose = '<i class="icon-remove-circle " ></i>';
 
     $entries = new TArray();
-    $entries->support  = $this->entriesSupport($params);
+    $entries->support = $this->entriesSupport($params);
 
     $this->content = <<<HTML
 <ul class="wgt-dropmenu" id="{$this->id}" style="z-index:500;height:16px;"  >
@@ -79,9 +79,9 @@ HTML;
   {
 
     $iconSupport = $this->view->icon('control/support.png'  ,'Support');
-    $iconBug     = $this->view->icon('control/bug.png'      ,'Bug');
-    $iconFaq     = $this->view->icon('control/faq.png'      ,'Faq');
-    $iconHelp    = $this->view->icon('control/help.png'     ,'Help');
+    $iconBug = $this->view->icon('control/bug.png'      ,'Bug');
+    $iconFaq = $this->view->icon('control/faq.png'      ,'Faq');
+    $iconHelp = $this->view->icon('control/help.png'     ,'Help');
 
     $html = <<<HTML
 

@@ -52,8 +52,8 @@ class DaidalosProjects_Controller extends Controller
   public function build()
   {
 
-    $view     = $this->getView();
-    $request  = $this->getRequest();
+    $view = $this->getView();
+    $request = $this->getRequest();
 
     if (!$projectXml = $this->getProjectDescription())
       return;
@@ -102,7 +102,7 @@ class DaidalosProjects_Controller extends Controller
   public function deploy()
   {
 
-    $view     = $this->getView();
+    $view = $this->getView();
     $response = $this->getResponse();
 
     if (!$projectXml = $this->getProjectDescription())
@@ -143,7 +143,7 @@ class DaidalosProjects_Controller extends Controller
   public function clean()
   {
 
-    $view     = $this->getView();
+    $view = $this->getView();
     $response = $this->getResponse();
 
     if (!$projectXml = $this->getProjectDescription())
@@ -174,7 +174,7 @@ class DaidalosProjects_Controller extends Controller
   public function syncMetadata()
   {
 
-    $view   = $this->getView();
+    $view = $this->getView();
 
     if (!$projectXml = $this->getProjectDescription())
       return;
@@ -209,7 +209,7 @@ class DaidalosProjects_Controller extends Controller
   public function syncDatabase()
   {
 
-    $view   = $this->getView();
+    $view = $this->getView();
 
     if (!$projectXml = $this->getProjectDescription())
       return;
@@ -244,7 +244,7 @@ class DaidalosProjects_Controller extends Controller
   public function refreshDatabase()
   {
 
-    $view   = $this->getView();
+    $view = $this->getView();
 
     if (!$projectXml = $this->getProjectDescription())
       return;
@@ -283,10 +283,10 @@ class DaidalosProjects_Controller extends Controller
   public function createDbPatch()
   {
 
-    $view     = $this->getView();
-    $request  = $this->getRequest();
+    $view = $this->getView();
+    $request = $this->getRequest();
 
-    $key  = $request->param('objid', Validator::CKEY) ;
+    $key = $request->param('objid', Validator::CKEY) ;
 
     $data = $this->model->getProjectMap();
 
@@ -379,8 +379,8 @@ class DaidalosProjects_Controller extends Controller
       $projectPath = $pfile;
     } else {
 
-      $key    = $request->param('objid', Validator::CKEY) ;
-      $data   = $this->model->getProjectMap();
+      $key = $request->param('objid', Validator::CKEY) ;
+      $data = $this->model->getProjectMap();
 
       if (!isset($data[$key])) {
         Message::addError('Requested invalid Key: '. $key  );
@@ -415,10 +415,10 @@ class DaidalosProjects_Controller extends Controller
   public function upload($params = null)
   {
 
-    $request    = $this->getRequest();
+    $request = $this->getRequest();
 
     // load the flow flags
-    $params       = $this->getFlags($this->getRequest());
+    $params = $this->getFlags($this->getRequest());
     $params->ajax = true;
 
     if (!$dump = $request->file('project_bdl')) {
@@ -437,10 +437,10 @@ class DaidalosProjects_Controller extends Controller
   public function delete($params = null)
   {
 
-    $request    = $this->getRequest();
+    $request = $this->getRequest();
 
     // load the flow flags
-    $params       = $this->getFlags($this->getRequest());
+    $params = $this->getFlags($this->getRequest());
     $params->ajax = true;
 
     if (!$objid = $this->request->get('objid',Validator::FILENAME)) {

@@ -44,37 +44,37 @@ class DaidalosPackage_Controller extends Controller
    *
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'workspace' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
     'syncpackagefiles' => array
     (
-      'method'    => array('PUT'),
-      'views'      => array('ajax')
+      'method' => array('PUT'),
+      'views' => array('ajax')
     ),
     'edit' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
     'build' => array
     (
-      'method'    => array('PUT'),
-      'views'      => array('ajax')
+      'method' => array('PUT'),
+      'views' => array('ajax')
     ),
     'listpackages' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('modal')
+      'method' => array('GET'),
+      'views' => array('modal')
     ),
     'deletepackage' => array
     (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
   );
 
@@ -120,8 +120,8 @@ class DaidalosPackage_Controller extends Controller
 
     $params = $this->getFlags($request);
 
-    $key   = $request->param('package', Validator::CKEY);
-    $type  = $request->param('type', Validator::CKEY);
+    $key = $request->param('package', Validator::CKEY);
+    $type = $request->param('type', Validator::CKEY);
 
     if (!$key || !$type) {
       throw new InvalidParam_Exception('Missing required parameters');
@@ -158,8 +158,8 @@ class DaidalosPackage_Controller extends Controller
   public function service_edit($request, $response)
   {
 
-    $key   = $request->param('package', Validator::CKEY);
-    $type  = $request->param('type', Validator::CKEY);
+    $key = $request->param('package', Validator::CKEY);
+    $type = $request->param('type', Validator::CKEY);
 
     if (!$key || !$type) {
       throw new InvalidParam_Exception('Missing required parameters');
@@ -177,7 +177,7 @@ class DaidalosPackage_Controller extends Controller
     /* @var $view DaidalosPackage_Editor_Maintab_View */
 
     $params = $this->getFlags($request);
-    $params->key  = $key;
+    $params->key = $key;
     $params->type = $type;
 
     $model = $this->loadModel('DaidalosPackage');
@@ -200,8 +200,8 @@ class DaidalosPackage_Controller extends Controller
     $params = $this->getFlags($request);
 
     $packageKey = $request->param('package', Validator::CKEY);
-    $buildKey   = $request->data('key', Validator::CKEY);
-    $type       = $request->param('type', Validator::CKEY);
+    $buildKey = $request->data('key', Validator::CKEY);
+    $type = $request->param('type', Validator::CKEY);
 
     if (!$packageKey || !$buildKey || !$type) {
       throw new InvalidParam_Exception('Missing required parameters');
@@ -242,7 +242,7 @@ class DaidalosPackage_Controller extends Controller
     $params = $this->getFlags($request);
 
     $packageKey = $request->param('package', Validator::CKEY);
-    $type       = $request->param('type', Validator::CKEY);
+    $type = $request->param('type', Validator::CKEY);
 
     if (!$packageKey || !$type) {
       throw new InvalidParam_Exception('Missing required parameters');
@@ -281,8 +281,8 @@ class DaidalosPackage_Controller extends Controller
     $params = $this->getFlags($request);
 
     $packageKey = $request->param('package', Validator::CKEY);
-    $toDelete   = $request->param('file', Validator::FILENAME);
-    $type       = $request->param('type', Validator::CKEY);
+    $toDelete = $request->param('file', Validator::FILENAME);
+    $type = $request->param('type', Validator::CKEY);
 
     $params->type = $type;
 

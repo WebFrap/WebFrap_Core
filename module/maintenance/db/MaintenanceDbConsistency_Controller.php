@@ -35,7 +35,7 @@ class MaintenanceDbConsistency_Controller extends Controller
 
     $params = $this->getFlags($request);
 
-    $view   = $response->loadView('maintenance-db-consistency' , 'MaintenanceDbConsistency');
+    $view = $response->loadView('maintenance-db-consistency' , 'MaintenanceDbConsistency');
 
     $view->display($params);
 

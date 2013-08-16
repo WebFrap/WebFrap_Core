@@ -44,12 +44,12 @@ class MaintenanceBase_Controller extends Controller
    *
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'menu' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
   );
 
@@ -65,7 +65,7 @@ class MaintenanceBase_Controller extends Controller
   public function service_menu($request, $response)
   {
 
-    $params   = new TArray();
+    $params = new TArray();
 
     $menuName = $request->param('menu', Validator::CNAME);
     $menuType = $request->param('mtype', Validator::CNAME);

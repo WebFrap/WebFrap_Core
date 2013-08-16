@@ -39,15 +39,15 @@ class DaidalosDbBackup_Maintab_Menu extends WgtDropmenu
   public function buildMenu($key, $params)
   {
 
-    $iconMenu          = '<i class="icon-reorder" ></i>';
-    $iconClose         = '<i class="icon-remove-circle " ></i>';
-    $iconBackup        = $this->view->icon('daidalos/backup.png' ,'Backup');
-    $iconSupport       = $this->view->icon('control/support.png'  ,'Support');
-    $iconFaq           = $this->view->icon('control/faq.png'      ,'Faq');
-    $iconHelp          = $this->view->icon('control/help.png'     ,'Help');
+    $iconMenu = '<i class="icon-reorder" ></i>';
+    $iconClose = '<i class="icon-remove-circle " ></i>';
+    $iconBackup = $this->view->icon('daidalos/backup.png' ,'Backup');
+    $iconSupport = $this->view->icon('control/support.png'  ,'Support');
+    $iconFaq = $this->view->icon('control/faq.png'      ,'Faq');
+    $iconHelp = $this->view->icon('control/help.png'     ,'Help');
 
     $entries = new TArray();
-    $entries->support  = $this->entriesSupport($params);
+    $entries->support = $this->entriesSupport($params);
 
     $this->content = <<<HTML
 

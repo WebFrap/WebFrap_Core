@@ -102,8 +102,8 @@ class AclMgmt_Path_Model extends AclMgmt_Model
   public function getAreaGroups($areaId, $idGroup, $params)
   {
 
-    $db     = $this->getDb();
-    $query  = $db->newQuery('AclMgmt_Qfdu');
+    $db = $this->getDb();
+    $query = $db->newQuery('AclMgmt_Qfdu');
     /* @var $query AclMgmt_Qfdu_Query  */
 
     $query->fetchAreaGroups
@@ -125,8 +125,8 @@ class AclMgmt_Path_Model extends AclMgmt_Model
   {
 
 
-    $db         = $this->getDb();
-    $query      = $db->newQuery('AclMgmt_Path');
+    $db = $this->getDb();
+    $query = $db->newQuery('AclMgmt_Path');
     /* @var $query AclMgmt_Path_Query  */
 
     $query->fetchAccessTree
@@ -135,31 +135,31 @@ class AclMgmt_Path_Model extends AclMgmt_Model
       $idGroup,
       $params
     );
-    $result   = $query->getAll();
+    $result = $query->getAll();
 
 
-    $index    = array();
+    $index = array();
     foreach ($result as $node) {
       $index[$node['m_parent'].'-'.((int) $node['depth']-1)][] = $node;
     }
 
     // the first node must be the root node
-    $node       = $result[0];
+    $node = $result[0];
     // start build the nodes
-    $root       = new TJsonObject();
-    $root->id   = $node['rowid'];
+    $root = new TJsonObject();
+    $root->id = $node['rowid'];
     $root->name = $node['label'];
 
-    $data         = new TJsonObject();
-    $root->data   = $data;
-    $data->key    = $node['access_key'];
-    $data->depth  = $node['depth'];
-    $data->label  = $node['label'];
-    $data->id     = $node['rowid'];
+    $data = new TJsonObject();
+    $root->data = $data;
+    $data->key = $node['access_key'];
+    $data->depth = $node['depth'];
+    $data->label = $node['label'];
+    $data->id = $node['rowid'];
     $data->assign = $node['assign_id'];
     $data->target = $node['target'];
-    $data->access_level     = $node['access_level'];
-    $data->description      = $node['description'];
+    $data->access_level = $node['access_level'];
+    $data->description = $node['description'];
     $data->area_description = ' Access: <strong>'.
       (
         isset(Acl::$accessLevels[$node['access_level']])
@@ -167,8 +167,8 @@ class AclMgmt_Path_Model extends AclMgmt_Model
           :'None'
       ).'</strong>'.NL.$node['area_description'];
 
-    $children         = new TJsonArray();
-    $root->children   = $children;
+    $children = new TJsonArray();
+    $root->children = $children;
 
     // build the tree recursive
     $this->buildReferenceTree($index, $children, $node['id_parent'].'-'.$node['depth'], $node['rowid']);
@@ -210,21 +210,21 @@ class AclMgmt_Path_Model extends AclMgmt_Model
 
     if (isset($index[$parentId])) {
       foreach ($index[$parentId] as $node) {
-        $child        = new TJsonObject();
-        $parent[]     = $child;
-        $child->id    = $node['rowid'].'-'.$pathId.'-'.$node['depth'];
-        $child->name  = $node['label'];
+        $child = new TJsonObject();
+        $parent[] = $child;
+        $child->id = $node['rowid'].'-'.$pathId.'-'.$node['depth'];
+        $child->name = $node['label'];
 
-        $data         = new TJsonObject();
-        $child->data  = $data;
-        $data->key    = $node['access_key'];
-        $data->depth  = $node['depth'];
-        $data->label  = $node['label'];
-        $data->id     = $node['rowid'];
+        $data = new TJsonObject();
+        $child->data = $data;
+        $data->key = $node['access_key'];
+        $data->depth = $node['depth'];
+        $data->label = $node['label'];
+        $data->id = $node['rowid'];
         $data->assign = $node['assign_id'];
         $data->target = $node['target'];
-        $data->access_level     = $node['access_level'];
-        $data->description      = $node['description'];
+        $data->access_level = $node['access_level'];
+        $data->description = $node['description'];
         $data->area_description = ' Access: <strong>'.
           (
             isset(Acl::$accessLevels[$node['access_level']])
@@ -233,8 +233,8 @@ class AclMgmt_Path_Model extends AclMgmt_Model
           ).'</strong>'.NL.$node['area_description'];
 
 
-        $children         = new TJsonArray();
-        $child->children  = $children;
+        $children = new TJsonArray();
+        $child->children = $children;
 
         $this->buildReferenceTree
         (
@@ -278,7 +278,7 @@ class AclMgmt_Path_Model extends AclMgmt_Model
   {
 
     $httpRequest = $this->getRequest();
-    $orm         = $this->getOrm();
+    $orm = $this->getOrm();
 
     if ($objid) {
       $entityWbfsysSecurityPath = $orm->get('WbfsysSecurityPath', (int) $objid);
@@ -318,7 +318,7 @@ class AclMgmt_Path_Model extends AclMgmt_Model
   public function savePath()
   {
 
-    $orm         = $this->getOrm();
+    $orm = $this->getOrm();
     $orm->save($this->entityWbfsysSecurityPath);
 
   }//end public function savePath */
@@ -330,8 +330,8 @@ class AclMgmt_Path_Model extends AclMgmt_Model
   public function dropPath($pathId)
   {
 
-    $db   = $this->getDb();
-    $orm  = $db->getOrm();
+    $db = $this->getDb();
+    $orm = $db->getOrm();
 
     $dropQuery = $db->newQuery('AclMgmt_Path');
     /* @var $dropQuery AclMgmt_Path_Query  */

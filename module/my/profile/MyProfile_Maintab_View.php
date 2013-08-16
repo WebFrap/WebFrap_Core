@@ -88,12 +88,12 @@ class MyProfile_Maintab_View extends WgtMaintab
     $this->setTemplate('my/profile/maintab/forgot_password');
 
     // Setzen von Viewspezifischen Control Flags
-    $params->viewType  = 'maintab';
-    $params->viewId    = $this->getId();
+    $params->viewType = 'maintab';
+    $params->viewId = $this->getId();
 
     // Form Target und ID definieren
-    $params->formAction  = 'ajax.php?c=My.Profile.forgotPassword';
-    $params->formId     = 'wgt-form-my_profile-forgot_password';
+    $params->formAction = 'ajax.php?c=My.Profile.forgotPassword';
+    $params->formId = 'wgt-form-my_profile-forgot_password';
 
     // Setzen der letzten metadaten
     $this->addVar('params', $params);
@@ -146,12 +146,12 @@ class MyProfile_Maintab_View extends WgtMaintab
     $this->setTemplate('my/profile/maintab/my_profile');
 
     // Setzen von Viewspezifischen Control Flags
-    $params->viewType  = 'maintab';
-    $params->viewId    = $this->getId();
+    $params->viewType = 'maintab';
+    $params->viewId = $this->getId();
 
     // Form Target und ID definieren
-    $params->formAction  = 'ajax.php?c=My.Profile.save';
-    $params->formId     = 'wgt-form-my_profile-show';
+    $params->formAction = 'ajax.php?c=My.Profile.save';
+    $params->formId = 'wgt-form-my_profile-show';
 
     // Setzen der letzten metadaten
     $this->addVar('params', $params);
@@ -189,7 +189,7 @@ class MyProfile_Maintab_View extends WgtMaintab
   public function addMenu($params)
   {
 
-    $menu     = $this->newMenu
+    $menu = $this->newMenu
     (
       $this->id.'_dropmenu',
       'MyMessage_Crud_Create'

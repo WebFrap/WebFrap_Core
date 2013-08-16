@@ -33,13 +33,13 @@ class WebfrapContactItem_Modal_View extends WgtModal
    * Die Breite des Modal Elements
    * @var int in px
    */
-  public $width   = 630 ;
+  public $width = 630 ;
 
   /**
    * Die Höhe des Modal Elements
    * @var int in px
    */
-  public $height   = 280 ;
+  public $height = 280 ;
 
 /*//////////////////////////////////////////////////////////////////////////////
 // Display Methodes
@@ -93,9 +93,9 @@ class WebfrapContactItem_Modal_View extends WgtModal
     $this->setTemplate('webfrap/attachment/modal/form_edit_link');
 
     $this->addVars(array(
-      'attachmentId'   => $attachId,
-      'refId'   => $refId,
-      'link'       => $fileNode,
+      'attachmentId' => $attachId,
+      'refId' => $refId,
+      'link' => $fileNode,
       'elementKey' => $elementId,
     ));
 

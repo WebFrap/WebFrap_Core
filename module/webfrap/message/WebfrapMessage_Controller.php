@@ -35,142 +35,142 @@ class WebfrapMessage_Controller extends Controller
   /**
    * @var array
    */
-  protected $options           = array(
+  protected $options = array(
     'messagelist' => array(
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
     'searchlist' => array(
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
 
     // mini overlay
     'minilist' => array(
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
     'minisearch' => array(
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
 
     // message logic
     'formnew' => array(
-      'method'    => array('GET'),
-      'views'      => array('modal', 'maintab')
+      'method' => array('GET'),
+      'views' => array('modal', 'maintab')
     ),
     'formshow' => array(
-      'method'    => array('GET'),
-      'views'      => array('modal', 'maintab')
+      'method' => array('GET'),
+      'views' => array('modal', 'maintab')
     ),
     'showmailcontent' => array(
-      'method'    => array('GET'),
-      'views'      => array('html')
+      'method' => array('GET'),
+      'views' => array('html')
     ),
     'showpreview' => array(
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
     'sendusermessage' => array(
-      'method'    => array('POST'),
-      'views'      => array('ajax')
+      'method' => array('POST'),
+      'views' => array('ajax')
     ),
 
     'loaduser' => array(
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
 
     'savemessage' => array(
-      'method'    => array('PUT'),
-      'views'      => array('ajax')
+      'method' => array('PUT'),
+      'views' => array('ajax')
     ),
 
     // form forward
     'formforward' => array(
-      'method'    => array('GET'),
-      'views'      => array('modal', 'maintab')
+      'method' => array('GET'),
+      'views' => array('modal', 'maintab')
     ),
 
     'sendforward' => array(
-      'method'    => array('POST'),
-      'views'      => array('ajax')
+      'method' => array('POST'),
+      'views' => array('ajax')
     ),
 
     // form reply
     'formreply' => array(
-      'method'    => array('GET'),
-      'views'      => array('modal', 'maintab')
+      'method' => array('GET'),
+      'views' => array('modal', 'maintab')
     ),
 
     'sendreply' => array(
-      'method'    => array('POST'),
-      'views'      => array('ajax')
+      'method' => array('POST'),
+      'views' => array('ajax')
     ),
 
     // delete
     'deletemessage' => array(
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
     'deleteall' => array(
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
     'deleteselection' => array(
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
 
     // archive
     'archivemessage' => array(
-      'method'    => array('PUT'),
-      'views'      => array('ajax')
+      'method' => array('PUT'),
+      'views' => array('ajax')
     ),
     'archiveall' => array(
-      'method'    => array('PUT'),
-      'views'      => array('ajax')
+      'method' => array('PUT'),
+      'views' => array('ajax')
     ),
     'archiveselection' => array(
-      'method'    => array('PUT'),
-      'views'      => array('ajax')
+      'method' => array('PUT'),
+      'views' => array('ajax')
     ),
 
     // reopen einen archivierten Datensatz wieder öffnen
     'reopen' => array(
-      'method'    => array('PUT'),
-      'views'      => array('ajax')
+      'method' => array('PUT'),
+      'views' => array('ajax')
     ),
 
     // spam / ham
     'setspam' => array(
-      'method'    => array('PUT'),
-      'views'      => array('ajax')
+      'method' => array('PUT'),
+      'views' => array('ajax')
     ),
 
     // nachricht als gelesen markieren
     'markread' => array(
-        'method'    => array('PUT'),
-        'views'      => array('ajax')
+        'method' => array('PUT'),
+        'views' => array('ajax')
     ),
     'markreadall' => array(
-        'method'    => array('PUT'),
-        'views'      => array('ajax')
+        'method' => array('PUT'),
+        'views' => array('ajax')
     ),
     'markreadselection' => array(
-        'method'    => array('PUT'),
-        'views'      => array('ajax')
+        'method' => array('PUT'),
+        'views' => array('ajax')
     ),
 
     // references
     'addref' => array(
-      'method'    => array('PUT'),
-      'views'      => array('ajax')
+      'method' => array('PUT'),
+      'views' => array('ajax')
     ),
     'delref' => array(
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
 
   );
@@ -194,7 +194,7 @@ class WebfrapMessage_Controller extends Controller
     $userSettings = $model->loadSettings();
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params  = new WebfrapMessage_Table_Search_Request($request, $userSettings);
+    $params = new WebfrapMessage_Table_Search_Request($request, $userSettings);
 
     if ($userSettings->changed)
       $model->saveSettings($userSettings);
@@ -239,7 +239,7 @@ class WebfrapMessage_Controller extends Controller
     $userSettings = $model->loadSettings();
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params  = new WebfrapMessage_Table_Search_Request($request, $userSettings);
+    $params = new WebfrapMessage_Table_Search_Request($request, $userSettings);
 
     if ($userSettings->changed)
       $model->saveSettings($userSettings);
@@ -285,7 +285,7 @@ class WebfrapMessage_Controller extends Controller
     $userSettings = $model->loadSettings();
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params  = new WebfrapMessage_Table_Search_Request($request, $userSettings);
+    $params = new WebfrapMessage_Table_Search_Request($request, $userSettings);
 
     if ($userSettings->changed)
       $model->saveSettings($userSettings);
@@ -330,7 +330,7 @@ class WebfrapMessage_Controller extends Controller
     $userSettings = $model->loadSettings();
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params  = new WebfrapMessage_Table_Search_Request($request, $userSettings);
+    $params = new WebfrapMessage_Table_Search_Request($request, $userSettings);
 
     if ($userSettings->changed)
       $model->saveSettings($userSettings);
@@ -369,7 +369,7 @@ class WebfrapMessage_Controller extends Controller
   {
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params  = $this->getFlags($request);
+    $params = $this->getFlags($request);
 
     $model = $this->loadModel('WebfrapMessage');
     $model->loadTableAccess($params);
@@ -382,7 +382,7 @@ class WebfrapMessage_Controller extends Controller
     }
 
     // load the view object
-    $view   = $response->loadView(
+    $view = $response->loadView(
       'form-messages-new',
       'WebfrapMessage_New',
       'displayNew'
@@ -407,7 +407,7 @@ class WebfrapMessage_Controller extends Controller
   {
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params  = $this->getFlags($request);
+    $params = $this->getFlags($request);
 
     $msgId = $request->param('objid', Validator::EID);
 
@@ -455,7 +455,7 @@ class WebfrapMessage_Controller extends Controller
   {
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params  = $this->getFlags($request);
+    $params = $this->getFlags($request);
 
     $msgId = $request->param('objid', Validator::EID);
 
@@ -473,7 +473,7 @@ class WebfrapMessage_Controller extends Controller
     $model->loadMessage($msgId);
 
     // load the view object
-    $view   = $response->loadView(
+    $view = $response->loadView(
       'form-messages-show-'.$msgId,
       'WebfrapMessage',
       'displayContent',
@@ -496,7 +496,7 @@ class WebfrapMessage_Controller extends Controller
   {
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params  = $this->getFlags($request);
+    $params = $this->getFlags($request);
 
     $msgId = $request->param('objid', Validator::EID);
 
@@ -515,7 +515,7 @@ class WebfrapMessage_Controller extends Controller
 
     // load the view object
     /* @var $view WebfrapMessage_Ajax_View */
-    $view   = $response->loadView(
+    $view = $response->loadView(
         'messages-preview-'.$msgId,
         'WebfrapMessage',
         'displayMsgPreview'
@@ -539,8 +539,8 @@ class WebfrapMessage_Controller extends Controller
   {
 
     // resource laden
-    $user     = $this->getUser();
-    $acl      = $this->getAcl();
+    $user = $this->getUser();
+    $acl = $this->getAcl();
 
 
     // load request parameters an interpret as flags
@@ -550,18 +550,18 @@ class WebfrapMessage_Controller extends Controller
     // bei der Anzeige von mehreren Windows oder Tabs zu vermeiden
     $params->contextKey = 'message-user-autocomplete';
 
-    $view  = $response->loadView(
+    $view = $response->loadView(
       'message-user-ajax',
       'WebfrapMessage',
       'displayUserAutocomplete',
       View::AJAX
     );
     /* @var $model Example_Model */
-    $model  = $this->loadModel('WebfrapMessage');
+    $model = $this->loadModel('WebfrapMessage');
     //$model->setAccess($access);
     $view->setModel($model);
 
-    $searchKey  = $this->request->param('key', Validator::TEXT);
+    $searchKey = $this->request->param('key', Validator::TEXT);
 
     $view->displayUserAutocomplete($searchKey, $params);
 
@@ -579,8 +579,8 @@ class WebfrapMessage_Controller extends Controller
   {
 
     // resource laden
-    $user     = $this->getUser();
-    $acl      = $this->getAcl();
+    $user = $this->getUser();
+    $acl = $this->getAcl();
 
 
     // load request parameters an interpret as flags
@@ -612,8 +612,8 @@ class WebfrapMessage_Controller extends Controller
   {
 
     // resource laden
-    $user     = $this->getUser();
-    $acl      = $this->getAcl();
+    $user = $this->getUser();
+    $acl = $this->getAcl();
 
     // load request parameters an interpret as flags
     $rqtData = $this->getFlags($request);
@@ -655,15 +655,15 @@ JS
   {
 
     // resource laden
-    $user       = $this->getUser();
-    $acl        = $this->getAcl();
-    $tpl        = $this->getTpl();
+    $user = $this->getUser();
+    $acl = $this->getAcl();
+    $tpl = $this->getTpl();
     $resContext = $response->createContext();
 
     // load request parameters an interpret as flags
     $params = $this->getFlags($request);
 
-    $messageId  = $request->param('objid', Validator::EID);
+    $messageId = $request->param('objid', Validator::EID);
 
     $resContext->assertNotNull(
       'Missing the Message ID',
@@ -674,7 +674,7 @@ JS
       throw new InvalidRequest_Exception();
 
     /* @var $model WebfrapMessage_Model */
-    $model  = $this->loadModel('WebfrapMessage');
+    $model = $this->loadModel('WebfrapMessage');
 
     $model->deleteMessage($messageId);
 
@@ -699,15 +699,15 @@ JS
   {
 
     // resource laden
-    $user       = $this->getUser();
-    $acl        = $this->getAcl();
-    $tpl        = $this->getTpl();
+    $user = $this->getUser();
+    $acl = $this->getAcl();
+    $tpl = $this->getTpl();
 
     if ($resContext->hasError)
       throw new InvalidRequest_Exception();
 
     /* @var $model WebfrapMessage_Model */
-    $model  = $this->loadModel('WebfrapMessage');
+    $model = $this->loadModel('WebfrapMessage');
 
     $model->deleteAllMessage();
 
@@ -734,9 +734,9 @@ JS
   {
 
     // resource laden
-    $user       = $this->getUser();
-    $acl        = $this->getAcl();
-    $tpl        = $this->getTpl();
+    $user = $this->getUser();
+    $acl = $this->getAcl();
+    $tpl = $this->getTpl();
 
     // load request parameters an interpret as flags
     $params = $this->getFlags($request);
@@ -744,7 +744,7 @@ JS
     $msgIds = $request->param('slct', Validator::EID);
 
     /* @var $model WebfrapMessage_Model */
-    $model  = $this->loadModel('WebfrapMessage');
+    $model = $this->loadModel('WebfrapMessage');
     $model->deleteSelection($msgIds);
 
     $entries = array();
@@ -768,11 +768,11 @@ JS
   public function service_sendUserMessage($request, $response)
   {
     // refid
-    $refId   = $request->param('ref_id', Validator::EID);
+    $refId = $request->param('ref_id', Validator::EID);
     $dataSrc = $request->param('d_src', Validator::CNAME);
 
 
-    $userId  = $request->data('receiver', Validator::EID);
+    $userId = $request->data('receiver', Validator::EID);
 
     /* @var $model WebfrapContactForm_Model */
     $model = $this->loadModel('WebfrapMessage');
@@ -807,7 +807,7 @@ JS
   {
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params  = $this->getFlags($request);
+    $params = $this->getFlags($request);
 
     $msgId = $request->param('objid', Validator::EID);
 
@@ -826,7 +826,7 @@ JS
     $model->loadMessage($msgId);
 
     // load the view object
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       'form-messages-forward-'.$msgId,
       'WebfrapMessage_Forward',
@@ -847,7 +847,7 @@ JS
   {
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params  = $this->getFlags($request);
+    $params = $this->getFlags($request);
 
     $msgId = $request->param('objid', Validator::EID);
 
@@ -865,7 +865,7 @@ JS
     $msgNode = $model->loadMessage($msgId);
 
 
-    $userId  = $request->data('receiver', Validator::EID);
+    $userId = $request->data('receiver', Validator::EID);
 
     $mgsData = new TDataObject();
     $mgsData->subject = 'Fwd: '.$msgNode->subject;
@@ -888,7 +888,7 @@ JS
   {
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params  = $this->getFlags($request);
+    $params = $this->getFlags($request);
 
     $msgId = $request->param('objid', Validator::EID);
 
@@ -906,7 +906,7 @@ JS
     $model->loadMessage($msgId);
 
     // load the view object
-    $view   = $response->loadView(
+    $view = $response->loadView(
       'form-messages-reply-'.$msgId,
       'WebfrapMessage_Reply',
       'displayForm'
@@ -927,7 +927,7 @@ JS
   {
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params  = $this->getFlags($request);
+    $params = $this->getFlags($request);
 
     $msgId = $request->param('objid', Validator::EID);
 
@@ -943,7 +943,7 @@ JS
     }
 
 
-    $receiverId  = $request->data('receiver', Validator::EID);
+    $receiverId = $request->data('receiver', Validator::EID);
 
     /* @var $model WebfrapContactForm_Model */
     $model = $this->loadModel('WebfrapMessage');
@@ -974,7 +974,7 @@ JS
   {
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params  = $this->getFlags($request);
+    $params = $this->getFlags($request);
 
     $msgId = $request->param('msg', Validator::EID);
     $refId = $request->param('ref', Validator::EID);
@@ -993,7 +993,7 @@ JS
     $linkId = $model->addRef($msgId,$refId);
 
     /* @var $view WebfrapMessage_Ajax_View */
-    $view   = $response->loadView(
+    $view = $response->loadView(
       'message-update-ref',
       'WebfrapMessage',
       'displayAddRef'
@@ -1013,7 +1013,7 @@ JS
   {
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params  = $this->getFlags($request);
+    $params = $this->getFlags($request);
 
     $delId = $request->param('delid', Validator::EID);
 
@@ -1031,7 +1031,7 @@ JS
     $model->delRef($delId);
 
     /* @var $view WebfrapMessage_Ajax_View */
-    $view   = $response->loadView(
+    $view = $response->loadView(
       'message-del-ref',
       'WebfrapMessage',
       'displayDelRef'
@@ -1056,15 +1056,15 @@ JS
   {
 
     // resource laden
-    $user       = $this->getUser();
-    $acl        = $this->getAcl();
-    $tpl        = $this->getTpl();
+    $user = $this->getUser();
+    $acl = $this->getAcl();
+    $tpl = $this->getTpl();
     $resContext = $response->createContext();
 
     // load request parameters an interpret as flags
     $params = $this->getFlags($request);
 
-    $messageId  = $request->param('objid', Validator::EID);
+    $messageId = $request->param('objid', Validator::EID);
 
     $resContext->assertNotNull(
       'Missing the Message ID',
@@ -1075,7 +1075,7 @@ JS
       throw new InvalidRequest_Exception();
 
     /* @var $model WebfrapMessage_Model */
-    $model  = $this->loadModel('WebfrapMessage');
+    $model = $this->loadModel('WebfrapMessage');
 
     $model->archiveMessage($messageId);
 
@@ -1100,9 +1100,9 @@ JS
   {
 
     // resource laden
-    $user       = $this->getUser();
-    $acl        = $this->getAcl();
-    $tpl        = $this->getTpl();
+    $user = $this->getUser();
+    $acl = $this->getAcl();
+    $tpl = $this->getTpl();
 
     $params = $this->getFlags($request);
 
@@ -1142,9 +1142,9 @@ JS
   {
 
     // resource laden
-    $user       = $this->getUser();
-    $acl        = $this->getAcl();
-    $tpl        = $this->getTpl();
+    $user = $this->getUser();
+    $acl = $this->getAcl();
+    $tpl = $this->getTpl();
 
     // load request parameters an interpret as flags
     $params = $this->getFlags($request);
@@ -1152,7 +1152,7 @@ JS
     $msgIds = $request->param('slct', Validator::EID);
 
     /* @var $model WebfrapMessage_Model */
-    $model  = $this->loadModel('WebfrapMessage');
+    $model = $this->loadModel('WebfrapMessage');
     $model->archiveSelection($msgIds);
 
     $entries = array();
@@ -1177,15 +1177,15 @@ JS
   {
 
     // resource laden
-    $user       = $this->getUser();
-    $acl        = $this->getAcl();
-    $tpl        = $this->getTpl();
+    $user = $this->getUser();
+    $acl = $this->getAcl();
+    $tpl = $this->getTpl();
     $resContext = $response->createContext();
 
     // load request parameters an interpret as flags
     $params = $this->getFlags($request);
 
-    $messageId  = $request->param('objid', Validator::EID);
+    $messageId = $request->param('objid', Validator::EID);
 
     $resContext->assertNotNull(
       'Missing the Message ID',
@@ -1196,7 +1196,7 @@ JS
       throw new InvalidRequest_Exception();
 
     /* @var $model WebfrapMessage_Model */
-    $model  = $this->loadModel('WebfrapMessage');
+    $model = $this->loadModel('WebfrapMessage');
 
     $model->archiveMessage($messageId, false);
 

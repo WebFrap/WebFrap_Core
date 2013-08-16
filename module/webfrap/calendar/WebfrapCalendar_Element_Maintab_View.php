@@ -55,7 +55,7 @@ class WebfrapCalendar_Element_Maintab_View extends WgtMaintab
   public function addMenu($params)
   {
 
-    $menu     = $this->newMenu($this->id.'_dropmenu');
+    $menu = $this->newMenu($this->id.'_dropmenu');
 
     $menu->id = $this->id.'_dropmenu';
 

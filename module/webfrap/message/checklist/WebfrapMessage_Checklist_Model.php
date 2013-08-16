@@ -34,10 +34,10 @@ class WebfrapMessage_Checklist_Model extends Model
   public function save($formData)
   {
 
-    $orm       = $this->getOrm();
-    $db        = $this->getDb();
-    $user      = $this->getUser();
-    $response  = $this->getResponse();
+    $orm = $this->getOrm();
+    $db = $this->getDb();
+    $user = $this->getUser();
+    $response = $this->getResponse();
     
     $savedIds = array();
 

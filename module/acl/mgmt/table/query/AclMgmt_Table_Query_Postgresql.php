@@ -48,8 +48,8 @@ class AclMgmt_Table_Query_Postgresql extends LibSqlQuery
     if (!$params)
       $params = new TFlag();
 
-    $this->sourceSize  = null;
-    $db                = $this->getDb();
+    $this->sourceSize = null;
+    $db = $this->getDb();
 
     if (!$this->criteria) {
       $criteria = $db->orm->newCriteria();
@@ -68,7 +68,7 @@ class AclMgmt_Table_Query_Postgresql extends LibSqlQuery
     $criteria->where("security_access.id_area={$areaId} and security_access.partial = 0");
 
     // Run Query und save the result
-    $this->result    = $db->orm->select($criteria);
+    $this->result = $db->orm->select($criteria);
     $this->calcQuery = $criteria->count('count(DISTINCT security_access.'.Db::PK.') as '.Db::Q_SIZE);
 
   }//end public function fetch */

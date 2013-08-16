@@ -31,7 +31,7 @@ class WebfrapAuth_Model extends Model
   public function getUserByEmail($email)
   {
 
-    $orm   = $this->getOrm();
+    $orm = $this->getOrm();
 
     return $orm->execute('WbfsysRoleUser', 'WebfrapAuth::userByEmail', $email  );
 
@@ -44,7 +44,7 @@ class WebfrapAuth_Model extends Model
   public function getUserByName($name)
   {
 
-    $orm   = $this->getOrm();
+    $orm = $this->getOrm();
 
     return $orm->get('WbfsysRoleUser', "upper(name) = upper('{$name}')");
 
@@ -79,7 +79,7 @@ class WebfrapAuth_Model extends Model
     }
 
     $user->reset_pwd_date = date('Y-m-d H:i:s');
-    $user->reset_pwd_key  = SEncrypt::uniqueToken();
+    $user->reset_pwd_key = SEncrypt::uniqueToken();
     $orm->update($user);
 
     // verschicken der Nachricht
@@ -102,7 +102,7 @@ class WebfrapAuth_Model extends Model
   public function protocolLogin($user, $usedSSO = false)
   {
 
-    $orm     = $this->getOrm();
+    $orm = $this->getOrm();
     $request = $this->getRequest();
 
     $browser = $request->getBrowser();
@@ -139,7 +139,7 @@ class WebfrapAuth_Model extends Model
     $pNode->id_os = $osNode;
     $pNode->id_main_language = $langNode;
     $pNode->ip_address = $clientIp;
-    $pNode->flag_sso   = $usedSSO;
+    $pNode->flag_sso = $usedSSO;
 
     $orm->send($pNode);
 
@@ -156,11 +156,11 @@ class WebfrapAuth_Model extends Model
   {
 
     // mal was prüfen
-    $orm       = $this->getOrm();
-    $response  = $this->getResponse();
+    $orm = $this->getOrm();
+    $response = $this->getResponse();
 
     if (is_object($username)) {
-      $authRole        = $username;
+      $authRole = $username;
     } else {
       try {
         if (!$authRole = $orm->get('WbfsysRoleUser', "UPPER(name) = UPPER('{$username}')")) {
@@ -175,9 +175,9 @@ class WebfrapAuth_Model extends Model
       }
     }
 
-    $this->entity    = $authRole;
-    $this->userData  = $authRole->getData();
-    $this->userId    = $authRole->getId();
+    $this->entity = $authRole;
+    $this->userData = $authRole->getData();
+    $this->userId = $authRole->getId();
     $this->userLevel = (int) $authRole->getData('level');
 
     if ($authRole->profile) {

@@ -85,13 +85,13 @@ class WebfrapBase_Maintab_View extends WgtMaintab
   {
 
     // laden der mvc/utils adapter Objekte
-    $acl    = $this->getAcl();
-    $user   = $this->getUser();
+    $acl = $this->getAcl();
+    $user = $this->getUser();
     $access = $params->access;
 
     $entries = new TArray();
 
-    $menu     = $this->newMenu(
+    $menu = $this->newMenu(
       $this->id.'_dropmenu'
     );
     $menu->id = $this->id.'_dropmenu';

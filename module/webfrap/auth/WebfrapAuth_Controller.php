@@ -41,40 +41,40 @@ class WebfrapAuth_Controller extends Controller
    */
   protected $options = array(
     'form' => array(
-      'method'    => array('GET'),
-      'views'      => array('maintab', 'html')
+      'method' => array('GET'),
+      'views' => array('maintab', 'html')
     ),
     'login' => array(
-      'method'    => array('POST'),
-      'views'      => array('ajax', 'html')
+      'method' => array('POST'),
+      'views' => array('ajax', 'html')
     ),
     'logout' => array(
-      'method'    => array('GET'),
-      'views'      => array('ajax', 'maintab', 'html')
+      'method' => array('GET'),
+      'views' => array('ajax', 'maintab', 'html')
     ),
     'formresetpasswd' => array(
-      'method'    => array('GET'),
-      'views'      => array('maintab', 'html')
+      'method' => array('GET'),
+      'views' => array('maintab', 'html')
     ),
     'resetpasswd' => array(
-      'method'    => array('PUT', 'POST'),
-      'views'      => array('ajax', 'html')
+      'method' => array('PUT', 'POST'),
+      'views' => array('ajax', 'html')
     ),
     'formchangepasswd' => array(
-      'method'    => array('GET'),
-      'views'      => array('maintab', 'html')
+      'method' => array('GET'),
+      'views' => array('maintab', 'html')
     ),
     'changepasswd' => array(
-      'method'    => array('PUT', 'POST'),
-      'views'      => array('ajax', 'html')
+      'method' => array('PUT', 'POST'),
+      'views' => array('ajax', 'html')
     ),
     'formforgotpasswd' => array(
-      'method'    => array('GET'),
-      'views'      => array('maintab', 'html')
+      'method' => array('GET'),
+      'views' => array('maintab', 'html')
     ),
     'forgotpasswd' => array(
-      'method'    => array('PUT', 'POST'),
-      'views'      => array('ajax', 'html')
+      'method' => array('PUT', 'POST'),
+      'views' => array('ajax', 'html')
     ),
   );
 
@@ -100,16 +100,16 @@ class WebfrapAuth_Controller extends Controller
     $inputLoginname = $this->view->newInput('inputLoginname' , 'Input');
     $inputLoginname->addAttributes
     (array(
-      'name'  => 'name',
-      'type'  => 'text',
+      'name' => 'name',
+      'type' => 'text',
       'class' => 'medium'
     ));
 
     $inputPasswd = $this->view->newInput('inputPasswd' , 'Input');
     $inputPasswd->addAttributes
     (array(
-      'name'  => 'password',
-      'type'  => 'password',
+      'name' => 'password',
+      'type' => 'password',
       'class' => 'medium'
     ));
 
@@ -117,7 +117,7 @@ class WebfrapAuth_Controller extends Controller
     $inputSubmit->addAttributes
     (array
     (
-      'type'  => 'submit',
+      'type' => 'submit',
       'class' => 'wgtButton submit',
       'value' => 'Login'
     ));
@@ -132,9 +132,9 @@ class WebfrapAuth_Controller extends Controller
   public function service_login($request, $response)
   {
 
-    $auth     = new LibAuth($this);
+    $auth = new LibAuth($this);
     $response = $this->getResponse();
-    $orm      = $this->getOrm();
+    $orm = $this->getOrm();
 
     /* @var $model WebfrapAuth_Model */
     $model = $this->loadModel('WebfrapAuth');
@@ -267,14 +267,14 @@ class WebfrapAuth_Controller extends Controller
   {
 
     $response = $this->getResponse();
-    $request  = $this->getRequest();
-    $user     = $this->getUser();
+    $request = $this->getRequest();
+    $user = $this->getUser();
 
     $auth = new LibAuth($this);
 
-    $oldPwd     = $request->data('password_old' , Validator::PASSWORD);
-    $pwdNew     = $request->data('password_new' , Validator::TEXT);
-    $pwdCheck   = $request->data('password_check' , Validator::TEXT);
+    $oldPwd = $request->data('password_old' , Validator::PASSWORD);
+    $pwdNew = $request->data('password_new' , Validator::TEXT);
+    $pwdCheck = $request->data('password_check' , Validator::TEXT);
 
     $i18n = $this->getI18n();
 
@@ -307,14 +307,14 @@ class WebfrapAuth_Controller extends Controller
   {
 
     $response = $this->getResponse();
-    $request  = $this->getRequest();
-    $user     = $this->getUser();
+    $request = $this->getRequest();
+    $user = $this->getUser();
 
     $auth = new LibAuth($this);
 
-    $oldPwd     = $request->data('password_old' , Validator::PASSWORD);
-    $pwdNew     = $request->data('password_new' , Validator::TEXT);
-    $pwdCheck   = $request->data('password_check' , Validator::TEXT);
+    $oldPwd = $request->data('password_old' , Validator::PASSWORD);
+    $pwdNew = $request->data('password_new' , Validator::TEXT);
+    $pwdCheck = $request->data('password_check' , Validator::TEXT);
 
     $i18n = $this->getI18n();
 
@@ -349,11 +349,11 @@ class WebfrapAuth_Controller extends Controller
   {
 
     $response = $this->getResponse();
-    $request  = $this->getRequest();
-    $orm      = $this->getOrm();
+    $request = $this->getRequest();
+    $orm = $this->getOrm();
 
-    $userName  = $request->data('username', Validator::TEXT);
-    $eMail     = $request->data('e_mail', Validator::EMAIL);
+    $userName = $request->data('username', Validator::TEXT);
+    $eMail = $request->data('e_mail', Validator::EMAIL);
 
     $model = $this->loadModel('WebfrapAuth');
 
@@ -426,7 +426,7 @@ class WebfrapAuth_Controller extends Controller
   {
 
     $response = $this->getResponse();
-    $flow     = $this->getFlowController();
+    $flow = $this->getFlowController();
 
     $user = $this->getUser();
 

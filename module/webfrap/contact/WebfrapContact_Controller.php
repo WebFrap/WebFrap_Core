@@ -35,33 +35,33 @@ class WebfrapContact_Controller extends Controller
   /**
    * @var array
    */
-  protected $options           = array(
+  protected $options = array(
 
     'list' => array(
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
     'formnew' => array(
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
     'insert' => array(
-      'method'    => array('POST'),
-      'views'      => array('maintab')
+      'method' => array('POST'),
+      'views' => array('maintab')
     ),
 
     // delete
     'delete' => array(
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
     'deleteall' => array(
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
     'deleteselection' => array(
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
 
   );
@@ -80,7 +80,7 @@ class WebfrapContact_Controller extends Controller
   {
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $usrRqt  = new WebfrapContact_List_Request($request);
+    $usrRqt = new WebfrapContact_List_Request($request);
 
     /* @var $model WebfrapContact_Model */
     $model = $this->loadModel('WebfrapContact');
@@ -117,7 +117,7 @@ class WebfrapContact_Controller extends Controller
   {
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params  = $this->getFlags($request);
+    $params = $this->getFlags($request);
 
     /* @var $model WebfrapContact_Model */
     $model = $this->loadModel('WebfrapContact');
@@ -131,7 +131,7 @@ class WebfrapContact_Controller extends Controller
     }
 
     // create a window
-    $view   = $response->loadView(
+    $view = $response->loadView(
       'form-messages-new',
       'WebfrapContact',
       'displayNew'
@@ -155,7 +155,7 @@ class WebfrapContact_Controller extends Controller
   {
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $userRqt  = new WebfrapContact_Save_Request($request);
+    $userRqt = new WebfrapContact_Save_Request($request);
 
     /* @var $model WebfrapContact_Model */
     $model = $this->loadModel('WebfrapContact');
@@ -171,7 +171,7 @@ class WebfrapContact_Controller extends Controller
     $model->insert($userRqt);
 
     /* @var $view Li */
-    $view   = $response->loadView(
+    $view = $response->loadView(
       'form-messages-show-'.$msgId,
       'WebfrapContact_Tile',
       'displayEntry'
@@ -213,7 +213,7 @@ class WebfrapContact_Controller extends Controller
   {
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params  = $this->getFlags($request);
+    $params = $this->getFlags($request);
 
     $msgId = $request->param('objid', Validator::EID);
 
@@ -241,7 +241,7 @@ class WebfrapContact_Controller extends Controller
     }
 
     // create a window
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       'form-messages-show-'.$msgId,
       'WebfrapMessage_Show',
@@ -269,15 +269,15 @@ class WebfrapContact_Controller extends Controller
   {
 
     // resource laden
-    $user       = $this->getUser();
-    $acl        = $this->getAcl();
-    $tpl        = $this->getTpl();
+    $user = $this->getUser();
+    $acl = $this->getAcl();
+    $tpl = $this->getTpl();
     $resContext = $response->createContext();
 
     // load request parameters an interpret as flags
     $params = $this->getFlags($request);
 
-    $messageId  = $request->param('objid', Validator::EID);
+    $messageId = $request->param('objid', Validator::EID);
 
     $resContext->assertNotNull(
       'Missing the Message ID',
@@ -288,7 +288,7 @@ class WebfrapContact_Controller extends Controller
       throw new InvalidRequest_Exception();
 
     /* @var $model WebfrapMessage_Model */
-    $model  = $this->loadModel('WebfrapMessage');
+    $model = $this->loadModel('WebfrapMessage');
 
     $model->deleteMessage($messageId);
 
@@ -315,15 +315,15 @@ JS
   {
 
     // resource laden
-    $user       = $this->getUser();
-    $acl        = $this->getAcl();
-    $tpl        = $this->getTpl();
+    $user = $this->getUser();
+    $acl = $this->getAcl();
+    $tpl = $this->getTpl();
 
     if ($resContext->hasError)
       throw new InvalidRequest_Exception();
 
     /* @var $model WebfrapMessage_Model */
-    $model  = $this->loadModel('WebfrapMessage');
+    $model = $this->loadModel('WebfrapMessage');
 
     $model->deleteAllMessage();
 
@@ -350,9 +350,9 @@ JS
   {
 
     // resource laden
-    $user       = $this->getUser();
-    $acl        = $this->getAcl();
-    $tpl        = $this->getTpl();
+    $user = $this->getUser();
+    $acl = $this->getAcl();
+    $tpl = $this->getTpl();
 
     // load request parameters an interpret as flags
     $params = $this->getFlags($request);
@@ -360,7 +360,7 @@ JS
     $msgIds = $request->param('slct', Validator::EID);
 
     /* @var $model WebfrapMessage_Model */
-    $model  = $this->loadModel('WebfrapMessage');
+    $model = $this->loadModel('WebfrapMessage');
     $model->deleteSelection($msgIds);
 
     $entries = array();
@@ -384,11 +384,11 @@ JS
   public function service_sendUserMessage($request, $response)
   {
     // refid
-    $refId   = $request->param('ref_id', Validator::EID);
+    $refId = $request->param('ref_id', Validator::EID);
     $dataSrc = $request->param('d_src', Validator::CNAME);
 
 
-    $userId  = $request->data('receiver', Validator::EID);
+    $userId = $request->data('receiver', Validator::EID);
 
     /* @var $model WebfrapContactForm_Model */
     $model = $this->loadModel('WebfrapMessage');
@@ -423,7 +423,7 @@ JS
   {
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params  = $this->getFlags($request);
+    $params = $this->getFlags($request);
 
     $msgId = $request->param('objid', Validator::EID);
 
@@ -442,7 +442,7 @@ JS
     $model->loadMessage($msgId);
 
     // create a window
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       'form-messages-forward-'.$msgId,
       'WebfrapMessage_Forward',
@@ -463,7 +463,7 @@ JS
   {
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params  = $this->getFlags($request);
+    $params = $this->getFlags($request);
 
     $msgId = $request->param('objid', Validator::EID);
 
@@ -482,7 +482,7 @@ JS
     $msgNode = $model->loadMessage($msgId);
 
 
-    $userId  = $request->data('receiver', Validator::EID);
+    $userId = $request->data('receiver', Validator::EID);
 
     $mgsData = new TDataObject();
     $mgsData->subject = 'Fwd: '.$msgNode->subject;
@@ -505,7 +505,7 @@ JS
   {
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params  = $this->getFlags($request);
+    $params = $this->getFlags($request);
 
     $msgId = $request->param('objid', Validator::EID);
 
@@ -524,7 +524,7 @@ JS
     $model->loadMessage($msgId);
 
     // create a window
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       'form-messages-reply-'.$msgId,
       'WebfrapMessage_Reply',
@@ -546,7 +546,7 @@ JS
   {
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params  = $this->getFlags($request);
+    $params = $this->getFlags($request);
 
     $msgId = $request->param('objid', Validator::EID);
 
@@ -563,7 +563,7 @@ JS
     }
 
 
-    $receiverId  = $request->data('receiver', Validator::EID);
+    $receiverId = $request->data('receiver', Validator::EID);
 
     /* @var $model WebfrapContactForm_Model */
     $model = $this->loadModel('WebfrapMessage');

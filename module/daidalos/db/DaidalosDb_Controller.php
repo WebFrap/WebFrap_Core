@@ -42,52 +42,52 @@ class DaidalosDb_Controller extends Controller
    *
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'listing' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('maintab'  )
+      'method' => array('GET'),
+      'views' => array('maintab'  )
     ),
     'listschema' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
     'query' => array
     (
-      'method'    => array('GET','POST'),
-      'views'      => array('ajax')
+      'method' => array('GET','POST'),
+      'views' => array('ajax')
     ),
     'listschematables' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
     'formbackup' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
     'backup' => array
     (
-      'method'    => array('PUT'),
-      'views'      => array('maintab')
+      'method' => array('PUT'),
+      'views' => array('maintab')
     ),
     'listrestore' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
     'restore' => array
     (
-      'method'    => array('PUT'),
-      'views'      => array('ajax')
+      'method' => array('PUT'),
+      'views' => array('ajax')
     ),
     'deletedump' => array
     (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
   );
 
@@ -105,7 +105,7 @@ class DaidalosDb_Controller extends Controller
 
     $params = $this->getFlags($request);
 
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       'daidalos_schema_list',
       'DaidalosDb',
@@ -113,7 +113,7 @@ class DaidalosDb_Controller extends Controller
       View::MAINTAB
     );
 
-    $model  = $this->loadModel('DaidalosDb');
+    $model = $this->loadModel('DaidalosDb');
     $view->setModel($model);
 
     $view->displayListing($params);
@@ -130,7 +130,7 @@ class DaidalosDb_Controller extends Controller
 
     $params = $this->getFlags($request);
 
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       'daidalos_schema_list-schema',
       'DaidalosDbSchema',
@@ -138,7 +138,7 @@ class DaidalosDb_Controller extends Controller
       View::MAINTAB
     );
 
-    $model  = $this->loadModel('DaidalosDb');
+    $model = $this->loadModel('DaidalosDb');
     $view->setModel($model);
 
     $view->display($request, $response, $params);
@@ -152,7 +152,7 @@ class DaidalosDb_Controller extends Controller
   public function service_query($request, $response)
   {
 
-    $db   = $this->getDb();
+    $db = $this->getDb();
 
     $view = $response->loadView('daidalos_db_query', 'DaidalosDb');
 
@@ -184,7 +184,7 @@ class DaidalosDb_Controller extends Controller
     $dbKey = $request->param('db', Validator::CKEY);
     $schemaKey = $request->param('schema', Validator::CKEY);
 
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       'daidalos_db-'.$dbKey.'-schema-'.$schemaKey.'-tables',
       'DaidalosDbSchemaTable',
@@ -192,7 +192,7 @@ class DaidalosDb_Controller extends Controller
       View::MAINTAB
     );
 
-    $model  = $this->loadModel('DaidalosDb');
+    $model = $this->loadModel('DaidalosDb');
     $view->setModel($model);
 
     $view->display($dbKey, $schemaKey, $params);
@@ -215,7 +215,7 @@ class DaidalosDb_Controller extends Controller
 
     $key = $request->param('key', Validator::CKEY);
 
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       'daidalos_db_form_backup-'.$key,
       'DaidalosDbBackup',
@@ -223,7 +223,7 @@ class DaidalosDb_Controller extends Controller
       View::MAINTAB
     );
 
-    $model  = $this->loadModel('DaidalosDbBackup');
+    $model = $this->loadModel('DaidalosDbBackup');
     $view->setModel($model);
 
     $view->displayForm($key, $params);
@@ -244,7 +244,7 @@ class DaidalosDb_Controller extends Controller
 
     $prefix = $request->data('prefix', Validator::TEXT);
 
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       'daidalos_schema_list_restore-'.$key,
       'DaidalosDbBackup',
@@ -252,7 +252,7 @@ class DaidalosDb_Controller extends Controller
       View::MAINTAB
     );
 
-    $model  = $this->loadModel('DaidalosDbBackup');
+    $model = $this->loadModel('DaidalosDbBackup');
 
     $view->setModel($model);
 
@@ -272,9 +272,9 @@ class DaidalosDb_Controller extends Controller
 
     $params = $this->getFlags($request);
 
-    $key    = $request->param('key', Validator::CKEY);
+    $key = $request->param('key', Validator::CKEY);
 
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       'daidalos_schema_list_restore-'.$key,
       'DaidalosDbBackup',
@@ -282,7 +282,7 @@ class DaidalosDb_Controller extends Controller
       View::MAINTAB
     );
 
-    $model  = $this->loadModel('DaidalosDbBackup');
+    $model = $this->loadModel('DaidalosDbBackup');
 
     $view->setModel($model);
 
@@ -300,7 +300,7 @@ class DaidalosDb_Controller extends Controller
 
     $params = $this->getFlags($request);
 
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       'daidalos_schema_list',
       'DaidalosDb',
@@ -308,7 +308,7 @@ class DaidalosDb_Controller extends Controller
       View::MAINTAB
     );
 
-    $model  = $this->loadModel('DaidalosDb');
+    $model = $this->loadModel('DaidalosDb');
     $view->setModel($model);
 
     $view->display($params);
@@ -325,7 +325,7 @@ class DaidalosDb_Controller extends Controller
 
     $params = $this->getFlags($request);
 
-    $model  = $this->loadModel('DaidalosDb');
+    $model = $this->loadModel('DaidalosDb');
 
   }//end public function service_restore */
 

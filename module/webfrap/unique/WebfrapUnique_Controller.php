@@ -30,11 +30,11 @@ class WebfrapUnique_Controller extends Controller
   /**
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'check' => array(
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
   );
 
@@ -56,10 +56,10 @@ class WebfrapUnique_Controller extends Controller
   {
 
     // resource laden
-    $user     = $this->getUser();
-    $orm     = $this->getOrm();
-    $db     = $this->getDb();
-    $acl      = $this->getAcl();
+    $user = $this->getUser();
+    $orm = $this->getOrm();
+    $db = $this->getDb();
+    $acl = $this->getAcl();
 
     $dkey = $request->param('dkey',Validator::CNAME);
 
@@ -80,9 +80,9 @@ class WebfrapUnique_Controller extends Controller
       );
     }
 
-    $fName   = $request->param('fname',Validator::CNAME);
-    $chkVal  = $request->param('val',Validator::SEARCH);
-    $objid  = $request->param('objid',Validator::EID);
+    $fName = $request->param('fname',Validator::CNAME);
+    $chkVal = $request->param('val',Validator::SEARCH);
+    $objid = $request->param('objid',Validator::EID);
 
     $domainEnt = $orm->newEntity($domainNode->srcKey);
 

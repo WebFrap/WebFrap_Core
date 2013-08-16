@@ -40,13 +40,13 @@ class WebfrapMessage_List_Maintab_View extends WgtMaintab
     //$this->addVar('node', $this->model->node);
 
     // laden der mvc/utils adapter Objekte
-    $user     = $this->getUser();
-    $acl      = $this->getAcl();
-    $request  = $this->getRequest();
+    $user = $this->getUser();
+    $acl = $this->getAcl();
+    $request = $this->getRequest();
 
     $access = $params->access;
 
-    $params->qsize  = 50;
+    $params->qsize = 50;
 
     // die query muss für das paging und eine korrekte anzeige
     // die anzahl der gefundenen datensätze ermitteln
@@ -136,11 +136,11 @@ class WebfrapMessage_List_Maintab_View extends WgtMaintab
   public function addMenu($params)
   {
 
-    $iconLtChat    = $this->icon('groupware/group_chat.png'      ,'Chat');
-    $iconLtFull    = $this->icon('groupware/group_full.png'      ,'Full');
-    $iconLtHead    = $this->icon('groupware/group_head.png'     ,'Head');
+    $iconLtChat = $this->icon('groupware/group_chat.png'      ,'Chat');
+    $iconLtFull = $this->icon('groupware/group_full.png'      ,'Full');
+    $iconLtHead = $this->icon('groupware/group_head.png'     ,'Head');
 
-    $menu     = $this->newMenu($this->id.'_dropmenu');
+    $menu = $this->newMenu($this->id.'_dropmenu');
 
     $menu->id = $this->id.'_dropmenu';
 

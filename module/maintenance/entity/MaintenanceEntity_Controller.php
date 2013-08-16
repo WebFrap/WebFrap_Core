@@ -35,32 +35,32 @@ class MaintenanceEntity_Controller extends Controller
   /**
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'showmeta' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('modal')
+      'method' => array('GET'),
+      'views' => array('modal')
     ),
     'statsentity' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('modal')
+      'method' => array('GET'),
+      'views' => array('modal')
     ),
     'statsdataset' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('modal')
+      'method' => array('GET'),
+      'views' => array('modal')
     ),
     'protocolentity' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('modal')
+      'method' => array('GET'),
+      'views' => array('modal')
     ),
     'protocoldataset' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('modal')
+      'method' => array('GET'),
+      'views' => array('modal')
     ),
   );
 
@@ -78,9 +78,9 @@ class MaintenanceEntity_Controller extends Controller
   {
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params  = $this->getFormFlags($request);
+    $params = $this->getFormFlags($request);
 
-    $domainKey   = $request->param('dkey', Validator::CKEY);
+    $domainKey = $request->param('dkey', Validator::CKEY);
     if (!$domainKey) {
       throw new InvalidRequest_Exception
       (
@@ -89,7 +89,7 @@ class MaintenanceEntity_Controller extends Controller
       );
     }
 
-    $domainNode  = DomainNode::getNode($domainKey);
+    $domainNode = DomainNode::getNode($domainKey);
 
     if (!$domainNode) {
       throw new InvalidRequest_Exception
@@ -119,7 +119,7 @@ class MaintenanceEntity_Controller extends Controller
     }
 
     // create a window
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       'form_meta-'.$domainNode->domainName,
       'EnterpriseCompany_Maintenance',
@@ -128,7 +128,7 @@ class MaintenanceEntity_Controller extends Controller
     $view->setModel($this->loadModel($domainNode->domainKey.'_Crud'));
 
     // load the flow flags
-    $params  = $this->getFormFlags($params);
+    $params = $this->getFormFlags($params);
 
     // show only the the fields in the meta category
     $params->categories = array('meta');
@@ -160,9 +160,9 @@ class MaintenanceEntity_Controller extends Controller
   {
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params  = $this->getFormFlags($request);
+    $params = $this->getFormFlags($request);
 
-    $domainKey   = $request->param('dkey', Validator::CKEY);
+    $domainKey = $request->param('dkey', Validator::CKEY);
     if (!$domainKey) {
       throw new InvalidRequest_Exception
       (
@@ -171,7 +171,7 @@ class MaintenanceEntity_Controller extends Controller
       );
     }
 
-    $domainNode  = DomainNode::getNode($domainKey);
+    $domainNode = DomainNode::getNode($domainKey);
 
     if (!$domainNode) {
       throw new InvalidRequest_Exception
@@ -192,7 +192,7 @@ class MaintenanceEntity_Controller extends Controller
     }
 
     // create a window
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       'stats-'.$domainNode->domainName,
       'MaintenanceEntity_Stats',
@@ -215,9 +215,9 @@ class MaintenanceEntity_Controller extends Controller
   {
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params  = $this->getFormFlags($request);
+    $params = $this->getFormFlags($request);
 
-    $domainKey   = $request->param('dkey', Validator::CKEY);
+    $domainKey = $request->param('dkey', Validator::CKEY);
     if (!$domainKey) {
       throw new InvalidRequest_Exception
       (
@@ -226,7 +226,7 @@ class MaintenanceEntity_Controller extends Controller
       );
     }
 
-    $domainNode  = DomainNode::getNode($domainKey);
+    $domainNode = DomainNode::getNode($domainKey);
 
     if (!$domainNode) {
       throw new InvalidRequest_Exception
@@ -256,7 +256,7 @@ class MaintenanceEntity_Controller extends Controller
     }
 
     // create a window
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       'stats-'.$domainNode->domainName.'-'.$objid,
       'MaintenanceEntity_Stats',
@@ -289,7 +289,7 @@ class MaintenanceEntity_Controller extends Controller
   public function service_protocolEntity($request, $response)
   {
 
-    $domainKey   = $request->param('dkey', Validator::CKEY);
+    $domainKey = $request->param('dkey', Validator::CKEY);
     if (!$domainKey) {
       throw new InvalidRequest_Exception
       (
@@ -298,7 +298,7 @@ class MaintenanceEntity_Controller extends Controller
       );
     }
 
-    $domainNode  = DomainNode::getNode($domainKey);
+    $domainNode = DomainNode::getNode($domainKey);
 
     if (!$domainNode) {
       throw new InvalidRequest_Exception
@@ -318,7 +318,7 @@ class MaintenanceEntity_Controller extends Controller
     }
 
     // create a window
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       'protocol-'.$domainNode->domainName,
       'MaintenanceEntity_Protocol',
@@ -327,7 +327,7 @@ class MaintenanceEntity_Controller extends Controller
     $view->setModel($this->model);
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params  = $this->getFormFlags($request);
+    $params = $this->getFormFlags($request);
 
     $view->displayEntity($domainNode, $params);
 
@@ -343,9 +343,9 @@ class MaintenanceEntity_Controller extends Controller
   {
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params  = $this->getFormFlags($request);
+    $params = $this->getFormFlags($request);
 
-      $domainKey   = $request->param('dkey', Validator::CKEY);
+      $domainKey = $request->param('dkey', Validator::CKEY);
     if (!$domainKey) {
       throw new InvalidRequest_Exception
       (
@@ -354,7 +354,7 @@ class MaintenanceEntity_Controller extends Controller
       );
     }
 
-    $domainNode  = DomainNode::getNode($domainKey);
+    $domainNode = DomainNode::getNode($domainKey);
 
     if (!$domainNode) {
       throw new InvalidRequest_Exception
@@ -384,7 +384,7 @@ class MaintenanceEntity_Controller extends Controller
 
 
     // create a window
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       'protocol-'.$domainNode->domainName,
       'MaintenanceEntity_Protocol',
@@ -393,7 +393,7 @@ class MaintenanceEntity_Controller extends Controller
     $view->setModel($this->model);
 
     // load the flow flags
-    $params  = $this->getFormFlags($request);
+    $params = $this->getFormFlags($request);
 
     $error = $view->displayDataset($domainNode, $objid,  $params);
 
@@ -420,38 +420,38 @@ class MaintenanceEntity_Controller extends Controller
   protected function getFormFlags($request)
   {
 
-    $response  = $this->getResponse();
+    $response = $this->getResponse();
 
     $params = new TFlag();
 
 
     // target mask key
     if ($refId = $request->param('refid', Validator::INT))
-      $params->refId  = $refId;
+      $params->refId = $refId;
 
     // listing type
-    if ($ltype   = $request->param('ltype', Validator::CNAME))
-      $params->ltype    = $ltype;
+    if ($ltype = $request->param('ltype', Validator::CNAME))
+      $params->ltype = $ltype;
 
     // startpunkt des pfades für die acls
     if ($aclRoot = $request->param('a_root', Validator::CKEY))
-      $params->aclRoot    = $aclRoot;
+      $params->aclRoot = $aclRoot;
 
     // die id des Datensatzes von dem aus der Pfad gestartet wurde
     if ($aclRootId = $request->param('a_root_id', Validator::INT))
-      $params->aclRootId    = $aclRootId;
+      $params->aclRootId = $aclRootId;
 
     // der key des knotens auf dem wir uns im pfad gerade befinden
     if ($aclKey = $request->param('a_key', Validator::CKEY))
-      $params->aclKey    = $aclKey;
+      $params->aclKey = $aclKey;
 
     // der name des knotens
     if ($aclNode = $request->param('a_node', Validator::CKEY))
-      $params->aclNode    = $aclNode;
+      $params->aclNode = $aclNode;
 
     // an welchem punkt des pfades befinden wir uns?
     if ($aclLevel = $request->param('a_level', Validator::INT))
-      $params->aclLevel  = $aclLevel;
+      $params->aclLevel = $aclLevel;
 
     // per default
     $params->categories = array();

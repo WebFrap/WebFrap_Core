@@ -30,12 +30,12 @@ class WebfrapProtocol_Controller extends Controller
   /**
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'overlaydset' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
   );
 
@@ -51,8 +51,8 @@ class WebfrapProtocol_Controller extends Controller
   public function service_overlayDset($request, $response)
   {
 
-    $dKey     = $request->param('dkey', Validator::TEXT);
-    $objid    = $request->param('objid', Validator::EID);
+    $dKey = $request->param('dkey', Validator::TEXT);
+    $objid = $request->param('objid', Validator::EID);
 
     /* @var $view WebfrapProtocol_Ajax_View  */
     $view = $response->loadView

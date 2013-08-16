@@ -63,17 +63,17 @@ class DaidalosDbSchemaTable_Maintab_View extends WgtMaintabCustom
   public function addMenuMenu($params)
   {
 
-    $iconMenu          = '<i class="icon-reorder" ></i>';
-    $iconClose         = '<i class="icon-remove-circle " ></i>';
+    $iconMenu = '<i class="icon-reorder" ></i>';
+    $iconClose = '<i class="icon-remove-circle " ></i>';
 
     $iconSupport = $this->icon('control/support.png'  ,'Support');
-    $iconBug     = $this->icon('control/bug.png'      ,'Bug');
-    $iconFaq     = $this->icon('control/faq.png'      ,'Faq');
-    $iconHelp    = $this->icon('control/help.png'     ,'Help');
+    $iconBug = $this->icon('control/bug.png'      ,'Bug');
+    $iconFaq = $this->icon('control/faq.png'      ,'Faq');
+    $iconHelp = $this->icon('control/help.png'     ,'Help');
 
-    $iconQuery         = $this->icon('daidalos/query.png' ,'Query');
+    $iconQuery = $this->icon('daidalos/query.png' ,'Query');
 
-    $menu     = $this->newMenu
+    $menu = $this->newMenu
     (
       $this->id.'_dropmenu'
     );

@@ -44,72 +44,72 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
    *
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'create' => array
     (
-      'method'    => array('GET', 'POST'),
-      'views'      => array('area', 'modal')
+      'method' => array('GET', 'POST'),
+      'views' => array('area', 'modal')
     ),
     'edit' => array
     (
-      'method'    => array('GET', 'PUT'),
-      'views'      => array('area', 'modal')
+      'method' => array('GET', 'PUT'),
+      'views' => array('area', 'modal')
     ),
     'data' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
     'append' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
     'listing' => array
     (
-      'method'    => array('GET', 'POST'),
-      'views'      => array('maintab')
+      'method' => array('GET', 'POST'),
+      'views' => array('maintab')
     ),
     'search' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
     'selection' => array
     (
-      'method'    => array('GET', 'POST'),
-      'views'      => array('maintab')
+      'method' => array('GET', 'POST'),
+      'views' => array('maintab')
     ),
     'filter' => array
     (
-      'method'    => array('GET', 'POST'),
-      'views'      => array('ajax')
+      'method' => array('GET', 'POST'),
+      'views' => array('ajax')
     ),
     'textbykey' => array
     (
-      'method'    => array('GET', 'POST'),
-      'views'      => array('ajax')
+      'method' => array('GET', 'POST'),
+      'views' => array('ajax')
     ),
     'delete' => array
     (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
     'archiveentry' => array
     (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
     'insert' => array
     (
-      'method'    => array('POST'),
-      'views'      => array('ajax')
+      'method' => array('POST'),
+      'views' => array('ajax')
     ),
     'update' => array
     (
-      'method'    => array('POST', 'PUT'),
-      'views'      => array('ajax')
+      'method' => array('POST', 'PUT'),
+      'views' => array('ajax')
     ),
   );
 
@@ -147,10 +147,10 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
   {
 
     // resource laden
-    $user      = $this->getUser();
+    $user = $this->getUser();
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params  = $this->getFormFlags($request);
+    $params = $this->getFormFlags($request);
 
     // der contextKey wird benötigt um potentielle Konflikte in der UI
     // bei der Anzeige von mehreren Windows oder Tabs zu vermeiden
@@ -246,7 +246,7 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
   {
 
     // resource laden
-    $user      = $this->getUser();
+    $user = $this->getUser();
 
     // Die ID ist Plicht.
     // Ohne diese können wir keinen Datensatz identifizieren und somit auch
@@ -280,8 +280,8 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
           'The requested {@resource@} for ID {@id@} not exists!',
           'wbf.message',
           array(
-            'resource'  => $response->i18n->l('Announcement', 'wbfsys.announcement.label'),
-            'id'        => $objid
+            'resource' => $response->i18n->l('Announcement', 'wbfsys.announcement.label'),
+            'id' => $objid
           )
         ),
         Response::NOT_FOUND
@@ -289,7 +289,7 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
     }
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params  = $this->getFormFlags($request);
+    $params = $this->getFormFlags($request);
 
     // entity mit übergeben
     $params->entity = $entityWbfsysAnnouncement;
@@ -309,8 +309,8 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
           'You have no permission to access {@resource@}:{@id@}',
           'wbf.message',
           array(
-            'resource'  => $response->i18n->l('Announcement', 'wbfsys.announcement.label'),
-            'id'        => $objid
+            'resource' => $response->i18n->l('Announcement', 'wbfsys.announcement.label'),
+            'id' => $objid
           )
         ),
         Response::FORBIDDEN
@@ -381,7 +381,7 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
   {
 
     // resource laden
-    $user      = $this->getUser();
+    $user = $this->getUser();
 
     // create named params object
     $params = $this->getCrudFlags($request);
@@ -520,7 +520,7 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
   {
 
     // resource laden
-    $user      = $this->getUser();
+    $user = $this->getUser();
 
     // prüfen ob die verwendete HTTP Methode für diesen service
     // überhaupt erlaub ist
@@ -536,7 +536,7 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
           array
           (
             'method' => $request->method(),
-            'use'    => 'PUT or POST'
+            'use' => 'PUT or POST'
           )
         ),
         Error::METHOD_NOT_ALLOWED
@@ -582,8 +582,8 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
           'wbf.message',
           array
           (
-            'resource'  => $response->i18n->l('Announcement', 'wbfsys.announcement.label'),
-            'id'        => $objid
+            'resource' => $response->i18n->l('Announcement', 'wbfsys.announcement.label'),
+            'id' => $objid
           )
         ),
         Response::NOT_FOUND
@@ -611,8 +611,8 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
           'wbf.message',
           array
           (
-            'resource'  => $response->i18n->l('Announcement', 'wbfsys.announcement.label'),
-            'id'        => $objid
+            'resource' => $response->i18n->l('Announcement', 'wbfsys.announcement.label'),
+            'id' => $objid
           )
         ),
         Response::FORBIDDEN
@@ -709,9 +709,9 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
   {
 
     // resource laden
-    $request   = $this->getRequest();
-    $response  = $this->getResponse();
-    $user      = $this->getUser();
+    $request = $this->getRequest();
+    $response = $this->getResponse();
+    $user = $this->getUser();
 
     // laden der passenden subview
     $view = $response->loadView
@@ -768,7 +768,7 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
   {
 
     // resource laden
-    $user      = $this->getUser();
+    $user = $this->getUser();
 
     // prüfen ob die verwendete HTTP Methode für diesen service
     // überhaupt erlaub ist
@@ -784,7 +784,7 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
           array
           (
             'method' => $request->method(),
-            'use'    => 'DELETE'
+            'use' => 'DELETE'
           )
         ),
         Error::METHOD_NOT_ALLOWED
@@ -828,8 +828,8 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
           'wbf.message',
           array
           (
-            'resource'  => $response->i18n->l('Announcement', 'wbfsys.announcement.label'),
-            'id'        => $objid
+            'resource' => $response->i18n->l('Announcement', 'wbfsys.announcement.label'),
+            'id' => $objid
           )
         ),
         Response::NOT_FOUND
@@ -858,8 +858,8 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
           'wbf.message',
           array
           (
-            'resource'  => $response->i18n->l('Announcement', 'wbfsys.announcement.label'),
-            'id'        => $objid
+            'resource' => $response->i18n->l('Announcement', 'wbfsys.announcement.label'),
+            'id' => $objid
           )
         ),
         Response::FORBIDDEN
@@ -959,10 +959,10 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
   {
 
     // resource laden
-    $user      = $this->getUser();
+    $user = $this->getUser();
 
     // load request parameters an interpret as flags
-    $params  = $this->getListingFlags($request);
+    $params = $this->getListingFlags($request);
 
     // der contextKey wird benötigt um potentielle Konflikte in der UI
     // bei der Anzeige von mehreren Windows oder Tabs zu vermeiden
@@ -1100,11 +1100,11 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
   {
 
     // resource laden
-    $user      = $this->getUser();
+    $user = $this->getUser();
 
 
     // laden der steuerungs parameter
-    $params  = $this->getListingFlags($request);
+    $params = $this->getListingFlags($request);
 
     // der contextKey wird benötigt um potentielle Konflikte in der UI
     // bei der Anzeige von mehreren Windows oder Tabs zu vermeiden
@@ -1202,7 +1202,7 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
   {
 
     // resource laden
-    $user        = $this->getUser();
+    $user = $this->getUser();
     $respContext = $response->createContext();
 
     // erst mal brauchen wir das passende model

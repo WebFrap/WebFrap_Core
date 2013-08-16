@@ -46,37 +46,37 @@ class WebfrapExport_Controller extends MvcController_Domain
    *
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'list' => array
     (
-      'method'    => array('GET'),
-      //'views'      => array('document')
+      'method' => array('GET'),
+      //'views' => array('document')
     ),
     'listall' => array
     (
-      'method'    => array('GET'),
-      //'views'      => array('document')
+      'method' => array('GET'),
+      //'views' => array('document')
     ),
     'listselection' => array
     (
-      'method'    => array('GET'),
-      //'views'      => array('document')
+      'method' => array('GET'),
+      //'views' => array('document')
     ),
     'reflist' => array
     (
-      'method'    => array('GET'),
-      //'views'      => array('document')
+      'method' => array('GET'),
+      //'views' => array('document')
     ),
     'reflistall' => array
     (
-      'method'    => array('GET'),
-      //'views'      => array('document')
+      'method' => array('GET'),
+      //'views' => array('document')
     ),
     'reflistselection' => array
     (
-      'method'    => array('GET'),
-      //'views'      => array('document')
+      'method' => array('GET'),
+      //'views' => array('document')
     ),
   );
 
@@ -94,9 +94,9 @@ class WebfrapExport_Controller extends MvcController_Domain
   {
 
     // load request parameters an interpret as flags
-    $context     = new ContextDomainListing($request);
-    $domainNode  = $this->getDomainNode($request);
-    $variant     = $this->getVariant($request);
+    $context = new ContextDomainListing($request);
+    $domainNode = $this->getDomainNode($request);
+    $variant = $this->getVariant($request);
 
     /* @var $model WebFrapExport_Model  */
     $model = $this->loadDomainModel($domainNode, 'WebfrapExport');
@@ -132,9 +132,9 @@ class WebfrapExport_Controller extends MvcController_Domain
   {
 
     // load request parameters an interpret as flags
-    $context     = new ContextDomainListing($request);
-    $domainNode  = $this->getDomainNode($request);
-    $variant     = $this->getVariant($request);
+    $context = new ContextDomainListing($request);
+    $domainNode = $this->getDomainNode($request);
+    $variant = $this->getVariant($request);
 
     /* @var $model WebFrapExport_Model  */
     $model = $this->loadDomainModel($domainNode, 'WebfrapExport');
@@ -170,9 +170,9 @@ class WebfrapExport_Controller extends MvcController_Domain
   {
 
     // load request parameters an interpret as flags
-    $context     = new ContextDomainListing($request);
-    $domainNode  = $this->getDomainNode($request);
-    $variant     = $this->getVariant($request);
+    $context = new ContextDomainListing($request);
+    $domainNode = $this->getDomainNode($request);
+    $variant = $this->getVariant($request);
 
     $ids = $request->param('e', Validator::EID);
 
@@ -192,8 +192,8 @@ class WebfrapExport_Controller extends MvcController_Domain
       $domainNode->domainKey.'_'.$variant->mask.'_Worksheet'
     );
 
-    $dataSheet          = $exportDoc->getSheet();
-    $dataSheet->data    = $exportModel->searchByIds($ids, $context->access, $context);
+    $dataSheet = $exportDoc->getSheet();
+    $dataSheet->data = $exportModel->searchByIds($ids, $context->access, $context);
     $dataSheet->refData = $dataSheet->data;
 
     $exportDoc->executeRenderer();
@@ -210,17 +210,17 @@ class WebfrapExport_Controller extends MvcController_Domain
   {
 
     // load request parameters an interpret as flags
-    $context     = new ContextDomainListing($request);
-    $domainNode  = $this->getDomainNode($request);
-    $variant     = $this->getVariant($request);
-    $refNode     = $this->getRefNode($request);
-    $refId       = $request->param('refid', Validator::EID);
+    $context = new ContextDomainListing($request);
+    $domainNode = $this->getDomainNode($request);
+    $variant = $this->getVariant($request);
+    $refNode = $this->getRefNode($request);
+    $refId = $request->param('refid', Validator::EID);
 
     /* @var $model WebFrapExport_Ref_Model  */
     $model = $this->loadDomainModel($domainNode, 'WebfrapExport_Ref');
     $model->injectAccessContainer($variant, $context, $refNode, $refId  );
 
-    $classKey   = $domainNode->domainKey.'_Ref_'.$refNode->mask.'_'.$variant->mask;
+    $classKey = $domainNode->domainKey.'_Ref_'.$refNode->mask.'_'.$variant->mask;
 
     $className = $classKey.'_Document';
 
@@ -252,17 +252,17 @@ class WebfrapExport_Controller extends MvcController_Domain
   {
 
     // load request parameters an interpret as flags
-    $context     = new ContextDomainListing($request);
-    $domainNode  = $this->getDomainNode($request);
-    $variant     = $this->getVariant($request);
-    $refNode     = $this->getRefNode($request);
-    $refId       = $request->param('refid', Validator::EID);
+    $context = new ContextDomainListing($request);
+    $domainNode = $this->getDomainNode($request);
+    $variant = $this->getVariant($request);
+    $refNode = $this->getRefNode($request);
+    $refId = $request->param('refid', Validator::EID);
 
     /* @var $model WebFrapExport_Model  */
     $model = $this->loadDomainModel($domainNode, 'WebfrapExport_Ref');
     $model->injectAccessContainer($variant, $context, $refNode, $refId  );
 
-    $classKey   = $domainNode->domainKey.'_Ref_'.$refNode->mask.'_'.$variant->mask;
+    $classKey = $domainNode->domainKey.'_Ref_'.$refNode->mask.'_'.$variant->mask;
 
     $className = $classKey.'_Document';
 
@@ -294,20 +294,20 @@ class WebfrapExport_Controller extends MvcController_Domain
   {
 
     // load request parameters an interpret as flags
-    $context     = new ContextDomainListing($request);
-    $domainNode  = $this->getDomainNode($request);
-    $variant     = $this->getVariant($request);
-    $refNode     = $this->getRefNode($request);
+    $context = new ContextDomainListing($request);
+    $domainNode = $this->getDomainNode($request);
+    $variant = $this->getVariant($request);
+    $refNode = $this->getRefNode($request);
 
-    $ids   = $request->param('e', Validator::EID);
+    $ids = $request->param('e', Validator::EID);
     $refId = $request->param('refid', Validator::EID);
 
     /* @var $model WebFrapExport_Ref_Model  */
     $model = $this->loadDomainModel($domainNode, 'WebfrapExport_Ref');
     $model->injectAccessContainer($variant, $context, $refNode, $refId  );
 
-    $classKey   = $domainNode->domainKey.'_Ref_'.$refNode->mask.'_'.$variant->mask;
-    $className  = $classKey.'_Document';
+    $classKey = $domainNode->domainKey.'_Ref_'.$refNode->mask.'_'.$variant->mask;
+    $className = $classKey.'_Document';
 
     $exportModel = $this->loadModel($classKey  );
 

@@ -44,37 +44,37 @@ class WebfrapTaskPlanner_Controller extends Controller
    *
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'list' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
     'newplan' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('modal')
+      'method' => array('GET'),
+      'views' => array('modal')
     ),
     'editplan' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('modal')
+      'method' => array('GET'),
+      'views' => array('modal')
     ),
     'insertplan' => array
     (
-      'method'    => array('POST'),
-      'views'      => array('ajax')
+      'method' => array('POST'),
+      'views' => array('ajax')
     ),
     'updateplan' => array
     (
-      'method'    => array('POST','PUT'),
-      'views'      => array('ajax')
+      'method' => array('POST','PUT'),
+      'views' => array('ajax')
     ),
     'deleteplan' => array
     (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
 
   );

@@ -104,8 +104,8 @@ class AclMgmt_Tree_Model extends AclMgmt_Model
   public function getAreaGroups($areaId, $idGroup, $params)
   {
 
-    $db     = $this->getDb();
-    $query  = $db->newQuery('AclMgmt_Tree');
+    $db = $this->getDb();
+    $query = $db->newQuery('AclMgmt_Tree');
     /* @var $query AclMgmt_Tree_Query  */
 
     $query->fetchAreaGroups
@@ -127,8 +127,8 @@ class AclMgmt_Tree_Model extends AclMgmt_Model
   {
 
 
-    $db         = $this->getDb();
-    $query      = $db->newQuery('AclMgmt_Tree');
+    $db = $this->getDb();
+    $query = $db->newQuery('AclMgmt_Tree');
     /* @var $query AclMgmt_Tree_Query  */
 
     $query->fetchAccessTree
@@ -137,11 +137,11 @@ class AclMgmt_Tree_Model extends AclMgmt_Model
       $idGroup,
       $params
     );
-    $result   = $query->getAll();
+    $result = $query->getAll();
 
     $this->accessLabel = array_flip(Acl::$accessLevels);
 
-    $index    = array();
+    $index = array();
     foreach ($result as $pos => $node) {
 
       $index[$node['m_parent'].'-'.((int) $node['depth']-1)][] = $node;
@@ -152,28 +152,28 @@ class AclMgmt_Tree_Model extends AclMgmt_Model
       Debug::console('node '.$pos.': '.$node['m_parent'].'-'.((int) $node['depth']-1), $node, null,true);
     }
 
-    $rootList         = array();
+    $rootList = array();
 
     // the first node must be the root node
-    $node       = $result[0];
+    $node = $result[0];
     // start build the nodes
-    $root        = new stdClass();
-    $rootList[]  = $root;
-    $root->key   = $node['rowid'].'-'.$node['depth'];
+    $root = new stdClass();
+    $rootList[] = $root;
+    $root->key = $node['rowid'].'-'.$node['depth'];
     $root->title = $node['label'];
     $root->children = array();
 
-    $data         = new stdClass();
-    $root->data   = $data;
-    $data->key    = $node['access_key'];
-    $data->depth  = $node['depth'];
-    $data->label  = $node['label'];
-    $data->id     = $node['rowid'];
+    $data = new stdClass();
+    $root->data = $data;
+    $data->key = $node['access_key'];
+    $data->depth = $node['depth'];
+    $data->label = $node['label'];
+    $data->id = $node['rowid'];
     $data->assign = $node['assign_id'];
     $data->target = $node['target'];
     $data->real_parent = $node['real_parent'];
-    $data->access_level     = $node['access_level'];
-    $data->description      = $node['description'];
+    $data->access_level = $node['access_level'];
+    $data->description = $node['description'];
     $data->area_description = ' Access: <strong>'.
       (
         isset($this->accessLabel[$node['access_level']])
@@ -222,25 +222,25 @@ class AclMgmt_Tree_Model extends AclMgmt_Model
     if (isset($index[$parentId])) {
 
       foreach ($index[$parentId] as $node) {
-        $child        = new stdClass();
-        $parent->children[]     = $child;
-        $child->key   = $node['rowid'].'-'.$pathId.'-'.$node['depth'];
+        $child = new stdClass();
+        $parent->children[] = $child;
+        $child->key = $node['rowid'].'-'.$pathId.'-'.$node['depth'];
         $child->title = $node['label'].$this->levelLabel($node['access_level']);
 
         if ($node['real_parent'])
           Debug::console('children: '.$parentId.' '.$node['access_key'].' '.$node['real_parent']);
 
-        $data         = new stdClass();
-        $child->data  = $data;
-        $data->key    = $node['access_key'];
-        $data->depth  = $node['depth'];
-        $data->label  = $node['label'];
-        $data->id     = $node['rowid'];
+        $data = new stdClass();
+        $child->data = $data;
+        $data->key = $node['access_key'];
+        $data->depth = $node['depth'];
+        $data->label = $node['label'];
+        $data->id = $node['rowid'];
         $data->assign = $node['assign_id'];
         $data->target = $node['target'];
         $data->real_parent = $node['real_parent'];
-        $data->access_level     = $node['access_level'];
-        $data->description      = $node['description'];
+        $data->access_level = $node['access_level'];
+        $data->description = $node['description'];
         $data->area_description = ' Access: <strong>'.
           (
             isset($this->accessLabel[$node['access_level']])
@@ -249,7 +249,7 @@ class AclMgmt_Tree_Model extends AclMgmt_Model
           ).'</strong>'.NL.$node['area_description'];
 
 
-        $child->children  = array();
+        $child->children = array();
 
         $this->buildReferenceTree
         (
@@ -292,7 +292,7 @@ class AclMgmt_Tree_Model extends AclMgmt_Model
   {
 
     $httpRequest = $this->getRequest();
-    $orm         = $this->getOrm();
+    $orm = $this->getOrm();
 
     if ($objid) {
       $entityWbfsysSecurityPath = $orm->get('WbfsysSecurityPath', (int) $objid);
@@ -331,7 +331,7 @@ class AclMgmt_Tree_Model extends AclMgmt_Model
   public function savePath()
   {
 
-    $orm         = $this->getOrm();
+    $orm = $this->getOrm();
     $orm->save($this->entityWbfsysSecurityPath);
 
   }//end public function savePath */
@@ -348,8 +348,8 @@ class AclMgmt_Tree_Model extends AclMgmt_Model
   public function dropPath($pathId)
   {
 
-    $db   = $this->getDb();
-    $orm  = $db->getOrm();
+    $db = $this->getDb();
+    $orm = $db->getOrm();
 
     $dropQuery = $db->newQuery('AclMgmt_Tree');
     /* @var $dropQuery AclMgmt_Tree_Query  */

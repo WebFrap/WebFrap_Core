@@ -37,13 +37,13 @@ class WebfrapAnnouncement_Table_Maintab_Menu extends WgtDropmenu
   {
 
     // laden der mvc/utils adapter Objekte
-    $acl   = $this->getAcl();
-    $view   = $this->getView();
+    $acl = $this->getAcl();
+    $view = $this->getView();
 
-    $iconMenu        = '<i class="icon-reorder" ></i>';
-    $iconClose       = '<i class="icon-remove-circle " ></i>';
-    $iconEntity      = $this->view->icon('control/entity.png'      ,'Entity');
-    $iconAdd         = $this->view->icon('control/add.png'      ,'Create');
+    $iconMenu = '<i class="icon-reorder" ></i>';
+    $iconClose = '<i class="icon-remove-circle " ></i>';
+    $iconEntity = $this->view->icon('control/entity.png'      ,'Entity');
+    $iconAdd = $this->view->icon('control/add.png'      ,'Create');
 
     $iconSupport = '<i class="icon-info-sign"></i>';
     $iconFaq = '<i class="icon-question-sign"></i>';

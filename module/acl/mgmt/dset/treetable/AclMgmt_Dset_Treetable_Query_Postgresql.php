@@ -36,7 +36,7 @@ class AclMgmt_Dset_Treetable_Query_Postgresql extends LibSqlQuery
    * Sub Users
    * @var array
    */
-  public $users    = array();
+  public $users = array();
 
 
 /*//////////////////////////////////////////////////////////////////////////////

@@ -298,8 +298,8 @@ SQL;
   public function getUserListByKey($key, $params)
   {
 
-    $db     = $this->getDb();
-    $query  = $db->newQuery('WebfrapMessage');
+    $db = $this->getDb();
+    $query = $db->newQuery('WebfrapMessage');
     /* @var $query WebfrapMessage_Query  */
 
     $query->fetchAutocomplete(
@@ -530,7 +530,7 @@ UPDATE wbfsys_message_receiver
 	set status = {$tmpUSt}
 WHERE
 	id_message = {$messageId}
-	AND ( NOT status = {$tmpASt} OR flag_deleted  = true );
+	AND ( NOT status = {$tmpASt} OR flag_deleted = true );
 SQL;
 
     $db->update($sql);
@@ -852,9 +852,9 @@ SQL;
   public function loadSettings()
   {
 
-    $db     = $this->getDb();
-    $user   = $this->getUser();
-    $cache  = $this->getL1Cache();
+    $db = $this->getDb();
+    $user = $this->getUser();
+    $cache = $this->getL1Cache();
 
     $settingsLoader = new LibUserSettings($db, $user, $cache);
 
@@ -868,9 +868,9 @@ SQL;
   public function saveSettings($settings)
   {
 
-    $db     = $this->getDb();
-    $user   = $this->getUser();
-    $cache  = $this->getL1Cache();
+    $db = $this->getDb();
+    $user = $this->getUser();
+    $cache = $this->getL1Cache();
 
     $settingsLoader = new LibUserSettings($db, $user, $cache);
     $settingsLoader->saveSetting(EUserSettingType::MESSAGES, $settings);

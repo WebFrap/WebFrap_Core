@@ -102,7 +102,7 @@ class AclModule_Model extends Model
         $this->register('entityWbfsysSecurityArea', $entityWbfsysSecurityArea);
 
       } else {
-        $entityWbfsysSecurityArea   = new WbfsysSecurityArea_Entity() ;
+        $entityWbfsysSecurityArea = new WbfsysSecurityArea_Entity() ;
         $this->register('entityWbfsysSecurityArea', $entityWbfsysSecurityArea);
       }
 
@@ -221,7 +221,7 @@ class AclModule_Model extends Model
         $this->register('entityWbfsysSecurityAccess', $entityWbfsysSecurityAccess);
 
       } else {
-        $entityWbfsysSecurityAccess   = new WbfsysSecurityAccess_Entity() ;
+        $entityWbfsysSecurityAccess = new WbfsysSecurityAccess_Entity() ;
         $this->register('entityWbfsysSecurityAccess', $entityWbfsysSecurityAccess);
       }
 
@@ -287,8 +287,8 @@ class AclModule_Model extends Model
   public function getEntryDataAccess($view,  $params)
   {
 
-    $orm   = $this->getOrm();
-    $data  = array();
+    $orm = $this->getOrm();
+    $data = array();
 
     $data['security_access'] = $this->getEntityWbfsysSecurityAccess();
 
@@ -325,9 +325,9 @@ class AclModule_Model extends Model
   {
 
     $httpRequest = $this->getRequest();
-    $view        = $this->getView();
-    $response    = $this->getResponse();
-    $orm         = $this->getOrm();
+    $view = $this->getView();
+    $response = $this->getResponse();
+    $orm = $this->getOrm();
 
     $entityWbfsysSecurityAccess = new WbfsysSecurityAccess_Entity;
 
@@ -370,9 +370,9 @@ class AclModule_Model extends Model
   {
 
     // laden der mvc/utils adapter Objekte
-    $db        = $this->getDb();
-    $orm       = $db->getOrm();
-    $response  = $this->getResponse();
+    $db = $this->getDb();
+    $orm = $db->getOrm();
+    $response = $this->getResponse();
 
     try {
       if (!$entityWbfsysSecurityAccess = $this->getRegisterd('entityWbfsysSecurityAccess')) {
@@ -393,11 +393,11 @@ class AclModule_Model extends Model
         );
       }
 
-      $entityWbfsysSecurityAccess->access_level  = 1;
-      $entityWbfsysSecurityAccess->ref_access_level  = 1;
-      $entityWbfsysSecurityAccess->message_level  = Acl::DENIED;
-      $entityWbfsysSecurityAccess->priv_message_level  = Acl::DENIED;
-      $entityWbfsysSecurityAccess->meta_level  = Acl::DENIED;
+      $entityWbfsysSecurityAccess->access_level = 1;
+      $entityWbfsysSecurityAccess->ref_access_level = 1;
+      $entityWbfsysSecurityAccess->message_level = Acl::DENIED;
+      $entityWbfsysSecurityAccess->priv_message_level = Acl::DENIED;
+      $entityWbfsysSecurityAccess->meta_level = Acl::DENIED;
 
       if (!$orm->insert($entityWbfsysSecurityAccess)) {
         $entityText = $entityWbfsysSecurityAccess->text();
@@ -415,26 +415,26 @@ class AclModule_Model extends Model
 
         // ok jetzt müssen wir noch kurz partiellen zugriff auf die unteren ebene vergeben
         $partialMod = new WbfsysSecurityAccess_Entity;
-        $partialMod->id_area     = $orm->getByKey('WbfsysSecurityArea', $this->domainNode->modAclKey);
-        $partialMod->id_group    = $entityWbfsysSecurityAccess->id_group;
-        $partialMod->partial       = 1;
-        $partialMod->access_level  = 1;
-        $partialMod->ref_access_level  = 1;
-        $partialMod->meta_level  = Acl::DENIED;
-        $partialMod->priv_message_level  = Acl::DENIED;
-        $partialMod->message_level  = Acl::DENIED;
+        $partialMod->id_area = $orm->getByKey('WbfsysSecurityArea', $this->domainNode->modAclKey);
+        $partialMod->id_group = $entityWbfsysSecurityAccess->id_group;
+        $partialMod->partial = 1;
+        $partialMod->access_level = 1;
+        $partialMod->ref_access_level = 1;
+        $partialMod->meta_level = Acl::DENIED;
+        $partialMod->priv_message_level = Acl::DENIED;
+        $partialMod->message_level = Acl::DENIED;
         $orm->insertIfNotExists($partialMod, array('id_area', 'id_group', 'partial'));
 
 
         $partialEntity = new WbfsysSecurityAccess_Entity;
-        $partialEntity->id_area    = $orm->getByKey('WbfsysSecurityArea', $this->domainNode->aclBaseKey);
-        $partialEntity->id_group   = $entityWbfsysSecurityAccess->id_group;
-        $partialEntity->partial        = 1;
-        $partialEntity->access_level   = 1;
-        $partialEntity->ref_access_level  = 1;
-        $partialEntity->meta_level  = Acl::DENIED;
-        $partialEntity->message_level  = Acl::DENIED;
-        $partialEntity->priv_message_level  = Acl::DENIED;
+        $partialEntity->id_area = $orm->getByKey('WbfsysSecurityArea', $this->domainNode->aclBaseKey);
+        $partialEntity->id_group = $entityWbfsysSecurityAccess->id_group;
+        $partialEntity->partial = 1;
+        $partialEntity->access_level = 1;
+        $partialEntity->ref_access_level = 1;
+        $partialEntity->meta_level = Acl::DENIED;
+        $partialEntity->message_level = Acl::DENIED;
+        $partialEntity->priv_message_level = Acl::DENIED;
         $orm->insertIfNotExists($partialEntity, array('id_area','id_group','partial'));
 
 
@@ -503,8 +503,8 @@ class AclModule_Model extends Model
   {
 
     $httpRequest = $this->getRequest();
-    $orm         = $this->getOrm();
-    $response    = $this->getResponse();
+    $orm = $this->getOrm();
+    $response = $this->getResponse();
 
     if (!$entityWbfsysSecurityArea = $orm->get('WbfsysSecurityArea',  $id)) {
       throw new InvalidRequest_Exception
@@ -557,8 +557,8 @@ class AclModule_Model extends Model
   {
 
     // fetch the required technical objects
-    $db   = $this->getDb();
-    $orm  = $db->getOrm();
+    $db = $this->getDb();
+    $orm = $db->getOrm();
     $view = $this->getView();
     $response = $this->getResponse();
 
@@ -645,8 +645,8 @@ class AclModule_Model extends Model
   public function searchGroupsAutocomplete($key, $params)
   {
 
-    $db     = $this->getDb();
-    $query  = $db->newQuery('AclMgmt');
+    $db = $this->getDb();
+    $query = $db->newQuery('AclMgmt');
     /* @var $query AclMgmt_Query  */
 
     $query->fetchGroupsByKey
@@ -669,11 +669,11 @@ class AclModule_Model extends Model
   public function search($areaId, $access, $params)
   {
 
-    $db         = $this->getDb();
-    $query      = $db->newQuery('AclMgmt_Table');
+    $db = $this->getDb();
+    $query = $db->newQuery('AclMgmt_Table');
     /* @var $query AclMgmt_Table_Query  */
 
-    $condition  = $this->getSearchCondition();
+    $condition = $this->getSearchCondition();
 
     $query->fetch
     (
@@ -694,11 +694,11 @@ class AclModule_Model extends Model
   public function getSearchCondition()
   {
 
-    $condition  = array();
+    $condition = array();
 
     $httpRequest = $this->getRequest();
-    $db          = $this->getDb();
-    $orm         = $db->getOrm();
+    $db = $this->getDb();
+    $orm = $db->getOrm();
 
     if ($free = $httpRequest->param('free_search', Validator::TEXT))
       $condition['free'] = $free;
@@ -762,7 +762,7 @@ class AclModule_Model extends Model
           'wbf.message',
           array
           (
-            'resource'  => $response->i18n->l($domainNode->label, $domainNode->domainI18n.'.label')
+            'resource' => $response->i18n->l($domainNode->label, $domainNode->domainI18n.'.label')
           )
         ),
         Response::FORBIDDEN
@@ -782,22 +782,22 @@ class AclModule_Model extends Model
   public function pushMgmtConfigurationToEntity($params)
   {
 
-    $db         = $this->getDb();
-    $orm        = $db->getOrm();
+    $db = $this->getDb();
+    $orm = $db->getOrm();
 
     $entityAreaId = $this->getEntityAreaId();
-    $areaId       = $this->getAreaId();
+    $areaId = $this->getAreaId();
 
     /* @var $groupQuery AclMgmt_SyncGroup_Query */
-    $groupQuery   = $db->newQuery('AclMgmt_SyncGroup');
+    $groupQuery = $db->newQuery('AclMgmt_SyncGroup');
     $groupQuery->fetch($areaId);
 
     foreach ($groupQuery as $entry) {
       $partialEntity = new WbfsysSecurityAccess_Entity;
-      $partialEntity->id_area    = $entityAreaId;
-      $partialEntity->id_group   = $entry['security_access_id_group'];
-      $partialEntity->partial        = 0;
-      $partialEntity->access_level   = $entry['security_access_access_level'];
+      $partialEntity->id_area = $entityAreaId;
+      $partialEntity->id_group = $entry['security_access_id_group'];
+      $partialEntity->partial = 0;
+      $partialEntity->access_level = $entry['security_access_access_level'];
       $orm->insertIfNotExists
       (
         $partialEntity,
@@ -817,14 +817,14 @@ class AclModule_Model extends Model
     foreach ($assignmentQuery as $entry) {
 
       $partUser = new WbfsysGroupUsers_Entity;
-      $partUser->id_user    = $entry['group_users_id_user'];
-      $partUser->id_group   = $entry['group_users_id_group'];
+      $partUser->id_user = $entry['group_users_id_user'];
+      $partUser->id_group = $entry['group_users_id_group'];
 
       if ($entry['group_users_vid'])
         $partUser->vid = $entry['group_users_vid'];
 
-      $partUser->id_area  = $entityAreaId;
-      $partUser->partial  = 0;
+      $partUser->id_area = $entityAreaId;
+      $partUser->partial = 0;
 
       $orm->insertIfNotExists
       (
@@ -850,22 +850,22 @@ class AclModule_Model extends Model
   public function pullMgmtConfigurationfromEntity($params)
   {
 
-    $db         = $this->getDb();
-    $orm        = $db->getOrm();
+    $db = $this->getDb();
+    $orm = $db->getOrm();
 
     $entityAreaId = $this->getEntityAreaId();
-    $areaId       = $this->getAreaId();
+    $areaId = $this->getAreaId();
 
     /* @var $groupQuery AclMgmt_SyncGroup_Query */
-    $groupQuery      = $db->newQuery('AclMgmt_SyncGroup');
+    $groupQuery = $db->newQuery('AclMgmt_SyncGroup');
     $groupQuery->fetch($entityAreaId);
 
     foreach ($groupQuery as $entry) {
       $partialEntity = new WbfsysSecurityAccess_Entity;
-      $partialEntity->id_area    = $areaId;
-      $partialEntity->id_group   = $entry['security_access_id_group'];
-      $partialEntity->partial        = 0;
-      $partialEntity->access_level   = $entry['security_access_access_level'];
+      $partialEntity->id_area = $areaId;
+      $partialEntity->id_group = $entry['security_access_id_group'];
+      $partialEntity->partial = 0;
+      $partialEntity->access_level = $entry['security_access_access_level'];
       $orm->insertIfNotExists
       (
         $partialEntity,
@@ -885,14 +885,14 @@ class AclModule_Model extends Model
     foreach ($assignmentQuery as $entry) {
 
       $partUser = new WbfsysGroupUsers_Entity;
-      $partUser->id_user    = $entry['group_users_id_user'];
-      $partUser->id_group   = $entry['group_users_id_group'];
+      $partUser->id_user = $entry['group_users_id_user'];
+      $partUser->id_group = $entry['group_users_id_group'];
 
       if ($entry['group_users_vid'])
         $partUser->vid = $entry['group_users_vid'];
 
-      $partUser->id_area    = $areaId;
-      $partUser->partial    = 0;
+      $partUser->id_area = $areaId;
+      $partUser->partial = 0;
 
       $orm->insertIfNotExists
       (

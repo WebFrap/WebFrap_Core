@@ -30,82 +30,82 @@ class WebfrapMediathek_Video_Controller extends Controller
   /**
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'search' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
     'disconnect' => array
     (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
     'delete' => array
     (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
     'formuploadfiles' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('modal')
+      'method' => array('GET'),
+      'views' => array('modal')
     ),
     'uploadfile' => array
     (
-      'method'    => array('POST'),
-      'views'      => array('ajax')
+      'method' => array('POST'),
+      'views' => array('ajax')
     ),
     'savefile' => array
     (
-      'method'    => array('POST'),
-      'views'      => array('ajax')
+      'method' => array('POST'),
+      'views' => array('ajax')
     ),
     'formaddlink' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('modal')
+      'method' => array('GET'),
+      'views' => array('modal')
     ),
     'addlink' => array
     (
-      'method'    => array('POST'),
-      'views'      => array('ajax')
+      'method' => array('POST'),
+      'views' => array('ajax')
     ),
     'savelink' => array
     (
-      'method'    => array('PUT'),
-      'views'      => array('ajax')
+      'method' => array('PUT'),
+      'views' => array('ajax')
     ),
     'edit' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('modal')
+      'method' => array('GET'),
+      'views' => array('modal')
     ),
     'formaddstorage' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('modal')
+      'method' => array('GET'),
+      'views' => array('modal')
     ),
     'addstorage' => array
     (
-      'method'    => array('POST'),
-      'views'      => array('ajax')
+      'method' => array('POST'),
+      'views' => array('ajax')
     ),
     'editstorage' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('modal')
+      'method' => array('GET'),
+      'views' => array('modal')
     ),
     'savestorage' => array
     (
-      'method'    => array('PUT'),
-      'views'      => array('ajax')
+      'method' => array('PUT'),
+      'views' => array('ajax')
     ),
     'deletestorage' => array
     (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
   );
 
@@ -121,9 +121,9 @@ class WebfrapMediathek_Video_Controller extends Controller
   public function service_delete($request, $response)
   {
 
-    $id       = $request->param('objid', Validator::EID);
-    $element  = $request->param('element', Validator::CKEY);
-    $refId    = $request->param('ref_id', Validator::EID);
+    $id = $request->param('objid', Validator::EID);
+    $element = $request->param('element', Validator::CKEY);
+    $refId = $request->param('ref_id', Validator::EID);
 
     /* @var $model WebfrapAttachment_Model */
     $model = $this->loadModel('WebfrapAttachment');
@@ -149,7 +149,7 @@ class WebfrapMediathek_Video_Controller extends Controller
   public function service_disconnect($request, $response)
   {
 
-    $id   = $request->param('objid', Validator::EID);
+    $id = $request->param('objid', Validator::EID);
 
     /* @var $model WebfrapAttachment_Model */
     $model = $this->loadModel('WebfrapAttachment');
@@ -166,14 +166,14 @@ class WebfrapMediathek_Video_Controller extends Controller
   public function service_search($request, $response)
   {
 
-    $refId     = $request->param('refid', Validator::EID);
-    $element   = $request->param('element', Validator::CKEY);
+    $refId = $request->param('refid', Validator::EID);
+    $element = $request->param('element', Validator::CKEY);
     $searchKey = $request->param('skey', Validator::SEARCH);
 
     /* @var $model WebfrapAttachment_Model */
     $model = $this->loadModel('WebfrapAttachment');
 
-    $searchData  = $model->getAttachmentList($refId, null, $searchKey);
+    $searchData = $model->getAttachmentList($refId, null, $searchKey);
 
     /* @var $view WebfrapAttachment_Ajax_View */
     $view = $response->loadView
@@ -195,7 +195,7 @@ class WebfrapMediathek_Video_Controller extends Controller
   public function service_formUploadFiles($request, $response)
   {
 
-    $refId   = $request->param('refid', Validator::EID);
+    $refId = $request->param('refid', Validator::EID);
     $element = $request->param('element', Validator::CKEY);
 
     $view = $response->loadView
@@ -218,7 +218,7 @@ class WebfrapMediathek_Video_Controller extends Controller
   public function service_uploadFile($request, $response)
   {
     // refid
-    $refId   = $request->param('refid', Validator::EID);
+    $refId = $request->param('refid', Validator::EID);
     $element = $request->param('element', Validator::CKEY);
 
     $file = $request->file('file');
@@ -232,15 +232,15 @@ class WebfrapMediathek_Video_Controller extends Controller
     }
 
     $type = $request->data('type', Validator::EID);
-    $versioning   = $request->data('version', Validator::BOOLEAN);
-    $description  = $request->data('description', Validator::TEXT);
-    $confidentiality   = $request->data('id_confidentiality', Validator::EID);
+    $versioning = $request->data('version', Validator::BOOLEAN);
+    $description = $request->data('description', Validator::TEXT);
+    $confidentiality = $request->data('id_confidentiality', Validator::EID);
 
     /* @var $model WebfrapAttachment_Model */
     $model = $this->loadModel('WebfrapAttachment');
 
     $attachNode = $model->uploadFile($refId, $file, $type, $versioning, $confidentiality, $description);
-    $entryData  = $model->getAttachmentList($refId, $attachNode->getId());
+    $entryData = $model->getAttachmentList($refId, $attachNode->getId());
 
     $view = $response->loadView
     (
@@ -261,22 +261,22 @@ class WebfrapMediathek_Video_Controller extends Controller
   public function service_saveFile($request, $response)
   {
     // refid
-    $attachId  = $request->param('attachid', Validator::EID);
-    $element   = $request->param('element', Validator::CKEY);
+    $attachId = $request->param('attachid', Validator::EID);
+    $element = $request->param('element', Validator::CKEY);
 
     $file = $request->file('file');
 
     $objid = $request->data('objid', Validator::EID);
     $type = $request->data('type', Validator::EID);
-    $versioning   = $request->data('version', Validator::BOOLEAN);
-    $description  = $request->data('description', Validator::TEXT);
-    $confidentiality   = $request->data('id_confidentiality', Validator::EID);
+    $versioning = $request->data('version', Validator::BOOLEAN);
+    $description = $request->data('description', Validator::TEXT);
+    $confidentiality = $request->data('id_confidentiality', Validator::EID);
 
     /* @var $model WebfrapAttachment_Model */
     $model = $this->loadModel('WebfrapAttachment');
 
     $model->saveFile($objid, $file, $type, $versioning, $confidentiality, $description);
-    $entryData  = $model->getAttachmentList(null, $attachId);
+    $entryData = $model->getAttachmentList(null, $attachId);
 
     $view = $response->loadView
     (
@@ -298,7 +298,7 @@ class WebfrapMediathek_Video_Controller extends Controller
   public function service_formAddLink($request, $response)
   {
 
-    $refId   = $request->param('refid', Validator::EID);
+    $refId = $request->param('refid', Validator::EID);
     $elementId = $request->param('element', Validator::CKEY);
 
     /* @var $view WebfrapAttachment_Link_Modal_View  */
@@ -322,20 +322,20 @@ class WebfrapMediathek_Video_Controller extends Controller
   public function service_addLink($request, $response)
   {
     // refid
-    $refId   = $request->param('refid', Validator::EID);
+    $refId = $request->param('refid', Validator::EID);
     $element = $request->param('element', Validator::CKEY);
 
     $link = $request->data('link', Validator::LINK);
     $type = $request->data('id_type', Validator::EID);
-    $storage     = $request->data('id_storage', Validator::EID);
+    $storage = $request->data('id_storage', Validator::EID);
     $description = $request->data('description', Validator::TEXT);
-    $confidentiality   = $request->data('id_confidentiality', Validator::EID);
+    $confidentiality = $request->data('id_confidentiality', Validator::EID);
 
     /* @var $model WebfrapAttachment_Model */
     $model = $this->loadModel('WebfrapAttachment');
 
     $attachNode = $model->addLink($refId, $link, $type, $storage, $confidentiality, $description);
-    $entryData  = $model->getAttachmentList($refId, $attachNode->getId());
+    $entryData = $model->getAttachmentList($refId, $attachNode->getId());
 
     $view = $response->loadView
     (
@@ -356,22 +356,22 @@ class WebfrapMediathek_Video_Controller extends Controller
   public function service_saveLink($request, $response)
   {
     // refid
-    $refId     = $request->param('refid', Validator::EID);
-    $attachId  = $request->param('attachid', Validator::EID);
-    $element   = $request->param('element', Validator::CKEY);
+    $refId = $request->param('refid', Validator::EID);
+    $attachId = $request->param('attachid', Validator::EID);
+    $element = $request->param('element', Validator::CKEY);
 
     $objid = $request->data('objid', Validator::EID);
     $link = $request->data('link', Validator::LINK);
     $type = $request->data('id_type', Validator::EID);
-    $storage     = $request->data('id_storage', Validator::EID);
+    $storage = $request->data('id_storage', Validator::EID);
     $description = $request->data('description', Validator::TEXT);
-    $confidentiality   = $request->data('id_confidentiality', Validator::EID);
+    $confidentiality = $request->data('id_confidentiality', Validator::EID);
 
     /* @var $model WebfrapAttachment_Model */
     $model = $this->loadModel('WebfrapAttachment');
 
     $model->saveLink($objid, $link, $type, $storage, $confidentiality, $description);
-    $entryData  = $model->getAttachmentList(null, $attachId);
+    $entryData = $model->getAttachmentList(null, $attachId);
 
     $view = $response->loadView
     (
@@ -392,9 +392,9 @@ class WebfrapMediathek_Video_Controller extends Controller
   public function service_edit($request, $response)
   {
 
-    $objid   = $request->param('objid', Validator::EID);
+    $objid = $request->param('objid', Validator::EID);
     $element = $request->param('element', Validator::CKEY);
-    $refId   = $request->param('refid', Validator::EID);
+    $refId = $request->param('refid', Validator::EID);
 
     /* @var $model WebfrapAttachment_Model */
     $model = $this->loadModel('WebfrapAttachment');
@@ -435,8 +435,8 @@ class WebfrapMediathek_Video_Controller extends Controller
   public function service_deleteStorage($request, $response)
   {
 
-    $id       = $request->param('objid', Validator::EID);
-    $element  = $request->param('element', Validator::CKEY);
+    $id = $request->param('objid', Validator::EID);
+    $element = $request->param('element', Validator::CKEY);
 
     /* @var $model WebfrapAttachment_Model */
     $model = $this->loadModel('WebfrapAttachment');
@@ -462,7 +462,7 @@ class WebfrapMediathek_Video_Controller extends Controller
   public function service_formAddStorage($request, $response)
   {
 
-    $refId   = $request->param('refid', Validator::EID);
+    $refId = $request->param('refid', Validator::EID);
     $elementId = $request->param('element', Validator::CKEY);
 
     /* @var $view WebfrapAttachment_Link_Modal_View  */
@@ -486,20 +486,20 @@ class WebfrapMediathek_Video_Controller extends Controller
   public function service_addStorage($request, $response)
   {
     // refid
-    $refId   = $request->param('refid', Validator::EID);
+    $refId = $request->param('refid', Validator::EID);
     $element = $request->param('element', Validator::CKEY);
 
     $name = $request->data('name', Validator::TEXT);
     $link = $request->data('link', Validator::LINK);
     $type = $request->data('id_type', Validator::EID);
     $description = $request->data('description', Validator::TEXT);
-    $confidentiality   = $request->data('id_confidentiality', Validator::EID);
+    $confidentiality = $request->data('id_confidentiality', Validator::EID);
 
     /* @var $model WebfrapAttachment_Model */
     $model = $this->loadModel('WebfrapAttachment');
 
     $storageNode = $model->addStorage($refId, $name, $link, $type, $confidentiality, $description);
-    $entryData   = $model->getStorageList(null, $storageNode->getId());
+    $entryData = $model->getStorageList(null, $storageNode->getId());
 
     $view = $response->loadView
     (
@@ -520,7 +520,7 @@ class WebfrapMediathek_Video_Controller extends Controller
   public function service_editStorage($request, $response)
   {
 
-    $objid   = $request->param('objid', Validator::EID);
+    $objid = $request->param('objid', Validator::EID);
     $element = $request->param('element', Validator::CKEY);
 
     /* @var $model WebfrapAttachment_Model */
@@ -555,13 +555,13 @@ class WebfrapMediathek_Video_Controller extends Controller
     $link = $request->data('link', Validator::LINK);
     $type = $request->data('id_type', Validator::EID);
     $description = $request->data('description', Validator::TEXT);
-    $confidentiality   = $request->data('id_confidentiality', Validator::EID);
+    $confidentiality = $request->data('id_confidentiality', Validator::EID);
 
     /* @var $model WebfrapAttachment_Model */
     $model = $this->loadModel('WebfrapAttachment');
 
     $model->saveStorage($objid, $name, $link, $type, $confidentiality, $description);
-    $entryData  = $model->getStorageList(null, $objid);
+    $entryData = $model->getStorageList(null, $objid);
 
     $view = $response->loadView
     (

@@ -32,7 +32,7 @@ class DaidalosDbBackup_Model extends Model
     $db = $this->getDb();
 
     /*
-    $dbName   = $db->databaseName;
+    $dbName = $db->databaseName;
     $userName = $db->dbUser;
     $dbPasswd = $db->dbPwd;
     */
@@ -90,9 +90,9 @@ class DaidalosDbBackup_Model extends Model
   public function upload()
   {
 
-    $request    = $this->getRequest();
-    $response   = $this->getResponse();
-    $db         = $this->getDb();
+    $request = $this->getRequest();
+    $response = $this->getResponse();
+    $db = $this->getDb();
 
     if (!$dump = $request->file('db_dump')) {
       $response->addError('Got no data to upload. Did you forget to choose a file?');

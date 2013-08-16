@@ -28,8 +28,8 @@ class DaidalosSystem_Model extends Model
   public function getUsersByKey($key, $params)
   {
 
-    $db     = $this->getDb();
-    $query  = $db->newQuery('DaidalosSystem');
+    $db = $this->getDb();
+    $query = $db->newQuery('DaidalosSystem');
 
     $query->fetchUsersByKey
     (

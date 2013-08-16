@@ -37,9 +37,9 @@ class WebfrapExport_Ref_Model extends MvcModel_Domain
   public function injectAccessContainer($variant, $context, $refNode, $refId)
   {
 
-    $user      = $this->getUser();
+    $user = $this->getUser();
 
-    $classKey  = $this->domainNode->domainKey.'_Ref_'.$refNode->mask.'_'.$variant->mask;
+    $classKey = $this->domainNode->domainKey.'_Ref_'.$refNode->mask.'_'.$variant->mask;
     $className = $classKey.'_Access';
 
     // if the requested access container not exists, we can assume this request
@@ -64,7 +64,7 @@ class WebfrapExport_Ref_Model extends MvcModel_Domain
           'wbf.message',
           array
           (
-            'resource'  => $response->i18n->l($this->domainNode->label, $this->domainNode->domainI18n.'.label')
+            'resource' => $response->i18n->l($this->domainNode->label, $this->domainNode->domainI18n.'.label')
           )
         ),
         Response::FORBIDDEN

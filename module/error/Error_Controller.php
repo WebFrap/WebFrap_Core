@@ -67,7 +67,7 @@ class Error_Controller extends Controller
     $this->view->addVar
     (array
     (
-      'errorTitle'   => $this->errorTitle,
+      'errorTitle' => $this->errorTitle,
       'errorMessage' => $this->errorMessage
     ));
     */

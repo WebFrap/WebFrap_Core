@@ -58,8 +58,8 @@ class AclMgmt_Qfdu_Group_Treetable_Query extends LibSqlQuery
 
     $context->qsize = -1;
 
-    $this->sourceSize  = null;
-    $db                = $this->getDb();
+    $this->sourceSize = null;
+    $db = $this->getDb();
 
     if (!$this->criteria) {
       $criteria = $db->orm->newCriteria();
@@ -74,8 +74,8 @@ class AclMgmt_Qfdu_Group_Treetable_Query extends LibSqlQuery
 
 
     // Run Query und save the result
-    $this->result     = $db->orm->select($criteria);
-    $this->calcQuery  = $criteria->count('count(DISTINCT group_users.id_group) as '.Db::Q_SIZE, true);
+    $this->result = $db->orm->select($criteria);
+    $this->calcQuery = $criteria->count('count(DISTINCT group_users.id_group) as '.Db::Q_SIZE, true);
 
   }//end public function fetch */
 
@@ -98,8 +98,8 @@ class AclMgmt_Qfdu_Group_Treetable_Query extends LibSqlQuery
     $context->qsize = -1;
     $context->groupBy = 'user';
 
-    $this->sourceSize  = null;
-    $db                = $this->getDb();
+    $this->sourceSize = null;
+    $db = $this->getDb();
 
     $ids = new TFlag();
     $ids->userId = $userId;
@@ -115,8 +115,8 @@ class AclMgmt_Qfdu_Group_Treetable_Query extends LibSqlQuery
 
 
     // Run Query und save the result
-    $this->result     = $db->orm->select($criteria);
-    $this->calcQuery  = $criteria->count('count(DISTINCT group_users.id_group) as '.Db::Q_SIZE, true);
+    $this->result = $db->orm->select($criteria);
+    $this->calcQuery = $criteria->count('count(DISTINCT group_users.id_group) as '.Db::Q_SIZE, true);
 
   }//end public function fetchListUser */
 
@@ -142,8 +142,8 @@ class AclMgmt_Qfdu_Group_Treetable_Query extends LibSqlQuery
     $context->qsize = -1;
     $context->groupBy = 'dset';
 
-    $this->sourceSize  = null;
-    $db                = $this->getDb();
+    $this->sourceSize = null;
+    $db = $this->getDb();
 
     $ids = new TFlag();
     $ids->userId = $userId;
@@ -159,8 +159,8 @@ class AclMgmt_Qfdu_Group_Treetable_Query extends LibSqlQuery
 
 
     // Run Query und save the result
-    $this->result     = $db->orm->select($criteria);
-    $this->calcQuery  = $criteria->count('count(DISTINCT group_users.vid) as '.Db::Q_SIZE, true);
+    $this->result = $db->orm->select($criteria);
+    $this->calcQuery = $criteria->count('count(DISTINCT group_users.vid) as '.Db::Q_SIZE, true);
 
   }//end public function fetchListDset */
 

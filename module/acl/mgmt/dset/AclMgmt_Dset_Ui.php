@@ -79,14 +79,14 @@ class AclMgmt_Dset_Ui extends MvcUi
     $listObj->setAccessPath($params, $params->aclKey, $params->aclNode);
 
     // set the offset to set the paging menu correct
-    $listObj->start    = $params->start;
+    $listObj->start = $params->start;
 
     // set the position for the size menu
     $listObj->stepSize = $params->qsize;
 
     // check if there is a filter for the first char
     if ($params->begin)
-      $listObj->begin  = $params->begin;
+      $listObj->begin = $params->begin;
 
     // if there is a given tableId for the html id of the the table replace
     // the default id with it
@@ -109,7 +109,7 @@ class AclMgmt_Dset_Ui extends MvcUi
 
     if ($params->ajax) {
       // refresh the table in ajax requests
-      $listObj->refresh    = true;
+      $listObj->refresh = true;
 
       // the table should only replace the content inside of the container
       // but not the container itself
@@ -118,7 +118,7 @@ class AclMgmt_Dset_Ui extends MvcUi
       // create the panel
       $tabPanel = new WgtPanelTable($listObj);
 
-      $tabPanel->title      = $this->view->i18n->l
+      $tabPanel->title = $this->view->i18n->l
       (
         $this->domainNode->label.' "{@label@}" User Access',
         $this->domainNode->domainI18n.'.label',
@@ -127,7 +127,7 @@ class AclMgmt_Dset_Ui extends MvcUi
           'label' => $domainEntity->text()
         )
       );
-      $tabPanel->searchKey  = ''.$this->domainNode->aclDomainKey.'_acl_dset';
+      $tabPanel->searchKey = ''.$this->domainNode->aclDomainKey.'_acl_dset';
     }
 
     if ($params->append) {

@@ -72,8 +72,8 @@ class WebfrapCalendar_Query extends LibSqlQuery
 
     $user = $this->getUser();
 
-    $this->sourceSize  = null;
-    $db                = $this->getDb();
+    $this->sourceSize = null;
+    $db = $this->getDb();
 
     if (!$this->criteria) {
       $this->criteria = $db->orm->newCriteria();
@@ -87,7 +87,7 @@ class WebfrapCalendar_Query extends LibSqlQuery
     $this->appendFilter($this->criteria, $condition, $params);
 
     // Run Query und save the result
-    $this->result    = $db->orm->select($this->criteria);
+    $this->result = $db->orm->select($this->criteria);
 
     if ($params->loadFullSize)
       $this->calcQuery = $this->criteria->count('count(wbfsys_message.'.Db::PK.') as '.Db::Q_SIZE);

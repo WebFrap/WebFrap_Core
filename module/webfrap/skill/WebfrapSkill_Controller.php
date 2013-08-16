@@ -30,22 +30,22 @@ class WebfrapSkill_Controller extends Controller
   /**
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'add' => array
     (
-      'method'    => array('PUT'),
-      'views'      => array('ajax')
+      'method' => array('PUT'),
+      'views' => array('ajax')
     ),
     'autocomplete' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
     'disconnect' => array
     (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
   );
 
@@ -64,14 +64,14 @@ class WebfrapSkill_Controller extends Controller
     /* @var $model WebfrapSkill_Model */
     $model = $this->loadModel('WebfrapSkill');
 
-    $name   = $request->data('name', Validator::TEXT);
+    $name = $request->data('name', Validator::TEXT);
 
     // gehen wir mal davon aus, dass die per autocomplete kam und wohl korrekt ist
-    $id     = $request->data('tag_id', Validator::EID);
+    $id = $request->data('tag_id', Validator::EID);
 
     // die sollte entweder per autocomplete kommen oder statisch im widget
     // vorhanden sein
-    $refId  = $request->data('refid', Validator::EID);
+    $refId = $request->data('refid', Validator::EID);
 
     // sicher stellen, dass alle benötigten Informationen vorhanden sind
     if (!$refId || (!$name && !$id)) {
@@ -111,11 +111,11 @@ class WebfrapSkill_Controller extends Controller
     /* @var $model WebfrapSkill_Model */
     $model = $this->loadModel('WebfrapSkill');
 
-    $key   = $request->param('key', Validator::TEXT);
+    $key = $request->param('key', Validator::TEXT);
 
     // die sollte entweder per autocomplete kommen oder statisch im widget
     // vorhanden sein
-    $refId  = $request->param('refid', Validator::EID);
+    $refId = $request->param('refid', Validator::EID);
 
       // sicher stellen, dass alle benötigten Informationen vorhanden sind
     if (!$key || !$refId) {
@@ -139,7 +139,7 @@ class WebfrapSkill_Controller extends Controller
   public function service_disconnect($request, $response)
   {
 
-    $id   = $request->param('objid', Validator::EID);
+    $id = $request->param('objid', Validator::EID);
 
     /* @var $model WebfrapSkill_Model */
     $model = $this->loadModel('WebfrapSkill');

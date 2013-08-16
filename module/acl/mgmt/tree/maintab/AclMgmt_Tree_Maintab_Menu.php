@@ -54,16 +54,16 @@ class AclMgmt_Tree_Maintab_Menu extends WgtDropmenu
   public function buildMenu($objid, $params)
   {
 
-    $view             = $this->view;
-    $iconMenu        = '<i class="icon-reorder" ></i>';
-    $iconEdit        = '<i class="icon-save" ></i>';
-    $iconClose       = '<i class="icon-remove-circle " ></i>';
+    $view = $this->view;
+    $iconMenu = '<i class="icon-reorder" ></i>';
+    $iconEdit = '<i class="icon-save" ></i>';
+    $iconClose = '<i class="icon-remove-circle " ></i>';
 
-    $access           = $params->access;
-    $user            = $this->getUser();
+    $access = $params->access;
+    $user = $this->getUser();
 
     $entries = new TArray();
-    $entries->support  = $this->entriesSupport($objid, $params);
+    $entries->support = $this->entriesSupport($objid, $params);
 
     $this->content = <<<HTML
 
@@ -107,10 +107,10 @@ HTML;
   protected function entriesSupport($objid, $params)
   {
 
-    $iconSupport  = $this->view->icon( 'control/support.png'  ,'Support');
-    $iconBug      = $this->view->icon( 'control/bug.png'      ,'Bug'  );
-    $iconFaq      = $this->view->icon( 'control/faq.png'      ,'Faq'  );
-    $iconHelp     = $this->view->icon( 'control/help.png'     ,'Help');
+    $iconSupport = $this->view->icon( 'control/support.png'  ,'Support');
+    $iconBug = $this->view->icon( 'control/bug.png'      ,'Bug'  );
+    $iconFaq = $this->view->icon( 'control/faq.png'      ,'Faq'  );
+    $iconHelp = $this->view->icon( 'control/help.png'     ,'Help');
 
 
     $html = <<<HTML

@@ -61,7 +61,7 @@ class WebfrapMessage_Show_Maintab_View extends WgtMaintab
   public function addMenu($params,$message)
   {
 
-    $menu     = $this->newMenu($this->id.'_dropmenu');
+    $menu = $this->newMenu($this->id.'_dropmenu');
 
     $menu->id = $this->id.'_dropmenu';
 

@@ -56,9 +56,9 @@ class WebfrapMessage_Forward_Maintab_View extends WgtMaintab
   public function addMenu($params)
   {
 
-    $iconSend  = '<i class="icon-envelope" ></i>';
+    $iconSend = '<i class="icon-envelope" ></i>';
 
-    $menu     = $this->newMenu($this->id.'_dropmenu');
+    $menu = $this->newMenu($this->id.'_dropmenu');
 
     $menu->id = $this->id.'_dropmenu';
 

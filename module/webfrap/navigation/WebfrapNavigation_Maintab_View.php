@@ -77,7 +77,7 @@ class WebfrapNavigation_Maintab_View extends WgtMaintab
   {
 
     /**/
-    $menu     = $this->newMenu(
+    $menu = $this->newMenu(
       $this->id.'_dropmenu',
       'WebfrapNavigation'
     );

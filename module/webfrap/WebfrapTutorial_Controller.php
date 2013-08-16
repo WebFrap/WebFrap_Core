@@ -66,7 +66,7 @@ class WebfrapTutorial_Controller extends Controller
       $template = 'start';
     }
 
-    View::$sendBody  = true;
+    View::$sendBody = true;
 
     $this->view->addVar('page' , $template  );
     $this->view->setTemplate('index' , 'tutorial');

@@ -44,22 +44,22 @@ class WebfrapMaintenance_Process_Controller extends MvcController_Domain
    *
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'list' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
     'formswitchstatus' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('modal', 'maintab')
+      'method' => array('GET'),
+      'views' => array('modal', 'maintab')
     ),
     'changestatus' => array
     (
-      'method'    => array('PUT'),
-      'views'      => array('ajax')
+      'method' => array('PUT'),
+      'views' => array('ajax')
     )
   );
 
@@ -98,7 +98,7 @@ class WebfrapMaintenance_Process_Controller extends MvcController_Domain
   public function service_formSwitchStatus($request, $response)
   {
 
-    $statusId  = $request->param('active', Validator::EID);
+    $statusId = $request->param('active', Validator::EID);
 
     $domainNode = $this->getDomainNode($request);
 
@@ -129,9 +129,9 @@ class WebfrapMaintenance_Process_Controller extends MvcController_Domain
   public function service_changeStatus($request, $response)
   {
 
-    $idStatus  = $request->data('id_status', Validator::EID);
-    $idNew     = $request->data('id_new', Validator::EID);
-    $comment   = $request->data('comment', Validator::TEXT);
+    $idStatus = $request->data('id_status', Validator::EID);
+    $idNew = $request->data('id_new', Validator::EID);
+    $comment = $request->data('comment', Validator::TEXT);
 
     $domainNode = $this->getDomainNode($request, true);
 

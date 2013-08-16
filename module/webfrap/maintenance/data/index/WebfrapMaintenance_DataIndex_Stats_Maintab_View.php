@@ -67,8 +67,8 @@ class WebfrapMaintenance_DataIndex_Stats_Maintab_View extends WgtMaintabCustom
     $this->setTemplate('webfrap/maintenance/data_index/maintab/stats');
 
     // Setzen von Viewspezifischen Control Flags
-    $params->viewType  = 'maintab';
-    $params->viewId    = $this->getId();
+    $params->viewType = 'maintab';
+    $params->viewId = $this->getId();
 
     // Menü und Javascript Logik erstellen
     $this->addMenu($params);
@@ -91,7 +91,7 @@ class WebfrapMaintenance_DataIndex_Stats_Maintab_View extends WgtMaintabCustom
   public function addMenu($params)
   {
 
-    $menu     = $this->newMenu
+    $menu = $this->newMenu
     (
       $this->id.'_dropmenu',
       'WebfrapMaintenance_DataIndex_Stats'

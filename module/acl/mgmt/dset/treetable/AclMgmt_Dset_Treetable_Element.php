@@ -38,7 +38,7 @@ class AclMgmt_Dset_Treetable_Element extends WgtTreetable
    *
    * @var string $id
    */
-  public $id       = null;
+  public $id = null;
 
   /**
    * the html id of the table tag, this id can be used to replace the table
@@ -46,7 +46,7 @@ class AclMgmt_Dset_Treetable_Element extends WgtTreetable
    *
    * @var string $id
    */
-  public $areaId   = null;
+  public $areaId = null;
 
   /**
    * @var DomainNode
@@ -58,14 +58,14 @@ class AclMgmt_Dset_Treetable_Element extends WgtTreetable
    *
    * @var AclMgmt_Dset_Treetable_Query
    */
-  public $data        = null;
+  public $data = null;
 
   /**
    * the most likley class of a given query object
    *
    * @var array
    */
-  public $dataUser    = array();
+  public $dataUser = array();
 
   /**
    * Ist kein Single menu
@@ -83,7 +83,7 @@ class AclMgmt_Dset_Treetable_Element extends WgtTreetable
   {
 
     $this->domainNode = $domainNode;
-    $this->name     = $name;
+    $this->name = $name;
     $this->stepSize = Wgt::$defListSize;
 
     // when a view is given we asume that the element should be injected
@@ -98,7 +98,7 @@ class AclMgmt_Dset_Treetable_Element extends WgtTreetable
       if ($name)
         $view->addElement($name, $this);
     } else {
-      $this->i18n     = I18n::getActive();
+      $this->i18n = I18n::getActive();
     }
 
     $this->loadUrl();
@@ -113,8 +113,8 @@ class AclMgmt_Dset_Treetable_Element extends WgtTreetable
 
     $this->id = 'wgt-treetable-'.$this->domainNode->aclDomainKey.'-acl-dset';
 
-    $this->url['group']      = array(
-      'tree'  => array(
+    $this->url['group'] = array(
+      'tree' => array(
         Wgt::ACTION_BUTTON_GET,
         'Reference ACLs',
         'maintab.php?c=Acl.Mgmt_Tree.showGraph&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',
@@ -123,7 +123,7 @@ class AclMgmt_Dset_Treetable_Element extends WgtTreetable
         'wbf.inheritance',
         Acl::ADMIN
       ),
-      'delete'  => array(
+      'delete' => array(
         Wgt::ACTION_DELETE,
         'Delete',
         'index.php?c=Acl.Mgmt_Dset.cleanGroup&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',
@@ -132,15 +132,15 @@ class AclMgmt_Dset_Treetable_Element extends WgtTreetable
         'wbf.label',
         Acl::ADMIN
       ),
-      'sep'  => array(
+      'sep' => array(
         Wgt::ACTION_SEP
       ),
 
     );
     $this->actions['group'] = array('tree', 'inheritance', 'sep', 'delete');
 
-    $this->url['user']  = array(
-      'delete'  => array(
+    $this->url['user'] = array(
+      'delete' => array(
         Wgt::ACTION_DELETE,
         'Delete',
         'index.php?c=Acl.Mgmt_Dset.deleteUser&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',
@@ -173,9 +173,9 @@ class AclMgmt_Dset_Treetable_Element extends WgtTreetable
       return;
 
     if (is_object($data)) {
-      $this->data       = $data;
-      $this->dataSize   = $data->getSourceSize();
-      $this->dataUser   = $data->users;
+      $this->data = $data;
+      $this->dataSize = $data->getSourceSize();
+      $this->dataUser = $data->users;
     } else {
       $this->data = $data;
     }
@@ -321,9 +321,9 @@ class AclMgmt_Dset_Treetable_Element extends WgtTreetable
     $pos = 1;
     foreach ($this->data as $row) {
 
-      $groupId     = $row['role_group_rowid'];
-      $objid       = $groupId;
-      $rowid       = $this->id.'_row_'.$groupId;
+      $groupId = $row['role_group_rowid'];
+      $objid = $groupId;
+      $rowid = $this->id.'_row_'.$groupId;
 
       $body .= '<tr class="row'.$num.'" id="'.$rowid.'" >'.NL;
 
@@ -398,7 +398,7 @@ class AclMgmt_Dset_Treetable_Element extends WgtTreetable
         $this->num = 1;
 
       if ($this->enableNav) {
-        $navigation  = $this->rowMenu
+        $navigation = $this->rowMenu
         (
           $objid.'&group_id='.$groupId,
           $row,
@@ -450,13 +450,13 @@ class AclMgmt_Dset_Treetable_Element extends WgtTreetable
     $childs = $this->dataUser[$groupId];
 
     $body = '';
-    $pos  = 1;
+    $pos = 1;
 
     foreach ($childs as $userId => $row) {
 
-      $objid    = $row['group_users_rowid'];
-      $rowid   = $this->id.'_row_'.$groupId.'_'.$userId;
-      $pRowid   = 'child-of-'.$this->id.'_row_'.$groupId.' group-'.$groupId;
+      $objid = $row['group_users_rowid'];
+      $rowid = $this->id.'_row_'.$groupId.'_'.$userId;
+      $pRowid = 'child-of-'.$this->id.'_row_'.$groupId.' group-'.$groupId;
 
       $body .= '<tr class="row'.$this->num.' '.$pRowid.' wgt-border-top" id="'.$rowid.'"  >'.NL;
 
@@ -509,7 +509,7 @@ class AclMgmt_Dset_Treetable_Element extends WgtTreetable
 
 
       if ($this->enableNav) {
-        $navigation  = $this->rowMenu
+        $navigation = $this->rowMenu
         (
           $row['group_users_rowid'].'&group_id='.$groupId.'&user_id='.$userId,
           $row,
@@ -609,12 +609,12 @@ class AclMgmt_Dset_Treetable_Element extends WgtTreetable
 
     foreach ($this->data as $key => $row) {
 
-      $userId     = $row['group_users_id_user'];
-      $groupId    = $row['group_users_id_group'];
-      $objid      = $row['group_users_rowid'];
+      $userId = $row['group_users_id_user'];
+      $groupId = $row['group_users_id_group'];
+      $objid = $row['group_users_rowid'];
 
-      $rowid      = $this->id.'_row_'.$groupId.'_'.$userId;
-      $pRowid     = 'child-of-'.$this->id.'_row_'.$groupId.' group-'.$groupId;
+      $rowid = $this->id.'_row_'.$groupId.'_'.$userId;
+      $pRowid = 'child-of-'.$this->id.'_row_'.$groupId.' group-'.$groupId;
 
       $body .= '<htmlArea selector="tr#'.$this->id.'_row_'.$groupId.'" action="after"  ><![CDATA['.NL;
       $body .= '<tr class="'.$pRowid.'" id="'.$rowid.'"  >'.NL;
@@ -669,7 +669,7 @@ class AclMgmt_Dset_Treetable_Element extends WgtTreetable
 
 
       if ($this->enableNav) {
-        $navigation  = $this->rowMenu
+        $navigation = $this->rowMenu
         (
           $row['group_users_rowid'].'&group_id='.$groupId.'&user_id='.$userId.'&area_id='.$this->areaId,
           $row,

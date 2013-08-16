@@ -38,14 +38,14 @@ class AclMgmt_Table_Element extends WgtTable
    *
    * @var string $id
    */
-  public $id       = 'wgt-table-acl-mgmt-acl';
+  public $id = 'wgt-table-acl-mgmt-acl';
 
   /**
    * the most likley class of a given query object
    *
    * @var AclMgmt_Table_Query
    */
-  public $data       = null;
+  public $data = null;
 
   /**
    * @var DomainNode
@@ -62,7 +62,7 @@ class AclMgmt_Table_Element extends WgtTable
   {
 
     $this->domainNode = $domainNode;
-    $this->name     = $name;
+    $this->name = $name;
     $this->stepSize = Wgt::$defListSize;
 
     // when a view is given we asume that the element should be injected
@@ -77,7 +77,7 @@ class AclMgmt_Table_Element extends WgtTable
       if ($name)
         $view->addElement($name, $this);
     } else {
-      $this->i18n     = I18n::getActive();
+      $this->i18n = I18n::getActive();
     }
 
     $this->loadUrl();
@@ -100,8 +100,8 @@ class AclMgmt_Table_Element extends WgtTable
      * manually wich actions are used with: Wgt::addActions
      * @var array
      */
-    $this->url      = array(
-      'delete'  => array(
+    $this->url = array(
+      'delete' => array(
         Wgt::ACTION_DELETE,
         'Delete',
         'index.php?c=Acl.Mgmt.deleteGroup&dkey='.$this->domainNode->domainName.'&amp;objid=',
@@ -110,7 +110,7 @@ class AclMgmt_Table_Element extends WgtTable
         'wbf.label',
         Acl::ADMIN
       ),
-      'tree'  => array(
+      'tree' => array(
         Wgt::ACTION_BUTTON_GET,
         'Reference ACLs',
         'maintab.php?c=Acl.Mgmt_Tree.showGraph&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',
@@ -119,7 +119,7 @@ class AclMgmt_Table_Element extends WgtTable
         'wbf.inheritance',
         Acl::ADMIN
       ),
-      'sep'  => array(
+      'sep' => array(
         Wgt::ACTION_SEP
       ),
 
@@ -266,8 +266,8 @@ class AclMgmt_Table_Element extends WgtTable
     $pos = 1;
     foreach ($this->data as $key => $row) {
 
-      $objid  = $row['security_access_rowid'];
-      $rowid  = $this->id.'_row_'.$objid;
+      $objid = $row['security_access_rowid'];
+      $rowid = $this->id.'_row_'.$objid;
 
       $body .= '<tr class="wcm wcm_ui_highlight row'.$num.' node-'.$objid.'" id="'.$rowid.'" >'.NL;
       $body .= '<td valign="top" class="pos" name="slct['.$objid.']" >'.$pos.'</td>'.NL;
@@ -328,7 +328,7 @@ class AclMgmt_Table_Element extends WgtTable
       */
 
       if ($this->enableNav) {
-        $navigation  = $this->rowMenu
+        $navigation = $this->rowMenu
           (
             $objid.'&group_id='.$row['role_group_rowid'],
             $row,
@@ -491,7 +491,7 @@ class AclMgmt_Table_Element extends WgtTable
       */
 
     if ($this->enableNav) {
-      $navigation  = $this->rowMenu(
+      $navigation = $this->rowMenu(
       	$objid.'&group_id='.$row['role_group_rowid'],
         $row,
         $row['role_group_name']

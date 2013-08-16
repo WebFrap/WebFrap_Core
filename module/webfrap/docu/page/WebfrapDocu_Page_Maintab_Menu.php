@@ -39,14 +39,14 @@ class WebfrapDocu_Page_Maintab_Menu extends WgtDropmenu
   public function buildMenu($key, $params)
   {
 
-    $iconSave          = '<i class="icon-save" ></i>';
+    $iconSave = '<i class="icon-save" ></i>';
 
     $entries = new TArray();
 
     $tmp = explode('-',$key);
 
     $crumbs = array();
-    $path   = array();
+    $path = array();
     foreach ($tmp as $cData) {
       $path[] = $cData;
       $crumbs[implode('-',$path)] = SParserString::subToName($cData);

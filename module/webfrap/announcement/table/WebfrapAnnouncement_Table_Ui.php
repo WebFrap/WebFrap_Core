@@ -92,14 +92,14 @@ class WebfrapAnnouncement_Table_Ui extends MvcUi
     $table->setAccessPath($params, $params->aclKey, $params->aclNode);
 
     // set the offset to set the paging menu correct
-    $table->start    = $params->start;
+    $table->start = $params->start;
 
     // set the position for the size menu
     $table->stepSize = $params->qsize;
 
     // check if there is a filter for the first char
     if ($params->begin)
-      $table->begin    = $params->begin;
+      $table->begin = $params->begin;
 
     // if there is a given tableId for the html id of the the table replace
     // the default id with it
@@ -146,7 +146,7 @@ class WebfrapAnnouncement_Table_Ui extends MvcUi
     if ($params->ajax) {
       // set refresh to true, to embed the content of this element inside
       // of the ajax.tpl index as "htmlarea"
-      $table->refresh    = true;
+      $table->refresh = true;
 
       // the table should only replace the content inside of the container
       // but not the container itself
@@ -334,10 +334,10 @@ JSCODE;
     // laden der mvc/utils adapter Objekte
     $view = $this->getView();
 
-    $entityWbfsysAnnouncement  = $model->getEntityWbfsysAnnouncement();
-    $fieldsWbfsysAnnouncement  = $entityWbfsysAnnouncement->getSearchCols();
+    $entityWbfsysAnnouncement = $model->getEntityWbfsysAnnouncement();
+    $fieldsWbfsysAnnouncement = $entityWbfsysAnnouncement->getSearchCols();
 
-    $formWbfsysAnnouncement    = $view->newForm('WbfsysAnnouncement');
+    $formWbfsysAnnouncement = $view->newForm('WbfsysAnnouncement');
     $formWbfsysAnnouncement->setNamespace('WbfsysAnnouncement');
     $formWbfsysAnnouncement->setPrefix('WbfsysAnnouncement');
     $formWbfsysAnnouncement->setKeyName('wbfsys_announcement');

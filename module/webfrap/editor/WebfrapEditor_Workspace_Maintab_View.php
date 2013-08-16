@@ -59,17 +59,17 @@ class WebfrapEditor_Workspace_Maintab_View extends WgtMaintabCustom
   public function addMenu()
   {
 
-    $iconMenu          = '<i class="icon-reorder" ></i>';
-    $iconClose         = '<i class="icon-remove-circle " ></i>';
-    $iconSave          = '<i class="icon-save" ></i>';
-    $iconRefresh       = '<i class="icon-refresh" ></i>';
+    $iconMenu = '<i class="icon-reorder" ></i>';
+    $iconClose = '<i class="icon-remove-circle " ></i>';
+    $iconSave = '<i class="icon-save" ></i>';
+    $iconRefresh = '<i class="icon-refresh" ></i>';
 
-    $iconSupport   = $this->icon('control/support.png'  ,'Support');
-    $iconBug       = $this->icon('control/bug.png'      ,'Bug');
-    $iconFaq       = $this->icon('control/faq.png'      ,'Faq');
-    $iconHelp      = $this->icon('control/help.png'     ,'Help');
+    $iconSupport = $this->icon('control/support.png'  ,'Support');
+    $iconBug = $this->icon('control/bug.png'      ,'Bug');
+    $iconFaq = $this->icon('control/faq.png'      ,'Faq');
+    $iconHelp = $this->icon('control/help.png'     ,'Help');
 
-    $menu     = $this->newMenu($this->id.'_dropmenu');
+    $menu = $this->newMenu($this->id.'_dropmenu');
 
     $menu->id = $this->id.'_dropmenu';
 

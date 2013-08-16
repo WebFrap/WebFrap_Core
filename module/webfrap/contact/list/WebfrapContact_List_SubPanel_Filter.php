@@ -33,14 +33,14 @@ class WebfrapContact_List_SubPanel_Filter extends WgtPanelElementFilter
   public function render()
   {
 
-    $i18n    = $this->getI18n();
-    $acl     = $this->getAcl();
-    $user    = $this->getUser();
-    $access  = $this->access;
+    $i18n = $this->getI18n();
+    $acl = $this->getAcl();
+    $user = $this->getUser();
+    $access = $this->access;
 
-    $controlsMsg     = '';
-    $controlsTask    = '';
-    $hiddenControls  = '';
+    $controlsMsg = '';
+    $controlsTask = '';
+    $hiddenControls = '';
 
     // Message filters
 

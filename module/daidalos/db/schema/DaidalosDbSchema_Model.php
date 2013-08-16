@@ -155,7 +155,7 @@ SQL;
   public function getSchemaBackups($dbName, $schemaKey)
   {
 
-    $path     = PATH_GW.'data/backups/db/'.$dbName.'/schemas/'.$schemaKey;
+    $path = PATH_GW.'data/backups/db/'.$dbName.'/schemas/'.$schemaKey;
     $iterator = new IoFolderIterator($path);
 
     return $iterator->getFilesByEnding('.backup', true);
@@ -227,7 +227,7 @@ SQL;
     WHERE
     table_catalog = '{$dbName}'
     AND table_schema = '{$schemaKey}'
-    AND table_type  = 'BASE TABLE'
+    AND table_type = 'BASE TABLE'
     ORDER BY table_name ;
 SQL;
 
@@ -248,7 +248,7 @@ SQL;
     else
       $dbConf = $conf['default'];
 
-    $dbConf['dbname']   = $dbName;
+    $dbConf['dbname'] = $dbName;
     $dbConf['dbschema'] = 'public';
 
     $className = 'LibDb'.$dbConf['class'];

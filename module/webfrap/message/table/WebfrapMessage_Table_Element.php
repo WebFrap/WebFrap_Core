@@ -33,7 +33,7 @@ class WebfrapMessage_Table_Element extends WgtTable
    *
    * @var string $id
    */
-  public $id   = 'wgt_table-user-messages';
+  public $id = 'wgt_table-user-messages';
 
   /**
    * the most likley class of a given query object
@@ -51,7 +51,7 @@ class WebfrapMessage_Table_Element extends WgtTable
   /**
    * @var string
    */
-  public $bodyHeight   = 'xxlarge';
+  public $bodyHeight = 'xxlarge';
 
  /**
   * Laden der Urls für die Actions
@@ -61,8 +61,8 @@ class WebfrapMessage_Table_Element extends WgtTable
 
     $user = Webfrap::$env->getUser();
 
-    $this->url  = array(
-      'show'    => array(
+    $this->url = array(
+      'show' => array(
         Wgt::ACTION_BUTTON_GET,
         'Show',
         'maintab.php?c=Webfrap.Message.formShow&amp;objid=',
@@ -72,7 +72,7 @@ class WebfrapMessage_Table_Element extends WgtTable
         Acl::ACCESS
       ),
 
-      'forward'    => array(
+      'forward' => array(
         Wgt::ACTION_BUTTON_GET,
         'Forward',
         'maintab.php?c=Webfrap.Message.formForward&amp;objid=',
@@ -82,7 +82,7 @@ class WebfrapMessage_Table_Element extends WgtTable
         Acl::INSERT
       ),
 
-      'reply'    => array(
+      'reply' => array(
         Wgt::ACTION_BUTTON_GET,
         'Reply',
         'maintab.php?c=Webfrap.Message.formReply&amp;objid=',
@@ -101,7 +101,7 @@ class WebfrapMessage_Table_Element extends WgtTable
         }
       ),
 
-      'reopen'    => array(
+      'reopen' => array(
         Wgt::ACTION_BUTTON_PUT,
         'Reopen',
         'ajax.php?c=Webfrap.Message.reopen&amp;objid=',
@@ -124,7 +124,7 @@ class WebfrapMessage_Table_Element extends WgtTable
         }
       ),
 
-      'archive'    => array(
+      'archive' => array(
         Wgt::ACTION_BUTTON_GET,
         'Archive',
         'maintab.php?c=Webfrap.Message.archive&amp;objid=',
@@ -147,7 +147,7 @@ class WebfrapMessage_Table_Element extends WgtTable
         }
       ),
 
-      'ham'    => array(
+      'ham' => array(
         Wgt::ACTION_BUTTON_PUT,
         'Ham',
         'ajax.php?c=Webfrap.Message.setSpam&spam=0&amp;objid=',
@@ -170,7 +170,7 @@ class WebfrapMessage_Table_Element extends WgtTable
         }
       ),
 
-      'spam'    => array(
+      'spam' => array(
         Wgt::ACTION_BUTTON_PUT,
         'Spam',
         'ajax.php?c=Webfrap.Message.setSpam&spam=100&amp;objid=',
@@ -192,7 +192,7 @@ class WebfrapMessage_Table_Element extends WgtTable
 
         }
       ),
-      'mark_read'    => array(
+      'mark_read' => array(
           Wgt::ACTION_BUTTON_PUT,
           'Mark as read',
           'ajax.php?c=Webfrap.Message.markAsRead&amp;objid=',
@@ -219,7 +219,7 @@ class WebfrapMessage_Table_Element extends WgtTable
       ),
 
 
-      'delete'  => array(
+      'delete' => array(
         Wgt::ACTION_DELETE,
         'Delete',
         'ajax.php?c=Webfrap.Message.deleteMessage&amp;objid=',
@@ -229,7 +229,7 @@ class WebfrapMessage_Table_Element extends WgtTable
         Acl::DELETE
       ),
 
-      'sep'  => array(
+      'sep' => array(
         Wgt::ACTION_SEP
       )
 
@@ -386,12 +386,12 @@ class WebfrapMessage_Table_Element extends WgtTable
 
     foreach ($data as $key => $row) {
 
-      $objid       = $row['wbfsys_message_rowid'];
-      $rowid       = $this->id.'_row_'.$objid;
+      $objid = $row['wbfsys_message_rowid'];
+      $rowid = $this->id.'_row_'.$objid;
 
-      $rowWcm       = '';
-      $rowParams   = '';
-      $dsUrl        = null;
+      $rowWcm = '';
+      $rowParams = '';
+      $dsUrl = null;
       // check if the row has
       if ($dsUrl = $this->getActionUrl($objid, $row)) {
         $rowWcm     .= ' wcm_control_access_dataset';
@@ -486,7 +486,7 @@ class WebfrapMessage_Table_Element extends WgtTable
       $body .= '</td>'.NL;
 
       if ($this->enableNav) {
-        $navigation  = $this->rowMenu(
+        $navigation = $this->rowMenu(
           $objid,
           $row
         );
@@ -704,7 +704,7 @@ class WebfrapMessage_Table_Element extends WgtTable
     $body .= '</td>'.NL;
 
     if ($this->enableNav) {
-      $navigation  = $this->rowMenu(
+      $navigation = $this->rowMenu(
         $objid,
         $row
       );

@@ -33,13 +33,13 @@ class WebfrapContactForm_Modal_View extends WgtModal
    * Die Breite des Modal Elements
    * @var int in px
    */
-  public $width   = 800 ;
+  public $width = 800 ;
 
   /**
    * Die Höhe des Modal Elements
    * @var int in px
    */
-  public $height   = 550 ;
+  public $height = 550 ;
 
   /**
    * @var WebfrapMessage_Model
@@ -72,11 +72,11 @@ class WebfrapContactForm_Modal_View extends WgtModal
     $this->setTemplate('webfrap/contact/form/modal/form_user', true);
 
     $this->addVars(array(
-      'refId'       => $refId,
-      'userId'      => $userId,
-      'dataSrc'     => $dataSrc,
-      'elementKey'  => $elementId,
-      'userData'    => $this->model->getUserData($userId)
+      'refId' => $refId,
+      'userId' => $userId,
+      'dataSrc' => $dataSrc,
+      'elementKey' => $elementId,
+      'userData' => $this->model->getUserData($userId)
     ));
 
 
@@ -106,11 +106,11 @@ class WebfrapContactForm_Modal_View extends WgtModal
     $this->setTemplate('webfrap/contact/form/modal/form_group', true);
 
     $this->addVars(array(
-      'refId'       => $refId,
-      'userId'      => $groupKey,
-      'dataSrc'     => $dataSrc,
-      'elementKey'  => $elementId,
-      'groupData'   => $this->model->getGroupUsers($groupKey, null, $refId)
+      'refId' => $refId,
+      'userId' => $groupKey,
+      'dataSrc' => $dataSrc,
+      'elementKey' => $elementId,
+      'groupData' => $this->model->getGroupUsers($groupKey, null, $refId)
     ));
 
   }//end public function displayGroup */
@@ -143,12 +143,12 @@ class WebfrapContactForm_Modal_View extends WgtModal
     $this->setTemplate('webfrap/contact/form/modal/form_dataset', true);
 
     $this->addVars(array(
-      'refId'       => $refId,
-      'dataSrc'     => $dataSrc,
-      'dNode'       => $domainNode,
-      'entity'      => $entity,
-      'elementKey'  => $elementId,
-      'users'   => $this->model->getDsetUsers($refId)
+      'refId' => $refId,
+      'dataSrc' => $dataSrc,
+      'dNode' => $domainNode,
+      'entity' => $entity,
+      'elementKey' => $elementId,
+      'users' => $this->model->getDsetUsers($refId)
     ));
 
   }//end public function displayDset */

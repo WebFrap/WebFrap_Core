@@ -119,7 +119,7 @@ class WebfrapContactItem_Model extends Model
 
     $db = $this->getDb();
 
-    $condEntry  = '';
+    $condEntry = '';
     $condAttach = '';
 
     if ($refId) {
@@ -286,7 +286,7 @@ SQL;
   public function deleteAddress($storageId)
   {
 
-    $orm    = $this->getOrm();
+    $orm = $this->getOrm();
 
     $orm->delete('WbfsysFileAddress', $storageId);
 
@@ -308,7 +308,7 @@ SQL;
 
     $db = $this->getDb();
 
-    $condEntry  = '';
+    $condEntry = '';
     $condAttach = '';
 
     if ($refId) {

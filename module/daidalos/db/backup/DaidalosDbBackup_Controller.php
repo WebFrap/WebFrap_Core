@@ -42,37 +42,37 @@ class DaidalosDbBackup_Controller extends Controller
    *
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'formbackup' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
     'backup' => array
     (
-      'method'    => array('PUT'),
-      'views'      => array('maintab')
+      'method' => array('PUT'),
+      'views' => array('maintab')
     ),
     'listrestore' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
     'restore' => array
     (
-      'method'    => array('PUT'),
-      'views'      => array('ajax')
+      'method' => array('PUT'),
+      'views' => array('ajax')
     ),
     'deletedump' => array
     (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
     'uploaddump' => array
     (
-      'method'    => array('POST','PUT'),
-      'views'      => array('ajax')
+      'method' => array('POST','PUT'),
+      'views' => array('ajax')
     ),
   );
 
@@ -92,7 +92,7 @@ class DaidalosDbBackup_Controller extends Controller
 
     $key = $request->param('key', Validator::CKEY);
 
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       'daidalos_db_form_backup-'.$key,
       'DaidalosDbBackup',
@@ -100,7 +100,7 @@ class DaidalosDbBackup_Controller extends Controller
       View::MAINTAB
     );
 
-    $model  = $this->loadModel('DaidalosDbBackup');
+    $model = $this->loadModel('DaidalosDbBackup');
     $view->setModel($model);
 
     $view->displayForm($key, $params);
@@ -121,7 +121,7 @@ class DaidalosDbBackup_Controller extends Controller
 
     $prefix = $request->data('prefix', Validator::TEXT);
 
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       'daidalos_schema_list_restore-'.$key,
       'DaidalosDbBackup',
@@ -129,7 +129,7 @@ class DaidalosDbBackup_Controller extends Controller
       View::MAINTAB
     );
 
-    $model  = $this->loadModel('DaidalosDbBackup');
+    $model = $this->loadModel('DaidalosDbBackup');
 
     $view->setModel($model);
 
@@ -149,9 +149,9 @@ class DaidalosDbBackup_Controller extends Controller
 
     $params = $this->getFlags($request);
 
-    $key    = $request->param('key', Validator::CKEY);
+    $key = $request->param('key', Validator::CKEY);
 
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       'daidalos_schema_list_restore-'.$key,
       'DaidalosDbBackup',
@@ -159,7 +159,7 @@ class DaidalosDbBackup_Controller extends Controller
       View::MAINTAB
     );
 
-    $model  = $this->loadModel('DaidalosDbBackup');
+    $model = $this->loadModel('DaidalosDbBackup');
 
     $view->setModel($model);
 
@@ -177,7 +177,7 @@ class DaidalosDbBackup_Controller extends Controller
 
     $params = $this->getFlags($request);
 
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       'daidalos_schema_list',
       'DaidalosDb',
@@ -185,7 +185,7 @@ class DaidalosDbBackup_Controller extends Controller
       View::MAINTAB
     );
 
-    $model  = $this->loadModel('DaidalosDb');
+    $model = $this->loadModel('DaidalosDb');
     $view->setModel($model);
 
     $view->display($params);
@@ -202,7 +202,7 @@ class DaidalosDbBackup_Controller extends Controller
 
     $params = $this->getFlags($request);
 
-    $model  = $this->loadModel('DaidalosDb');
+    $model = $this->loadModel('DaidalosDb');
 
   }//end public function service_restore */
 
@@ -216,7 +216,7 @@ class DaidalosDbBackup_Controller extends Controller
 
     $params = $this->getFlags($request);
 
-    $model  = $this->loadModel('DaidalosDbBackup');
+    $model = $this->loadModel('DaidalosDbBackup');
     $model->upload();
 
   }//end public function service_uploadDump */

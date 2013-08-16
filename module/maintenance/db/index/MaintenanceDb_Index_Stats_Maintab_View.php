@@ -82,8 +82,8 @@ class MaintenanceDb_Index_Stats_Maintab_View extends WgtMaintabCustom
     $this->setTemplate('maintenance/db/index/maintab/stats', true);
 
     // Setzen von Viewspezifischen Control Flags
-    $params->viewType  = 'maintab';
-    $params->viewId    = $this->getId();
+    $params->viewType = 'maintab';
+    $params->viewId = $this->getId();
 
     // Menü und Javascript Logik erstellen
     $this->addMenu($params);
@@ -106,7 +106,7 @@ class MaintenanceDb_Index_Stats_Maintab_View extends WgtMaintabCustom
   public function addMenu($params)
   {
 
-    $menu     = $this->newMenu
+    $menu = $this->newMenu
     (
       $this->id.'_dropmenu',
       'MaintenanceDb_Index_Stats'

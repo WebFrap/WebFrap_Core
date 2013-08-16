@@ -106,7 +106,7 @@ class AclMgmt_Qfdu_Model extends Model
         $this->register('entityWbfsysGroupUsers', $entityWbfsysGroupUsers);
 
       } else {
-        $entityWbfsysGroupUsers   = new WbfsysGroupUsers_Entity() ;
+        $entityWbfsysGroupUsers = new WbfsysGroupUsers_Entity() ;
         $this->register('entityWbfsysGroupUsers', $entityWbfsysGroupUsers);
       }
 
@@ -153,8 +153,8 @@ class AclMgmt_Qfdu_Model extends Model
   public function getEntryWbfsysGroupUsers($params)
   {
 
-    $db     = $this->getDb();
-    $query  = $db->newQuery($this->domainNode->domainAclMask.'_Qfdu_Treetable');
+    $db = $this->getDb();
+    $query = $db->newQuery($this->domainNode->domainAclMask.'_Qfdu_Treetable');
 
     $areaId = $this->getAreaId();
 
@@ -189,8 +189,8 @@ class AclMgmt_Qfdu_Model extends Model
   {
 
     $httpRequest = $this->getRequest();
-    $orm         = $this->getOrm();
-    $response    = $this->getResponse();
+    $orm = $this->getOrm();
+    $response = $this->getResponse();
 
     $entityWbfsysGroupUsers = new WbfsysGroupUsers_Entity;
 
@@ -294,9 +294,9 @@ class AclMgmt_Qfdu_Model extends Model
   {
 
     // erst mal die nötigen resourcen laden
-    $db        = $this->getDb();
-    $orm       = $db->getOrm();
-    $response  = $this->getResponse();
+    $db = $this->getDb();
+    $orm = $db->getOrm();
+    $response = $this->getResponse();
 
     try {
       if (!$entityWbfsysGroupUsers = $this->getRegisterd('entityWbfsysGroupUsers')) {
@@ -338,10 +338,10 @@ class AclMgmt_Qfdu_Model extends Model
         // zu entscheiden in welcher form die alcs ausgelesen werden müssen
         if ($entityWbfsysGroupUsers->vid) {
           $partUser = new WbfsysGroupUsers_Entity;
-          $partUser->id_user    = $entityWbfsysGroupUsers->id_user;
-          $partUser->id_group   = $entityWbfsysGroupUsers->id_group;
-          $partUser->id_area    = $entityWbfsysGroupUsers->id_area;
-          $partUser->partial  = 1;
+          $partUser->id_user = $entityWbfsysGroupUsers->id_user;
+          $partUser->id_group = $entityWbfsysGroupUsers->id_group;
+          $partUser->id_area = $entityWbfsysGroupUsers->id_area;
+          $partUser->partial = 1;
           $orm->insertIfNotExists($partUser, array('id_area','id_group','id_user','partial'));
         }
 
@@ -403,8 +403,8 @@ class AclMgmt_Qfdu_Model extends Model
   public function searchGroupsAutocomplete($key, $params)
   {
 
-    $db     = $this->getDb();
-    $query  = $db->newQuery('AclMgmt');
+    $db = $this->getDb();
+    $query = $db->newQuery('AclMgmt');
     /* @var $query AclMgmt_Query  */
 
     $query->fetchGroupsByKey
@@ -426,10 +426,10 @@ class AclMgmt_Qfdu_Model extends Model
   public function loadGroups($areaId, $params)
   {
 
-    $db     = $this->getDb();
+    $db = $this->getDb();
 
     /* @var $query AclMgmt_Qfdu_Group_Treetable_Query  */
-    $query  = $db->newQuery('AclMgmt_Qfdu_Group_Treetable');
+    $query = $db->newQuery('AclMgmt_Qfdu_Group_Treetable');
 
     $condition = $this->getSearchCondition();
 
@@ -454,10 +454,10 @@ class AclMgmt_Qfdu_Model extends Model
   public function searchQualifiedUsers($areaId, $params, $filter = null)
   {
 
-    $db     = $this->getDb();
+    $db = $this->getDb();
 
     /* @var $query AclMgmt_Qfdu_Group_Treetable_Query  */
-    $query  = $db->newQuery('AclMgmt_Qfdu_Group_Treetable');
+    $query = $db->newQuery('AclMgmt_Qfdu_Group_Treetable');
 
     $condition = $this->getSearchCondition($filter);
 
@@ -479,11 +479,11 @@ class AclMgmt_Qfdu_Model extends Model
   public function loadGridUsers($groupId, $context)
   {
 
-    $db     = $this->getDb();
+    $db = $this->getDb();
 
     /* @var $query AclMgmt_Qfdu_User_Treetable_Query  */
-    $query      = $db->newQuery('AclMgmt_Qfdu_User_Treetable');
-    $condition  = $this->getSearchCondition();
+    $query = $db->newQuery('AclMgmt_Qfdu_User_Treetable');
+    $condition = $this->getSearchCondition();
 
     $query->fetch
     (
@@ -509,12 +509,12 @@ class AclMgmt_Qfdu_Model extends Model
   public function loadGridDsets($groupId, $userId, $context)
   {
 
-    $db     = $this->getDb();
+    $db = $this->getDb();
 
     /* @var $query AclMgmt_Qfdu_Dset_Treetable_Query  */
-    $query      = $db->newQuery('AclMgmt_Qfdu_Dset_Treetable');
+    $query = $db->newQuery('AclMgmt_Qfdu_Dset_Treetable');
     $query->domainNode = $this->domainNode;
-    $condition  = $this->getSearchCondition();
+    $condition = $this->getSearchCondition();
 
     $query->fetch
     (
@@ -536,11 +536,11 @@ class AclMgmt_Qfdu_Model extends Model
   public function loadListByUser_Users($context, $filter = null)
   {
 
-    $db     = $this->getDb();
+    $db = $this->getDb();
 
     /* @var $query AclMgmt_Qfdu_User_Treetable_Query  */
-    $query      = $db->newQuery('AclMgmt_Qfdu_User_Treetable');
-    $condition  = $this->getSearchCondition($filter);
+    $query = $db->newQuery('AclMgmt_Qfdu_User_Treetable');
+    $condition = $this->getSearchCondition($filter);
 
     $query->fetchListUser
     (
@@ -560,12 +560,12 @@ class AclMgmt_Qfdu_Model extends Model
   public function loadListByUser_Dset($userId, $context)
   {
 
-    $db     = $this->getDb();
+    $db = $this->getDb();
 
     /* @var $query AclMgmt_Qfdu_Dset_Treetable_Query  */
-    $query      = $db->newQuery('AclMgmt_Qfdu_Dset_Treetable');
+    $query = $db->newQuery('AclMgmt_Qfdu_Dset_Treetable');
     $query->domainNode = $this->domainNode;
-    $condition  = $this->getSearchCondition();
+    $condition = $this->getSearchCondition();
 
     $query->fetchListUser
     (
@@ -586,12 +586,12 @@ class AclMgmt_Qfdu_Model extends Model
   public function loadListByUser_Groups($userId, $dsetId, $context)
   {
 
-    $db     = $this->getDb();
+    $db = $this->getDb();
 
     /* @var $query AclMgmt_Qfdu_Group_Treetable_Query  */
-    $query      = $db->newQuery('AclMgmt_Qfdu_Group_Treetable');
+    $query = $db->newQuery('AclMgmt_Qfdu_Group_Treetable');
     $query->domainNode = $this->domainNode;
-    $condition  = $this->getSearchCondition();
+    $condition = $this->getSearchCondition();
 
     $query->fetchListUser
     (
@@ -613,12 +613,12 @@ class AclMgmt_Qfdu_Model extends Model
   public function loadListByDset_Dsets($context, $filter = null)
   {
 
-    $db     = $this->getDb();
+    $db = $this->getDb();
 
     /* @var $query AclMgmt_Qfdu_Dset_Treetable_Query  */
-    $query      = $db->newQuery('AclMgmt_Qfdu_Dset_Treetable');
+    $query = $db->newQuery('AclMgmt_Qfdu_Dset_Treetable');
     $query->domainNode = $this->domainNode;
-    $condition  = $this->getSearchCondition($filter);
+    $condition = $this->getSearchCondition($filter);
 
     $query->fetchListDset
     (
@@ -638,11 +638,11 @@ class AclMgmt_Qfdu_Model extends Model
   public function loadListByDset_Users($vid,  $context)
   {
 
-    $db     = $this->getDb();
+    $db = $this->getDb();
 
     /* @var $query AclMgmt_Qfdu_User_Treetable_Query  */
-    $query      = $db->newQuery('AclMgmt_Qfdu_User_Treetable');
-    $condition  = $this->getSearchCondition();
+    $query = $db->newQuery('AclMgmt_Qfdu_User_Treetable');
+    $condition = $this->getSearchCondition();
 
     $query->fetchListDset
     (
@@ -665,11 +665,11 @@ class AclMgmt_Qfdu_Model extends Model
   public function loadListByDset_Groups($userId, $dsetId,  $context)
   {
 
-    $db     = $this->getDb();
+    $db = $this->getDb();
 
     /* @var $query AclMgmt_Qfdu_Group_Treetable_Query  */
-    $query      = $db->newQuery('AclMgmt_Qfdu_Group_Treetable');
-    $condition  = $this->getSearchCondition();
+    $query = $db->newQuery('AclMgmt_Qfdu_Group_Treetable');
+    $condition = $this->getSearchCondition();
 
     $query->fetchListDset
     (
@@ -692,10 +692,10 @@ class AclMgmt_Qfdu_Model extends Model
   public function loadExportByGroup($areaId, $context)
   {
 
-    $db     = $this->getDb();
+    $db = $this->getDb();
 
     /* @var $query AclMgmt_Qfdu_Group_Export_Query  */
-    $query      = $db->newQuery('AclMgmt_Qfdu_Group_Export');
+    $query = $db->newQuery('AclMgmt_Qfdu_Group_Export');
     $query->domainNode = $this->domainNode;
     $query->fetch
     (
@@ -715,10 +715,10 @@ class AclMgmt_Qfdu_Model extends Model
   public function loadExportByDset($areaId, $context)
   {
 
-    $db     = $this->getDb();
+    $db = $this->getDb();
 
     /* @var $query AclMgmt_Qfdu_Dset_Export_Query  */
-    $query      = $db->newQuery('AclMgmt_Qfdu_Dset_Export');
+    $query = $db->newQuery('AclMgmt_Qfdu_Dset_Export');
     $query->domainNode = $this->domainNode;
     $query->fetch
     (
@@ -738,10 +738,10 @@ class AclMgmt_Qfdu_Model extends Model
   public function loadExportByUser($areaId, $context)
   {
 
-    $db     = $this->getDb();
+    $db = $this->getDb();
 
     /* @var $query AclMgmt_Qfdu_User_Export_Query  */
-    $query      = $db->newQuery('AclMgmt_Qfdu_User_Export');
+    $query = $db->newQuery('AclMgmt_Qfdu_User_Export');
     $query->domainNode = $this->domainNode;
     $query->fetch
     (
@@ -763,11 +763,11 @@ class AclMgmt_Qfdu_Model extends Model
   public function getSearchCondition($filterFree = null)
   {
 
-    $condition  = array();
+    $condition = array();
 
     $httpRequest = $this->getRequest();
-    $db          = $this->getDb();
-    $orm         = $db->getOrm();
+    $db = $this->getDb();
+    $orm = $db->getOrm();
 
     if ($filterFree)
       $condition['free'] = $filterFree;
@@ -785,8 +785,8 @@ class AclMgmt_Qfdu_Model extends Model
   public function getAreaGroups($areaId, $params)
   {
 
-    $db     = $this->getDb();
-    $query  = $db->newQuery($this->domainNode->domainAclMask.'_Qfdu');
+    $db = $this->getDb();
+    $query = $db->newQuery($this->domainNode->domainAclMask.'_Qfdu');
     /* @var $query AclMgmt_Qfdu_Query  */
 
     $query->fetchAreaGroups
@@ -807,8 +807,8 @@ class AclMgmt_Qfdu_Model extends Model
   public function getUsersByKey($areaId, $key, $params)
   {
 
-    $db     = $this->getDb();
-    $query  = $db->newQuery($this->domainNode->domainAclMask.'_Qfdu');
+    $db = $this->getDb();
+    $query = $db->newQuery($this->domainNode->domainAclMask.'_Qfdu');
     /* @var $query AclMgmt_Qfdu_Query  */
 
     $query->fetchUsersByKey
@@ -835,8 +835,8 @@ class AclMgmt_Qfdu_Model extends Model
   public function getEntitiesByKey($areaId, $key, $params)
   {
 
-    $db     = $this->getDb();
-    $query  = $db->newQuery($this->domainNode->domainAclMask.'_Qfdu');
+    $db = $this->getDb();
+    $query = $db->newQuery($this->domainNode->domainAclMask.'_Qfdu');
     /* @var $query AclMgmt_Qfdu_Query  */
 
     $query->fetchTargetEntityByKey
@@ -866,8 +866,8 @@ class AclMgmt_Qfdu_Model extends Model
   public function cleanQfdUser($groupId, $userId, $areaId, $params  )
   {
 
-    $orm       = $this->getOrm();
-    $response  = $this->getResponse();
+    $orm = $this->getOrm();
+    $response = $this->getResponse();
 
     try {
       $orm->deleteWhere
@@ -924,7 +924,7 @@ class AclMgmt_Qfdu_Model extends Model
   {
 
     $orm = $this->getOrm();
-    $response  = $this->getResponse();
+    $response = $this->getResponse();
 
     try {
       $orm->deleteWhere
@@ -976,9 +976,9 @@ class AclMgmt_Qfdu_Model extends Model
   public function cleanQfduGroup($groupId, $areaId, $params  )
   {
 
-    $orm   = $this->getOrm();
-    $view  = $this->getView();
-    $response  = $this->getResponse();
+    $orm = $this->getOrm();
+    $view = $this->getView();
+    $response = $this->getResponse();
 
     try {
       $orm->deleteWhere
@@ -1028,8 +1028,8 @@ class AclMgmt_Qfdu_Model extends Model
   public function emptyQfduUsers($areaId, $params  )
   {
 
-    $orm       = $this->getOrm();
-    $response  = $this->getResponse();
+    $orm = $this->getOrm();
+    $response = $this->getResponse();
 
     try {
       $orm->deleteWhere
@@ -1096,7 +1096,7 @@ class AclMgmt_Qfdu_Model extends Model
           'wbf.message',
           array
           (
-            'resource'  => $response->i18n->l($domainNode->label, $domainNode->domainI18n.'.label')
+            'resource' => $response->i18n->l($domainNode->label, $domainNode->domainI18n.'.label')
           )
         ),
         Response::FORBIDDEN

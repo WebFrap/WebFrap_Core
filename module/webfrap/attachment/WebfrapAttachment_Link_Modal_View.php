@@ -28,13 +28,13 @@ class WebfrapAttachment_Link_Modal_View extends WgtModal
    * Die Breite des Modal Elements
    * @var int in px
    */
-  public $width   = 630 ;
+  public $width = 630 ;
 
   /**
    * Die Höhe des Modal Elements
    * @var int in px
    */
-  public $height   = 280 ;
+  public $height = 280 ;
 
 /*//////////////////////////////////////////////////////////////////////////////
 // Display Methodes
@@ -100,9 +100,9 @@ class WebfrapAttachment_Link_Modal_View extends WgtModal
     }
 
     $this->addVars(array(
-      'attachmentId'   => $attachId,
-      'refId'   => $context->refId,
-      'link'       => $fileNode,
+      'attachmentId' => $attachId,
+      'refId' => $context->refId,
+      'link' => $fileNode,
       'elementKey' => $context->element,
       'refMask' => $context->refMask,
       'preUrl' => $context->toUrlExt(),

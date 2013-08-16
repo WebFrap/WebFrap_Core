@@ -44,7 +44,7 @@ class WebfrapStatsBrowser_Graph extends LibGraphEz
     $this->data = new WebfrapStatsBrowser_Graph_Query();
     $this->data->fetch('2012-01-01');
 
-    $this->width  = 600;
+    $this->width = 600;
     $this->height = 300;
 
   }//end public function prepare */

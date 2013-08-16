@@ -40,7 +40,7 @@ class Widget_Module extends Module
     if (Log::$levelDebug)
       Debug::console('Widget: '.$name);
 
-    $className    = ''.SParserString::subToCamelCase($name).'_Widget';
+    $className = ''.SParserString::subToCamelCase($name).'_Widget';
     $classNameOld = 'WgtWidget'.SParserString::subToCamelCase($name);
 
     if (!Webfrap::classExists($className)) {

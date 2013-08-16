@@ -43,8 +43,8 @@ class AclMgmt_Multi_Model extends Model
   public function update($params   )
   {
 
-    $orm  = $this->getOrm();
-    $db   = $this->getDb();
+    $orm = $this->getOrm();
+    $db = $this->getDb();
     $view = $this->getView();
 
     try {
@@ -117,7 +117,7 @@ class AclMgmt_Multi_Model extends Model
   {
 
     $httpRequest = $this->getRequest();
-    $orm         = $this->getOrm();
+    $orm = $this->getOrm();
 
     try {
 

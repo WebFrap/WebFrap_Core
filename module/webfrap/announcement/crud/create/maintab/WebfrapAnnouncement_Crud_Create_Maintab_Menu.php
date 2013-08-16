@@ -40,11 +40,11 @@ class WbfsysAnnouncement_Crud_Create_Maintab_Menu extends WgtDropmenu
   {
 
     // laden der mvc/utils adapter Objekte
-    $acl   = $this->getAcl();
-    $view   = $this->getView();
+    $acl = $this->getAcl();
+    $view = $this->getView();
 
     $entries = new TArray();
-    $entries->support  = $this->entriesSupport($params);
+    $entries->support = $this->entriesSupport($params);
 
     // prüfen ob der aktuelle benutzer überhaupt neue einträge anlegen darf
     if ($params->access->insert) {

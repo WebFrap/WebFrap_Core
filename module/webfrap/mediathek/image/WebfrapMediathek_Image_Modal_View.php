@@ -34,13 +34,13 @@ class WebfrapMediathek_Image_Modal_View extends WgtModal
    * Die Breite des Modal Elements
    * @var int in px
    */
-  public $width   = 600 ;
+  public $width = 600 ;
 
   /**
    * Die Höhe des Modal Elements
    * @var int in px
    */
-  public $height   = 300 ;
+  public $height = 300 ;
 
 /*//////////////////////////////////////////////////////////////////////////////
 // Display Methodes
@@ -66,7 +66,7 @@ class WebfrapMediathek_Image_Modal_View extends WgtModal
     $this->setTemplate('webfrap/mediathek/modal/form_image_add');
 
     $this->addVars(array(
-      'mediaId'    => $mediaId,
+      'mediaId' => $mediaId,
       'elementKey' => $elementId,
     ));
 
@@ -94,10 +94,10 @@ class WebfrapMediathek_Image_Modal_View extends WgtModal
     $this->setTemplate('webfrap/mediathek/modal/form_image_edit');
 
     $this->addVars(array(
-      'imageId'    => $imageId,
-      'mediaId'    => $mediaId,
-      'elementId'  => $elementId,
-      'image'      => $imageNode,
+      'imageId' => $imageId,
+      'mediaId' => $mediaId,
+      'elementId' => $elementId,
+      'image' => $imageNode,
     ));
 
   }//end public function displayEdit */

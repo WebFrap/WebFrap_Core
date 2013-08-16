@@ -41,15 +41,15 @@ class DaidalosDb_Maintab_Menu extends WgtDropmenu
 
     $view = $this->view;
 
-    $iconMenu          = '<i class="icon-reorder" ></i>';
-    $iconClose         = '<i class="icon-remove-circle " ></i>';
-    $iconQuery         = $view->icon('daidalos/query.png' ,'Query');
+    $iconMenu = '<i class="icon-reorder" ></i>';
+    $iconClose = '<i class="icon-remove-circle " ></i>';
+    $iconQuery = $view->icon('daidalos/query.png' ,'Query');
     $iconSupport = $view->icon('control/support.png'  ,'Support');
-    $iconBug     = $view->icon('control/bug.png'      ,'Bug');
-    $iconFaq     = $view->icon('control/faq.png'      ,'Faq');
+    $iconBug = $view->icon('control/bug.png'      ,'Bug');
+    $iconFaq = $view->icon('control/faq.png'      ,'Faq');
 
     $entries = new TArray();
-    //$entries->support  = $this->entriesSupport($params);
+    //$entries->support = $this->entriesSupport($params);
 
     $this->content = <<<HTML
 

@@ -39,11 +39,11 @@ class DaidalosAcl_Maintab_Menu extends WgtDropmenu
   public function buildMenu($params)
   {
 
-    $iconMenu          = '<i class="icon-reorder" ></i>';
-    $iconClose         = '<i class="icon-remove-circle " ></i>';
+    $iconMenu = '<i class="icon-reorder" ></i>';
+    $iconClose = '<i class="icon-remove-circle " ></i>';
 
     $entries = new TArray();
-    $entries->support  = $this->entriesSupport($params);
+    $entries->support = $this->entriesSupport($params);
 
     $this->content = <<<HTML
 <ul class="wgt-dropmenu" id="{$this->id}" style="z-index:500;height:16px;"  >
@@ -75,7 +75,7 @@ HTML;
   {
 
     $iconSupport = $this->view->icon('control/support.png'  ,'Support');
-    $iconFaq     = $this->view->icon('control/faq.png'      ,'Faq');
+    $iconFaq = $this->view->icon('control/faq.png'      ,'Faq');
 
     $html = <<<HTML
 

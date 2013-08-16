@@ -46,12 +46,12 @@ class WebfrapDocuModule_Controller extends Controller
    */
   protected $options = array(
     'list' => array(
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
     'entry' => array(
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
   );
 

@@ -31,7 +31,7 @@ class WebfrapContact_List_Menu extends WgtMenuBuilder_SplitButton
   {
     
     $this->buttons = array(
-      'edit'    => array(
+      'edit' => array(
         Wgt::ACTION_BUTTON_GET,
         'Edit',
         'maintab.php?c=Webfrap.Contact.edit&amp;objid=',
@@ -40,7 +40,7 @@ class WebfrapContact_List_Menu extends WgtMenuBuilder_SplitButton
         'wbf.label',
         Acl::UPDATE
       ),
-      'message'    => array(
+      'message' => array(
         Wgt::ACTION_BUTTON_GET,
         'Contact',
         'modal.php?c=Webfrap.Contact.contactForm&amp;objid=',
@@ -49,7 +49,7 @@ class WebfrapContact_List_Menu extends WgtMenuBuilder_SplitButton
         'wbf.label',
         Acl::LISTING
       ),
-      'delete'  => array(
+      'delete' => array(
         Wgt::ACTION_DELETE,
         'Delete',
         'index.php?c=Webfrap.Contact.delete&amp;objid=',
@@ -58,7 +58,7 @@ class WebfrapContact_List_Menu extends WgtMenuBuilder_SplitButton
         'wbf.label',
         Acl::DELETE
       ),
-      'sep'  => array(
+      'sep' => array(
         Wgt::ACTION_SEP
       ),
     

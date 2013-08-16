@@ -77,19 +77,19 @@ class WebfrapCache_Maintab_View extends WgtMaintabCustom
   public function addMenu($params)
   {
 
-    $i18n         = $this->getI18n();
+    $i18n = $this->getI18n();
 
-    $iconMenu     = '<i class="icon-reorder" ></i>';
-    $iconSupport  = $this->icon('control/support.png'      ,'Support');
-    $iconHelp     = $this->icon('control/help.png'      ,'Help');
-    $iconClose    = '<i class="icon-remove-circle " ></i>';
-    $iconEdit     = '<i class="icon-edit" ></i>';
-    $iconBug      = $this->icon('control/bug.png'      ,'Bug');
-    $iconFaq      = '<i class="icon-bookmark" ></i>';
+    $iconMenu = '<i class="icon-reorder" ></i>';
+    $iconSupport = $this->icon('control/support.png'      ,'Support');
+    $iconHelp = $this->icon('control/help.png'      ,'Help');
+    $iconClose = '<i class="icon-remove-circle " ></i>';
+    $iconEdit = '<i class="icon-edit" ></i>';
+    $iconBug = $this->icon('control/bug.png'      ,'Bug');
+    $iconFaq = '<i class="icon-bookmark" ></i>';
 
-    $iconRefresh    = '<i class="icon-refresh" ></i>';
+    $iconRefresh = '<i class="icon-refresh" ></i>';
 
-    $menu          = $this->newMenu($this->id.'_dropmenu');
+    $menu = $this->newMenu($this->id.'_dropmenu');
     $menu->content = <<<HTML
 
 <div class="inline" >

@@ -88,7 +88,7 @@ class WebfrapDocu_Modal_View extends WgtModal
 
     $iconEdit = '<i class="icon-edit" ></i>';
 
-    $menu          =  <<<HTML
+    $menu =  <<<HTML
 
 <div class="wgt-panel wgt-border" >
 

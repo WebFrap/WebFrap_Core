@@ -39,12 +39,12 @@ class WebfrapMessage_Checklist_Controller extends Controller
 
     // message logic
     'save' => array(
-      'method'    => array('PUT'),
-      'views'      => array('ajax')
+      'method' => array('PUT'),
+      'views' => array('ajax')
     ),
     'delete' => array(
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
 
   );
@@ -83,7 +83,7 @@ class WebfrapMessage_Checklist_Controller extends Controller
     }
 
     /* @var $view WebfrapMessage_Checklist_Ajax_View */
-    $view   = $response->loadView(
+    $view = $response->loadView(
       'form-messages-checklist-save',
       'WebfrapMessage_Checklist',
       'displaySave'
@@ -113,7 +113,7 @@ class WebfrapMessage_Checklist_Controller extends Controller
   {
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params  = $this->getFlags($request);
+    $params = $this->getFlags($request);
 
     $model = $this->loadModel('WebfrapMessage');
     $model->loadTableAccess($params);

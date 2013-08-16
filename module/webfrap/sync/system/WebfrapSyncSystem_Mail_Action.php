@@ -48,7 +48,7 @@ class WebfrapSyncSystem_Mail_Action extends Action
 
       $messages = $mailConnector->getRange($pos,10);
 
-      $msgIds   = array();
+      $msgIds = array();
 
       foreach ($messages as /* @var $message ezcMail */ $message) {
 

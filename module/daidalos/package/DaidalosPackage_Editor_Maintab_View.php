@@ -85,19 +85,19 @@ class DaidalosPackage_Editor_Maintab_View extends WgtMaintabCustom
   protected function addMenu($key, $params)
   {
 
-    $i18n         = $this->getI18n();
+    $i18n = $this->getI18n();
 
-    $iconMenu     = '<i class="icon-reorder" ></i>';
-    $iconSupport  = $this->icon('control/support.png'      ,'Support');
-    $iconHelp     = $this->icon('control/help.png'      ,'Help');
-    $iconClose    = '<i class="icon-remove-circle " ></i>';
-    $iconSave     = '<i class="icon-save" ></i>';
-    $iconBug      = $this->icon('control/bug.png'      ,'Bug');
+    $iconMenu = '<i class="icon-reorder" ></i>';
+    $iconSupport = $this->icon('control/support.png'      ,'Support');
+    $iconHelp = $this->icon('control/help.png'      ,'Help');
+    $iconClose = '<i class="icon-remove-circle " ></i>';
+    $iconSave = '<i class="icon-save" ></i>';
+    $iconBug = $this->icon('control/bug.png'      ,'Bug');
 
-    $iconSync      = $this->icon('control/sync.png'      ,'Sync');
-    $iconBuild     = $this->icon('daidalos/build.png'      ,'Build');
+    $iconSync = $this->icon('control/sync.png'      ,'Sync');
+    $iconBuild = $this->icon('daidalos/build.png'      ,'Build');
 
-    $menu          = $this->newMenu($this->id.'_dropmenu');
+    $menu = $this->newMenu($this->id.'_dropmenu');
     $menu->content = <<<HTML
 <ul class="wcm wcm_ui_dropmenu wgt-dropmenu" id="{$this->id}_dropmenu" >
   <li class="wgt-root" >

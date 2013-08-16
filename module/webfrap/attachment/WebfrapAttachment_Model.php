@@ -236,7 +236,7 @@ class WebfrapAttachment_Model extends Model
       $fileNode->name = $file->getNewname();
       $fileNode->file_hash = $checkSum;
       $fileNode->file_size = $fileSize;
-      $fileNode->mimetype  = $file->getFiletype();
+      $fileNode->mimetype = $file->getFiletype();
 
       $fileId = $fileNode->getId();
 
@@ -246,8 +246,8 @@ class WebfrapAttachment_Model extends Model
     }
 
     $fileNode->flag_versioning = $versioning;
-    $fileNode->description     = $description;
-    $fileNode->id_type         = $type;
+    $fileNode->description = $description;
+    $fileNode->id_type = $type;
     $fileNode->id_confidentiality = $confidentiality;
 
     $fileNode = $orm->update($fileNode);
@@ -305,7 +305,7 @@ class WebfrapAttachment_Model extends Model
   public function cleanAttachments($refId)
   {
 
-    $orm    = $this->getOrm();
+    $orm = $this->getOrm();
     $orm->deleteWhere('WbfsysEntityAttachment', "vid=".$refId);
 
   }//end public function cleanAttachments */
@@ -317,7 +317,7 @@ class WebfrapAttachment_Model extends Model
   public function disconnect($objid)
   {
 
-    $orm    = $this->getOrm();
+    $orm = $this->getOrm();
     $orm->delete('WbfsysEntityAttachment', $objid);
 
   }//end public function disconnect */
@@ -329,7 +329,7 @@ class WebfrapAttachment_Model extends Model
   public function deleteFile($attachId)
   {
 
-    $orm    = $this->getOrm();
+    $orm = $this->getOrm();
 
     $fileId = $orm->getField('WbfsysEntityAttachment', $attachId, 'id_file');
 
@@ -359,7 +359,7 @@ class WebfrapAttachment_Model extends Model
     $db = $this->getDb();
     $wheres = array();
 
-    $condEntry  = '';
+    $condEntry = '';
     $condAttach = '';
 
     if ($refId) {
@@ -476,7 +476,7 @@ SQL;
     }
     
     if ($searchStack) {
-      $wheres[]  = ' AND ( '.implode(' AND ', $searchStack).' ) ';
+      $wheres[] = ' AND ( '.implode(' AND ', $searchStack).' ) ';
     } 
     
     $sqlWhere = implode( ' AND ', $wheres);
@@ -672,7 +672,7 @@ SQL;
   public function deleteStorage($storageId)
   {
 
-    $orm    = $this->getOrm();
+    $orm = $this->getOrm();
 
     $orm->delete('WbfsysFileStorage', $storageId);
 
@@ -694,7 +694,7 @@ SQL;
 
     $db = $this->getDb();
 
-    $condEntry  = '';
+    $condEntry = '';
     $condAttach = '';
 
     if ($refId) {

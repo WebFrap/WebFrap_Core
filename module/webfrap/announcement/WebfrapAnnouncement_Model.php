@@ -35,7 +35,7 @@ class WebfrapAnnouncement_Model extends Model
   public function getUserChannel($user)
   {
 
-    $orm     = $this->getOrm();
+    $orm = $this->getOrm();
     $channel = $orm->getByKey('WbfsysAnnouncementChannel', 'user_'.$user->getId()  );
 
     // wenn es den channel nicht gibt wird der automatisch angelegt
@@ -73,7 +73,7 @@ class WebfrapAnnouncement_Model extends Model
 
     $label = SParserString::subToCamelCase($entity);
 
-    $orm     = $this->getOrm();
+    $orm = $this->getOrm();
     $channel = $orm->getByKey('WbfsysAnnouncementChannel', 'entity_'.$entity  );
 
     // wenn es den channel nicht gibt wird der automatisch angelegt

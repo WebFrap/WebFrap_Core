@@ -30,37 +30,37 @@ class WebfrapKnowhowNode_Controller extends Controller
   /**
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'open' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
     'show' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
     'opendialog' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('modal')
+      'method' => array('GET'),
+      'views' => array('modal')
     ),
     'save' => array
     (
-      'method'    => array('POST','PUT'),
-      'views'      => array('ajax')
+      'method' => array('POST','PUT'),
+      'views' => array('ajax')
     ),
     'autocomplete' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
     'delete' => array
     (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
   );
 
@@ -76,9 +76,9 @@ class WebfrapKnowhowNode_Controller extends Controller
   public function service_open($request, $response)
   {
 
-    $idContainer  = $request->param('container', Validator::EID);
-    $nodeKey      = $request->param('node', Validator::TEXT);
-    $objid        = $request->param('objid', Validator::EID);
+    $idContainer = $request->param('container', Validator::EID);
+    $nodeKey = $request->param('node', Validator::TEXT);
+    $objid = $request->param('objid', Validator::EID);
 
     /* @var $view WebfrapKnowhowNode_Maintab_View  */
     $view = $response->loadView
@@ -110,9 +110,9 @@ class WebfrapKnowhowNode_Controller extends Controller
   public function service_show($request, $response)
   {
 
-    $idContainer  = $request->param('container', Validator::EID);
-    $nodeKey      = $request->param('node', Validator::TEXT);
-    $objid        = $request->param('objid', Validator::EID);
+    $idContainer = $request->param('container', Validator::EID);
+    $nodeKey = $request->param('node', Validator::TEXT);
+    $objid = $request->param('objid', Validator::EID);
 
     /* @var $view WebfrapKnowhowNode_Show_Maintab_View  */
     $view = $response->loadView
@@ -144,7 +144,7 @@ class WebfrapKnowhowNode_Controller extends Controller
   public function service_openDialog($request, $response)
   {
 
-    $refId   = $request->param('refid', Validator::EID);
+    $refId = $request->param('refid', Validator::EID);
     $element = $request->param('element', Validator::CKEY);
 
     /* @var $view WebfrapKnowhowNode_Modal_View  */
@@ -172,16 +172,16 @@ class WebfrapKnowhowNode_Controller extends Controller
     $model = $this->loadModel('WebfrapKnowhowNode');
 
     // params
-    $elId    = $request->param('element', Validator::CKEY);
+    $elId = $request->param('element', Validator::CKEY);
 
     // data
-    $title     = $request->data('title', Validator::TEXT);
+    $title = $request->data('title', Validator::TEXT);
     $accessKey = $request->data('access_key', Validator::TEXT);
-    $content   = $request->data('content', Validator::TEXT);
+    $content = $request->data('content', Validator::TEXT);
     $container = $request->data('id_container', Validator::EID);
-    $rowid     = $request->data('rowid', Validator::EID);
+    $rowid = $request->data('rowid', Validator::EID);
 
-    $context   = $response->createContext();
+    $context = $response->createContext();
 
     $context->assertNotNull('Missing the Title', $title);
     $context->assertNotNull('Missing the Key', $accessKey);
@@ -228,11 +228,11 @@ class WebfrapKnowhowNode_Controller extends Controller
     /* @var $model WebfrapKnowhowNode_Model */
     $model = $this->loadModel('WebfrapKnowhowNode');
 
-    $key   = $request->param('key', Validator::TEXT);
+    $key = $request->param('key', Validator::TEXT);
 
     // die sollte entweder per autocomplete kommen oder statisch im widget
     // vorhanden sein
-    $refId  = $request->param('refid', Validator::EID);
+    $refId = $request->param('refid', Validator::EID);
 
       // sicher stellen, dass alle benötigten Informationen vorhanden sind
     if (!$key || !$refId) {
@@ -257,7 +257,7 @@ class WebfrapKnowhowNode_Controller extends Controller
   public function service_delete($request, $response)
   {
 
-    $id   = $request->param('objid', Validator::EID);
+    $id = $request->param('objid', Validator::EID);
     $node = $request->param('node', Validator::TEXT);
 
     /* @var $model WebfrapKnowhowNode_Model */

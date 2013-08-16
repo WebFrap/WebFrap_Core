@@ -73,12 +73,12 @@ class WbfsysAnnouncement_Crud_Create_Maintab_View extends WgtMaintabCustom
     $this->setTemplate('wbfsys/announcement/maintab/crud/form_create');
 
     // Setzen von Viewspezifischen Control Flags
-    $params->viewType  = 'maintab';
-    $params->viewId    = $this->getId();
+    $params->viewType = 'maintab';
+    $params->viewId = $this->getId();
 
     // Form Target und ID definieren
-    $params->formAction  = 'ajax.php?c=Wbfsys.Announcement.insert';
-    $params->formId       = 'wgt-form-wbfsys_announcement';
+    $params->formAction = 'ajax.php?c=Wbfsys.Announcement.insert';
+    $params->formId = 'wgt-form-wbfsys_announcement';
 
     // Setzen der letzten metadaten
     $this->addVar('params', $params);
@@ -121,7 +121,7 @@ class WbfsysAnnouncement_Crud_Create_Maintab_View extends WgtMaintabCustom
   public function addMenu($params)
   {
 
-    $menu     = $this->newMenu
+    $menu = $this->newMenu
     (
       $this->id.'_dropmenu',
       'WbfsysAnnouncement_Crud_Create'

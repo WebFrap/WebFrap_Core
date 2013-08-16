@@ -64,7 +64,7 @@ class TestRunner_Cli_View extends LibTemplateCli
 
         $engine->runSingleTestFile($path, $className);
 
-        $numTests    = $report->numClassTests($className);
+        $numTests = $report->numClassTests($className);
         $failedTests = $report->numClassTestsFailed($className);
 
         if (!$numTests || !$failedTests) {

@@ -59,7 +59,7 @@ class WebfrapMediathek_Document_Ajax_View extends LibTemplatePlain
 
     $pageFragment = new WgtAjaxArea();
     $pageFragment->selector = 'table#wgt-grid-mediathek-'.$elementId.'-document-table>tbody';
-    $pageFragment->action   = 'prepend';
+    $pageFragment->action = 'prepend';
 
     $mediathekElement = new WgtElementMediathek();
     $mediathekElement->setId($elementId);
@@ -93,12 +93,12 @@ WGTJS;
 
     $pageFragment = new WgtAjaxArea();
     $pageFragment->selector = 'tr#wgt-grid-mediathek-'.$elementId.'-file_row_'.$imgId.'-2';
-    $pageFragment->action   = 'remove';
+    $pageFragment->action = 'remove';
     $tpl->setArea('remove_entries', $pageFragment);
 
     $pageFragment = new WgtAjaxArea();
     $pageFragment->selector = 'tr#wgt-grid-mediathek-'.$elementId.'-file_row_'.$imgId.'-1';
-    $pageFragment->action   = 'replace';
+    $pageFragment->action = 'replace';
 
     $mediathekElement = new WgtElementMediathek();
     $mediathekElement->mediaId = $mediaId;
@@ -156,7 +156,7 @@ WGTJS;
 
     $pageFragment = new WgtAjaxArea();
     $pageFragment->selector = 'table#wgt-grid-mediathek-'.$elementId.'-document-table>tbody';
-    $pageFragment->action   = 'html';
+    $pageFragment->action = 'html';
 
     $mediathekElement = new WgtElementMediathek();
     $mediathekElement->idKey = $elementId;

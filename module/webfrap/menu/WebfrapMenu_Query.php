@@ -38,8 +38,8 @@ class WebfrapMenu_Query extends LibSqlQuery
   public function fetchMenuEntries($menuKey , $params = null)
   {
 
-    $this->sourceSize   = null;
-    $db                 = $this->getDb();
+    $this->sourceSize = null;
+    $db = $this->getDb();
 
     $query = <<<CODE
 
@@ -60,7 +60,7 @@ order by
 CODE;
 
     // Run Query und save the result
-    $this->result     = $db->select($query);
+    $this->result = $db->select($query);
 
   }//end public function fetchMenuEntries */
 

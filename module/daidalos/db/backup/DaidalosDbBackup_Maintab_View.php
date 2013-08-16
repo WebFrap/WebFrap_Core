@@ -96,7 +96,7 @@ class DaidalosDbBackup_Maintab_View extends WgtMaintabCustom
   public function addMenu($params, $key)
   {
 
-    $menu     = $this->newMenu
+    $menu = $this->newMenu
     (
       $this->id.'_dropmenu',
       'DaidalosDbBackup'

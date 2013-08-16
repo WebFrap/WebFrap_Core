@@ -38,10 +38,10 @@ class WebfrapComment_Model extends Model
     $orm = $this->getOrm();
 
     $commentNode = $orm->newEntity("WbfsysComment");
-    $commentNode->title   = $title;
+    $commentNode->title = $title;
     $commentNode->content = $comment;
-    $commentNode->vid     = $refId;
-    $commentNode->m_parent  = $parent;
+    $commentNode->vid = $refId;
+    $commentNode->m_parent = $parent;
     $commentNode = $orm->insert($commentNode);
 
     return $commentNode;
@@ -61,7 +61,7 @@ class WebfrapComment_Model extends Model
     $orm = $this->getOrm();
 
     $commentNode = $orm->get("WbfsysComment", $rowid);
-    $commentNode->title   = $title;
+    $commentNode->title = $title;
     $commentNode->content = $comment;
     $commentNode = $orm->update($commentNode);
 
@@ -76,7 +76,7 @@ class WebfrapComment_Model extends Model
   public function cleanComments($refId)
   {
 
-    $orm    = $this->getOrm();
+    $orm = $this->getOrm();
     $orm->deleteWhere('WbfsysComment', "vid=".$refId);
 
   }//end public function cleanDsetTags */
@@ -88,7 +88,7 @@ class WebfrapComment_Model extends Model
   public function delete($objid)
   {
 
-    $orm    = $this->getOrm();
+    $orm = $this->getOrm();
     $orm->delete('WbfsysComment', $objid);
 
   }//end public function delete */

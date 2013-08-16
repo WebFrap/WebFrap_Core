@@ -74,7 +74,7 @@ class DaidalosAcl_Model extends Model
   public function dissableAllUsers()
   {
 
-    $orm  = $this->getDb()->getOrm();
+    $orm = $this->getDb()->getOrm();
     $crit = $orm->newCriteria();
 
     $crit->table('wbfsys_role_user');

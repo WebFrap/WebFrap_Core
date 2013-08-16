@@ -40,7 +40,7 @@ class WebfrapKnowhowNode_Ajax_View extends LibTemplatePlain
 
     $pageFragment = new WgtAjaxArea();
     $pageFragment->selector = '#wgt-input-commenttree-'.$elementId.'-rowid';
-    $pageFragment->action   = 'value';
+    $pageFragment->action = 'value';
 
     $pageFragment->setContent($node->getId());
 

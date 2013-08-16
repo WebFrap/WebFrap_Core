@@ -72,7 +72,7 @@ WGTJS;
 
     $pageFragment = new WgtAjaxArea();
     $pageFragment->selector = 'tr#wgt-grid-attachment-'.$context->element.'_row_'.$entry['attach_id'];
-    $pageFragment->action   = 'replace';
+    $pageFragment->action = 'replace';
 
     $attachmentElement = new WgtElementAttachmentList('tmp', $context);
     $attachmentElement->setId($context->element);
@@ -129,7 +129,7 @@ WGTJS;
 
     $pageFragment = new WgtAjaxArea();
     $pageFragment->selector = 'table#wgt-grid-attachment-'.$context->element.'-table>tbody';
-    $pageFragment->action   = 'html';
+    $pageFragment->action = 'html';
 
     $attachmentElement = new WgtElementAttachmentList('tmp', $context);
     $attachmentElement->setData($data);
@@ -202,7 +202,7 @@ WGTJS;
 
     $pageFragment = new WgtAjaxArea();
     $pageFragment->selector = 'tr#wgt-grid-attachment-'.$context->element.'-storage_row_'.$entry['storage_id'];
-    $pageFragment->action   = 'replace';
+    $pageFragment->action = 'replace';
 
     $attachmentElement = new WgtElementAttachmentList('tmp', $context);
     $attachmentElement->setId($context->element);

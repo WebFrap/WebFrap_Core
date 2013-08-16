@@ -57,7 +57,7 @@ class DaidalosDb_Model extends Model
   public function getDatabases()
   {
 
-    $dbAdmin    = new LibDbAdminPostgresql($this->getDb());
+    $dbAdmin = new LibDbAdminPostgresql($this->getDb());
 
     return $dbAdmin->getDatabases();
 
@@ -109,7 +109,7 @@ SQL;
 
      */
 
-    $dbAdmin    = new LibDbAdminPostgresql($this->getDb());
+    $dbAdmin = new LibDbAdminPostgresql($this->getDb());
 
     return $dbAdmin->getSchemas($dbName);
 
@@ -133,7 +133,7 @@ SQL;
     WHERE
     table_catalog = '{$dbName}'
     AND table_schema = '{$schemaKey}'
-    AND table_type  = 'BASE TABLE'
+    AND table_type = 'BASE TABLE'
     ORDER BY table_name ;
 SQL;
 

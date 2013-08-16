@@ -61,7 +61,7 @@ class WebfrapExport_Model extends MvcModel_Domain
           'wbf.message',
           array
           (
-            'resource'  => $response->i18n->l($this->domainNode->label, $this->domainNode->domainI18n.'.label')
+            'resource' => $response->i18n->l($this->domainNode->label, $this->domainNode->domainI18n.'.label')
           )
         ),
         Response::FORBIDDEN

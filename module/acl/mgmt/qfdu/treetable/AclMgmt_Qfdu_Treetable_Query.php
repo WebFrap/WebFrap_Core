@@ -36,7 +36,7 @@ class AclMgmt_Qfdu_Treetable_Query extends LibSqlQuery
    * Sub Users
    * @var array
    */
-  public $users    = array();
+  public $users = array();
 
   /**
    * Sub Datasets
@@ -65,8 +65,8 @@ class AclMgmt_Qfdu_Treetable_Query extends LibSqlQuery
 
     $params->qsize = -1;
 
-    $this->sourceSize  = null;
-    $db                = $this->getDb();
+    $this->sourceSize = null;
+    $db = $this->getDb();
 
     if (!$this->criteria) {
       $criteria = $db->orm->newCriteria();
@@ -81,26 +81,26 @@ class AclMgmt_Qfdu_Treetable_Query extends LibSqlQuery
 
 
     // Run Query und save the result
-    $result           = $db->orm->select($criteria);
-    $this->calcQuery  = $criteria->count('count(DISTINCT group_users.rowid) as '.Db::Q_SIZE);
+    $result = $db->orm->select($criteria);
+    $this->calcQuery = $criteria->count('count(DISTINCT group_users.rowid) as '.Db::Q_SIZE);
 
-    $this->data       = array();
-    $this->users      = array();
+    $this->data = array();
+    $this->users = array();
 
     foreach ($result as $row) {
       $this->data[(int) $row['role_group_rowid']] = $row;
 
       if (!is_null($row['group_users_vid'])) {
-        $this->datasets[(int) $row['role_group_rowid']][(int) $row['role_user_rowid']][]  = $row;
+        $this->datasets[(int) $row['role_group_rowid']][(int) $row['role_user_rowid']][] = $row;
       } else {
-        $this->users[(int) $row['role_group_rowid']][(int) $row['role_user_rowid']]  = $row;
+        $this->users[(int) $row['role_group_rowid']][(int) $row['role_user_rowid']] = $row;
       }
 
       if (!isset($this->users[(int) $row['role_group_rowid']][(int) $row['role_user_rowid']])) {
         $this->users[(int) $row['role_group_rowid']][(int) $row['role_user_rowid']] = array
         (
           'name' => $row['user'],
-          'id'   => $row['role_user_rowid'],
+          'id' => $row['role_user_rowid'],
         );
       }
 

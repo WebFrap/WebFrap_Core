@@ -72,20 +72,20 @@ class DaidalosPackage_Component_Iterator extends IoFolderIterator
    */
   public $tyeFolderMap = array
   (
-    'module'      => 'code',
+    'module' => 'code',
     'core_module' => 'code',
-    'code'        => 'code',
-    'framework'   => 'code',
-    'webfrap'     => 'code',
-    'lib'         => 'code',
-    'docu'        => 'docu',
-    'db_dump'     => 'db_dump',
-    'wgt'         => 'wgt',
-    'ui_theme'    => 'ui_theme',
-    'icon_theme'  => 'icon_theme',
-    'gateway'     => 'gateway',
-    'vendor'      => 'vendor',
-    'metadata'    => 'metadata'
+    'code' => 'code',
+    'framework' => 'code',
+    'webfrap' => 'code',
+    'lib' => 'code',
+    'docu' => 'docu',
+    'db_dump' => 'db_dump',
+    'wgt' => 'wgt',
+    'ui_theme' => 'ui_theme',
+    'icon_theme' => 'icon_theme',
+    'gateway' => 'gateway',
+    'vendor' => 'vendor',
+    'metadata' => 'metadata'
   );
 
   /**
@@ -134,7 +134,7 @@ class DaidalosPackage_Component_Iterator extends IoFolderIterator
       return null;
     }
 
-    $tmp     = null;
+    $tmp = null;
     $doAgain = true;
 
     while ($doAgain) {
@@ -144,18 +144,18 @@ class DaidalosPackage_Component_Iterator extends IoFolderIterator
 
       if ($this->activFolder) {
         $current = $this->activFolder->current();
-        $key     = $this->activFolder->key();
+        $key = $this->activFolder->key();
 
         if (!$current) {
           $this->activFolder = null;
-          $this->current     = null;
-          $this->key         = null;
+          $this->current = null;
+          $this->key = null;
           $doAgain = true;
           continue;
         } else {
           $this->activFolder->next();
           $this->current = $current;
-          $this->key     = $key;
+          $this->key = $key;
           break;
         }
 
@@ -166,21 +166,21 @@ class DaidalosPackage_Component_Iterator extends IoFolderIterator
         next($this->componentFolders);
 
         if ($activFolder) {
-          $componentName     = $this->componentName;
+          $componentName = $this->componentName;
 
           $this->activFolder = new DaidalosPackage_File_Iterator
           (
             PATH_ROOT.$this->componentName.'/'.$activFolder->getAttribute('name'),
             $this->targetFolder,
             IoFileIterator::RELATIVE,
-            (trim($activFolder->getAttribute('recursive'))  ==  'false' ?false :true),
+            (trim($activFolder->getAttribute('recursive')) ==  'false' ?false :true),
             (trim($activFolder->getAttribute('filter'))  !='' ?trim($activFolder->getAttribute('filter')) :null)
           );
 
           $doAgain = true;
           continue;
         } else {
-          $this->activFolder      = null;
+          $this->activFolder = null;
           $this->componentFolders = null;
         }
       }
@@ -188,9 +188,9 @@ class DaidalosPackage_Component_Iterator extends IoFolderIterator
       $next = current($this->components);
 
       if (!$next) {
-        $this->activFolder      = null;
+        $this->activFolder = null;
         $this->componentFolders = null;
-        $this->current          = null;
+        $this->current = null;
         break;
       } else {
         next($this->components);
@@ -201,19 +201,19 @@ class DaidalosPackage_Component_Iterator extends IoFolderIterator
           $this->componentFolders[] = $folder;
         }
 
-        $this->componentName    = $next->getAttribute('name');
+        $this->componentName = $next->getAttribute('name');
 
         $type = $next->getAttribute('type');
         if (!$type)
           $type = 'code';
 
-        $this->componentType    = $type;
+        $this->componentType = $type;
 
         $target = $next->getAttribute('target');
         if (!$target)
           $target = $this->componentName;
 
-        $this->targetFolder     = (isset($this->tyeFolderMap[$type])? $this->tyeFolderMap[$type].'/'
+        $this->targetFolder = (isset($this->tyeFolderMap[$type])? $this->tyeFolderMap[$type].'/'
           : 'code/').$target;
 
         Debug::console("Got component {$this->componentName} target {$this->targetFolder}");
@@ -233,10 +233,10 @@ class DaidalosPackage_Component_Iterator extends IoFolderIterator
    */
   public function rewind ()
   {
-    $this->componentFolders  = null;
-    $this->componentName     = null;
-    $this->key               = null;
-    $this->current           = null;
+    $this->componentFolders = null;
+    $this->componentName = null;
+    $this->key = null;
+    $this->current = null;
 
     if ($this->components) {
       reset($this->components);

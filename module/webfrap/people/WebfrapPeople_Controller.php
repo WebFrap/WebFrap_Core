@@ -63,10 +63,10 @@ class WebfrapPeople_Controller extends Controller
 
     $model = $this->loadModel('WebfrapPeople');
 
-    $view   = $this->tpl->loadView('WebfrapPeople_Ajax');
+    $view = $this->tpl->loadView('WebfrapPeople_Ajax');
     $view->setModel($model);
 
-    $searchKey  = $request->param('key', Validator::TEXT);
+    $searchKey = $request->param('key', Validator::TEXT);
 
     $error = $view->displayAutocomplete($searchKey, $params);
 
@@ -97,41 +97,41 @@ class WebfrapPeople_Controller extends Controller
   protected function getListingFlags($request)
   {
 
-    $response  = $this->getResponse();
+    $response = $this->getResponse();
 
     $params = new TFlag();
 
     // input type
     if ($suffix = $request->param('suffix', Validator::CKEY))
-      $params->suffix    = $suffix;
+      $params->suffix = $suffix;
 
     // append entries
     if ($append = $request->param('append', Validator::BOOLEAN))
-      $params->append    = $append;
+      $params->append = $append;
 
     // startpunkt des pfades für die acls
     if ($aclRoot = $request->param('a_root', Validator::CKEY))
-      $params->aclRoot    = $aclRoot;
+      $params->aclRoot = $aclRoot;
 
     // die id des Datensatzes von dem aus der Pfad gestartet wurde
     if ($aclRootId = $request->param('a_root_id', Validator::INT))
-      $params->aclRootId    = $aclRootId;
+      $params->aclRootId = $aclRootId;
 
     // der key des knotens auf dem wir uns im pfad gerade befinden
     if ($aclKey = $request->param('a_key', Validator::CKEY))
-      $params->aclKey    = $aclKey;
+      $params->aclKey = $aclKey;
 
     // der name des knotens
     if ($aclNode = $request->param('a_node', Validator::CKEY))
-      $params->aclNode    = $aclNode;
+      $params->aclNode = $aclNode;
 
     // an welchem punkt des pfades befinden wir uns?
     if ($aclLevel = $request->param('a_level', Validator::INT))
-      $params->aclLevel  = $aclLevel;
+      $params->aclLevel = $aclLevel;
 
     // start position of the query and size of the table
     $params->start
-      = $request->param('start', Validator::INT);
+ = $request->param('start', Validator::INT);
 
     // stepsite for query (limit) and the table
     if (!$params->qsize = $request->param('qsize', Validator::INT))
@@ -139,15 +139,15 @@ class WebfrapPeople_Controller extends Controller
 
     // order for the multi display element
     $params->order
-      = $request->param('order', Validator::CNAME);
+ = $request->param('order', Validator::CNAME);
 
     // target for a callback function
     $params->target
-      = $request->param('target', Validator::CKEY  );
+ = $request->param('target', Validator::CKEY  );
 
     // target for some ui element
     $params->targetId
-      = $request->param('target_id', Validator::CKEY  );
+ = $request->param('target_id', Validator::CKEY  );
 
     // flag for beginning seach filter
     if ($text = $request->param('begin', Validator::TEXT  )) {
@@ -158,15 +158,15 @@ class WebfrapPeople_Controller extends Controller
     // the model should add all inputs in the ajax request, not just the text
     // converts per default to false, thats ok here
     $params->fullLoad
-      = $request->param('full_load', Validator::BOOLEAN);
+ = $request->param('full_load', Validator::BOOLEAN);
 
     // keyname to tageting ui elements
     $params->keyName
-      = $request->param('key_name', Validator::CKEY  );
+ = $request->param('key_name', Validator::CKEY  );
 
     // the activ id, mostly needed in exlude calls
     $params->objid
-      = $request->param('objid', Validator::EID  );
+ = $request->param('objid', Validator::EID  );
 
     return $params;
 

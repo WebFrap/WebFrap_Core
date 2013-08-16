@@ -121,8 +121,8 @@ class AclMgmt_Dset_Maintab_View extends WgtMaintab
     $selectboxGroups = new WgtSelectbox('selectboxGroups', $this);
     $selectboxGroups->setData($this->model->getGroups($areaId, $params));
     $selectboxGroups->addAttributes(array(
-      'id'    => 'wgt-input-'.$this->domainNode->aclDomainKey.'-acl-dset-id_group',
-      'name'  => 'group_users[id_group]',
+      'id' => 'wgt-input-'.$this->domainNode->aclDomainKey.'-acl-dset-id_group',
+      'name' => 'group_users[id_group]',
       'class' => 'medium asgd-'.$params->formIdAppend
     ));
 
@@ -164,7 +164,7 @@ class AclMgmt_Dset_Maintab_View extends WgtMaintab
   public function createMenu($domainEntity, $params)
   {
 
-    $menu     = $this->newMenu
+    $menu = $this->newMenu
     (
       $this->id.'_dropmenu',
       'AclMgmt_Dset'

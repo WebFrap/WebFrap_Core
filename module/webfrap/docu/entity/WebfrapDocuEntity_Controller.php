@@ -46,8 +46,8 @@ class WebfrapDocuEntity_Controller extends Controller
    */
   protected $options = array(
     'show' => array(
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
   );
 

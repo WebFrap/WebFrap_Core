@@ -45,7 +45,7 @@ class WebRegister_Frontend_Controller extends ControllerFrontend
   /**
    * @var boolean
    */
-  protected $fullAccess         = true;
+  protected $fullAccess = true;
 
   /**
    * @var array
@@ -53,24 +53,24 @@ class WebRegister_Frontend_Controller extends ControllerFrontend
   protected $options = array
   (
     'listing' => array(
-      'method'    => array('GET'),
-      'views'      => array('html')
+      'method' => array('GET'),
+      'views' => array('html')
     ),
     'addarticle' => array(
-      'method'    => array('POST'),
-      'views'      => array('ajax')
+      'method' => array('POST'),
+      'views' => array('ajax')
     ),
     'removearticle' => array(
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
     'clear' => array(
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
     'update' => array(
-      'method'    => array('PUT'),
-      'views'      => array('ajax')
+      'method' => array('PUT'),
+      'views' => array('ajax')
     ),
   );
 
@@ -84,7 +84,7 @@ class WebRegister_Frontend_Controller extends ControllerFrontend
   public function service_listing($request,$response)
   {
 
-    $view    = $this->getView();
+    $view = $this->getView();
     $request = $this->getRequest();
 
     /* @var $model ShopFront_Model */

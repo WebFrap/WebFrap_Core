@@ -40,12 +40,12 @@ class WebfrapPeople_Access_List_Container extends LibAclPermission
     // um potentielle fehler abzufangen wird auch direkt der richtige Root gesetzt
     // nicht das hier einer einen falschen pfad injected
     if (is_null($params->aclRoot) || 1 == $params->aclLevel  ) {
-      $params->isAclRoot     = true;
-      $params->aclRoot       = 'mgmt-wbfsys_role_user';
-      $params->aclRootId     = null;
-      $params->aclKey        = 'mgmt-wbfsys_role_user';
-      $params->aclNode       = 'mgmt-wbfsys_role_user';
-      $params->aclLevel      = 1;
+      $params->isAclRoot = true;
+      $params->aclRoot = 'mgmt-wbfsys_role_user';
+      $params->aclRootId = null;
+      $params->aclKey = 'mgmt-wbfsys_role_user';
+      $params->aclNode = 'mgmt-wbfsys_role_user';
+      $params->aclLevel = 1;
     }
 
     // wenn wir in keinem pfad sind nehmen wir einfach die normalen
@@ -88,14 +88,14 @@ class WebfrapPeople_Access_List_Container extends LibAclPermission
   {
 
     // laden der mvc/utils adapter Objekte
-    $acl  = $this->getAcl();
+    $acl = $this->getAcl();
     $user = $this->getUser();
-    $orm  = $this->getDb()->getOrm();
+    $orm = $this->getDb()->getOrm();
 
-    $userId    = $user->getId();
+    $userId = $user->getId();
 
     // erstellen der Acl criteria und befüllen mit den relevanten cols
-    $criteria  = $orm->newCriteria();
+    $criteria = $orm->newCriteria();
 
     $criteria->select(array('wbfsys_role_user.rowid as rowid')  );
 

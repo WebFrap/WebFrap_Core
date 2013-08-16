@@ -55,13 +55,13 @@ class DaidalosPackage_File_Iterator extends IoFileIterator
   )
   {
 
-    $this->folder     = str_replace('//', '/', $folder);
-    $this->mode       = IoFileIterator::RELATIVE;
-    $this->recursive  = $recursive;
+    $this->folder = str_replace('//', '/', $folder);
+    $this->mode = IoFileIterator::RELATIVE;
+    $this->recursive = $recursive;
     $this->targetFolder = $targetFolder;
 
     if ($filter)
-      $this->filter     = explode(',', $filter);
+      $this->filter = explode(',', $filter);
 
     if (is_dir($folder)) {
       $this->fRes = opendir($folder);
@@ -82,25 +82,25 @@ class DaidalosPackage_File_Iterator extends IoFileIterator
   public function next ()
   {
 
-    $repeat   = true;
-    $current  = null;
+    $repeat = true;
+    $current = null;
 
     while ($repeat) {
 
       if ($this->subFolder) {
         $nextSub = $this->subFolder->current();
-        $key     = $this->subFolder->key();
+        $key = $this->subFolder->key();
 
         if ($nextSub) {
           $this->subFolder->next();
           $this->current = $nextSub;
-          $this->key     = $key;
+          $this->key = $key;
 
           return $this->current;
         } else {
           $this->subFolder = null;
-          $this->current   = null;
-          $this->key       = null;
+          $this->current = null;
+          $this->key = null;
           continue;
         }
       }
@@ -131,16 +131,16 @@ class DaidalosPackage_File_Iterator extends IoFileIterator
             $this->filter
           );
 
-          $current  = $this->subFolder->current();
+          $current = $this->subFolder->current();
 
           if (!$current) {
             $this->subFolder = null;
-            $this->current   = null;
-            $this->key       = null;
+            $this->current = null;
+            $this->key = null;
             continue;
           } else {
-            $this->key       = $this->subFolder->key();
-            $this->current   = $current;
+            $this->key = $this->subFolder->key();
+            $this->current = $current;
             $this->subFolder->next();
 
             return $this->current;

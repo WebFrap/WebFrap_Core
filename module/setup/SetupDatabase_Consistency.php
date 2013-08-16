@@ -50,15 +50,15 @@ class SetupDatabase_Consistency extends DataContainer
 
     $user = new LibEnvelopUser();
 
-    $user->userName  = 'system';
+    $user->userName = 'system';
     $user->firstName = 'gaia';
-    $user->lastName  = 'olymp';
+    $user->lastName = 'olymp';
 
-    $user->passwd  = '☯kqU✈m92✇.Pdw+73HW☮d!2§ÄaV°;-)';
-    $user->level   = User::LEVEL_SYSTEM;
+    $user->passwd = '☯kqU✈m92✇.Pdw+73HW☮d!2§ÄaV°;-)';
+    $user->level = User::LEVEL_SYSTEM;
     $user->profile = 'default';
-    $user->description  = 'Der System User';
-    $user->inactive     = false;
+    $user->description = 'Der System User';
+    $user->inactive = false;
     $user->nonCertLogin = false;
 
     $user->addressItems[] = array('mail', 'system@'.$request->getServerName());

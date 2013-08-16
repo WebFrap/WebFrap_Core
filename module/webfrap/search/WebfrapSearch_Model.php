@@ -30,13 +30,13 @@ class WebfrapSearch_Model extends Model
 
   public $entities = array();
 
-  public $roles    = array();
+  public $roles = array();
 
-  public $users    = array();
+  public $users = array();
 
-  public $offSet  = 0;
+  public $offSet = 0;
 
-  public $limit   = 10;
+  public $limit = 10;
 
   /**
    * @param LibHttpRequest $request

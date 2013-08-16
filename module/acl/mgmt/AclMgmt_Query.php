@@ -47,8 +47,8 @@ class AclMgmt_Query extends LibSqlQuery
     if (!$params)
       $params = new TFlag();
 
-    $this->sourceSize  = null;
-    $db                = $this->getDb();
+    $this->sourceSize = null;
+    $db = $this->getDb();
 
     $sql = <<<SQL
 

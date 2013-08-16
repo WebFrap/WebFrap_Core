@@ -1,7 +1,7 @@
 <?php
 
 // sicher stellen, dass die benötigten Resourcen vorhanden sind
-$orm  = $this->model->getOrm();
+$orm = $this->model->getOrm();
 $user = $this->model->getUser();
 
 $cntForm = new WgtFormBuilder(

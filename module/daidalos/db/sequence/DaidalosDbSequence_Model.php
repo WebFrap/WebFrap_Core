@@ -54,7 +54,7 @@ JOIN
 
  WHERE
    relkind = 'S'
-     AND ns.nspname  = '{$schema}'
+     AND ns.nspname = '{$schema}'
  ORDER BY relname
 
 SQL;

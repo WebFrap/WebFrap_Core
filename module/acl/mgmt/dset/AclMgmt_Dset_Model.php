@@ -52,8 +52,8 @@ class AclMgmt_Dset_Model extends AclMgmt_Model
   public function getGroups($params)
   {
 
-    $db     = $this->getDb();
-    $query  = $db->newQuery('AclMgmt_Dset');
+    $db = $this->getDb();
+    $query = $db->newQuery('AclMgmt_Dset');
     /* @var $query AclMgmt_Dset_Query  */
 
     $query->fetchGroups
@@ -113,7 +113,7 @@ class AclMgmt_Dset_Model extends AclMgmt_Model
         $this->register('entityWbfsysGroupUsers', $entityWbfsysGroupUsers);
 
       } else {
-        $entityWbfsysGroupUsers   = new WbfsysGroupUsers_Entity() ;
+        $entityWbfsysGroupUsers = new WbfsysGroupUsers_Entity() ;
         $this->register('entityWbfsysGroupUsers', $entityWbfsysGroupUsers);
       }
 
@@ -150,8 +150,8 @@ class AclMgmt_Dset_Model extends AclMgmt_Model
   public function searchQualifiedUsers($dsetId, $areaId, $params)
   {
 
-    $db     = $this->getDb();
-    $query  = $db->newQuery('AclMgmt_Dset_Treetable');
+    $db = $this->getDb();
+    $query = $db->newQuery('AclMgmt_Dset_Treetable');
     /* @var $query AclMgmt_Dset_Treetable_Query  */
 
     $condition = $this->getSearchCondition();
@@ -176,10 +176,10 @@ class AclMgmt_Dset_Model extends AclMgmt_Model
   public function getEntryWbfsysGroupUsers($params)
   {
 
-    $orm   = $this->getOrm();
-    $data  = array();
+    $orm = $this->getOrm();
+    $data = array();
 
-    $data['group_users']  = $this->getEntityWbfsysGroupUsers();
+    $data['group_users'] = $this->getEntityWbfsysGroupUsers();
 
     $tabData = array();
 
@@ -187,7 +187,7 @@ class AclMgmt_Dset_Model extends AclMgmt_Model
       $tabData = array_merge($tabData , $ent->getAllData($tabName));
 
     $tabData['group_users_date_start'] = null;
-    $tabData['group_users_date_end']   = null;
+    $tabData['group_users_date_end'] = null;
 
     $userRole = $orm->get('WbfsysRoleUser', $data['group_users']->id_user  );
 
@@ -200,8 +200,8 @@ class AclMgmt_Dset_Model extends AclMgmt_Model
         : $person->lastname.$person->firstname
       );
 
-    $tabData['role_user_name']   = $userRole->name;
-    $tabData['role_user_rowid']  = $data['group_users']->id_user;
+    $tabData['role_user_name'] = $userRole->name;
+    $tabData['role_user_rowid'] = $data['group_users']->id_user;
 
     return $tabData;
 
@@ -216,8 +216,8 @@ class AclMgmt_Dset_Model extends AclMgmt_Model
   public function getSearchCondition()
   {
 
-    $condition    = array();
-    $httpRequest  = $this->getRequest();
+    $condition = array();
+    $httpRequest = $this->getRequest();
 
     if ($free = $httpRequest->param('free_search' , Validator::TEXT))
       $condition['free'] = $free;
@@ -234,8 +234,8 @@ class AclMgmt_Dset_Model extends AclMgmt_Model
   public function getUsersByKey($areaId, $key, $params)
   {
 
-    $db     = $this->getDb();
-    $query  = $db->newQuery('AclMgmt_Dset');
+    $db = $this->getDb();
+    $query = $db->newQuery('AclMgmt_Dset');
     /* @var $query AclMgmt_Dset_Query  */
 
     $query->fetchUsersByKey
@@ -260,8 +260,8 @@ class AclMgmt_Dset_Model extends AclMgmt_Model
   {
 
     $httpRequest = $this->getRequest();
-    $orm         = $this->getOrm();
-    $response    = $this->getResponse();
+    $orm = $this->getOrm();
+    $response = $this->getResponse();
 
     $entityWbfsysGroupUsers = new WbfsysGroupUsers_Entity;
 
@@ -345,9 +345,9 @@ class AclMgmt_Dset_Model extends AclMgmt_Model
   {
 
     // laden der mvc/utils adapter Objekte
-    $db        = $this->getDb();
-    $orm       = $db->getOrm();
-    $response  = $this->getResponse();
+    $db = $this->getDb();
+    $orm = $db->getOrm();
+    $response = $this->getResponse();
 
     try {
       if (!$entityWbfsysGroupUsers = $this->getRegisterd('entityWbfsysGroupUsers')) {
@@ -389,10 +389,10 @@ class AclMgmt_Dset_Model extends AclMgmt_Model
         // zu entscheiden in welcher form die alcs ausgelesen werden müssen
         if ($entityWbfsysGroupUsers->vid) {
           $partUser = new WbfsysGroupUsers_Entity;
-          $partUser->id_user    = $entityWbfsysGroupUsers->id_user;
-          $partUser->id_group   = $entityWbfsysGroupUsers->id_group;
-          $partUser->id_area    = $entityWbfsysGroupUsers->id_area;
-          $partUser->partial    = 1;
+          $partUser->id_user = $entityWbfsysGroupUsers->id_user;
+          $partUser->id_group = $entityWbfsysGroupUsers->id_group;
+          $partUser->id_area = $entityWbfsysGroupUsers->id_area;
+          $partUser->partial = 1;
           $orm->insertIfNotExists($partUser, array('id_area','id_group','id_user','partial'));
         }
 
@@ -449,8 +449,8 @@ class AclMgmt_Dset_Model extends AclMgmt_Model
   {
 
     // erst mal alle nötigen resourcen organisieren
-    $orm       = $this->getOrm();
-    $response  = $this->getResponse();
+    $orm = $this->getOrm();
+    $response = $this->getResponse();
 
     try {
       $orm->delete('WbfsysGroupUsers', $objid);
@@ -504,8 +504,8 @@ class AclMgmt_Dset_Model extends AclMgmt_Model
   public function cleanQfduGroup($groupId, $areaId, $params  )
   {
 
-    $orm       = $this->getOrm();
-    $response  = $this->getResponse();
+    $orm = $this->getOrm();
+    $response = $this->getResponse();
 
     try {
       $orm->deleteWhere('WbfsysGroupUsers', " id_group={$groupId} and id_area={$areaId} ");

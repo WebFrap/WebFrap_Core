@@ -30,37 +30,37 @@ class WebfrapAttachment_Audio_Controller extends Controller
   /**
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'search' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
     'formadd' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('modal')
+      'method' => array('GET'),
+      'views' => array('modal')
     ),
     'insert' => array
     (
-      'method'    => array('POST'),
-      'views'      => array('ajax')
+      'method' => array('POST'),
+      'views' => array('ajax')
     ),
     'formedit' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('modal')
+      'method' => array('GET'),
+      'views' => array('modal')
     ),
     'update' => array
     (
-      'method'    => array('POST'),
-      'views'      => array('ajax')
+      'method' => array('POST'),
+      'views' => array('ajax')
     ),
     'delete' => array
     (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
   );
 
@@ -77,13 +77,13 @@ class WebfrapAttachment_Audio_Controller extends Controller
   {
 
     $mediathek = $request->param('mediathek', Validator::EID);
-    $element   = $request->param('element', Validator::CKEY);
+    $element = $request->param('element', Validator::CKEY);
     $searchKey = $request->param('skey', Validator::SEARCH);
 
     /* @var $model WebfrapAttachment_Model */
     $model = $this->loadModel('WebfrapAttachment');
 
-    $searchData  = $model->getAttachmentList($mediathek, null, $searchKey);
+    $searchData = $model->getAttachmentList($mediathek, null, $searchKey);
 
     /* @var $view WebfrapAttachment_Ajax_View */
     $view = $response->loadView
@@ -105,8 +105,8 @@ class WebfrapAttachment_Audio_Controller extends Controller
   public function service_formAdd($request, $response)
   {
 
-    $mediathek   = $request->param('mediathek', Validator::EID);
-    $element     = $request->param('element', Validator::CKEY);
+    $mediathek = $request->param('mediathek', Validator::EID);
+    $element = $request->param('element', Validator::CKEY);
 
     $view = $response->loadView
     (
@@ -128,22 +128,22 @@ class WebfrapAttachment_Audio_Controller extends Controller
   public function service_insert($request, $response)
   {
     // refid
-    $attachId  = $request->param('attachid', Validator::EID);
-    $element   = $request->param('element', Validator::CKEY);
+    $attachId = $request->param('attachid', Validator::EID);
+    $element = $request->param('element', Validator::CKEY);
 
     $file = $request->file('file');
 
     $objid = $request->data('objid', Validator::EID);
     $type = $request->data('type', Validator::EID);
-    $versioning   = $request->data('version', Validator::BOOLEAN);
-    $description  = $request->data('description', Validator::TEXT);
-    $confidentiality   = $request->data('id_confidentiality', Validator::EID);
+    $versioning = $request->data('version', Validator::BOOLEAN);
+    $description = $request->data('description', Validator::TEXT);
+    $confidentiality = $request->data('id_confidentiality', Validator::EID);
 
     /* @var $model WebfrapAttachment_Model */
     $model = $this->loadModel('WebfrapAttachment');
 
     $model->saveFile($objid, $file, $type, $versioning, $confidentiality, $description);
-    $entryData  = $model->getAttachmentList(null, $attachId);
+    $entryData = $model->getAttachmentList(null, $attachId);
 
     $view = $response->loadView
     (
@@ -165,8 +165,8 @@ class WebfrapAttachment_Audio_Controller extends Controller
   public function service_formEdit($request, $response)
   {
 
-    $objid     = $request->param('objid', Validator::EID);
-    $element   = $request->param('element', Validator::CKEY);
+    $objid = $request->param('objid', Validator::EID);
+    $element = $request->param('element', Validator::CKEY);
     $mediathek = $request->param('mediathek', Validator::EID);
 
     /* @var $model WebfrapAttachment_Model */
@@ -204,22 +204,22 @@ class WebfrapAttachment_Audio_Controller extends Controller
   public function service_update($request, $response)
   {
     // refid
-    $attachId  = $request->param('attachid', Validator::EID);
-    $element   = $request->param('element', Validator::CKEY);
+    $attachId = $request->param('attachid', Validator::EID);
+    $element = $request->param('element', Validator::CKEY);
 
     $file = $request->file('file');
 
     $objid = $request->data('objid', Validator::EID);
     $type = $request->data('type', Validator::EID);
-    $versioning   = $request->data('version', Validator::BOOLEAN);
-    $description  = $request->data('description', Validator::TEXT);
-    $confidentiality   = $request->data('id_confidentiality', Validator::EID);
+    $versioning = $request->data('version', Validator::BOOLEAN);
+    $description = $request->data('description', Validator::TEXT);
+    $confidentiality = $request->data('id_confidentiality', Validator::EID);
 
     /* @var $model WebfrapAttachment_Model */
     $model = $this->loadModel('WebfrapAttachment');
 
     $model->saveFile($objid, $file, $type, $versioning, $confidentiality, $description);
-    $entryData  = $model->getAttachmentList(null, $attachId);
+    $entryData = $model->getAttachmentList(null, $attachId);
 
     $view = $response->loadView
     (
@@ -241,9 +241,9 @@ class WebfrapAttachment_Audio_Controller extends Controller
   public function service_delete($request, $response)
   {
 
-    $id         = $request->param('objid', Validator::EID);
-    $element    = $request->param('element', Validator::CKEY);
-    $mediathek  = $request->param('mediathek', Validator::EID);
+    $id = $request->param('objid', Validator::EID);
+    $element = $request->param('element', Validator::CKEY);
+    $mediathek = $request->param('mediathek', Validator::EID);
 
     /* @var $model WebfrapAttachment_Model */
     $model = $this->loadModel('WebfrapAttachment');

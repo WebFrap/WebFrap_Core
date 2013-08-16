@@ -95,12 +95,12 @@ SQL;
 
       $date = DateTime::createFromFormat('Y-m-d H:i:s', $entry['visited']);
 
-      $innerTmp['label']     = $entry['label'].' ('.$date->format('Y-m-d').') ';
+      $innerTmp['label'] = $entry['label'].' ('.$date->format('Y-m-d').') ';
 
       if ($entry['vid'])
-        $innerTmp['url']   = 'maintab.php?c='.$entry['url'].'&amp;objid='.$entry['vid'];
+        $innerTmp['url'] = 'maintab.php?c='.$entry['url'].'&amp;objid='.$entry['vid'];
       else
-        $innerTmp['url']   = 'maintab.php?c='.$entry['url'];
+        $innerTmp['url'] = 'maintab.php?c='.$entry['url'];
 
       $data[] = $innerTmp;
     }
@@ -145,12 +145,12 @@ SQL;
     foreach ($tmp as $entry) {
       $innerTmp = array();
 
-      $innerTmp['label']     = $entry['label'].' ('.$entry['counter'].' times) ';
+      $innerTmp['label'] = $entry['label'].' ('.$entry['counter'].' times) ';
 
       if ($entry['vid'])
-        $innerTmp['url']   = 'maintab.php?c='.$entry['url'].'&amp;objid='.$entry['vid'];
+        $innerTmp['url'] = 'maintab.php?c='.$entry['url'].'&amp;objid='.$entry['vid'];
       else
-        $innerTmp['url']   = 'maintab.php?c='.$entry['url'];
+        $innerTmp['url'] = 'maintab.php?c='.$entry['url'];
 
       $data[] = $innerTmp;
     }
@@ -190,12 +190,12 @@ SQL;
     foreach ($tmp as $entry) {
       $innerTmp = array();
 
-      $innerTmp['label']     = $entry['label'].' ('.$entry['counter'].' times) ';
+      $innerTmp['label'] = $entry['label'].' ('.$entry['counter'].' times) ';
 
       if ($entry['vid'])
-        $innerTmp['url']   = 'maintab.php?c='.$entry['url'].'&amp;objid='.$entry['vid'];
+        $innerTmp['url'] = 'maintab.php?c='.$entry['url'].'&amp;objid='.$entry['vid'];
       else
-        $innerTmp['url']   = 'maintab.php?c='.$entry['url'];
+        $innerTmp['url'] = 'maintab.php?c='.$entry['url'];
 
       $data[] = $innerTmp;
     }
@@ -219,7 +219,7 @@ SQL;
     $offset = 0
   ) {
 
-    $db   = $this->getDb();
+    $db = $this->getDb();
     $user = $this->getUser();
 
     $now = date('Y-m-d');
@@ -278,7 +278,7 @@ SQL;
   public function loadWallmessage()
   {
 
-    $db   = $this->getDb();
+    $db = $this->getDb();
     $user = $this->getUser();
 
     $now = date('Y-m-d');

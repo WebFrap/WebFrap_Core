@@ -28,13 +28,13 @@ class WebfrapAttachment_Connector_Modal_View extends WgtModal
    * Die Breite des Modal Elements
    * @var int in px
    */
-  public $width   = 600 ;
+  public $width = 600 ;
 
   /**
    * Die Höhe des Modal Elements
    * @var int in px
    */
-  public $height   = 300 ;
+  public $height = 300 ;
 
 /*//////////////////////////////////////////////////////////////////////////////
 // Display Methodes

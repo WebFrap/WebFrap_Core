@@ -75,10 +75,10 @@ class WebfrapEditor_Maintab_View extends WgtMaintabCustom
   public function addMenu($activeNode)
   {
 
-    $iconMenu          = '<i class="icon-reorder" ></i>';
-    $iconClose         = '<i class="icon-remove-circle " ></i>';
-    $iconSave          = '<i class="icon-save" ></i>';
-    $iconShow          = $this->icon('control/show.png' ,'Show');
+    $iconMenu = '<i class="icon-reorder" ></i>';
+    $iconClose = '<i class="icon-remove-circle " ></i>';
+    $iconSave = '<i class="icon-save" ></i>';
+    $iconShow = $this->icon('control/show.png' ,'Show');
 
     $iconSupport = '<i class="icon-info-sign"></i>';
     $iconFaq = '<i class="icon-question-sign"></i>';
@@ -86,7 +86,7 @@ class WebfrapEditor_Maintab_View extends WgtMaintabCustom
 
     $nodeId = $activeNode->getId();
 
-    $menu     = $this->newMenu($this->id.'_dropmenu');
+    $menu = $this->newMenu($this->id.'_dropmenu');
 
     $menu->id = $this->id.'_dropmenu';
 

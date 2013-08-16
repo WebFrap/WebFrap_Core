@@ -44,10 +44,10 @@ class WebfrapMockup_Controller extends MvcController
    *
    * @var array
    */
-  protected $options           = array(
+  protected $options = array(
     'notyetimplemented' => array(
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
   );
 

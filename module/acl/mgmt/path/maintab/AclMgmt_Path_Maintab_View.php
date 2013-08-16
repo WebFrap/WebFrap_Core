@@ -101,9 +101,9 @@ class AclMgmt_Path_Maintab_View extends WgtMaintab
     // create form elements
     $selectAccess = new AclMgmt_Selectbox_Access('inputAccess', $this);
     $selectAccess->addAttributes(array(
-      'id'    => 'wgt-input-'.$this->model->domainNode->aclDomainKey.'-acl-path-access_level',
+      'id' => 'wgt-input-'.$this->model->domainNode->aclDomainKey.'-acl-path-access_level',
       'class' => 'medium',
-      'name'  => 'security_path[access_level]',
+      'name' => 'security_path[access_level]',
     ));
 
 
@@ -127,7 +127,7 @@ class AclMgmt_Path_Maintab_View extends WgtMaintab
   public function createMenu($objid, $params)
   {
 
-    $menu     = $this->newMenu
+    $menu = $this->newMenu
     (
       $this->id.'_dropmenu',
       $this->model->domainNode->domainAclMask.'_Path'

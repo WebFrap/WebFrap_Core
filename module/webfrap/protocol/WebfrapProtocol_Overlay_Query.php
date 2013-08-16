@@ -43,8 +43,8 @@ class WebfrapProtocol_Overlay_Query extends LibSqlQuery
     if (!$params)
       $params = new TFlag();
 
-    $this->sourceSize  = null;
-    $db                = $this->getDb();
+    $this->sourceSize = null;
+    $db = $this->getDb();
 
     $criteria = new LibSqlCriteria('webfrap-protocol-overlay', $db);
 
@@ -55,7 +55,7 @@ class WebfrapProtocol_Overlay_Query extends LibSqlQuery
     $this->appendFilter($criteria, $condition, $params);
 
     // Run Query und save the result
-    $this->result    = $db->orm->select($criteria);
+    $this->result = $db->orm->select($criteria);
 
     if ($params->loadFullSize)
       $this->calcQuery = $criteria->count('count(DISTINCT wbfsys_protocol_message.rowid) as '.Db::Q_SIZE);
@@ -84,7 +84,7 @@ class WebfrapProtocol_Overlay_Query extends LibSqlQuery
     if (!$params)
       $params = new TFlag();
 
-    $db                = $this->getDb();
+    $db = $this->getDb();
 
     // wenn keine keys vorhanden sind wird ein leeres result objekt gesetzt
     if (!$inKeys) {
@@ -93,7 +93,7 @@ class WebfrapProtocol_Overlay_Query extends LibSqlQuery
       return;
     }
 
-    $criteria          = $db->orm->newCriteria();
+    $criteria = $db->orm->newCriteria();
 
     $this->setCols($criteria);
     $this->setTables($criteria);
@@ -105,13 +105,13 @@ class WebfrapProtocol_Overlay_Query extends LibSqlQuery
     );
 
     // Run Query und save the result
-    $result    = $db->orm->select($criteria);
+    $result = $db->orm->select($criteria);
 
     $this->data = array();
 
     foreach ($result as $row) {
       $row['acl-level'] = $inKeys[$row['log_rowid']];
-      $this->data[]     = $row;
+      $this->data[] = $row;
     }
 
   }//end public function fetchInAcls */
@@ -497,9 +497,9 @@ class WebfrapProtocol_Overlay_Query extends LibSqlQuery
   {
 
     // laden der potentiell nötigen resource objekte
-    $db    = $this->getDb();
-    $user  = $this->getUser();
-    $acl   = $this->getAcl();
+    $db = $this->getDb();
+    $user = $this->getUser();
+    $acl = $this->getAcl();
 
   }//end public function appendFilter */
 

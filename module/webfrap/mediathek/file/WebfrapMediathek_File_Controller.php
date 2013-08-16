@@ -31,37 +31,37 @@ class WebfrapMediathek_File_Controller extends Controller
   /**
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'search' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
     'add' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('modal')
+      'method' => array('GET'),
+      'views' => array('modal')
     ),
     'insert' => array
     (
-      'method'    => array('POST'),
-      'views'      => array('ajax')
+      'method' => array('POST'),
+      'views' => array('ajax')
     ),
     'edit' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('modal')
+      'method' => array('GET'),
+      'views' => array('modal')
     ),
     'update' => array
     (
-      'method'    => array('POST'),
-      'views'      => array('ajax')
+      'method' => array('POST'),
+      'views' => array('ajax')
     ),
     'delete' => array
     (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
   );
 
@@ -77,15 +77,15 @@ class WebfrapMediathek_File_Controller extends Controller
   public function service_search($request, $response)
   {
 
-    $mediaId   = $request->param('media', Validator::EID);
-    $element   = $request->param('element', Validator::CKEY);
+    $mediaId = $request->param('media', Validator::EID);
+    $element = $request->param('element', Validator::CKEY);
     $searchKey = $request->param('skey', Validator::SEARCH);
 
     /* @var $model WebfrapMediathek_Model */
     $model = $this->loadModel('WebfrapMediathek');
     $model->loadMediathekById($mediaId);
 
-    $searchData  = $model->getFileList($mediaId, null, $searchKey);
+    $searchData = $model->getFileList($mediaId, null, $searchKey);
 
     /* @var $view WebfrapMediathek_File_Ajax_View */
     $view = $response->loadView
@@ -107,8 +107,8 @@ class WebfrapMediathek_File_Controller extends Controller
   public function service_add($request, $response)
   {
 
-    $mediaId   = $request->param('media', Validator::EID);
-    $element   = $request->param('element', Validator::CKEY);
+    $mediaId = $request->param('media', Validator::EID);
+    $element = $request->param('element', Validator::CKEY);
 
     /* @var $view WebfrapMediathek_File_Modal_View */
     $view = $response->loadView
@@ -131,16 +131,16 @@ class WebfrapMediathek_File_Controller extends Controller
   public function service_insert($request, $response)
   {
     // mediaId
-    $mediaId   = $request->param('media', Validator::EID);
-    $element   = $request->param('element', Validator::CKEY);
+    $mediaId = $request->param('media', Validator::EID);
+    $element = $request->param('element', Validator::CKEY);
 
     $file = $request->file('file');
 
     $fileNode = new TDataObject();
 
-    $fileNode->description  = $request->data('description', Validator::TEXT);
-    $fileNode->versioning   = $request->data('version', Validator::BOOLEAN);
-    $fileNode->id_licence   = $request->data('licence', Validator::EID);
+    $fileNode->description = $request->data('description', Validator::TEXT);
+    $fileNode->versioning = $request->data('version', Validator::BOOLEAN);
+    $fileNode->id_licence = $request->data('licence', Validator::EID);
     $fileNode->id_confidentiality = $request->data('confidential', Validator::EID);
 
     /* @var $model WebfrapMediathek_File_Model */
@@ -175,9 +175,9 @@ class WebfrapMediathek_File_Controller extends Controller
   public function service_edit($request, $response)
   {
 
-    $objid     = $request->param('objid', Validator::EID);
-    $element   = $request->param('element', Validator::CKEY);
-    $mediaId   = $request->param('media', Validator::EID);
+    $objid = $request->param('objid', Validator::EID);
+    $element = $request->param('element', Validator::CKEY);
+    $mediaId = $request->param('media', Validator::EID);
 
     /* @var $model WebfrapMediathek_File_Model */
     $model = $this->loadModel('WebfrapMediathek_File');
@@ -205,17 +205,17 @@ class WebfrapMediathek_File_Controller extends Controller
   public function service_update($request, $response)
   {
     // refid
-    $mediaId   = $request->param('media', Validator::EID);
-    $element   = $request->param('element', Validator::CKEY);
+    $mediaId = $request->param('media', Validator::EID);
+    $element = $request->param('element', Validator::CKEY);
 
-    $file  = $request->file('file');
+    $file = $request->file('file');
 
     $objid = $request->data('objid', Validator::EID);
 
     $fileNode = new TDataObject();
-    $fileNode->description  = $request->data('description', Validator::TEXT);
-    $fileNode->versioning   = $request->data('version', Validator::BOOLEAN);
-    $fileNode->id_licence   = $request->data('licence', Validator::EID);
+    $fileNode->description = $request->data('description', Validator::TEXT);
+    $fileNode->versioning = $request->data('version', Validator::BOOLEAN);
+    $fileNode->id_licence = $request->data('licence', Validator::EID);
     $fileNode->id_confidentiality = $request->data('confidential', Validator::EID);
 
     /* @var $model WebfrapMediathek_File_Model */
@@ -249,9 +249,9 @@ class WebfrapMediathek_File_Controller extends Controller
   public function service_delete($request, $response)
   {
 
-    $id       = $request->param('objid', Validator::EID);
-    $element  = $request->param('element', Validator::CKEY);
-    $mediaId  = $request->param('media', Validator::EID);
+    $id = $request->param('objid', Validator::EID);
+    $element = $request->param('element', Validator::CKEY);
+    $mediaId = $request->param('media', Validator::EID);
 
     /* @var $model WebfrapMediathek_File_Model */
     $model = $this->loadModel('WebfrapMediathek_File');

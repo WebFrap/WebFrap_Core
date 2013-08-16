@@ -46,28 +46,28 @@ class WebfrapDocu_Controller extends Controller
    */
   protected $options = array(
     'open' => array(
-      'method'    => array('GET'),
-      'views'      => array('modal', 'maintab')
+      'method' => array('GET'),
+      'views' => array('modal', 'maintab')
     ),
     'edit' => array(
-      'method'    => array('GET'),
-      'views'      => array('modal', 'maintab')
+      'method' => array('GET'),
+      'views' => array('modal', 'maintab')
     ),
     'save' => array(
-      'method'    => array('PUT'),
-      'views'      => array('ajax')
+      'method' => array('PUT'),
+      'views' => array('ajax')
     ),
     'menu' => array(
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
     'page' => array(
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
     'root' => array(
-      'method'    => array('GET'),
-      'views'      => array('modal', 'maintab')
+      'method' => array('GET'),
+      'views' => array('modal', 'maintab')
     ),
   );
 
@@ -225,7 +225,7 @@ class WebfrapDocu_Controller extends Controller
   public function service_save($request, $response)
   {
 
-    $key     = $request->param('key', Validator::TEXT);
+    $key = $request->param('key', Validator::TEXT);
     $content = $request->data('content', Validator::TEXT);
 
     if (!$key) {
@@ -295,7 +295,7 @@ class WebfrapDocu_Controller extends Controller
     $params = $this->getFlags($request);
     $key = $request->param('key', Validator::CKEY);
 
-    $view   = $response->loadView(
+    $view = $response->loadView(
       'webfrap_docu_menu',
       'WebfrapDocu_Menu',
       'displayMenu',
@@ -316,14 +316,14 @@ class WebfrapDocu_Controller extends Controller
 
     $params = $this->getFlags($request);
 
-    $key    = $request->param('page', Validator::CKEY);
+    $key = $request->param('page', Validator::CKEY);
 
     if (!$key)
       $key = 'wbf';
 
-    $model  = $this->loadModel('WebfrapDocu_Page');
+    $model = $this->loadModel('WebfrapDocu_Page');
 
-    $view   = $response->loadView(
+    $view = $response->loadView(
       'webfrap_docu_page',
       'WebfrapDocu_Page',
       'displayPage',

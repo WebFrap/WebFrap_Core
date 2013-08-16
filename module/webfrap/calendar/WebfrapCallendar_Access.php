@@ -49,14 +49,14 @@ class WebfrapCalendar_Access extends LibAclPermission
   {
 
     // laden der mvc/utils adapter Objekte
-    $acl  = $this->getAcl();
+    $acl = $this->getAcl();
     $user = $this->getUser();
-    $orm  = $this->getDb()->getOrm();
+    $orm = $this->getDb()->getOrm();
 
-    $userId    = $user->getId();
+    $userId = $user->getId();
 
     // erstellen der Acl criteria und befüllen mit den relevanten cols
-    $criteria  = $orm->newCriteria();
+    $criteria = $orm->newCriteria();
 
     $criteria->select(array('wbfsys_message.rowid as rowid')  );
 

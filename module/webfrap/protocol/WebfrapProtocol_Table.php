@@ -34,7 +34,7 @@ class WebfrapProtocol_Table extends WgtTable
    *
    * @var string $id
    */
-  public $id       = 'wgt-table_demo_entity1';
+  public $id = 'wgt-table_demo_entity1';
 
   /**
    * list with all actions for the listed datarows
@@ -43,14 +43,14 @@ class WebfrapProtocol_Table extends WgtTable
    * manually wich actions are used with: Wgt::addActions
    * @var array
    */
-  public $url      = array
+  public $url = array
   (
-    'paging'  => array
+    'paging' => array
     (
       Wgt::ACTION_PAGING ,
       'index.php?c=Demo.Entity1.search'
     ),
-    'show'    => array
+    'show' => array
     (
       Wgt::ACTION_AJAX_GET,
       'show',
@@ -59,7 +59,7 @@ class WebfrapProtocol_Table extends WgtTable
       'wcm wcm_req_ajax',
       'demo.entity1.label.title_show'
     ),
-    'edit'    => array
+    'edit' => array
     (
       Wgt::ACTION_AJAX_GET,
       'edit',
@@ -68,7 +68,7 @@ class WebfrapProtocol_Table extends WgtTable
       'wcm wcm_req_ajax',
       'demo.entity1.label.title_edit'
     ),
-    'delete'  => array
+    'delete' => array
     (
       Wgt::ACTION_AJAX_GET,
       'delete',
@@ -77,7 +77,7 @@ class WebfrapProtocol_Table extends WgtTable
       'wcm wcm_req_del',
       'demo.entity1.label.title_delete'
     ),
-    'checkbox'  => array
+    'checkbox' => array
     (
       Wgt::ACTION_CHECKBOX,
       'select',
@@ -147,9 +147,9 @@ class WebfrapProtocol_Table extends WgtTable
     $num = 1;
     foreach ($this->data as $key => $row) {
 
-      $objid       = $row['wbfsys_protocol_message_'.Db::PK];
-      $rowid       = $this->id.'_row_'.$objid;
-      $navigation  = $this->rowMenu($objid, $row);
+      $objid = $row['wbfsys_protocol_message_'.Db::PK];
+      $rowid = $this->id.'_row_'.$objid;
+      $navigation = $this->rowMenu($objid, $row);
 
       $body .= '<tr class="row'.$num.'" id="'.$rowid.'" >'.NL;
 
@@ -216,10 +216,10 @@ class WebfrapProtocol_Table extends WgtTable
 
     foreach ($this->data as $key => $row) {
 
-      $objid       = $row['demo_entity1_'.Db::PK];
+      $objid = $row['demo_entity1_'.Db::PK];
 
-      $rowid       = $this->id.'_row_'.$objid;
-      $navigation  = $this->rowMenu($objid, $row  );
+      $rowid = $this->id.'_row_'.$objid;
+      $navigation = $this->rowMenu($objid, $row  );
 
       // is this an insert or an update area
       if ($this->insertMode)

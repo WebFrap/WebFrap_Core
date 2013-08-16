@@ -91,7 +91,7 @@ class WebfrapAnnouncement_Table_Model extends Model
 
       } else {
 
-        $entityWebfrapAnnouncement   = new WbfsysAnnouncement_Entity() ;
+        $entityWebfrapAnnouncement = new WbfsysAnnouncement_Entity() ;
         $this->register('entityWebfrapAnnouncement', $entityWebfrapAnnouncement);
         $this->register('main_entity', $entityWebfrapAnnouncement);
       }
@@ -142,12 +142,12 @@ class WebfrapAnnouncement_Table_Model extends Model
   public function getEntryData($params)
   {
 
-    $orm   = $this->getOrm();
-    $user  = $this->getUser();
+    $orm = $this->getOrm();
+    $user = $this->getUser();
 
-    $data  = array();
+    $data = array();
 
-    $data['wbfsys_announcement']  = $this->getEntityWbfsysAnnouncement();
+    $data['wbfsys_announcement'] = $this->getEntityWbfsysAnnouncement();
 
     $tabData = array();
 
@@ -191,9 +191,9 @@ class WebfrapAnnouncement_Table_Model extends Model
 
     $userData = $user->getData();
 
-    $tabData['wbfsys_role_user_name']  = $userData['name'];
-    $tabData['core_person_lastname']   = $userData['lastname'];
-    $tabData['core_person_firstname']  = $userData['firstname'];
+    $tabData['wbfsys_role_user_name'] = $userData['name'];
+    $tabData['core_person_lastname'] = $userData['lastname'];
+    $tabData['core_person_firstname'] = $userData['firstname'];
 
     return $tabData;
 
@@ -228,20 +228,20 @@ class WebfrapAnnouncement_Table_Model extends Model
   {
 
     // laden der mvc/utils adapter Objekte
-    $view         = $this->getView();
+    $view = $this->getView();
     $httpRequest = $this->getRequest();
-    $response    = $this->getResponse();
+    $response = $this->getResponse();
 
-    $db          = $this->getDb();
-    $orm         = $db->getOrm();
-    $user        = $this->getUser();
+    $db = $this->getDb();
+    $orm = $db->getOrm();
+    $user = $this->getUser();
 
     // freitext suche
     if ($free = $httpRequest->param('free_search' , Validator::TEXT))
       $condition['free'] = $db->escape(trim($free));
 
     if (!$fieldsWbfsysAnnouncement = $this->getRegisterd('search_fields_wbfsys_announcement')) {
-       $fieldsWbfsysAnnouncement   = $orm->getSearchCols('WbfsysAnnouncement');
+       $fieldsWbfsysAnnouncement = $orm->getSearchCols('WbfsysAnnouncement');
     }
 
     if ($refs = $httpRequest->dataSearchIds('search_webfrap_announcement')) {
@@ -252,7 +252,7 @@ class WebfrapAnnouncement_Table_Model extends Model
       ));
     }
 
-    $filterWbfsysAnnouncement     = $httpRequest->checkSearchInput
+    $filterWbfsysAnnouncement = $httpRequest->checkSearchInput
     (
       $orm->getValidationData('WbfsysAnnouncement', $fieldsWbfsysAnnouncement),
       $orm->getErrorMessages('WbfsysAnnouncement'  ),
@@ -329,10 +329,10 @@ class WebfrapAnnouncement_Table_Model extends Model
   {
 
     $httpRequest = $this->getRequest();
-    $orm         = $this->getOrm();
-    $view        = $this->getView();
+    $orm = $this->getOrm();
+    $view = $this->getView();
 
-    $response    = $this->getResponse();
+    $response = $this->getResponse();
 
     try {
 
@@ -340,7 +340,7 @@ class WebfrapAnnouncement_Table_Model extends Model
       $entityWebfrapAnnouncement = $orm->newEntity('WbfsysAnnouncement');
 
       if (!$params->fieldsWbfsysAnnouncement) {
-        $params->fieldsWbfsysAnnouncement  = $entityWebfrapAnnouncement->getCols
+        $params->fieldsWbfsysAnnouncement = $entityWebfrapAnnouncement->getCols
         (
           $params->categories
         );
@@ -381,10 +381,10 @@ class WebfrapAnnouncement_Table_Model extends Model
 
     //entity wbfsys_announcement
     if (!$entityWebfrapAnnouncement = $this->getRegisterd('entityWebfrapAnnouncement')) {
-      $entityWebfrapAnnouncement   = new WbfsysAnnouncement_Entity() ;
+      $entityWebfrapAnnouncement = new WbfsysAnnouncement_Entity() ;
     }
 
-    $formWbfsysAnnouncement    = $view->newForm('WebfrapAnnouncement');
+    $formWbfsysAnnouncement = $view->newForm('WebfrapAnnouncement');
     $formWbfsysAnnouncement->setNamespace('WebfrapAnnouncement');
     $formWbfsysAnnouncement->setPrefix('WebfrapAnnouncement');
     $formWbfsysAnnouncement->createSearchForm

@@ -51,15 +51,15 @@ class AclMgmt_Dset_Maintab_Menu extends WgtDropmenu
   public function buildMenu($objid, $params)
   {
 
-    $iconEdit        = '<i class="icon-save" ></i>';
-    $iconMask        = $this->view->icon('control/mask.png', 'Mask');
-    $iconListMask    = '<i class="icon-list-alt" ></i>';
+    $iconEdit = '<i class="icon-save" ></i>';
+    $iconMask = $this->view->icon('control/mask.png', 'Mask');
+    $iconListMask = '<i class="icon-list-alt" ></i>';
 
-    $access           = $params->access;
-    $user            = $this->getUser();
+    $access = $params->access;
+    $user = $this->getUser();
 
     $entries = new TArray();
-    $entries->support  = $this->entriesSupport($objid, $params);
+    $entries->support = $this->entriesSupport($objid, $params);
 
 
     $codeButton = '';
@@ -127,7 +127,7 @@ HTML;
   protected function entriesSupport($objid, $params)
   {
 
-    $iconFaq      = $this->view->icon( 'control/faq.png'      ,'Faq'  );
+    $iconFaq = $this->view->icon( 'control/faq.png'      ,'Faq'  );
 
     $html = <<<HTML
 

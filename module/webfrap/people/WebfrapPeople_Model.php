@@ -41,8 +41,8 @@ class WebfrapPeople_Model extends Model
   public function getUsersByKey($key, $params)
   {
 
-    $db     = $this->getDb();
-    $query  = $db->newQuery('WebfrapPeople');
+    $db = $this->getDb();
+    $query = $db->newQuery('WebfrapPeople');
 
     $query->fetchByKey
     (

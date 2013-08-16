@@ -105,7 +105,7 @@ class Wbfpage_Module extends Module
     if (!$name  )
       $name = $request->get('mex',Validator::CNAME);
 
-     $classname   = ''.ucfirst($name).'_Page';
+     $classname = ''.ucfirst($name).'_Page';
 
      if (!WebFrap::classExists($classname))
        $classname = 'Page'.ucfirst($name);
@@ -114,13 +114,13 @@ class Wbfpage_Module extends Module
       Debug::console('Page: '.$classname);
 
     if (WebFrap::classExists($classname)) {
-      $this->controller     = new $classname();
+      $this->controller = new $classname();
       $this->controllerName = $classname;
       //$this->controllerBase = $name;
       return true;
     } else {
       //Reset The Extention
-      $this->controller     = null;
+      $this->controller = null;
       $this->controllerName = null;
       //\Reset The Extention
 

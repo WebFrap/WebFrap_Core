@@ -44,7 +44,7 @@ class TestRunner_Model extends Model
         continue;
       }
 
-      $folder     = new LibFilesystemFolder($folder);
+      $folder = new LibFilesystemFolder($folder);
       $childFiles = $folder->getFilesByEnding('_Test.php', false, true);
 
       $tmp = array_merge($tmp, $childFiles);

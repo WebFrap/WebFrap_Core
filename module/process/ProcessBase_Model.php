@@ -87,9 +87,9 @@ class ProcessBase_Model extends Model
   {
 
     $this->entityKey =  $entityKey;
-    $this->entityId  =  $entityId;
+    $this->entityId =  $entityId;
 
-    $entityKey    = SParserString::subToCamelCase($this->entityKey);
+    $entityKey = SParserString::subToCamelCase($this->entityKey);
     $this->entity = $this->getDb()->getOrm()->get(
       $entityKey,
       $this->entityId

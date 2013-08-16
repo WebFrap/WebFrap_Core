@@ -40,9 +40,9 @@ class WebfrapMenu_Model extends Model
   public function getStartMenu(  )
   {
 
-    $db     = $this->getDb();
+    $db = $this->getDb();
 
-    $conf   = $this->getConf();
+    $conf = $this->getConf();
     $appKey = $conf->getStatus('gateway.key');
 
     if (!$appKey)

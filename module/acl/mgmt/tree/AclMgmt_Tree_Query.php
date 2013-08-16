@@ -45,8 +45,8 @@ class AclMgmt_Tree_Query extends LibSqlQuery
     if (!$params)
       $params = new TFlag();
 
-    $this->sourceSize  = null;
-    $db                = $this->getDb();
+    $this->sourceSize = null;
+    $db = $this->getDb();
 
     $sql = <<<SQL
   SELECT
@@ -90,7 +90,7 @@ SQL;
       $params = new TFlag();
 
 
-    $db                = $this->getDb();
+    $db = $this->getDb();
 
     $sql = <<<SQL
 SELECT
@@ -103,7 +103,7 @@ SQL;
 
     $areaLevel = $db->select($sql)->getField('access_level');
 
-    $this->sourceSize  = null;
+    $this->sourceSize = null;
 
     /*
     Beschreibung der Felder in der Rekursion:

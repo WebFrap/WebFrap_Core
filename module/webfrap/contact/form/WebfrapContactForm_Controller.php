@@ -30,37 +30,37 @@ class WebfrapContactForm_Controller extends Controller
   /**
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'formuser' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('modal')
+      'method' => array('GET'),
+      'views' => array('modal')
     ),
     'formgroup' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('modal')
+      'method' => array('GET'),
+      'views' => array('modal')
     ),
     'formdset' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('modal')
+      'method' => array('GET'),
+      'views' => array('modal')
     ),
     'sendusermessage' => array
     (
-      'method'    => array('POST'),
-      'views'      => array('ajax')
+      'method' => array('POST'),
+      'views' => array('ajax')
     ),
     'sendgroupmessage' => array
     (
-      'method'    => array('POST'),
-      'views'      => array('ajax')
+      'method' => array('POST'),
+      'views' => array('ajax')
     ),
     'senddsetmessage' => array
     (
-      'method'    => array('POST'),
-      'views'      => array('ajax')
+      'method' => array('POST'),
+      'views' => array('ajax')
     ),
   );
 
@@ -75,8 +75,8 @@ class WebfrapContactForm_Controller extends Controller
   public function service_formUser($request, $response)
   {
 
-    $refId   = $request->param('ref_id', Validator::EID);
-    $userId  = $request->param('user_id', Validator::EID);
+    $refId = $request->param('ref_id', Validator::EID);
+    $userId = $request->param('user_id', Validator::EID);
     $dataSrc = $request->param('d_src', Validator::CNAME);
     $element = $request->param('element', Validator::CKEY);
 
@@ -106,8 +106,8 @@ class WebfrapContactForm_Controller extends Controller
   public function service_sendUserMessage($request, $response)
   {
     // refid
-    $refId   = $request->param('ref_id', Validator::EID);
-    $userId  = $request->param('user_id', Validator::EID);
+    $refId = $request->param('ref_id', Validator::EID);
+    $userId = $request->param('user_id', Validator::EID);
     $dataSrc = $request->param('d_src', Validator::CNAME);
 
     /* @var $model WebfrapContactForm_Model */
@@ -141,10 +141,10 @@ class WebfrapContactForm_Controller extends Controller
   public function service_formGroup($request, $response)
   {
 
-    $refId     = $request->param('ref_id', Validator::EID);
-    $groupKey  = $request->param('group', Validator::CNAME);
-    $dataSrc   = $request->param('d_src', Validator::CNAME);
-    $element   = $request->param('element', Validator::CKEY);
+    $refId = $request->param('ref_id', Validator::EID);
+    $groupKey = $request->param('group', Validator::CNAME);
+    $dataSrc = $request->param('d_src', Validator::CNAME);
+    $element = $request->param('element', Validator::CKEY);
 
     if (!$element)
       $element = 'contact';
@@ -174,10 +174,10 @@ class WebfrapContactForm_Controller extends Controller
   public function service_sendGroupMessage($request, $response)
   {
     // refid
-    $refId   = $request->param('ref_id', Validator::EID);
+    $refId = $request->param('ref_id', Validator::EID);
     $dataSrc = $request->param('d_src', Validator::CNAME);
 
-    $users   = $request->data('user', Validator::EID);
+    $users = $request->data('user', Validator::EID);
 
     /* @var $model WebfrapContactForm_Model */
     $model = $this->loadModel('WebfrapMessage');
@@ -217,9 +217,9 @@ class WebfrapContactForm_Controller extends Controller
   public function service_formDset($request, $response)
   {
 
-    $refId     = $request->param('ref_id', Validator::EID);
-    $dataSrc   = $request->param('d_src', Validator::CNAME);
-    $element   = $request->param('element', Validator::CKEY);
+    $refId = $request->param('ref_id', Validator::EID);
+    $dataSrc = $request->param('d_src', Validator::CNAME);
+    $element = $request->param('element', Validator::CKEY);
 
     if (!$element)
       $element = 'contact';
@@ -249,10 +249,10 @@ class WebfrapContactForm_Controller extends Controller
   public function service_sendDsetMessage($request, $response)
   {
     // refid
-    $refId   = $request->param('ref_id', Validator::EID);
+    $refId = $request->param('ref_id', Validator::EID);
     $dataSrc = $request->param('d_src', Validator::CNAME);
 
-    $users   = $request->data('user', Validator::EID);
+    $users = $request->data('user', Validator::EID);
 
     /* @var $model WebfrapContactForm_Model */
     $model = $this->loadModel('WebfrapMessage');

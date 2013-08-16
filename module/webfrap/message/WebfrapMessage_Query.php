@@ -41,8 +41,8 @@ class WebfrapMessage_Query extends LibSqlQuery
   public function fetchAutocomplete($key)
   {
 
-    $this->sourceSize  = null;
-    $db               = $this->getDb();
+    $this->sourceSize = null;
+    $db = $this->getDb();
 
     $sql = <<<SQL
   SELECT

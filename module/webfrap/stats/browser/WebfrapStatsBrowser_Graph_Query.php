@@ -39,16 +39,16 @@ class WebfrapStatsBrowser_Graph_Query extends LibSqlQuery
   public function fetch($start)
   {
 
-    $db     = $this->getDb();
+    $db = $this->getDb();
 
     $matrix = array();
 
-    $dateStart  = new DateTime($start);
-    $dateEnd    = new DateTime($start);
+    $dateStart = new DateTime($start);
+    $dateEnd = new DateTime($start);
     $dateEnd->add(new DateInterval('P1Y'));
 
-    $interval   = new DateInterval('P1M');
-    $periods    = new DatePeriod($dateStart, $interval , $dateEnd);
+    $interval = new DateInterval('P1M');
+    $periods = new DatePeriod($dateStart, $interval , $dateEnd);
 
     // fillup
 

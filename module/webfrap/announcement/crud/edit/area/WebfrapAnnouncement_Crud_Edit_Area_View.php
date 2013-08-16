@@ -45,12 +45,12 @@ class WebfrapAnnouncement_Crud_Edit_Area_View extends LibTemplateAreaView
     $this->setTemplate('webfrap/announcement/area/crud/form_edit');
 
     // Setzen von Viewspezifischen Control Flags
-    $params->viewType  = 'area';
-    $params->viewId    = $this->getId();
+    $params->viewType = 'area';
+    $params->viewId = $this->getId();
 
     // Form Target und ID definieren
-    $params->formAction  = 'ajax.php?c=Webfrap.Announcement.update';
-    $params->formId     = 'wgt-form-webfrap_announcement';
+    $params->formAction = 'ajax.php?c=Webfrap.Announcement.update';
+    $params->formId = 'wgt-form-webfrap_announcement';
 
     // Setzen der letzten metadaten
     $this->addVar('params', $params);

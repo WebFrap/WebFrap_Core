@@ -38,10 +38,10 @@ class WebfrapNavigation_LastAccess_Query extends LibSqlQuery
   public function fetchLastAccessed($userId, $areaId = null, $mask = null)
   {
 
-    $this->sourceSize   = null;
-    $db                 = $this->getDb();
+    $this->sourceSize = null;
+    $db = $this->getDb();
 
-    $criteria           = $db->orm->newCriteria();
+    $criteria = $db->orm->newCriteria();
 
     $cols = array
     (
@@ -57,7 +57,7 @@ class WebfrapNavigation_LastAccess_Query extends LibSqlQuery
     $this->checkLimitAndOrder($criteria, new TFlag());
 
     // Run Query und save the result
-    $this->result     = $db->orm->select($criteria);
+    $this->result = $db->orm->select($criteria);
 
   }//end public function fetchLastAccessed */
 

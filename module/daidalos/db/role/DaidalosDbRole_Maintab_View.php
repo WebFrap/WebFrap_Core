@@ -68,26 +68,26 @@ class DaidalosDbRole_Maintab_View extends WgtMaintabCustom
   public function addMenu($params)
   {
 
-    $menu     = $this->newMenu
+    $menu = $this->newMenu
     (
       $this->id.'_dropmenu'
     );
 
     $menu->id = $this->id.'_dropmenu';
 
-    $iconMenu          = '<i class="icon-reorder" ></i>';
-    $iconClose         = '<i class="icon-remove-circle " ></i>';
+    $iconMenu = '<i class="icon-reorder" ></i>';
+    $iconClose = '<i class="icon-remove-circle " ></i>';
 
     $iconSupport = $this->icon('control/support.png'  ,'Support');
-    $iconFaq     = $this->icon('control/faq.png'      ,'Faq');
+    $iconFaq = $this->icon('control/faq.png'      ,'Faq');
 
-    $iconQuery         = $this->icon('daidalos/query.png' ,'Query');
+    $iconQuery = $this->icon('daidalos/query.png' ,'Query');
 
-    $iconCreateView    = $this->icon('daidalos/table_import.png' ,'Create Wbf Views');
-    $iconRecreate      = $this->icon('daidalos/table_dump.png' ,'Refresh Wbf Views');
-    $iconDeleteView    = $this->icon('daidalos/table_clean.png' ,'Delete Wbf Views');
+    $iconCreateView = $this->icon('daidalos/table_import.png' ,'Create Wbf Views');
+    $iconRecreate = $this->icon('daidalos/table_dump.png' ,'Refresh Wbf Views');
+    $iconDeleteView = $this->icon('daidalos/table_clean.png' ,'Delete Wbf Views');
 
-    $iconRefresh       = '<i class="icon-refresh" ></i>';
+    $iconRefresh = '<i class="icon-refresh" ></i>';
 
     $entries = new TArray();
 

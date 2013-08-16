@@ -42,8 +42,8 @@ class WebfrapPeople_Query_Postgresql extends LibSqlQuery
     if (!$params)
       $params = new TFlag();
 
-    $this->sourceSize  = null;
-    $db                = $this->getDb();
+    $this->sourceSize = null;
+    $db = $this->getDb();
 
     $tmp = explode(',',$key);
 

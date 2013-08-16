@@ -55,17 +55,17 @@ class MaintenanceDbConsistency_Maintab_Menu extends WgtDropmenu
   {
 
     // laden der mvc/utils adapter Objekte
-    $acl   = $this->getAcl();
-    $view   = $this->getView();
+    $acl = $this->getAcl();
+    $view = $this->getView();
 
-    $iconMenu    = '<i class="icon-reorder" ></i>';
-    $iconExecute    = $view->icon('control/exec.png', 'Send');
-    $iconClose     = '<i class="icon-remove-circle " ></i>';
+    $iconMenu = '<i class="icon-reorder" ></i>';
+    $iconExecute = $view->icon('control/exec.png', 'Send');
+    $iconClose = '<i class="icon-remove-circle " ></i>';
 
-    $iconSupport         = $view->icon('control/support.png'      ,'Support');
-    $iconBug         = $view->icon('control/bug.png'      ,'Bug');
-    $iconFaq         = $view->icon('control/faq.png'      ,'Faq');
-    $iconHelp         = $view->icon('control/help.png'      ,'Help');
+    $iconSupport = $view->icon('control/support.png'      ,'Support');
+    $iconBug = $view->icon('control/bug.png'      ,'Bug');
+    $iconFaq = $view->icon('control/faq.png'      ,'Faq');
+    $iconHelp = $view->icon('control/help.png'      ,'Help');
 
     $entries = new TArray();
 

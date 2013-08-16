@@ -32,17 +32,17 @@ class DaidalosDeployDatabase_Model extends Model
   /**
    * @var boolean
    */
-  protected $syncCol  = false;
+  protected $syncCol = false;
 
   /**
    * @var boolean
    */
-  protected $forceColSync  = false;
+  protected $forceColSync = false;
 
   /**
    * @var boolean
    */
-  protected $syncTable  = false;
+  protected $syncTable = false;
 
 /*//////////////////////////////////////////////////////////////////////////////
 // Methoden
@@ -93,11 +93,11 @@ class DaidalosDeployDatabase_Model extends Model
   public function syncMetadata($rootPath = PATH_ROOT, $type = null)
   {
 
-    $orm        = $this->getOrm();
-    $db         = $this->getDb();
-    $respsonse  = $this->getResponse();
+    $orm = $this->getOrm();
+    $db = $this->getDb();
+    $respsonse = $this->getResponse();
 
-    $repos  = Webfrap::getIncludePaths('metadata');
+    $repos = Webfrap::getIncludePaths('metadata');
 
     $this->protocol = new LibProtocolReport('log/report_sync_metadata_'.date('YmdHis').'.html');
 
@@ -151,11 +151,11 @@ class DaidalosDeployDatabase_Model extends Model
   public function syncMetadata_SecurityArea($orm, $modules, $deployRevision, $rootPath  )
   {
 
-    $orm  = $this->getOrm();
+    $orm = $this->getOrm();
     $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
+    $acl = $this->getAcl();
+    $aclManager = $acl->getManager();
+    $respsonse = $this->getResponse();
 
     $this->protocol->paragraph('Security Area');
 
@@ -187,11 +187,11 @@ class DaidalosDeployDatabase_Model extends Model
   public function syncMetadata_Module($orm, $modules, $deployRevision, $rootPath  )
   {
 
-    $orm  = $this->getOrm();
+    $orm = $this->getOrm();
     $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
+    $acl = $this->getAcl();
+    $aclManager = $acl->getManager();
+    $respsonse = $this->getResponse();
 
     $this->protocol->paragraph('Module');
 
@@ -222,11 +222,11 @@ class DaidalosDeployDatabase_Model extends Model
   public function syncMetadata_ModuleAccess($orm, $modules, $deployRevision, $rootPath  )
   {
 
-    $orm  = $this->getOrm();
+    $orm = $this->getOrm();
     $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
+    $acl = $this->getAcl();
+    $aclManager = $acl->getManager();
+    $respsonse = $this->getResponse();
 
     $this->protocol->paragraph('Module Access');
 
@@ -257,11 +257,11 @@ class DaidalosDeployDatabase_Model extends Model
   public function syncMetadata_ModuleCategory($orm, $modules, $deployRevision, $rootPath  )
   {
 
-    $orm  = $this->getOrm();
+    $orm = $this->getOrm();
     $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
+    $acl = $this->getAcl();
+    $aclManager = $acl->getManager();
+    $respsonse = $this->getResponse();
 
     $this->protocol->paragraph('Module Category');
 
@@ -292,11 +292,11 @@ class DaidalosDeployDatabase_Model extends Model
   public function syncMetadata_Entity($orm, $modules, $deployRevision, $rootPath  )
   {
 
-    $orm  = $this->getOrm();
+    $orm = $this->getOrm();
     $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
+    $acl = $this->getAcl();
+    $aclManager = $acl->getManager();
+    $respsonse = $this->getResponse();
 
     $this->protocol->paragraph('Entity');
 
@@ -327,11 +327,11 @@ class DaidalosDeployDatabase_Model extends Model
   public function syncMetadata_EntityAccess($orm, $modules, $deployRevision, $rootPath  )
   {
 
-    $orm  = $this->getOrm();
+    $orm = $this->getOrm();
     $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
+    $acl = $this->getAcl();
+    $aclManager = $acl->getManager();
+    $respsonse = $this->getResponse();
 
     $this->protocol->paragraph('Entity Access');
 
@@ -363,11 +363,11 @@ class DaidalosDeployDatabase_Model extends Model
   public function syncMetadata_EntityRef($orm, $modules, $deployRevision, $rootPath  )
   {
 
-    $orm  = $this->getOrm();
+    $orm = $this->getOrm();
     $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
+    $acl = $this->getAcl();
+    $aclManager = $acl->getManager();
+    $respsonse = $this->getResponse();
 
     $this->protocol->paragraph('Entity Ref');
 
@@ -398,11 +398,11 @@ class DaidalosDeployDatabase_Model extends Model
   public function syncMetadata_Management($orm, $modules, $deployRevision, $rootPath  )
   {
 
-    $orm  = $this->getOrm();
+    $orm = $this->getOrm();
     $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
+    $acl = $this->getAcl();
+    $aclManager = $acl->getManager();
+    $respsonse = $this->getResponse();
 
     $this->protocol->paragraph('Management');
 
@@ -433,11 +433,11 @@ class DaidalosDeployDatabase_Model extends Model
   public function syncMetadata_ManagementMaintenance($orm, $modules, $deployRevision, $rootPath  )
   {
 
-    $orm  = $this->getOrm();
+    $orm = $this->getOrm();
     $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
+    $acl = $this->getAcl();
+    $aclManager = $acl->getManager();
+    $respsonse = $this->getResponse();
 
     $this->protocol->paragraph('Management Maintenance');
 
@@ -468,11 +468,11 @@ class DaidalosDeployDatabase_Model extends Model
   public function syncMetadata_ManagementAcl($orm, $modules, $deployRevision, $rootPath  )
   {
 
-    $orm  = $this->getOrm();
+    $orm = $this->getOrm();
     $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
+    $acl = $this->getAcl();
+    $aclManager = $acl->getManager();
+    $respsonse = $this->getResponse();
 
     $this->protocol->paragraph('Management Acl');
 
@@ -503,11 +503,11 @@ class DaidalosDeployDatabase_Model extends Model
   public function syncMetadata_ManagementAccess($orm, $modules, $deployRevision, $rootPath  )
   {
 
-    $orm  = $this->getOrm();
+    $orm = $this->getOrm();
     $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
+    $acl = $this->getAcl();
+    $aclManager = $acl->getManager();
+    $respsonse = $this->getResponse();
 
     $this->protocol->paragraph('Management Access');
 
@@ -539,11 +539,11 @@ class DaidalosDeployDatabase_Model extends Model
   public function syncMetadata_ManagementRef($orm, $modules, $deployRevision, $rootPath  )
   {
 
-    $orm  = $this->getOrm();
+    $orm = $this->getOrm();
     $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
+    $acl = $this->getAcl();
+    $aclManager = $acl->getManager();
+    $respsonse = $this->getResponse();
 
     $this->protocol->paragraph('Management Ref');
 
@@ -574,11 +574,11 @@ class DaidalosDeployDatabase_Model extends Model
   public function syncMetadata_ManagementElement($orm, $modules, $deployRevision, $rootPath  )
   {
 
-    $orm  = $this->getOrm();
+    $orm = $this->getOrm();
     $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
+    $acl = $this->getAcl();
+    $aclManager = $acl->getManager();
+    $respsonse = $this->getResponse();
 
     $this->protocol->paragraph('Management Element');
 
@@ -609,11 +609,11 @@ class DaidalosDeployDatabase_Model extends Model
   public function syncMetadata_Profile($orm, $modules, $deployRevision, $rootPath  )
   {
 
-    $orm  = $this->getOrm();
+    $orm = $this->getOrm();
     $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
+    $acl = $this->getAcl();
+    $aclManager = $acl->getManager();
+    $respsonse = $this->getResponse();
 
     $this->protocol->paragraph('Profile');
 
@@ -644,11 +644,11 @@ class DaidalosDeployDatabase_Model extends Model
   public function syncMetadata_Process($orm, $modules, $deployRevision, $rootPath  )
   {
 
-    $orm  = $this->getOrm();
+    $orm = $this->getOrm();
     $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
+    $acl = $this->getAcl();
+    $aclManager = $acl->getManager();
+    $respsonse = $this->getResponse();
 
     $this->protocol->paragraph('Process');
 
@@ -679,11 +679,11 @@ class DaidalosDeployDatabase_Model extends Model
   public function syncMetadata_Role($orm, $modules, $deployRevision, $rootPath  )
   {
 
-    $orm  = $this->getOrm();
+    $orm = $this->getOrm();
     $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
+    $acl = $this->getAcl();
+    $aclManager = $acl->getManager();
+    $respsonse = $this->getResponse();
 
     $this->protocol->paragraph('Role');
 
@@ -714,11 +714,11 @@ class DaidalosDeployDatabase_Model extends Model
   public function syncMetadata_Widget($orm, $modules, $deployRevision, $rootPath  )
   {
 
-    $orm  = $this->getOrm();
+    $orm = $this->getOrm();
     $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
+    $acl = $this->getAcl();
+    $aclManager = $acl->getManager();
+    $respsonse = $this->getResponse();
 
     $this->protocol->paragraph('Widget');
 
@@ -750,11 +750,11 @@ class DaidalosDeployDatabase_Model extends Model
   public function syncMetadata_Desktop($orm, $modules, $deployRevision, $rootPath  )
   {
 
-    $orm  = $this->getOrm();
+    $orm = $this->getOrm();
     $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
+    $acl = $this->getAcl();
+    $aclManager = $acl->getManager();
+    $respsonse = $this->getResponse();
 
     $this->protocol->paragraph('Desktop');
 
@@ -786,11 +786,11 @@ class DaidalosDeployDatabase_Model extends Model
   public function syncMetadata_Item($orm, $modules, $deployRevision, $rootPath  )
   {
 
-    $orm  = $this->getOrm();
+    $orm = $this->getOrm();
     $user = $this->getUser();
-    $acl  = $this->getAcl();
-    $aclManager  = $acl->getManager();
-    $respsonse   = $this->getResponse();
+    $acl = $this->getAcl();
+    $aclManager = $acl->getManager();
+    $respsonse = $this->getResponse();
 
     $this->protocol->paragraph('Item');
 
@@ -823,10 +823,10 @@ class DaidalosDeployDatabase_Model extends Model
   public function syncDatabase($rootPath = PATH_ROOT)
   {
 
-    $respsonse  = $this->getResponse();
-    $gmods      = Webfrap::getIncludePaths('metadata');
+    $respsonse = $this->getResponse();
+    $gmods = Webfrap::getIncludePaths('metadata');
 
-    $dbAdmin    = new LibDbAdminPostgresql($this->getDb());
+    $dbAdmin = new LibDbAdminPostgresql($this->getDb());
 
     $allTables = array();
     $tmp = $dbAdmin->getDbTables();
@@ -871,14 +871,14 @@ class DaidalosDeployDatabase_Model extends Model
   public function syncData($rootPath = PATH_ROOT)
   {
 
-    $orm      = $this->getOrm();
+    $orm = $this->getOrm();
     $response = $this->getResponse();
 
     $dataPaths = Webfrap::getIncludePaths('metadata');
     foreach ($dataPaths as $dataPath) {
 
       $folder = new LibFilesystemFolder($rootPath.$dataPath.'/data/metadata/data/');
-      $files  = $folder->getFilesByEnding('.php');
+      $files = $folder->getFilesByEnding('.php');
 
       foreach ($files as $file) {
 
@@ -892,7 +892,7 @@ class DaidalosDeployDatabase_Model extends Model
 
       // sandbox
       $folder = new LibFilesystemFolder($rootPath.$dataPath.'/sandbox/data/metadata/data/');
-      $files  = $folder->getFilesByEnding('.php');
+      $files = $folder->getFilesByEnding('.php');
 
       foreach ($files as $file) {
 

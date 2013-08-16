@@ -31,13 +31,13 @@ class WebfrapAnnouncement_Crud_Edit_Modal_View extends WgtModal
    * Die Breite des Modal Elements
    * @var int in px
    */
-  public $width   = 825 ;
+  public $width = 825 ;
 
   /**
    * Die Höhe des Modal Elements
    * @var int in px
    */
-  public $height   = 600 ;
+  public $height = 600 ;
 
 /*//////////////////////////////////////////////////////////////////////////////
 // Dimension
@@ -64,12 +64,12 @@ class WebfrapAnnouncement_Crud_Edit_Modal_View extends WgtModal
     $this->setTemplate('webfrap/announcement/crud/edit/modal/form_edit', true);
 
     // Setzen von Viewspezifischen Control Flags
-    $params->viewType  = 'modal';
-    $params->viewId    = $this->getId();
+    $params->viewType = 'modal';
+    $params->viewId = $this->getId();
 
     // Form Target und ID definieren
-    $params->formAction  = 'ajax.php?c=Webfrap.Announcement.update';
-    $params->formId     = 'wgt-form-webfrap_announcement';
+    $params->formAction = 'ajax.php?c=Webfrap.Announcement.update';
+    $params->formId = 'wgt-form-webfrap_announcement';
 
     // Setzen der letzten metadaten
     $this->addVar('params', $params);

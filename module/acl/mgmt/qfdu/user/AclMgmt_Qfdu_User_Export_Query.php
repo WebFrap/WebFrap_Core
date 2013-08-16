@@ -58,10 +58,10 @@ class AclMgmt_Qfdu_User_Export_Query extends LibSqlQuery
 
     $context->qsize = -1;
 
-    $this->sourceSize  = null;
-    $db                = $this->getDb();
+    $this->sourceSize = null;
+    $db = $this->getDb();
 
-    $criteria  = $db->orm->newCriteria();
+    $criteria = $db->orm->newCriteria();
     $dsetEntiy = $db->orm->newEntity($this->domainNode->srcKey);
 
     $textKeys = $dsetEntiy->textKeys();
@@ -80,8 +80,8 @@ class AclMgmt_Qfdu_User_Export_Query extends LibSqlQuery
 
 
     // Run Query und save the result
-    $this->result     = $db->orm->select($criteria);
-    $this->calcQuery  = $criteria->count('count(DISTINCT group_users.rowid) as '.Db::Q_SIZE);
+    $this->result = $db->orm->select($criteria);
+    $this->calcQuery = $criteria->count('count(DISTINCT group_users.rowid) as '.Db::Q_SIZE);
 
   }//end public function fetch */
 

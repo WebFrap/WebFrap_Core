@@ -60,8 +60,8 @@ class WebfrapAnnouncement_Table_Maintab_View extends WgtMaintab
   {
 
     // laden der mvc/utils adapter Objekte
-    $request  = $this->getRequest();
-    $access   = $params->access;
+    $request = $this->getRequest();
+    $access = $params->access;
 
     // Setzen der letzten metadaten
     $this->addVar('params', $params);
@@ -111,8 +111,8 @@ class WebfrapAnnouncement_Table_Maintab_View extends WgtMaintab
     // crudform
 
     // Form Target und ID definieren
-    $params->formAction  = 'ajax.php?c=Webfrap.Announcement.insert';
-    $params->formId       = 'wgt-form-webfrap_announcement';
+    $params->formAction = 'ajax.php?c=Webfrap.Announcement.insert';
+    $params->formId = 'wgt-form-webfrap_announcement';
 
     // Das Create Form Objekt erstellen und mit allen nötigen Daten befüllen
     $form = $this->newForm('WebfrapAnnouncement_Crud_Create');
@@ -147,7 +147,7 @@ class WebfrapAnnouncement_Table_Maintab_View extends WgtMaintab
   public function addMenuListing($params)
   {
 
-    $menu     = $this->newMenu
+    $menu = $this->newMenu
     (
       $this->id.'_dropmenu',
       'WebfrapAnnouncement_Table'

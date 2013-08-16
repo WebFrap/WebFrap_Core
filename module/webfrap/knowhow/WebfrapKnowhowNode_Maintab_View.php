@@ -75,19 +75,19 @@ class WebfrapKnowhowNode_Maintab_View extends WgtMaintabCustom
   public function addMenu($activeNode)
   {
 
-    $iconMenu          = '<i class="icon-reorder" ></i>';
-    $iconClose         = '<i class="icon-remove-circle " ></i>';
-    $iconSave          = '<i class="icon-save" ></i>';
-    $iconShow          = $this->icon('control/show.png' ,'Show');
+    $iconMenu = '<i class="icon-reorder" ></i>';
+    $iconClose = '<i class="icon-remove-circle " ></i>';
+    $iconSave = '<i class="icon-save" ></i>';
+    $iconShow = $this->icon('control/show.png' ,'Show');
 
-    $iconSupport   = $this->icon('control/support.png'  ,'Support');
-    $iconBug       = $this->icon('control/bug.png'      ,'Bug');
-    $iconFaq       = $this->icon('control/faq.png'      ,'Faq');
-    $iconHelp      = $this->icon('control/help.png'     ,'Help');
+    $iconSupport = $this->icon('control/support.png'  ,'Support');
+    $iconBug = $this->icon('control/bug.png'      ,'Bug');
+    $iconFaq = $this->icon('control/faq.png'      ,'Faq');
+    $iconHelp = $this->icon('control/help.png'     ,'Help');
 
     $nodeId = $activeNode->getId();
 
-    $menu     = $this->newMenu($this->id.'_dropmenu');
+    $menu = $this->newMenu($this->id.'_dropmenu');
 
     $menu->id = $this->id.'_dropmenu';
 

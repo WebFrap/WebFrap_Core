@@ -92,10 +92,10 @@ class DaidalosDeploy_Controller extends Controller
     $model = $this->loadModel('DaidalosDeployDatabase');
     /* @var $model DaidalosDeployDatabase_Model */
 
-    $syncCol   = $request->param('sync_col', Validator::BOOLEAN);
+    $syncCol = $request->param('sync_col', Validator::BOOLEAN);
     $deleteCol = $request->param('delete_col', Validator::BOOLEAN);
     $syncTable = $request->param('sync_table', Validator::BOOLEAN);
-    $rootPath  = $request->param('root_path', Validator::FOLDERNAME)?:PATH_ROOT;
+    $rootPath = $request->param('root_path', Validator::FOLDERNAME)?:PATH_ROOT;
 
     if ($deleteCol)
       $model->forceColSync(true);
@@ -129,7 +129,7 @@ class DaidalosDeploy_Controller extends Controller
   public function service_syncData($request, $respsonse)
   {
 
-    $rootPath  = $request->param('root_path', Validator::FOLDERNAME)?:PATH_ROOT;
+    $rootPath = $request->param('root_path', Validator::FOLDERNAME)?:PATH_ROOT;
 
     $model = $this->loadModel('DaidalosDeployDatabase');
     /* @var $model DaidalosDeployDatabase_Model */

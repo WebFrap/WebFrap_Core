@@ -44,7 +44,7 @@ class WebfrapTag_Model extends Model
   public function addTag($tagName)
   {
 
-    $orm     = $this->getOrm();
+    $orm = $this->getOrm();
     $tagNode = $orm->getWhere("WbfsysTag",  "name ilike '".$orm->escape($tagName)."' ");
 
     if ($tagNode) {
@@ -52,7 +52,7 @@ class WebfrapTag_Model extends Model
     } else {
       $tagNode = $orm->newEntity("WbfsysTag");
       $tagNode->name = $tagName;
-      $tagNode->access_key  = SFormatStrings::nameToAccessKey($tagName);
+      $tagNode->access_key = SFormatStrings::nameToAccessKey($tagName);
       $tagNode = $orm->insertIfNotExists($tagNode, array('name'));
 
       return $tagNode;
@@ -69,11 +69,11 @@ class WebfrapTag_Model extends Model
   public function addConnection($tagId, $objid)
   {
 
-    $orm    = $this->getOrm();
+    $orm = $this->getOrm();
     $tagRef = $orm->newEntity('WbfsysTagReference');
 
-    $tagRef->id_tag  = (string) $tagId;
-    $tagRef->vid     = $objid;
+    $tagRef->id_tag = (string) $tagId;
+    $tagRef->vid = $objid;
 
     if (!$tagRef->id_tag) {
       throw new LibDb_Exception("FUUU");
@@ -90,7 +90,7 @@ class WebfrapTag_Model extends Model
   public function cleanDsetTags($objid)
   {
 
-    $orm    = $this->getOrm();
+    $orm = $this->getOrm();
     $orm->deleteWhere('WbfsysTagReference', "vid=".$objid);
 
   }//end public function cleanDsetTags */
@@ -102,7 +102,7 @@ class WebfrapTag_Model extends Model
   public function disconnect($objid)
   {
 
-    $orm    = $this->getOrm();
+    $orm = $this->getOrm();
     $orm->delete('WbfsysTagReference', $objid);
 
   }//end public function disconnect */

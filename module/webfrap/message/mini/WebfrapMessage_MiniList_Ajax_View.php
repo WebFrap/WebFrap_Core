@@ -36,11 +36,11 @@ class WebfrapMessage_MiniList_Ajax_View extends LibTemplateAjaxView
   {
 
     // laden der mvc/utils adapter Objekte
-    $user     = $this->getUser();
-    $acl      = $this->getAcl();
-    $request  = $this->getRequest();
+    $user = $this->getUser();
+    $acl = $this->getAcl();
+    $request = $this->getRequest();
 
-    $params->qsize  = 50;
+    $params->qsize = 50;
     $params->elementId = 'wgt-grid-webfrap-messages-mini_list';
 
     // die query muss für das paging und eine korrekte anzeige
@@ -96,11 +96,11 @@ WGTJS;
   {
 
     // laden der mvc/utils adapter Objekte
-    $user     = $this->getUser();
-    $acl      = $this->getAcl();
-    $request  = $this->getRequest();
+    $user = $this->getUser();
+    $acl = $this->getAcl();
+    $request = $this->getRequest();
 
-    $params->qsize  = 50;
+    $params->qsize = 50;
 
     // die query muss für das paging und eine korrekte anzeige
     // die anzahl der gefundenen datensätze ermitteln

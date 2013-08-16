@@ -113,9 +113,9 @@ class DaidalosPackage_File extends LibXmlDocument
       foreach ($tmp as $folder) {
         $folders[] = array
         (
-          'name'       => $folder->getAttribute('name'),
-          'recursive'  => ($folder->getAttribute('recursive')?:'true'),
-          'filter'     => ($folder->getAttribute('filter')?:''),
+          'name' => $folder->getAttribute('name'),
+          'recursive' => ($folder->getAttribute('recursive')?:'true'),
+          'filter' => ($folder->getAttribute('filter')?:''),
         );
       }
     } else {
@@ -134,7 +134,7 @@ class DaidalosPackage_File extends LibXmlDocument
   public function getComponentIterator()
   {
 
-    $tmp     = $this->xpath('/package/components/component');
+    $tmp = $this->xpath('/package/components/component');
 
     return new DaidalosPackage_Component_Iterator($tmp, '/code/');
 

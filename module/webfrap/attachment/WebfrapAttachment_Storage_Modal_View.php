@@ -28,13 +28,13 @@ class WebfrapAttachment_Storage_Modal_View extends WgtModal
    * Die Breite des Modal Elements
    * @var int in px
    */
-  public $width   = 630 ;
+  public $width = 630 ;
 
   /**
    * Die Höhe des Modal Elements
    * @var int in px
    */
-  public $height   = 280 ;
+  public $height = 280 ;
 
 /*//////////////////////////////////////////////////////////////////////////////
 // Display Methodes
@@ -84,8 +84,8 @@ class WebfrapAttachment_Storage_Modal_View extends WgtModal
     $this->setTemplate('webfrap/attachment/modal/form_edit_storage', true);
 
     $this->addVars(array(
-      'storage'       => $storageNode,
-      'elementKey'    => $context->element,
+      'storage' => $storageNode,
+      'elementKey' => $context->element,
       'refMask' => $context->refMask,
       'preUrl' => $context->toUrlExt(),
     ));

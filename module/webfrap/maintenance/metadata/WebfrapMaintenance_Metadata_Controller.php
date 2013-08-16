@@ -44,22 +44,22 @@ class WebfrapMaintenance_Metadata_Controller extends Controller
    *
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'stats' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('modal')
+      'method' => array('GET'),
+      'views' => array('modal')
     ),
     'cleansource' => array
     (
-      'method'    => array('DELETE'),
-      'views'      => array('modal')
+      'method' => array('DELETE'),
+      'views' => array('modal')
     ),
     'cleanall' => array
     (
-      'method'    => array('DELETE'),
-      'views'      => array('modal')
+      'method' => array('DELETE'),
+      'views' => array('modal')
     )
   );
 

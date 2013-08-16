@@ -118,7 +118,7 @@ class DaidalosDeployProject_Model extends Model
 
     $this->entity = $entity;
     $this->params = $params;
-    $this->env    = $env;
+    $this->env = $env;
 
     $this->deployConf = $deployConf;
 
@@ -161,10 +161,10 @@ class DaidalosDeployProject_Model extends Model
 
     $map = array
     (
-      $this->entity->id_gateway   => 'gatewayProject',
+      $this->entity->id_gateway => 'gatewayProject',
       $this->entity->id_icon_theme => 'iconProject',
-      $this->entity->id_theme     => 'themeProject',
-      $this->entity->id_wgt       => 'wgtProject',
+      $this->entity->id_theme => 'themeProject',
+      $this->entity->id_wgt => 'wgtProject',
       $this->entity->id_framework => 'webfrapProject'
     );
 

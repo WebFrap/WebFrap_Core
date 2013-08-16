@@ -48,9 +48,9 @@ class WebfrapMediathek_File_Model extends Model
 
     //$fileNode->versioning = $dataNode->confidentiality;
     $fileNode->id_mediathek = $mediaId;
-    $fileNode->id_licence   = $dataNode->id_licence;
+    $fileNode->id_licence = $dataNode->id_licence;
     $fileNode->id_confidentiality = $dataNode->id_confidentiality;
-    $fileNode->description   = $dataNode->description;
+    $fileNode->description = $dataNode->description;
 
     $fileNode = $orm->insert($fileNode);
 
@@ -90,7 +90,7 @@ class WebfrapMediathek_File_Model extends Model
 
       $fileNode->mimetype = $file->getFiletype();
 
-      $fileId   = $fileNode->getId();
+      $fileId = $fileNode->getId();
       $filePath = SParserString::idToPath($fileId);
 
       $filePath = PATH_GW.'data/uploads/wbfsys_file/file/'.$filePath;
@@ -138,7 +138,7 @@ class WebfrapMediathek_File_Model extends Model
   public function delete($imgId)
   {
 
-    $orm    = $this->getOrm();
+    $orm = $this->getOrm();
 
     // datei löschen
     $orm->delete('WbfsysFile', $imgId);

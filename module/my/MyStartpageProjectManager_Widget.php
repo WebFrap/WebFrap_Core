@@ -32,8 +32,8 @@ class MyStartpageProjectManager_Widget extends WgtWidget
   public function asTab($containerId, $tabId, $tabSize = 'medium')
   {
 
-    $user     = $this->getUser();
-    $view     = $this->getView();
+    $user = $this->getUser();
+    $view = $this->getView();
 
     $profile = $user->getProfileName();
     $modMenu = $view->newItem('widgetUserMenu', 'WgtElementMenuExplorer');

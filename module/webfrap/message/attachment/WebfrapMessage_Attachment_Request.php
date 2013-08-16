@@ -65,7 +65,7 @@ class WebfrapMessage_Attachment_Request extends Context
 
     $this->data['id_type'] = $request->data('type', Validator::EID);
     $this->data['flag_versioning'] = $request->data('version', Validator::BOOLEAN);
-    $this->data['description']  = $request->data('description', Validator::TEXT);
+    $this->data['description'] = $request->data('description', Validator::TEXT);
     $this->data['id_confidentiality'] = $request->data('id_confidentiality', Validator::EID);
 
     $this->interpretRequestAcls($request);

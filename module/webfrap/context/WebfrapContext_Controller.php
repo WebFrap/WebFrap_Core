@@ -31,18 +31,18 @@ class WebfrapContext_Controller extends Controller
   /**
    * @var array
    */
-  protected $options           = array(
+  protected $options = array(
     'set' => array(
-      'method'    => array('PUT'),
-      'views'      => array('ajax')
+      'method' => array('PUT'),
+      'views' => array('ajax')
     ),
     'reset' => array(
-      'method'    => array('PUT'),
-      'views'      => array('ajax')
+      'method' => array('PUT'),
+      'views' => array('ajax')
     ),
     'resetall' => array(
-      'method'    => array('PUT'),
-      'views'      => array('ajax')
+      'method' => array('PUT'),
+      'views' => array('ajax')
     ),
   );
 

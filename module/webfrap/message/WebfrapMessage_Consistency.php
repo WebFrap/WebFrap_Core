@@ -44,7 +44,7 @@ class WebfrapMessage_Consistency extends DataContainer
   {
 
     $orm = $this->getOrm();
-    $this->sysUsers   = $orm->getIds("WbfsysRoleUser", "rowid>0");
+    $this->sysUsers = $orm->getIds("WbfsysRoleUser", "rowid>0");
 
     $this->fixUserAddresses();
     $this->fixUserReceiver();
@@ -60,14 +60,14 @@ class WebfrapMessage_Consistency extends DataContainer
     $orm = $this->getOrm();
 
     $itemType = $orm->getByKey('WbfsysAddressItemType', 'message');
-    $itemId   = $itemType->getId();
+    $itemId = $itemType->getId();
 
     foreach ($this->sysUsers as $sysUser) {
 
       if (!$item = $orm->get('WbfsysAddressItem', 'id_user='.$sysUser.' and id_type='.$itemId)) {
         // Private Channel für den User erstellen
         $item = $orm->newEntity('WbfsysAddressItem');
-        $item->address_value   = $sysUser;
+        $item->address_value = $sysUser;
         $item->id_user = $sysUser;
         $item->id_type = $itemId;
         $item->use_for_contact = true;

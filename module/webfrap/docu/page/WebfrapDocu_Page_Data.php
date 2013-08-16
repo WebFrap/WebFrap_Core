@@ -74,7 +74,7 @@ class WebfrapDocu_Page_Data
       $this->template = '';
 
     $this->content = $page->content;
-    $this->key     = $page->key;
+    $this->key = $page->key;
 
     $this->page = $page;
     $this->slices = $slices;

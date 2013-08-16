@@ -33,13 +33,13 @@ class WebfrapKnowhowNode_Modal_View extends WgtModal
    * Die Breite des Modal Elements
    * @var int in px
    */
-  public $width   = 450 ;
+  public $width = 450 ;
 
   /**
    * Die Höhe des Modal Elements
    * @var int in px
    */
-  public $height   = 380 ;
+  public $height = 380 ;
 
 /*//////////////////////////////////////////////////////////////////////////////
 // Display Methodes

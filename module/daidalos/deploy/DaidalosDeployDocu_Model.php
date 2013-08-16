@@ -54,11 +54,11 @@ class DaidalosDeployDocu_Model extends Model
   public function syncDocu()
   {
 
-    $orm        = $this->getOrm();
-    $db         = $this->getDb();
-    $respsonse  = $this->getResponse();
+    $orm = $this->getOrm();
+    $db = $this->getDb();
+    $respsonse = $this->getResponse();
 
-    $repos  = Webfrap::getIncludePaths('metadata');
+    $repos = Webfrap::getIncludePaths('metadata');
 
     $this->protocol = new LibProtocolReport('log/report_sync_doku_'.date('YmdHis').'.html');
 
@@ -87,9 +87,9 @@ class DaidalosDeployDocu_Model extends Model
   public function syncDocu_ArchNode($orm, $modules, $archKey, $archLabel  )
   {
 
-    $orm  = $this->getOrm();
+    $orm = $this->getOrm();
     $user = $this->getUser();
-    $respsonse   = $this->getResponse();
+    $respsonse = $this->getResponse();
 
     $this->protocol->paragraph($archLabel);
 
@@ -119,9 +119,9 @@ class DaidalosDeployDocu_Model extends Model
   public function syncDocu_Root($orm, $modules  )
   {
 
-    $orm  = $this->getOrm();
+    $orm = $this->getOrm();
     $user = $this->getUser();
-    $respsonse   = $this->getResponse();
+    $respsonse = $this->getResponse();
 
     $this->protocol->paragraph('Doku Root');
     

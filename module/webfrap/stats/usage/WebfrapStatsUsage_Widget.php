@@ -52,12 +52,12 @@ class WebfrapStatsUsage_Widget extends WgtWidget
   public function render($tabId, $tabSize = 'medium')
   {
 
-    $user         = $this->getUser();
-    $view         = $this->getView();
-    $httpRequest  = $this->getRequest();
+    $user = $this->getUser();
+    $view = $this->getView();
+    $httpRequest = $this->getRequest();
 
-    $chartType  = $httpRequest->param('graph', Validator::CNAME);
-    $startDate  = $httpRequest->param('start', Validator::DATE);
+    $chartType = $httpRequest->param('graph', Validator::CNAME);
+    $startDate = $httpRequest->param('start', Validator::DATE);
 
     $startDate = date('Y').'-01-01';
 
@@ -67,10 +67,10 @@ class WebfrapStatsUsage_Widget extends WgtWidget
     $selectbox = $view->newItem('tmp','Selectbox');
     $selectbox->addAttributes(array
     (
-      'name'      => 'entity',
-      'id'        => 'wgt_selectbox-widget-entities',
-      //'onchange'  => '',
-      'class'     => 'medium cursor',
+      'name' => 'entity',
+      'id' => 'wgt_selectbox-widget-entities',
+      //'onchange' => '',
+      'class' => 'medium cursor',
     ));
     $selectbox->setWidth('medium');
     $selectbox->setFirstfree('Select an Entity');
@@ -78,7 +78,7 @@ class WebfrapStatsUsage_Widget extends WgtWidget
     $selectbox->setData($this->query->fetchSelectbox());
     $selectbox->setActive($this->entityKey);
 
-    $boxWidth   = $this->width - 122;
+    $boxWidth = $this->width - 122;
 
     $html = <<<HTML
     <div id="{$tabId}" class="wgt_tab {$tabSize}" title="Entity Chart"  >
@@ -147,29 +147,29 @@ HTML;
   public function runLoad($tabSize = 'medium'  )
   {
 
-    $user         = $this->getUser();
-    $view         = $this->getView();
-    $httpRequest  = $this->getRequest();
+    $user = $this->getUser();
+    $view = $this->getView();
+    $httpRequest = $this->getRequest();
 
-    $tabId      = $httpRequest->param( 'target',Validator::CKEY  );
-    $size       = $httpRequest->data( 'size',Validator::CNAME  );
+    $tabId = $httpRequest->param( 'target',Validator::CKEY  );
+    $size = $httpRequest->data( 'size',Validator::CNAME  );
 
-    $chartType  = $httpRequest->data( 'graph',Validator::CNAME  );
-    $entityKey  = $httpRequest->data( 'entity',Validator::CNAME  );
-    $startDate  = $httpRequest->data( 'start',Validator::DATE  );
+    $chartType = $httpRequest->data( 'graph',Validator::CNAME  );
+    $entityKey = $httpRequest->data( 'entity',Validator::CNAME  );
+    $startDate = $httpRequest->data( 'start',Validator::DATE  );
 
-    $width      = $httpRequest->param( 'width',Validator::INT  );
-    $height     = $httpRequest->param( 'height',Validator::INT  );
+    $width = $httpRequest->param( 'width',Validator::INT  );
+    $height = $httpRequest->param( 'height',Validator::INT  );
 
     $json = $this->load($entityKey, $startDate);
 
 
     if (!$width || !$height) {
-      $width  = $this->width;
+      $width = $this->width;
       $height = $this->height;
     }
 
-    $boxWidth   = $width - 122;
+    $boxWidth = $width - 122;
 
     $code = <<<HTML
       <div class="wcm wcm_chart_{$chartType}" id="{$tabId}_graph" style="width:{$width}px;height:{$height}px;" >
@@ -202,9 +202,9 @@ HTML;
 
     Debug::console("$entityKey , $startDate");
 
-    $query  = new StatsEntity_Widget_Query();
+    $query = new StatsEntity_Widget_Query();
     $this->query = $query;
-    $data   = $query->fetch($entityKey, $startDate);
+    $data = $query->fetch($entityKey, $startDate);
 
     //Message::addMessage('fkn test');
 
@@ -215,7 +215,7 @@ HTML;
     $labels[] = 'Entries Changed';
 
     foreach ($data as $period => $row) {
-      $key          = date('M',strtotime($period));
+      $key = date('M',strtotime($period));
       $values[$key] = array(
         (isset($row['created'])?$row['created']:0),
         (isset($row['changed'])?$row['changed']:0)

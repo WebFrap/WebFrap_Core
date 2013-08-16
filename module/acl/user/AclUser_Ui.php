@@ -70,8 +70,8 @@ class AclMgmt_Qfdu_User_Ui extends MvcUi
       $this->view
     );
 
-    $areaId              = $params->areaId;
-    $listObj->areaId     = $areaId;
+    $areaId = $params->areaId;
+    $listObj->areaId = $areaId;
     $listObj->domainNode = $this->domainNode;
 
     // use the query as datasource for the table
@@ -82,14 +82,14 @@ class AclMgmt_Qfdu_User_Ui extends MvcUi
     $listObj->setAccessPath($params, $params->aclKey, $params->aclNode);
 
     // set the offset to set the paging menu correct
-    $listObj->start    = $params->start;
+    $listObj->start = $params->start;
 
     // set the position for the size menu
     $listObj->stepSize = $params->qsize;
 
     // check if there is a filter for the first char
     if ($params->begin)
-      $listObj->begin  = $params->begin;
+      $listObj->begin = $params->begin;
 
     // if there is a given tableId for the html id of the the table replace
     // the default id with it
@@ -112,7 +112,7 @@ class AclMgmt_Qfdu_User_Ui extends MvcUi
 
     if ($params->ajax) {
       // refresh the table in ajax requests
-      $listObj->refresh    = true;
+      $listObj->refresh = true;
 
       // the table should only replace the content inside of the container
       // but not the container itself
@@ -121,7 +121,7 @@ class AclMgmt_Qfdu_User_Ui extends MvcUi
       // create the panel
       $tabPanel = new WgtPanelTable($listObj);
 
-      $tabPanel->title      = $this->view->i18n->l
+      $tabPanel->title = $this->view->i18n->l
       (
         'Qualified User Access for {@label@}',
         'wbf.label',
@@ -130,7 +130,7 @@ class AclMgmt_Qfdu_User_Ui extends MvcUi
           'label' => $this->domainNode->label
         )
       );
-      $tabPanel->searchKey  = $this->domainNode->domainName.'_acl_tuser';
+      $tabPanel->searchKey = $this->domainNode->domainName.'_acl_tuser';
     }
 
 

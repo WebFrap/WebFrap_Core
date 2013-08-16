@@ -42,57 +42,57 @@ class DaidalosDbSchema_Controller extends Controller
    *
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'listschema' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('maintab'  )
+      'method' => array('GET'),
+      'views' => array('maintab'  )
     ),
     'listviews' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('maintab'  )
+      'method' => array('GET'),
+      'views' => array('maintab'  )
     ),
     'listtables' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('maintab'  )
+      'method' => array('GET'),
+      'views' => array('maintab'  )
     ),
     'listsequences' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('maintab'  )
+      'method' => array('GET'),
+      'views' => array('maintab'  )
     ),
     'listbackups' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('modal'  )
+      'method' => array('GET'),
+      'views' => array('modal'  )
     ),
     'dumpschema' => array
     (
-      'method'    => array('POST'),
-      'views'      => array('modal'  )
+      'method' => array('POST'),
+      'views' => array('modal'  )
     ),
     'restoredump' => array
     (
-      'method'    => array('PUT'),
-      'views'      => array('ajax'  )
+      'method' => array('PUT'),
+      'views' => array('ajax'  )
     ),
     'deletedump' => array
     (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax'  )
+      'method' => array('DELETE'),
+      'views' => array('ajax'  )
     ),
     'uploaddump' => array
     (
-      'method'    => array('POST'),
-      'views'      => array('ajax'  )
+      'method' => array('POST'),
+      'views' => array('ajax'  )
     ),
     'drop' => array
     (
-      'method'    => array('DELETE'),
-      'views'      => array('maintab'  )
+      'method' => array('DELETE'),
+      'views' => array('maintab'  )
     ),
   );
 
@@ -110,7 +110,7 @@ class DaidalosDbSchema_Controller extends Controller
 
     $params = $this->getFlags($request);
 
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       'daidalos_schema_list-schema',
       'DaidalosDbSchema',
@@ -118,7 +118,7 @@ class DaidalosDbSchema_Controller extends Controller
       View::MAINTAB
     );
 
-    $model  = $this->loadModel('DaidalosDb');
+    $model = $this->loadModel('DaidalosDb');
     $view->setModel($model);
 
     $view->display($request, $response, $params);
@@ -135,10 +135,10 @@ class DaidalosDbSchema_Controller extends Controller
 
     $params = $this->getFlags($request);
 
-    $dbKey     = $request->param('db', Validator::CKEY);
+    $dbKey = $request->param('db', Validator::CKEY);
     $schemaKey = $request->param('schema', Validator::CKEY);
 
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       'daidalos_db-'.$dbKey.'-views-'.$schemaKey,
       'DaidalosDbSchema',
@@ -146,7 +146,7 @@ class DaidalosDbSchema_Controller extends Controller
       View::MAINTAB
     );
 
-    $model  = $this->loadModel('DaidalosDbSchema');
+    $model = $this->loadModel('DaidalosDbSchema');
     $view->setModel($model);
 
     $view->displayBackup($dbKey, $schemaKey, $params);
@@ -163,10 +163,10 @@ class DaidalosDbSchema_Controller extends Controller
 
     $params = $this->getFlags($request);
 
-    $dbKey     = $request->param('db', Validator::CKEY);
+    $dbKey = $request->param('db', Validator::CKEY);
     $schemaKey = $request->param('schema', Validator::CKEY);
 
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       'daidalos_db-'.$dbKey.'-tables-'.$schemaKey,
       'DaidalosDbSchema',
@@ -174,7 +174,7 @@ class DaidalosDbSchema_Controller extends Controller
       View::MAINTAB
     );
 
-    $model  = $this->loadModel('DaidalosDbSchema');
+    $model = $this->loadModel('DaidalosDbSchema');
     $view->setModel($model);
 
     $view->displayBackup($dbKey, $schemaKey, $params);
@@ -191,10 +191,10 @@ class DaidalosDbSchema_Controller extends Controller
 
     $params = $this->getFlags($request);
 
-    $dbKey     = $request->param('db', Validator::CKEY);
+    $dbKey = $request->param('db', Validator::CKEY);
     $schemaKey = $request->param('schema', Validator::CKEY);
 
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       'daidalos_db-'.$dbKey.'-schema-'.$schemaKey,
       'DaidalosDbSchema',
@@ -202,7 +202,7 @@ class DaidalosDbSchema_Controller extends Controller
       View::MAINTAB
     );
 
-    $model  = $this->loadModel('DaidalosDbSchema');
+    $model = $this->loadModel('DaidalosDbSchema');
     /* @var $model DaidalosDbSchema_Model */
 
     $view->setModel($model);
@@ -220,10 +220,10 @@ class DaidalosDbSchema_Controller extends Controller
 
     $params = $this->getFlags($request);
 
-    $dbKey     = $request->param('db', Validator::CKEY);
+    $dbKey = $request->param('db', Validator::CKEY);
     $schemaKey = $request->param('schema', Validator::CKEY);
 
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       'daidalos_db-'.$dbKey.'-schema-'.$schemaKey,
       'DaidalosDbSchema_Backup',
@@ -231,7 +231,7 @@ class DaidalosDbSchema_Controller extends Controller
       View::MODAL
     );
 
-    $model  = $this->loadModel('DaidalosDbSchema');
+    $model = $this->loadModel('DaidalosDbSchema');
     /* @var $model DaidalosDbSchema_Model */
     $view->setModel($model);
 
@@ -251,10 +251,10 @@ class DaidalosDbSchema_Controller extends Controller
 
     $params = $this->getFlags($request);
 
-    $dbKey     = $request->param('db', Validator::CKEY);
+    $dbKey = $request->param('db', Validator::CKEY);
     $schemaKey = $request->param('schema', Validator::CKEY);
 
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       'daidalos_db-'.$dbKey.'-schema-'.$schemaKey,
       'DaidalosDbSchema_Backup',
@@ -262,7 +262,7 @@ class DaidalosDbSchema_Controller extends Controller
       View::MODAL
     );
 
-    $model  = $this->loadModel('DaidalosDbSchema');
+    $model = $this->loadModel('DaidalosDbSchema');
     /* @var $model DaidalosDbSchema_Model */
     $view->setModel($model);
 
@@ -280,11 +280,11 @@ class DaidalosDbSchema_Controller extends Controller
 
     $params = $this->getFlags($request);
 
-    $dbKey     = $request->param('db', Validator::CKEY);
+    $dbKey = $request->param('db', Validator::CKEY);
     $schemaKey = $request->param('schema', Validator::CKEY);
-    $dumpKey   = $request->param('dump', Validator::FILENAME);
+    $dumpKey = $request->param('dump', Validator::FILENAME);
 
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       'daidalos_db-'.$dbKey.'-schema-'.$schemaKey,
       'DaidalosDbSchema_Backup',
@@ -292,7 +292,7 @@ class DaidalosDbSchema_Controller extends Controller
       View::AJAX
     );
 
-    $model  = $this->loadModel('DaidalosDbSchema');
+    $model = $this->loadModel('DaidalosDbSchema');
     /* @var $model DaidalosDbSchema_Model */
 
     $model->restoreSchemaBackup($dbKey, $schemaKey, $dumpKey);
@@ -312,10 +312,10 @@ class DaidalosDbSchema_Controller extends Controller
 
     $params = $this->getFlags($request);
 
-    $dbKey     = $request->param('db', Validator::CKEY);
+    $dbKey = $request->param('db', Validator::CKEY);
     $schemaKey = $request->param('schema', Validator::CKEY);
 
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       'daidalos_db-'.$dbKey.'-schema-'.$schemaKey,
       'DaidalosDbSchema_Backup',
@@ -324,7 +324,7 @@ class DaidalosDbSchema_Controller extends Controller
     );
     /* @var $view DaidalosDbSchema_Backup_Ajax_View */
 
-    $model  = $this->loadModel('DaidalosDbSchema');
+    $model = $this->loadModel('DaidalosDbSchema');
     /* @var $model DaidalosDbSchema_Model */
 
     $uplDump = $model->uploadDump($dbKey, $schemaKey, $request);
@@ -347,11 +347,11 @@ class DaidalosDbSchema_Controller extends Controller
 
     $params = $this->getFlags($request);
 
-    $dbKey     = $request->param('db', Validator::CKEY);
+    $dbKey = $request->param('db', Validator::CKEY);
     $schemaKey = $request->param('schema', Validator::CKEY);
-    $dumpKey   = $request->param('dump', Validator::FILENAME);
+    $dumpKey = $request->param('dump', Validator::FILENAME);
 
-    $view   = $response->loadView
+    $view = $response->loadView
     (
       'daidalos_db-'.$dbKey.'-schema-'.$schemaKey,
       'DaidalosDbSchema_Backup',
@@ -360,7 +360,7 @@ class DaidalosDbSchema_Controller extends Controller
     );
     /* @var $view DaidalosDbSchema_Backup_Ajax_View */
 
-    $model  = $this->loadModel('DaidalosDbSchema');
+    $model = $this->loadModel('DaidalosDbSchema');
     /* @var $model DaidalosDbSchema_Model */
     $model->deleteDump($dbKey, $schemaKey, $dumpKey);
 

@@ -60,10 +60,10 @@ class AclMgmt_Qfdu_Dset_Treetable_Query extends LibSqlQuery
 
     $context->qsize = -1;
 
-    $this->sourceSize  = null;
-    $db                = $this->getDb();
+    $this->sourceSize = null;
+    $db = $this->getDb();
 
-    $criteria  = $db->orm->newCriteria();
+    $criteria = $db->orm->newCriteria();
     $dsetEntiy = $db->orm->newEntity($this->domainNode->srcKey);
 
     $textKeys = $dsetEntiy->textKeys();
@@ -88,8 +88,8 @@ class AclMgmt_Qfdu_Dset_Treetable_Query extends LibSqlQuery
 
 
     // Run Query und save the result
-    $this->result     = $db->orm->select($criteria);
-    $this->calcQuery  = $criteria->count('count(DISTINCT group_users.id_group) as '.Db::Q_SIZE, true);
+    $this->result = $db->orm->select($criteria);
+    $this->calcQuery = $criteria->count('count(DISTINCT group_users.id_group) as '.Db::Q_SIZE, true);
 
   }//end public function fetch */
 
@@ -111,10 +111,10 @@ class AclMgmt_Qfdu_Dset_Treetable_Query extends LibSqlQuery
 
     $context->qsize = -1;
 
-    $this->sourceSize  = null;
-    $db                = $this->getDb();
+    $this->sourceSize = null;
+    $db = $this->getDb();
 
-    $criteria  = $db->orm->newCriteria();
+    $criteria = $db->orm->newCriteria();
     $dsetEntiy = $db->orm->newEntity($this->domainNode->srcKey);
 
     $textKeys = $dsetEntiy->textKeys();
@@ -140,8 +140,8 @@ class AclMgmt_Qfdu_Dset_Treetable_Query extends LibSqlQuery
     $this->checkLimitAndOrder($criteria, $tableKey, $fieldKeys, $context);
 
     // Run Query und save the result
-    $this->result     = $db->orm->select($criteria);
-    $this->calcQuery  = $criteria->count('count(DISTINCT group_users.id_user) as '.Db::Q_SIZE, true);
+    $this->result = $db->orm->select($criteria);
+    $this->calcQuery = $criteria->count('count(DISTINCT group_users.id_user) as '.Db::Q_SIZE, true);
 
   }//end public function fetchListUser */
 
@@ -161,10 +161,10 @@ class AclMgmt_Qfdu_Dset_Treetable_Query extends LibSqlQuery
     if (!$context)
       $context = new TFlag();
 
-    $this->sourceSize  = null;
-    $db                = $this->getDb();
+    $this->sourceSize = null;
+    $db = $this->getDb();
 
-    $criteria  = $db->orm->newCriteria();
+    $criteria = $db->orm->newCriteria();
     $dsetEntiy = $db->orm->newEntity($this->domainNode->srcKey);
 
     $textKeys = $dsetEntiy->textKeys();
@@ -190,8 +190,8 @@ class AclMgmt_Qfdu_Dset_Treetable_Query extends LibSqlQuery
 
 
     // Run Query und save the result
-    $this->result     = $db->orm->select($criteria);
-    $this->calcQuery  = $criteria->count('count(DISTINCT group_users.vid) as '.Db::Q_SIZE, true);
+    $this->result = $db->orm->select($criteria);
+    $this->calcQuery = $criteria->count('count(DISTINCT group_users.vid) as '.Db::Q_SIZE, true);
 
   }//end public function fetchListDset */
 

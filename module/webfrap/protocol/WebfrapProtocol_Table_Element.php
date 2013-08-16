@@ -33,7 +33,7 @@ class WebfrapProtocol_Table_Element extends WgtTable
    *
    * @var string $id
    */
-  public $id   = 'wgt_table-webfrap_protocol';
+  public $id = 'wgt_table-webfrap_protocol';
 
   /**
    * the most likley class of a given query object
@@ -47,12 +47,12 @@ class WebfrapProtocol_Table_Element extends WgtTable
    *
    * @var string $namespace
    */
-  public $namespace   = 'WbfsysProtocolAccess';
+  public $namespace = 'WbfsysProtocolAccess';
 
   /**
    * @var string
    */
-  public $bodyHeight   = 'large';
+  public $bodyHeight = 'large';
 
  /**
   * Laden der Urls für die Actions
@@ -60,15 +60,15 @@ class WebfrapProtocol_Table_Element extends WgtTable
   public function loadUrl()
   {
 
-    $this->url  = array
+    $this->url = array
     (
-      'paging'  => array
+      'paging' => array
       (
         Wgt::ACTION_PAGING ,
         'index.php?c=Wbfsys.ProtocolAccess.search&amp;target_mask=WbfsysProtocolAccess&amp;ltype=table'
       ),
 
-      'sep'  => array
+      'sep' => array
       (
         Wgt::ACTION_SEP
       ),
@@ -184,8 +184,8 @@ class WebfrapProtocol_Table_Element extends WgtTable
     $pos = 1;
     foreach ($this->data as $key => $row) {
 
-      $objid       = $row['wbfsys_protocol_message_rowid'];
-      $rowid       = $this->id.'_row_'.$objid;
+      $objid = $row['wbfsys_protocol_message_rowid'];
+      $rowid = $this->id.'_row_'.$objid;
 
       $body .= '<tr class="wcm wcm_ui_highlight row'.$num.' node-'.$objid.'" '
 .' id="'.$rowid.'" >'.NL;

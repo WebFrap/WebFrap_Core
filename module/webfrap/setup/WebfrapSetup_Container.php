@@ -35,8 +35,8 @@ class WebfrapSetup_Container extends DataContainer
 
     $db = Db::connection('admin');
 
-    $conf    = Conf::get('db','connection');
-    $defCon  = $conf['default'];
+    $conf = Conf::get('db','connection');
+    $defCon = $conf['default'];
 
     $dbAdmin = $db->getManager();
     $dbAdmin->setOwner($defCon['dbuser']);

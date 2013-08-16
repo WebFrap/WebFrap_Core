@@ -44,77 +44,77 @@ class WebfrapCache_Controller extends Controller
    *
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'stats' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
     'cleanall' => array
     (
-      'method'    => array('GET', 'DELETE', "CLI"),
-      'views'      => array('ajax', 'cli')
+      'method' => array('GET', 'DELETE', "CLI"),
+      'views' => array('ajax', 'cli')
     ),
     'rebuildcss' => array
     (
-      'method'    => array('PUT', "CLI"),
-      'views'      => array('ajax', 'cli')
+      'method' => array('PUT', "CLI"),
+      'views' => array('ajax', 'cli')
     ),
     'rebuildjs' => array
     (
-      'method'    => array('PUT', "CLI"),
-      'views'      => array('ajax', 'cli')
+      'method' => array('PUT', "CLI"),
+      'views' => array('ajax', 'cli')
     ),
     'rebuildwebtheme' => array
     (
-      'method'    => array('PUT', "CLI"),
-      'views'      => array('ajax', 'cli')
+      'method' => array('PUT', "CLI"),
+      'views' => array('ajax', 'cli')
     ),
     'rebuildapptheme' => array
     (
-      'method'    => array('PUT', "CLI"),
-      'views'      => array('ajax', 'cli')
+      'method' => array('PUT', "CLI"),
+      'views' => array('ajax', 'cli')
     ),
     'rebuildallcss' => array
     (
-      'method'    => array('PUT', "CLI"),
-      'views'      => array('ajax', 'cli')
+      'method' => array('PUT', "CLI"),
+      'views' => array('ajax', 'cli')
     ),
     'rebuildalljs' => array
     (
-      'method'    => array('PUT', "CLI"),
-      'views'      => array('ajax', 'cli')
+      'method' => array('PUT', "CLI"),
+      'views' => array('ajax', 'cli')
     ),
     'rebuildallwebtheme' => array
     (
-      'method'    => array('PUT', "CLI"),
-      'views'      => array('ajax', 'cli')
+      'method' => array('PUT', "CLI"),
+      'views' => array('ajax', 'cli')
     ),
     'rebuildallapptheme' => array
     (
-      'method'    => array('PUT', "CLI"),
-      'views'      => array('ajax', 'cli')
+      'method' => array('PUT', "CLI"),
+      'views' => array('ajax', 'cli')
     ),
     'cleancss' => array
     (
-      'method'    => array('DELETE', "CLI"),
-      'views'      => array('ajax', 'cli')
+      'method' => array('DELETE', "CLI"),
+      'views' => array('ajax', 'cli')
     ),
     'cleanjs' => array
     (
-      'method'    => array('DELETE', "CLI"),
-      'views'      => array('ajax', 'cli')
+      'method' => array('DELETE', "CLI"),
+      'views' => array('ajax', 'cli')
     ),
     'cleanwebtheme' => array
     (
-      'method'    => array('DELETE', "CLI"),
-      'views'      => array('ajax', 'cli')
+      'method' => array('DELETE', "CLI"),
+      'views' => array('ajax', 'cli')
     ),
     'cleanapptheme' => array
     (
-      'method'    => array('DELETE', "CLI"),
-      'views'      => array('ajax', 'cli')
+      'method' => array('DELETE', "CLI"),
+      'views' => array('ajax', 'cli')
     ),
   );
 

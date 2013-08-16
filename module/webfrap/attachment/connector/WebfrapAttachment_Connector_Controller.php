@@ -30,43 +30,43 @@ class WebfrapAttachment_Connector_Controller extends Controller
   /**
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'create' => array(
-      'method'    => array('GET'),
-      'views'      => array('modal')
+      'method' => array('GET'),
+      'views' => array('modal')
     ),
     'addlink' => array(
-      'method'    => array('POST'),
-      'views'      => array('ajax')
+      'method' => array('POST'),
+      'views' => array('ajax')
     ),
     'savelink' => array(
-      'method'    => array('PUT'),
-      'views'      => array('ajax')
+      'method' => array('PUT'),
+      'views' => array('ajax')
     ),
     'edit' => array(
-      'method'    => array('GET'),
-      'views'      => array('modal')
+      'method' => array('GET'),
+      'views' => array('modal')
     ),
     'formaddstorage' => array(
-      'method'    => array('GET'),
-      'views'      => array('modal')
+      'method' => array('GET'),
+      'views' => array('modal')
     ),
     'addstorage' => array(
-      'method'    => array('POST'),
-      'views'      => array('ajax')
+      'method' => array('POST'),
+      'views' => array('ajax')
     ),
     'editstorage' => array(
-      'method'    => array('GET'),
-      'views'      => array('modal')
+      'method' => array('GET'),
+      'views' => array('modal')
     ),
     'savestorage' => array(
-      'method'    => array('PUT'),
-      'views'      => array('ajax')
+      'method' => array('PUT'),
+      'views' => array('ajax')
     ),
     'deletestorage' => array(
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
   );
 
@@ -118,7 +118,7 @@ class WebfrapAttachment_Connector_Controller extends Controller
 
     $context = new WebfrapAttachment_Request($request);
 
-    $objid   = $request->param('objid', Validator::EID);
+    $objid = $request->param('objid', Validator::EID);
 
     /* @var $model WebfrapAttachment_Model */
     $model = $this->loadModel('WebfrapAttachment');
@@ -164,7 +164,7 @@ class WebfrapAttachment_Connector_Controller extends Controller
 
     $context = new WebfrapAttachment_Request($request);
 
-    $id       = $request->param('objid', Validator::EID);
+    $id = $request->param('objid', Validator::EID);
 
     /* @var $model WebfrapAttachment_Model */
     $model = $this->loadModel('WebfrapAttachment');
@@ -247,9 +247,9 @@ class WebfrapAttachment_Connector_Controller extends Controller
     }
 
     $type = $request->data('type', Validator::EID);
-    $versioning   = $request->data('version', Validator::BOOLEAN);
-    $description  = $request->data('description', Validator::TEXT);
-    $confidentiality   = $request->data('id_confidentiality', Validator::EID);
+    $versioning = $request->data('version', Validator::BOOLEAN);
+    $description = $request->data('description', Validator::TEXT);
+    $confidentiality = $request->data('id_confidentiality', Validator::EID);
 
     /* @var $model WebfrapAttachment_Model */
     $model = $this->loadModel('WebfrapAttachment');
@@ -261,7 +261,7 @@ class WebfrapAttachment_Connector_Controller extends Controller
     }
 
     $attachNode = $model->uploadFile($context->refId, $file, $type, $versioning, $confidentiality, $description);
-    $entryData  = $model->getAttachmentList($context->refId, $attachNode->getId());
+    $entryData = $model->getAttachmentList($context->refId, $attachNode->getId());
 
     /* @var $view WebfrapAttachment_Ajax_View  */
     $view = $response->loadView
@@ -287,15 +287,15 @@ class WebfrapAttachment_Connector_Controller extends Controller
     $context = new WebfrapAttachment_Request($request);
 
     // refid
-    $attachId  = $request->param('attachid', Validator::EID);
+    $attachId = $request->param('attachid', Validator::EID);
 
     $file = $request->file('file');
 
     $objid = $request->data('objid', Validator::EID);
     $type = $request->data('type', Validator::EID);
-    $versioning   = $request->data('version', Validator::BOOLEAN);
-    $description  = $request->data('description', Validator::TEXT);
-    $confidentiality   = $request->data('id_confidentiality', Validator::EID);
+    $versioning = $request->data('version', Validator::BOOLEAN);
+    $description = $request->data('description', Validator::TEXT);
+    $confidentiality = $request->data('id_confidentiality', Validator::EID);
 
     /* @var $model WebfrapAttachment_Model */
     $model = $this->loadModel('WebfrapAttachment');
@@ -307,7 +307,7 @@ class WebfrapAttachment_Connector_Controller extends Controller
     }
 
     $model->saveFile($objid, $file, $type, $versioning, $confidentiality, $description);
-    $entryData  = $model->getAttachmentList(null, $attachId);
+    $entryData = $model->getAttachmentList(null, $attachId);
 
     $view = $response->loadView
     (

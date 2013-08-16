@@ -63,7 +63,7 @@ class WebfrapMaintenance_Maintab extends WgtMaintab
   public function addMenuMenu($modMenu, $params)
   {
 
-    $menu     = $this->newMenu
+    $menu = $this->newMenu
     (
       $this->id.'_dropmenu',
       'WebfrapMaintenance'

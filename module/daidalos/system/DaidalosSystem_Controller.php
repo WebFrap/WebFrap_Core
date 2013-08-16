@@ -28,22 +28,22 @@ class DaidalosSystem_Controller extends Controller
   /**
    * @var array
    */
-  protected $options           = array
+  protected $options = array
   (
     'statuseditior' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
     'autocompleteusers' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('ajax'  )
+      'method' => array('GET'),
+      'views' => array('ajax'  )
     ),
     'changeuser' => array
     (
-      'method'    => array('POST', 'PUT'),
-      'views'      => array('ajax','maintab')
+      'method' => array('POST', 'PUT'),
+      'views' => array('ajax','maintab')
     ),
   );
 
@@ -95,10 +95,10 @@ class DaidalosSystem_Controller extends Controller
     // load request parameters an interpret as flags
     $params = $this->getFlags($request);
 
-    $view   = $this->tplEngine->loadView('DaidalosSystem_Ajax');
+    $view = $this->tplEngine->loadView('DaidalosSystem_Ajax');
     $view->setModel($this->loadModel('DaidalosSystem'));
 
-    $searchKey  = $this->request->param('key',Validator::TEXT);
+    $searchKey = $this->request->param('key',Validator::TEXT);
 
     return $view->displayAutocomplete($searchKey, $params);
 

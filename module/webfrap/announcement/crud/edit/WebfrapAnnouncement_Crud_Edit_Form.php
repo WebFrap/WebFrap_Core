@@ -33,7 +33,7 @@ class WebfrapAnnouncement_Crud_Edit_Form extends WgtCrudForm
    * @getter WgtCrudForm::getNamespace()
    * @var string
    */
-  public $namespace  = 'WebfrapAnnouncement';
+  public $namespace = 'WebfrapAnnouncement';
 
   /**
    * prename for the ui elements to avoid redundant names in the forms
@@ -43,7 +43,7 @@ class WebfrapAnnouncement_Crud_Edit_Form extends WgtCrudForm
    * @getter WgtCrudForm::getPrefix()
    * @var string
    */
-  public $prefix      = 'WebfrapAnnouncement';
+  public $prefix = 'WebfrapAnnouncement';
 
   /**
    * suffixes are used to create multiple instances of forms for diffrent
@@ -54,70 +54,70 @@ class WebfrapAnnouncement_Crud_Edit_Form extends WgtCrudForm
    * @getter WgtCrudForm::getSuffix()
    * @var string
    */
-  public $suffix      = null;
+  public $suffix = null;
 
   /**
    * Standard Liste der Felder die angezeigt werden sollen
    *
    * @var array
    */
-  protected $fields      = array
+  protected $fields = array
   (
       'webfrap_announcement' => array
       (
         'title' => array
         (
-          'required'  => true,
-          'readonly'  => false,
-          'lenght'     => '400',
+          'required' => true,
+          'readonly' => false,
+          'lenght' => '400',
         ),
         'type' => array
         (
-          'required'  => false,
-          'readonly'  => false,
-          'lenght'     => '',
+          'required' => false,
+          'readonly' => false,
+          'lenght' => '',
         ),
         'importance' => array
         (
-          'required'  => false,
-          'readonly'  => false,
-          'lenght'     => '',
+          'required' => false,
+          'readonly' => false,
+          'lenght' => '',
         ),
         'message' => array
         (
-          'required'  => true,
-          'readonly'  => false,
-          'lenght'     => '',
+          'required' => true,
+          'readonly' => false,
+          'lenght' => '',
         ),
         'date_start' => array
         (
-          'required'  => false,
-          'readonly'  => false,
-          'lenght'     => '',
+          'required' => false,
+          'readonly' => false,
+          'lenght' => '',
         ),
         'date_end' => array
         (
-          'required'  => false,
-          'readonly'  => false,
-          'lenght'     => '',
+          'required' => false,
+          'readonly' => false,
+          'lenght' => '',
         ),
         'rowid' => array
         (
-          'required'  => false,
-          'readonly'  => false,
-          'lenght'     => '',
+          'required' => false,
+          'readonly' => false,
+          'lenght' => '',
         ),
         'm_version' => array
         (
-          'required'  => false,
-          'readonly'  => false,
-          'lenght'     => '',
+          'required' => false,
+          'readonly' => false,
+          'lenght' => '',
         ),
         'm_uuid' => array
         (
-          'required'  => false,
-          'readonly'  => false,
-          'lenght'     => '',
+          'required' => false,
+          'readonly' => false,
+          'lenght' => '',
         ),
       ),
 
@@ -128,7 +128,7 @@ class WebfrapAnnouncement_Crud_Edit_Form extends WgtCrudForm
    *
    * @var WbfsysAnnouncement_Entity
    */
-  public $entity      = null;
+  public $entity = null;
 
   /**
   * Erfragen der Haupt Entity
@@ -149,7 +149,7 @@ class WebfrapAnnouncement_Crud_Edit_Form extends WgtCrudForm
   {
 
     $this->entity = $entity;
-    $this->rowid  = $entity->getId();
+    $this->rowid = $entity->getId();
 
   }//end public function setEntity */
 
@@ -199,14 +199,14 @@ class WebfrapAnnouncement_Crud_Edit_Form extends WgtCrudForm
   public function renderForm($params = null  )
   {
 
-    $params  = $this->checkNamedParams($params);
-    $i18n     = $this->view->i18n;
+    $params = $this->checkNamedParams($params);
+    $i18n = $this->view->i18n;
 
     // add the entity to the view
     $this->view->addVar('entity', $this->entity);
     $this->view->addVar('entityWbfsysAnnouncement', $this->entity);
 
-    $this->db     = $this->getDb();
+    $this->db = $this->getDb();
 
     if (!$this->suffix) {
       $this->suffix = $this->rowid?:'';
@@ -222,8 +222,8 @@ class WebfrapAnnouncement_Crud_Edit_Form extends WgtCrudForm
     (
       array
       (
-        'name'  => 'webfrap_announcement[id_webfrap_announcement-tostring]',
-        'id'    => $sendTo,
+        'name' => 'webfrap_announcement[id_webfrap_announcement-tostring]',
+        'id' => $sendTo,
         'value' => $this->entity->text(),
       )
     );
@@ -241,10 +241,10 @@ class WebfrapAnnouncement_Crud_Edit_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'webfrap_announcement[title]',
-          'id'        => 'wgt-input-webfrap_announcement_title'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip xxlarge'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Title (Announcement)', 'wbfsys.announcement.label'),
+          'name' => 'webfrap_announcement[title]',
+          'id' => 'wgt-input-webfrap_announcement_title'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip xxlarge'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Title (Announcement)', 'wbfsys.announcement.label'),
           'maxlength' => $this->entity->maxSize('title'),
         )
       );
@@ -255,8 +255,8 @@ class WebfrapAnnouncement_Crud_Edit_Form extends WgtCrudForm
       $inputTitle->setData($this->entity->getSecure('title'));
       $inputTitle->setLabel($i18n->l('Title', 'wbfsys.announcement.label'));
 
-      $inputTitle->refresh           = $this->refresh;
-      $inputTitle->serializeElement  = $this->sendElement;
+      $inputTitle->refresh = $this->refresh;
+      $inputTitle->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -277,10 +277,10 @@ class WebfrapAnnouncement_Crud_Edit_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'webfrap_announcement[date_start]',
-          'id'        => 'wgt-input-webfrap_announcement_date_start'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip small'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Start Date (Announcement)', 'wbfsys.announcement.label'),
+          'name' => 'webfrap_announcement[date_start]',
+          'id' => 'wgt-input-webfrap_announcement_date_start'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip small'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Start Date (Announcement)', 'wbfsys.announcement.label'),
           'maxlength' => $this->entity->maxSize('date_start'),
         )
       );
@@ -291,8 +291,8 @@ class WebfrapAnnouncement_Crud_Edit_Form extends WgtCrudForm
       $inputDateStart->setData($this->entity->getDate('date_start'));
       $inputDateStart->setLabel($i18n->l('Start Date', 'wbfsys.announcement.label'));
 
-      $inputDateStart->refresh           = $this->refresh;
-      $inputDateStart->serializeElement  = $this->sendElement;
+      $inputDateStart->refresh = $this->refresh;
+      $inputDateStart->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -318,10 +318,10 @@ class WebfrapAnnouncement_Crud_Edit_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'webfrap_announcement[type]',
-          'id'        => 'wgt-input-webfrap_announcement_type'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Type (Announcement)', 'wbfsys.announcement.label'),
+          'name' => 'webfrap_announcement[type]',
+          'id' => 'wgt-input-webfrap_announcement_type'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Type (Announcement)', 'wbfsys.announcement.label'),
         )
       );
       $inputIdType->setWidth('medium');
@@ -357,10 +357,10 @@ class WebfrapAnnouncement_Crud_Edit_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'webfrap_announcement[importance]',
-          'id'        => 'wgt-input-webfrap_announcement_importance'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Importance (Announcement)', 'wbfsys.announcement.label'),
+          'name' => 'webfrap_announcement[importance]',
+          'id' => 'wgt-input-webfrap_announcement_importance'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Importance (Announcement)', 'wbfsys.announcement.label'),
         )
       );
       $inputImportance->setWidth('medium');
@@ -370,8 +370,8 @@ class WebfrapAnnouncement_Crud_Edit_Form extends WgtCrudForm
       $inputImportance->setActive($this->entity->getSecure('importance'));
       $inputImportance->setLabel($i18n->l('Importance', 'wbfsys.announcement.label'));
 
-      $inputImportance->refresh           = $this->refresh;
-      $inputImportance->serializeElement  = $this->sendElement;
+      $inputImportance->refresh = $this->refresh;
+      $inputImportance->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -391,9 +391,9 @@ class WebfrapAnnouncement_Crud_Edit_Form extends WgtCrudForm
       (
         array
         (
-          'name'  => 'webfrap_announcement[message]',
-          'id'    => 'wgt-input-webfrap_announcement_message'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip full large-height'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'name' => 'webfrap_announcement[message]',
+          'id' => 'wgt-input-webfrap_announcement_message'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip full large-height'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
           'title' => $i18n->l('Insert value for Message (Announcement)', 'wbfsys.announcement.label'),
         )
       );
@@ -406,8 +406,8 @@ class WebfrapAnnouncement_Crud_Edit_Form extends WgtCrudForm
       $inputMessage->setLabel($i18n->l('Message', 'wbfsys.announcement.label'));
       $inputMessage->setMode('rich_text');
 
-      $inputMessage->refresh           = $this->refresh;
-      $inputMessage->serializeElement  = $this->sendElement;
+      $inputMessage->refresh = $this->refresh;
+      $inputMessage->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -428,10 +428,10 @@ class WebfrapAnnouncement_Crud_Edit_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'webfrap_announcement[date_end]',
-          'id'        => 'wgt-input-webfrap_announcement_date_end'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip small'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for End Date (Announcement)', 'wbfsys.announcement.label'),
+          'name' => 'webfrap_announcement[date_end]',
+          'id' => 'wgt-input-webfrap_announcement_date_end'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip small'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for End Date (Announcement)', 'wbfsys.announcement.label'),
           'maxlength' => $this->entity->maxSize('date_end'),
         )
       );
@@ -442,8 +442,8 @@ class WebfrapAnnouncement_Crud_Edit_Form extends WgtCrudForm
       $inputDateEnd->setData($this->entity->getDate('date_end'));
       $inputDateEnd->setLabel($i18n->l('End Date', 'wbfsys.announcement.label'));
 
-      $inputDateEnd->refresh           = $this->refresh;
-      $inputDateEnd->serializeElement  = $this->sendElement;
+      $inputDateEnd->refresh = $this->refresh;
+      $inputDateEnd->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -464,10 +464,10 @@ class WebfrapAnnouncement_Crud_Edit_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'webfrap_announcement[rowid]',
-          'id'        => 'wgt-input-webfrap_announcement_rowid'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip valid_required medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Rowid (Announcement)', 'wbfsys.announcement.label'),
+          'name' => 'webfrap_announcement[rowid]',
+          'id' => 'wgt-input-webfrap_announcement_rowid'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip valid_required medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Rowid (Announcement)', 'wbfsys.announcement.label'),
         )
       );
       $inputRowid->setWidth('medium');
@@ -477,8 +477,8 @@ class WebfrapAnnouncement_Crud_Edit_Form extends WgtCrudForm
       $inputRowid->setData($this->entity->getId());
       $inputRowid->setLabel($i18n->l('Rowid', 'wbfsys.announcement.label'));
 
-      $inputRowid->refresh           = $this->refresh;
-      $inputRowid->serializeElement  = $this->sendElement;
+      $inputRowid->refresh = $this->refresh;
+      $inputRowid->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -499,10 +499,10 @@ class WebfrapAnnouncement_Crud_Edit_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'webfrap_announcement[m_version]',
-          'id'        => 'wgt-input-webfrap_announcement_m_version'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip valid_int medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Version (Announcement)', 'wbfsys.announcement.label'),
+          'name' => 'webfrap_announcement[m_version]',
+          'id' => 'wgt-input-webfrap_announcement_m_version'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip valid_int medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Version (Announcement)', 'wbfsys.announcement.label'),
         )
       );
       $inputMVersion->setWidth('medium');
@@ -512,8 +512,8 @@ class WebfrapAnnouncement_Crud_Edit_Form extends WgtCrudForm
       $inputMVersion->setData($this->entity->getSecure('m_version'));
       $inputMVersion->setLabel($i18n->l('Version', 'wbfsys.announcement.label'));
 
-      $inputMVersion->refresh           = $this->refresh;
-      $inputMVersion->serializeElement  = $this->sendElement;
+      $inputMVersion->refresh = $this->refresh;
+      $inputMVersion->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar
@@ -534,10 +534,10 @@ class WebfrapAnnouncement_Crud_Edit_Form extends WgtCrudForm
       (
         array
         (
-          'name'      => 'webfrap_announcement[m_uuid]',
-          'id'        => 'wgt-input-webfrap_announcement_m_uuid'.($this->suffix?'-'.$this->suffix:''),
-          'class'     => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
-          'title'     => $i18n->l('Insert value for Uuid (Announcement)', 'wbfsys.announcement.label'),
+          'name' => 'webfrap_announcement[m_uuid]',
+          'id' => 'wgt-input-webfrap_announcement_m_uuid'.($this->suffix?'-'.$this->suffix:''),
+          'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
+          'title' => $i18n->l('Insert value for Uuid (Announcement)', 'wbfsys.announcement.label'),
         )
       );
       $inputMUuid->setWidth('medium');
@@ -547,8 +547,8 @@ class WebfrapAnnouncement_Crud_Edit_Form extends WgtCrudForm
       $inputMUuid->setData($this->entity->getSecure('m_uuid'));
       $inputMUuid->setLabel($i18n->l('Uuid', 'wbfsys.announcement.label'));
 
-      $inputMUuid->refresh           = $this->refresh;
-      $inputMUuid->serializeElement  = $this->sendElement;
+      $inputMUuid->refresh = $this->refresh;
+      $inputMUuid->serializeElement = $this->sendElement;
 
       // activate the category
       $this->view->addVar

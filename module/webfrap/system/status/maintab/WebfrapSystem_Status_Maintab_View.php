@@ -135,9 +135,9 @@ class WebfrapSystem_Status_Maintab_View extends WgtMaintab
   public function addMenu()
   {
 
-    $i18n         = $this->getI18n();
+    $i18n = $this->getI18n();
 
-    $menu          = $this->newMenu($this->id.'_dropmenu');
+    $menu = $this->newMenu($this->id.'_dropmenu');
     $menu->content = <<<HTML
 
 <div class="inline" >

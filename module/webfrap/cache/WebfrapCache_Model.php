@@ -214,7 +214,7 @@ JSON;
   public function rebuildJs($key)
   {
 
-    $cache    = new LibCacheRequestJavascript();
+    $cache = new LibCacheRequestJavascript();
     $cache->rebuildList($key);
 
   }//end public function rebuildJs */
@@ -225,7 +225,7 @@ JSON;
   public function rebuildCss($key)
   {
 
-    $cache    = new LibCacheRequestCss();
+    $cache = new LibCacheRequestCss();
     $cache->rebuildList($key);
 
   }//end public function rebuildCss */
@@ -236,7 +236,7 @@ JSON;
   public function rebuildWebTheme($key)
   {
 
-    $cache    = new LibCacheRequestWebTheme();
+    $cache = new LibCacheRequestWebTheme();
     $cache->rebuildList($key);
 
   }//end public function rebuildTheme */
@@ -247,7 +247,7 @@ JSON;
   public function rebuildAppTheme($key)
   {
 
-    $cache    = new LibCacheRequestAppTheme();
+    $cache = new LibCacheRequestAppTheme();
     $cache->rebuildList($key);
 
   }//end public function rebuildAppTheme */
@@ -259,7 +259,7 @@ JSON;
   {
 
     $response = $this->getResponse();
-    $cache    = new LibCacheRequestJavascript();
+    $cache = new LibCacheRequestJavascript();
 
     $folderIterator = new IoFileIterator
     (
@@ -287,7 +287,7 @@ JSON;
   {
 
     $response = $this->getResponse();
-    $cache    = new LibCacheRequestCss();
+    $cache = new LibCacheRequestCss();
     $folderIterator = new IoFileIterator
     (
       PATH_GW.'conf/include/css/',
@@ -314,7 +314,7 @@ JSON;
   {
 
     $response = $this->getResponse();
-    $cache    = new LibCacheRequestWebTheme();
+    $cache = new LibCacheRequestWebTheme();
 
     $folderIterator = new IoFileIterator
     (
@@ -342,7 +342,7 @@ JSON;
   {
 
     $response = $this->getResponse();
-    $cache    = new LibCacheRequestAppTheme();
+    $cache = new LibCacheRequestAppTheme();
 
     $folderIterator = new IoFileIterator
     (

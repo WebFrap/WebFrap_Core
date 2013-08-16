@@ -83,19 +83,19 @@ class WebfrapMaintenance_DoubleCheck_Maintab_View extends WgtMaintabCustom
   {
 
     // laden der mvc/utils adapter Objekte
-    $acl    = $this->getAcl();
+    $acl = $this->getAcl();
 
-    $menu  = $this->newMenu($this->id.'_dropmenu');
+    $menu = $this->newMenu($this->id.'_dropmenu');
     $menu->id = $this->id.'_dropmenu';
     $menu->setAcl($acl);
     $menu->setModel($this->model);
 
-    $iconMenu      = '<i class="icon-reorder" ></i>';
-    $iconRebuild   = $this->icon( 'maintenance/rebuild_index.png', 'Rebuild Index');
-    $iconClose     = '<i class="icon-remove-circle " ></i>';
+    $iconMenu = '<i class="icon-reorder" ></i>';
+    $iconRebuild = $this->icon( 'maintenance/rebuild_index.png', 'Rebuild Index');
+    $iconClose = '<i class="icon-remove-circle " ></i>';
 
     $entries = new TArray();
-    $entries->support  = $this->entriesSupport( $menu);
+    $entries->support = $this->entriesSupport( $menu);
 
     $menu->content = <<<HTML
 
@@ -135,10 +135,10 @@ HTML;
   protected function entriesSupport($menu)
   {
 
-    $iconSupport    = $this->icon('control/support.png'  ,'Support');
-    $iconBug        = $this->icon('control/bug.png'     ,'Bug');
-    $iconFaq        = $this->icon('control/faq.png'     ,'Faq');
-    $iconHelp       = $this->icon('control/help.png'    ,'Help');
+    $iconSupport = $this->icon('control/support.png'  ,'Support');
+    $iconBug = $this->icon('control/bug.png'     ,'Bug');
+    $iconFaq = $this->icon('control/faq.png'     ,'Faq');
+    $iconHelp = $this->icon('control/help.png'    ,'Help');
 
     $html = <<<HTML
 

@@ -55,16 +55,16 @@ class WebfrapMessage_New_Maintab_View extends WgtMaintab
   public function addMenu($params)
   {
 
-    $iconMenu          = '<i class="icon-reorder" ></i>';
-    $iconClose         = '<i class="icon-remove-circle " ></i>';
-    $iconSupport   = $this->icon('control/support.png'  ,'Support');
-    $iconBug       = $this->icon('control/bug.png'      ,'Bug');
-    $iconFaq       = $this->icon('control/faq.png'      ,'Faq');
-    $iconHelp      = $this->icon('control/help.png'     ,'Help');
+    $iconMenu = '<i class="icon-reorder" ></i>';
+    $iconClose = '<i class="icon-remove-circle " ></i>';
+    $iconSupport = $this->icon('control/support.png'  ,'Support');
+    $iconBug = $this->icon('control/bug.png'      ,'Bug');
+    $iconFaq = $this->icon('control/faq.png'      ,'Faq');
+    $iconHelp = $this->icon('control/help.png'     ,'Help');
 
-    $iconSend      = $this->icon('message/send.png' ,'Send');
+    $iconSend = $this->icon('message/send.png' ,'Send');
 
-    $menu     = $this->newMenu($this->id.'_dropmenu');
+    $menu = $this->newMenu($this->id.'_dropmenu');
 
     $menu->id = $this->id.'_dropmenu';
 

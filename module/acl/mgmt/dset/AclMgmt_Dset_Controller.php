@@ -53,38 +53,38 @@ class AclMgmt_Dset_Controller extends MvcController_Domain
   (
     'listing' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('maintab')
+      'method' => array('GET'),
+      'views' => array('maintab')
     ),
     'search' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
     'appenduser' => array
     (
-      'method'    => array('POST', 'PUT'),
-      'views'      => array('ajax')
+      'method' => array('POST', 'PUT'),
+      'views' => array('ajax')
     ),
     'cleangroup' => array
     (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
     'cleangroup' => array
     (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
     'deleteuser' => array
     (
-      'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'method' => array('DELETE'),
+      'views' => array('ajax')
     ),
     'autocompleteusers' => array
     (
-      'method'    => array('GET'),
-      'views'      => array('ajax')
+      'method' => array('GET'),
+      'views' => array('ajax')
     ),
 
   );
@@ -102,8 +102,8 @@ class AclMgmt_Dset_Controller extends MvcController_Domain
   public function service_listing($request, $response)
   {
 
-    $domainNode  = $this->getDomainNode($request);
-    $params      = $this->getListingFlags($request);
+    $domainNode = $this->getDomainNode($request);
+    $params = $this->getListingFlags($request);
 
     // Die ID ist Plicht.
     // Ohne diese können wir keinen Datensatz identifizieren und somit auch
@@ -151,12 +151,12 @@ class AclMgmt_Dset_Controller extends MvcController_Domain
           'wbf.message',
           array
           (
-            'resource'  => $response->i18n->l
+            'resource' => $response->i18n->l
             (
               $domainNode->domainName,
               $domainNode->domainI18n.'.label'
             ),
-            'id'        => $objid
+            'id' => $objid
           )
         ),
         Response::NOT_FOUND
@@ -174,7 +174,7 @@ class AclMgmt_Dset_Controller extends MvcController_Domain
     $view->setModel($model);
     $view->domainNode = $domainNode;
 
-    $areaId  = $model->getAreaId();
+    $areaId = $model->getAreaId();
     $view->displayListing($domainEntity, $areaId, $params);
 
   }//end public function service_listing */
@@ -197,12 +197,12 @@ class AclMgmt_Dset_Controller extends MvcController_Domain
     }
 
     // load the flow flags
-    $domainNode  = $this->getDomainNode($request);
+    $domainNode = $this->getDomainNode($request);
     $params = $this->getListingFlags($request);
 
     // load the default model
     /* @var $model AclMgmt_Dset_Model  */
-    $model  = $this->loadModel('AclMgmt_Dset');
+    $model = $this->loadModel('AclMgmt_Dset');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $params);
 
@@ -237,7 +237,7 @@ class AclMgmt_Dset_Controller extends MvcController_Domain
   public function service_appendUser($request, $response)
   {
 
-    $domainNode  = $this->getDomainNode($request);
+    $domainNode = $this->getDomainNode($request);
 
     // load request parameters an interpret as flags
     $params = $this->getListingFlags($request);
@@ -297,7 +297,7 @@ class AclMgmt_Dset_Controller extends MvcController_Domain
   public function service_cleanGroup($request, $response)
   {
 
-    $domainNode  = $this->getDomainNode($request);
+    $domainNode = $this->getDomainNode($request);
 
       if (!$objid = $request->param('objid', Validator::INT)  ) {
       throw new InvalidRequest_Exception
@@ -343,13 +343,13 @@ class AclMgmt_Dset_Controller extends MvcController_Domain
   public function service_deleteUser($request, $response)
   {
 
-    $domainNode  = $this->getDomainNode($request);
+    $domainNode = $this->getDomainNode($request);
 
-    $objid    = $request->param('objid', Validator::EID);
+    $objid = $request->param('objid', Validator::EID);
 
     // only used to remove the dataentry
-    $userId   = $request->param('user_id' , Validator::EID);
-    $groupId  = $request->param('group_id', Validator::EID);
+    $userId = $request->param('user_id' , Validator::EID);
+    $groupId = $request->param('group_id', Validator::EID);
 
     // did we receive an id of an object that should be deleted
     if (!$objid) {
@@ -361,16 +361,16 @@ class AclMgmt_Dset_Controller extends MvcController_Domain
     }
 
     // interpret the given user parameters
-    $params   = $this->getCrudFlags($request);
+    $params = $this->getCrudFlags($request);
 
 
     /* @var $model AclMgmt_Dset_Model  */
-    $model    = $this->loadModel('AclMgmt_Dset');
+    $model = $this->loadModel('AclMgmt_Dset');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $params);
     $model->setView($this->tpl);
 
-    $areaId   = $model->getAreaId();
+    $areaId = $model->getAreaId();
 
     // try to delete the dataset
     $model->deleteUser($objid, $params);
@@ -400,13 +400,13 @@ class AclMgmt_Dset_Controller extends MvcController_Domain
   public function service_autocompleteUsers($request, $response)
   {
 
-    $domainNode  = $this->getDomainNode($request);
+    $domainNode = $this->getDomainNode($request);
 
     // load request parameters an interpret as flags
     $params = $this->getListingFlags($request);
 
     /* @var $model AclMgmt_Dset_Model  */
-    $model  = $this->loadModel('AclMgmt_Dset');
+    $model = $this->loadModel('AclMgmt_Dset');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $params);
 
@@ -420,8 +420,8 @@ class AclMgmt_Dset_Controller extends MvcController_Domain
     $view->domainNode = $domainNode;
     $view->setModel($model);
 
-    $searchKey  = $request->param('key', Validator::TEXT);
-    $areaId     = $model->getAreaId();
+    $searchKey = $request->param('key', Validator::TEXT);
+    $areaId = $model->getAreaId();
 
     $view->displayAutocompleteUsers($areaId, $searchKey, $params);
 
@@ -454,68 +454,68 @@ class AclMgmt_Dset_Controller extends MvcController_Domain
   protected function getCrudFlags($request)
   {
 
-    $response  = $this->getResponse();
+    $response = $this->getResponse();
 
     // create named parameters object
     $params = new TFlag();
 
 
     // the publish type, like selectbox, tree, table..
-    if ($publish  = $request->param('publish', Validator::CNAME))
-      $params->publish   = $publish;
+    if ($publish = $request->param('publish', Validator::CNAME))
+      $params->publish = $publish;
 
     // listing type
-    if ($ltype   = $request->param('ltype', Validator::CNAME))
-      $params->ltype    = $ltype;
+    if ($ltype = $request->param('ltype', Validator::CNAME))
+      $params->ltype = $ltype;
 
     // context
-    if ($context   = $request->param('context', Validator::CNAME))
-      $params->context    = $context;
+    if ($context = $request->param('context', Validator::CNAME))
+      $params->context = $context;
 
     // if of the target element, can be a table, a tree or whatever
     if ($targetId = $request->param('target_id', Validator::CKEY))
-      $params->targetId  = $targetId;
+      $params->targetId = $targetId;
 
 
     // callback for a target function in thr browser
-    if ($target   = $request->param('target', Validator::CNAME))
-      $params->target    = $target;
+    if ($target = $request->param('target', Validator::CNAME))
+      $params->target = $target;
 
     // mask key
     if ($mask = $request->param('mask', Validator::CNAME))
-      $params->mask  = $mask;
+      $params->mask = $mask;
 
     // mask key
     if ($viewType = $request->param('view', Validator::CNAME))
-      $params->viewType  = $viewType;
+      $params->viewType = $viewType;
 
     // mask key
     if ($viewId = $request->param('view_id', Validator::CKEY))
-      $params->viewId  = $viewId;
+      $params->viewId = $viewId;
 
     // refid
     if ($refid = $request->param('refid', Validator::INT))
-      $params->refId  = $refid;
+      $params->refId = $refid;
 
     // startpunkt des pfades für die acls
     if ($aclRoot = $request->param('a_root', Validator::CKEY))
-      $params->aclRoot    = $aclRoot;
+      $params->aclRoot = $aclRoot;
 
     // die id des Datensatzes von dem aus der Pfad gestartet wurde
     if ($aclRootId = $request->param('a_root_id', Validator::INT))
-      $params->aclRootId    = $aclRootId;
+      $params->aclRootId = $aclRootId;
 
     // der key des knotens auf dem wir uns im pfad gerade befinden
     if ($aclKey = $request->param('a_key', Validator::CKEY))
-      $params->aclKey    = $aclKey;
+      $params->aclKey = $aclKey;
 
     // der name des knotens
     if ($aclNode = $request->param('a_node', Validator::CKEY))
-      $params->aclNode    = $aclNode;
+      $params->aclNode = $aclNode;
 
     // an welchem punkt des pfades befinden wir uns?
     if ($aclLevel = $request->param('a_level', Validator::INT))
-      $params->aclLevel  = $aclLevel;
+      $params->aclLevel = $aclLevel;
 
     // per default
     $params->categories = array();

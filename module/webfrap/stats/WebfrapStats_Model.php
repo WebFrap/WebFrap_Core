@@ -91,7 +91,7 @@ class WebfrapStats_Model  extends Model
     $khNode->access_key = $accessKey;
     $khNode->id_repository = $container;
     $khNode->raw_content = $content;
-    $khNode->content  = $content;
+    $khNode->content = $content;
     $khNode = $orm->update($khNode);
 
     $this->activeNode = $khNode;
@@ -140,7 +140,7 @@ class WebfrapStats_Model  extends Model
   {
 
     $orm = $this->getOrm();
-    $this->activeNode = $orm->getWhere('WbfsysKnowHowNode', "upper(access_key)  =  upper('{$orm->escape($key)}')  ");
+    $this->activeNode = $orm->getWhere('WbfsysKnowHowNode', "upper(access_key) =  upper('{$orm->escape($key)}')  ");
 
     Debug::console("load  by  key  " . $key, $this->activeNode);
 
@@ -169,7 +169,7 @@ class WebfrapStats_Model  extends Model
   {
 
     $orm = $this->getOrm();
-    $orm->deleteWhere('WbfsysKnowHowNode', "UPPER(access_key)  =  UPPER('{$orm->escape($key)}')");
+    $orm->deleteWhere('WbfsysKnowHowNode', "UPPER(access_key) =  UPPER('{$orm->escape($key)}')");
 
   } //end  public  function  deleteByKey  */
 

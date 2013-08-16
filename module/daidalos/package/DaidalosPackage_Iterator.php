@@ -90,11 +90,11 @@ class DaidalosPackage_Iterator extends IoFolderIterator
     } while ($tmp && !file_exists($this->folder.'/'.$tmp.'/package.bdl'  ));
 
     if ($tmp) {
-      $this->fileName  = $this->folder.'/'.$tmp.'/package.xml';
-      $this->current   = new DaidalosPackage_File($this->folder.'/'.$tmp.'/package.bdl');
+      $this->fileName = $this->folder.'/'.$tmp.'/package.xml';
+      $this->current = new DaidalosPackage_File($this->folder.'/'.$tmp.'/package.bdl');
     } else {
-      $this->fileName  = null;
-      $this->current   = null;
+      $this->fileName = null;
+      $this->current = null;
     }
 
     return $this->current;
