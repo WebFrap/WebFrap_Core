@@ -288,7 +288,7 @@ class WebfrapContact_Controller extends Controller
       throw new InvalidRequest_Exception();
 
     /* @var $model WebfrapMessage_Model */
-    $model  = $this->loadModel('WebfrapMessage');
+    $model = $this->loadModel('WebfrapMessage');
 
     $model->deleteMessage($messageId);
 
@@ -323,7 +323,7 @@ JS
       throw new InvalidRequest_Exception();
 
     /* @var $model WebfrapMessage_Model */
-    $model  = $this->loadModel('WebfrapMessage');
+    $model = $this->loadModel('WebfrapMessage');
 
     $model->deleteAllMessage();
 
@@ -360,7 +360,7 @@ JS
     $msgIds = $request->param('slct', Validator::EID);
 
     /* @var $model WebfrapMessage_Model */
-    $model  = $this->loadModel('WebfrapMessage');
+    $model = $this->loadModel('WebfrapMessage');
     $model->deleteSelection($msgIds);
 
     $entries = array();

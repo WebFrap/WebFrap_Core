@@ -130,7 +130,7 @@ class DaidalosDbRole_Controller extends Controller
       true
     );
 
-    $model  = $this->loadModel('DaidalosDbRole');
+    $model = $this->loadModel('DaidalosDbRole');
 
     $view->setModel($model);
 

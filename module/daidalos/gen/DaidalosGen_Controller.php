@@ -73,7 +73,7 @@ class DaidalosGen_Controller extends Controller
     );
 
     /* @var $model DaidalosGen_Model  */
-    $model  = $this->loadModel('DaidalosGen');
+    $model = $this->loadModel('DaidalosGen');
 
     // das Repository in welches generiert werden soll
     $target = $request->param('target', Validator::TEXT);

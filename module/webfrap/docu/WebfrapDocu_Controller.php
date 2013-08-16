@@ -321,7 +321,7 @@ class WebfrapDocu_Controller extends Controller
     if (!$key)
       $key = 'wbf';
 
-    $model  = $this->loadModel('WebfrapDocu_Page');
+    $model = $this->loadModel('WebfrapDocu_Page');
 
     $view   = $response->loadView(
       'webfrap_docu_page',

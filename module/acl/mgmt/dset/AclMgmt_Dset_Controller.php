@@ -202,7 +202,7 @@ class AclMgmt_Dset_Controller extends MvcController_Domain
 
     // load the default model
     /* @var $model AclMgmt_Dset_Model  */
-    $model  = $this->loadModel('AclMgmt_Dset');
+    $model = $this->loadModel('AclMgmt_Dset');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $params);
 
@@ -406,7 +406,7 @@ class AclMgmt_Dset_Controller extends MvcController_Domain
     $params = $this->getListingFlags($request);
 
     /* @var $model AclMgmt_Dset_Model  */
-    $model  = $this->loadModel('AclMgmt_Dset');
+    $model = $this->loadModel('AclMgmt_Dset');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $params);
 

@@ -174,7 +174,7 @@ class WebfrapSettings_Search_Controller extends Controller
       View::AJAX
     );
     /* @var $model Example_Model */
-    $model  = $this->loadModel('WebfrapMessage');
+    $model = $this->loadModel('WebfrapMessage');
     //$model->setAccess($access);
     $view->setModel($model);
 
@@ -260,7 +260,7 @@ JS
       throw new InvalidRequest_Exception();
 
     /* @var $model WebfrapMessage_Model */
-    $model  = $this->loadModel('WebfrapMessage');
+    $model = $this->loadModel('WebfrapMessage');
 
     $model->deleteMessage($messageId);
 
