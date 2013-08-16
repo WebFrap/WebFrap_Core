@@ -557,7 +557,7 @@ class WebfrapMessage_Controller extends Controller
       View::AJAX
     );
     /* @var $model Example_Model */
-    $model  = $this->loadModel('WebfrapMessage');
+    $model = $this->loadModel('WebfrapMessage');
     //$model->setAccess($access);
     $view->setModel($model);
 
@@ -674,7 +674,7 @@ JS
       throw new InvalidRequest_Exception();
 
     /* @var $model WebfrapMessage_Model */
-    $model  = $this->loadModel('WebfrapMessage');
+    $model = $this->loadModel('WebfrapMessage');
 
     $model->deleteMessage($messageId);
 
@@ -707,7 +707,7 @@ JS
       throw new InvalidRequest_Exception();
 
     /* @var $model WebfrapMessage_Model */
-    $model  = $this->loadModel('WebfrapMessage');
+    $model = $this->loadModel('WebfrapMessage');
 
     $model->deleteAllMessage();
 
@@ -744,7 +744,7 @@ JS
     $msgIds = $request->param('slct', Validator::EID);
 
     /* @var $model WebfrapMessage_Model */
-    $model  = $this->loadModel('WebfrapMessage');
+    $model = $this->loadModel('WebfrapMessage');
     $model->deleteSelection($msgIds);
 
     $entries = array();
@@ -1075,7 +1075,7 @@ JS
       throw new InvalidRequest_Exception();
 
     /* @var $model WebfrapMessage_Model */
-    $model  = $this->loadModel('WebfrapMessage');
+    $model = $this->loadModel('WebfrapMessage');
 
     $model->archiveMessage($messageId);
 
@@ -1152,7 +1152,7 @@ JS
     $msgIds = $request->param('slct', Validator::EID);
 
     /* @var $model WebfrapMessage_Model */
-    $model  = $this->loadModel('WebfrapMessage');
+    $model = $this->loadModel('WebfrapMessage');
     $model->archiveSelection($msgIds);
 
     $entries = array();
@@ -1196,7 +1196,7 @@ JS
       throw new InvalidRequest_Exception();
 
     /* @var $model WebfrapMessage_Model */
-    $model  = $this->loadModel('WebfrapMessage');
+    $model = $this->loadModel('WebfrapMessage');
 
     $model->archiveMessage($messageId, false);
 

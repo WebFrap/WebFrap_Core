@@ -61,7 +61,7 @@ class DaidalosAcl_Controller extends Controller
 
     $view   = $response->loadView('wgt-view-daidalos_acl-form', 'DaidalosAcl');
 
-    $model  = $this->loadModel('DaidalosAcl');
+    $model = $this->loadModel('DaidalosAcl');
 
     $view->setModel($model);
     $view->displayForm($params);
@@ -76,7 +76,7 @@ class DaidalosAcl_Controller extends Controller
 
     $params = $this->getFlags($this->getRequest());
 
-    $model  = $this->loadModel('DaidalosAcl');
+    $model = $this->loadModel('DaidalosAcl');
     $model->updateArea($this->getRequest());
 
   }//end public function service_updateAcl */

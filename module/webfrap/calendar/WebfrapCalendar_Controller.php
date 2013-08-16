@@ -533,7 +533,7 @@ JS
       throw new InvalidRequest_Exception();
 
     /* @var $model WebfrapCalendar_Model */
-    $model  = $this->loadModel('WebfrapCalendar');
+    $model = $this->loadModel('WebfrapCalendar');
 
     $model->deleteMessage($messageId);
 
@@ -566,7 +566,7 @@ JS
       throw new InvalidRequest_Exception();
 
     /* @var $model WebfrapCalendar_Model */
-    $model  = $this->loadModel('WebfrapCalendar');
+    $model = $this->loadModel('WebfrapCalendar');
 
     $model->deleteAllMessage();
 
@@ -603,7 +603,7 @@ JS
     $msgIds = $request->param('slct', Validator::EID);
 
     /* @var $model WebfrapCalendar_Model */
-    $model  = $this->loadModel('WebfrapCalendar');
+    $model = $this->loadModel('WebfrapCalendar');
     $model->deleteSelection($msgIds);
 
     $entries = array();

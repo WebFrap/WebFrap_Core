@@ -207,7 +207,7 @@ class AclMgmt_Qfdu_Controller extends MvcController_Domain
 
     // load the default model
     /* @var $model AclMgmt_Qfdu_Model */
-    $model  = $this->loadModel('AclMgmt_Qfdu');
+    $model = $this->loadModel('AclMgmt_Qfdu');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $params);
 
@@ -319,7 +319,7 @@ class AclMgmt_Qfdu_Controller extends MvcController_Domain
     $domainNode  = $this->getDomainNode($request);
 
     /* @var $model AclMgmt_Qfdu_Model */
-    $model  = $this->loadModel('AclMgmt_Qfdu');
+    $model = $this->loadModel('AclMgmt_Qfdu');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $params);
 
@@ -488,7 +488,7 @@ class AclMgmt_Qfdu_Controller extends MvcController_Domain
 
     // load the default model
     /* @var $model AclMgmt_Qfdu_Model */
-    $model  = $this->loadModel('AclMgmt_Qfdu');
+    $model = $this->loadModel('AclMgmt_Qfdu');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $params);
 
@@ -524,7 +524,7 @@ class AclMgmt_Qfdu_Controller extends MvcController_Domain
 
     // load the default model
     /* @var $model AclMgmt_Qfdu_Model */
-    $model  = $this->loadModel('AclMgmt_Qfdu');
+    $model = $this->loadModel('AclMgmt_Qfdu');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $context);
 
@@ -573,7 +573,7 @@ class AclMgmt_Qfdu_Controller extends MvcController_Domain
 
     // load the default model
     /* @var $model AclMgmt_Qfdu_Model */
-    $model  = $this->loadModel('AclMgmt_Qfdu');
+    $model = $this->loadModel('AclMgmt_Qfdu');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $context);
 
@@ -670,7 +670,7 @@ class AclMgmt_Qfdu_Controller extends MvcController_Domain
 
     // load the default model
     /* @var $model AclMgmt_Qfdu_Model */
-    $model  = $this->loadModel('AclMgmt_Qfdu');
+    $model = $this->loadModel('AclMgmt_Qfdu');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $context);
 
@@ -719,7 +719,7 @@ class AclMgmt_Qfdu_Controller extends MvcController_Domain
 
     // load the default model
     /* @var $model AclMgmt_Qfdu_Model */
-    $model  = $this->loadModel('AclMgmt_Qfdu');
+    $model = $this->loadModel('AclMgmt_Qfdu');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $context);
 

@@ -113,7 +113,7 @@ class DaidalosDb_Controller extends Controller
       View::MAINTAB
     );
 
-    $model  = $this->loadModel('DaidalosDb');
+    $model = $this->loadModel('DaidalosDb');
     $view->setModel($model);
 
     $view->displayListing($params);
@@ -138,7 +138,7 @@ class DaidalosDb_Controller extends Controller
       View::MAINTAB
     );
 
-    $model  = $this->loadModel('DaidalosDb');
+    $model = $this->loadModel('DaidalosDb');
     $view->setModel($model);
 
     $view->display($request, $response, $params);
@@ -192,7 +192,7 @@ class DaidalosDb_Controller extends Controller
       View::MAINTAB
     );
 
-    $model  = $this->loadModel('DaidalosDb');
+    $model = $this->loadModel('DaidalosDb');
     $view->setModel($model);
 
     $view->display($dbKey, $schemaKey, $params);
@@ -223,7 +223,7 @@ class DaidalosDb_Controller extends Controller
       View::MAINTAB
     );
 
-    $model  = $this->loadModel('DaidalosDbBackup');
+    $model = $this->loadModel('DaidalosDbBackup');
     $view->setModel($model);
 
     $view->displayForm($key, $params);
@@ -252,7 +252,7 @@ class DaidalosDb_Controller extends Controller
       View::MAINTAB
     );
 
-    $model  = $this->loadModel('DaidalosDbBackup');
+    $model = $this->loadModel('DaidalosDbBackup');
 
     $view->setModel($model);
 
@@ -282,7 +282,7 @@ class DaidalosDb_Controller extends Controller
       View::MAINTAB
     );
 
-    $model  = $this->loadModel('DaidalosDbBackup');
+    $model = $this->loadModel('DaidalosDbBackup');
 
     $view->setModel($model);
 
@@ -308,7 +308,7 @@ class DaidalosDb_Controller extends Controller
       View::MAINTAB
     );
 
-    $model  = $this->loadModel('DaidalosDb');
+    $model = $this->loadModel('DaidalosDb');
     $view->setModel($model);
 
     $view->display($params);
@@ -325,7 +325,7 @@ class DaidalosDb_Controller extends Controller
 
     $params = $this->getFlags($request);
 
-    $model  = $this->loadModel('DaidalosDb');
+    $model = $this->loadModel('DaidalosDb');
 
   }//end public function service_restore */
 

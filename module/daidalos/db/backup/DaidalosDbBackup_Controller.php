@@ -100,7 +100,7 @@ class DaidalosDbBackup_Controller extends Controller
       View::MAINTAB
     );
 
-    $model  = $this->loadModel('DaidalosDbBackup');
+    $model = $this->loadModel('DaidalosDbBackup');
     $view->setModel($model);
 
     $view->displayForm($key, $params);
@@ -129,7 +129,7 @@ class DaidalosDbBackup_Controller extends Controller
       View::MAINTAB
     );
 
-    $model  = $this->loadModel('DaidalosDbBackup');
+    $model = $this->loadModel('DaidalosDbBackup');
 
     $view->setModel($model);
 
@@ -159,7 +159,7 @@ class DaidalosDbBackup_Controller extends Controller
       View::MAINTAB
     );
 
-    $model  = $this->loadModel('DaidalosDbBackup');
+    $model = $this->loadModel('DaidalosDbBackup');
 
     $view->setModel($model);
 
@@ -185,7 +185,7 @@ class DaidalosDbBackup_Controller extends Controller
       View::MAINTAB
     );
 
-    $model  = $this->loadModel('DaidalosDb');
+    $model = $this->loadModel('DaidalosDb');
     $view->setModel($model);
 
     $view->display($params);
@@ -202,7 +202,7 @@ class DaidalosDbBackup_Controller extends Controller
 
     $params = $this->getFlags($request);
 
-    $model  = $this->loadModel('DaidalosDb');
+    $model = $this->loadModel('DaidalosDb');
 
   }//end public function service_restore */
 
@@ -216,7 +216,7 @@ class DaidalosDbBackup_Controller extends Controller
 
     $params = $this->getFlags($request);
 
-    $model  = $this->loadModel('DaidalosDbBackup');
+    $model = $this->loadModel('DaidalosDbBackup');
     $model->upload();
 
   }//end public function service_uploadDump */

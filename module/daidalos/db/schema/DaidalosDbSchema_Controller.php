@@ -118,7 +118,7 @@ class DaidalosDbSchema_Controller extends Controller
       View::MAINTAB
     );
 
-    $model  = $this->loadModel('DaidalosDb');
+    $model = $this->loadModel('DaidalosDb');
     $view->setModel($model);
 
     $view->display($request, $response, $params);
@@ -146,7 +146,7 @@ class DaidalosDbSchema_Controller extends Controller
       View::MAINTAB
     );
 
-    $model  = $this->loadModel('DaidalosDbSchema');
+    $model = $this->loadModel('DaidalosDbSchema');
     $view->setModel($model);
 
     $view->displayBackup($dbKey, $schemaKey, $params);
@@ -174,7 +174,7 @@ class DaidalosDbSchema_Controller extends Controller
       View::MAINTAB
     );
 
-    $model  = $this->loadModel('DaidalosDbSchema');
+    $model = $this->loadModel('DaidalosDbSchema');
     $view->setModel($model);
 
     $view->displayBackup($dbKey, $schemaKey, $params);
@@ -202,7 +202,7 @@ class DaidalosDbSchema_Controller extends Controller
       View::MAINTAB
     );
 
-    $model  = $this->loadModel('DaidalosDbSchema');
+    $model = $this->loadModel('DaidalosDbSchema');
     /* @var $model DaidalosDbSchema_Model */
 
     $view->setModel($model);
@@ -231,7 +231,7 @@ class DaidalosDbSchema_Controller extends Controller
       View::MODAL
     );
 
-    $model  = $this->loadModel('DaidalosDbSchema');
+    $model = $this->loadModel('DaidalosDbSchema');
     /* @var $model DaidalosDbSchema_Model */
     $view->setModel($model);
 
@@ -262,7 +262,7 @@ class DaidalosDbSchema_Controller extends Controller
       View::MODAL
     );
 
-    $model  = $this->loadModel('DaidalosDbSchema');
+    $model = $this->loadModel('DaidalosDbSchema');
     /* @var $model DaidalosDbSchema_Model */
     $view->setModel($model);
 
@@ -292,7 +292,7 @@ class DaidalosDbSchema_Controller extends Controller
       View::AJAX
     );
 
-    $model  = $this->loadModel('DaidalosDbSchema');
+    $model = $this->loadModel('DaidalosDbSchema');
     /* @var $model DaidalosDbSchema_Model */
 
     $model->restoreSchemaBackup($dbKey, $schemaKey, $dumpKey);
@@ -324,7 +324,7 @@ class DaidalosDbSchema_Controller extends Controller
     );
     /* @var $view DaidalosDbSchema_Backup_Ajax_View */
 
-    $model  = $this->loadModel('DaidalosDbSchema');
+    $model = $this->loadModel('DaidalosDbSchema');
     /* @var $model DaidalosDbSchema_Model */
 
     $uplDump = $model->uploadDump($dbKey, $schemaKey, $request);
@@ -360,7 +360,7 @@ class DaidalosDbSchema_Controller extends Controller
     );
     /* @var $view DaidalosDbSchema_Backup_Ajax_View */
 
-    $model  = $this->loadModel('DaidalosDbSchema');
+    $model = $this->loadModel('DaidalosDbSchema');
     /* @var $model DaidalosDbSchema_Model */
     $model->deleteDump($dbKey, $schemaKey, $dumpKey);
 

@@ -107,7 +107,7 @@ class DaidalosDbView_Controller extends Controller
       true
     );
 
-    $model  = $this->loadModel('DaidalosDbView');
+    $model = $this->loadModel('DaidalosDbView');
     $model->dbName     = $dbName;
     $model->schemaName = $schemaName;
     $params->dbName     = $dbName;
@@ -129,7 +129,7 @@ class DaidalosDbView_Controller extends Controller
 
     $params = $this->getFlags($request);
 
-    $model  = $this->loadModel('DaidalosDb');
+    $model = $this->loadModel('DaidalosDb');
 
   }//end public function service_restore */
 
@@ -150,7 +150,7 @@ class DaidalosDbView_Controller extends Controller
     $dbName     = $request->param("db", Validator::CNAME);
     $schemaName = $request->param("schema", Validator::CNAME);
 
-    $model  = $this->loadModel('DaidalosDbView');
+    $model = $this->loadModel('DaidalosDbView');
 
     $model->dropWbfViews($schemaName);
 
@@ -171,7 +171,7 @@ class DaidalosDbView_Controller extends Controller
     $dbName     = $request->param("db", Validator::CNAME);
     $schemaName = $request->param("schema", Validator::CNAME);
 
-    $model  = $this->loadModel('DaidalosDbView');
+    $model = $this->loadModel('DaidalosDbView');
 
     $model->createWbfViews($schemaName);
 
@@ -190,7 +190,7 @@ class DaidalosDbView_Controller extends Controller
     $dbName     = $request->param("db", Validator::CNAME);
     $schemaName = $request->param("schema", Validator::CNAME);
 
-    $model  = $this->loadModel('DaidalosDbView');
+    $model = $this->loadModel('DaidalosDbView');
 
     $model->dropWbfViews($schemaName);
     $model->createWbfViews($schemaName);
