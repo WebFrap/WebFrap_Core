@@ -462,19 +462,19 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
       $listType = ucfirst($params->ltype);
 
       // die Maske über welche der neue Liste Eintrag gerendert werden soll
-      if (!$params->mask)
-        $params->mask = 'WebfrapAnnouncement';
+      if (!$params->targetMask)
+        $params->targetMask = 'WebfrapAnnouncement';
 
       // laden der angeforderten view
       $view = $response->loadView
       (
         'listing_webfrap_announcement',
-        $params->mask.'_'.$listType,
+        $params->targetMask.'_'.$listType,
         'displayInsert'
       );
 
       // model wird benötigt
-      $view->setModel($this->loadModel($params->mask.'_'.$listType));
+      $view->setModel($this->loadModel($params->targetMask.'_'.$listType));
 
       $view->displayInsert($params);
 
@@ -655,14 +655,14 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
     $listType = ucfirst($params->ltype);
 
     // die Maske über welche der neue Liste Eintrag gerendert werden soll
-    if (!$params->mask)
-      $params->mask = 'WebfrapAnnouncement';
+    if (!$params->targetMask)
+      $params->targetMask = 'WebfrapAnnouncement';
 
     // laden der angeforderten view
     $view = $response->loadView
     (
       'listing_webfrap_announcement',
-      $params->mask.'_'.$listType,
+      $params->targetMask.'_'.$listType,
       'displayUpdate'
     );
 
@@ -681,7 +681,7 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
     }
 
     // model wird benötigt
-    $view->setModel($this->loadModel($params->mask.'_'.$listType));
+    $view->setModel($this->loadModel($params->targetMask.'_'.$listType));
 
     $error = $view->displayUpdate($params);
 
@@ -872,8 +872,8 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
     if (!$params->ltype)
       $params->ltype = 'table';
 
-    if (!$params->mask)
-      $params->mask = 'WbfsysAnnouncement';
+    if (!$params->targetMask)
+      $params->targetMask = 'WbfsysAnnouncement';
 
     $listType = ucfirst($params->ltype);
 
@@ -890,7 +890,7 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
     if (!$view = $response->loadView
     (
       'listing_wbfsys_announcement',
-      $params->mask.'_'.$listType,
+      $params->targetMask.'_'.$listType,
       'displayDelete'
     ))
     {
@@ -909,7 +909,7 @@ class WebfrapAnnouncement_Controller extends ControllerCrud
     }
 
     // model wird benötigt
-    $view->setModel($this->loadModel($params->mask.'_'.$listType));
+    $view->setModel($this->loadModel($params->targetMask.'_'.$listType));
 
     $error = $view->displayDelete($entityWbfsysAnnouncement, $params);
 
