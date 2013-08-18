@@ -56,8 +56,8 @@ class AclModule_Maintab_Menu extends WgtDropmenu
     $user = $this->getUser();
 
     // first create icons
-    $iconMasks = $this->view->icon('control/masks.png'     , 'Masks');
-    $iconMask = $this->view->icon('control/mask.png'      , 'Mask');
+    $iconMasks = '<i class="icon-list" ></i>';
+    $iconMask = '<i class="icon-list-alt" ></i>';
 
     // load entries
     $entries = new TArray();
@@ -70,7 +70,7 @@ class AclModule_Maintab_Menu extends WgtDropmenu
     <button
       class="wcm wcm_control_dropmenu wgt-button"
       wgt_drop_box="{$this->id}"
-      id="{$this->id}-control" >{$this->view->i18n->l('Menu','wbf.label')} <i class="icon-angle-down" ></i></button>
+      id="{$this->id}-control" ><i class="icon-reorder" ></i> {$this->view->i18n->l('Menu','wbf.label')} <i class="icon-angle-down" ></i></button>
     <var id="{$this->id}-control-cfg-dropmenu"  >{"triggerEvent":"click"}</var>
   </div>
 
@@ -152,9 +152,6 @@ HTML;
   protected function entriesSupport($areaId, $params)
   {
 
-    // first create icons
-    $iconSupport = $this->view->icon( 'control/support.png' ,'Support');
-    $iconHelp = '<i class="icon-info-sign" ></i>';
 
     // assemble al parts to the html submenu
     $html = <<<HTML
@@ -166,7 +163,7 @@ HTML;
         <li><a
           class="wcm wcm_req_ajax"
           href="modal.php?c=Webfrap.Docu.open&amp;key=project_activity-acl"
-        >{$iconHelp} {$this->view->i18n->l('Help','wbf.label')}</a>
+        ><i class="icon-info-sign" ></i> {$this->view->i18n->l('Help','wbf.label')}</a>
         </li>
       </ul>
     </span>

@@ -32,7 +32,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
    * @getter WgtCrudForm::getNamespace()
    * @var string
    */
-  public $namespace = 'MyProfile';
+  public $namespace  = 'MyProfile';
 
   /**
    * prename for the ui elements to avoid redundant names in the forms
@@ -42,7 +42,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
    * @getter WgtCrudForm::getPrefix()
    * @var string
    */
-  public $prefix = 'MyProfile';
+  public $prefix      = 'MyProfile';
 
   /**
    * suffixes are used to create multiple instances of forms for diffrent
@@ -53,232 +53,232 @@ class MyProfile_Crud_Form extends WgtCrudForm
    * @getter WgtCrudForm::getSuffix()
    * @var string
    */
-  public $suffix = null;
+  public $suffix      = null;
 
   /**
    * Standard Liste der Felder die angezeigt werden sollen
    *
    * @var array
    */
-  protected $fields = array
+  protected $fields      = array
   (
       'wbfsys_role_user' => array
       (
         'name' => array
         (
-          'required' => false,
-          'readonly' => false,
-          'lenght' => '250',
+          'required'  => false,
+          'readonly'  => false,
+          'lenght'     => '250',
         ),
         'id_person' => array
         (
-          'required' => false,
-          'readonly' => false,
-          'lenght' => '',
+          'required'  => false,
+          'readonly'  => false,
+          'lenght'     => '',
         ),
         'rowid' => array
         (
-          'required' => false,
-          'readonly' => true,
-          'lenght' => '',
+          'required'  => false,
+          'readonly'  => true,
+          'lenght'     => '',
         ),
         'id_employee' => array
         (
-          'required' => false,
-          'readonly' => false,
-          'lenght' => '',
+          'required'  => false,
+          'readonly'  => false,
+          'lenght'     => '',
         ),
         'm_time_created' => array
         (
-          'required' => false,
-          'readonly' => true,
-          'lenght' => '',
+          'required'  => false,
+          'readonly'  => true,
+          'lenght'     => '',
         ),
         'm_role_create' => array
         (
-          'required' => false,
-          'readonly' => true,
-          'lenght' => '',
+          'required'  => false,
+          'readonly'  => true,
+          'lenght'     => '',
         ),
         'm_time_changed' => array
         (
-          'required' => false,
-          'readonly' => true,
-          'lenght' => '',
+          'required'  => false,
+          'readonly'  => true,
+          'lenght'     => '',
         ),
         'm_role_change' => array
         (
-          'required' => false,
-          'readonly' => true,
-          'lenght' => '',
+          'required'  => false,
+          'readonly'  => true,
+          'lenght'     => '',
         ),
         'm_version' => array
         (
-          'required' => false,
-          'readonly' => true,
-          'lenght' => '',
+          'required'  => false,
+          'readonly'  => true,
+          'lenght'     => '',
         ),
         'm_uuid' => array
         (
-          'required' => false,
-          'readonly' => true,
-          'lenght' => '',
+          'required'  => false,
+          'readonly'  => true,
+          'lenght'     => '',
         ),
         'password' => array
         (
-          'required' => false,
-          'readonly' => false,
-          'lenght' => '64',
+          'required'  => false,
+          'readonly'  => false,
+          'lenght'     => '64',
         ),
         'level' => array
         (
-          'required' => false,
-          'readonly' => false,
-          'lenght' => '',
+          'required'  => false,
+          'readonly'  => false,
+          'lenght'     => '',
         ),
         'profile' => array
         (
-          'required' => false,
-          'readonly' => false,
-          'lenght' => '120',
+          'required'  => false,
+          'readonly'  => false,
+          'lenght'     => '120',
         ),
         'inactive' => array
         (
-          'required' => false,
-          'readonly' => false,
-          'lenght' => '',
+          'required'  => false,
+          'readonly'  => false,
+          'lenght'     => '',
         ),
         'non_cert_login' => array
         (
-          'required' => false,
-          'readonly' => false,
-          'lenght' => '',
+          'required'  => false,
+          'readonly'  => false,
+          'lenght'     => '',
         ),
         'description' => array
         (
-          'required' => false,
-          'readonly' => false,
-          'lenght' => '',
+          'required'  => false,
+          'readonly'  => false,
+          'lenght'     => '',
         ),
       ),
       'embed_person' => array
       (
         'firstname' => array
         (
-          'required' => false,
-          'readonly' => false,
-          'lenght' => '250',
+          'required'  => false,
+          'readonly'  => false,
+          'lenght'     => '250',
         ),
         'lastname' => array
         (
-          'required' => false,
-          'readonly' => false,
-          'lenght' => '250',
+          'required'  => false,
+          'readonly'  => false,
+          'lenght'     => '250',
         ),
         'academic_title' => array
         (
-          'required' => false,
-          'readonly' => false,
-          'lenght' => '50',
+          'required'  => false,
+          'readonly'  => false,
+          'lenght'     => '50',
         ),
         'noblesse_title' => array
         (
-          'required' => false,
-          'readonly' => false,
-          'lenght' => '50',
+          'required'  => false,
+          'readonly'  => false,
+          'lenght'     => '50',
         ),
         'rowid' => array
         (
-          'required' => false,
-          'readonly' => true,
-          'lenght' => '',
+          'required'  => false,
+          'readonly'  => true,
+          'lenght'     => '',
         ),
         'm_time_created' => array
         (
-          'required' => false,
-          'readonly' => true,
-          'lenght' => '',
+          'required'  => false,
+          'readonly'  => true,
+          'lenght'     => '',
         ),
         'm_role_create' => array
         (
-          'required' => false,
-          'readonly' => true,
-          'lenght' => '',
+          'required'  => false,
+          'readonly'  => true,
+          'lenght'     => '',
         ),
         'm_time_changed' => array
         (
-          'required' => false,
-          'readonly' => true,
-          'lenght' => '',
+          'required'  => false,
+          'readonly'  => true,
+          'lenght'     => '',
         ),
         'm_role_change' => array
         (
-          'required' => false,
-          'readonly' => true,
-          'lenght' => '',
+          'required'  => false,
+          'readonly'  => true,
+          'lenght'     => '',
         ),
         'm_version' => array
         (
-          'required' => false,
-          'readonly' => true,
-          'lenght' => '',
+          'required'  => false,
+          'readonly'  => true,
+          'lenght'     => '',
         ),
         'm_uuid' => array
         (
-          'required' => false,
-          'readonly' => true,
-          'lenght' => '',
+          'required'  => false,
+          'readonly'  => true,
+          'lenght'     => '',
         ),
         'photo' => array
         (
-          'required' => false,
-          'readonly' => false,
-          'lenght' => '250',
+          'required'  => false,
+          'readonly'  => false,
+          'lenght'     => '250',
         ),
       ),
       'embed_enterprise_employee' => array
       (
         'rowid' => array
         (
-          'required' => false,
-          'readonly' => true,
-          'lenght' => '',
+          'required'  => false,
+          'readonly'  => true,
+          'lenght'     => '',
         ),
         'm_time_created' => array
         (
-          'required' => false,
-          'readonly' => true,
-          'lenght' => '',
+          'required'  => false,
+          'readonly'  => true,
+          'lenght'     => '',
         ),
         'm_role_create' => array
         (
-          'required' => false,
-          'readonly' => true,
-          'lenght' => '',
+          'required'  => false,
+          'readonly'  => true,
+          'lenght'     => '',
         ),
         'm_time_changed' => array
         (
-          'required' => false,
-          'readonly' => true,
-          'lenght' => '',
+          'required'  => false,
+          'readonly'  => true,
+          'lenght'     => '',
         ),
         'm_role_change' => array
         (
-          'required' => false,
-          'readonly' => true,
-          'lenght' => '',
+          'required'  => false,
+          'readonly'  => true,
+          'lenght'     => '',
         ),
         'm_version' => array
         (
-          'required' => false,
-          'readonly' => true,
-          'lenght' => '',
+          'required'  => false,
+          'readonly'  => true,
+          'lenght'     => '',
         ),
         'm_uuid' => array
         (
-          'required' => false,
-          'readonly' => true,
-          'lenght' => '',
+          'required'  => false,
+          'readonly'  => true,
+          'lenght'     => '',
         ),
       ),
 
@@ -289,7 +289,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
    *
    * @var WbfsysRoleUser_Entity
    */
-  public $entity = null;
+  public $entity      = null;
 
   /**
   * The EmbedPerson Reference Entity
@@ -324,7 +324,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   {
 
     $this->entity = $entity;
-    $this->rowid = $entity->getId();
+    $this->rowid  = $entity->getId();
 
   }//end public function setEntity */
 
@@ -437,7 +437,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
   public function renderForm($params = null  )
   {
 
-    $params = $this->checkNamedParams($params);
+    $params  = $this->checkNamedParams($params);
     $i18n = $this->view->i18n;
 
     if ($params->access)
@@ -449,7 +449,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
     $this->view->addVar('entityEmbedPerson',  $this->entityEmbedPerson) ;
     $this->view->addVar('entityEmbedEnterpriseEmployee',  $this->entityEmbedEnterpriseEmployee) ;
 
-    $this->db = $this->getDb();
+    $this->db     = $this->getDb();
 
     if (!$this->suffix) {
       $this->suffix = $this->rowid?:'';
@@ -467,8 +467,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
     (
       array
       (
-        'name' => 'wbfsys_role_user[id_my_profile-tostring]',
-        'id' => $sendTo,
+        'name'  => 'wbfsys_role_user[id_my_profile-tostring]',
+        'id'    => $sendTo,
         'value' => $this->entity->text(),
       )
     );
@@ -597,7 +597,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $this->items['my_profile-id_person'] = $inputIdPerson;
       $inputIdPerson->addAttributes(array
       (
-        'readonly' => 'readonly',
+        'readonly'  => 'readonly',
         'name' => 'wbfsys_role_user[id_person]',
         'id' => 'wgt-input-my_profile_id_person'.($this->suffix?'-'.$this->suffix:''),
           'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
@@ -885,7 +885,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $this->items['my_profile-id_employee'] = $inputIdEmployee;
       $inputIdEmployee->addAttributes(array
       (
-        'readonly' => 'readonly',
+        'readonly'  => 'readonly',
         'name' => 'wbfsys_role_user[id_employee]',
         'id' => 'wgt-input-my_profile_id_employee'.($this->suffix?'-'.$this->suffix:''),
           'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
@@ -1006,7 +1006,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $this->items['my_profile-m_role_create'] = $inputMRoleCreate;
       $inputMRoleCreate->addAttributes(array
       (
-        'readonly' => 'readonly',
+        'readonly'  => 'readonly',
         'name' => 'wbfsys_role_user[m_role_create]',
         'id' => 'wgt-input-my_profile_m_role_create'.($this->suffix?'-'.$this->suffix:''),
           'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
@@ -1135,7 +1135,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $this->items['my_profile-m_role_change'] = $inputMRoleChange;
       $inputMRoleChange->addAttributes(array
       (
-        'readonly' => 'readonly',
+        'readonly'  => 'readonly',
         'name' => 'wbfsys_role_user[m_role_change]',
         'id' => 'wgt-input-my_profile_m_role_change'.($this->suffix?'-'.$this->suffix:''),
           'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
@@ -1387,7 +1387,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $this->items['embed_person-m_role_create'] = $inputMRoleCreate;
       $inputMRoleCreate->addAttributes(array
       (
-        'readonly' => 'readonly',
+        'readonly'  => 'readonly',
         'name' => 'embed_person[m_role_create]',
         'id' => 'wgt-input-embed_person_m_role_create'.($this->suffix?'-'.$this->suffix:''),
           'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
@@ -1516,7 +1516,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $this->items['embed_person-m_role_change'] = $inputMRoleChange;
       $inputMRoleChange->addAttributes(array
       (
-        'readonly' => 'readonly',
+        'readonly'  => 'readonly',
         'name' => 'embed_person[m_role_change]',
         'id' => 'wgt-input-embed_person_m_role_change'.($this->suffix?'-'.$this->suffix:''),
           'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
@@ -1768,7 +1768,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $this->items['embed_enterprise_employee-m_role_create'] = $inputMRoleCreate;
       $inputMRoleCreate->addAttributes(array
       (
-        'readonly' => 'readonly',
+        'readonly'  => 'readonly',
         'name' => 'embed_enterprise_employee[m_role_create]',
         'id' => 'wgt-input-embed_enterprise_employee_m_role_create'.($this->suffix?'-'.$this->suffix:''),
           'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
@@ -1897,7 +1897,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
       $this->items['embed_enterprise_employee-m_role_change'] = $inputMRoleChange;
       $inputMRoleChange->addAttributes(array
       (
-        'readonly' => 'readonly',
+        'readonly'  => 'readonly',
         'name' => 'embed_enterprise_employee[m_role_change]',
         'id' => 'wgt-input-embed_enterprise_employee_m_role_change'.($this->suffix?'-'.$this->suffix:''),
           'class' => 'wcm wcm_ui_tip medium'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
@@ -2398,8 +2398,8 @@ class MyProfile_Crud_Form extends WgtCrudForm
       (
         array
         (
-          'name' => 'wbfsys_role_user[description]',
-          'id' => 'wgt-input-my_profile_description'.($this->suffix?'-'.$this->suffix:''),
+          'name'  => 'wbfsys_role_user[description]',
+          'id'    => 'wgt-input-my_profile_description'.($this->suffix?'-'.$this->suffix:''),
           'class' => 'wcm wcm_ui_tip large medium-height'.($this->assignedForm?' asgd-'.$this->assignedForm:''),
           'title' => $i18n->l('Insert value for Description (Role User)', 'wbfsys.role_user.label'),
         )
@@ -2447,7 +2447,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
     }
 
     // laden aller nötigen system resourcen
-    $orm = $this->getOrm();
+    $orm      = $this->getOrm();
     $response = $this->getResponse();
 
     // extrahieren der Daten für die Hauptentity
@@ -2458,7 +2458,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
       'wbfsys_role_user'
     );
 
-    $tmp = $filter->getData();
+    $tmp  = $filter->getData();
     $data = array();
 
     // es werden nur daten gesetzt die tatsächlich übergeben wurden, sonst
@@ -2478,7 +2478,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
       'embed_person'
     );
 
-    $tmpEmbedPerson = $filterEmbedPerson->getData();
+    $tmpEmbedPerson  = $filterEmbedPerson->getData();
     $dataEmbedPerson = array();
 
     // es werden nur daten gesetzt die tatsächlich übergeben wurden, sonst
@@ -2498,7 +2498,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
       'embed_enterprise_employee'
     );
 
-    $tmpEmbedEnterpriseEmployee = $filterEmbedEnterpriseEmployee->getData();
+    $tmpEmbedEnterpriseEmployee  = $filterEmbedEnterpriseEmployee->getData();
     $dataEmbedEnterpriseEmployee = array();
 
     // es werden nur daten gesetzt die tatsächlich übergeben wurden, sonst

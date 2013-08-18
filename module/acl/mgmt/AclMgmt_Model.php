@@ -666,7 +666,7 @@ class AclMgmt_Model extends Model
    * @param TFlag $params named parameters
    * @return void
    */
-  public function search($areaId, $access, $params)
+  public function search($areaKeys, $access, $params)
   {
 
     $db = $this->getDb();
@@ -675,9 +675,8 @@ class AclMgmt_Model extends Model
 
     $condition = $this->getSearchCondition();
 
-    $query->fetch
-    (
-      $areaId,
+    $query->fetch(
+      $areaKeys,
       $condition,
       $params
     );
@@ -722,11 +721,9 @@ class AclMgmt_Model extends Model
     if (!$entity)
       $entity =  $this->getRegisterd('entityWbfsysSecurityAccess');
 
-    return $orm->checkUnique
-    (
+    return $orm->checkUnique(
       $entity ,
-      array
-      (
+      array(
         'id_area',
         'id_group',
         'partial'

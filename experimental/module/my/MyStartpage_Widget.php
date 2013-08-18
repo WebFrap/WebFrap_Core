@@ -21,7 +21,7 @@
  * @author Dominik Bonsch
  * @copyright Dominik Bonsch <dominik.bonsch@webfrap.net>
  */
-class MyStartpageProjectManager_Widget extends WgtWidget
+class MyStartpage_Widget extends WgtWidget
 {
 
   /**
@@ -32,8 +32,8 @@ class MyStartpageProjectManager_Widget extends WgtWidget
   public function asTab($containerId, $tabId, $tabSize = 'medium')
   {
 
-    $user = $this->getUser();
-    $view = $this->getView();
+    $user     = $this->getUser();
+    $view     = $this->getView();
 
     $profile = $user->getProfileName();
     $modMenu = $view->newItem('widgetUserMenu', 'WgtElementMenuExplorer');
@@ -41,7 +41,7 @@ class MyStartpageProjectManager_Widget extends WgtWidget
     $modMenu->setData(DaoFoldermenu::get('profile/'.strtolower($profile)));
     $modMenu->setId('wbf_desktop_usermenu');
 
-    $rederer = $view->getRenderer('ProfileProjectManagerDashboardMenu');
+    $rederer = $view->getRenderer('ProfileDefaultDashboardMenu');
 
     $html = <<<HTML
     <div id="{$tabId}" class="wgt_tab {$tabSize} {$containerId}" title="My Menu"  >
@@ -54,5 +54,5 @@ HTML;
 
   }//end public function asTab */
 
-} // end class MyStartpageProjectManager_Widget
+} // end class MyStartpage_Widget
 

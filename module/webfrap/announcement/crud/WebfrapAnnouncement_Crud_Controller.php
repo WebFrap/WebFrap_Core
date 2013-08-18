@@ -53,7 +53,6 @@ class WebfrapAnnouncement_Crud_Controller extends ControllerCrud
   public function service_create($request, $response)
   {
 
-    // resource laden
     $user = $this->getUser();
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
@@ -378,8 +377,8 @@ class WebfrapAnnouncement_Crud_Controller extends ControllerCrud
     if (!$params->ltype)
       $params->ltype = 'table';
 
-    if (!$params->mask)
-      $params->mask = 'WebfrapAnnouncement';
+    if (!$params->targetMask)
+      $params->targetMask = 'WebfrapAnnouncement';
 
     $listType = ucfirst($params->ltype);
 
@@ -395,7 +394,7 @@ class WebfrapAnnouncement_Crud_Controller extends ControllerCrud
     if (!$view = $response->loadView
     (
       'listing_webfrap_announcement',
-      $params->mask.'_'.$listType,
+      $params->targetMask.'_'.$listType,
       'displayArchive'
     ))
     {
@@ -414,7 +413,7 @@ class WebfrapAnnouncement_Crud_Controller extends ControllerCrud
     }
 
     // model wird benötigt
-    $view->setModel($this->loadModel($params->mask.'_'.$listType));
+    $view->setModel($this->loadModel($params->targetMask.'_'.$listType));
 
     $error = $view->displayArchive($entityWebfrapAnnouncement, $params);
 

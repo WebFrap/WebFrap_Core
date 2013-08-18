@@ -91,8 +91,7 @@ class AclMgmt_Ui extends MvcUi
 
     $view = $this->getView();
 
-    $table = new AclMgmt_Table_Element
-    (
+    $table = new AclMgmt_Table_Element(
       $this->domainNode,
       'listingAclTable',
       $view
@@ -106,10 +105,8 @@ class AclMgmt_Ui extends MvcUi
     $table->setAccess($access);
     $table->setAccessPath($params, $params->aclKey, $params->aclNode);
 
-    $table->setTitle
-    (
-      $this->view->i18n->l
-      (
+    $table->setTitle(
+      $this->view->i18n->l(
         'ACL '.$this->domainNode->pLabel,
         $this->domainNode->domainI18n.'.label'
       )
@@ -148,12 +145,10 @@ class AclMgmt_Ui extends MvcUi
     // create the panel
     $tabPanel = new WgtPanelTable($table);
 
-    $tabPanel->title = $this->view->i18n->l
-    (
+    $tabPanel->title = $this->view->i18n->l(
       'Role access area: {@label@}',
       'wbf.lable',
-      array
-      (
+      array(
         'label' => $view->i18n->l($this->domainNode->label, $this->domainNode->domainI18n.'.label')
       )
     );

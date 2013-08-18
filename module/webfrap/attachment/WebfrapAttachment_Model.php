@@ -98,10 +98,10 @@ class WebfrapAttachment_Model extends Model
    * @var array
    */
   protected $searchFields = array(
-      'file_name' => 'file.name',
-      'file_type' => 'file_type.name',
-      'file_owner' => 'person.wbfsys_role_user_name',
-      'file_description' => 'file.description'
+    'file_name' => 'file.name',
+    'file_type' => 'file_type.name',
+    'file_owner' => 'person.wbfsys_role_user_name',
+    'file_description' => 'file.description'
   );
 
 /*//////////////////////////////////////////////////////////////////////////////
@@ -124,7 +124,8 @@ class WebfrapAttachment_Model extends Model
   public function getUrlExt()
   {
 
-    $url = '&amp;refid='.$this->context->refId.'&amp;ref_mask='.$this->context->refMask.'&amp;element='.$this->context->element;
+    $url = '&amp;refid='.$this->context->refId.'&amp;ref_mask='.$this->context->refMask
+      .'&amp;element='.$this->context->element;
 
     if ($this->context->refField)
       $url .= '&amp;ref_field='.$this->context->refField;

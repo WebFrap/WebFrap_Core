@@ -52,7 +52,7 @@ class AclMgmt_Dset_Maintab_Menu extends WgtDropmenu
   {
 
     $iconEdit = '<i class="icon-save" ></i>';
-    $iconMask = $this->view->icon('control/mask.png', 'Mask');
+    $iconMask = '<i class="icon-list-alt" ></i>';
     $iconListMask = '<i class="icon-list-alt" ></i>';
 
     $access = $params->access;

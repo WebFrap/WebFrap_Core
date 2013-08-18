@@ -38,11 +38,11 @@ class WebfrapMessage_Checklist_Model extends Model
     $db = $this->getDb();
     $user = $this->getUser();
     $response = $this->getResponse();
-    
+
     $savedIds = array();
 
     try {
-    
+
       // start a transaction in the database
       $db->begin();
 
@@ -67,22 +67,22 @@ class WebfrapMessage_Checklist_Model extends Model
         } else {
 
           if (!$orm->update($entityEntry)) {
-            
+
             $entityText = $entityEntry->text();
             $response->addError("Failed to save entry: {$entityText}" );
-            
+
           } else {
 
-            $entityTexts[] = $entityEntry->text();         
+            $entityTexts[] = $entityEntry->text();
             $savedIds[$entityEntry->getId()] = $entityEntry->getId();
-            
+
           }
         }
       }
 
       $textSaved = implode($entityTexts, ', ');
       $response->addMessage( 'Successfully saved Project: '.$textSaved);
-      
+
       // everything ok
       $db->commit();
 
@@ -90,7 +90,7 @@ class WebfrapMessage_Checklist_Model extends Model
 
       $db->rollback();
       return $savedIds;
-      
+
     } catch(WebfrapSys_Exception $e) {
 
       return $savedIds;
@@ -101,20 +101,20 @@ class WebfrapMessage_Checklist_Model extends Model
 
   }//end public function save */
 
-  
+
   /**
    * @param int $delId
    * @param Context $params
    */
   public function delete($delId, $params)
   {
-    
+
     $orm = $this->getOrm();
     $attachEnt = $orm->delete("WbfsysChecklistEntry",$delId);
-    
+
   }//end public function delete */
-  
-  
+
+
   /**
    * @param int $msgId
    * @throws DataNotExists_Exception if the message not exists
@@ -123,7 +123,7 @@ class WebfrapMessage_Checklist_Model extends Model
   {
 
     $db = $this->getDb();
-    
+
     $where = implode( ', ', $ids );
 
     $sql = <<<SQL
@@ -146,6 +146,6 @@ SQL;
     return $db->select($sql);
 
   }//end public function loadChecklistEntries */
-  
+
 } // end class WebfrapMessage_Checklist_Model
 

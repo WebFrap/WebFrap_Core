@@ -821,7 +821,7 @@ HTML;
 
     $html .= ' </div>';
     $html .= ' <div class="menu"  style="text-align:center;margin:0px auto;" >';
-    $html .=     $this->menuCharFilter();
+    //$html .=     $this->menuCharFilter();
     $html .= ' </div>';
     $html .= $this->metaInformations();
     $html .= '</div>'.NL;

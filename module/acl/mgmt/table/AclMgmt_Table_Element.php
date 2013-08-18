@@ -206,6 +206,10 @@ class AclMgmt_Table_Element extends WgtTable
       '.$this->view->i18n->l('Group','wbf.label').'
     </th>'.NL;
 
+    $html .= '<th style="width:250px" >
+      '.$this->view->i18n->l('Area','wbf.label').'
+    </th>'.NL;
+
     $html .= '<th style="width:60px" >
       '.$this->view->i18n->l('Asgd','wbf.label').'
     </th>'.NL;
@@ -274,6 +278,10 @@ class AclMgmt_Table_Element extends WgtTable
 
       $body .= '<td valign="top"  >'
         .(!is_null($row['role_group_name'])?$row['role_group_name']:' ')
+        .'</td>'.NL;
+
+      $body .= '<td valign="top"  >'
+        .(!is_null($row['area_key'])?$row['area_key']:' ')
         .'</td>'.NL;
 
       $body .= '<td valign="top"  >'
@@ -437,6 +445,10 @@ class AclMgmt_Table_Element extends WgtTable
 
     $body .= '<td valign="top" >'.
       (!is_null($row['role_group_name'])?$row['role_group_name']:' ')
+      .'</td>'.NL;
+
+    $body .= '<td valign="top" >'.
+      (!is_null($row['area_key'])?$row['area_key']:' ')
       .'</td>'.NL;
 
     $body .= '<td valign="top"  >'
