@@ -36,22 +36,22 @@ class MyProfile_Controller extends Controller
     'formforgotpassword' => array
     (
       'method'    => array('GET'),
-      'views'      => array('window', 'maintab')
+      'views' => array('window', 'maintab')
     ),
     'show' => array
     (
       'method'    => array('GET'),
-      'views'      => array('window', 'maintab')
+      'views' => array('window', 'maintab')
     ),
     'update' => array
     (
       'method'    => array('PUT'),
-      'views'      => array('ajax')
+      'views' => array('ajax')
     ),
     'delcontactitem' => array
     (
       'method'    => array('PUT'),
-      'views'      => array('ajax')
+      'views' => array('ajax')
     ),
   );
 

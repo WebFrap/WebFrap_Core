@@ -33,7 +33,7 @@ class WebfrapYggdrasil_Consistency extends DataContainer
   public function run()
   {
 
-    $db      = $this->getDb();
+    $db = $this->getDb();
 
     $conf    = Conf::get('db', 'connection');
     $defCon  = $conf['default'];

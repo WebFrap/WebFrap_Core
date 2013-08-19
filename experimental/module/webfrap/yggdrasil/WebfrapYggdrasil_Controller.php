@@ -44,17 +44,17 @@ class WebfrapYggdrasil_Controller extends Controller
    *
    * @var array
    */
-  protected $options           = array
+  protected $options      = array
   (
     'root' => array
     (
       'method'    => array('GET'),
-      'views'      => array('maintab')
+      'views' => array('maintab')
     ),
     'subtree' => array
     (
       'method'    => array('GET'),
-      'views'      => array('ajax')
+      'views' => array('ajax')
     ),
   );
 
@@ -94,7 +94,7 @@ class WebfrapYggdrasil_Controller extends Controller
 
     $nodeId  = $request->param('node', Validator::TEXT);
 
-    $tmp      = explode('-', $nodeId);
+    $tmp = explode('-', $nodeId);
     $moduleId = array_pop($tmp);
     $nodeType = ucfirst(array_pop($tmp));
 
@@ -102,7 +102,7 @@ class WebfrapYggdrasil_Controller extends Controller
 
     // create a new area with the id of the target element, this area will replace
     // the HTML Node of the target UI Element
-    $view      = $this->tpl->newSubView
+    $view = $this->tpl->newSubView
     (
       $nodeId,
       'WebfrapYggdrasil_'.$nodeType.'_Ajax'

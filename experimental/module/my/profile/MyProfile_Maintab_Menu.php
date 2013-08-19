@@ -108,8 +108,8 @@ HTML;
   {
 
     $iconSupport  = $this->view->icon('control/support.png'  ,'Support');
-    $iconBug      = $this->view->icon('control/bug.png'      ,'Bug');
-    $iconFaq      = $this->view->icon('control/faq.png'      ,'Faq');
+    $iconBug = $this->view->icon('control/bug.png'      ,'Bug');
+    $iconFaq = $this->view->icon('control/faq.png'      ,'Faq');
     $iconHelp     = $this->view->icon('control/help.png'     ,'Help');
 
 

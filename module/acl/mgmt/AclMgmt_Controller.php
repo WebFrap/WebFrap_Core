@@ -52,35 +52,35 @@ class AclMgmt_Controller extends MvcController_Domain
   protected $options = array(
     'listing' => array(
       'method'    => array('GET'),
-      'views'      => array('maintab')
+      'views' => array('maintab')
     ),
     'search' => array(
       'method'    => array('GET'),
-      'views'      => array('ajax')
+      'views' => array('ajax')
     ),
     'loadgroups' => array(
       'method'    => array('GET'),
-      'views'      => array('ajax')
+      'views' => array('ajax')
     ),
     'appendgroup' => array(
       'method'    => array('PUT', 'POST'),
-      'views'      => array('ajax')
+      'views' => array('ajax')
     ),
     'deletegroup' => array(
       'method'    => array('DELETE'),
-      'views'      => array('ajax')
+      'views' => array('ajax')
     ),
     'updatearea' => array(
       'method'    => array('PUT', 'POST'),
-      'views'      => array('ajax')
+      'views' => array('ajax')
     ),
     'pushtoentity' => array(
       'method'    => array('PUT', 'POST'),
-      'views'      => array('ajax')
+      'views' => array('ajax')
     ),
     'pullfromentity' => array(
       'method'    => array('PUT', 'POST'),
-      'views'      => array('ajax')
+      'views' => array('ajax')
     ),
 
   );

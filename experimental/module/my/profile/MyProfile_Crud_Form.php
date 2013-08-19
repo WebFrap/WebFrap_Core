@@ -42,7 +42,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
    * @getter WgtCrudForm::getPrefix()
    * @var string
    */
-  public $prefix      = 'MyProfile';
+  public $prefix = 'MyProfile';
 
   /**
    * suffixes are used to create multiple instances of forms for diffrent
@@ -53,14 +53,14 @@ class MyProfile_Crud_Form extends WgtCrudForm
    * @getter WgtCrudForm::getSuffix()
    * @var string
    */
-  public $suffix      = null;
+  public $suffix = null;
 
   /**
    * Standard Liste der Felder die angezeigt werden sollen
    *
    * @var array
    */
-  protected $fields      = array
+  protected $fields = array
   (
       'wbfsys_role_user' => array
       (
@@ -289,7 +289,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
    *
    * @var WbfsysRoleUser_Entity
    */
-  public $entity      = null;
+  public $entity = null;
 
   /**
   * The EmbedPerson Reference Entity
@@ -2447,7 +2447,7 @@ class MyProfile_Crud_Form extends WgtCrudForm
     }
 
     // laden aller nötigen system resourcen
-    $orm      = $this->getOrm();
+    $orm = $this->getOrm();
     $response = $this->getResponse();
 
     // extrahieren der Daten für die Hauptentity
