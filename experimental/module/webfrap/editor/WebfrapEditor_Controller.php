@@ -30,11 +30,11 @@ class WebfrapEditor_Controller extends Controller
   /**
    * @var array
    */
-  protected $options      = array
+  protected $options = array
   (
     'workspace' => array
     (
-      'method'    => array('GET'),
+      'method' => array('GET'),
       'views' => array('maintab')
     ),
   );

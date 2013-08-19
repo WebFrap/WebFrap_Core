@@ -35,8 +35,8 @@ class WebfrapYggdrasil_Consistency extends DataContainer
 
     $db = $this->getDb();
 
-    $conf    = Conf::get('db', 'connection');
-    $defCon  = $conf['default'];
+    $conf = Conf::get('db', 'connection');
+    $defCon = $conf['default'];
 
     $revision = $db->select('select max(revision) as max_ref from wbfsys_module')->getField('max_ref');
 

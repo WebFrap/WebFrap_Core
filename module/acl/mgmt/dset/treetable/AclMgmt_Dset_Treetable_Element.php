@@ -123,7 +123,7 @@ class AclMgmt_Dset_Treetable_Element extends WgtTreetable
         'wbf.inheritance',
         Acl::ADMIN
       ),
-      'delete'  => array(
+      'delete' => array(
         Wgt::ACTION_BUTTON_DELETE,
         'Delete',
         'index.php?c=Acl.Mgmt_Dset.cleanGroup&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',
@@ -140,7 +140,7 @@ class AclMgmt_Dset_Treetable_Element extends WgtTreetable
     $this->actions['group'] = array('tree', 'inheritance', 'sep', 'delete');
 
     $this->url['user'] = array(
-      'delete'  => array(
+      'delete' => array(
         Wgt::ACTION_BUTTON_DELETE,
         'Delete',
         'index.php?c=Acl.Mgmt_Dset.deleteUser&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',

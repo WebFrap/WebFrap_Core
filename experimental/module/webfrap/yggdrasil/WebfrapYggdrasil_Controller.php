@@ -44,16 +44,16 @@ class WebfrapYggdrasil_Controller extends Controller
    *
    * @var array
    */
-  protected $options      = array
+  protected $options = array
   (
     'root' => array
     (
-      'method'    => array('GET'),
+      'method' => array('GET'),
       'views' => array('maintab')
     ),
     'subtree' => array
     (
-      'method'    => array('GET'),
+      'method' => array('GET'),
       'views' => array('ajax')
     ),
   );
@@ -90,9 +90,9 @@ class WebfrapYggdrasil_Controller extends Controller
   public function service_subTree($request, $response)
   {
 
-    $params  = $this->getFlags($request);
+    $params = $this->getFlags($request);
 
-    $nodeId  = $request->param('node', Validator::TEXT);
+    $nodeId = $request->param('node', Validator::TEXT);
 
     $tmp = explode('-', $nodeId);
     $moduleId = array_pop($tmp);
