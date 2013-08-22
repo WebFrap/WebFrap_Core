@@ -291,5 +291,35 @@ class WebfrapTaskPlanner_Controller extends Controller
     $view->displayDelete($objid, $params);
 
   }//end public function service_deletePlan */
+  
+  public function service_runTask($request, $response) {
+  	
+  	$objid = $request->param('objid', Validator::EID);
+  	
+  	$db = $this->getDb();
+  	
+  	$sql = <<<SQL
+SELECT
+  plan.rowid as plan_id,
+  plan.actions as plan_actions,
+  task.rowid as task_id,
+  task.actions as task_actions
+
+FROM
+  wbfsys_task_plan as plan
+
+JOIN
+  wbfsys_planned_task task
+    ON plan.rowid = task.vid 	
+WHERE
+		plan.rowid = {$objid}
+SQL;
+
+  	$taskAction = $db->select($sql)->get();
+  	
+  	$task = new LibTask($taskAction);
+  	$task->run();
+  	
+  }
 
 } // end class Webfrap_TaskPlanner_Controller

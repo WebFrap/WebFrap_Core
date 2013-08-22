@@ -31,17 +31,24 @@ class WebfrapTaskPlanner_List_Menu extends WgtSimpleListmenu
 [
   {
     "type" : "request",
-    "label": "",
+    "label": "Delete",
     "icon": "control/delete.png",
     "method": "del",
     "service": "ajax.php?c=Webfrap.TaskPlanner.deletePlan&objid="
   },
   {
     "type" : "request",
-    "label": "",
+    "label": "List",
     "icon": "control/listings.png",
     "method": "get",
     "service": "modal.php?c=Webfrap.TaskPlanner.listTasks&objid="
+  },
+  {
+    "type" : "request",
+    "label": "Run Task",
+    "icon": "control/star.png",
+    "method": "get",
+    "service": "modal.php?c=Webfrap.TaskPlanner.runTask&objid="
   }
 ]
 JSON;
