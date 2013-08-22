@@ -101,9 +101,13 @@ SQL;
     plan.series_rule,
     plan.actions,
     plan.description,
+    task.status,
     userrole.fullname
   FROM
     wbfsys_task_plan plan
+  JOIN
+    wbfsys_planned_task task
+      ON plan.rowid = task.vid
   LEFT JOIN
     view_person_role userrole
       ON userrole.wbfsys_role_user_rowid = plan.id_user
@@ -112,10 +116,9 @@ SQL;
     plan.timestamp_start;
 
 SQL;
-    
+      
     return $db->select($sql);
   } // end public function getPlans */
-
   
   /**
 	 *

@@ -38,10 +38,10 @@ class WebfrapTaskPlanner_List_Menu extends WgtSimpleListmenu
   },
   {
     "type" : "request",
-    "label": "List",
+    "label": "Edit",
     "icon": "control/listings.png",
     "method": "get",
-    "service": "modal.php?c=Webfrap.TaskPlanner.listTasks&objid="
+    "service": "modal.php?c=Webfrap.TaskPlanner.editPlan&objid="
   },
   {
     "type" : "request",
