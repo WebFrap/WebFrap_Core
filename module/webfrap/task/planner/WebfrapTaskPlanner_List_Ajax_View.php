@@ -90,7 +90,7 @@ WGTJS;
   public function displayUpdate($id, $params)
   {
 
-    $this->plan = $this->model->getPlans('rowid='.$id)->get();
+    $this->plan = $this->model->getPlans('plan.rowid='.$id)->get();
     $this->listMenu = new WebfrapTaskPlanner_List_Menu($this);
 
     $pageFragment = new WgtAjaxArea();
