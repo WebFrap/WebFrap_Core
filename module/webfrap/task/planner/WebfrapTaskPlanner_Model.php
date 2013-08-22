@@ -137,6 +137,31 @@ SQL;
     
     return $orm->getWhere('WbfsysPlannedTask', "vid=" . $objid);
   }
+  
+  public function getTaskAction($objid) {
+     
+     $db = $this->getDb();
+      
+     $sql = <<<SQL
+SELECT
+  plan.rowid as plan_id,
+  plan.actions as plan_actions,
+  task.rowid as task_id,
+  task.actions as task_actions
+     
+FROM
+  wbfsys_task_plan as plan
+     
+JOIN
+  wbfsys_planned_task task
+    ON plan.rowid = task.vid
+WHERE
+		plan.rowid = {$objid}
+SQL;
+     
+     return $db->select($sql)->get();
+     
+  }
 
   /**
 	 *

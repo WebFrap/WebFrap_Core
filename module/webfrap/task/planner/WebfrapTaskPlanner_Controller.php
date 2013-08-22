@@ -296,28 +296,12 @@ class WebfrapTaskPlanner_Controller extends Controller
   	
   	$objid = $request->param('objid', Validator::EID);
   	
-  	$db = $this->getDb();
+  	$model = $this->loadModel('WebfrapTaskPlanner');
   	
-  	$sql = <<<SQL
-SELECT
-  plan.rowid as plan_id,
-  plan.actions as plan_actions,
-  task.rowid as task_id,
-  task.actions as task_actions
-
-FROM
-  wbfsys_task_plan as plan
-
-JOIN
-  wbfsys_planned_task task
-    ON plan.rowid = task.vid 	
-WHERE
-		plan.rowid = {$objid}
-SQL;
-
-  	$taskAction = $db->select($sql)->get();
-  	
+    $taskAction = $model->getTaskAction($objid);
+      	
   	$task = new LibTask($taskAction);
+    
   	$task->run();
   	
   }
