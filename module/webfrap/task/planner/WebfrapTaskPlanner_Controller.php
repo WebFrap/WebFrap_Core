@@ -292,6 +292,11 @@ class WebfrapTaskPlanner_Controller extends Controller
 
   }//end public function service_deletePlan */
   
+  /**
+   * @param LibRequestHttp $request
+   * @param LibResponseHttp $response
+   * @return void
+   */
   public function service_runTask($request, $response) {
   	
   	$objid = $request->param('objid', Validator::EID);

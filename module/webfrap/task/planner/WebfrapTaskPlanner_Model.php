@@ -129,7 +129,12 @@ SQL;
     
     return $orm->get('WbfsysTaskPlan', $objid);
   } // end public function getPlan */
-
+  
+  /**
+   *
+   * @param int $objid
+   * @return WbfsysTaskPlan_Entity
+   */
   public function getTask ($objid)
   {
 
@@ -138,6 +143,11 @@ SQL;
     return $orm->getWhere('WbfsysPlannedTask', "vid=" . $objid);
   }
   
+  /**
+   *
+   * @param int $objid
+   * @return array
+   */
   public function getTaskAction($objid) {
      
      $db = $this->getDb();
