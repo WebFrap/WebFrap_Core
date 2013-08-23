@@ -57,7 +57,7 @@ class WebfrapTaskPlanner_List_Ajax_View extends LibTemplateAjaxView
   public function displayAdd($id, $params)
   {
 
-    $this->plan = $this->model->getPlans('rowid='.$id)->get();
+    $this->plan = $this->model->getPlans('plan.rowid='.$id)->get();
     $this->listMenu = new WebfrapTaskPlanner_List_Menu($this);
 
     $pageFragment = new WgtAjaxArea();
@@ -124,7 +124,7 @@ WGTJS;
   public function displayDelete($id, $params)
   {
 
-    $this->plan = $this->model->getPlans('rowid='.$id)->get();
+    $this->plan = $this->model->getPlans('plan.rowid='.$id)->get();
 
     $pageFragment = new WgtAjaxArea();
     $pageFragment->selector = 'tr#wgt-table-taskplanner-'.$id;
