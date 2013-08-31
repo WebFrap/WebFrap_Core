@@ -1077,7 +1077,7 @@ JS
     /* @var $model WebfrapMessage_Model */
     $model = $this->loadModel('WebfrapMessage');
 
-    $model->archiveMessage($messageId);
+    $model->archiveMessage($messageId, true);
 
     //wgt-table-webfrap-groupware_message_row_
     $tpl->addJsCode(<<<JS
