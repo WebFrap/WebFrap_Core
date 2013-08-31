@@ -125,9 +125,9 @@ class WebfrapMessage_Table_Element extends WgtTable
       ),
 
       'archive' => array(
-        Wgt::ACTION_BUTTON_GET,
+        Wgt::ACTION_BUTTON_PUT,
         'Archive',
-        'maintab.php?c=Webfrap.Message.archive&amp;objid=',
+        'ajax.php?c=Webfrap.Message.archiveMessage&amp;objid=',
         'icon-folder-close',
         '',
         'wbf.label',
@@ -471,14 +471,14 @@ class WebfrapMessage_Table_Element extends WgtTable
 
         // status
         $body .= isset( $iconStatus[(int) $row['wbfsys_message_receiver_status']])
-          ? $iconStatus[(int) $row['wbfsys_message_receiver_status']]
+          ? $iconStatus[(int)$row['wbfsys_message_receiver_status']]
           : $iconStatus[EMessageStatus::IS_NEW];
 
       } else {
 
         // status
         $body .= $row['wbfsys_message_id_sender_status']
-          ? $iconStatus[(int) $row['wbfsys_message_id_sender_status']]
+          ? $iconStatus[(int)$row['wbfsys_message_id_sender_status']]
           : $iconStatus[EMessageStatus::IS_NEW];
 
       }

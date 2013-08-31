@@ -787,29 +787,29 @@ SQL;
 
     $msgNode = $orm->get( 'WbfsysMessage', $messageId );
 
-    if( $msgNode->id_sender == $user->getId() ) {
+    if ($msgNode->id_sender == $user->getId()) {
 
-      if( $archive )
+      if ($archive)
         $msgNode->id_sender_status = EMessageStatus::ARCHIVED;
       else
         $msgNode->id_sender_status = EMessageStatus::OPEN;
 
       $orm->save($msgNode);
 
-    } else {
-
-      $queries = array();
-
-      if( $archive )
-        $queries[] = 'UPDATE wbfsys_message_receiver set status = '.EMessageStatus::ARCHIVED.' WHERE vid = '.$user->getId().' AND rowid = '.$messageId;
-      else
-        $queries[] = 'UPDATE wbfsys_message_receiver set status = '.EMessageStatus::OPEN.' WHERE vid = '.$user->getId().' AND rowid = '.$messageId;
-
-      foreach ($queries as $query) {
-        $db->exec($query);
-      }
-
     }
+
+    $queries = array();
+
+    if ($archive)
+      $queries[] = 'UPDATE wbfsys_message_receiver set status = '.EMessageStatus::ARCHIVED.' WHERE vid = '.$user->getId().' AND id_message = '.$messageId;
+    else
+      $queries[] = 'UPDATE wbfsys_message_receiver set status = '.EMessageStatus::OPEN.' WHERE vid = '.$user->getId().' AND id_message = '.$messageId;
+
+    foreach ($queries as $query) {
+      $db->exec($query);
+    }
+
+
 
   }//ebnd public function archiveMessage
 
