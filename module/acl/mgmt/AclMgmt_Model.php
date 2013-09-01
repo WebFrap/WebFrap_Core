@@ -299,6 +299,7 @@ class AclMgmt_Model extends Model
 
     $tabData['num_assignments'] = 0;
     $tabData['role_group_rowid'] = $data['security_access']->id_group;
+    $tabData['area_key'] = '';
 
     $tabData['role_group_name'] = $orm->getField
     (
