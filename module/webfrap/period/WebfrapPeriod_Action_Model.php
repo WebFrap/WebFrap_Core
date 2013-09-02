@@ -47,7 +47,7 @@ JOIN
 WHERE
   wbfsys_period_task.event_type = {$type}
   AND
-    UPPER(wbfsys_period_type.access_key) = UPPER('{$key}');
+    UPPER(wbfsys_period_type.access_key) = '{$key}';
 SQL;
 
     return $this->getDb()->sql($sql);

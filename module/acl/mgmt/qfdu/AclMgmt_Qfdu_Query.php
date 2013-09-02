@@ -104,7 +104,7 @@ SQL;
       if ('' == $safeVal)
         continue;
 
-      $wheres[] = " upper(wbfsys_role_user.name) like upper('{$safeVal}%')
+      $wheres[] = " wbfsys_role_user.name like upper('{$safeVal}%')
         or upper(core_person.lastname) like upper('{$safeVal}%')
         or upper(core_person.firstname) like upper('{$safeVal}%') ";
     }

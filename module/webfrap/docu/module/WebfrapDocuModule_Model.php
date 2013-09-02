@@ -97,7 +97,7 @@ SELECT
 FROM
   wbfsys_module
 WHERE
-  UPPER(access_key) = UPPER('{$key}');
+  access_key = '{$key}';
 
 SQL;
 

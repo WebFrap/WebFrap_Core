@@ -50,7 +50,7 @@ class WebfrapPeople_Query_Postgresql extends LibSqlQuery
     $wheres = array();
 
     foreach ($tmp as $value) {
-      $wheres[] = " upper(wbfsys_role_user.name) like upper('{$db->escape($key)}%')
+      $wheres[] = " wbfsys_role_user.name like upper('{$db->escape($key)}%')
         or upper(core_person.lastname) like upper('{$db->escape($key)}%')
         or upper(core_person.firstname) like upper('{$db->escape($key)}%') ";
     }

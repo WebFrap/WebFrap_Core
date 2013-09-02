@@ -111,27 +111,27 @@ class WebfrapAuth_Model extends Model
     $mainLang = $request->getMainClientLanguage();
     $clientIp = $request->getClientIp();
 
-    $browserNode = $orm->getWhere('WbfsysBrowser', "UPPER(access_key) = UPPER('{$browser}') ");
+    $browserNode = $orm->getWhere('WbfsysBrowser', "access_key = UPPER('{$browser}') ");
     if (!$browserNode)
-      $browserNode = $orm->getWhere('WbfsysBrowser', "UPPER(access_key) = UPPER('unkown') ");
+      $browserNode = $orm->getWhere('WbfsysBrowser', "access_key = UPPER('unkown') ");
 
     if ('unknown' == $browser) {
-      $browserVersionNode = $orm->getWhere('WbfsysBrowserVersion', "UPPER(access_key) = UPPER('unknown_0') ");
+      $browserVersionNode = $orm->getWhere('WbfsysBrowserVersion', "access_key = UPPER('unknown_0') ");
     } elseif
     (
-      !$browserVersionNode = $orm->getWhere('WbfsysBrowserVersion', "UPPER(access_key) = UPPER('{$browser}_{$browserVersion}') ")
+      !$browserVersionNode = $orm->getWhere('WbfsysBrowserVersion', "access_key = UPPER('{$browser}_{$browserVersion}') ")
     )
     {
-      $browserVersionNode = $orm->getWhere('WbfsysBrowserVersion', "UPPER(access_key) = UPPER('{$browser}_0') ");
+      $browserVersionNode = $orm->getWhere('WbfsysBrowserVersion', "access_key = UPPER('{$browser}_0') ");
     }
 
-    $osNode = $orm->getWhere('WbfsysOs', "UPPER(access_key) = UPPER('{$os}') ");
+    $osNode = $orm->getWhere('WbfsysOs', "access_key = UPPER('{$os}') ");
     if (!$osNode)
-      $osNode = $orm->getWhere('WbfsysOs', "UPPER(access_key) = UPPER('unkown') ");
+      $osNode = $orm->getWhere('WbfsysOs', "access_key = UPPER('unkown') ");
 
-    $langNode = $orm->getWhere('WbfsysLanguage', "UPPER(access_key) = UPPER('{$mainLang}') ");
+    $langNode = $orm->getWhere('WbfsysLanguage', "access_key = UPPER('{$mainLang}') ");
     if (!$langNode)
-      $langNode = $orm->getWhere('WbfsysLanguage', "UPPER(access_key) = UPPER('undefined') ");
+      $langNode = $orm->getWhere('WbfsysLanguage', "access_key = UPPER('undefined') ");
 
     $pNode = $orm->newEntity('WbfsysProtocolUsage');
     $pNode->id_browser = $browserNode;
@@ -163,7 +163,7 @@ class WebfrapAuth_Model extends Model
       $authRole = $username;
     } else {
       try {
-        if (!$authRole = $orm->get('WbfsysRoleUser', "UPPER(name) = UPPER('{$username}')")) {
+        if (!$authRole = $orm->get('WbfsysRoleUser', "lower(name) = 'lower({$userName})'")) {
           $response->addError('User '.$username.' not exists');
 
           return false;

@@ -59,7 +59,7 @@ class AclUser_Model extends Model
 
     $orm = $this->getOrm();
 
-    $this->areaId = $orm->get('WbfsysSecurityArea',"upper(access_key)=upper('{$this->domainNode->aclBaseKey}')")->getid();
+    $this->areaId = $orm->get('WbfsysSecurityArea',"access_key=upper('{$this->domainNode->aclBaseKey}')")->getid();
 
     return $this->areaId;
 

@@ -317,7 +317,7 @@ LEFT JOIN
 WHERE
   UPPER(chan.access_key) = UPPER('wbf_global')
   	AND (NOT uss.visited = '2' OR uss.visited is null)
-  	AND UPPER(type.access_key) = UPPER('wallmessage')
+  	AND type.access_key = UPPER('wallmessage')
   	AND (ann.date_start <= '{$now}' OR ann.date_start is null)
   	AND (ann.date_end >= '{$now}' OR ann.date_start is null)
 

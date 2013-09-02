@@ -56,7 +56,7 @@ class WebfrapAuth_Query extends LibSqlQuery
     $criteria->where
     (
       " upper(wbfsys_address_item.address_value) = upper('{$email}')
-          and upper(wbfsys_address_item_type.access_key) = upper('mail') "
+          and wbfsys_address_item_type.access_key) = upper('mail') "
     );
 
     // Run Query und save the result

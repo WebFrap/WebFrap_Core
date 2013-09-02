@@ -44,7 +44,7 @@ class DaidalosSystem_Query extends LibSqlQuery
     $wheres = array();
 
     foreach ($tmp as $value) {
-      $wheres[] = " upper(wbfsys_role_user.name) like upper('{$key}%')
+      $wheres[] = " wbfsys_role_user.name like upper('{$key}%')
         or upper(core_person.lastname) like upper('{$key}%')
         or upper(core_person.firstname) like upper('{$key}%') ";
     }
