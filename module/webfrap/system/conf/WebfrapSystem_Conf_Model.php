@@ -101,7 +101,7 @@ app_theme
     "sys.name" : {
       "string",
       "Text",
-      "Name of the basesystem WebFrap for free || Buiznodes for commercial projects",
+      "Name of the basesystem WebFrap for free || BuizCore for commercial projects",
       "WebFrap",
       "true"
     },

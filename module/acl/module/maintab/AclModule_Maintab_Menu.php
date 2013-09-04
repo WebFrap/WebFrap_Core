@@ -1,13 +1,13 @@
 <?php
 /*******************************************************************************
 *
-* @author      : Dominik Bonsch <dominik.bonsch@buiznodes.com>
+* @author      : Dominik Bonsch <dominik.bonsch@buizcore.com>
 * @date        :
-* @copyright   : buiznodes.com <contact@buiznodes.com>
-* @project     : buiznodes.com
-* @projectUrl  : buiznodes.com
+* @copyright   : buizcore.com <contact@buizcore.com>
+* @project     : buizcore.com
+* @projectUrl  : buizcore.com
 *
-* @licence     : buiznodes.com
+* @licence     : buizcore.com
 *
 * @version: @package_version@  Revision: @package_revision@
 *
@@ -24,8 +24,8 @@
  * @package WebFrap
  * @subpackage ModProject
  * @author Dominik Bonsch <uiznodes.com>
- * @copyright buiznodes.com <buiznodes.com>
- * @licence buiznodes.com
+ * @copyright buizcore.com <buizcore.com>
+ * @licence buizcore.com
  */
 class AclModule_Maintab_Menu extends WgtDropmenu
 {
