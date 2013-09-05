@@ -76,7 +76,7 @@
         
           <h3><a
             tab="backpath"
-            wgt_src="ajax.php?c=Acl.Mgmt_Qfdu.tabUsers&area_id=<?php
+            wgt_src="ajax.php?c=Acl.Mgmt_Backpath.openTab&area_id=<?php
               echo $VAR->entityWbfsysSecurityArea
             ?>&tabid=<?php
               echo $this->id?>-<?php echo $VAR->domain->aclDomainKey ?>-acl-content-backpath&dkey=<?php

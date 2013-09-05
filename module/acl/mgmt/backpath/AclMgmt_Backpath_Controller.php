@@ -26,7 +26,7 @@
  * @author Dominik Bonsch <dominik.bonsch@webfrap.net>
  * @copyright webfrap.net <contact@webfrap.net>
  */
-class AclMgmt_Qfdu_Controller extends MvcController_Domain
+class AclMgmt_Backpath_Controller extends MvcController_Domain
 {
 /*//////////////////////////////////////////////////////////////////////////////
 // Attributes
@@ -52,101 +52,18 @@ class AclMgmt_Qfdu_Controller extends MvcController_Domain
   protected $options = array
   (
 
-    'tabusers' => array
+    'opentab' => array
     (
       'method' => array('GET'),
       'views' => array('ajax')
     ),
-    'searchusers' => array
-    (
-      'method' => array('GET'),
-      'views' => array('ajax')
-    ),
-
-    'loadusers' => array
-    (
-      'method' => array('GET'),
-      'views' => array('ajax')
-    ),
-    'loadentity' => array
-    (
-      'method' => array('GET'),
-      'views' => array('ajax')
-    ),
-    'appenduser' => array
-    (
-      'method' => array('PUT', 'POST'),
-      'views' => array('ajax')
-    ),
-
-    // dropping of assignments
-    'dropallassignments' => array
-    (
-      'method' => array('DELETE'),
-      'views' => array('ajax')
-    ),
-
-
-    'cleanroup' => array
-    (
-      'method' => array('DELETE'),
-      'views' => array('ajax')
-    ),
-    'emptyusers' => array
-    (
-      'method' => array('DELETE'),
-      'views' => array('ajax')
-    ),
-
-    // group by users
-    'listbyusers' => array
+    'search' => array
     (
       'method' => array('GET'),
       'views' => array('ajax')
     ),
 
-    'searchbyusers' => array
-    (
-      'method' => array('GET'),
-      'views' => array('ajax')
-    ),
-
-    'loadlistuserdsets' => array
-    (
-      'method' => array('GET'),
-      'views' => array('ajax')
-    ),
-
-    'loadlistusergroups' => array
-    (
-      'method' => array('GET'),
-      'views' => array('ajax')
-    ),
-
-    // group by dsets
-    'listbydsets' => array
-    (
-      'method' => array('GET'),
-      'views' => array('ajax')
-    ),
-    'searchbydsets' => array
-    (
-      'method' => array('GET'),
-      'views' => array('ajax')
-    ),
-
-    'loadlistdsetusers' => array
-    (
-      'method' => array('GET'),
-      'views' => array('ajax')
-    ),
-
-    'loadlistdsetgroups' => array
-    (
-      'method' => array('GET'),
-      'views' => array('ajax')
-    ),
-
+    
   );
 
 /*//////////////////////////////////////////////////////////////////////////////
@@ -159,15 +76,15 @@ class AclMgmt_Qfdu_Controller extends MvcController_Domain
    * @param LibResponseHttp $response
    * @return boolean
    */
-  public function service_tabUsers($request, $response)
+  public function service_openTab($request, $response)
   {
 
     // load request parameters an interpret as flags
     $params = $this->getTabFlags($request);
     $domainNode = $this->getDomainNode($request);
 
-    /* @var $model AclMgmt_Qfdu_Model */
-    $model = $this->loadModel('AclMgmt_Qfdu');
+    /* @var $model AclMgmt_Backpath_Model */
+    $model = $this->loadModel('AclMgmt_Backpath');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $params);
 
@@ -178,7 +95,7 @@ class AclMgmt_Qfdu_Controller extends MvcController_Domain
     // the HTML Node of the target UI Element
     $view = $response->loadView(
       $params->tabId,
-      'AclMgmt_Qfdu_Group',
+      'AclMgmt_Backpath',
       'displayTab',
       View::AREA
     );
