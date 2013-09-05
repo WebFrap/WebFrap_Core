@@ -73,9 +73,24 @@
           		to either one or more Projects. The person will then only have edit rights for the assigned Projects.
           	</p>
           </div>
+        
+          <h3><a
+            tab="backpath"
+            wgt_src="ajax.php?c=Acl.Mgmt_Qfdu.tabUsers&area_id=<?php
+              echo $VAR->entityWbfsysSecurityArea
+            ?>&tabid=<?php
+              echo $this->id?>-<?php echo $VAR->domain->aclDomainKey ?>-acl-content-backpath&dkey=<?php
+              echo $VAR->domain->domainName
+            ?>" ><?php
+              echo $I18N->l( 'Backpath', 'wbf.label' ); ?></a></h3>
+          <div>
+            <p>
+          		Backpath information for implicit role assignments.
+          	</p>
+          </div>
+
 
         </div>
-
       </div>
 
       <!-- Accordion Content Container -->
@@ -209,6 +224,12 @@
       <div
         class="container"
         id="<?php echo $this->id?>-<?php echo $VAR->domain->aclDomainKey ?>-acl-content-qfd_users" >
+
+      </div><!-- end tab -->
+
+      <div
+        class="container"
+        id="<?php echo $this->id?>-<?php echo $VAR->domain->aclDomainKey ?>-acl-content-backpath" >
 
       </div><!-- end tab -->
 
