@@ -49,16 +49,17 @@ class AclMgmt_Backpath_Controller extends MvcController_Domain
    *
    * @var array
    */
-  protected $options = array
-  (
+  protected $options = array(
 
-    'opentab' => array
-    (
+    'opentab' => array(
       'method' => array('GET'),
       'views' => array('ajax')
     ),
-    'search' => array
-    (
+    'search' => array(
+      'method' => array('GET'),
+      'views' => array('ajax')
+    ),
+    'autoarea' => array(
       'method' => array('GET'),
       'views' => array('ajax')
     ),
@@ -93,6 +94,7 @@ class AclMgmt_Backpath_Controller extends MvcController_Domain
 
     // create a new area with the id of the target element, this area will replace
     // the HTML Node of the target UI Element
+    /* @var $view AclMgmt_Backpath_Area_View  */
     $view = $response->loadView(
       $params->tabId,
       'AclMgmt_Backpath',
@@ -114,7 +116,7 @@ class AclMgmt_Backpath_Controller extends MvcController_Domain
    * @param LibResponseHttp $response
    * @return boolean
    */
-  public function service_searchUsers($request, $response)
+  public function service_search($request, $response)
   {
 
     // load the flow flags
@@ -144,82 +146,11 @@ class AclMgmt_Backpath_Controller extends MvcController_Domain
 
   }//end public function service_searchUsers */
 
-
-
 /*//////////////////////////////////////////////////////////////////////////////
 // Laden der Metadaten für das Append Menü
 //////////////////////////////////////////////////////////////////////////////*/
 
-  /**
-   * the default table for the management EnterpriseEmployee
-   * @param LibRequestHttp $request
-   * @param LibResponseHttp $response
-   * @return boolean
-   */
-  public function service_loadUsers($request, $response)
-  {
 
-    // load request parameters an interpret as flags
-    $params = $this->getListingFlags($request);
-    $domainNode = $this->getDomainNode($request);
-
-    /* @var $model AclMgmt_Qfdu_Model */
-    $model = $this->loadModel('AclMgmt_Qfdu');
-    $model->domainNode = $domainNode;
-    $model->checkAccess($domainNode, $params);
-
-    // check user params
-    $searchKey = $request->param('key', Validator::TEXT);
-
-    $view = $response->loadView
-    (
-      $domainNode->domainName.'-mgmt-acl',
-      'AclMgmt_Qfdu',
-      'displayAutocomplete'
-    );
-    $view->setModel($model);
-    $view->domainNode = $domainNode;
-
-    $areaId = $model->getAreaId();
-
-    $view->displayAutocomplete($areaId, $searchKey, $params);
-
-  }//end public function service_loadUsers */
-
-  /**
-   * the default table for the management EnterpriseEmployee
-   * @param LibRequestHttp $request
-   * @param LibResponseHttp $response
-   * @return boolean
-   */
-  public function service_loadEntity($request, $response)
-  {
-
-    // load request parameters an interpret as flags
-    $params = $this->getListingFlags($request);
-    $domainNode = $this->getDomainNode($request);
-
-    /* @var $model AclMgmt_Qfdu_Model */
-    $model = $this->loadModel('AclMgmt_Qfdu');
-    $model->domainNode = $domainNode;
-    $model->checkAccess($domainNode, $params);
-
-    $view = $response->loadView
-    (
-      $domainNode->domainName.'-acl-mgmt',
-      'AclMgmt_Qfdu',
-      'displayAutocompleteEntity'
-    );
-    $view->setModel($model);
-    $view->domainNode = $domainNode;
-
-    $searchKey = $request->param('key', Validator::TEXT);
-    $areaId = $model->getAreaId();
-
-    $view->displayAutocompleteEntity($areaId, $searchKey, $params);
-
-
-  }//end public function service_loadEntity */
 
   /**
    * the default table for the management EnterpriseEmployee
@@ -670,138 +601,99 @@ class AclMgmt_Backpath_Controller extends MvcController_Domain
     $view->displayLoadGridGroups($userId, $dsetId, $context);
 
   }//end public function service_loadListDsetsGroups */
+  
+/*//////////////////////////////////////////////////////////////////////////////
+// autoload
+//////////////////////////////////////////////////////////////////////////////*/
+  
+  /**
+   * the default table for the management EnterpriseEmployee
+   * @param LibRequestHttp $request
+   * @param LibResponseHttp $response
+   * @return boolean
+   */
+  public function service_autoGroups($request, $response)
+  {
+  
+    // load request parameters an interpret as flags
+    $params = $this->getListingFlags($request);
+    $domainNode = $this->getDomainNode($request);
+  
+    /* @var $model AclMgmt_Qfdu_Model */
+    $model = $this->loadModel('AclMgmt_Qfdu');
+    $model->domainNode = $domainNode;
+    $model->checkAccess($domainNode, $params);
+  
+    $view = $response->loadView
+    (
+        $domainNode->domainName.'-acl-mgmt',
+        'AclMgmt_Qfdu',
+        'displayAutocompleteEntity'
+    );
+    $view->setModel($model);
+    $view->domainNode = $domainNode;
+  
+    $searchKey = $request->param('key', Validator::TEXT);
+    $areaId = $model->getAreaId();
+  
+    $view->displayAutocompleteEntity($areaId, $searchKey, $params);
+  
+  
+  }//end public function service_autoGroups */
+  
+  /**
+   * the default table for the management EnterpriseEmployee
+   * @param LibRequestHttp $request
+   * @param LibResponseHttp $response
+   * @return boolean
+   */
+  public function service_autoArea($request, $response)
+  {
+  
+    // load request parameters an interpret as flags
+    $params = $this->getListingFlags($request);
+    $domainNode = $this->getDomainNode($request);
+  
+    /* @var $model AclMgmt_Model */
+    $model = $this->loadModel('AclMgmt');
+    $model->domainNode = $domainNode;
+    $model->checkAccess($domainNode, $params);
+  
+    /* @var $view AclMgmt_Ajax_View */
+    $view = $response->loadView(
+      $domainNode->domainName.'-acl-mgmt',
+      'AclMgmt',
+      'displayAutocompleteArea'
+    );
+    $view->setModel($model);
+    $view->domainNode = $domainNode;
+  
+    $searchKey = $request->param('key', Validator::TEXT);
+    $areaId = $model->getAreaId();
+  
+    $view->displayAutocompleteArea($areaId, $searchKey, $params);
+  
+  
+  }//end public function service_autoArea */
 
 /*//////////////////////////////////////////////////////////////////////////////
 // parse flags
 //////////////////////////////////////////////////////////////////////////////*/
 
   /**
-   * @param TFlag $params
-   * @return TFlag
+   * @param LibRequestHttp $request
+   * @return ContextDomainListing
    */
   protected function getListingFlags($request)
   {
 
-    $response = $this->getResponse();
-
-    $params = new TFlag();
-
-    // the publish type, like selectbox, tree, table..
-    if ($publish = $request->param('publish', Validator::CNAME))
-      $params->publish = $publish;
-
-    // listing type
-    if ($ltype = $request->param('ltype', Validator::CNAME))
-      $params->ltype = $ltype;
-
-    // input type
-    if ($input = $request->param('input', Validator::CKEY))
-      $params->input = $input;
-
-    // input type
-    if ($suffix = $request->param('suffix', Validator::CKEY))
-      $params->suffix = $suffix;
-
-    // append entries
-    if ($append = $request->param('append', Validator::BOOLEAN))
-      $params->append = $append;
-
-    // startpunkt des pfades für die acls
-    if ($aclRoot = $request->param('a_root', Validator::CKEY))
-      $params->aclRoot = $aclRoot;
-
-    // die id des Datensatzes von dem aus der Pfad gestartet wurde
-    if ($aclRootId = $request->param('a_root_id', Validator::INT))
-      $params->aclRootId = $aclRootId;
-
-    // der key des knotens auf dem wir uns im pfad gerade befinden
-    if ($aclKey = $request->param('a_key', Validator::CKEY))
-      $params->aclKey = $aclKey;
-
-    // der name des knotens
-    if ($aclNode = $request->param('a_node', Validator::CKEY))
-      $params->aclNode = $aclNode;
-
-    // an welchem punkt des pfades befinden wir uns?
-    if ($aclLevel = $request->param('a_level', Validator::INT))
-      $params->aclLevel = $aclLevel;
-
-
-    // per default
-    $params->categories = array();
-
-    if ('selectbox' === $params->publish) {
-
-      // fieldname of the calling selectbox
-      $params->field
- = $request->param('field', Validator::CNAME);
-
-      // html id of the calling selectbox
-      $params->inputId
- = $request->param('input_id', Validator::CKEY);
-
-      // html id of the table
-      $params->targetId
- = $request->param('target_id', Validator::CKEY);
-
-      // html id of the calling selectbox
-      $params->target
- = str_replace('_','.',$request->param('target',Validator::CKEY));
-
-    } else {
-
-      // start position of the query and size of the table
-      $params->start
- = $request->param('start', Validator::INT);
-
-      // stepsite for query (limit) and the table
-      if (!$params->qsize = $request->param('qsize', Validator::INT))
-        $params->qsize = Wgt::$defListSize;
-
-      // order for the multi display element
-      $params->order
- = $request->param('order', Validator::CNAME);
-
-      // target for a callback function
-      $params->target
- = $request->param('target', Validator::CKEY  );
-
-      // target for some ui element
-      $params->targetId
- = $request->param('target_id', Validator::CKEY  );
-
-      // flag for beginning seach filter
-      if ($text = $request->param('begin', Validator::TEXT  )) {
-        // whatever is comming... take the first char
-        $params->begin = $text[0];
-      }
-
-      // the model should add all inputs in the ajax request, not just the text
-      // converts per default to false, thats ok here
-      $params->fullLoad
- = $request->param('full_load', Validator::BOOLEAN);
-
-      // exclude whatever
-      $params->exclude
- = $request->param('exclude', Validator::CKEY  );
-
-      // keyname to tageting ui elements
-      $params->keyName
- = $request->param('key_name', Validator::CKEY  );
-
-      // the activ id, mostly needed in exlude calls
-      $params->objid
- = $request->param('objid', Validator::EID  );
-
-    }
-
-    return $params;
+    return new ContextDomainListing($request);
 
   }//end protected function getListingFlags */
 
   /**
-   * @param TFlag $params
-   * @return TFlag
+   * @param LibRequestHttp $request
+   * @return ContextDomainCrud
    */
   protected function getCrudFlags($request)
   {
@@ -810,8 +702,8 @@ class AclMgmt_Backpath_Controller extends MvcController_Domain
   }//end protected function getCrudFlags */
 
   /**
-   * @param TFlag $params
-   * @return TFlag
+   * @param LibRequestHttp $request
+   * @return ContextListing
    */
   protected function getTabFlags($request)
   {

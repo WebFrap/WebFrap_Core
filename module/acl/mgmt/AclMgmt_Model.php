@@ -650,8 +650,7 @@ class AclMgmt_Model extends Model
     $query = $db->newQuery('AclMgmt');
     /* @var $query AclMgmt_Query  */
 
-    $query->fetchGroupsByKey
-    (
+    $query->fetchGroupsByKey(
       $key,
       $params
     );
@@ -659,6 +658,26 @@ class AclMgmt_Model extends Model
     return $query->getAll();
 
   }//end public function searchGroupsAutocomplete */
+ 
+  /**
+   * @param string $key
+   * @param TArray $params
+   */
+  public function searchAreasAutocomplete($key, $params)
+  {
+  
+    $db = $this->getDb();
+    $query = $db->newQuery('AclMgmt');
+    /* @var $query AclMgmt_Query  */
+  
+    $query->fetchAreasByKey(
+      $key,
+      $params
+    );
+  
+    return $query->getAll();
+  
+  }//end public function searchAreasAutocomplete */
 
   /**
    *
@@ -752,14 +771,11 @@ class AclMgmt_Model extends Model
     // ok wenn er nichtmal lesen darf, dann ist hier direkt schluss
     if (!$access->admin) {
       // ausgabe einer fehlerseite und adieu
-      throw new InvalidRequest_Exception
-      (
-        $response->i18n->l
-        (
+      throw new InvalidRequest_Exception(
+        $response->i18n->l(
           'You have no permission for administration in {@resource@}',
           'wbf.message',
-          array
-          (
+          array(
             'resource' => $response->i18n->l($domainNode->label, $domainNode->domainI18n.'.label')
           )
         ),

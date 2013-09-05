@@ -97,14 +97,13 @@ class AclMgmt_Backpath_Area_View extends LibTemplateAreaView
     $ui->setView($this);
     $ui->domainNode = $this->domainNode;
     
-    /*
     $ui->createListItem(
       $this->model->search($areaId, $params->access, $params),
       $areaId,
       $params->access,
       $params
     );
-    */
+    
   
   }//end public function displayTab */
 

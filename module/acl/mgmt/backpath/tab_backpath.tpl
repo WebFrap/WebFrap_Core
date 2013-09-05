@@ -29,21 +29,21 @@ $crudForm->form();
 <div class="wgt-panel" style="margin-left:5px;"  >
   <button
     class="wgt-button"
-    id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-acl-qfdu-append"
+    id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-backpath-crud"
     onclick="$R.form('wgt-form-<?php
-      echo $VAR->domain->aclDomainKey ?>-acl-qfdu-append');$UI.form.reset('wgt-form-<?php
-      echo $VAR->domain->aclDomainKey ?>-acl-qfdu-append');return false;" >
-    <i class="icon-link " ></i> Append
+      echo $VAR->domain->aclDomainKey ?>-backpath-crud');$UI.form.reset('wgt-form-<?php
+      echo $VAR->domain->aclDomainKey ?>-backpath-crud');return false;" >
+    <i class="icon-save " ></i> Save
   </button>
 
   <button
     class="wgt-button"
-    id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-acl-qfdu-reload"
-    onclick="$R.get('ajax.php?c=Acl.Mgmt_Qfdu.tabUsers&area_id=<?php
+    id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-acl-backpath-reload"
+    onclick="$R.get('ajax.php?c=Acl.Mgmt_Backpath.openTab&area_id=<?php
       echo $VAR->areaId ?>&dkey=<?php
       echo $VAR->domain->domainName ?>&tabid=wgt_tab-<?php
-      echo $VAR->domain->aclDomainKey ?>_acl_listing_tab_<?php
-      echo $VAR->domain->aclDomainKey ?>-acl_qfd_users');return false;" >
+      echo $VAR->domain->domainName ?>_acl_listing-<?php
+      echo $VAR->domain->aclDomainKey ?>-acl-content-backpath');return false;" >
     <i class="icon-refresh" ></i> Reload
   </button>
 </div>
@@ -56,7 +56,7 @@ $crudForm->form();
       'Target Area', 
       'path[id_target_area]',
       null,
-      null,
+      'ajax.php?c=Acl.Mgmt_Backpath.autoArea&amp;area_id='.$VAR->areaId.'&amp;dkey='.$VAR->domain->domainName.'&amp;key=',
       array(),
       array('size'=>'large')
     ); ?>
@@ -64,9 +64,9 @@ $crudForm->form();
       'Ref Field',
       'path[ref_field]',
       null,
-      null,
+      'ajax.php?c=Acl.Mgmt_Backpath.autoArea&amp;area_id='.$VAR->areaId.'&amp;dkey='.$VAR->domain->domainName.'&amp;key=',
       array(),
-      array('size'=>'large')
+      array('size'=>'large','entityMode'=>true)
     ); ?>
   </div>
 
@@ -76,7 +76,7 @@ $crudForm->form();
         'path[groups]',
         null,
         array(),
-        array('size'=>'large')
+        array('size'=>'large','entityMode'=>true)
       );
     ?>
   </div>

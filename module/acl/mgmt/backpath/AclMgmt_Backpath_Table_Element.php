@@ -102,7 +102,7 @@ class AclMgmt_Backpath_Table_Element extends WgtTable
      */
     $this->url = array(
       'edit' => array(
-        Wgt::ACTION_GET,
+        Wgt::ACTION_BUTTON_GET,
         'Edit',
         'index.php?c=Acl.Mgmt_Backpath.edit&dkey='.$this->domainNode->domainName.'&amp;objid=',
         'icon-edit',
@@ -111,7 +111,7 @@ class AclMgmt_Backpath_Table_Element extends WgtTable
         Acl::ADMIN
       ),
       'delete' => array(
-        Wgt::ACTION_DELETE,
+        Wgt::ACTION_BUTTON_DELETE,
         'Delete',
         'index.php?c=Acl.Mgmt_Backpath.delete&dkey='.$this->domainNode->domainName.'&amp;objid=',
         'icon-remove-sign',

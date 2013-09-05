@@ -67,10 +67,10 @@ class AclMgmt_Backpath_Ajax_View extends LibTemplateAjaxView
     $context->ajax = true;
   
     $ui->createListItem(
-        $this->model->searchQualifiedUsers($areaId, $context),
-        $areaId,
-        $context->access,
-        $context
+      $this->model->search($areaId, $context->access, $context),
+      $areaId,
+      $context->access,
+      $context
     );
   
     return null;

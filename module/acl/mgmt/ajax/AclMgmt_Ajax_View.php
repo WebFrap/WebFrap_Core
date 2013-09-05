@@ -64,8 +64,30 @@ class AclMgmt_Ajax_View extends LibTemplatePlain
     $view = $this->getTplEngine();
     $view->setRawJsonData($this->model->searchGroupsAutocomplete($key, $params));
 
-    return null;
-
+  }//end public function displayAutocomplete */
+  
+  /**
+   * @param string $key
+   * @param TArray $params
+   */
+  public function displayAutocompleteArea($key, $params)
+  {
+  
+    $view = $this->getTplEngine();
+    $view->setRawJsonData($this->model->searchAreasAutocomplete($key, $params));
+  
+  }//end public function displayAutocomplete */
+  
+  /**
+   * @param string $key
+   * @param TArray $params
+   */
+  public function displayAutocompleteGroup($key, $params)
+  {
+  
+    $view = $this->getTplEngine();
+    $view->setRawJsonData($this->model->searchGroupsAutocomplete($key, $params));
+  
   }//end public function displayAutocomplete */
 
   /**

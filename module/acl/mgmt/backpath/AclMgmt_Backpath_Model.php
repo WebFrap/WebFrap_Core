@@ -138,6 +138,35 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
 // Connect Code
 //////////////////////////////////////////////////////////////////////////////*/
 
+
+  /**
+   *
+   * @param int $areaId
+   * @param LibAclContainer $access
+   * @param TFlag $params named parameters
+   * @return void
+   */
+  public function search($areaKeys, $access, $params)
+  {
+  
+    $db = $this->getDb();
+    $query = $db->newQuery('AclMgmt_Backpath_Table');
+    /* @var $query AclMgmt_Backpath_Table_Query  */
+  
+    $condition = $this->getSearchCondition();
+  
+    $query->fetch(
+      $areaKeys,
+      $condition,
+      $params
+    );
+  
+    return $query;
+  
+  }//end public function search */
+  
+  
+
   /**
    * de:
    * Extrahieren und validieren der Daten zum erstellen einer Verknüpfung,
@@ -375,6 +404,32 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
 
     return $query->getAll();
 
+  }//end public function searchGroupsAutocomplete */
+  
+  /**
+   * de:
+   * Suche für den Autocomplete service
+   * Die Anfrage wird über ein AclMgmt_Query Objekt
+   * gehandelt, das result als array zurückgegeben
+   *
+   * @param string $key der Suchstring für den namen der Gruppe
+   * @param TFlag $params
+   * @return array
+   */
+  public function searchAreasAutocomplete($key, $params)
+  {
+  
+    $db = $this->getDb();
+    $query = $db->newQuery('AclMgmt');
+    /* @var $query AclMgmt_Query  */
+  
+    $query->fetchAreasByKey(
+        $key,
+        $params
+    );
+  
+    return $query->getAll();
+  
   }//end public function searchGroupsAutocomplete */
 
   /**

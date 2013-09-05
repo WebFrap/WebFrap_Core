@@ -57,7 +57,7 @@ class AclMgmt_Backpath_Table_Query extends LibSqlQuery
     $this->appendConditions($criteria, $condition, $params);
     $this->checkLimitAndOrder($criteria, $params);
 
-    $criteria->where("wbfsys_security_backpath.id_area");
+    $criteria->where("wbfsys_security_backpath.id_area = {$areaId}");
 
     // Run Query und save the result
     $this->result = $db->orm->select($criteria);
@@ -88,7 +88,7 @@ class AclMgmt_Backpath_Table_Query extends LibSqlQuery
       'wbfsys_security_backpath.meta_level as "wbfsys_security_backpath_meta_level"',
       'wbfsys_security_backpath.message_level as "wbfsys_security_backpath_message_level"',
       'wbfsys_security_backpath.priv_message_level as "wbfsys_security_backpath_priv_message_level"',
-      'target_area.access_key as target_area_key',
+      'wbfsys_security_area.access_key as target_area_key',
     );
 
     $criteria->select($cols);
@@ -106,15 +106,13 @@ class AclMgmt_Backpath_Table_Query extends LibSqlQuery
   public function setTables($criteria   )
   {
 
-    $criteria->from('wbfsys_security_access security_access', 'security_access');
+    $criteria->from('wbfsys_security_backpath');
 
-    $criteria->leftJoinOn (
+    $criteria->leftJoinOn(
       'wbfsys_security_backpath',
       'id_target_area',
-      'security_security_area',
-      'rowid',
-      null,
-      'target_area'
+      'wbfsys_security_area',
+      'rowid'
     );
 
 
@@ -164,7 +162,7 @@ class AclMgmt_Backpath_Table_Query extends LibSqlQuery
     if ($params->order) {
       $criteria->orderBy($params->order);
     } else { // if not use the default
-      $criteria->orderBy('target_area.access_key');
+      $criteria->orderBy('wbfsys_security_area.access_key');
     }
 
     // Check the offset

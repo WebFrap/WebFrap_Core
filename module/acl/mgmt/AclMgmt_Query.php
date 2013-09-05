@@ -68,6 +68,48 @@ SQL;
     $this->result = $db->select($sql)->getAll();
 
   }//end public function fetchGroupsByKey */
+  
+  /**
+   * Loading the tabledata from the database
+   * @param int $areaId
+   * @param string $key
+   * @param TFlag $params
+   * @return void
+   *
+   * @throws LibDb_Exception
+   */
+  public function fetchAreasByKey($areaId, $key, $params = null)
+  {
+  
+    if (!$params)
+      $params = new TFlag();
+  
+    $this->sourceSize = null;
+    $db = $this->getDb();
+  
+    $sql = <<<SQL
+  
+  SELECT
+    rowid as id,
+    access_key as value,
+    access_key as label
+  FROM
+    wbfsys_security_area
+  JOIN 
+      wbfsys_security_area_type
+    ON
+      wbfsys_security_area_type.rowid = wbfsys_security_area.id_type
+  WHERE
+    LOWER(access_key) like LOWER('{$db->addSlashes($key)}%')
+    AND NOT rowid IN( SELECT id_group FROM wbfsys_security_area WHERE rowid = {$areaId} )
+    AND wbfsys_security_area_type.access_key IN('module','module_category','mgmt')
+  LIMIT 12;
+  
+SQL;
+  
+    $this->result = $db->select($sql)->getAll();
+  
+  }//end public function fetchAreasByKey */
 
 } // end class AclMgmt_Query */
 
