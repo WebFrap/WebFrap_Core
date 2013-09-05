@@ -56,11 +56,7 @@ class AclMgmt_Qfdu_Model extends Model
   {
 
     if (!$this->areaId) {
-      $orm = $this->getOrm();
-      $this->areaId = $orm->get
-      (
-        'WbfsysSecurityArea',
-        "access_key=upper('{$this->domainNode->aclBaseKey}')")->getid();
+      $this->areaId = $this->getAcl()->resources->getAreaId($this->domainNode->aclBaseKey);
     }
 
     return $this->areaId;
