@@ -63,8 +63,20 @@ class AclMgmt_Backpath_Controller extends MvcController_Domain
       'method' => array('GET'),
       'views' => array('ajax')
     ),
+    'autogroups' => array(
+      'method' => array('GET'),
+      'views' => array('ajax')
+    ),
     'autoreffield' => array(
       'method' => array('GET'),
+      'views' => array('ajax')
+    ),
+    'save' => array(
+      'method' => array('PUT'),
+      'views' => array('ajax')
+    ),
+    'delete' => array(
+      'method' => array('DELETE'),
       'views' => array('ajax')
     ),
 
@@ -151,10 +163,42 @@ class AclMgmt_Backpath_Controller extends MvcController_Domain
   }//end public function service_searchUsers */
 
 /*//////////////////////////////////////////////////////////////////////////////
-// Laden der Metadaten für das Append Menü
+// CRUD Methodes
 //////////////////////////////////////////////////////////////////////////////*/
 
-
+  /**
+   * the default table for the management EnterpriseEmployee
+   * @param LibRequestHttp $request
+   * @param LibResponseHttp $response
+   * @return boolean
+   */
+  public function service_edit($request, $response)
+  {
+  
+    // load request parameters an interpret as flags
+    $params = $this->getCrudFlags($request);
+    $domainNode = $this->getDomainNode($request);
+  
+    $pathId = $request->param('objid',Validator::EID);
+  
+    /* @var $model AclMgmt_Backpath_Model */
+    $model = $this->loadModel('AclMgmt_Backpath');
+    $model->domainNode = $domainNode;
+    $model->checkAccess($domainNode, $params);
+    
+    /* @var $view AclMgmt_Backpath_Ajax_View */
+    $view = $response->loadView(
+      $domainNode->domainName.'-backpath',
+      'AclMgmt_Backpath',
+      'displayEdit',
+      View::AREA
+    );
+    $view->setModel($model);
+    $view->domainNode = $domainNode;
+  
+    $view->displayEdit($params);
+  
+  }//end public function service_edit */
 
   /**
    * the default table for the management EnterpriseEmployee
@@ -166,7 +210,7 @@ class AclMgmt_Backpath_Controller extends MvcController_Domain
   {
 
     // load request parameters an interpret as flags
-    $params = $this->getListingFlags($request);
+    $params = $this->getCrudFlags($request);
     $domainNode = $this->getDomainNode($request);
     
     $pathId = $request->param('objid',Validator::EID);
@@ -192,8 +236,8 @@ class AclMgmt_Backpath_Controller extends MvcController_Domain
       $model->fetchUpdateData($params);
       
       $model->update($params);
-      $setEntity = $model->getEntityWbfsysSecurityBackpath();
-      $view->displayInsert($setEntity, $params);
+      $pathEntity = $model->getEntityWbfsysSecurityBackpath();
+      $view->displayUpdate($pathEntity, $params);
       
     } else {
       
@@ -217,403 +261,43 @@ class AclMgmt_Backpath_Controller extends MvcController_Domain
       }
 
       $model->insert($params);
-      $setEntity = $model->getEntityWbfsysSecurityBackpath();
-      $view->displayInsert($setEntity, $params);
+      $pathEntity = $model->getEntityWbfsysSecurityBackpath();
+      $view->displayInsert($pathEntity, $params);
     }
 
   }//end public function service_save */
 
-/*//////////////////////////////////////////////////////////////////////////////
-// QDFU delete & clean methodes
-//////////////////////////////////////////////////////////////////////////////*/
-
- /**
-  * delete a single entity
-  * @param LibRequestHttp $request
-  * @param LibResponseHttp $response
-  * @return boolean success flag
-  */
-  public function service_dropAllAssignments($request, $response)
-  {
-
-    $domainNode = $this->getDomainNode($request);
-
-    // did we receive an id of an object that should be deleted
-    if (!$objid = $request->param('objid', Validator::EID)) {
-      // wenn nicht ist die anfrage per definition invalide
-      throw new InvalidRequest_Exception
-      (
-        $response->i18n->l
-        (
-          'The Request for action {@resource@} was invalid. ID was missing!',
-          'wbf.message',
-          array
-          (
-            'resource' => 'deleteDset'
-          )
-        ),
-        Response::BAD_REQUEST
-      );
-    }
-
-    // interpret the given user parameters
-    $context = $this->getCrudFlags($request);
-
-    /* @var $model AclMgmt_Qfdu_Model */
-    $model = $this->loadModel('AclMgmt_Qfdu');
-    $model->setView($this->tpl);
-    $model->domainNode = $domainNode;
-    $model->checkAccess($domainNode, $context);
-
-    $areaId = $model->getAreaId();
-
-    $aclManager = $this->acl->getManager();
-
-    try {
-
-      $asgdData = $aclManager->deleteAreaAssignments($areaId);
-
-      /* @var $ui AclMgmt_Qfdu_Ui */
-      $ui = $this->loadUi('AclMgmt_Qfdu');
-      $ui->domainNode = $domainNode;
-      $ui->setView($this->tpl);
-      $ui->removeAllAssignments($context);
-
-    } catch (Webfrap_Exception $e) {
-      throw new InternalError_Exception(null, $e->getMessage());
-    }
-
-  }//end public function service_dropAllAssignments */
-
-
-/*//////////////////////////////////////////////////////////////////////////////
-// Qualified User Handling
-//////////////////////////////////////////////////////////////////////////////*/
-
   /**
-   * the default table for the management EnterpriseEmployee
    * @param LibRequestHttp $request
    * @param LibResponseHttp $response
    * @return boolean
    */
-  public function service_listByUsers($request, $response)
+  public function service_delete($request, $response)
   {
-
+  
     // load request parameters an interpret as flags
-    $params = $this->getTabFlags($request);
+    $params = $this->getCrudFlags($request);
     $domainNode = $this->getDomainNode($request);
-
-    /* @var $model AclMgmt_Qfdu_Model */
-    $model = $this->loadModel('AclMgmt_Qfdu');
+  
+    $pathId = $request->param('objid',Validator::EID);
+  
+    /* @var $model AclMgmt_Backpath_Model */
+    $model = $this->loadModel('AclMgmt_Backpath');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $params);
-
-    // target for some ui element
-    $areaId = $model->getAreaId();
-    $params->areaId = $areaId;
-
-    $params->tabId = 'tab-box-'.$domainNode->domainName.'-acl-content-users';
-
-    // create a new area with the id of the target element, this area will replace
-    // the HTML Node of the target UI Element
-    /* @var $view AclMgmt_Qfdu_User_Area_View */
-    $view = $response->loadView
-    (
-      $params->tabId,
-      'AclMgmt_Qfdu_User',
-      'displayTab',
-      View::AREA
+  
+    /* @var $view AclMgmt_Backpath_Ajax_View */
+    $view = $response->loadView(
+      $domainNode->domainName.'-backpath',
+      'AclMgmt_Backpath'
     );
-    $view->domainNode = $domainNode;
-
-    $view->setPosition('#'.$params->tabId);
     $view->setModel($model);
-
-    $view->displayTab($areaId, $params);
-
-  }//end public function service_listByUsers */
-
-  /**
-   *
-   * @param LibRequestHttp $request
-   * @param LibResponseHttp $response
-   * @return boolean
-   */
-  public function service_searchByUsers($request, $response)
-  {
-
-    // load the flow flags
-    $params = $this->getListingFlags($request);
-    $domainNode = $this->getDomainNode($request);
-
-    // load the default model
-    /* @var $model AclMgmt_Qfdu_Model */
-    $model = $this->loadModel('AclMgmt_Qfdu');
-    $model->domainNode = $domainNode;
-    $model->checkAccess($domainNode, $params);
-
-    $areaId = $model->getAreaId();
-
-    // this can only be an ajax request, so we can directly load the ajax view
-    $view = $response->loadView
-    (
-      $domainNode->domainName.'-mgmt-acl',
-      'AclMgmt_Qfdu_User',
-      'displaySearch'
-    );
-
     $view->domainNode = $domainNode;
-
-    $view->setModel($model);
-    $view->displaySearch($areaId, $params);
-
-  }//end public function service_searchListUsers */
-
-  /**
-   *
-   * @param LibRequestHttp $request
-   * @param LibResponseHttp $response
-   * @return boolean
-   */
-  public function service_loadListUserDsets($request, $response)
-  {
-
-    // load the flow flags
-    $context = new ContextListing($request);
-    $domainNode = $this->getDomainNode($request);
-
-    // load the default model
-    /* @var $model AclMgmt_Qfdu_Model */
-    $model = $this->loadModel('AclMgmt_Qfdu');
-    $model->domainNode = $domainNode;
-    $model->checkAccess($domainNode, $context);
-
-    $context->areaId = $model->getAreaId();
-
-    $userId = $request->param('objid', Validator::EID);
-    $context->pRowId = $request->param('p_row_id', Validator::CKEY);
-    $context->pRowPos = $request->param('p_row_pos', Validator::TEXT);
-
-    $respContext = $response->createContext();
-
-    $respContext->assertNotNull('Invalid Area', $context->areaId);
-    $respContext->assertInt('Missing Group', $userId);
-
-    if ($respContext->hasError)
-      throw new InvalidRequest_Exception();
-
-    // this can only be an ajax request, so we can directly load the ajax view
-    /* @var $view AclMgmt_Qfdu_User_Ajax_View */
-    $view = $response->loadView
-    (
-      $domainNode->domainName.'-mgmt-acl',
-      'AclMgmt_Qfdu_User',
-      'displayLoadGridDsets'
-    );
-
-    $view->domainNode = $domainNode;
-
-    $view->setModel($model);
-    $view->displayLoadGridDsets($userId, $context);
-
-  }//end public function service_loadListUserDsets */
-
-  /**
-   *
-   * @param LibRequestHttp $request
-   * @param LibResponseHttp $response
-   * @return boolean
-   */
-  public function service_loadListUserGroups($request, $response)
-  {
-
-    // load the flow flags
-    $context = new ContextListing($request);
-    $domainNode = $this->getDomainNode($request);
-
-    // load the default model
-    /* @var $model AclMgmt_Qfdu_Model */
-    $model = $this->loadModel('AclMgmt_Qfdu');
-    $model->domainNode = $domainNode;
-    $model->checkAccess($domainNode, $context);
-
-    $context->areaId = $model->getAreaId();
-
-    $dsetId = $request->param('objid', Validator::EID);
-    $userId = $request->param('user', Validator::EID);
-    $context->pRowId = $request->param('p_row_id', Validator::CKEY);
-    $context->pRowPos = $request->param('p_row_pos', Validator::TEXT);
-
-    $respContext = $response->createContext();
-
-    $respContext->assertNotNull('Invalid Area', $context->areaId);
-    $respContext->assertInt('Missing User', $userId);
-    $respContext->assertInt('Missing Dataset', $dsetId);
-
-    if ($respContext->hasError)
-      throw new InvalidRequest_Exception();
-
-    // this can only be an ajax request, so we can directly load the ajax view
-    /* @var $view AclMgmt_Qfdu_User_Ajax_View */
-    $view = $response->loadView
-    (
-      $domainNode->domainName.'-mgmt-acl',
-      'AclMgmt_Qfdu_User',
-      'displayLoadGridGroups'
-    );
-
-    $view->domainNode = $domainNode;
-
-    $view->setModel($model);
-    $view->displayLoadGridGroups($userId, $dsetId, $context);
-
-  }//end public function service_loadListUserGroups */
-
-/*//////////////////////////////////////////////////////////////////////////////
-// List by dsets
-//////////////////////////////////////////////////////////////////////////////*/
-
-  /**
-   * the default table for the management EnterpriseEmployee
-   * @param LibRequestHttp $request
-   * @param LibResponseHttp $response
-   * @return boolean
-   */
-  public function service_listByDsets($request, $response)
-  {
-
-    // load request parameters an interpret as flags
-    $params = $this->getTabFlags($request);
-    $domainNode = $this->getDomainNode($request);
-
-    /* @var $model AclMgmt_Qfdu_Model */
-    $model = $this->loadModel('AclMgmt_Qfdu');
-    $model->domainNode = $domainNode;
-    $model->checkAccess($domainNode, $params);
-
-    // target for some ui element
-    $areaId = $model->getAreaId();
-    $params->areaId = $areaId;
-
-    $params->tabId = 'tab-box-'.$domainNode->domainName.'-acl-content-dsets';
-
-    // create a new area with the id of the target element, this area will replace
-    // the HTML Node of the target UI Element
-    /* @var $view AclMgmt_Qfdu_User_Area_View */
-    $view = $response->loadView
-    (
-      $params->tabId,
-      'AclMgmt_Qfdu_Dset',
-      'displayTab',
-      View::AREA
-    );
-    $view->domainNode = $domainNode;
-
-    $view->setPosition('#'.$params->tabId);
-    $view->setModel($model);
-    $view->displayTab($areaId, $params);
-
-  }//end public function service_listByDsets */
-
-  /**
-   *
-   * @param LibRequestHttp $request
-   * @param LibResponseHttp $response
-   * @return boolean
-   */
-  public function service_loadListDsetUsers($request, $response)
-  {
-
-    // load the flow flags
-    $context = new ContextListing($request);
-    $domainNode = $this->getDomainNode($request);
-
-    // load the default model
-    /* @var $model AclMgmt_Qfdu_Model */
-    $model = $this->loadModel('AclMgmt_Qfdu');
-    $model->domainNode = $domainNode;
-    $model->checkAccess($domainNode, $context);
-
-    $context->areaId = $model->getAreaId();
-
-    $dsetId = $request->param('objid', Validator::EID);
-    $context->pRowId = $request->param('p_row_id', Validator::CKEY);
-    $context->pRowPos = $request->param('p_row_pos', Validator::TEXT);
-
-    $respContext = $response->createContext();
-
-    $respContext->assertNotNull('Invalid Area', $context->areaId);
-    $respContext->assertInt('Missing Dset id', $dsetId);
-
-    if ($respContext->hasError)
-      throw new InvalidRequest_Exception();
-
-    // this can only be an ajax request, so we can directly load the ajax view
-    /* @var $view AclMgmt_Qfdu_Dset_Ajax_View */
-    $view = $response->loadView
-    (
-      $domainNode->domainName.'-mgmt-acl',
-      'AclMgmt_Qfdu_Dset',
-      'displayLoadGridUsers'
-    );
-
-    $view->domainNode = $domainNode;
-
-    $view->setModel($model);
-    $view->displayLoadGridUsers($dsetId, $context);
-
-  }//end public function service_loadListDsetUsers */
-
-  /**
-   *
-   * @param LibRequestHttp $request
-   * @param LibResponseHttp $response
-   * @return boolean
-   */
-  public function service_loadListDsetGroups($request, $response)
-  {
-
-    // load the flow flags
-    $context = new ContextListing($request);
-    $domainNode = $this->getDomainNode($request);
-
-    // load the default model
-    /* @var $model AclMgmt_Qfdu_Model */
-    $model = $this->loadModel('AclMgmt_Qfdu');
-    $model->domainNode = $domainNode;
-    $model->checkAccess($domainNode, $context);
-
-    $context->areaId = $model->getAreaId();
-
-    $userId = $request->param('objid', Validator::EID);
-    $dsetId = $request->param('dset', Validator::EID);
-    $context->pRowId = $request->param('p_row_id', Validator::CKEY);
-    $context->pRowPos = $request->param('p_row_pos', Validator::TEXT);
-
-    $respContext = $response->createContext();
-
-    $respContext->assertNotNull('Invalid Area', $context->areaId);
-    $respContext->assertInt('Missing User', $userId);
-    $respContext->assertInt('Missing Dataset', $dsetId);
-
-    if ($respContext->hasError)
-      throw new InvalidRequest_Exception();
-
-    // this can only be an ajax request, so we can directly load the ajax view
-    /* @var $view AclMgmt_Qfdu_Dset_Ajax_View */
-    $view = $response->loadView
-    (
-      $domainNode->domainName.'-mgmt-acl',
-      'AclMgmt_Qfdu_Dset',
-      'displayLoadGridGroups'
-    );
-
-    $view->domainNode = $domainNode;
-
-    $view->setModel($model);
-    $view->displayLoadGridGroups($userId, $dsetId, $context);
-
-  }//end public function service_loadListDsetsGroups */
+  
+    $model->delete($pathId, $params);
+    $view->displayDelete($pathId, $params);
+  
+  }//end public function service_delete */
   
 /*//////////////////////////////////////////////////////////////////////////////
 // autoload

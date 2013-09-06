@@ -274,29 +274,33 @@ class AclMgmt_Backpath_Table_Element extends WgtTable
         .(!is_null($row['wbfsys_security_backpath_ref_field'])?$row['wbfsys_security_backpath_ref_field']:' ')
         .'</td>'.NL;
 
-      $body .= '<td valign="top" style="text-align:right;" >'.$this->selectRights(
-          $row['security_access_access_level'],
-          "ar[security_access][{$objid}][access_level]"
-        ).'</td>'.NL;
+      $body .= '<td valign="top"  >'
+        .(!is_null($row['wbfsys_security_backpath_groups'])?$row['wbfsys_security_backpath_groups']:' ')
+        .'</td>'.NL;
 
       $body .= '<td valign="top" style="text-align:right;" >'.$this->selectRights(
-          $row['security_access_ref_access_level'],
-          "ar[security_access][{$objid}][ref_access_level]"
+          $row['wbfsys_security_backpath_access_level'],
+          "ar[wbfsys_security_backpath][{$objid}][access_level]"
+        ).'</td>'.NL;
+
+      $body .= '<td valign="top" style="text-align:right;" >'.$this->selectRights(
+          $row['wbfsys_security_backpath_ref_access_level'],
+          "ar[wbfsys_security_backpath][{$objid}][ref_access_level]"
         ).'</td>'.NL;
 
       $body .= '<td valign="top" style="text-align:right;" >'.$this->selectSimpleRights(
-          $row['security_access_message_level'],
-          "ar[security_access][{$objid}][message_level]"
+          $row['wbfsys_security_backpath_message_level'],
+          "ar[wbfsys_security_backpath][{$objid}][message_level]"
         ).'</td>'.NL;
 
       $body .= '<td valign="top" style="text-align:right;" >'.$this->selectSimpleRights(
-          $row['security_access_priv_message_level'],
-          "ar[security_access][{$objid}][priv_message_level]"
+          $row['wbfsys_security_backpath_priv_message_level'],
+          "ar[wbfsys_security_backpath][{$objid}][priv_message_level]"
         ).'</td>'.NL;
 
       $body .= '<td valign="top" style="text-align:right;" >'.$this->selectSimpleRights(
-          $row['security_access_meta_level'],
-          "ar[security_access][{$objid}][meta_level]"
+          $row['wbfsys_security_backpath_meta_level'],
+          "ar[wbfsys_security_backpath][{$objid}][meta_level]"
         ).'</td>'.NL;
 
       if ($this->enableNav) {
@@ -391,7 +395,7 @@ class AclMgmt_Backpath_Table_Element extends WgtTable
   public function buildAjaxTbody($row  )
   {
 
-    $objid = $row['security_access_rowid'];
+    $objid = $row['wbfsys_security_backpath_rowid'];
     $rowid = $this->id.'_row_'.$objid;
 
     // is this an insert or an update area
@@ -418,28 +422,28 @@ class AclMgmt_Backpath_Table_Element extends WgtTable
         .'</td>'.NL;
 
       $body .= '<td valign="top" style="text-align:right;" >'.$this->selectRights(
-          $row['security_access_access_level'],
-          "ar[security_access][{$objid}][access_level]"
+          $row['wbfsys_security_backpath_access_level'],
+          "ar[wbfsys_security_backpath][{$objid}][access_level]"
         ).'</td>'.NL;
 
       $body .= '<td valign="top" style="text-align:right;" >'.$this->selectRights(
-          $row['security_access_ref_access_level'],
-          "ar[security_access][{$objid}][ref_access_level]"
+          $row['wbfsys_security_backpath_ref_access_level'],
+          "ar[wbfsys_security_backpath][{$objid}][ref_access_level]"
         ).'</td>'.NL;
 
       $body .= '<td valign="top" style="text-align:right;" >'.$this->selectSimpleRights(
-          $row['security_access_message_level'],
-          "ar[security_access][{$objid}][message_level]"
+          $row['wbfsys_security_backpath_message_level'],
+          "ar[wbfsys_security_backpath][{$objid}][message_level]"
         ).'</td>'.NL;
 
       $body .= '<td valign="top" style="text-align:right;" >'.$this->selectSimpleRights(
-      	$row['security_access_priv_message_level'],
-      	"ar[security_access][{$objid}][priv_message_level]"
+      	$row['wbfsys_security_backpath_priv_message_level'],
+      	"ar[wbfsys_security_backpath][{$objid}][priv_message_level]"
       ).'</td>'.NL;
 
       $body .= '<td valign="top" style="text-align:right;" >'.$this->selectSimpleRights(
-        $row['security_access_meta_level'],
-        "ar[security_access][{$objid}][meta_level]"
+        $row['wbfsys_security_backpath_meta_level'],
+        "ar[wbfsys_security_backpath][{$objid}][meta_level]"
       ).'</td>'.NL;
 
     if ($this->enableNav) {

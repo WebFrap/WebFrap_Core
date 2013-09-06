@@ -4,7 +4,7 @@ $crudForm = new WgtFormBuilder(
   $this,
   $VAR->formActionCrud,
   $VAR->formIdCrud,
-  'post'
+  'put'
 );
 $crudForm->form();
 
@@ -60,26 +60,33 @@ $crudForm->form();
   <div class="left bw4" >
     <?php $crudForm->autocomplete(
       'Target Area', 
-      'path[id_target_area]',
+      'path,id_target_area',
       null,
       'ajax.php?c=Acl.Mgmt_Backpath.autoArea&amp;area_id='.$VAR->areaId.'&amp;dkey='.$VAR->domain->domainName.'&amp;key=',
       array(),
       array('size'=>'large','entityMode'=>true)
     ); ?>
-    <?php  $crudForm->autocomplete(
+    <?php  $crudForm->input(
+      'Ref Field',
+      'path,ref_field',
+      null,
+      array(),
+      array('size'=>'large')
+    ); ?>
+    <?php  /* $crudForm->autocomplete(
       'Ref Field',
       'path[ref_field]',
       null,
       'ajax.php?c=Acl.Mgmt_Backpath.autoRefField&amp;area_id='.$VAR->areaId.'&amp;dkey='.$VAR->domain->domainName.'&amp;key=',
       array(),
       array('size'=>'large')
-    ); ?>
+    ); */ ?>
   </div>
 
   <div class="inline bw3" >
     <?php $crudForm->textarea(
         'Groups',
-        'path[groups]',
+        'path,groups',
         null,
         array(),
         array('size'=>'large','entityMode'=>true)

@@ -73,7 +73,7 @@ class AclMgmt_Backpath_Area_View extends LibTemplateAreaView
       
     // create the form action
     $params->formActionCrud = 'ajax.php?c=Acl.Mgmt_Backpath.save&dkey='.$this->domainNode->domainName;
-    $params->formIdCrud = 'wgt-form-'.$this->domainNode->aclDomainKey.'-backpath-acl';
+    $params->formIdCrud = 'wgt-form-'.$this->domainNode->aclDomainKey.'-backpath-crud';
   
     // append form actions
     $this->setFormData($params->formActionCrud, $params->formIdCrud, $params, 'Crud');
