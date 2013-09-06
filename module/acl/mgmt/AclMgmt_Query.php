@@ -90,9 +90,9 @@ SQL;
     $sql = <<<SQL
   
   SELECT
-    rowid as id,
-    access_key as value,
-    access_key as label
+    wbfsys_security_area.rowid as id,
+    wbfsys_security_area.access_key as value,
+    wbfsys_security_area.access_key as label
   FROM
     wbfsys_security_area
   JOIN 
@@ -100,8 +100,8 @@ SQL;
     ON
       wbfsys_security_area_type.rowid = wbfsys_security_area.id_type
   WHERE
-    LOWER(access_key) like LOWER('{$db->addSlashes($key)}%')
-    AND NOT rowid IN( SELECT id_group FROM wbfsys_security_area WHERE rowid = {$areaId} )
+    LOWER(wbfsys_security_area.access_key) like LOWER('{$db->addSlashes($key)}%')
+    AND NOT rowid IN( SELECT id_group FROM wbfsys_security_area WHERE wbfsys_security_area.rowid = {$areaId} )
     AND wbfsys_security_area_type.access_key IN('module','module_category','mgmt')
   LIMIT 12;
   

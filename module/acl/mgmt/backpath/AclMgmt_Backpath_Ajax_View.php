@@ -181,7 +181,17 @@ JSCODE;
   
   }//end public function displayDelete */
 
+  /**
+   * @param string $key
+   * @param TArray $params
+   */
+  public function displayAutocompleteRefField($key, $params)
+  {
   
+    $view = $this->getTplEngine();
+    $view->setRawJsonData($this->model->searchRefFieldsAutocomplete($key, $params));
+  
+  }//end public function displayAutocompleteRefField */
  
 
 } // end class AclMgmt_Backpath_Ajax_View */

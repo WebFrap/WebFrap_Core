@@ -63,6 +63,10 @@ class AclMgmt_Backpath_Controller extends MvcController_Domain
       'method' => array('GET'),
       'views' => array('ajax')
     ),
+    'autoreffield' => array(
+      'method' => array('GET'),
+      'views' => array('ajax')
+    ),
 
     
   );
@@ -158,7 +162,7 @@ class AclMgmt_Backpath_Controller extends MvcController_Domain
    * @param LibResponseHttp $response
    * @return boolean
    */
-  public function service_appendUser($request, $response)
+  public function service_save($request, $response)
   {
 
     // load request parameters an interpret as flags
@@ -675,6 +679,41 @@ class AclMgmt_Backpath_Controller extends MvcController_Domain
   
   
   }//end public function service_autoArea */
+  
+  /**
+   * the default table for the management EnterpriseEmployee
+   * @param LibRequestHttp $request
+   * @param LibResponseHttp $response
+   * @return boolean
+   */
+  public function service_autoRefField($request, $response)
+  {
+  
+    // load request parameters an interpret as flags
+    $params = $this->getListingFlags($request);
+    $domainNode = $this->getDomainNode($request);
+  
+    /* @var $model AclMgmt_Model */
+    $model = $this->loadModel('AclMgmt');
+    $model->domainNode = $domainNode;
+    $model->checkAccess($domainNode, $params);
+  
+    /* @var $view AclMgmt_Ajax_View */
+    $view = $response->loadView(
+      $domainNode->domainName.'-acl-mgmt',
+      'AclMgmt_Backpath',
+      'displayAutocompleteRefField'
+    );
+    $view->setModel($model);
+    $view->domainNode = $domainNode;
+  
+    $searchKey = $request->param('key', Validator::TEXT);
+    $areaId = $model->getAreaId();
+  
+    $view->displayAutocompleteRefField($areaId, $searchKey, $params);
+  
+  
+  }//end public function service_autoRefField */
 
 /*//////////////////////////////////////////////////////////////////////////////
 // parse flags

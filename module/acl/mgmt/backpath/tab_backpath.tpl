@@ -18,7 +18,7 @@ $crudForm->form();
   
 <input
   type="hidden"
-  id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-qfdu-id_area"
+  id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-backpath-id_area"
   name="path[id_area]"
   value="<?php echo $VAR->areaId?>"
   class="meta asgd-<?php echo $VAR->formIdCrud?>"
@@ -30,9 +30,7 @@ $crudForm->form();
   <button
     class="wgt-button"
     id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-backpath-crud"
-    onclick="$R.form('wgt-form-<?php
-      echo $VAR->domain->aclDomainKey ?>-backpath-crud');$UI.form.reset('wgt-form-<?php
-      echo $VAR->domain->aclDomainKey ?>-backpath-crud');return false;" >
+    onclick="$R.form('<?php echo $VAR->formIdCrud ?>');$UI.form.reset('<?php echo $VAR->formIdCrud ?>');return false;" >
     <i class="icon-save " ></i> Save
   </button>
 
@@ -49,7 +47,15 @@ $crudForm->form();
 </div>
 
 <!-- formular -->
-<div class="left bw71 wgt-space" >
+<div class="left bw71 wgt-space" id="wgt-box-<?php echo $VAR->domain->aclDomainKey ?>-backpath_crudform" >
+
+  <input
+    type="hidden"
+    id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-backpath-rowid"
+    name="rowid"
+    value=""
+    class="meta asgd-<?php echo $VAR->formIdCrud?>"
+  />
 
   <div class="left bw4" >
     <?php $crudForm->autocomplete(
@@ -58,15 +64,15 @@ $crudForm->form();
       null,
       'ajax.php?c=Acl.Mgmt_Backpath.autoArea&amp;area_id='.$VAR->areaId.'&amp;dkey='.$VAR->domain->domainName.'&amp;key=',
       array(),
-      array('size'=>'large')
+      array('size'=>'large','entityMode'=>true)
     ); ?>
     <?php  $crudForm->autocomplete(
       'Ref Field',
       'path[ref_field]',
       null,
-      'ajax.php?c=Acl.Mgmt_Backpath.autoArea&amp;area_id='.$VAR->areaId.'&amp;dkey='.$VAR->domain->domainName.'&amp;key=',
+      'ajax.php?c=Acl.Mgmt_Backpath.autoRefField&amp;area_id='.$VAR->areaId.'&amp;dkey='.$VAR->domain->domainName.'&amp;key=',
       array(),
-      array('size'=>'large','entityMode'=>true)
+      array('size'=>'large')
     ); ?>
   </div>
 
@@ -91,10 +97,8 @@ $crudForm->form();
 
 <div class="wgt-clear xxsmall" ></div>
 
-
-
+<?php // check if this is still required ?>
 <script>
-
 <?php foreach( $this->jsItems as $jsItem ){ ?>
   <?php echo $ELEMENT->$jsItem->jsCode?>
 <?php } ?>

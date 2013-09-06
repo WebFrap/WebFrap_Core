@@ -69,7 +69,46 @@ SQL;
 
   }//end public function fetchGroupsByKey */
 
-
+  /**
+   * Loading the tabledata from the database
+   * @param int $areaId
+   * @param string $key
+   * @param TFlag $params
+   * @return void
+   *
+   * @throws LibDb_Exception
+   */
+  public function fetchAreasByKey($areaId, $key, $params = null)
+  {
+  
+    if (!$params)
+      $params = new TFlag();
+  
+    $this->sourceSize = null;
+    $db = $this->getDb();
+  
+    $sql = <<<SQL
+  
+  SELECT
+    wbfsys_security_area.rowid as id,
+    wbfsys_security_area.access_key as value,
+    wbfsys_security_area.access_key as label
+  FROM
+    wbfsys_security_area
+  JOIN 
+      wbfsys_security_area_type
+    ON
+      wbfsys_security_area_type.rowid = wbfsys_security_area.id_type
+  WHERE
+    LOWER(wbfsys_security_area.access_key) like LOWER('{$db->addSlashes($key)}%')
+    AND wbfsys_security_area_type.access_key IN('module','module_category','mgmt')
+  LIMIT 12;
+  
+SQL;
+  
+    $this->result = $db->select($sql)->getAll();
+  
+  }//end public function fetchAreasByKey */
 
 } // end class AclMgmt_Query_Postgresql */
 

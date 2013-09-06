@@ -38,20 +38,20 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
   * @param int $objid
   * @return WbfsysSecurityArea_Entity
   */
-  public function getEntityWbfsysGroupUsers($objid = null)
+  public function getEntityWbfsysSecurityBackpath($objid = null)
   {
 
     $response = $this->getResponse();
 
-    $entityWbfsysGroupUsers = $this->getRegisterd('entityWbfsysGroupUsers');
+    $entityWbfsysSecurityBackpath = $this->getRegisterd('entityWbfsysSecurityBackpath');
 
     //entity wbfsys_security_area
-    if (!$entityWbfsysGroupUsers) {
+    if (!$entityWbfsysSecurityBackpath) {
 
       if (!is_null($objid)) {
         $orm = $this->getOrm();
 
-        if (!$entityWbfsysGroupUsers = $orm->get('WbfsysGroupUsers', $objid)) {
+        if (!$entityWbfsysSecurityBackpath = $orm->get('WbfsysGroupUsers', $objid)) {
           $response->addError
           (
             $this->i18n->l
@@ -64,17 +64,17 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
           return null;
         }
 
-        $this->register('entityWbfsysGroupUsers', $entityWbfsysGroupUsers);
+        $this->register('entityWbfsysSecurityBackpath', $entityWbfsysSecurityBackpath);
 
       } else {
-        $entityWbfsysGroupUsers = new WbfsysGroupUsers_Entity() ;
-        $this->register('entityWbfsysGroupUsers', $entityWbfsysGroupUsers);
+        $entityWbfsysSecurityBackpath = new WbfsysSecurityBackpath_Entity() ;
+        $this->register('entityWbfsysSecurityBackpath', $entityWbfsysSecurityBackpath);
       }
 
-    } elseif ($objid && $objid != $entityWbfsysGroupUsers->getId()) {
+    } elseif ($objid && $objid != $entityWbfsysSecurityBackpath->getId()) {
       $orm = $this->getOrm();
 
-      if (!$entityWbfsysGroupUsers = $orm->get('WbfsysGroupUsers', $objid)) {
+      if (!$entityWbfsysSecurityBackpath = $orm->get('WbfsysGroupUsers', $objid)) {
         $response->addError
         (
           $this->i18n->l
@@ -87,24 +87,24 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
         return null;
       }
 
-      $this->register('entityWbfsysGroupUsers', $entityWbfsysGroupUsers);
+      $this->register('entityWbfsysSecurityBackpath', $entityWbfsysSecurityBackpath);
     }
 
-    return $entityWbfsysGroupUsers;
+    return $entityWbfsysSecurityBackpath;
 
-  }//end public function getEntityWbfsysGroupUsers */
+  }//end public function getEntityWbfsysSecurityBackpath */
 
   /**
   * returns the activ main entity with data, or creates a empty one
   * and returns it instead
-  * @param WbfsysGroupUsers_Entity $entity
+  * @param WbfsysSecurityBackpath_Entity $entity
   */
-  public function setEntityWbfsysGroupUsers($entity)
+  public function setEntityWbfsysSecurityBackpath($entity)
   {
 
-    $this->register('entityWbfsysGroupUsers', $entity);
+    $this->register('entityWbfsysSecurityBackpath', $entity);
 
-  }//end public function setEntityWbfsysGroupUsers */
+  }//end public function setEntityWbfsysSecurityBackpath */
 
   /**
    * just fetch the post data without any required validation
@@ -120,7 +120,7 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
     $areaId = $this->getAreaId();
 
     $condition = array();
-    $condition['free'] = $this->getEntityWbfsysGroupUsers()->getId();
+    $condition['free'] = $this->getEntityWbfsysSecurityBackpath()->getId();
 
     $query->fetch
     (
@@ -164,9 +164,16 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
     return $query;
   
   }//end public function search */
-  
-  
 
+  
+  
+  
+  
+  
+  
+  
+  
+  
   /**
    * de:
    * Extrahieren und validieren der Daten zum erstellen einer Verknüpfung,
@@ -182,7 +189,7 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
     $orm = $this->getOrm();
     $response = $this->getResponse();
 
-    $entityWbfsysGroupUsers = new WbfsysGroupUsers_Entity;
+    $entityWbfsysSecurityBackpath = new WbfsysSecurityBackpath_Entity;
 
     $fields = array
     (
@@ -193,33 +200,33 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
 
     $httpRequest->validateUpdate
     (
-      $entityWbfsysGroupUsers,
+      $entityWbfsysSecurityBackpath,
       'group_users',
       $fields,
       array('id_group', 'id_user')
     );
 
     // aus sicherheitsgründen setzen wir die hier im code
-    $entityWbfsysGroupUsers->id_area = $this->getAreaId();
+    $entityWbfsysSecurityBackpath->id_area = $this->getAreaId();
 
     // ist eine direkte verknüpfung
-    $entityWbfsysGroupUsers->partial = 0;
+    $entityWbfsysSecurityBackpath->partial = 0;
 
-    if (!$entityWbfsysGroupUsers->id_group) {
+    if (!$entityWbfsysSecurityBackpath->id_group) {
       $response->addError
       (
         $response->i18n->l('Missing Group', 'wbf.message')
       );
     }
 
-    if (!$entityWbfsysGroupUsers->id_user) {
+    if (!$entityWbfsysSecurityBackpath->id_user) {
       $response->addError
       (
         $response->i18n->l('Missing User', 'wbf.message')
       );
     }
 
-    if (!$entityWbfsysGroupUsers->vid) {
+    if (!$entityWbfsysSecurityBackpath->vid) {
       if (!$httpRequest->data('assign_full', Validator::BOOLEAN)) {
         $response->addError
         (
@@ -232,7 +239,7 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
       }
     }
 
-    $this->register('entityWbfsysGroupUsers', $entityWbfsysGroupUsers);
+    $this->register('entityWbfsysSecurityBackpath', $entityWbfsysSecurityBackpath);
 
     if ($response->hasErrors()) {
       return new Error
@@ -255,7 +262,7 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
    * prüfen ob der benutzer nicht schon unter diesen bedingungen der
    * gruppe zugeordnet wurde
    *
-   * @param WbfsysGroupUsers_Entity $entity
+   * @param WbfsysSecurityBackpath_Entity $entity
    * @return boolean false wenn doppelten einträge vorhanden sind
    */
   public function checkUnique($entity = null)
@@ -264,7 +271,7 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
     $orm = $this->getOrm();
 
     if (!$entity)
-      $entity =  $this->getRegisterd('entityWbfsysGroupUsers');
+      $entity =  $this->getRegisterd('entityWbfsysSecurityBackpath');
 
     return $orm->checkUnique
     (
@@ -289,7 +296,7 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
     $response = $this->getResponse();
 
     try {
-      if (!$entityWbfsysGroupUsers = $this->getRegisterd('entityWbfsysGroupUsers')) {
+      if (!$entityWbfsysSecurityBackpath = $this->getRegisterd('entityWbfsysSecurityBackpath')) {
         return new Error
         (
           $response->i18n->l
@@ -302,13 +309,13 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
           (
             'The expected Entity with the key {@key@} was not in the registry',
             'wbf.message',
-            array('key' => 'entityWbfsysGroupUsers')
+            array('key' => 'entityWbfsysSecurityBackpath')
           )
         );
       }
 
-      if (!$orm->insert($entityWbfsysGroupUsers)) {
-        $entityText = $entityWbfsysGroupUsers->text();
+      if (!$orm->insert($entityWbfsysSecurityBackpath)) {
+        $entityText = $entityWbfsysSecurityBackpath->text();
         $response->addError
         (
           $response->i18n->l
@@ -326,16 +333,16 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
         // zu der gruppe in relation zur area des datensatzes
         // diese teilzuweisung vermindert den aufwand um in listen elementen
         // zu entscheiden in welcher form die alcs ausgelesen werden müssen
-        if ($entityWbfsysGroupUsers->vid) {
-          $partUser = new WbfsysGroupUsers_Entity;
-          $partUser->id_user = $entityWbfsysGroupUsers->id_user;
-          $partUser->id_group = $entityWbfsysGroupUsers->id_group;
-          $partUser->id_area = $entityWbfsysGroupUsers->id_area;
+        if ($entityWbfsysSecurityBackpath->vid) {
+          $partUser = new WbfsysSecurityBackpath_Entity;
+          $partUser->id_user = $entityWbfsysSecurityBackpath->id_user;
+          $partUser->id_group = $entityWbfsysSecurityBackpath->id_group;
+          $partUser->id_area = $entityWbfsysSecurityBackpath->id_area;
           $partUser->partial = 1;
           $orm->insertIfNotExists($partUser, array('id_area','id_group','id_user','partial'));
         }
 
-        $entityText = $entityWbfsysGroupUsers->text();
+        $entityText = $entityWbfsysSecurityBackpath->text();
 
         $response->addMessage
         (
@@ -351,7 +358,7 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
         (
           'Edited: '.$entityText,
           'edit',
-          $entityWbfsysGroupUsers
+          $entityWbfsysSecurityBackpath
         );
 
       }
@@ -380,57 +387,7 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
 // Search Methodes
 //////////////////////////////////////////////////////////////////////////////*/
 
-  /**
-   * de:
-   * Suche für den Autocomplete service
-   * Die Anfrage wird über ein AclMgmt_Query Objekt
-   * gehandelt, das result als array zurückgegeben
-   *
-   * @param string $key der Suchstring für den namen der Gruppe
-   * @param TFlag $params
-   * @return array
-   */
-  public function searchGroupsAutocomplete($key, $params)
-  {
 
-    $db = $this->getDb();
-    $query = $db->newQuery('AclMgmt');
-    /* @var $query AclMgmt_Query  */
-
-    $query->fetchGroupsByKey(
-      $key,
-      $params
-    );
-
-    return $query->getAll();
-
-  }//end public function searchGroupsAutocomplete */
-  
-  /**
-   * de:
-   * Suche für den Autocomplete service
-   * Die Anfrage wird über ein AclMgmt_Query Objekt
-   * gehandelt, das result als array zurückgegeben
-   *
-   * @param string $key der Suchstring für den namen der Gruppe
-   * @param TFlag $params
-   * @return array
-   */
-  public function searchAreasAutocomplete($key, $params)
-  {
-  
-    $db = $this->getDb();
-    $query = $db->newQuery('AclMgmt');
-    /* @var $query AclMgmt_Query  */
-  
-    $query->fetchAreasByKey(
-        $key,
-        $params
-    );
-  
-    return $query->getAll();
-  
-  }//end public function searchGroupsAutocomplete */
 
   /**
    *
