@@ -31,8 +31,7 @@ $crudForm->form();
     class="wgt-button"
     id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-backpath-crud"
     onclick="$R.form('<?php echo $VAR->formIdCrud ?>');$UI.form.reset('<?php echo $VAR->formIdCrud ?>');return false;" >
-    <i class="icon-save " ></i> Save
-  </button>
+    <i class="icon-save " ></i> Save Path</button>
 
   <button
     class="wgt-button"
@@ -42,8 +41,7 @@ $crudForm->form();
       echo $VAR->domain->domainName ?>&tabid=wgt_tab-<?php
       echo $VAR->domain->domainName ?>_acl_listing-<?php
       echo $VAR->domain->aclDomainKey ?>-acl-content-backpath');return false;" >
-    <i class="icon-refresh" ></i> Reload
-  </button>
+    <i class="icon-refresh" ></i> Reload</button>
 </div>
 
 <!-- formular -->

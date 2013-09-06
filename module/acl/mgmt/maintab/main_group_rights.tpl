@@ -159,9 +159,10 @@
           action="ajax.php?c=Acl.Mgmt.appendGroup&dkey=<?php echo $VAR->domain->domainName ?>" ></form>
 
         <div class="wgt-panel" >
+        
 
             <!-- Group Input -->
-            <span><?php echo $I18N->l( 'Add group', 'wbf.label' ); ?></span>
+            <span><?php echo $I18N->l( 'Group', 'wbf.label' ); ?></span>
             <input
               type="text"
               id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-id_group-tostring"
@@ -190,6 +191,22 @@
             >
               <i class="icon-search" ></i>
             </button>
+            
+            <!-- Area Input -->
+            <span><?php echo $I18N->l( 'Area', 'wbf.label' ); ?></span>
+            <input
+              id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-id_area"
+              class="asgd-wgt-form-<?php echo $VAR->domain->aclDomainKey ?>-acl-append"
+              name="security_access[id_area]"
+            />
+            <button
+              id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-id_area-append"
+              class="wgt-button append wcm wcm_ui_tip"
+              title="To assign a new role, just type the name of the role in the autocomplete field left to this infobox."
+              onclick="$R.get('modal.php?c=Wbfsys.RoleGroup.selection&amp;target=<?php echo $VAR->searchFormId ?>');return false;"
+            >
+              <i class="icon-search" ></i>
+            </button>
 
             <!-- area & button -->
 
@@ -205,8 +222,7 @@
             <button
               class="wgt-button"
               id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-acl-form-append"  >
-              <i class="icon-link" ></i> Append
-            </button>
+              <i class="icon-link" ></i> Create Relation</button>
 
           </div><!-- end end panel -->
 
