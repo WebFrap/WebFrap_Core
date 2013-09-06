@@ -52,10 +52,8 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
         $orm = $this->getOrm();
 
         if (!$entityWbfsysSecurityBackpath = $orm->get('WbfsysGroupUsers', $objid)) {
-          $response->addError
-          (
-            $this->i18n->l
-            (
+          $response->addError(
+            $this->i18n->l(
               'There is no wbfsyssecurityarea with this id '.$objid,
               'wbfsys.security_area.message'
             )
@@ -75,10 +73,8 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
       $orm = $this->getOrm();
 
       if (!$entityWbfsysSecurityBackpath = $orm->get('WbfsysGroupUsers', $objid)) {
-        $response->addError
-        (
-          $this->i18n->l
-          (
+        $response->addError(
+          $this->i18n->l(
             'There is no wbfsyssecurityarea with this id '.$objid,
             'wbfsys.security_area.message'
           )
@@ -106,36 +102,8 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
 
   }//end public function setEntityWbfsysSecurityBackpath */
 
-  /**
-   * just fetch the post data without any required validation
-   * @param TFlag $params named parameters
-   * @return boolean
-   */
-  public function getEntryWbfsysGroupUsers($params)
-  {
-
-    $db = $this->getDb();
-    $query = $db->newQuery($this->domainNode->domainAclMask.'_Qfdu_Treetable');
-
-    $areaId = $this->getAreaId();
-
-    $condition = array();
-    $condition['free'] = $this->getEntityWbfsysSecurityBackpath()->getId();
-
-    $query->fetch
-    (
-      $areaId,
-      $condition,
-      $params
-    );
-
-    return $query;
-
-
-  }// end public function getEntryWbfsysGroupUsers */
-
 /*//////////////////////////////////////////////////////////////////////////////
-// Connect Code
+// CRUD code
 //////////////////////////////////////////////////////////////////////////////*/
 
 
@@ -182,7 +150,7 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
    * @param TFlag $params named parameters
    * @return null/Error im Fehlerfall
    */
-  public function fetchConnectData($params)
+  public function fetchInsertData($params)
   {
 
     $httpRequest = $this->getRequest();
@@ -191,71 +159,65 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
 
     $entityWbfsysSecurityBackpath = new WbfsysSecurityBackpath_Entity;
 
-    $fields = array
-    (
-      'id_group',
-      'id_user',
-      'vid',
+    $fields = array(
+      'id_area',
+      'id_target_area',
+      'ref_field',
+      'groups',
     );
 
-    $httpRequest->validateUpdate
-    (
+    $httpRequest->validateInsert(
       $entityWbfsysSecurityBackpath,
-      'group_users',
+      'path',
       $fields,
-      array('id_group', 'id_user')
+      $fields
     );
 
     // aus sicherheitsgründen setzen wir die hier im code
     $entityWbfsysSecurityBackpath->id_area = $this->getAreaId();
-
-    // ist eine direkte verknüpfung
-    $entityWbfsysSecurityBackpath->partial = 0;
-
-    if (!$entityWbfsysSecurityBackpath->id_group) {
-      $response->addError
-      (
-        $response->i18n->l('Missing Group', 'wbf.message')
-      );
-    }
-
-    if (!$entityWbfsysSecurityBackpath->id_user) {
-      $response->addError
-      (
-        $response->i18n->l('Missing User', 'wbf.message')
-      );
-    }
-
-    if (!$entityWbfsysSecurityBackpath->vid) {
-      if (!$httpRequest->data('assign_full', Validator::BOOLEAN)) {
-        $response->addError
-        (
-          $response->i18n->l
-          (
-            'Please confirm, that you want to access this use to the full Area.',
-            'wbf.message'
-          )
-        );
-      }
-    }
-
     $this->register('entityWbfsysSecurityBackpath', $entityWbfsysSecurityBackpath);
+  
+    if ($response->hasErrors())
+      throw new InvalidRequest_Exception('One or more Fields contain invalid values');
 
-    if ($response->hasErrors()) {
-      return new Error
-      (
-        $response->i18n->l
-        (
-          'Sorry this request was invlalid.',
-          'wbf.message'
-        ),
-        Response::BAD_REQUEST
-      );
-    } else {
-      return null;
-    }
-
-  }//end public function fetchConnectData */
+  }//end public function fetchInsertData */
+  
+  /**
+   * de:
+   * Extrahieren und validieren der Daten zum erstellen einer Verknüpfung,
+   * aus dem Userrequest
+   *
+   * @param TFlag $params named parameters
+   * @return null/Error im Fehlerfall
+   */
+  public function fetchUpdateData($params)
+  {
+  
+    $httpRequest = $this->getRequest();
+    $orm = $this->getOrm();
+    $response = $this->getResponse();
+  
+    $entityWbfsysSecurityBackpath = $this->getEntityWbfsysSecurityBackpath();
+  
+    $fields = array(
+      'id_target_area',
+      'ref_field',
+      'groups',
+    );
+  
+    $httpRequest->validateUpdate(
+      $entityWbfsysSecurityBackpath,
+      'path',
+      $fields,
+      $fields
+    );
+  
+    $this->register('entityWbfsysSecurityBackpath', $entityWbfsysSecurityBackpath);
+  
+    if ($response->hasErrors())
+      throw new InvalidRequest_Exception('One or more Fields contain invalid values');
+  
+  }//end public function fetchUpdateData */
 
   /**
    * de:
@@ -273,21 +235,24 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
     if (!$entity)
       $entity =  $this->getRegisterd('entityWbfsysSecurityBackpath');
 
-    return $orm->checkUnique
-    (
+    return $orm->checkUnique(
       $entity,
-      array('id_area', 'id_group', 'id_user', 'vid', 'partial')
+      array(
+        'id_area',
+        'id_target_area',
+        'ref_field'
+      )
     );
 
   }//end public function checkUnique */
 
   /**
-   * the update method of the model
+   * Create thew new Backpath
    *
    * @param TFlag $params named parameters
    * @return boolean
    */
-  public function connect($params)
+  public function insert($params)
   {
 
     // erst mal die nötigen resourcen laden
@@ -296,223 +261,94 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
     $response = $this->getResponse();
 
     try {
-      if (!$entityWbfsysSecurityBackpath = $this->getRegisterd('entityWbfsysSecurityBackpath')) {
-        return new Error
-        (
-          $response->i18n->l
-          (
-            'Sorry, something went wrong!',
-            'wbfsys.message'
-          ),
-          Response::INTERNAL_ERROR,
-          $response->i18n->l
-          (
-            'The expected Entity with the key {@key@} was not in the registry',
-            'wbf.message',
-            array('key' => 'entityWbfsysSecurityBackpath')
-          )
-        );
-      }
+      
+      $entityWbfsysSecurityBackpath = $this->getRegisterd('entityWbfsysSecurityBackpath');
 
       if (!$orm->insert($entityWbfsysSecurityBackpath)) {
-        $entityText = $entityWbfsysSecurityBackpath->text();
-        $response->addError
-        (
-          $response->i18n->l
-          (
-            'Failed to update {@label@}',
-            'wbf.message',
-            array('label' => $entityText)
+        
+        $response->addError(
+          $response->i18n->l(
+            'Failed to create the path',
+            'wbf.message'
           )
         );
 
       } else {
 
-        // wenn ein benutzer der gruppe hinzugefügt wird, jedoch nur
-        // in relation zu einem datensatz, dann bekommt er einen teilzuweisung
-        // zu der gruppe in relation zur area des datensatzes
-        // diese teilzuweisung vermindert den aufwand um in listen elementen
-        // zu entscheiden in welcher form die alcs ausgelesen werden müssen
-        if ($entityWbfsysSecurityBackpath->vid) {
-          $partUser = new WbfsysSecurityBackpath_Entity;
-          $partUser->id_user = $entityWbfsysSecurityBackpath->id_user;
-          $partUser->id_group = $entityWbfsysSecurityBackpath->id_group;
-          $partUser->id_area = $entityWbfsysSecurityBackpath->id_area;
-          $partUser->partial = 1;
-          $orm->insertIfNotExists($partUser, array('id_area','id_group','id_user','partial'));
-        }
-
-        $entityText = $entityWbfsysSecurityBackpath->text();
-
-        $response->addMessage
-        (
-          $response->i18n->l
-          (
-            'Successfully updated {@label@}',
-            'wbfsys.message',
-            array('label'=>$entityText)
+        $response->addMessage(
+          $response->i18n->l(
+            'Successfully created new path',
+            'wbf.message'
           )
         );
-
-        $this->protocol
-        (
-          'Edited: '.$entityText,
-          'edit',
+        $this->protocol(
+          'Created new Backpath',
+          'insert',
           $entityWbfsysSecurityBackpath
         );
 
       }
+      
     } catch (LibDb_Exception $e) {
+      
       return new Error($e, Response::INTERNAL_ERROR);
     }
 
-    if ($response->hasErrors()) {
-      return new Error
-      (
-        $response->i18n->l
-        (
-          'Sorry, something went wrong!',
-          'wbf.message'
-        ),
-        Response::INTERNAL_ERROR
-      );
-    } else {
-      return null;
+  }//end public function insert */
+  
+  /**
+   * Create thew new Backpath
+   *
+   * @param TFlag $params named parameters
+   * @return boolean
+   */
+  public function update($params)
+  {
+  
+    // erst mal die nötigen resourcen laden
+    $db = $this->getDb();
+    $orm = $db->getOrm();
+    $response = $this->getResponse();
+  
+    try {
+  
+      $entityWbfsysSecurityBackpath = $this->getRegisterd('entityWbfsysSecurityBackpath');
+  
+      if (!$orm->update($entityWbfsysSecurityBackpath)) {
+        $response->addError(
+            $response->i18n->l(
+                'Failed to update the path',
+                'wbf.message'
+            )
+        );
+  
+      } else {
+  
+        $response->addMessage(
+            $response->i18n->l(
+                'Successfully created new path',
+                'wbf.message'
+            )
+        );
+        $this->protocol(
+            'Created new Backpath',
+            'insert',
+            $entityWbfsysSecurityBackpath
+        );
+  
+      }
+  
+    } catch (LibDb_Exception $e) {
+  
+      return new Error($e, Response::INTERNAL_ERROR);
     }
-
-
-  }//end public function connect */
+  
+  }//end public function insert */
 
 /*//////////////////////////////////////////////////////////////////////////////
 // Search Methodes
 //////////////////////////////////////////////////////////////////////////////*/
 
-
-
-  /**
-   *
-   * @param int $areaId
-   * @param TFlag $params named parameters
-   * @return void
-   */
-  public function loadGroups($areaId, $params)
-  {
-
-    $db = $this->getDb();
-
-    /* @var $query AclMgmt_Qfdu_Group_Treetable_Query  */
-    $query = $db->newQuery('AclMgmt_Qfdu_Group_Treetable');
-
-    $condition = $this->getSearchCondition();
-
-    $query->fetch
-    (
-      $areaId,
-      $condition,
-      $params
-    );
-
-    return $query;
-
-  }//end public function searchQualifiedUsers */
-
-  /**
-   *
-   * @param int $areaId
-   * @param TFlag $params named parameters
-   * @param $filter mixed some custom filter, mainly used for display connect of a single dataset
-   * @return void
-   */
-  public function searchQualifiedUsers($areaId, $params, $filter = null)
-  {
-
-    $db = $this->getDb();
-
-    /* @var $query AclMgmt_Qfdu_Group_Treetable_Query  */
-    $query = $db->newQuery('AclMgmt_Qfdu_Group_Treetable');
-
-    $condition = $this->getSearchCondition($filter);
-
-    $query->fetch(
-      $areaId,
-      $condition,
-      $params
-    );
-
-    return $query;
-
-  }//end public function searchQualifiedUsers */
-
- 
-
-  /**
-   * @param int $areaId
-   * @param Context $context
-   * @return AclMgmt_Qfdu_Group_Export_Query
-   */
-  public function loadExportByGroup($areaId, $context)
-  {
-
-    $db = $this->getDb();
-
-    /* @var $query AclMgmt_Qfdu_Group_Export_Query  */
-    $query = $db->newQuery('AclMgmt_Qfdu_Group_Export');
-    $query->domainNode = $this->domainNode;
-    $query->fetch
-    (
-      $areaId,
-      $context
-    );
-
-    return $query;
-
-  }//end public function loadExportByGroup */
-
-  /**
-   * @param int $areaId
-   * @param Context $context
-   * @return AclMgmt_Qfdu_Dset_Export_Query
-   */
-  public function loadExportByDset($areaId, $context)
-  {
-
-    $db = $this->getDb();
-
-    /* @var $query AclMgmt_Qfdu_Dset_Export_Query  */
-    $query = $db->newQuery('AclMgmt_Qfdu_Dset_Export');
-    $query->domainNode = $this->domainNode;
-    $query->fetch
-    (
-      $areaId,
-      $context
-    );
-
-    return $query;
-
-  }//end public function loadExportByDset */
-
-  /**
-   * @param int $areaId
-   * @param Context $context
-   * @return AclMgmt_Qfdu_User_Export_Query
-   */
-  public function loadExportByUser($areaId, $context)
-  {
-
-    $db = $this->getDb();
-
-    /* @var $query AclMgmt_Qfdu_User_Export_Query  */
-    $query = $db->newQuery('AclMgmt_Qfdu_User_Export');
-    $query->domainNode = $this->domainNode;
-    $query->fetch
-    (
-      $areaId,
-      $context
-    );
-
-    return $query;
-
-  }//end public function loadExportByUser */
 
 
   /**
@@ -543,5 +379,5 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
 
 
 
-} // end class AclMgmt_Qfdu_Model */
+} // end class AclMgmt_Backpath_Model */
 

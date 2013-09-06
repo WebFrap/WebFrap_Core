@@ -168,51 +168,60 @@ class AclMgmt_Backpath_Controller extends MvcController_Domain
     // load request parameters an interpret as flags
     $params = $this->getListingFlags($request);
     $domainNode = $this->getDomainNode($request);
+    
+    $pathId = $request->param('objid',Validator::EID);
 
-    /* @var $model AclMgmt_Qfdu_Model */
-    $model = $this->loadModel('AclMgmt_Qfdu');
+    /* @var $model AclMgmt_Backpath_Model */
+    $model = $this->loadModel('AclMgmt_Backpath');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $params);
 
-    $view = $response->loadView
-    (
-      $domainNode->domainName.'-mgmt-acl',
-      'AclMgmt_Qfdu',
-      'displayConnect'
+    $view = $response->loadView(
+      $domainNode->domainName.'-backpath',
+      'AclMgmt_Backpath'
     );
     $view->setModel($model);
     $view->domainNode = $domainNode;
 
-    // fetch the data from the http request and load it in the model registry
-    // if fails stop here
-    if ($error = $model->fetchConnectData($params)) {
-      // wenn wir einen fehler bekommen ist schluss
-      return $error;
+
+    if ($pathId) {
+      
+      // fetch the data from the http request and load it in the model registry
+      // if fails stop here
+      /* @throws InvalidRequest_Exception */
+      $model->fetchUpdateData($params);
+      
+      $model->update($params);
+      $setEntity = $model->getEntityWbfsysSecurityBackpath();
+      $view->displayInsert($setEntity, $params);
+      
+    } else {
+      
+      // fetch the data from the http request and load it in the model registry
+      // if fails stop here
+      /* @throws InvalidRequest_Exception */
+      $model->fetchInsertData($params);
+      
+      // prüfen ob die zuweisung unique ist
+      ///TODO hier muss noch ein trigger in die datenbank um raceconditions zu vermeiden
+      if (!$model->checkUnique()) {
+      
+        throw new InvalidRequest_Exception(
+            $response->i18n->l(
+              'This Assignment allready exists!',
+              'wbf.message'
+            ),
+            Error::CONFLICT
+        );
+      
+      }
+
+      $model->insert($params);
+      $setEntity = $model->getEntityWbfsysSecurityBackpath();
+      $view->displayInsert($setEntity, $params);
     }
 
-    // prüfen ob die zuweisung unique ist
-    ///TODO hier muss noch ein trigger in die datenbank um raceconditions zu vermeiden
-    if (!$model->checkUnique()) {
-
-      throw new InvalidRequest_Exception
-      (
-        $response->i18n->l
-        (
-          'This Assignment allready exists!',
-          'wbf.message'
-        ),
-        Error::CONFLICT
-      );
-
-    }
-
-    $model->connect($params);
-
-    $entityAssign = $model->getEntityWbfsysGroupUsers();
-
-    $view->displayConnect($entityAssign->id_area, $params);
-
-  }//end public function service_appendUser */
+  }//end public function service_save */
 
 /*//////////////////////////////////////////////////////////////////////////////
 // QDFU delete & clean methodes
