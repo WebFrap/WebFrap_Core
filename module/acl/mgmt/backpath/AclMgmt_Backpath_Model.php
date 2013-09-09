@@ -133,13 +133,32 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
   
   }//end public function search */
 
+  /**
+   * @param int $areaId
+   * @param int $dsetId
+   * @param LibAclContainer $access
+   * @param TFlag $params named parameters
+   * @return void
+   */
+  public function searchById($areaKeys, $dsetId, $access, $params)
+  {
   
+    $db = $this->getDb();
+    $query = $db->newQuery('AclMgmt_Backpath_Table');
+    /* @var $query AclMgmt_Backpath_Table_Query  */
   
+    //$condition = $this->getSearchCondition();
   
+    $query->fetchById(
+      $areaKeys,
+      $dsetId,
+      array(),
+      $params
+    );
   
+    return $query;
   
-  
-  
+  }//end public function searchById */
   
   
   /**

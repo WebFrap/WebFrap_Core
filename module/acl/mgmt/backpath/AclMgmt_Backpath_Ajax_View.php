@@ -89,29 +89,28 @@ class AclMgmt_Backpath_Ajax_View extends LibTemplateAjaxView
   public function displayInsert($eAssignment, $context)
   {
 
-    $ui = $this->tplEngine->loadUi('AclMgmt_Qfdu_Group');
+    /* @var $ui AclMgmt_Backpath_Ui */
+    $ui = $this->tplEngine->loadUi('AclMgmt_Backpath');
     $ui->domainNode = $this->domainNode;
     $ui->setModel($this->model);
     $ui->setView($this->getView());
 
-    // add the id to the form
-    if (!$context->searchFormId)
-      $context->searchFormId = 'wgt-form-table-'.$this->domainNode->domainName.'-acl-qfdu-search';
-
+    $areaKeys = $this->model->getAreaId();
+    
     // ok it's definitly an ajax request
     $context->ajax = true;
 
-    $ui->createListItem
-    (
-      $this->model->searchQualifiedUsers($context->areaId, $context, $eAssignment->getId()),
+    $ui->addListEntry(
+      $this->model->searchById($areaKeys, $eAssignment->getId(), $context->access, $context),
       $context->areaId,
       $context->access,
-      $context
+      $context,
+      true
     );
 
     return null;
 
-  }//end public function displayConnect */
+  }//end public function displayInsert */
   
   /**
    * append a new user in relation to an area / entity to a group
@@ -124,27 +123,25 @@ class AclMgmt_Backpath_Ajax_View extends LibTemplateAjaxView
    */
   public function displayUpdate($eAssignment, $context)
   {
-  
-    $ui = $this->tplEngine->loadUi('AclMgmt_Qfdu_Group');
+    
+    /* @var $ui AclMgmt_Backpath_Ui */
+    $ui = $this->tplEngine->loadUi('AclMgmt_Backpath');
     $ui->domainNode = $this->domainNode;
     $ui->setModel($this->model);
     $ui->setView($this->getView());
-  
-    // add the id to the form
-    if (!$context->searchFormId)
-      $context->searchFormId = 'wgt-form-table-'.$this->domainNode->domainName.'-acl-qfdu-search';
-  
+
+    $areaKeys = $this->model->getAreaId();
+    
     // ok it's definitly an ajax request
     $context->ajax = true;
-  
-    $ui->createListItem
-    (
-        $this->model->searchQualifiedUsers($context->areaId, $context, $eAssignment->getId()),
-        $context->areaId,
-        $context->access,
-        $context
+
+    $ui->addListEntry(
+      $this->model->searchById($areaKeys, $eAssignment->getId(), $context->access, $context),
+      $context->areaId,
+      $context->access,
+      $context
     );
-  
+
     return null;
   
   }//end public function displayUpdate */

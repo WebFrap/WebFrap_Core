@@ -394,7 +394,7 @@ class AclMgmt_Backpath_Table_Element extends WgtTable
    * @param array $row
    * @return string
    */
-  public function buildAjaxTbody($row  )
+  public function buildAjaxTbody($row)
   {
 
     $objid = $row['wbfsys_security_backpath_rowid'];
@@ -409,50 +409,49 @@ class AclMgmt_Backpath_Table_Element extends WgtTable
       $body = '<htmlArea selector="tr#'.$rowid.'" action="html" ><![CDATA[';
     }
 
-    $body .= '<td valign="top" name="slct['.$objid.']" class="pos" ></td>'.NL;
+    $body .= '<td valign="top" name="slct['.$objid.']" class="pos" >1</td>'.NL;
 
-    $body .= '<td valign="top" >'.
-      (!is_null($row['role_group_name'])?$row['role_group_name']:' ')
-      .'</td>'.NL;
-
-    $body .= '<td valign="top" >'.
-      (!is_null($row['area_key'])?$row['area_key']:' ')
+    $body .= '<td valign="top"  >'
+      .(!is_null($row['target_area_key'])?$row['target_area_key']:' ')
       .'</td>'.NL;
 
     $body .= '<td valign="top"  >'
-        .(!is_null($row['num_assignments'])?$row['num_assignments']:' ')
-        .'</td>'.NL;
+      .(!is_null($row['wbfsys_security_backpath_ref_field'])?$row['wbfsys_security_backpath_ref_field']:' ')
+      .'</td>'.NL;
 
-      $body .= '<td valign="top" style="text-align:right;" >'.$this->selectRights(
-          $row['wbfsys_security_backpath_access_level'],
-          "ar[wbfsys_security_backpath][{$objid}][access_level]"
-        ).'</td>'.NL;
+    $body .= '<td valign="top"  >'
+      .(!is_null($row['wbfsys_security_backpath_groups'])?$row['wbfsys_security_backpath_groups']:' ')
+      .'</td>'.NL;
 
-      $body .= '<td valign="top" style="text-align:right;" >'.$this->selectRights(
-          $row['wbfsys_security_backpath_ref_access_level'],
-          "ar[wbfsys_security_backpath][{$objid}][ref_access_level]"
-        ).'</td>'.NL;
-
-      $body .= '<td valign="top" style="text-align:right;" >'.$this->selectSimpleRights(
-          $row['wbfsys_security_backpath_message_level'],
-          "ar[wbfsys_security_backpath][{$objid}][message_level]"
-        ).'</td>'.NL;
-
-      $body .= '<td valign="top" style="text-align:right;" >'.$this->selectSimpleRights(
-      	$row['wbfsys_security_backpath_priv_message_level'],
-      	"ar[wbfsys_security_backpath][{$objid}][priv_message_level]"
+    $body .= '<td valign="top" style="text-align:right;" >'.$this->selectRights(
+        $row['wbfsys_security_backpath_access_level'],
+        "ar[wbfsys_security_backpath][{$objid}][access_level]"
       ).'</td>'.NL;
 
-      $body .= '<td valign="top" style="text-align:right;" >'.$this->selectSimpleRights(
+    $body .= '<td valign="top" style="text-align:right;" >'.$this->selectRights(
+        $row['wbfsys_security_backpath_ref_access_level'],
+        "ar[wbfsys_security_backpath][{$objid}][ref_access_level]"
+      ).'</td>'.NL;
+
+    $body .= '<td valign="top" style="text-align:right;" >'.$this->selectSimpleRights(
+        $row['wbfsys_security_backpath_message_level'],
+        "ar[wbfsys_security_backpath][{$objid}][message_level]"
+      ).'</td>'.NL;
+
+    $body .= '<td valign="top" style="text-align:right;" >'.$this->selectSimpleRights(
+        $row['wbfsys_security_backpath_priv_message_level'],
+        "ar[wbfsys_security_backpath][{$objid}][priv_message_level]"
+      ).'</td>'.NL;
+
+    $body .= '<td valign="top" style="text-align:right;" >'.$this->selectSimpleRights(
         $row['wbfsys_security_backpath_meta_level'],
         "ar[wbfsys_security_backpath][{$objid}][meta_level]"
       ).'</td>'.NL;
 
     if ($this->enableNav) {
       $navigation = $this->rowMenu(
-      	$objid.'&group_id='.$row['role_group_rowid'],
-        $row,
-        $row['role_group_name']
+        $objid,
+        $row
       );
       $body .= '<td valign="top"  class="nav_split"  >'.$navigation.'</td>'.NL;
     }

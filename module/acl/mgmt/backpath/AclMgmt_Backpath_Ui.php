@@ -173,27 +173,24 @@ WGTJS;
    * @param boolean $insert
    * @return void
    */
-  public function addListEntry($areaId, $access, $params, $insert)
+  public function addListEntry($data, $areaId, $access, $params, $insert)
   {
 
     //$className = $this->domainNode->domainAclMask.'_Qfdu_Treetable_Element';
 
-    $table = new AclMgmt_Qfdu_Group_Treetable_Element
-    (
+    $table = new AclMgmt_Backpath_Table_Element(
       $this->domainNode,
-      'listingQualifiedUsers',
+      'listingBackpathElement',
       $this->view
     );
 
     // den access container dem listenelement übergeben
     $table->setAccess($access);
     $table->setAccessPath($params, $params->aclKey, $params->aclNode);
+    $table->appendMode = false;
+    $table->insertMode = $insert;
 
     $table->areaId = $areaId;
-
-    $assignEntity = $this->model->getEntityWbfsysGroupUsers();
-
-    $data = $this->model->getEntryWbfsysGroupUsers( $params);
 
     $table->setData($data);
 
@@ -201,19 +198,20 @@ WGTJS;
     if ($params->targetId)
       $table->id = $params->targetId;
 
+    // for paging use the default search form, to enshure to keep the order
+    // and to page in search results if there was any search
+    if (!$params->searchFormId)
+      $params->searchFormId = 'wgt-form-table-'.$this->domainNode->domainName.'-acl-backpath-search';
+    
     $table->setPagingId($params->searchFormId);
 
     // add the id to the form
     if (!$params->formId)
-      $params->formId = 'wgt-form-'.$this->domainNode->domainName.'-acl-tgroup-update';
+      $params->formId = 'wgt-form-'.$this->domainNode->domainName.'-backpath-ms';
 
     $table->setSaveForm($params->formId);
 
-    $table->addActions(array('inheritance', 'sep', 'delete'), 'group');
-    $table->addActions(array('delete'), 'user');
-    $table->addActions(array('delete'), 'dset');
-
-    $this->view->setPageFragment('groupUsersEntry', $table->buildAjaxEntry());
+    $this->view->setPageFragment('areaPath', $table->buildAjax());
 
     if ($insert) {
 

@@ -140,18 +140,18 @@ class AclMgmt_Backpath_Controller extends MvcController_Domain
     $domainNode = $this->getDomainNode($request);
 
     // load the default model
-    /* @var $model AclMgmt_Qfdu_Model */
-    $model = $this->loadModel('AclMgmt_Qfdu');
+    /* @var $model AclMgmt_Backpath_Model */
+    $model = $this->loadModel('AclMgmt_Backpath');
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $params);
 
     $areaId = $model->getAreaId();
 
     // this can only be an ajax request, so we can directly load the ajax view
-    $view = $response->loadView
-    (
+    /* @var $view AclMgmt_Backpath_Ajax_View */
+    $view = $response->loadView(
       $domainNode->domainName.'-mgmt-acl',
-      'AclMgmt_Qfdu',
+      'AclMgmt_Backpath',
       'displaySearch'
     );
 

@@ -64,6 +64,40 @@ class AclMgmt_Backpath_Table_Query extends LibSqlQuery
     $this->calcQuery = $criteria->count('count(DISTINCT wbfsys_security_backpath.'.Db::PK.') as '.Db::Q_SIZE);
 
   }//end public function fetch */
+  
+  /** build criteria, interpret conditions and load data
+   *
+   * @param int $areaId
+   * @param string/array $condition conditions for the query
+   * @param TFlag $params
+   *
+   * @return void
+   *
+   * @throws LibDb_Exception
+   */
+  public function fetchById($areaId, $pathId, $condition = null, $params = null)
+  {
+  
+    if (!$params)
+      $params = new TFlag();
+  
+    $this->sourceSize = null;
+    $db = $this->getDb();
+  
+    $criteria = $db->orm->newCriteria();
+    $this->setCols($criteria);
+    $this->setTables($criteria);
+    $this->appendConditions($criteria, $condition, $params);
+    $this->checkLimitAndOrder($criteria, $params);
+  
+    $criteria->where("wbfsys_security_backpath.id_area = {$areaId}");
+    $criteria->where("wbfsys_security_backpath.rowid = {$pathId}");
+  
+    // Run Query und save the result
+    $this->result = $db->orm->select($criteria);
+    $this->calcQuery = $criteria->count('count(DISTINCT wbfsys_security_backpath.'.Db::PK.') as '.Db::Q_SIZE);
+  
+  }//end public function fetch */
 
  /** inject the requested cols in the criteria
    *
