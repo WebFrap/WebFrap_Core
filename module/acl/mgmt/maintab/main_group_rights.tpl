@@ -160,7 +160,7 @@
 
         <div class="wgt-panel" >
         
-
+            <div class="left" >
             <!-- Group Input -->
             <span><?php echo $I18N->l( 'Group', 'wbf.label' ); ?></span>
             <input
@@ -193,21 +193,22 @@
             </button>
             
             <!-- Area Input -->
-            <span><?php echo $I18N->l( 'Area', 'wbf.label' ); ?></span>
-            <input
-              id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-id_area"
-              class="asgd-wgt-form-<?php echo $VAR->domain->aclDomainKey ?>-acl-append"
-              name="security_access[id_area]"
-            />
-            <button
-              id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-id_area-append"
-              class="wgt-button append wcm wcm_ui_tip"
-              title="To assign a new role, just type the name of the role in the autocomplete field left to this infobox."
-              onclick="$R.get('modal.php?c=Wbfsys.RoleGroup.selection&amp;target=<?php echo $VAR->searchFormId ?>');return false;"
-            >
-              <i class="icon-search" ></i>
-            </button>
-
+            &nbsp;&nbsp;
+            <span><?php echo $I18N->l( 'Area', 'wbf.label' ); ?></span>&nbsp;
+            
+            </div>
+            <div class="inline" >
+              <select
+                id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-id_area"
+                class="wcm wcm_widget_selectbox asgd-wgt-form-<?php echo $VAR->domain->aclDomainKey ?>-acl-append"
+                name="area" >
+                <?php foreach( $VAR->domain->domainAclAreas as $areaKey ){
+                  echo '<option value="'.$areaKey.'" >'.$areaKey.'</option>'.NL;
+                } ?>
+              </select>
+            </div>
+            
+            <div class="inline" >
             <!-- area & button -->
 
             <input
@@ -218,11 +219,13 @@
               value="<?php echo $VAR->entityWbfsysSecurityArea?>"
               class="asgd-wgt-form-<?php echo $VAR->domain->aclDomainKey ?>-acl-append "
             />
-
+            &nbsp;&nbsp;
             <button
               class="wgt-button"
               id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-acl-form-append"  >
               <i class="icon-link" ></i> Create Relation</button>
+              
+            </div>
 
           </div><!-- end end panel -->
 

@@ -329,12 +329,12 @@ class AclMgmt_Model extends Model
     $view = $this->getView();
     $response = $this->getResponse();
     $orm = $this->getOrm();
+    $acl = $this->getAcl();
 
     $entityWbfsysSecurityAccess = new WbfsysSecurityAccess_Entity;
 
     $fields = array(
       'id_group',
-      'id_area',
       'access_level',
       'date_start',
       'date_end',
@@ -346,6 +346,9 @@ class AclMgmt_Model extends Model
       $fields,
       array('id_group')
     );
+    
+    $area = $httpRequest->data('area',Validator::CKEY);
+    $entityWbfsysSecurityAccess->id_area = $acl->resources->getAreaId($area);
 
     $entityWbfsysSecurityAccess->partial = 0;
 
@@ -377,16 +380,13 @@ class AclMgmt_Model extends Model
 
     try {
       if (!$entityWbfsysSecurityAccess = $this->getRegisterd('entityWbfsysSecurityAccess')) {
-        return new Error
-        (
-          $response->i18n->l
-          (
+        return new Error(
+          $response->i18n->l(
             'Sorry, something went wrong!',
             'wbf.message'
           ),
           Response::INTERNAL_ERROR,
-          $response->i18n->l
-          (
+          $response->i18n->l(
             'The expected Entity with the key {@key@} was not in the registry',
             'wbf.message',
             array('key' => 'entityWbfsysSecurityAccess')
@@ -401,11 +401,10 @@ class AclMgmt_Model extends Model
       $entityWbfsysSecurityAccess->meta_level = Acl::DENIED;
 
       if (!$orm->insert($entityWbfsysSecurityAccess)) {
+        
         $entityText = $entityWbfsysSecurityAccess->text();
-        $response->addError
-        (
-          $response->i18n->l
-          (
+        $response->addError(
+          $response->i18n->l(
             'Failed to updated {@key@}',
             'wbf.message',
             array('key'=>$entityText)

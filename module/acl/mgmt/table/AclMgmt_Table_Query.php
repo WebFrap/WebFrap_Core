@@ -65,8 +65,8 @@ class AclMgmt_Table_Query extends LibSqlQuery
     $this->appendConditions($criteria, $condition, $params  );
     $this->checkLimitAndOrder($criteria, $params);
 
-    $keys = "UPPER('".implode("'), UPPER('",$areaKeys)."')";
-    $criteria->where("upper(area.access_key) IN({$keys}) and security_access.partial = 0");
+    $keys = "'".implode("', '",$areaKeys)."'";
+    $criteria->where("area.access_key IN({$keys}) and security_access.partial = 0");
 
     // Run Query und save the result
     $this->result = $db->orm->select($criteria);
