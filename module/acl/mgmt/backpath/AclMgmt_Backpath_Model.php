@@ -344,6 +344,53 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
     }
   
   }//end public function insert */
+  
+  /**
+   * Create thew new Backpath
+   *
+   * @param TFlag $params named parameters
+   * @return boolean
+   */
+  public function delete($delId, $params)
+  {
+  
+    // erst mal die nötigen resourcen laden
+    $db = $this->getDb();
+    $orm = $db->getOrm();
+    $response = $this->getResponse();
+    
+    try {
+  
+      if (!$orm->delete('WbfsysSecurityBackpath',$delId )) {
+        $response->addError(
+          $response->i18n->l(
+            'Failed to delete the path',
+            'wbf.message'
+          )
+        );
+  
+      } else {
+  
+        $response->addMessage(
+          $response->i18n->l(
+            'Successfully deleted the path',
+            'wbf.message'
+          )
+        );
+        $this->protocol(
+          'Deleted a backpath',
+          'delete',
+          $delId
+        );
+  
+      }
+  
+    } catch (LibDb_Exception $e) {
+  
+      return new Error($e, Response::INTERNAL_ERROR);
+    }
+  
+  }//end public function insert */
 
 /*//////////////////////////////////////////////////////////////////////////////
 // Search Methodes

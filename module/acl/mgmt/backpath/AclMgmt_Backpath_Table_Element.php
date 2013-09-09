@@ -124,6 +124,8 @@ class AclMgmt_Backpath_Table_Element extends WgtTable
       ),
 
     );
+    
+    $this->actions = array('edit','sep','delete');
 
   }//end public function loadUrl */
 

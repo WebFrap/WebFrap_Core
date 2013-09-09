@@ -161,18 +161,12 @@ class AclMgmt_Backpath_Ajax_View extends LibTemplateAjaxView
   public function displayDelete($delId, $context)
   {
   
-    $itemId = 'wgt-table-'.$this->domainNode->domainName.'-acl-tgroup';
-  
-    $groupRowId = "{$itemId}_row_{$groupId}";
-  
+    $rowId = 'wgt-table-'.$this->domainNode->domainName.'-backpath_row_'.$delId;
+
     $code = <<<JSCODE
   
-    \$S('#{$groupRowId}').fadeOut(100,function() {
-      \$S('#{$groupRowId}').remove();
-      \$S('.c-{$groupRowId}').each(function() {
-        \$S('.c-'+\$S(this).attr('id')).remove();
-      });
-      \$S('.c-{$groupRowId}').remove();
+    \$S('#{$rowId}').fadeOut(100,function() {
+      \$S('#{$rowId}').remove();
     });
   
 JSCODE;
