@@ -105,6 +105,7 @@ class AclMgmt_Table_Query_Postgresql extends LibSqlQuery
       'role_group.name as "role_group_name"',
       'role_group.rowid as "role_group_rowid"',
       'count(distinct group_users.id_user) as num_assignments',
+      'area_type.m_order'
     );
 
     $criteria->select($cols);
@@ -160,6 +161,15 @@ class AclMgmt_Table_Query_Postgresql extends LibSqlQuery
       'rowid',
       null,
       'area'
+    );
+
+    $criteria->leftJoinOn (
+      'area',
+      'id_type',
+      'wbfsys_security_area_type',
+      'rowid',
+      null,
+      'area_type'
     );
 
   }//end public function setTables */
@@ -221,11 +231,10 @@ class AclMgmt_Table_Query_Postgresql extends LibSqlQuery
   {
 
     // check if there is a given order
-    if ($params->order) {
-      $criteria->orderBy($params->order);
-    } else { // if not use the default
-      $criteria->orderBy('role_group.name');
-    }
+    $criteria->orderBy('area_type.m_order asc');
+    $criteria->orderBy('role_group.name');
+    $criteria->groupBy('area_type.m_order');
+    $criteria->groupBy('role_group.name');
 
     // Check the offset
     if ($params->start) {

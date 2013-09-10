@@ -117,7 +117,15 @@ class AclMgmt_Table_Element extends WgtTable
         'icon-cogs',
         '',
         'wbf.inheritance',
-        Acl::ADMIN
+        Acl::ADMIN,
+        Wgt::BUTTON_CHECK => function($row, $id, $value, $access){
+          
+          if ('mod-' == substr($row['area_key'], 0, 4)) {
+            return false;
+          }
+          return true;
+          
+        }
       ),
       'sep' => array(
         Wgt::ACTION_SEP

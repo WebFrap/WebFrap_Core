@@ -116,7 +116,7 @@ class AclMgmt_Controller extends MvcController_Domain
     );
     $view->domainNode = $domainNode;
 
-    $view->setModel($model  );
+    $view->setModel($model);
     $view->displayListing($params);
 
   }//end public function service_listing */
