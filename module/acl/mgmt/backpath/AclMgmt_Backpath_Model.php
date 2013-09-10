@@ -194,6 +194,14 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
 
     // aus sicherheitsgründen setzen wir die hier im code
     $entityWbfsysSecurityBackpath->id_area = $this->getAreaId();
+    
+    // setzen des keys, ist zwar denormalisiert macht es aber einfacher
+    $entityWbfsysSecurityBackpath->target_area_key = $orm->getField(
+      'WbfsysSecurityArea', 
+      $entityWbfsysSecurityBackpath->id_target_area, 
+      'access_key'
+    );
+    
     $this->register('entityWbfsysSecurityBackpath', $entityWbfsysSecurityBackpath);
   
     if ($response->hasErrors())
