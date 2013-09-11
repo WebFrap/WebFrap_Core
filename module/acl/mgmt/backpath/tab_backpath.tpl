@@ -87,7 +87,15 @@ $crudForm->form();
         'path,groups',
         null,
         array(),
-        array('size'=>'large','entityMode'=>true)
+        array('size'=>'large')
+      );
+    ?>
+    <?php $crudForm->textarea(
+        'Set Groups',
+        'path,set_groups',
+        null,
+        array(),
+        array('size'=>'large')
       );
     ?>
   </div>

@@ -118,6 +118,7 @@ class AclMgmt_Backpath_Table_Query extends LibSqlQuery
       'wbfsys_security_backpath.rowid as "wbfsys_security_backpath_rowid"',
       'wbfsys_security_backpath.ref_field as "wbfsys_security_backpath_ref_field"',
       'wbfsys_security_backpath.groups as "wbfsys_security_backpath_groups"',
+      'wbfsys_security_backpath.set_groups as "wbfsys_security_backpath_set_groups"',
       'wbfsys_security_backpath.access_level as "wbfsys_security_backpath_access_level"',
       'wbfsys_security_backpath.ref_access_level as "wbfsys_security_backpath_ref_access_level"',
       'wbfsys_security_backpath.meta_level as "wbfsys_security_backpath_meta_level"',

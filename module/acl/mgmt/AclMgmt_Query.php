@@ -103,6 +103,7 @@ SQL;
     LOWER(wbfsys_security_area.access_key) like LOWER('{$db->addSlashes($key)}%')
     AND NOT rowid IN( SELECT id_group FROM wbfsys_security_area WHERE wbfsys_security_area.rowid = {$areaId} )
     AND wbfsys_security_area_type.access_key IN('module','module_category','mgmt')
+  ORDER BY wbfsys_security_area.access_key asc
   LIMIT 12;
   
 SQL;

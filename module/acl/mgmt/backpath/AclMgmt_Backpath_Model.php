@@ -174,6 +174,7 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
 
     $httpRequest = $this->getRequest();
     $orm = $this->getOrm();
+    $acl = $this->getAcl();
     $response = $this->getResponse();
 
     $entityWbfsysSecurityBackpath = new WbfsysSecurityBackpath_Entity;
@@ -183,6 +184,7 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
       'id_target_area',
       'ref_field',
       'groups',
+      'set_groups',
     );
 
     $httpRequest->validateInsert(
@@ -201,6 +203,15 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
       $entityWbfsysSecurityBackpath->id_target_area, 
       'access_key'
     );
+    
+    $levels = $acl->getRoleAreaLevels(
+      $entityWbfsysSecurityBackpath->target_area_key, 
+      explode(',', $entityWbfsysSecurityBackpath->groups)
+    );
+    
+    foreach ($levels as $lKey => $lValue) {
+      $entityWbfsysSecurityBackpath->$lKey = $lValue;
+    }
     
     $this->register('entityWbfsysSecurityBackpath', $entityWbfsysSecurityBackpath);
   
@@ -230,6 +241,7 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
       'id_target_area',
       'ref_field',
       'groups',
+      'set_groups'
     );
   
     $httpRequest->validateUpdate(

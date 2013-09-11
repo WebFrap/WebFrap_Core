@@ -216,6 +216,10 @@ class AclMgmt_Backpath_Table_Element extends WgtTable
       '.$this->view->i18n->l('Groups','wbf.label').'
     </th>'.NL;
 
+    $html .= '<th style="width:250px" >
+      '.$this->view->i18n->l('Set Groups','wbf.label').'
+    </th>'.NL;
+
     $html .= '<th style="width:100px" >
       '.$this->view->i18n->l('Access','wbf.label').'
     </th>'.NL;
@@ -268,16 +272,20 @@ class AclMgmt_Backpath_Table_Element extends WgtTable
       $body .= '<tr class="wcm wcm_ui_highlight row'.$num.' node-'.$objid.'" id="'.$rowid.'" >'.NL;
       $body .= '<td valign="top" class="pos" name="slct['.$objid.']" >'.$pos.'</td>'.NL;
 
-      $body .= '<td valign="top"  >'
+      $body .= '<td valign="top" >'
         .(!is_null($row['target_area_key'])?$row['target_area_key']:' ')
         .'</td>'.NL;
 
-      $body .= '<td valign="top"  >'
+      $body .= '<td valign="top" >'
         .(!is_null($row['wbfsys_security_backpath_ref_field'])?$row['wbfsys_security_backpath_ref_field']:' ')
         .'</td>'.NL;
 
-      $body .= '<td valign="top"  >'
+      $body .= '<td valign="top" >'
         .(!is_null($row['wbfsys_security_backpath_groups'])?$row['wbfsys_security_backpath_groups']:' ')
+        .'</td>'.NL;
+
+      $body .= '<td valign="top" >'
+        .(!is_null($row['wbfsys_security_backpath_set_groups'])?$row['wbfsys_security_backpath_set_groups']:' ')
         .'</td>'.NL;
 
       $body .= '<td valign="top" style="text-align:right;" >'.$this->selectRights(
@@ -422,6 +430,10 @@ class AclMgmt_Backpath_Table_Element extends WgtTable
     $body .= '<td valign="top"  >'
       .(!is_null($row['wbfsys_security_backpath_groups'])?$row['wbfsys_security_backpath_groups']:' ')
       .'</td>'.NL;
+
+      $body .= '<td valign="top" >'
+        .(!is_null($row['wbfsys_security_backpath_set_groups'])?$row['wbfsys_security_backpath_set_groups']:' ')
+        .'</td>'.NL;
 
     $body .= '<td valign="top" style="text-align:right;" >'.$this->selectRights(
         $row['wbfsys_security_backpath_access_level'],
