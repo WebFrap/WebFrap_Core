@@ -73,7 +73,7 @@
           		to either one or more Projects. The person will then only have edit rights for the assigned Projects.
           	</p>
           </div>
-        
+
           <h3><a
             tab="backpath"
             wgt_src="ajax.php?c=Acl.Mgmt_Backpath.openTab&area_id=<?php
@@ -159,7 +159,7 @@
           action="ajax.php?c=Acl.Mgmt.appendGroup&dkey=<?php echo $VAR->domain->domainName ?>" ></form>
 
         <div class="wgt-panel" >
-        
+
             <div class="left" >
             <!-- Group Input -->
             <span><?php echo $I18N->l( 'Group', 'wbf.label' ); ?></span>
@@ -191,11 +191,11 @@
             >
               <i class="icon-search" ></i>
             </button>
-            
+
             <!-- Area Input -->
             &nbsp;&nbsp;
             <span><?php echo $I18N->l( 'Area', 'wbf.label' ); ?></span>&nbsp;
-            
+
             </div>
             <div class="inline" >
               <select
@@ -207,7 +207,7 @@
                 } ?>
               </select>
             </div>
-            
+
             <div class="inline" >
             <!-- area & button -->
 
@@ -224,7 +224,7 @@
               class="wgt-button"
               id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-acl-form-append"  >
               <i class="icon-link" ></i> Create Relation</button>
-              
+
             </div>
 
           </div><!-- end end panel -->
