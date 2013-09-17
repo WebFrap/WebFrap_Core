@@ -92,8 +92,7 @@ SQL;
     $query->checkLimitAndOrder($criteria, $params);
     $query->appendFilter($criteria, $condition, $params);
 
-    $criteria->join
-    (
+    $criteria->join(
       " {$joinType} JOIN
         {$acl->sourceRelation} as acls
         ON
