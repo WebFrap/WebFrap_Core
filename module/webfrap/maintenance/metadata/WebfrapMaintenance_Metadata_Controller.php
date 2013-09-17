@@ -44,20 +44,16 @@ class WebfrapMaintenance_Metadata_Controller extends Controller
    *
    * @var array
    */
-  protected $options = array
-  (
-    'stats' => array
-    (
+  protected $options = array(
+    'stats' => array(
       'method' => array('GET'),
       'views' => array('modal')
     ),
-    'cleansource' => array
-    (
+    'cleansource' => array(
       'method' => array('DELETE'),
       'views' => array('modal')
     ),
-    'cleanall' => array
-    (
+    'cleanall' => array(
       'method' => array('DELETE'),
       'views' => array('modal')
     )
@@ -76,8 +72,7 @@ class WebfrapMaintenance_Metadata_Controller extends Controller
   {
 
     /* @var $view WebfrapMaintenance_Metadata_Modal_View  */
-    $view = $response->loadView
-    (
+    $view = $response->loadView(
       'webfrap-maintenance-metadata-stats',
       'WebfrapMaintenance_Metadata' ,
       'displayStats'
@@ -105,8 +100,7 @@ class WebfrapMaintenance_Metadata_Controller extends Controller
     $response->addMessage("Cleaned Metadata");
 
     /* @var $view WebfrapMaintenance_Metadata_Log_Modal_View  */
-    $view = $response->loadView
-    (
+    $view = $response->loadView(
       'webfrap-maintenance-metadata-cleanlog',
       'WebfrapMaintenance_Metadata_Log' ,
       'displayLog'

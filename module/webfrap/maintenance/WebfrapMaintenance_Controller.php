@@ -46,8 +46,7 @@ class WebfrapMaintenance_Controller extends Controller
    */
   protected $options = array
   (
-    'menu' => array
-    (
+    'menu' => array(
       'method' => array('GET'),
       'views' => array('maintab')
     ),
