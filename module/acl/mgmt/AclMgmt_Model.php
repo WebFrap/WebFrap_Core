@@ -764,8 +764,8 @@ class AclMgmt_Model extends Model
 
     $user = $this->getUser();
 
-    $access = new AclMgmt_Access_Container(null, null, $this, $domainNode);
-    $access->load($user->getProfileName(), $params);
+    $access = new AclMgmt_Access_Container($this, $domainNode);
+    $access->init($params);
 
     // ok wenn er nichtmal lesen darf, dann ist hier direkt schluss
     if (!$access->admin) {

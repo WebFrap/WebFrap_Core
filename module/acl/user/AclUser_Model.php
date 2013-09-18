@@ -729,20 +729,17 @@ class AclUser_Model extends Model
 
     $user = $this->getUser();
 
-    $access = new AclMgmt_Access_Container(null, null, $this, $domainNode);
-    $access->load($user->getProfileName(), $params);
+    $access = new AclMgmt_Access_Container($this, $domainNode);
+    $access->init($params);
 
     // ok wenn er nichtmal lesen darf, dann ist hier direkt schluss
     if (!$access->admin) {
       // ausgabe einer fehlerseite und adieu
-      throw new InvalidRequest_Exception
-      (
-        $response->i18n->l
-        (
+      throw new InvalidRequest_Exception(
+        $response->i18n->l(
           'You have no permission for administration in {@resource@}',
           'wbf.message',
-          array
-          (
+          array(
             'resource' => $response->i18n->l($domainNode->label, $domainNode->domainI18n.'.label')
           )
         ),
@@ -779,11 +776,9 @@ class AclUser_Model extends Model
       $partialEntity->id_group = $entry['security_access_id_group'];
       $partialEntity->partial = 0;
       $partialEntity->access_level = $entry['security_access_access_level'];
-      $orm->insertIfNotExists
-      (
+      $orm->insertIfNotExists(
         $partialEntity,
-        array
-        (
+        array(
           'id_area',
           'id_group',
           'partial'
@@ -807,11 +802,9 @@ class AclUser_Model extends Model
       $partUser->id_area = $entityAreaId;
       $partUser->partial = 0;
 
-      $orm->insertIfNotExists
-      (
+      $orm->insertIfNotExists(
         $partUser,
-        array
-        (
+        array(
           'id_area',
           'id_group',
           'id_user',
@@ -847,11 +840,9 @@ class AclUser_Model extends Model
       $partialEntity->id_group = $entry['security_access_id_group'];
       $partialEntity->partial = 0;
       $partialEntity->access_level = $entry['security_access_access_level'];
-      $orm->insertIfNotExists
-      (
+      $orm->insertIfNotExists(
         $partialEntity,
-        array
-        (
+        array(
           'id_area',
           'id_group',
           'partial'
@@ -875,11 +866,9 @@ class AclUser_Model extends Model
       $partUser->id_area = $areaId;
       $partUser->partial = 0;
 
-      $orm->insertIfNotExists
-      (
+      $orm->insertIfNotExists(
         $partUser,
-        array
-        (
+        array(
           'id_area',
           'id_group',
           'id_user',

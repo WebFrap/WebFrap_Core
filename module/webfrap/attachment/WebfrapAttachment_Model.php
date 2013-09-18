@@ -797,7 +797,7 @@ SQL;
        $refId = $entity->getId();
      }
 
-     $this->access = new $className();
+     $this->access = new $className($this);
      $this->access->loadDefault($context, $refId);
 
      return $this->access;

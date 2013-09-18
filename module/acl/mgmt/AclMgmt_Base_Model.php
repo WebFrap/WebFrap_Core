@@ -153,20 +153,17 @@ class AclMgmt_Base_Model extends Model
 
     $user = $this->getUser();
 
-    $access = new AclMgmt_Access_Container(null, null, $this, $domainNode);
-    $access->load($user->getProfileName(), $params);
+    $access = new AclMgmt_Access_Container($this, $domainNode);
+    $access->init($params);
 
     // ok wenn er nichtmal lesen darf, dann ist hier direkt schluss
     if (!$access->admin) {
       // ausgabe einer fehlerseite und adieu
-      throw new InvalidRequest_Exception
-      (
-        $response->i18n->l
-        (
+      throw new InvalidRequest_Exception(
+        $response->i18n->l(
           'You have no permission for administration in {@resource@}',
           'wbf.message',
-          array
-          (
+          array(
             'resource' => $response->i18n->l($domainNode->label, $domainNode->domainI18n.'.label')
           )
         ),
