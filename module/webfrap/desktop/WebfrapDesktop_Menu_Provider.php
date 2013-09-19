@@ -71,7 +71,8 @@ SELECT
   label,
   icon,
   http_url,
-  m_parent
+  m_parent,
+  type
 FROM
   wbfsys_menu_entry
 JOIN
@@ -85,7 +86,7 @@ SQL;
     $db->select($sql)->getAll();
 
 
-  }//end public function getProfileMenu */
+  }//end public function getMainMenu */
 
 } // end class WebfrapDesktop_Menu_Provider
 
