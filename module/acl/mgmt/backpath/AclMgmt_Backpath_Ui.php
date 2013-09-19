@@ -126,7 +126,19 @@ class AclMgmt_Backpath_Ui extends MvcUi
       );
       $tabPanel->searchKey = $this->domainNode->domainName.'_acl_backpath';
       
-      
+
+      $tabPanel->addButton (
+        'save',
+        array (
+          Wgt::ACTION_JS,
+          'Save',
+          "\$S('#{$listObj->id}-table').grid('save');",
+          'icon-save',
+          'wgt-button',
+          'wbf.label'
+        )
+      );
+     
       
     }
 
