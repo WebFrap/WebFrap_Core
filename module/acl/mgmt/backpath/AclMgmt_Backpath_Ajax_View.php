@@ -139,7 +139,8 @@ class AclMgmt_Backpath_Ajax_View extends LibTemplateAjaxView
       $this->model->searchById($areaKeys, $eAssignment->getId(), $context->access, $context),
       $context->areaId,
       $context->access,
-      $context
+      $context,
+      false
     );
 
     return null;

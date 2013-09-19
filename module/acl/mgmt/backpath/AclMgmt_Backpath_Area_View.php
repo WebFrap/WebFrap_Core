@@ -102,6 +102,40 @@ class AclMgmt_Backpath_Area_View extends LibTemplateAreaView
     
   
   }//end public function displayTab */
+  
+  /**
+   * display the Quallified users tab
+   *
+   * @param int $areaId
+   * @param TFlag $params
+   *
+   * @return boolean
+   */
+  public function displayEditForm($areaId, $params)
+  {
+
+  
+    // add the id to the form
+    $params->formId = 'wgt-form-'.$this->domainNode->aclDomainKey.'-acl-update';
+  
+    // create the form action
+    $params->formActionCrud = 'ajax.php?c=Acl.Mgmt_Backpath.save&dkey='.$this->domainNode->domainName;
+    $params->formIdCrud = 'wgt-form-'.$this->domainNode->aclDomainKey.'-backpath-crud';
+  
+    // append form actions
+    $this->setFormData($params->formActionCrud, $params->formIdCrud, $params, 'Crud');
+  
+    // set the path to the template
+    $this->setTemplate('acl/mgmt/backpath/area_crud_form', true);
+  
+    $this->addVar('areaId', $areaId);
+    $this->addVar('domain', $this->domainNode);
+    
+    $this->addVar('entity', $this->model->getEntityWbfsysSecurityBackpath());
+  
+  
+  
+  }//end public function displayTab */
 
 
 } // end class AclMgmt_Backpath_Area_View */

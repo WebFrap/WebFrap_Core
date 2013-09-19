@@ -71,7 +71,7 @@ class AclMgmt_Path_Maintab_Menu extends WgtDropmenu
       class="wcm wcm_control_dropmenu wgt-button"
       tabindex="-1"
       id="{$this->id}-control"
-      wgt_drop_box="{$this->id}"  ><i class="icon-reorder" ></i> {$view->i18n->l('Menu','wbf.label')}</button>
+      wgt_drop_box="{$this->id}"  ><i class="icon-reorder" ></i> {$view->i18n->l('Menu','wbf.label')} <i class="icon-angle-down" ></i></button>
       <var id="{$this->id}-control-cfg-dropmenu"  >{"triggerEvent":"click"}</var>
   </div>
 

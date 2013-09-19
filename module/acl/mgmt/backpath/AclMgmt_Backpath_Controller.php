@@ -186,17 +186,23 @@ class AclMgmt_Backpath_Controller extends MvcController_Domain
     $model->domainNode = $domainNode;
     $model->checkAccess($domainNode, $params);
     
+    $model->getEntityWbfsysSecurityBackpath($pathId);
+    
+    $areaId = $model->getAreaId();
+    
     /* @var $view AclMgmt_Backpath_Ajax_View */
     $view = $response->loadView(
       $domainNode->domainName.'-backpath',
       'AclMgmt_Backpath',
-      'displayEdit',
+      'displayEditForm',
       View::AREA
     );
     $view->setModel($model);
     $view->domainNode = $domainNode;
+    
+    $view->setPosition('#wgt-box-'.$domainNode->aclDomainKey.'-backpath_crudform');
   
-    $view->displayEdit($params);
+    $view->displayEditForm($areaId,$params);
   
   }//end public function service_edit */
 
@@ -213,7 +219,7 @@ class AclMgmt_Backpath_Controller extends MvcController_Domain
     $params = $this->getCrudFlags($request);
     $domainNode = $this->getDomainNode($request);
     
-    $pathId = $request->param('objid',Validator::EID);
+    $pathId = $request->data('objid',Validator::EID);
 
     /* @var $model AclMgmt_Backpath_Model */
     $model = $this->loadModel('AclMgmt_Backpath');
@@ -233,7 +239,7 @@ class AclMgmt_Backpath_Controller extends MvcController_Domain
       // fetch the data from the http request and load it in the model registry
       // if fails stop here
       /* @throws InvalidRequest_Exception */
-      $model->fetchUpdateData($params);
+      $model->fetchUpdateData($pathId, $params);
       
       $model->update($params);
       $pathEntity = $model->getEntityWbfsysSecurityBackpath();

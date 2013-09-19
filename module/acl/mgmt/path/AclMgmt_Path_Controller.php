@@ -184,8 +184,7 @@ class AclMgmt_Path_Controller extends ControllerCrud
     $model->checkAccess($domainNode, $params);
 
     if (!$model->fetchPathInput($objid)) {
-      throw new InvalidRequest_Exception
-      (
+      throw new InvalidRequest_Exception(
         'Not found',
         Response::NOT_FOUND
       );

@@ -104,7 +104,7 @@ class AclMgmt_Backpath_Table_Element extends WgtTable
       'edit' => array(
         Wgt::ACTION_BUTTON_GET,
         'Edit',
-        'index.php?c=Acl.Mgmt_Backpath.edit&dkey='.$this->domainNode->domainName.'&amp;objid=',
+        'ajax.php?c=Acl.Mgmt_Backpath.edit&dkey='.$this->domainNode->domainName.'&amp;objid=',
         'icon-edit',
         '',
         'wbf.label',
@@ -113,7 +113,7 @@ class AclMgmt_Backpath_Table_Element extends WgtTable
       'delete' => array(
         Wgt::ACTION_BUTTON_DELETE,
         'Delete',
-        'index.php?c=Acl.Mgmt_Backpath.delete&dkey='.$this->domainNode->domainName.'&amp;objid=',
+        'ajax.php?c=Acl.Mgmt_Backpath.delete&dkey='.$this->domainNode->domainName.'&amp;objid=',
         'icon-remove-sign',
         '',
         'wbf.label',

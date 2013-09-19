@@ -51,11 +51,11 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
       if (!is_null($objid)) {
         $orm = $this->getOrm();
 
-        if (!$entityWbfsysSecurityBackpath = $orm->get('WbfsysGroupUsers', $objid)) {
+        if (!$entityWbfsysSecurityBackpath = $orm->get('WbfsysSecurityBackpath', $objid)) {
           $response->addError(
             $this->i18n->l(
-              'There is no wbfsyssecurityarea with this id '.$objid,
-              'wbfsys.security_area.message'
+              'There is no backpath with this id '.$objid,
+              'wbfsys.security_backpath.message'
             )
           );
 
@@ -72,11 +72,11 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
     } elseif ($objid && $objid != $entityWbfsysSecurityBackpath->getId()) {
       $orm = $this->getOrm();
 
-      if (!$entityWbfsysSecurityBackpath = $orm->get('WbfsysGroupUsers', $objid)) {
+      if (!$entityWbfsysSecurityBackpath = $orm->get('WbfsysSecurityBackpath', $objid)) {
         $response->addError(
           $this->i18n->l(
-            'There is no wbfsyssecurityarea with this id '.$objid,
-            'wbfsys.security_area.message'
+            'There is no backpath with this id '.$objid,
+            'wbfsys.security_backpath.message'
           )
         );
 
@@ -228,14 +228,14 @@ class AclMgmt_Backpath_Model extends AclMgmt_Base_Model
    * @param TFlag $params named parameters
    * @return null/Error im Fehlerfall
    */
-  public function fetchUpdateData($params)
+  public function fetchUpdateData($objid,$params)
   {
   
     $httpRequest = $this->getRequest();
     $orm = $this->getOrm();
     $response = $this->getResponse();
   
-    $entityWbfsysSecurityBackpath = $this->getEntityWbfsysSecurityBackpath();
+    $entityWbfsysSecurityBackpath = $this->getEntityWbfsysSecurityBackpath($objid);
   
     $fields = array(
       'id_target_area',

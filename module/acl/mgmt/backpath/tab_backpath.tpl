@@ -6,6 +6,8 @@ $crudForm = new WgtFormBuilder(
   $VAR->formIdCrud,
   'put'
 );
+
+// print the crud form
 $crudForm->form();
 
 ?>
@@ -50,7 +52,7 @@ $crudForm->form();
   <input
     type="hidden"
     id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-backpath-rowid"
-    name="rowid"
+    name="objid"
     value=""
     class="meta asgd-<?php echo $VAR->formIdCrud?>"
   />
