@@ -46,7 +46,8 @@ JOIN
   wbfsys_profile
     ON wbfsys_profile.id_profile_menu = wbfsys_menu_entry.id_menu
 WHERE
-  wbfsys_profile.rowid = {$profileId};
+  wbfsys_profile.rowid = {$profileId}
+order by m_order;
 
 SQL;
 
