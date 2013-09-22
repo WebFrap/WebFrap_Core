@@ -120,10 +120,8 @@ class AclMgmt_Qfdu_Group_Treetable_Element extends WgtTreetable
 
     $this->id = 'wgt-treetable-'.$this->domainNode->domainName.'-acl-tgroup';
 
-    $this->url['group'] = array
-    (
-      'delete' => array
-      (
+    $this->url['group'] = array(
+      'delete' => array(
         Wgt::ACTION_BUTTON_DELETE,
         'Delete',
         'index.php?c=Acl.Mgmt_Qfdu_Group.dropGroupAssignments&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',
@@ -132,8 +130,7 @@ class AclMgmt_Qfdu_Group_Treetable_Element extends WgtTreetable
         'wbf.label',
         Acl::ADMIN
       ),
-      'tree' => array
-      (
+      'tree' => array(
         Wgt::ACTION_BUTTON_GET,
         'Reference ACLs',
         'maintab.php?c=Acl.Mgmt_Tree.showGraph&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',
@@ -142,16 +139,14 @@ class AclMgmt_Qfdu_Group_Treetable_Element extends WgtTreetable
         'wbf.inheritance',
         Acl::ADMIN
       ),
-      'sep' => array
-      (
+      'sep' => array(
         Wgt::ACTION_SEP
       ),
 
     );
     $this->actions['group'] = array('tree', 'sep', 'delete');
 
-    $this->url['user'] = array
-    (
+    $this->url['user'] = array(
       /*
       'delete' => array
       (
@@ -163,8 +158,7 @@ class AclMgmt_Qfdu_Group_Treetable_Element extends WgtTreetable
         'wbf.label',
         Acl::ADMIN
       ),*/
-      'delete' => array
-      (
+      'delete' => array(
         Wgt::ACTION_BUTTON_DELETE,
         'Delete',
         'index.php?c=Acl.Mgmt_Qfdu_Group.dropUserAssignments&amp;vtype=group&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',
@@ -176,10 +170,8 @@ class AclMgmt_Qfdu_Group_Treetable_Element extends WgtTreetable
     );
     $this->actions['user'] = array('delete');
 
-    $this->url['dset'] = array
-    (
-      'delete' => array
-      (
+    $this->url['dset'] = array(
+      'delete' => array(
         Wgt::ACTION_BUTTON_DELETE,
         'Delete',
         'index.php?c=Acl.Mgmt_Qfdu_Group.dropDsetAssignments&amp;vtype=group&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',
@@ -188,8 +180,7 @@ class AclMgmt_Qfdu_Group_Treetable_Element extends WgtTreetable
         'wbf.label',
         Acl::ADMIN
       ),
-      'dset_mask' => array
-      (
+      'dset_mask' => array(
         Wgt::ACTION_BUTTON_GET,
         'Dset Rights',
         'maintab.php?c=Acl.Mgmt_Dset.listing&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',
@@ -509,8 +500,7 @@ class AclMgmt_Qfdu_Group_Treetable_Element extends WgtTreetable
         $body .= '<td colspan="2" ></td>'.NL;
 
 
-        $navigation = $this->rowMenu
-        (
+        $navigation = $this->rowMenu(
           '0&user_id='.$userId.'&group_id='.$groupId,
           $row,
           null,

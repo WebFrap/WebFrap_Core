@@ -10,43 +10,53 @@
   id="<?php echo $VAR->formIdAppend?>"
   action="<?php echo $VAR->formActionAppend?>" ></form>
 
+<input
+  type="text"
+  id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tdset-id_area"
+  name="group_users[id_area]"
+  value="<?php echo $VAR->areaId?>"
+  class="meta asgd-<?php echo $VAR->formIdAppend?>"
+/>
+
 <!-- Assignment Panel -->
 <div class="wgt-panel" style="margin-left:5px;" >
-    <button
-      class="wgt-button"
-      id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-acl-tdset-append"
-      onclick="$R.form('wgt-form-<?php
-        echo $VAR->domain->aclDomainKey ?>-acl-tdset-append');$UI.form.reset('wgt-form-<?php
-        echo $VAR->domain->aclDomainKey ?>-acl-tdset-append');return false;" >
-      <i class="icon-link " ></i> Append
-    </button>
+  <button
+    class="wgt-button"
+    id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-acl-tdset-append"
+    onclick="$R.form('wgt-form-<?php
+      echo $VAR->domain->aclDomainKey ?>-acl-tdset-append');$UI.form.reset('wgt-form-<?php
+      echo $VAR->domain->aclDomainKey ?>-acl-tdset-append');return false;" >
+    <i class="icon-link " ></i> Append
+  </button>
 
-    <button
-      class="wgt-button"
-      id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-acl-tdset-reload"
-      onclick="$R.get('ajax.php?c=Acl.Mgmt_Qfdu.tabUsers&area_id=<?php
-        echo $VAR->areaId ?>&dkey=<?php
-        echo $VAR->domain->domainName ?>&tabid=wgt_tab-<?php
-        echo $VAR->domain->aclDomainKey ?>_acl_listing_tab_<?php
-        echo $VAR->domain->aclDomainKey ?>-acl_qfd_users');return false;" >
-      <i class="icon-refresh" ></i> Reload
-    </button>
+  <button
+    class="wgt-button"
+    id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-acl-tdset-reload"
+    onclick="$R.get('ajax.php?c=Acl.Mgmt_Qfdu.tabUsers&area_id=<?php
+      echo $VAR->areaId ?>&dkey=<?php
+      echo $VAR->domain->domainName ?>&tabid=wgt_tab-<?php
+      echo $VAR->domain->aclDomainKey ?>_acl_listing_tab_<?php
+      echo $VAR->domain->aclDomainKey ?>-acl_qfd_users');return false;" >
+    <i class="icon-refresh" ></i> Reload
+  </button>
 </div>
 
-<div class="wgt-space" style="width:100%" >
+<section class="wgt-content_box form" >
+  <div class="content" >
+    <fieldset>
 
-  <!-- formular -->
-  <div class="left bw61" >
-
+      <div class="left n-cols-2" >
         <!-- <?php echo $VAR->domain->label ?> Entity -->
-        <div class="left"  >
+        <div class="wgt-box input"  >
 
-          <label
-            class="wgt-label"
-            for="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tdset-vid"
-          ><?php echo $VAR->domain->label ?></label>
+          <div class="wgt-label" >
+            <label
+              class="wgt-label"
+              for="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tdset-vid"
+            ><?php echo $VAR->domain->label ?></label>
+          </div>
 
-          <div class="wgt-input medium" >
+          <div class="wgt-input" >
             <input
               type="text"
               id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tdset-vid-tostring"
@@ -68,20 +78,24 @@
               id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tdset-vid-append"
               class="wgt-button append"
               onclick="$R.get('modal.php?c=<?php echo $VAR->domain->domainUrl ?>.selection&input=<?php echo $VAR->domain->aclDomainKey ?>-acl-tdset-vid');return false;"
-            >
+             >
               <i class="icon-search" ></i>
             </button>
-         </div>
+          </div>
+          <div class="wgt-clear tiny" >&nbsp;</div>
+        </div>
 
         <!-- user input -->
-        <div class="left" >
+        <div class="wgt-box input" >
 
-          <label
-            class="wgt-label"
-            for="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tdset-id_user"
-          ><?php echo $I18N->l( 'User', 'wbf.label' ); ?></label>
+          <div class="wgt-label" >
+            <label
+              class="wgt-label"
+              for="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tdset-id_user"
+            ><?php echo $I18N->l( 'User', 'wbf.label' ); ?></label>
+          </div>
 
-          <div class="wgt-input medium" >
+          <div class="wgt-input" >
             <input
               type="text"
               id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tdset-id_user-tostring"
@@ -106,60 +120,54 @@
               <i class="icon-search" ></i>
             </button>
           </div>
+          <div class="wgt-clear tiny" >&nbsp;</div>
         </div>
+      </div>
 
-       </div>
-
-       <div class="inline bw3" >
-
+      <div class="inline n-cols-2" >
 
         <!-- group input -->
-        <div class="left" >
-          <label
-            class="wgt-label"
-            for="<?php echo $ELEMENT->selectboxGroups->id ?>"
-          ><?php echo $I18N->l( 'Group', 'wbf.label' ); ?></label>
+        <div class="wgt-box input" >
+          <div class="wgt-label" >
+            <label
+              class="wgt-label"
+              for="<?php echo $ELEMENT->selectboxGroups->id ?>"
+            ><?php echo $I18N->l( 'Group', 'wbf.label' ); ?></label>
+          </div>
           <div class="wgt-input medium" >
             <?php echo $ELEMENT->selectboxGroups->niceElement() ?>
           </div>
+          <div class="wgt-clear tiny" >&nbsp;</div>
         </div>
 
-         <!-- Assign Full -->
-         <div class="left" >
-           <label
-             class="wgt-label"
-             for="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tdset-flagfull" ><?php echo $I18N->l( 'Assign Full', 'wbf.label') ?></label>
 
-           <div class="wgt-input medium" >
-            <input
-              type="checkbox"
-              class="asgd-<?php echo $VAR->formIdAppend?>"
-              id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tdset-flagfull"
-              name="assign_full"
+        <!-- Assign wgt-box input -->
+        <div class="wgt-box input aligned" >
+
+         <div class="wgt-input medium checkbox" >
+          <input
+            type="checkbox"
+            class="asgd-<?php echo $VAR->formIdAppend?>"
+            id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tdset-flagfull"
+            name="assign_full"
             />
           </div>
-         </div>
-
-       </div>
-
-
-       <!-- buttons -->
-       <div class="left" >
-
-        <input
-          type="text"
-          id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tdset-id_area"
-          name="group_users[id_area]"
-          value="<?php echo $VAR->areaId?>"
-          class="meta asgd-<?php echo $VAR->formIdAppend?>"
-        />
+          <div class="wgt-label" >
+            <label
+              class="wgt-label"
+              for="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tdset-flagfull"
+            ><?php echo $I18N->l( 'Assign Full', 'wbf.label') ?></label>
+          </div>
+          <div class="wgt-clear tiny" >&nbsp;</div>
+        </div>
 
       </div>
 
-      <div class="wgt-clear medium" >&nbsp;</div>
+    </fieldset>
   </div>
+</section>
 
-</div>
+<div class="wgt-clear small" >&nbsp;</div>
 
 <div class="left" style="width:100%" >
 
