@@ -48,128 +48,127 @@
   <div class="content" >
     <fieldset>
       <div class="left n-cols-2" >
+
+        <!-- user input -->
+        <div class="wgt-box input" >
+
+          <div class="wgt-label" >
+            <label
+              class="wgt-label"
+              for="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tuser-id_user"
+            ><?php echo $I18N->l( 'User', 'wbf.label' ); ?></label>
+          </div>
+
+          <div class="wgt-input" >
+            <input
+              type="text"
+              id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tuser-id_user-tostring"
+              name="key"
+              title="Just type in the namen of the user, or klick on search for an extended search"
+              class="medium wcm wcm_ui_autocomplete wgt-ignore wcm_ui_tip"  />
+            <var class="wgt-settings" >{
+                "url":"ajax.php?c=Acl.Mgmt_Qfdu.loadUsers&amp;dkey=<?php echo $VAR->domain->domainName ?>&amp;area_id=<?php
+                  echo $VAR->areaId
+                 ?>&amp;key=",
+                "type":"entity"
+              }</var>
+            <input
+              type="text"
+              id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tuser-id_user"
+              name="group_users[id_user]"
+              class="meta valid_required asgd-<?php echo $VAR->formIdAppend?>"  />
+            <button
+              id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-acl-advanced_search"
+              class="wgt-button append"
+              onclick="$R.get('modal.php?c=Wbfsys.RoleUser.selection&input=<?php echo $VAR->domain->aclDomainKey ?>-acl-tuser-id_user');return false;"    >
+              <i class="icon-search" ></i>
+            </button>
+          </div>
+          <div class="wgt-clear tiny" >&nbsp;</div>
+        </div>
+
+        <!-- <?php echo $VAR->domain->label ?> Entity -->
+        <div class="wgt-box input"  >
+
+          <div class="wgt-label" >
+            <label
+              class="wgt-label"
+              for="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tuser-vid"
+            ><?php echo $VAR->domain->label ?></label>
+          </div>
+
+          <div class="wgt-input medium" >
+            <input
+              type="text"
+              id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tuser-vid-tostring"
+              title="Just type in the namen of the <?php echo $VAR->domain->label ?>, or klick on search for an extended search"
+              name="key"
+              class="medium wcm wcm_ui_autocomplete wgt-ignore wcm_ui_tip"
+            />
+            <var class="wgt-settings" >{
+                "url":"ajax.php?c=Acl.Mgmt_Qfdu.loadEntity&amp;dkey=<?php echo $VAR->domain->domainName ?>&amp;area_id=<?php echo $VAR->areaId ?>&amp;key=",
+                "type":"entity"
+              }</var>
+            <input
+              type="text"
+              id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tuser-vid"
+              name="group_users[vid]"
+              class="meta valid_required asgd-<?php echo $VAR->formIdAppend?>"
+            />
+            <button
+              id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tuser-vid-append"
+              class="wgt-button append"
+              onclick="$R.get('modal.php?c=<?php echo $VAR->domain->domainUrl ?>.selection&input=<?php echo $VAR->domain->aclDomainKey ?>-acl-tuser-vid');return false;"
+            >
+              <i class="icon-search" ></i>
+            </button>
+         </div>
+
+         <div class="wgt-clear tiny" >&nbsp;</div>
+        </div>
+
       </div>
 
       <div class="inline n-cols-2" >
+
+        <div class="wgt-box input" >
+
+            <!-- group input -->
+            <div class="wgt-label" >
+              <label
+                class="wgt-label"
+                for="<?php echo $ELEMENT->selectboxGroups->id ?>"
+              ><?php echo $I18N->l( 'Group', 'wbf.label' ); ?></label>
+            </div>
+            <div class="wgt-input medium" >
+              <?php echo $ELEMENT->selectboxGroups->niceElement() ?>
+            </div>
+           <div class="wgt-clear tiny" >&nbsp;</div>
+        </div>
+
+         <!-- Assign Full -->
+         <div class="wgt-box input" >
+
+           <div class="wgt-label" >
+             <label
+               class="wgt-label"
+               for="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tuser-flagfull" ><?php echo $I18N->l( 'Assign Full', 'wbf.label') ?></label>
+           </div>
+           <div class="wgt-input medium" >
+            <input
+              type="checkbox"
+              class="asgd-<?php echo $VAR->formIdAppend?>"
+              id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tuser-flagfull"
+              name="assign_full"
+            />
+          </div>
+           <div class="wgt-clear tiny" >&nbsp;</div>
+         </div>
+
       </div>
     </fieldset>
   </div>
 </section>
-
-
-  <!-- formular -->
-  <div class="left bw61" >
-
-    <div class="left bw3" >
-
-      <!-- user input -->
-      <div class="left" >
-
-        <label
-          class="wgt-label"
-          for="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tuser-id_user"
-        ><?php echo $I18N->l( 'User', 'wbf.label' ); ?></label>
-
-        <div class="wgt-input medium" >
-          <input
-            type="text"
-            id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tuser-id_user-tostring"
-            name="key"
-            title="Just type in the namen of the user, or klick on search for an extended search"
-            class="medium wcm wcm_ui_autocomplete wgt-ignore wcm_ui_tip"  />
-          <var class="wgt-settings" >{
-              "url":"ajax.php?c=Acl.Mgmt_Qfdu.loadUsers&amp;dkey=<?php echo $VAR->domain->domainName ?>&amp;area_id=<?php
-                echo $VAR->areaId
-               ?>&amp;key=",
-              "type":"entity"
-            }</var>
-          <input
-            type="text"
-            id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tuser-id_user"
-            name="group_users[id_user]"
-            class="meta valid_required asgd-<?php echo $VAR->formIdAppend?>"  />
-          <button
-            id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-acl-advanced_search"
-            class="wgt-button append"
-            onclick="$R.get('modal.php?c=Wbfsys.RoleUser.selection&input=<?php echo $VAR->domain->aclDomainKey ?>-acl-tuser-id_user');return false;"    >
-            <i class="icon-search" ></i>
-          </button>
-        </div>
-
-      </div>
-
-      <!-- <?php echo $VAR->domain->label ?> Entity -->
-      <div class="left"  >
-
-        <label
-          class="wgt-label"
-          for="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tuser-vid"
-        ><?php echo $VAR->domain->label ?></label>
-
-        <div class="wgt-input medium" >
-          <input
-            type="text"
-            id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tuser-vid-tostring"
-            title="Just type in the namen of the <?php echo $VAR->domain->label ?>, or klick on search for an extended search"
-            name="key"
-            class="medium wcm wcm_ui_autocomplete wgt-ignore wcm_ui_tip"
-          />
-          <var class="wgt-settings" >{
-              "url":"ajax.php?c=Acl.Mgmt_Qfdu.loadEntity&amp;dkey=<?php echo $VAR->domain->domainName ?>&amp;area_id=<?php echo $VAR->areaId ?>&amp;key=",
-              "type":"entity"
-            }</var>
-          <input
-            type="text"
-            id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tuser-vid"
-            name="group_users[vid]"
-            class="meta valid_required asgd-<?php echo $VAR->formIdAppend?>"
-          />
-          <button
-            id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tuser-vid-append"
-            class="wgt-button append"
-            onclick="$R.get('modal.php?c=<?php echo $VAR->domain->domainUrl ?>.selection&input=<?php echo $VAR->domain->aclDomainKey ?>-acl-tuser-vid');return false;"
-          >
-            <i class="icon-search" ></i>
-          </button>
-       </div>
-
-     </div>
-
-   </div>
-
-   <div class="inline bw3" >
-
-      <!-- group input -->
-      <div class="left" >
-        <label
-          class="wgt-label"
-          for="<?php echo $ELEMENT->selectboxGroups->id ?>"
-        ><?php echo $I18N->l( 'Group', 'wbf.label' ); ?></label>
-        <div class="wgt-input medium" >
-          <?php echo $ELEMENT->selectboxGroups->niceElement() ?>
-        </div>
-      </div>
-
-       <!-- Assign Full -->
-       <div class="left" >
-         <label
-           class="wgt-label"
-           for="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tuser-flagfull" ><?php echo $I18N->l( 'Assign Full', 'wbf.label') ?></label>
-
-         <div class="wgt-input medium" >
-          <input
-            type="checkbox"
-            class="asgd-<?php echo $VAR->formIdAppend?>"
-            id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-tuser-flagfull"
-            name="assign_full"
-          />
-        </div>
-       </div>
-
-     </div>
-
-   </div>
-
 
 <div class="wgt-clear medium" >&nbsp;</div>
 
