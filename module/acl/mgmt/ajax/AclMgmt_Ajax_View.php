@@ -64,8 +64,30 @@ class AclMgmt_Ajax_View extends LibTemplatePlain
     $view = $this->getTplEngine();
     $view->setRawJsonData($this->model->searchGroupsAutocomplete($key, $params));
 
-    return null;
-
+  }//end public function displayAutocomplete */
+  
+  /**
+   * @param string $key
+   * @param TArray $params
+   */
+  public function displayAutocompleteArea($key, $params)
+  {
+  
+    $view = $this->getTplEngine();
+    $view->setRawJsonData($this->model->searchAreasAutocomplete($key, $params));
+  
+  }//end public function displayAutocomplete */
+  
+  /**
+   * @param string $key
+   * @param TArray $params
+   */
+  public function displayAutocompleteGroup($key, $params)
+  {
+  
+    $view = $this->getTplEngine();
+    $view->setRawJsonData($this->model->searchGroupsAutocomplete($key, $params));
+  
   }//end public function displayAutocomplete */
 
   /**
@@ -110,13 +132,9 @@ class AclMgmt_Ajax_View extends LibTemplatePlain
       $params->searchFormId = 'wgt-form-table-'.$this->domainNode->aclDomainKey.'-acl-search';
 
     $params->ajax = true;
-    
-    $areaKeys = array();
-    $areaKeys[] = $this->domainNode->modAclKey;
-    $areaKeys[] = $this->domainNode->aclKey;
-    
+
     $ui->createListItem(
-      $this->model->search($areaKeys, $access, $params),
+      $this->model->search($this->domainNode->domainAclAreas, $access, $params),
       $access,
       $params
     );

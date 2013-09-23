@@ -54,6 +54,8 @@ class AclMgmt_Dset_Maintab_View extends WgtMaintab
   * add the table item
   * add the search field elements
   *
+  * @param Entity $domainEntity
+  * @param int $areaId
   * @param Context $params
   * @return boolean
   */
@@ -69,8 +71,7 @@ class AclMgmt_Dset_Maintab_View extends WgtMaintab
     $this->addVar('entityObj', $domainEntity);
 
     // fetch the i18n text only one time
-    $i18nText = $this->i18n->l
-    (
+    $i18nText = $this->i18n->l(
       'Dataset Access for {@label@}',
       'wbf.label',
       array('label' => $this->domainNode->label.' '.$domainEntity->text())
@@ -135,8 +136,7 @@ class AclMgmt_Dset_Maintab_View extends WgtMaintab
     $ui->domainNode = $this->domainNode;
     $ui->setView($this);
 
-    $ui->createListItem
-    (
+    $ui->createListItem(
       $this->model->searchQualifiedUsers($domainEntity, $areaId, $params),
       $domainEntity,
       $areaId,
@@ -164,10 +164,10 @@ class AclMgmt_Dset_Maintab_View extends WgtMaintab
   public function createMenu($domainEntity, $params)
   {
 
-    $menu = $this->newMenu
-    (
+    $menu = $this->newMenu(
       $this->id.'_dropmenu',
       'AclMgmt_Dset'
+      // $this->domainNode->domainAclMask.'_Dset'
     );
     $menu->domainNode = $this->domainNode;
     $menu->id = $this->id.'_dropmenu';

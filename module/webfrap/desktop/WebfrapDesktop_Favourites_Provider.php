@@ -16,44 +16,43 @@
 *******************************************************************************/
 
 /**
- *
  * @package WebFrap
  * @subpackage Core
  * @author Dominik Bonsch <dominik.bonsch@webfrap.net>
  * @copyright Webfrap Developer Network <contact@webfrap.net>
  */
-class WebfrapPeriod_Action_Model extends Model
+class WebfrapDesktop_Favourites_Provider extends Provider
 {
-/*//////////////////////////////////////////////////////////////////////////////
-// Trigger Methodes
-//////////////////////////////////////////////////////////////////////////////*/
 
- 
   /**
-   * @param int $idType
-   * @param int EWbfsysPeridEventType $type
+   * @param int $userId
+   * @return array[title, url, description]
    */
-  public function getActionsByStatus($key, $type)
+  public function getFavs( $userId )
   {
-    
+
+    $db = $this->getDb();
+
     $sql = <<<SQL
-SELECT 
-  rowid,
-  actions
-FROM 
-  wbfsys_period_task
-JOIN
-  wbfsys_period_type ON wbfsys_period_type.rowid = wbfsys_period_task.id_type
+
+SELECT
+  title,
+  url,
+  description
+FROM
+  wbfsys_bookmark
 WHERE
-  wbfsys_period_task.event_type = {$type}
-  AND
-    UPPER(wbfsys_period_type.access_key) = '{$key}';
+  id_role = {$userId}
+ORDER BY
+title;
+
 SQL;
 
-    return $this->getDb()->sql($sql);
-    
-  }//end public function getActionsByStatus */
-  
-  
-}//end WebfrapPeriod_Action_Model
+    return $db->select($sql)->getAll();
+
+
+  }//end public function getFavs */
+
+
+} // end class WebfrapDesktop_Favourites_Provider
 

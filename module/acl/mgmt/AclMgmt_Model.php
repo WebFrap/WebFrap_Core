@@ -59,7 +59,7 @@ class AclMgmt_Model extends Model
 
     $orm = $this->getOrm();
 
-    $this->areaId = $orm->get('WbfsysSecurityArea',"upper(access_key)=upper('{$this->domainNode->aclBaseKey}')")->getid();
+    $this->areaId = $orm->get('WbfsysSecurityArea',"access_key=upper('{$this->domainNode->aclBaseKey}')")->getid();
 
     return $this->areaId;
 
@@ -299,6 +299,7 @@ class AclMgmt_Model extends Model
 
     $tabData['num_assignments'] = 0;
     $tabData['role_group_rowid'] = $data['security_access']->id_group;
+    $tabData['area_key'] = '';
 
     $tabData['role_group_name'] = $orm->getField
     (
@@ -328,12 +329,12 @@ class AclMgmt_Model extends Model
     $view = $this->getView();
     $response = $this->getResponse();
     $orm = $this->getOrm();
+    $acl = $this->getAcl();
 
     $entityWbfsysSecurityAccess = new WbfsysSecurityAccess_Entity;
 
     $fields = array(
       'id_group',
-      'id_area',
       'access_level',
       'date_start',
       'date_end',
@@ -345,6 +346,9 @@ class AclMgmt_Model extends Model
       $fields,
       array('id_group')
     );
+    
+    $area = $httpRequest->data('area',Validator::CKEY);
+    $entityWbfsysSecurityAccess->id_area = $acl->resources->getAreaId($area);
 
     $entityWbfsysSecurityAccess->partial = 0;
 
@@ -376,16 +380,13 @@ class AclMgmt_Model extends Model
 
     try {
       if (!$entityWbfsysSecurityAccess = $this->getRegisterd('entityWbfsysSecurityAccess')) {
-        return new Error
-        (
-          $response->i18n->l
-          (
+        return new Error(
+          $response->i18n->l(
             'Sorry, something went wrong!',
             'wbf.message'
           ),
           Response::INTERNAL_ERROR,
-          $response->i18n->l
-          (
+          $response->i18n->l(
             'The expected Entity with the key {@key@} was not in the registry',
             'wbf.message',
             array('key' => 'entityWbfsysSecurityAccess')
@@ -400,11 +401,10 @@ class AclMgmt_Model extends Model
       $entityWbfsysSecurityAccess->meta_level = Acl::DENIED;
 
       if (!$orm->insert($entityWbfsysSecurityAccess)) {
+        
         $entityText = $entityWbfsysSecurityAccess->text();
-        $response->addError
-        (
-          $response->i18n->l
-          (
+        $response->addError(
+          $response->i18n->l(
             'Failed to updated {@key@}',
             'wbf.message',
             array('key'=>$entityText)
@@ -649,8 +649,7 @@ class AclMgmt_Model extends Model
     $query = $db->newQuery('AclMgmt');
     /* @var $query AclMgmt_Query  */
 
-    $query->fetchGroupsByKey
-    (
+    $query->fetchGroupsByKey(
       $key,
       $params
     );
@@ -658,6 +657,26 @@ class AclMgmt_Model extends Model
     return $query->getAll();
 
   }//end public function searchGroupsAutocomplete */
+ 
+  /**
+   * @param string $key
+   * @param TArray $params
+   */
+  public function searchAreasAutocomplete($key, $params)
+  {
+  
+    $db = $this->getDb();
+    $query = $db->newQuery('AclMgmt');
+    /* @var $query AclMgmt_Query  */
+  
+    $query->fetchAreasByKey(
+      $key,
+      $params
+    );
+  
+    return $query->getAll();
+  
+  }//end public function searchAreasAutocomplete */
 
   /**
    *
@@ -745,20 +764,17 @@ class AclMgmt_Model extends Model
 
     $user = $this->getUser();
 
-    $access = new AclMgmt_Access_Container(null, null, $this, $domainNode);
-    $access->load($user->getProfileName(), $params);
+    $access = new AclMgmt_Access_Container($this, $domainNode);
+    $access->init($params);
 
     // ok wenn er nichtmal lesen darf, dann ist hier direkt schluss
     if (!$access->admin) {
       // ausgabe einer fehlerseite und adieu
-      throw new InvalidRequest_Exception
-      (
-        $response->i18n->l
-        (
+      throw new InvalidRequest_Exception(
+        $response->i18n->l(
           'You have no permission for administration in {@resource@}',
           'wbf.message',
-          array
-          (
+          array(
             'resource' => $response->i18n->l($domainNode->label, $domainNode->domainI18n.'.label')
           )
         ),

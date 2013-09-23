@@ -60,8 +60,7 @@ class WebfrapMaintenance_Metadata_Modal_View extends WgtModal
   public function displayStats()
   {
 
-    $i18nLabel = $this->i18n->l
-    (
+    $i18nLabel = $this->i18n->l(
       'Metadata Stats',
       'wbf.label'
     );

@@ -144,7 +144,7 @@ class WebfrapKnowhowNode_Model  extends Model
   {
 
     $orm = $this->getOrm();
-    $this->activeNode = $orm->getWhere('WbfsysKnowHowNode', "upper(access_key) =  upper('{$orm->escape($key)}')  ");
+    $this->activeNode = $orm->getWhere('WbfsysKnowHowNode', "access_key =  upper('{$orm->escape($key)}')  ");
 
     Debug::console("load  by  key  " . $key, $this->activeNode);
 
@@ -173,7 +173,7 @@ class WebfrapKnowhowNode_Model  extends Model
   {
 
     $orm = $this->getOrm();
-    $orm->deleteWhere('WbfsysKnowHowNode', "UPPER(access_key) =  UPPER('{$orm->escape($key)}')");
+    $orm->deleteWhere('WbfsysKnowHowNode', "access_key =  UPPER('{$orm->escape($key)}')");
 
   } //end  public  function  deleteByKey  */
 

@@ -74,8 +74,23 @@
           	</p>
           </div>
 
-        </div>
+          <h3><a
+            tab="backpath"
+            wgt_src="ajax.php?c=Acl.Mgmt_Backpath.openTab&area_id=<?php
+              echo $VAR->entityWbfsysSecurityArea
+            ?>&tabid=<?php
+              echo $this->id?>-<?php echo $VAR->domain->aclDomainKey ?>-acl-content-backpath&dkey=<?php
+              echo $VAR->domain->domainName
+            ?>" ><?php
+              echo $I18N->l( 'Backpath', 'wbf.label' ); ?></a></h3>
+          <div>
+            <p>
+          		Backpath information for implicit role assignments.
+          	</p>
+          </div>
 
+
+        </div>
       </div>
 
       <!-- Accordion Content Container -->
@@ -89,118 +104,167 @@
         title="<?php echo $I18N->l( 'Rolebased Access', 'wbf.label' ); ?>"
       >
 
-      <div class="full wgt-border-bottom" >
-         <div class="wgt-panel title" >
-          <h2><?php
-            echo $I18N->l( 'Access Levels for Sec-Area:', 'wbf.label' );
-             ?> <?php
-             echo $VAR->entityWbfsysSecurityArea->getSecure('label');
-           ?></h2>
-        </div>
+        <section class="wgt-content_box tab-head  " >
+          <header
+            id="<?php echo $this->id?>-<?php echo $VAR->domain->aclDomainKey ?>-areadata-head"
+            class="wcm wcm_ui_tab_head tab-head"
+            wgt_body="<?php echo $this->id?>-<?php echo $VAR->domain->aclDomainKey ?>-areadata-content"  >
 
-        <div class="left bw25" >
-          <h3><?php echo $I18N->l( 'Area Acecss', 'wbf.label' ); ?></h3>
-          <?php echo $ELEMENT->inputWbfsysSecurityAreaIdLevelListing?>
-          <?php echo $ELEMENT->inputWbfsysSecurityAreaIdLevelAccess?>
-          <?php echo $ELEMENT->inputWbfsysSecurityAreaIdLevelInsert?>
-          <?php echo $ELEMENT->inputWbfsysSecurityAreaIdLevelUpdate?>
-          <?php echo $ELEMENT->inputWbfsysSecurityAreaIdLevelDelete?>
-          <?php echo $ELEMENT->inputWbfsysSecurityAreaIdLevelAdmin?>
-        </div>
+            <ul class="tab_head"  >
+              <li><a wgt_key="levels" class="tab" >Area Levels</a></li>
+              <li><a wgt_key="assignments" class="tab" >Assignments</a></li>
+            </ul>
+          </header>
+        </section>
 
-        <div class="inline bw25" >
-          <h3><?php echo $I18N->l( 'References Access', 'wbf.label' ); ?></h3>
-          <?php echo $ELEMENT->inputWbfsysSecurityAreaIdRefListing?>
-          <?php echo $ELEMENT->inputWbfsysSecurityAreaIdRefAccess?>
-          <?php echo $ELEMENT->inputWbfsysSecurityAreaIdRefInsert?>
-          <?php echo $ELEMENT->inputWbfsysSecurityAreaIdRefUpdate?>
-          <?php echo $ELEMENT->inputWbfsysSecurityAreaIdRefDelete?>
-          <?php echo $ELEMENT->inputWbfsysSecurityAreaIdRefAdmin?>
-        </div>
+        <section class="wgt-content_box form no-gap  " >
+          <div id="<?php echo $this->id?>-<?php echo $VAR->domain->aclDomainKey ?>-areadata-content" class="wgt-content-box"  >
 
-        <div class="inline bw25" >
-          <h3><?php echo $I18N->l( 'Description', 'wbf.label' ); ?></h3>
-          <?php echo $ELEMENT->inputWbfsysSecurityAreaDescription->element(); ?>
-        </div>
+            <!-- Tab budget_constraints  -->
+            <div
+              id="<?php echo $this->id?>-<?php echo $VAR->domain->aclDomainKey ?>-areadata-content-levels"
+              title="Area Levels"
+              wgt_key="levels"
+              class="container" >
 
-        <div class="meta" >
-        <?php echo $ELEMENT->inputWbfsysSecurityAreaRowid?>
-        </div>
+            <div class="wgt-panel" >
 
-        <div class="wgt-clear small">&nbsp;</div>
+              <form
+                method="get"
+                accept-charset="utf-8"
+                id="<?php echo $VAR->searchFormId?>"
+                action="<?php echo $VAR->searchFormAction?>&area_id=<?php echo $VAR->entityWbfsysSecurityArea ?>" ></form>
+              <form
+                method="post"
+                accept-charset="utf-8"
+                id="wgt-form-<?php echo $VAR->domain->aclDomainKey ?>-acl-append"
+                action="ajax.php?c=Acl.Mgmt.appendGroup&dkey=<?php echo $VAR->domain->domainName ?>" ></form>
 
-        </div>
+                <div class="left" >
+                <!-- Group Input -->
+                <span><?php echo $I18N->l( 'Group', 'wbf.label' ); ?></span>
+                <input
+                  type="text"
+                  id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-id_group-tostring"
+                  name="key"
+                  class="large wcm wcm_ui_autocomplete wgt-no-save"
+                />
+                <var id="var-<?php echo $VAR->domain->aclDomainKey ?>-automcomplete" >{
+                    "url":"ajax.php?c=Acl.Mgmt.loadGroups&amp;area_id=<?php
+                      echo $VAR->entityWbfsysSecurityArea
+                    ?>&amp;dkey=<?php
+                      echo $VAR->domain->domainName
+                    ?>&amp;key=",
+                    "type":"entity"
+                  }</var>
+                <input
+                  id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-id_group"
+                  class="asgd-wgt-form-<?php echo $VAR->domain->aclDomainKey ?>-acl-append valid_required"
+                  name="security_access[id_group]"
+                  type="hidden"
+                />
+                <button
+                  id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-id_group-append"
+                  class="wgt-button append wcm wcm_ui_tip"
+                  title="To assign a new role, just type the name of the role in the autocomplete field left to this infobox."
+                  onclick="$R.get('modal.php?c=Wbfsys.RoleGroup.selection&amp;target=<?php echo $VAR->searchFormId ?>');return false;"
+                >
+                  <i class="icon-search" ></i>
+                </button>
 
-        <form
-          method="get"
-          accept-charset="utf-8"
-          id="<?php echo $VAR->searchFormId?>"
-          action="<?php echo $VAR->searchFormAction?>&area_id=<?php echo $VAR->entityWbfsysSecurityArea ?>" ></form>
+                <!-- Area Input -->
+                &nbsp;&nbsp;
+                <span><?php echo $I18N->l( 'Area', 'wbf.label' ); ?></span>&nbsp;
 
-        <form
-          method="post"
-          accept-charset="utf-8"
-          id="wgt-form-<?php echo $VAR->domain->aclDomainKey ?>-acl-append"
-          action="ajax.php?c=Acl.Mgmt.appendGroup&dkey=<?php echo $VAR->domain->domainName ?>" ></form>
+                </div>
+                <div class="inline" >
+                  <select
+                    id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-id_area"
+                    class="wcm wcm_widget_selectbox asgd-wgt-form-<?php echo $VAR->domain->aclDomainKey ?>-acl-append"
+                    name="area" >
+                    <?php foreach( $VAR->domain->domainAclAreas as $areaKey ){
+                      echo '<option value="'.$areaKey.'" >'.$areaKey.'</option>'.NL;
+                    } ?>
+                  </select>
+                </div>
 
-        <div class="wgt-panel" >
+                <div class="inline" >
+                <!-- area & button -->
 
-            <!-- Group Input -->
-            <span><?php echo $I18N->l( 'Add group', 'wbf.label' ); ?></span>
-            <input
-              type="text"
-              id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-id_group-tostring"
-              name="key"
-              class="large wcm wcm_ui_autocomplete wgt-no-save"
-            />
-            <var id="var-<?php echo $VAR->domain->aclDomainKey ?>-automcomplete" >{
-                "url":"ajax.php?c=Acl.Mgmt.loadGroups&amp;area_id=<?php
-                  echo $VAR->entityWbfsysSecurityArea
-                ?>&amp;dkey=<?php
-                  echo $VAR->domain->domainName
-                ?>&amp;key=",
-                "type":"entity"
-              }</var>
-            <input
-              id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-id_group"
-              class="asgd-wgt-form-<?php echo $VAR->domain->aclDomainKey ?>-acl-append valid_required"
-              name="security_access[id_group]"
-              type="hidden"
-            />
-            <button
-              id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-id_group-append"
-              class="wgt-button append wcm wcm_ui_tip"
-              title="To assign a new role, just type the name of the role in the autocomplete field left to this infobox."
-              onclick="$R.get('modal.php?c=Wbfsys.RoleGroup.selection&amp;target=<?php echo $VAR->searchFormId ?>');return false;"
-            >
-              <i class="icon-search" ></i>
-            </button>
+                <input
+                  type="hidden"
+                  id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-id_area"
+                  name="security_access[id_area]"
+                  def_value="<?php echo $VAR->entityWbfsysSecurityArea?>"
+                  value="<?php echo $VAR->entityWbfsysSecurityArea?>"
+                  class="asgd-wgt-form-<?php echo $VAR->domain->aclDomainKey ?>-acl-append "
+                />
+                &nbsp;&nbsp;
+                <button
+                  class="wgt-button"
+                  id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-acl-form-append"  >
+                  <i class="icon-link" ></i> Create Relation</button>
 
-            <!-- area & button -->
+                </div>
 
-            <input
-              type="hidden"
-              id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-id_area"
-              name="security_access[id_area]"
-              def_value="<?php echo $VAR->entityWbfsysSecurityArea?>"
-              value="<?php echo $VAR->entityWbfsysSecurityArea?>"
-              class="asgd-wgt-form-<?php echo $VAR->domain->aclDomainKey ?>-acl-append "
-            />
-
-            <button
-              class="wgt-button"
-              id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-acl-form-append"  >
-              <i class="icon-link" ></i> Append
-            </button>
-
-          </div><!-- end end panel -->
-
+              </div><!-- end end panel -->
 
 
-          <div class="wgt-clear tiny" >&nbsp;</div>
+              <?php echo $ELEMENT->listingAclTable; ?>
 
-          <?php echo $ELEMENT->listingAclTable; ?>
-          <div class="wgt-clear small" >&nbsp;</div>
+              <div class="wgt-clear small" >&nbsp;</div>
+
+            </div>
+
+          <!-- Tab schedule  -->
+          <div
+            id="<?php echo $this->id?>-<?php echo $VAR->domain->aclDomainKey ?>-areadata-content-assignments"
+            title="Group Assignments"
+            wgt_key="assignments"
+            class="container" >
+
+            <div class="wgt-clear small" ></div>
+
+            <div class="left n-cols-2" >
+              <h3><?php echo $I18N->l( 'Area Acecss', 'wbf.label' ); ?></h3>
+              <?php echo $ELEMENT->inputWbfsysSecurityAreaIdLevelListing?>
+              <?php echo $ELEMENT->inputWbfsysSecurityAreaIdLevelAccess?>
+              <?php echo $ELEMENT->inputWbfsysSecurityAreaIdLevelInsert?>
+              <?php echo $ELEMENT->inputWbfsysSecurityAreaIdLevelUpdate?>
+              <?php echo $ELEMENT->inputWbfsysSecurityAreaIdLevelDelete?>
+              <?php echo $ELEMENT->inputWbfsysSecurityAreaIdLevelAdmin?>
+            </div>
+
+            <div class="inline n-cols-2" >
+              <h3><?php echo $I18N->l( 'References Access', 'wbf.label' ); ?></h3>
+              <?php echo $ELEMENT->inputWbfsysSecurityAreaIdRefListing?>
+              <?php echo $ELEMENT->inputWbfsysSecurityAreaIdRefAccess?>
+              <?php echo $ELEMENT->inputWbfsysSecurityAreaIdRefInsert?>
+              <?php echo $ELEMENT->inputWbfsysSecurityAreaIdRefUpdate?>
+              <?php echo $ELEMENT->inputWbfsysSecurityAreaIdRefDelete?>
+              <?php echo $ELEMENT->inputWbfsysSecurityAreaIdRefAdmin?>
+            </div>
+
+            <div class="wgt-clear small">&nbsp;</div>
+
+            <div class="inline n-cols-1" >
+              <h3><?php echo $I18N->l( 'Description', 'wbf.label' ); ?></h3>
+              <?php echo $ELEMENT->inputWbfsysSecurityAreaDescription->element(); ?>
+            </div>
+
+            <div class="meta" >
+            <?php echo $ELEMENT->inputWbfsysSecurityAreaRowid?>
+            </div>
+
+            <div class="wgt-clear small">&nbsp;</div>
+
+           </div>
+
+
+
+          </div>
+          <div class="wgt-clear xxsmall" ></div>
+        </section>
 
         <div class="wgt-clear xsmall">&nbsp;</div>
 
@@ -209,6 +273,12 @@
       <div
         class="container"
         id="<?php echo $this->id?>-<?php echo $VAR->domain->aclDomainKey ?>-acl-content-qfd_users" >
+
+      </div><!-- end tab -->
+
+      <div
+        class="container"
+        id="<?php echo $this->id?>-<?php echo $VAR->domain->aclDomainKey ?>-acl-content-backpath" >
 
       </div><!-- end tab -->
 

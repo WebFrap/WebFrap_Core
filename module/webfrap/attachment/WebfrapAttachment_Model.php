@@ -560,7 +560,7 @@ JOIN wbfsys_file_profile_type pt
   ON pt.id_type = type.rowid
 JOIN wbfsys_file_profile prof 
   ON prof.rowid = pt.id_profile
-WHERE UPPER(prof.access_key) = UPPER('{$key}');
+WHERE UPPER(prof.access_key) = '{$key}';
         
     
 SQL;
@@ -797,7 +797,7 @@ SQL;
        $refId = $entity->getId();
      }
 
-     $this->access = new $className();
+     $this->access = new $className($this);
      $this->access->loadDefault($context, $refId);
 
      return $this->access;

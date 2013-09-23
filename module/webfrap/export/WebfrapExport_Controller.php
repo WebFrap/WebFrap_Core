@@ -48,33 +48,27 @@ class WebfrapExport_Controller extends MvcController_Domain
    */
   protected $options = array
   (
-    'list' => array
-    (
+    'list' => array(
       'method' => array('GET'),
       //'views' => array('document')
     ),
-    'listall' => array
-    (
+    'listall' => array(
       'method' => array('GET'),
       //'views' => array('document')
     ),
-    'listselection' => array
-    (
+    'listselection' => array(
       'method' => array('GET'),
       //'views' => array('document')
     ),
-    'reflist' => array
-    (
+    'reflist' => array(
       'method' => array('GET'),
       //'views' => array('document')
     ),
-    'reflistall' => array
-    (
+    'reflistall' => array(
       'method' => array('GET'),
       //'views' => array('document')
     ),
-    'reflistselection' => array
-    (
+    'reflistselection' => array(
       'method' => array('GET'),
       //'views' => array('document')
     ),
@@ -106,8 +100,7 @@ class WebfrapExport_Controller extends MvcController_Domain
 
     $exportModel = $this->loadModel($domainNode->domainKey.'_'.$variant->mask  );
 
-    $exportDoc = new $className
-    (
+    $exportDoc = new $className(
       $this,
       $domainNode->pLabel.' Export',
       null,

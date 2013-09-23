@@ -26,7 +26,7 @@
  * @author Dominik Bonsch <dominik.bonsch@webfrap.net>
  * @copyright webfrap.net <contact@webfrap.net>
  */
-class AclMgmt_Table_Element extends WgtTable
+class AclMgmt_Backpath_Table_Element extends WgtTable
 {
 /*//////////////////////////////////////////////////////////////////////////////
 // Attributes
@@ -38,12 +38,12 @@ class AclMgmt_Table_Element extends WgtTable
    *
    * @var string $id
    */
-  public $id = 'wgt-table-acl-mgmt-acl';
+  public $id = 'wgt-table-backpath-mgmt-acl';
 
   /**
    * the most likley class of a given query object
    *
-   * @var AclMgmt_Table_Query
+   * @var AclMgmt_Backpath_Table_Query
    */
   public $data = null;
 
@@ -91,7 +91,7 @@ class AclMgmt_Table_Element extends WgtTable
   public function loadUrl()
   {
 
-    $this->id = 'wgt-table-'.$this->domainNode->aclDomainKey.'-acl';
+    $this->id = 'wgt-table-'.$this->domainNode->aclDomainKey.'-backpath';
 
     /**
      * list with all actions for the listed datarows
@@ -101,37 +101,31 @@ class AclMgmt_Table_Element extends WgtTable
      * @var array
      */
     $this->url = array(
-      'delete' => array(
-        Wgt::ACTION_DELETE,
-        'Delete',
-        'index.php?c=Acl.Mgmt.deleteGroup&dkey='.$this->domainNode->domainName.'&amp;objid=',
-        'icon-remove-sign',
+      'edit' => array(
+        Wgt::ACTION_BUTTON_GET,
+        'Edit',
+        'ajax.php?c=Acl.Mgmt_Backpath.edit&dkey='.$this->domainNode->domainName.'&amp;objid=',
+        'icon-edit',
         '',
         'wbf.label',
         Acl::ADMIN
       ),
-      'tree' => array(
-        Wgt::ACTION_BUTTON_GET,
-        'Reference ACLs',
-        'maintab.php?c=Acl.Mgmt_Tree.showGraph&amp;dkey='.$this->domainNode->domainName.'&amp;objid=',
-        'icon-cogs',
+      'delete' => array(
+        Wgt::ACTION_BUTTON_DELETE,
+        'Delete',
+        'ajax.php?c=Acl.Mgmt_Backpath.delete&dkey='.$this->domainNode->domainName.'&amp;objid=',
+        'icon-remove-sign',
         '',
-        'wbf.inheritance',
-        Acl::ADMIN,
-        Wgt::BUTTON_CHECK => function($row, $id, $value, $access){
-          
-          if ('mod-' == substr($row['area_key'], 0, 4)) {
-            return false;
-          }
-          return true;
-          
-        }
+        'wbf.label',
+        Acl::ADMIN
       ),
       'sep' => array(
         Wgt::ACTION_SEP
       ),
 
     );
+    
+    $this->actions = array('edit','sep','delete');
 
   }//end public function loadUrl */
 
@@ -210,16 +204,20 @@ class AclMgmt_Table_Element extends WgtTable
     // check for multi selection
     $html .= '<th style="width:30px;" class="pos" >'.$this->i18n->l('Pos.', 'wbf.label'  ).'</th>'.NL;
 
-    $html .= '<th style="width:250px" >
-      '.$this->view->i18n->l('Group','wbf.label').'
+    $html .= '<th style="width:150px" >
+      '.$this->view->i18n->l('Target Area','wbf.label').'
+    </th>'.NL;
+
+    $html .= '<th style="width:150px" >
+      '.$this->view->i18n->l('Ref Field','wbf.label').'
     </th>'.NL;
 
     $html .= '<th style="width:250px" >
-      '.$this->view->i18n->l('Area','wbf.label').'
+      '.$this->view->i18n->l('Groups','wbf.label').'
     </th>'.NL;
 
-    $html .= '<th style="width:60px" >
-      '.$this->view->i18n->l('Asgd','wbf.label').'
+    $html .= '<th style="width:250px" >
+      '.$this->view->i18n->l('Set Groups','wbf.label').'
     </th>'.NL;
 
     $html .= '<th style="width:100px" >
@@ -241,16 +239,6 @@ class AclMgmt_Table_Element extends WgtTable
     $html .= '<th style="width:100px" >
       '.$this->view->i18n->l('Maint','wbf.label').'
     </th>'.NL;
-
-    /*
-    $html .= '<th style="width:130px" >
-      '.$this->view->i18n->l('Date Start','wbf.label').'
-    </th>'.NL;
-
-    $html .= '<th style="width:130px" >
-      '.$this->view->i18n->l('Date End','wbf.label').'
-    </th>'.NL;
-    */
 
     // the default navigation col
     if ($this->enableNav)
@@ -278,78 +266,58 @@ class AclMgmt_Table_Element extends WgtTable
     $pos = 1;
     foreach ($this->data as $key => $row) {
 
-      $objid = $row['security_access_rowid'];
+      $objid = $row['wbfsys_security_backpath_rowid'];
       $rowid = $this->id.'_row_'.$objid;
 
       $body .= '<tr class="wcm wcm_ui_highlight row'.$num.' node-'.$objid.'" id="'.$rowid.'" >'.NL;
       $body .= '<td valign="top" class="pos" name="slct['.$objid.']" >'.$pos.'</td>'.NL;
 
-      $body .= '<td valign="top"  >'
-        .(!is_null($row['role_group_name'])?$row['role_group_name']:' ')
+      $body .= '<td valign="top" >'
+        .(!is_null($row['target_area_key'])?$row['target_area_key']:' ')
         .'</td>'.NL;
 
-      $body .= '<td valign="top"  >'
-        .(!is_null($row['area_key'])?$row['area_key']:' ')
+      $body .= '<td valign="top" >'
+        .(!is_null($row['wbfsys_security_backpath_ref_field'])?$row['wbfsys_security_backpath_ref_field']:' ')
         .'</td>'.NL;
 
-      $body .= '<td valign="top"  >'
-        .(!is_null($row['num_assignments'])?$row['num_assignments']:' ')
+      $body .= '<td valign="top" >'
+        .(!is_null($row['wbfsys_security_backpath_groups'])?$row['wbfsys_security_backpath_groups']:' ')
+        .'</td>'.NL;
+
+      $body .= '<td valign="top" >'
+        .(!is_null($row['wbfsys_security_backpath_set_groups'])?$row['wbfsys_security_backpath_set_groups']:' ')
         .'</td>'.NL;
 
       $body .= '<td valign="top" style="text-align:right;" >'.$this->selectRights(
-          $row['security_access_access_level'],
-          "ar[security_access][{$objid}][access_level]"
+          $row['wbfsys_security_backpath_access_level'],
+          "ar[wbfsys_security_backpath][{$objid}][access_level]"
         ).'</td>'.NL;
 
       $body .= '<td valign="top" style="text-align:right;" >'.$this->selectRights(
-          $row['security_access_ref_access_level'],
-          "ar[security_access][{$objid}][ref_access_level]"
+          $row['wbfsys_security_backpath_ref_access_level'],
+          "ar[wbfsys_security_backpath][{$objid}][ref_access_level]"
         ).'</td>'.NL;
 
       $body .= '<td valign="top" style="text-align:right;" >'.$this->selectSimpleRights(
-          $row['security_access_message_level'],
-          "ar[security_access][{$objid}][message_level]"
+          $row['wbfsys_security_backpath_message_level'],
+          "ar[wbfsys_security_backpath][{$objid}][message_level]"
         ).'</td>'.NL;
 
       $body .= '<td valign="top" style="text-align:right;" >'.$this->selectSimpleRights(
-          $row['security_access_priv_message_level'],
-          "ar[security_access][{$objid}][priv_message_level]"
+          $row['wbfsys_security_backpath_priv_message_level'],
+          "ar[wbfsys_security_backpath][{$objid}][priv_message_level]"
         ).'</td>'.NL;
 
       $body .= '<td valign="top" style="text-align:right;" >'.$this->selectSimpleRights(
-          $row['security_access_meta_level'],
-          "ar[security_access][{$objid}][meta_level]"
+          $row['wbfsys_security_backpath_meta_level'],
+          "ar[wbfsys_security_backpath][{$objid}][meta_level]"
         ).'</td>'.NL;
-
-      /*
-      $body .= '<td valign="top" >'
-        .'<input type="text" class="'.$this->editForm.' wcm wcm_ui_date show small" '
-        .' id="wgt-input-acl-enterprise_employee-qfdu-'.$objid.'-date_start" '
-        .' name="ar[security_access]['.$objid.'][date_start]" value="'
-        .(
-           '' != trim($row['security_access_date_start'])
-            ? $this->view->i18n->date($row['security_access_date_start'])
-            : ''
-        ).'" /></td>'.NL;
-
-      $body .= '<td valign="top" >'
-        .'<input type="text" class="'.$this->editForm.' wcm wcm_ui_date show small" '
-        .' id="wgt-input-acl-enterprise_employee-qfdu-'.$objid.'-date_end" '
-        .' name="ar[security_access]['.$objid.'][date_end]" value="'
-        .(
-           '' != trim($row['security_access_date_end'])
-            ? $this->view->i18n->date($row['security_access_date_end'])
-            : ''
-        ).'" /></td>'.NL;
-      */
 
       if ($this->enableNav) {
-        $navigation = $this->rowMenu
-          (
-            $objid.'&group_id='.$row['role_group_rowid'],
-            $row,
-            $row['role_group_name']
-          );
+        $navigation = $this->rowMenu(
+          $objid,
+          $row
+        );
         $body .= '<td valign="top"  class="nav_split"  >'.$navigation.'</td>'.NL;
       }
 
@@ -434,10 +402,10 @@ class AclMgmt_Table_Element extends WgtTable
    * @param array $row
    * @return string
    */
-  public function buildAjaxTbody($row  )
+  public function buildAjaxTbody($row)
   {
 
-    $objid = $row['security_access_rowid'];
+    $objid = $row['wbfsys_security_backpath_rowid'];
     $rowid = $this->id.'_row_'.$objid;
 
     // is this an insert or an update area
@@ -449,72 +417,53 @@ class AclMgmt_Table_Element extends WgtTable
       $body = '<htmlArea selector="tr#'.$rowid.'" action="html" ><![CDATA[';
     }
 
-    $body .= '<td valign="top" name="slct['.$objid.']" class="pos" ></td>'.NL;
+    $body .= '<td valign="top" name="slct['.$objid.']" class="pos" >1</td>'.NL;
 
-    $body .= '<td valign="top" >'.
-      (!is_null($row['role_group_name'])?$row['role_group_name']:' ')
-      .'</td>'.NL;
-
-    $body .= '<td valign="top" >'.
-      (!is_null($row['area_key'])?$row['area_key']:' ')
+    $body .= '<td valign="top"  >'
+      .(!is_null($row['target_area_key'])?$row['target_area_key']:' ')
       .'</td>'.NL;
 
     $body .= '<td valign="top"  >'
-        .(!is_null($row['num_assignments'])?$row['num_assignments']:' ')
+      .(!is_null($row['wbfsys_security_backpath_ref_field'])?$row['wbfsys_security_backpath_ref_field']:' ')
+      .'</td>'.NL;
+
+    $body .= '<td valign="top"  >'
+      .(!is_null($row['wbfsys_security_backpath_groups'])?$row['wbfsys_security_backpath_groups']:' ')
+      .'</td>'.NL;
+
+      $body .= '<td valign="top" >'
+        .(!is_null($row['wbfsys_security_backpath_set_groups'])?$row['wbfsys_security_backpath_set_groups']:' ')
         .'</td>'.NL;
 
-      $body .= '<td valign="top" style="text-align:right;" >'.$this->selectRights(
-          $row['security_access_access_level'],
-          "ar[security_access][{$objid}][access_level]"
-        ).'</td>'.NL;
-
-      $body .= '<td valign="top" style="text-align:right;" >'.$this->selectRights(
-          $row['security_access_ref_access_level'],
-          "ar[security_access][{$objid}][ref_access_level]"
-        ).'</td>'.NL;
-
-      $body .= '<td valign="top" style="text-align:right;" >'.$this->selectSimpleRights(
-          $row['security_access_message_level'],
-          "ar[security_access][{$objid}][message_level]"
-        ).'</td>'.NL;
-
-      $body .= '<td valign="top" style="text-align:right;" >'.$this->selectSimpleRights(
-      	$row['security_access_priv_message_level'],
-      	"ar[security_access][{$objid}][priv_message_level]"
+    $body .= '<td valign="top" style="text-align:right;" >'.$this->selectRights(
+        $row['wbfsys_security_backpath_access_level'],
+        "ar[wbfsys_security_backpath][{$objid}][access_level]"
       ).'</td>'.NL;
 
-      $body .= '<td valign="top" style="text-align:right;" >'.$this->selectSimpleRights(
-        $row['security_access_meta_level'],
-        "ar[security_access][{$objid}][meta_level]"
+    $body .= '<td valign="top" style="text-align:right;" >'.$this->selectRights(
+        $row['wbfsys_security_backpath_ref_access_level'],
+        "ar[wbfsys_security_backpath][{$objid}][ref_access_level]"
       ).'</td>'.NL;
 
-    /*
-    $body .= '<td valign="top" >'
-      .'<input type="text" class="'.$this->editForm.' wcm wcm_ui_date show small" '
-      .' id="wgt-input-acl-enterprise_employee-qfdu-'.$objid.'-date_start" '
-      .' name="ar[security_access]['.$objid.'][date_start]" value="'
-      .(
-        '' != trim($row['security_access_date_start'])
-          ? $this->view->i18n->date($row['security_access_date_start'])
-          : ''
-       ).'" /></td>'.NL;
+    $body .= '<td valign="top" style="text-align:right;" >'.$this->selectSimpleRights(
+        $row['wbfsys_security_backpath_message_level'],
+        "ar[wbfsys_security_backpath][{$objid}][message_level]"
+      ).'</td>'.NL;
 
-    $body .= '<td valign="top" >'
-      .'<input type="text" class="'.$this->editForm.' wcm wcm_ui_date show small" '
-      .' id="wgt-input-acl-enterprise_employee-qfdu-'.$objid.'-date_end" '
-      .' name="ar[security_access]['.$objid.'][date_end]" value="'
-      .(
-        '' != trim($row['security_access_date_end'])
-          ? $this->view->i18n->date($row['security_access_date_end'])
-          : ''
-      ).'" /></td>'.NL;
-      */
+    $body .= '<td valign="top" style="text-align:right;" >'.$this->selectSimpleRights(
+        $row['wbfsys_security_backpath_priv_message_level'],
+        "ar[wbfsys_security_backpath][{$objid}][priv_message_level]"
+      ).'</td>'.NL;
+
+    $body .= '<td valign="top" style="text-align:right;" >'.$this->selectSimpleRights(
+        $row['wbfsys_security_backpath_meta_level'],
+        "ar[wbfsys_security_backpath][{$objid}][meta_level]"
+      ).'</td>'.NL;
 
     if ($this->enableNav) {
       $navigation = $this->rowMenu(
-      	$objid.'&group_id='.$row['role_group_rowid'],
-        $row,
-        $row['role_group_name']
+        $objid,
+        $row
       );
       $body .= '<td valign="top"  class="nav_split"  >'.$navigation.'</td>'.NL;
     }

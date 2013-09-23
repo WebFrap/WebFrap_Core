@@ -21,7 +21,7 @@
  * @author Dominik Bonsch <dominik.bonsch@webfrap.net>
  * @copyright Webfrap Developer Network <contact@webfrap.net>
  */
-class WebfrapDesktop_Model extends Model
+class WebfrapDesktop_Menu_Provider extends Provider
 {
 
   /**
@@ -46,7 +46,8 @@ JOIN
   wbfsys_profile
     ON wbfsys_profile.id_profile_menu = wbfsys_menu_entry.id_menu
 WHERE
-  wbfsys_profile.rowid = {$profileId};
+  wbfsys_profile.rowid = {$profileId}
+order by m_order;
 
 SQL;
 
@@ -59,7 +60,7 @@ SQL;
    * @param int $profileId
    * @return array[rowid, label, icon, http_url]
    */
-  public function getMainMenu( $profileId )
+  public function getMainMenu( $profileKey )
   {
 
     $db = $this->getDb();
@@ -67,25 +68,46 @@ SQL;
     $sql = <<<SQL
 
 SELECT
-  rowid,
-  label,
-  icon,
-  http_url,
-  m_parent
+  wbfsys_menu_entry.rowid,
+  wbfsys_menu_entry.label,
+  wbfsys_menu_entry.icon,
+  wbfsys_menu_entry.http_url,
+  wbfsys_menu_entry.m_parent,
+  wbfsys_menu_entry.type,
+  wbfsys_menu_entry.access_key
 FROM
   wbfsys_menu_entry
 JOIN
   wbfsys_profile
     ON wbfsys_profile.id_main_menu = wbfsys_menu_entry.id_menu
 WHERE
-  wbfsys_profile.rowid = {$profileId};
+  wbfsys_profile.access_key = '{$profileKey}';
 
 SQL;
 
-    $db->select($sql)->getAll();
+    $tmp = $db->select($sql)->getAll();
+
+    $entries = array('root'=> array());
+
+    foreach( $tmp as $entry ){
+
+      if (!$entry['m_parent']) {
+        $entries['root'][] = $entry;
+      } else {
+
+        if(!isset($entries[$entry['m_parent']])){
+          $entries[$entry['m_parent']] = array();
+        }
+
+        $entries[$entry['m_parent']][] = $entry;
+
+      }
+    }
+
+    return $entries;
 
 
-  }//end public function getProfileMenu */
+  }//end public function getMainMenu */
 
-} // end class WebfrapDesktop_Model
+} // end class WebfrapDesktop_Menu_Provider
 

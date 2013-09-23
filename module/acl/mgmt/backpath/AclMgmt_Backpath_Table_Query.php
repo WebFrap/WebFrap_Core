@@ -26,7 +26,7 @@
  * @author Dominik Bonsch <dominik.bonsch@webfrap.net>
  * @copyright webfrap.net <contact@webfrap.net>
  */
-class AclMgmt_Table_Query_Postgresql extends LibSqlQuery
+class AclMgmt_Backpath_Table_Query extends LibSqlQuery
 {
 /*//////////////////////////////////////////////////////////////////////////////
 // methodes
@@ -42,7 +42,7 @@ class AclMgmt_Table_Query_Postgresql extends LibSqlQuery
    *
    * @throws LibDb_Exception
    */
-  public function fetch($areaKeys, $condition = null, $params = null)
+  public function fetch($areaId, $condition = null, $params = null)
   {
 
     if (!$params)
@@ -51,30 +51,52 @@ class AclMgmt_Table_Query_Postgresql extends LibSqlQuery
     $this->sourceSize = null;
     $db = $this->getDb();
 
-    if (!$this->criteria) {
-      $criteria = $db->orm->newCriteria();
-    } else {
-      $criteria = $this->criteria;
-    }
-
-    if (!$criteria->cols) {
-      $this->setCols($criteria);
-    }
-
+    $criteria = $db->orm->newCriteria();
+    $this->setCols($criteria);
     $this->setTables($criteria);
-    $this->appendConditions($criteria, $condition, $params  );
+    $this->appendConditions($criteria, $condition, $params);
     $this->checkLimitAndOrder($criteria, $params);
 
-    //$criteria->where("security_access.id_area={$areaId} and security_access.partial = 0");
-    
-    $keys = "UPPER('".implode("'), UPPER('",$areaKeys)."')";
-    
-    $criteria->where("upper(area.access_key) IN({$keys}) and security_access.partial = 0");
+    $criteria->where("wbfsys_security_backpath.id_area = {$areaId}");
 
     // Run Query und save the result
     $this->result = $db->orm->select($criteria);
-    $this->calcQuery = $criteria->count('count(DISTINCT security_access.'.Db::PK.') as '.Db::Q_SIZE);
+    $this->calcQuery = $criteria->count('count(DISTINCT wbfsys_security_backpath.'.Db::PK.') as '.Db::Q_SIZE);
 
+  }//end public function fetch */
+  
+  /** build criteria, interpret conditions and load data
+   *
+   * @param int $areaId
+   * @param string/array $condition conditions for the query
+   * @param TFlag $params
+   *
+   * @return void
+   *
+   * @throws LibDb_Exception
+   */
+  public function fetchById($areaId, $pathId, $condition = null, $params = null)
+  {
+  
+    if (!$params)
+      $params = new TFlag();
+  
+    $this->sourceSize = null;
+    $db = $this->getDb();
+  
+    $criteria = $db->orm->newCriteria();
+    $this->setCols($criteria);
+    $this->setTables($criteria);
+    $this->appendConditions($criteria, $condition, $params);
+    $this->checkLimitAndOrder($criteria, $params);
+  
+    $criteria->where("wbfsys_security_backpath.id_area = {$areaId}");
+    $criteria->where("wbfsys_security_backpath.rowid = {$pathId}");
+  
+    // Run Query und save the result
+    $this->result = $db->orm->select($criteria);
+    $this->calcQuery = $criteria->count('count(DISTINCT wbfsys_security_backpath.'.Db::PK.') as '.Db::Q_SIZE);
+  
   }//end public function fetch */
 
  /** inject the requested cols in the criteria
@@ -93,33 +115,19 @@ class AclMgmt_Table_Query_Postgresql extends LibSqlQuery
     ///TODO remove one of redundant id_group attributes
     // take care for the getEntryData method on the model
     $cols = array(
-      'security_access.rowid as "security_access_rowid"',
-      'area.access_key as area_key',
-      'security_access.access_level as "security_access_access_level"',
-      'security_access.ref_access_level as "security_access_ref_access_level"',
-      'security_access.meta_level as "security_access_meta_level"',
-      'security_access.message_level as "security_access_message_level"',
-      'security_access.priv_message_level as "security_access_priv_message_level"',
-      'security_access.date_start as "security_access_date_start"',
-      'security_access.date_end as "security_access_date_end"',
-      'role_group.name as "role_group_name"',
-      'role_group.rowid as "role_group_rowid"',
-      'count(distinct group_users.id_user) as num_assignments',
-      'area_type.m_order'
+      'wbfsys_security_backpath.rowid as "wbfsys_security_backpath_rowid"',
+      'wbfsys_security_backpath.ref_field as "wbfsys_security_backpath_ref_field"',
+      'wbfsys_security_backpath.groups as "wbfsys_security_backpath_groups"',
+      'wbfsys_security_backpath.set_groups as "wbfsys_security_backpath_set_groups"',
+      'wbfsys_security_backpath.access_level as "wbfsys_security_backpath_access_level"',
+      'wbfsys_security_backpath.ref_access_level as "wbfsys_security_backpath_ref_access_level"',
+      'wbfsys_security_backpath.meta_level as "wbfsys_security_backpath_meta_level"',
+      'wbfsys_security_backpath.message_level as "wbfsys_security_backpath_message_level"',
+      'wbfsys_security_backpath.priv_message_level as "wbfsys_security_backpath_priv_message_level"',
+      'wbfsys_security_area.access_key as target_area_key',
     );
 
     $criteria->select($cols);
-    $criteria->groupBy('role_group.rowid');
-    $criteria->groupBy('role_group.name');
-    $criteria->groupBy('area.access_key');
-    $criteria->groupBy('security_access.rowid');
-    $criteria->groupBy('security_access.access_level');
-    $criteria->groupBy('security_access.ref_access_level');
-    $criteria->groupBy('security_access.message_level');
-    $criteria->groupBy('security_access.priv_message_level');
-    $criteria->groupBy('security_access.meta_level');
-    $criteria->groupBy('security_access.date_start');
-    $criteria->groupBy('security_access.date_end');
 
   }//end public function setCols */
 
@@ -134,43 +142,15 @@ class AclMgmt_Table_Query_Postgresql extends LibSqlQuery
   public function setTables($criteria   )
   {
 
-    $criteria->from('wbfsys_security_access', 'security_access');
+    $criteria->from('wbfsys_security_backpath');
 
     $criteria->leftJoinOn(
-      'security_access',
-      'id_group',
-      'wbfsys_role_group',
-      'rowid',
-      null,
-      'role_group'
-    );
-
-    $criteria->leftJoinOn(
-      'security_access',
-      'id_group',
-      'wbfsys_group_users',
-      'id_group',
-      null,
-      'group_users'
-    );
-
-    $criteria->leftJoinOn (
-      'security_access',
-      'id_area',
+      'wbfsys_security_backpath',
+      'id_target_area',
       'wbfsys_security_area',
-      'rowid',
-      null,
-      'area'
+      'rowid'
     );
 
-    $criteria->leftJoinOn (
-      'area',
-      'id_type',
-      'wbfsys_security_area_type',
-      'rowid',
-      null,
-      'area_type'
-    );
 
   }//end public function setTables */
 
@@ -195,24 +175,8 @@ class AclMgmt_Table_Query_Postgresql extends LibSqlQuery
   {
 
 
-    if (isset($condition['free']) && trim($condition['free']) != ''  ) {
-
-       if (ctype_digit($condition['free'])) {
-          $criteria->where
-          (
-            '(security_access.rowid = \''.$condition['free'].'\')'
-          );
-       } else {
-          $criteria->where
-          (
-            '( upper(role_group.name) like upper(\'%'.$condition['free'].'%\'))'
-          );
-       }
-
-    }//end if
 
   }//end public function appendConditions */
-
 
 
  /** check for limits, offset and order
@@ -231,10 +195,11 @@ class AclMgmt_Table_Query_Postgresql extends LibSqlQuery
   {
 
     // check if there is a given order
-    $criteria->orderBy('area_type.m_order asc');
-    $criteria->orderBy('role_group.name');
-    $criteria->groupBy('area_type.m_order');
-    $criteria->groupBy('role_group.name');
+    if ($params->order) {
+      $criteria->orderBy($params->order);
+    } else { // if not use the default
+      $criteria->orderBy('wbfsys_security_area.access_key');
+    }
 
     // Check the offset
     if ($params->start) {
@@ -262,5 +227,5 @@ class AclMgmt_Table_Query_Postgresql extends LibSqlQuery
 
   }//end public function checkLimitAndOrder */
 
-} // end class AclMgmt_Table_Query_Postgresql */
+} // end class AclMgmt_Backpath_Table_Query */
 

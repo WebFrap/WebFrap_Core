@@ -45,7 +45,7 @@ class WebfrapDocu_Page_Model extends Model
     $page = $orm->get(
       'WbfsysDocuTree',
       "access_key='{$key}' and (id_lang IN("
-        ." select rowid from wbfsys_language where UPPER(access_key) = UPPER('{$lang}') "
+        ." select rowid from wbfsys_language where access_key = UPPER('{$lang}') "
         .") or id_lang is null) "
     );
 

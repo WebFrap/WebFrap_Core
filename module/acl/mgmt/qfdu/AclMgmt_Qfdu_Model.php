@@ -56,11 +56,7 @@ class AclMgmt_Qfdu_Model extends Model
   {
 
     if (!$this->areaId) {
-      $orm = $this->getOrm();
-      $this->areaId = $orm->get
-      (
-        'WbfsysSecurityArea',
-        "upper(access_key)=upper('{$this->domainNode->aclBaseKey}')")->getid();
+      $this->areaId = $this->getAcl()->resources->getAreaId($this->domainNode->aclBaseKey);
     }
 
     return $this->areaId;
@@ -1082,20 +1078,17 @@ class AclMgmt_Qfdu_Model extends Model
 
     $user = $this->getUser();
 
-    $access = new AclMgmt_Access_Container(null, null, $this, $domainNode);
-    $access->load($user->getProfileName(), $context);
+    $access = new AclMgmt_Access_Container($this, $domainNode);
+    $access->init($context);
 
     // ok wenn er nichtmal lesen darf, dann ist hier direkt schluss
     if (!$access->admin) {
       // ausgabe einer fehlerseite und adieu
-      throw new InvalidRequest_Exception
-      (
-        $response->i18n->l
-        (
+      throw new InvalidRequest_Exception(
+        $response->i18n->l(
           'You have no permission for administration in {@resource@}',
           'wbf.message',
-          array
-          (
+          array(
             'resource' => $response->i18n->l($domainNode->label, $domainNode->domainI18n.'.label')
           )
         ),

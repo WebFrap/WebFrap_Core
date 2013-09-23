@@ -44,6 +44,18 @@
 
   </div>
 
+<section class="wgt-content_box form" >
+  <div class="content" >
+    <fieldset>
+      <div class="left n-cols-2" >
+      </div>
+
+      <div class="inline n-cols-2" >
+      </div>
+    </fieldset>
+  </div>
+</section>
+
 
   <!-- formular -->
   <div class="left bw61" >

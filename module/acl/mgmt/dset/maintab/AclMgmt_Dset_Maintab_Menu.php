@@ -55,6 +55,33 @@ class AclMgmt_Dset_Maintab_Menu extends WgtDropmenu
     $iconMask = '<i class="icon-list-alt" ></i>';
     $iconListMask = '<i class="icon-list-alt" ></i>';
 
+    // setting the crumb menu
+    $this->view->crumbs->setCrumbs(
+      array(
+        array(
+          'Dashboard',
+          'index.php',
+          'icon-dashboard'
+        ),
+        array(
+          'Table: '.$this->domainNode->pLabel,
+          'maintab.php?c=Project.Activity.listing',
+          'icon-list'
+        ),
+        array(
+          $objid->text(),
+          'maintab.php?c='.$this->domainNode->domainUrl.'.edit&amp;objid='.$objid,
+          'icon-th-large'
+        ),
+        array(
+          'ACLs: '.$objid->text(),
+          'maintab.php?c=Acl.Mgmt_Dset.listing&dkey='.$this->domainNode->domainName.'&objid='.$objid,
+          'icon-shield',
+          'active'
+        )
+      )
+    );
+
     $access = $params->access;
     $user = $this->getUser();
 
@@ -137,7 +164,7 @@ HTML;
       <ul>
         <li><a
           class="wcm wcm_req_ajax"
-          href="modal.php?c=Wbfsys.Faq.create&refer=enterprise_employee-acl-dset" >{$iconFaq} Faq</a>
+          href="modal.php?c=Wbfsys.Faq.create&refer={$this->domainNode->domainName}-acl-dset" >{$iconFaq} Faq</a>
         </li>
       </ul>
     </span>

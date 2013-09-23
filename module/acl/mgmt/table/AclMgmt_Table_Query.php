@@ -65,8 +65,8 @@ class AclMgmt_Table_Query extends LibSqlQuery
     $this->appendConditions($criteria, $condition, $params  );
     $this->checkLimitAndOrder($criteria, $params);
 
-    $keys = "UPPER('".implode("'), UPPER('",$areaKeys)."')";
-    $criteria->where("upper(area.access_key) IN({$keys}) and security_access.partial = 0");
+    $keys = "'".implode("', '",$areaKeys)."'";
+    $criteria->where("area.access_key IN({$keys}) and security_access.partial = 0");
 
     // Run Query und save the result
     $this->result = $db->orm->select($criteria);
@@ -159,6 +159,15 @@ class AclMgmt_Table_Query extends LibSqlQuery
       'area'
     );
 
+    $criteria->leftJoinOn (
+      'area',
+      'id_type',
+      'wbfsys_security_area_type',
+      'rowid',
+      null,
+      'area_type'
+    );
+
   }//end public function setTables */
 
   /** inject conditions in the criteria object
@@ -185,13 +194,11 @@ class AclMgmt_Table_Query extends LibSqlQuery
     if (isset($condition['free']) && trim($condition['free']) != ''  ) {
 
        if (ctype_digit($condition['free'])) {
-          $criteria->where
-          (
+          $criteria->where(
             '(security_access.rowid = \''.$condition['free'].'\')'
           );
        } else {
-          $criteria->where
-          (
+          $criteria->where(
             '( upper(role_group.name) like upper(\'%'.$condition['free'].'%\'))'
           );
        }
@@ -218,12 +225,11 @@ class AclMgmt_Table_Query extends LibSqlQuery
   {
 
     // check if there is a given order
-    if ($params->order) {
-      $criteria->orderBy($params->order);
-    } else { // if not use the default
-      $criteria->orderBy('role_group.name');
-    }
-
+    $criteria->orderBy('area_type.m_order desc');
+    $criteria->orderBy('role_group.name');
+    $criteria->groupBy('area_type.m_order');
+    $criteria->groupBy('role_group.name');
+    
     // Check the offset
     if ($params->start) {
       if ($params->start < 0)

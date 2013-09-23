@@ -110,10 +110,10 @@ DDL;
 
     }//end webfrap_acl_max_permission_view
 
-    if (!$dbAdmin->viewExists('webfrap_inject_acls_view')) {
+    if (!$dbAdmin->viewExists('webfrap_area_user_level_view')) {
 
       $ddl = <<<DDL
-CREATE  OR REPLACE VIEW webfrap_inject_acls_view
+CREATE  OR REPLACE VIEW webfrap_area_user_level_view
   AS
   SELECT
     max(acl_access.access_level)  as "acl-level",
@@ -169,9 +169,9 @@ CREATE  OR REPLACE VIEW webfrap_inject_acls_view
 DDL;
 
       $dbAdmin->ddl($ddl);
-      $dbAdmin->setViewOwner('webfrap_inject_acls_view');
+      $dbAdmin->setViewOwner('webfrap_area_user_level_view');
 
-    }//end webfrap_inject_acls_view
+    }//end webfrap_area_user_level_view
 
     if (!$dbAdmin->viewExists('webfrap_acl_assigned_view')) {
 

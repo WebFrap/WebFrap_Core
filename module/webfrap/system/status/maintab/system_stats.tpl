@@ -74,7 +74,7 @@ $phpModules = array
 <div class="wgt-content_box inline wgt-space bw48" >
   <div class="head" ><h2>Caches</h2>
     <div class="right" >
-      <a class="wcm wcm_req_del wgt-action " href="ajax.php?c=Webfrap.Cache.CleanAll" >clean all</a>
+      <a class="wcm wcm_req_del wgt-button " href="ajax.php?c=Webfrap.Cache.CleanAll" >clean all</a>
     </div>
   </div>
   <div class="content" style="height:auto;" >
@@ -140,7 +140,7 @@ $phpModules = array
   <div class="head" ><h2>Metadata</h2>
     <div class="right" >
       <a
-        class="wcm wcm_req_del wgt-action"
+        class="wcm wcm_req_del wgt-button"
         title="Please confirm to clean the deprecated Metadata."
         href="modal.php?c=Webfrap.Maintenance_Metadata.cleanAll" >clean all</a>
     </div>
@@ -178,7 +178,7 @@ $phpModules = array
   <div class="head" ><h2>Contexts</h2>
     <div class="right" >
       <a
-        class="wcm wcm_req_del wgt-action"
+        class="wcm wcm_req_del wgt-button"
         title="Please confirm to clean the Contexts"
         href="modal.php?c=Webfrap.Context.resetAll" >clean all</a>
     </div>

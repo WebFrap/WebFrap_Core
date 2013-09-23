@@ -176,8 +176,7 @@ class AclMgmt_Qfdu_Controller extends MvcController_Domain
 
     // create a new area with the id of the target element, this area will replace
     // the HTML Node of the target UI Element
-    $view = $response->loadView
-    (
+    $view = $response->loadView(
       $params->tabId,
       'AclMgmt_Qfdu_Group',
       'displayTab',

@@ -131,8 +131,7 @@ class AclMgmt_Qfdu_Ajax_View extends LibTemplateAjaxView
     // ok it's definitly an ajax request
     $context->ajax = true;
 
-    $ui->createListItem
-    (
+    $ui->createListItem(
       $this->model->searchQualifiedUsers($areaId, $context),
       $areaId,
       $context->access,
@@ -166,8 +165,7 @@ class AclMgmt_Qfdu_Ajax_View extends LibTemplateAjaxView
     // ok it's definitly an ajax request
     $context->ajax = true;
 
-    $ui->listBlockUsers
-    (
+    $ui->listBlockUsers(
       $groupId,
       $context
     );
@@ -200,8 +198,7 @@ class AclMgmt_Qfdu_Ajax_View extends LibTemplateAjaxView
     // ok it's definitly an ajax request
     $context->ajax = true;
 
-    $ui->listBlockDsets
-    (
+    $ui->listBlockDsets(
       $groupId,
       $userId,
       $context

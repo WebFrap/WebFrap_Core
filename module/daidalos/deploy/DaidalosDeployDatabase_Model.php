@@ -114,6 +114,8 @@ class DaidalosDeployDatabase_Model extends Model
 
       $this->syncMetadata_ByType( 'security_area', $repos, $deployRevision, $rootPath);
       $this->syncMetadata_ByType( 'desktop',$repos, $deployRevision, $rootPath);
+      $this->syncMetadata_ByType( 'desktop_mainmenu',$repos, $deployRevision, $rootPath);
+      $this->syncMetadata_ByType( 'desktop_profilemenu',$repos, $deployRevision, $rootPath);
       $this->syncMetadata_ByType( 'profile', $repos, $deployRevision, $rootPath);
       $this->syncMetadata_ByType( 'role',$repos, $deployRevision, $rootPath);
 
@@ -160,9 +162,6 @@ class DaidalosDeployDatabase_Model extends Model
     $acl = $this->getAcl();
     $aclManager = $acl->getManager();
     $respsonse = $this->getResponse();
-
-    $this->protocol->paragraph('Security Area');
-
 
     $this->protocol->paragraph( SParserString::subToName($type) );
 

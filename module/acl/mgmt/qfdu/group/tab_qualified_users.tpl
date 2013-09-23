@@ -48,122 +48,133 @@
       </button>
     </div>
 
-    <!-- formular -->
-    <div class="left bw61" >
+    <section class="wgt-content_box form" >
+      <div class="content" >
+        <fieldset>
 
-      <div class="left bw3" >
+        <div class="left n-cols-2" >
 
-
-        <!-- group input -->
-        <div class="left" >
-          <label
-            class="wgt-label"
-            for="<?php echo $ELEMENT->selectboxGroups->id ?>" ><?php echo $I18N->l( 'Group', 'wbf.label' ); ?></label>
-          <div class="wgt-input medium" >
-            <?php echo $ELEMENT->selectboxGroups->niceElement() ?>
-          </div>
-        </div>
-
-        <!-- user input -->
-        <div class="left" >
-
-          <label
-            class="wgt-label"
-            for="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-qfdu-id_user" ><?php echo $I18N->l( 'User', 'wbf.label' ); ?></label>
-
-          <div class="wgt-input medium" >
-            <input
-              type="text"
-              id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-qfdu-id_user-tostring"
-              name="key"
-              title="Just type in the namen of the user, or klick on search for an extended search"
-              class="medium wcm wcm_ui_autocomplete wgt-ignore wcm_ui_tip"  />
-            <var class="wgt-settings" >{
-                "url":"ajax.php?c=Acl.Mgmt_Qfdu.loadUsers&amp;dkey=<?php echo $VAR->domain->domainName ?>&amp;area_id=<?php
-                  echo $VAR->areaId
-                 ?>&amp;key=",
-                "type":"entity"
-              }</var>
-            <input
-              type="text"
-              id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-qfdu-id_user"
-              name="group_users[id_user]"
-              class="meta valid_required asgd-<?php echo $VAR->formIdAppend?>"  />
-            <button
-              id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-acl-advanced_search"
-              class="wgt-button append"
-              onclick="$R.get('modal.php?c=Wbfsys.RoleUser.selection&input=<?php echo $VAR->domain->aclDomainKey ?>-acl-qfdu-id_user');return false;"    >
-              <i class="icon-search" ></i>
-            </button>
+          <!-- group input -->
+          <div class="wgt-box input" >
+            <div class="wgt-label" >
+              <label
+                class="wgt-label"
+                for="<?php echo $ELEMENT->selectboxGroups->id ?>" ><?php echo $I18N->l( 'Group', 'wbf.label' ); ?></label>
+            </div>
+            <div class="wgt-input" >
+              <?php echo $ELEMENT->selectboxGroups->niceElement() ?>
+            </div>
+            <div class="wgt-clear tiny" >&nbsp;</div>
           </div>
 
+          <!-- user input -->
+          <div class="wgt-box input" >
+
+            <div class="wgt-label" >
+              <label
+                class="wgt-label"
+                for="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-qfdu-id_user" ><?php echo $I18N->l( 'User', 'wbf.label' ); ?></label>
+            </div>
+
+            <div class="wgt-input" >
+              <input
+                type="text"
+                id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-qfdu-id_user-tostring"
+                name="key"
+                title="Just type in the namen of the user, or klick on search for an extended search"
+                class="medium wcm wcm_ui_autocomplete wgt-ignore wcm_ui_tip"  />
+              <var class="wgt-settings" >{
+                  "url":"ajax.php?c=Acl.Mgmt_Qfdu.loadUsers&amp;dkey=<?php echo $VAR->domain->domainName ?>&amp;area_id=<?php
+                    echo $VAR->areaId
+                   ?>&amp;key=",
+                  "type":"entity"
+                }</var>
+              <input
+                type="text"
+                id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-qfdu-id_user"
+                name="group_users[id_user]"
+                class="meta valid_required asgd-<?php echo $VAR->formIdAppend?>"  />
+              <button
+                id="wgt-button-<?php echo $VAR->domain->aclDomainKey ?>-acl-advanced_search"
+                class="wgt-button append"
+                onclick="$R.get('modal.php?c=Wbfsys.RoleUser.selection&input=<?php echo $VAR->domain->aclDomainKey ?>-acl-qfdu-id_user');return false;"    >
+                <i class="icon-search" ></i>
+              </button>
+            </div>
+            <div class="wgt-clear tiny" >&nbsp;</div>
+          </div>
+
         </div>
 
-      </div>
+        <div class="inline n-cols-2" >
 
-      <div class="inline bw3" >
+          <div class="wgt-box input"  >
 
-        <!-- <?php echo $VAR->domain->label ?> Entity -->
-        <div class="left"  >
+            <div class="wgt-label" >
+              <label
+                class="wgt-label"
+                for="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-qfdu-vid" ><?php echo $VAR->domain->label ?></label>
+            </div>
 
-          <label
-            class="wgt-label"
-            for="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-qfdu-vid" ><?php echo $VAR->domain->label ?></label>
-
-          <div class="wgt-input medium" >
-            <input
-              type="text"
-              id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-qfdu-vid-tostring"
-              title="Just type in the namen of the <?php echo $VAR->domain->label ?>, or klick on search for an extended search"
-              name="key"
-              class="medium wcm wcm_ui_autocomplete wgt-ignore wcm_ui_tip"
-            />
-            <var class="wgt-settings" >{
-                "url":"ajax.php?c=Acl.Mgmt_Qfdu.loadEntity&amp;dkey=<?php echo $VAR->domain->domainName ?>&amp;area_id=<?php echo $VAR->areaId ?>&amp;key=",
-                "type":"entity"
-              }</var>
-            <input
-              type="text"
-              id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-qfdu-vid"
-              name="group_users[vid]"
-              class="meta valid_required asgd-<?php echo $VAR->formIdAppend?>"
-            />
-            <button
-              id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-qfdu-vid-append"
-              class="wgt-button append"
-              onclick="$R.get('modal.php?c=<?php echo $VAR->domain->domainUrl ?>.selection&input=<?php echo $VAR->domain->aclDomainKey ?>-acl-qfdu-vid');return false;"
-            >
-              <i class="icon-search" ></i>
-            </button>
+            <div class="wgt-input" >
+              <input
+                type="text"
+                id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-qfdu-vid-tostring"
+                title="Just type in the namen of the <?php echo $VAR->domain->label ?>, or klick on search for an extended search"
+                name="key"
+                class="medium wcm wcm_ui_autocomplete wgt-ignore wcm_ui_tip"
+              />
+              <var class="wgt-settings" >{
+                  "url":"ajax.php?c=Acl.Mgmt_Qfdu.loadEntity&amp;dkey=<?php echo $VAR->domain->domainName ?>&amp;area_id=<?php echo $VAR->areaId ?>&amp;key=",
+                  "type":"entity"
+                }</var>
+              <input
+                type="text"
+                id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-qfdu-vid"
+                name="group_users[vid]"
+                class="meta valid_required asgd-<?php echo $VAR->formIdAppend?>"
+              />
+              <button
+                id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-qfdu-vid-append"
+                class="wgt-button append"
+                onclick="$R.get('modal.php?c=<?php echo $VAR->domain->domainUrl ?>.selection&input=<?php echo $VAR->domain->aclDomainKey ?>-acl-qfdu-vid');return false;"
+              >
+                <i class="icon-search" ></i>
+              </button>
+           </div>
+           <div class="wgt-clear tiny" >&nbsp;</div>
          </div>
 
-       </div>
+         <!-- Assign Full -->
+         <div class="wgt-box input aligned" >
 
-       <!-- Assign Full -->
-       <div class="left" >
-         <label
-           class="wgt-label"
-           for="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-qfdu-flagfull" ><?php echo $I18N->l( 'Assign Full', 'wbf.label') ?></label>
+           <div class="wgt-input checkbox" >
+              <input
+                type="checkbox"
+                class="asgd-<?php echo $VAR->formIdAppend?>"
+                id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-qfdu-flagfull"
+                name="assign_full"
+              />
+           </div>
+           <div class="wgt-label" >
+             <label
+               class="wgt-label"
+               for="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-qfdu-flagfull"
+             ><?php echo $I18N->l( 'Assign Full', 'wbf.label') ?></label>
+           </div>
+           <div class="wgt-clear tiny" >&nbsp;</div>
+         </div>
 
-         <div class="wgt-input medium" >
-          <input
-            type="checkbox"
-            class="asgd-<?php echo $VAR->formIdAppend?>"
-            id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-acl-qfdu-flagfull"
-            name="assign_full"
-          />
         </div>
-       </div>
 
+          <div class="wgt-clear small" >&nbsp;</div>
+        </fieldset>
+      </div>
+    </section>
 
+    <div class="wgt-clear small" >&nbsp;</div>
 
-     </div>
-
-    <div class="wgt-clear medium" >&nbsp;</div>
-
-    </div>
-
-    <div class="left full" style="width:100%;" >
+    <div class="full" style="width:100%;" >
       <?php echo $ELEMENT->listingQualifiedUsers ?>
     </div>
 

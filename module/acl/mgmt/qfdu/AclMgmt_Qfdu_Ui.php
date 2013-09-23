@@ -62,8 +62,7 @@ class AclMgmt_Qfdu_Ui extends MvcUi
     //$className = $this->domainNode->domainAclMask.'_Qfdu_Treetable_Element';
 
     /**/
-    $table = new AclMgmt_Qfdu_Group_Treetable_Element
-    (
+    $table = new AclMgmt_Qfdu_Group_Treetable_Element(
       $this->domainNode,
       'listingQualifiedUsers',
       $this->view

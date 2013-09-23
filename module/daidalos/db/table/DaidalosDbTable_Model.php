@@ -41,7 +41,7 @@ class DaidalosDbTable_Model extends Model
     'webfrap_acl_area_access_view',
     'webfrap_acl_level_global_asgd_view',
 
-    'webfrap_inject_acls_view',
+    'webfrap_area_user_level_view',
     'webfrap_has_arearole_view',
     'webfrap_acl_permission_view',
     'webfrap_acl_assigned_view',

@@ -52,45 +52,37 @@ class AclMgmt_Qfdu_User_Controller extends AclMgmt_Controller
   protected $options = array
   (
 
-    'search' => array
-    (
+    'search' => array(
       'method' => array('GET'),
       'views' => array('ajax')
     ),
-    'loadusers' => array
-    (
+    'loadusers' => array(
       'method' => array('GET'),
       'views' => array('ajax')
     ),
-    'loaddsets' => array
-    (
+    'loaddsets' => array(
       'method' => array('GET'),
       'views' => array('ajax')
     ),
-    'append' => array
-    (
+    'append' => array(
       'method' => array('PUT', 'POST'),
       'views' => array('ajax')
     ),
-    'export' => array
-    (
+    'export' => array(
       'method' => array('GET'),
       //'views' => array('document')
     ),
 
     // dropping of assignments
-    'dropgroupassignments' => array
-    (
+    'dropgroupassignments' => array(
       'method' => array('DELETE'),
       'views' => array('ajax')
     ),
-    'dropuserassignments' => array
-    (
+    'dropuserassignments' => array(
       'method' => array('DELETE'),
       'views' => array('ajax')
     ),
-    'dropdsetassignments' => array
-    (
+    'dropdsetassignments' => array(
       'method' => array('DELETE'),
       'views' => array('ajax')
     ),

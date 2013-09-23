@@ -109,15 +109,14 @@ class AclMgmt_Controller extends MvcController_Domain
     $model->checkAccess($domainNode, $params);
 
     /* @var $view AclMgmt_Maintab_View */
-    $view = $response->loadView
-    (
+    $view = $response->loadView(
       $domainNode->domainName.'_acl_listing',
       'AclMgmt',
       'displayListing'
     );
     $view->domainNode = $domainNode;
 
-    $view->setModel($model  );
+    $view->setModel($model);
     $view->displayListing($params);
 
   }//end public function service_listing */
