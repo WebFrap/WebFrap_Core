@@ -98,7 +98,7 @@ class WebfrapContact_List_Maintab_View extends WgtMaintab
 
 <div class="inline" >
   <button
-    class="wcm wcm_control_dropmenu wgt-button ui-state-default"
+    class="wcm wcm_control_dropmenu wgt-button"
     id="{$this->id}_dropmenu-control"
     style="text-align:left;"
     wgt_drop_box="{$this->id}_dropmenu"  ><i class="icon-reorder" ></i> Menu <i class="icon-angle-down" ></i></button>
