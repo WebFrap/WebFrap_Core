@@ -158,8 +158,7 @@ SQL;
 
     $criteria = $db->orm->newCriteria();
 
-    $criteria->select(array
-    (
+    $criteria->select(array(
       'DISTINCT wbfsys_file_type.rowid as id',
       'wbfsys_file_type.name as value',
       'wbfsys_file_type.description as content'
