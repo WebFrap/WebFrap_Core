@@ -113,7 +113,7 @@ class WebfrapBase_Maintab_View extends WgtMaintab
     </ul>
     <ul>
       <li>
-        <a class="wgtac_close" ><i class="icon-remove-circle" ></i> {$this->i18n->l('Close', 'wbf.label')}</a>
+        <a class="wgtac_close" ><i class="icon-remove" ></i> {$this->i18n->l('Close', 'wbf.label')}</a>
       </li>
     </ul>
 
@@ -130,7 +130,7 @@ HTML;
   <button
     class="wcm wcm_ui_tip-left wgt-button wgtac_close"
     tabindex="-1"
-    tooltip="Close the active tab"  ><i class="icon-remove-circle" ></i></button>
+    tooltip="Close the active tab"  ><i class="icon-remove" ></i></button>
 </div>
 
 <div class="right" >

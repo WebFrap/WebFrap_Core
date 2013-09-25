@@ -110,7 +110,7 @@ class MaintenanceDb_Index_Search_Maintab_View extends WgtMaintabCustom
 
     $iconMenu = '<i class="icon-reorder" ></i>';
     $iconRebuild = $view->icon( 'maintenance/rebuild_index.png', 'Rebuild Index');
-    $iconClose = '<i class="icon-remove-circle " ></i>';
+    $iconClose = '<i class="icon-remove " ></i>';
 
     $entries = new TArray();
     $entries->support = $this->entriesSupport($params);
@@ -127,7 +127,7 @@ class MaintenanceDb_Index_Search_Maintab_View extends WgtMaintabCustom
 {$entries->custom}
 {$entries->support}
       <li>
-        <p class="wgtac_close" ><i class="icon-remove-circle" ></i> {$view->i18n->l('Close','wbf.label')}</p>
+        <p class="wgtac_close" ><i class="icon-remove" ></i> {$view->i18n->l('Close','wbf.label')}</p>
       </li>
     </ul>
   </li>

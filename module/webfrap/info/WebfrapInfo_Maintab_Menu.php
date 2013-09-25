@@ -40,7 +40,7 @@ class WebfrapInfo_Maintab_Menu extends WgtDropmenu
     <ul style="margin-top:-10px;" >
 {$entries->support}
       <li>
-        <p class="wgtac_close" ><i class="icon-remove-circle" ></i> {$this->view->i18n->l('Close','wbf.label')}</p>
+        <p class="wgtac_close" ><i class="icon-remove" ></i> {$this->view->i18n->l('Close','wbf.label')}</p>
       </li>
     </ul>
   </li>

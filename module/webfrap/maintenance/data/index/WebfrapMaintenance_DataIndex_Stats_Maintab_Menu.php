@@ -45,7 +45,7 @@ class WebfrapMaintenance_DataIndex_Stats_Maintab_Menu extends WgtDropmenu
 
     $iconMenu = '<i class="icon-reorder" ></i>';
     $iconRebuild = $view->icon( 'maintenance/rebuild_index.png', 'Rebuild Index');
-    $iconClose = '<i class="icon-remove-circle " ></i>';
+    $iconClose = '<i class="icon-remove " ></i>';
 
     $entries = new TArray();
     $entries->support = $this->entriesSupport($params);
@@ -83,7 +83,7 @@ BUTTON;
       </li>
     {$entries->support}
       <li>
-        <a class="wgtac_close" ><i class="icon-remove-circle" ></i> {$this->view->i18n->l('Close', 'wbf.label')}</a>
+        <a class="wgtac_close" ><i class="icon-remove" ></i> {$this->view->i18n->l('Close', 'wbf.label')}</a>
       </li>
     </ul>
   </div>

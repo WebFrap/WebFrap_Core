@@ -60,7 +60,7 @@ class MaintenanceDbConsistency_Maintab_Menu extends WgtDropmenu
 
     $iconMenu = '<i class="icon-reorder" ></i>';
     $iconExecute = $view->icon('control/exec.png', 'Send');
-    $iconClose = '<i class="icon-remove-circle " ></i>';
+    $iconClose = '<i class="icon-remove " ></i>';
 
     $iconSupport = $view->icon('control/support.png'      ,'Support');
     $iconBug = $view->icon('control/bug.png'      ,'Bug');
@@ -95,7 +95,7 @@ class MaintenanceDbConsistency_Maintab_Menu extends WgtDropmenu
       </span>
     </li>
     <li>
-      <a class="wgtac_close" ><i class="icon-remove-circle" ></i> {$view->i18n->l('Close','wbf.label')}</a>
+      <a class="wgtac_close" ><i class="icon-remove" ></i> {$view->i18n->l('Close','wbf.label')}</a>
     </li>
   </ul>
 </div>

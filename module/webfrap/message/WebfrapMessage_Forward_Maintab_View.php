@@ -87,7 +87,7 @@ class WebfrapMessage_Forward_Maintab_View extends WgtMaintab
     </li>
     <li>
       <a class="wgtac_close" ><i
-      	class="icon-remove-circle" ></i> {$this->i18n->l('Close','wbf.label')}</a>
+      	class="icon-remove" ></i> {$this->i18n->l('Close','wbf.label')}</a>
     </li>
   </ul>
 </div>

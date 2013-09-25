@@ -100,7 +100,7 @@ class WebfrapMaintenance_Process_Maintab_View extends WgtMaintabList
 
     $i18n = $this->getI18n();
     $iconMenu = '<i class="icon-reorder" ></i>';
-    $iconClose = '<i class="icon-remove-circle " ></i>';
+    $iconClose = '<i class="icon-remove " ></i>';
 
     $entries = new TArray();
     $entries->support = $this->entriesSupport( $menu);
@@ -123,7 +123,7 @@ class WebfrapMaintenance_Process_Maintab_View extends WgtMaintabList
       </li>
     {$entries->support}
       <li>
-        <a class="wgtac_close" ><i class="icon-remove-circle" ></i> {$i18n->l('Close', 'wbf.label')}</a>
+        <a class="wgtac_close" ><i class="icon-remove" ></i> {$i18n->l('Close', 'wbf.label')}</a>
       </li>
     </ul>
   </div>

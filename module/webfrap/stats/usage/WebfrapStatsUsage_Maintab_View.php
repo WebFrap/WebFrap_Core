@@ -62,7 +62,7 @@ class WebfrapStatsUsage_Maintab_View extends WgtMaintab
   {
 
     $iconMenu = '<i class="icon-reorder" ></i>';
-    $iconClose = '<i class="icon-remove-circle" ></i>';
+    $iconClose = '<i class="icon-remove" ></i>';
     $iconRefresh = '<i class="icon-refresh" ></i>';
 
     $iconSupport = $this->icon('control/support.png'  ,'Support');
@@ -101,7 +101,7 @@ class WebfrapStatsUsage_Maintab_View extends WgtMaintab
       </span>
     </li>
     <li>
-      <a class="wgtac_close" ><i class="icon-remove-circle" ></i> {$this->i18n->l('Close','wbf.label')}</a>
+      <a class="wgtac_close" ><i class="icon-remove" ></i> {$this->i18n->l('Close','wbf.label')}</a>
     </li>
   </ul>
 </div>

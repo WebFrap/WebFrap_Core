@@ -156,7 +156,7 @@ class WebfrapSystem_Status_Maintab_View extends WgtMaintab
   </ul>
   <ul>
     <li>
-      <a class="wgtac_close" ><i class="icon-remove-circle" ></i> {$this->i18n->l('Close','wbf.label')}</a>
+      <a class="wgtac_close" ><i class="icon-remove" ></i> {$this->i18n->l('Close','wbf.label')}</a>
     </li>
   </ul>
 </div>
