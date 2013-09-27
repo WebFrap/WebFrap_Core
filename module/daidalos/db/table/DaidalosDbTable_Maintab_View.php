@@ -76,7 +76,7 @@ class DaidalosDbTable_Maintab_View extends WgtMaintabCustom
     $menu->id = $this->id.'_dropmenu';
 
     $iconMenu = '<i class="icon-reorder" ></i>';
-    $iconClose = '<i class="icon-remove-circle " ></i>';
+    $iconClose = '<i class="icon-remove " ></i>';
 
     $iconQuery = $this->icon('daidalos/query.png' ,'Query');
 
@@ -133,7 +133,7 @@ class DaidalosDbTable_Maintab_View extends WgtMaintabCustom
       </span>
     </li>
     <li>
-      <a class="wgtac_close" ><i class="icon-remove-circle" ></i> {$this->i18n->l('Close','wbf.label')}</a>
+      <a class="wgtac_close" ><i class="icon-remove" ></i> {$this->i18n->l('Close','wbf.label')}</a>
     </li>
   </ul>
 

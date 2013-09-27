@@ -223,7 +223,7 @@ class WebfrapMessage_Table_Element extends WgtTable
         Wgt::ACTION_DELETE,
         'Delete',
         'ajax.php?c=Webfrap.Message.deleteMessage&amp;objid=',
-        'icon-remove-circle',
+        'icon-remove',
         '',
         'wbf.label',
         Acl::DELETE

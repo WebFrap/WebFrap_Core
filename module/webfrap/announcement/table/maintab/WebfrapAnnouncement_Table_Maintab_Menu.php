@@ -41,7 +41,7 @@ class WebfrapAnnouncement_Table_Maintab_Menu extends WgtDropmenu
     $view = $this->getView();
 
     $iconMenu = '<i class="icon-reorder" ></i>';
-    $iconClose = '<i class="icon-remove-circle " ></i>';
+    $iconClose = '<i class="icon-remove " ></i>';
     $iconEntity = $this->view->icon('control/entity.png'      ,'Entity');
     $iconAdd = $this->view->icon('control/add.png'      ,'Create');
 
@@ -90,7 +90,7 @@ BUTTON;
       </span>
     </li>
     <li>
-      <a class="wgtac_close" ><i class="icon-remove-circle" ></i> {$this->view->i18n->l('Close','wbf.label')}</a>
+      <a class="wgtac_close" ><i class="icon-remove" ></i> {$this->view->i18n->l('Close','wbf.label')}</a>
     </li>
   </ul>
 </div>

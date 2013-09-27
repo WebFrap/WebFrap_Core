@@ -51,7 +51,7 @@ class WebfrapNavigation_Maintab_Menu extends WgtDropmenu
   <div class="wgt-dropdownbox" id="{$this->id}" >
     <ul>
       <li>
-        <a class="wgtac_close" ><i class="icon-remove-circle" ></i> {$this->view->i18n->l('Close', 'wbf.label')}</a>
+        <a class="wgtac_close" ><i class="icon-remove" ></i> {$this->view->i18n->l('Close', 'wbf.label')}</a>
       </li>
     </ul>
   </div>
@@ -101,7 +101,7 @@ HTML;
   <button
     class="wcm wcm_ui_tip-left wgt-button wgtac_close"
     tabindex="-1"
-    tooltip="Close the active tab"  ><i class="icon-remove-circle" ></i></button>
+    tooltip="Close the active tab"  ><i class="icon-remove" ></i></button>
 </div>
 <div class="right" >
   <input

@@ -42,7 +42,7 @@ class WebfrapMaintenance_Maintab_Menu extends WgtDropmenu
   {
 
     $iconMenu = '<i class="icon-reorder" ></i>';
-    $iconClose = '<i class="icon-remove-circle " ></i>';
+    $iconClose = '<i class="icon-remove " ></i>';
 
     $entries = new TArray();
 
@@ -60,7 +60,7 @@ class WebfrapMaintenance_Maintab_Menu extends WgtDropmenu
   <div class="wgt-dropdownbox" id="{$this->id}" >
     <ul>
       <li>
-        <a class="wgtac_close" ><i class="icon-remove-circle" ></i> {$this->view->i18n->l('Close', 'wbf.label')}</a>
+        <a class="wgtac_close" ><i class="icon-remove" ></i> {$this->view->i18n->l('Close', 'wbf.label')}</a>
       </li>
     </ul>
   </div>

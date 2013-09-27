@@ -60,7 +60,7 @@ class MyProfile_Maintab_Menu extends WgtDropmenu
 
     $iconMenu = '<i class="icon-reorder" ></i>';
     $iconSend = $view->icon('message/send.png', 'Send');
-    $iconClose = '<i class="icon-remove-circle " ></i>';
+    $iconClose = '<i class="icon-remove " ></i>';
 
     $entries = new TArray();
     $entries->support = $this->entriesSupport($params);
@@ -89,7 +89,7 @@ BUTTON;
 {$entries->custom}
 {$entries->support}
       <li>
-        <p class="wgtac_close" ><i class="icon-remove-circle" ></i> {$view->i18n->l('Close','wbf.label')}</p>
+        <p class="wgtac_close" ><i class="icon-remove" ></i> {$view->i18n->l('Close','wbf.label')}</p>
       </li>
     </ul>
   </li>

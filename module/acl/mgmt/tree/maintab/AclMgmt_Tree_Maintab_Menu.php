@@ -57,7 +57,7 @@ class AclMgmt_Tree_Maintab_Menu extends WgtDropmenu
     $view = $this->view;
     $iconMenu = '<i class="icon-reorder" ></i>';
     $iconEdit = '<i class="icon-save" ></i>';
-    $iconClose = '<i class="icon-remove-circle " ></i>';
+    $iconClose = '<i class="icon-remove " ></i>';
 
     $access = $params->access;
     $user = $this->getUser();
@@ -90,7 +90,7 @@ class AclMgmt_Tree_Maintab_Menu extends WgtDropmenu
 
     <ul>
       <li>
-        <a class="wgtac_close" ><i class="icon-remove-circle" ></i> {$this->view->i18n->l('Close','wbf.label')}</a>
+        <a class="wgtac_close" ><i class="icon-remove" ></i> {$this->view->i18n->l('Close','wbf.label')}</a>
       </li>
     </ul>
   </div>

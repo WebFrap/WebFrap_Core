@@ -83,7 +83,7 @@ class WebfrapTaskPlanner_Calendar_Maintab_View extends WgtMaintab
     $iconMenu = '<i class="icon-reorder" ></i>';
     $iconSupport = $this->icon('control/support.png'      ,'Support');
     $iconHelp = $this->icon('control/help.png'      ,'Help');
-    $iconClose = '<i class="icon-remove-circle " ></i>';
+    $iconClose = '<i class="icon-remove " ></i>';
     $iconEdit = '<i class="icon-edit" ></i>';
     $iconBug = $this->icon('control/bug.png'      ,'Bug');
     $iconFaq = $this->icon('control/bookmark.png'      ,'Bookmark');
@@ -118,7 +118,7 @@ class WebfrapTaskPlanner_Calendar_Maintab_View extends WgtMaintab
       </span>
     </li>
     <li>
-      <a class="wgtac_close" ><i class="icon-remove-circle" ></i> {$this->i18n->l('Close','wbf.label')}</a>
+      <a class="wgtac_close" ><i class="icon-remove" ></i> {$this->i18n->l('Close','wbf.label')}</a>
     </li>
   </ul>
 </div>

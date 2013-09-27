@@ -101,7 +101,7 @@ class WebfrapMaintenance_DoubleCheck_Show_Maintab_View extends WgtMaintabCustom
 
     $iconMenu = '<i class="icon-reorder" ></i>';
     $iconRebuild = $this->icon( 'maintenance/rebuild_index.png', 'Rebuild Index');
-    $iconClose = '<i class="icon-remove-circle " ></i>';
+    $iconClose = '<i class="icon-remove " ></i>';
 
     $entries = new TArray();
     $entries->support = $this->entriesSupport( $menu);
@@ -124,7 +124,7 @@ class WebfrapMaintenance_DoubleCheck_Show_Maintab_View extends WgtMaintabCustom
       </li>
     {$entries->support}
       <li>
-        <a class="wgtac_close" ><i class="icon-remove-circle" ></i> {$this->i18n->l('Close', 'wbf.label')}</a>
+        <a class="wgtac_close" ><i class="icon-remove" ></i> {$this->i18n->l('Close', 'wbf.label')}</a>
       </li>
     </ul>
   </div>

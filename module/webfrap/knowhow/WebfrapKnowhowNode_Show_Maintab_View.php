@@ -64,7 +64,7 @@ class WebfrapKnowhowNode_Show_Maintab_View extends WgtMaintabCustom
   {
 
     $iconMenu = '<i class="icon-reorder" ></i>';
-    $iconClose = '<i class="icon-remove-circle " ></i>';
+    $iconClose = '<i class="icon-remove " ></i>';
     $iconSave = '<i class="icon-save" ></i>';
     $iconEdit = '<i class="icon-edit" ></i>';
 
@@ -104,7 +104,7 @@ class WebfrapKnowhowNode_Show_Maintab_View extends WgtMaintabCustom
       </span>
     </li>
     <li>
-      <a class="wgtac_close" ><i class="icon-remove-circle" ></i> {$this->i18n->l('Close','wbf.label')}</a>
+      <a class="wgtac_close" ><i class="icon-remove" ></i> {$this->i18n->l('Close','wbf.label')}</a>
     </li>
   </ul>
 </div>
