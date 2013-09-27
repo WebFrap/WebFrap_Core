@@ -300,7 +300,7 @@ class AclUser_Treetable_Element extends WgtTreetable
 
 
     $icons = array();
-    $icons['closed'] = $this->icon('control/closed.png', 'Closed');
+    $icons['closed'] = '<i class="icon-caret-right" ></i>';
 
     // check for replace is used to check if this table should be pushed via ajax
     // to the client, or if the table is placed direct into a template
@@ -402,7 +402,7 @@ class AclUser_Treetable_Element extends WgtTreetable
   {
 
     $icons = array();
-    $icons['closed'] = $this->icon('control/closed.png', 'Closed');
+    $icons['closed'] = '<i class="icon-caret-right" ></i>';
 
     // create the table body
     $body = '<tbody>'.NL;
@@ -478,7 +478,7 @@ HTML;
   {
 
     $icons = array();
-    $icons['closed'] = $this->icon('control/closed.png', 'Closed');
+    $icons['closed'] = '<i class="icon-caret-right" ></i>';
 
     $body = '<htmlArea selector="tr#'.$this->id.'_row_'.$userId.'" action="after" ><![CDATA['.NL;
 
@@ -551,7 +551,7 @@ HTML;
   {
 
     $icons = array();
-    $icons['closed'] = $this->icon('control/closed.png', 'Closed');
+    $icons['closed'] = '<i class="icon-caret-right" ></i>';
 
     $body = '<htmlArea selector="tr#'.$this->id.'_row_'.$userId.'_'.$dsetId.'" action="after" ><![CDATA['.NL;
 
@@ -571,8 +571,7 @@ HTML;
         ? $this->view->i18n->date($row['group_users_date_end'])
         : '';
 
-      $navigation = $this->rowMenu
-      (
+      $navigation = $this->rowMenu(
         $objid.'&dset_id='.$dsetId.'&user_id='.$userId.'&area_id='.$this->areaId,
         $row,
         null,

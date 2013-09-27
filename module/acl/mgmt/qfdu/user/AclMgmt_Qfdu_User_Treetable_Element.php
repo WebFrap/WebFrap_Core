@@ -294,7 +294,7 @@ class AclMgmt_Qfdu_User_Treetable_Element extends WgtTreetable
 
 
     $icons = array();
-    $icons['closed'] = $this->icon('control/closed.png', 'Closed');
+    $icons['closed'] = '<i class="icon-caret-right" ></i>';
 
     // check for replace is used to check if this table should be pushed via ajax
     // to the client, or if the table is placed direct into a template
@@ -396,7 +396,7 @@ class AclMgmt_Qfdu_User_Treetable_Element extends WgtTreetable
   {
 
     $icons = array();
-    $icons['closed'] = $this->icon('control/closed.png', 'Closed');
+    $icons['closed'] = '<i class="icon-caret-right" ></i>';
 
     // create the table body
     $body = '<tbody>'.NL;
@@ -479,7 +479,7 @@ HTML;
   {
 
     $icons = array();
-    $icons['closed'] = $this->icon('control/closed.png', 'Closed');
+    $icons['closed'] = '<i class="icon-caret-right" ></i>';
 
     $body = '<htmlArea selector="tr#'.$this->id.'_row_'.$userId.'" action="after" ><![CDATA['.NL;
 
@@ -553,7 +553,7 @@ HTML;
   {
 
     $icons = array();
-    $icons['closed'] = $this->icon('control/closed.png', 'Closed');
+    $icons['closed'] = '<i class="icon-caret-right" ></i>';
 
     $body = '<htmlArea selector="tr#'.$this->id.'_row_'.$userId.'_'.$dsetId.'" action="after" ><![CDATA['.NL;
 
@@ -689,7 +689,7 @@ HTML;
   {
 
     $icons = array();
-    $icons['closed'] = $this->icon('control/closed.png', 'Closed');
+    $icons['closed'] = '<i class="icon-caret-right" ></i>';
 
     // create the table body
     $body = '';
@@ -704,8 +704,7 @@ HTML;
         $rowid = $this->id.'_row_'.$userId;
 
         if ($this->enableNav) {
-          $navigation = $this->rowMenu
-          (
+          $navigation = $this->rowMenu(
             '0&user_id='.$userId,
             $row,
             null,
