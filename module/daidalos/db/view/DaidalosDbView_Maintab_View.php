@@ -75,20 +75,15 @@ class DaidalosDbView_Maintab_View extends WgtMaintabCustom
 
     $menu->id = $this->id.'_dropmenu';
 
-    $iconMenu = '<i class="icon-reorder" ></i>';
-    $iconClose = '<i class="icon-remove " ></i>';
 
     $iconQuery = $this->icon('daidalos/query.png' ,'Query');
 
-    $iconSupport = $this->icon('control/support.png'  ,'Support');
-    $iconBug = $this->icon('control/bug.png'      ,'Bug');
     $iconFaq = $this->icon('control/faq.png'      ,'Faq');
 
     $iconCreateView = $this->icon('daidalos/table_import.png' ,'Create Wbf Views');
     $iconRecreate = $this->icon('daidalos/table_dump.png' ,'Refresh Wbf Views');
     $iconDeleteView = $this->icon('daidalos/table_clean.png' ,'Delete Wbf Views');
 
-    $iconRefresh = '<i class="icon-refresh" ></i>';
 
     $entries = new TArray();
 
@@ -127,8 +122,7 @@ class DaidalosDbView_Maintab_View extends WgtMaintabCustom
       <a class="deeplink" ><i class="icon-question-sign" ></i> {$this->i18n->l('Support', 'wbf.label')}</a>
       <span>
       <ul>
-        <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Issue.create&amp;context=menu" >{$iconBug} {$this->i18n->l('Bug', 'wbf.label')}</a></li>
-        <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Faq.create&amp;context=menu" >{$iconFaq} {$this->i18n->l('Faq', 'wbf.label')}</a></li>
+        <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Faq.create&amp;context=menu" ><i class="icon-question" ></i> {$this->i18n->l('Faq', 'wbf.label')}</a></li>
       </ul>
       </span>
     </li>

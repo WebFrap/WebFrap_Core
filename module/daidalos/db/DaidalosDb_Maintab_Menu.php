@@ -44,9 +44,6 @@ class DaidalosDb_Maintab_Menu extends WgtDropmenu
     $iconMenu = '<i class="icon-reorder" ></i>';
     $iconClose = '<i class="icon-remove " ></i>';
     $iconQuery = $view->icon('daidalos/query.png' ,'Query');
-    $iconSupport = $view->icon('control/support.png'  ,'Support');
-    $iconBug = $view->icon('control/bug.png'      ,'Bug');
-    $iconFaq = $view->icon('control/faq.png'      ,'Faq');
 
     $entries = new TArray();
     //$entries->support = $this->entriesSupport($params);
@@ -57,7 +54,7 @@ class DaidalosDb_Maintab_Menu extends WgtDropmenu
   <button
     class="wcm wcm_control_dropmenu wgt-button"
     id="{$this->id}-control"
-    wgt_drop_box="{$this->id}_dropmenu"  ><i class="icon-reorder" ></i> {$view->i18n->l('Menu','wbf.label')}</button>
+    wgt_drop_box="{$this->id}_dropmenu"  ><i class="icon-reorder" ></i> {$view->i18n->l('Menu','wbf.label')} <i class="icon-chevron-down" ></i></button>
 </div>
 
 <div class="wgt-dropdownbox" id="{$this->id}_dropmenu" >
@@ -71,8 +68,7 @@ class DaidalosDb_Maintab_Menu extends WgtDropmenu
       <a class="deeplink" ><i class="icon-question-sign" ></i> {$view->i18n->l('Support', 'wbf.label')}</a>
       <span>
       <ul>
-        <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Issue.create&amp;context=menu" >{$iconBug} {$view->i18n->l('Bug', 'wbf.label')}</a></li>
-        <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Faq.create&amp;context=menu" >{$iconFaq} {$view->i18n->l('Faq', 'wbf.label')}</a></li>
+        <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Faq.create&amp;context=menu" ><i class="icon-question" ></i> {$view->i18n->l('Faq', 'wbf.label')}</a></li>
       </ul>
       </span>
     </li>

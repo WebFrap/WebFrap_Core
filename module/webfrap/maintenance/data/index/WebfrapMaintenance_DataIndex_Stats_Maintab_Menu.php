@@ -102,7 +102,6 @@ HTML;
   {
 
     $iconSupport = $this->view->icon('control/support.png'  ,'Support');
-    $iconBug = $this->view->icon('control/bug.png'     ,'Bug');
     $iconFaq = $this->view->icon('control/faq.png'     ,'Faq');
     $iconHelp = $this->view->icon('control/help.png'    ,'Help');
 
@@ -117,10 +116,7 @@ HTML;
               href="modal.php?c=Webfrap.Docu.open&amp;key=wbfsys_message-create" >{$iconHelp} {$this->view->i18n->l('Help','wbf.label')}</a></li>
             <li><a
               class="wcm wcm_req_ajax"
-              href="modal.php?c=Wbfsys.Issue.create&amp;context=create" >{$iconBug} {$this->view->i18n->l('Bug','wbf.label')}</a></li>
-            <li><a
-              class="wcm wcm_req_ajax"
-              href="modal.php?c=Wbfsys.Faq.create&amp;context=create" >{$iconFaq} {$this->view->i18n->l('FAQ','wbf.label')}</a></li>
+              href="modal.php?c=Wbfsys.Faq.create&amp;context=create" ><i class="icon-question" ></i> {$this->view->i18n->l('FAQ','wbf.label')}</a></li>
           </ul>
         </span>
       </li>

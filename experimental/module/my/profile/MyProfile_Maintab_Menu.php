@@ -130,7 +130,7 @@ HTML;
           </li>
           <li>
             <a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Faq.create&amp;context=create" >
-              {$iconFaq} {$this->view->i18n->l('FAQ','wbf.label')}
+              <i class="icon-question" ></i> {$this->view->i18n->l('FAQ','wbf.label')}
             </a>
           </li>
         </ul>

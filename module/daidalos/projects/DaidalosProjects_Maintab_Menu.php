@@ -48,7 +48,7 @@ class DaidalosProjects_Maintab_Menu extends WgtDropmenu
     $this->content = <<<HTML
 <ul class="wgt-dropmenu" id="{$this->id}" style="z-index:500;height:16px;"  >
   <li class="wgt-root" >
-    <button class="wgt-button" ><i class="icon-reorder" ></i> {$this->view->i18n->l('Menu','wbf.label')}</button>
+    <button class="wgt-button" ><i class="icon-reorder" ></i> {$this->view->i18n->l('Menu','wbf.label')} <i class="icon-chevron-down" ></i></button>
     <ul style="margin-top:-10px;" >
       <li>
         <p class="wgtac_bookmark" ><i class="icon-bookmark" ></i> {$this->view->i18n->l('Bookmark','wbf.label')}</p>
@@ -78,18 +78,13 @@ HTML;
   protected function entriesSupport($params)
   {
 
-    $iconSupport = $this->view->icon('control/support.png'  ,'Support');
-    $iconBug = $this->view->icon('control/bug.png'      ,'Bug');
-    $iconFaq = $this->view->icon('control/faq.png'      ,'Faq');
-    $iconHelp = $this->view->icon('control/help.png'     ,'Help');
 
     $html = <<<HTML
 
       <li>
         <p><i class="icon-question-sign" ></i> Support</p>
         <ul>
-          <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Issue.create&amp;context=menu" >{$iconBug} Bug</a></li>
-          <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Faq.create&amp;context=menu" >{$iconFaq} Faq</a></li>
+          <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Faq.create&amp;context=menu" ><i class="icon-question" ></i> Faq</a></li>
         </ul>
       </li>
 

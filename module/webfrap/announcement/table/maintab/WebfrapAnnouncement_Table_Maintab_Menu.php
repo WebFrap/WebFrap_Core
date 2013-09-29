@@ -40,14 +40,6 @@ class WebfrapAnnouncement_Table_Maintab_Menu extends WgtDropmenu
     $acl = $this->getAcl();
     $view = $this->getView();
 
-    $iconMenu = '<i class="icon-reorder" ></i>';
-    $iconClose = '<i class="icon-remove " ></i>';
-    $iconEntity = $this->view->icon('control/entity.png'      ,'Entity');
-    $iconAdd = $this->view->icon('control/add.png'      ,'Create');
-
-    $iconSupport = '<i class="icon-info-sign"></i>';
-    $iconFaq = '<i class="icon-question-sign"></i>';
-    $iconHelp = '<i class="icon-info"></i>';
 
     $entries = new TArray();
 
@@ -57,7 +49,7 @@ class WebfrapAnnouncement_Table_Maintab_Menu extends WgtDropmenu
       $entries->buttonInsert = <<<BUTTON
 
 <div class="wgt-panel-control" >
-  <button class="wcm wcm_ui_button wgtac_new" ><i class="icon-plus-sign" ></i> {$this->view->i18n->l('New','wbf.label')}</button>
+  <button class="wcm wcm_ui_button wgtac_new" ><i class="icon-plus-sign" ></i> {$this->view->i18n->l('New','wbf.label')} <i class="icon-chevron-down" ></i></button>
 </div>
 
 BUTTON;
@@ -70,7 +62,7 @@ BUTTON;
   <button
     class="wcm wcm_control_dropmenu wgt-button"
     id="{$this->id}-control"
-    wgt_drop_box="{$this->id}_dropmenu"  ><i class="icon-record" ></i> {$this->view->i18n->l('Menu','wbf.label')}</button>
+    wgt_drop_box="{$this->id}_dropmenu"  ><i class="icon-record" ></i> {$this->view->i18n->l('Menu','wbf.label')} <i class="icon-chevron-down" ></i></button>
   <var id="{$this->id}-control-cfg-dropmenu"  >{"triggerEvent":"mouseover","closeOnLeave":"true","align":"right"}</var>
 </div>
 
@@ -85,7 +77,7 @@ BUTTON;
       <a class="deeplink" ><i class="icon-question-sign" ></i> {$this->view->i18n->l('Support', 'wbf.label')}</a>
       <span>
       <ul>
-        <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Faq.create&amp;context=menu" >{$iconFaq} {$this->view->i18n->l('Faq', 'wbf.label')}</a></li>
+        <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Faq.create&amp;context=menu" ><i class="icon-question" ></i> {$this->view->i18n->l('Faq', 'wbf.label')}</a></li>
       </ul>
       </span>
     </li>

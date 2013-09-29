@@ -88,11 +88,9 @@ class DaidalosPackage_Editor_Maintab_View extends WgtMaintabCustom
     $i18n = $this->getI18n();
 
     $iconMenu = '<i class="icon-reorder" ></i>';
-    $iconSupport = $this->icon('control/support.png'      ,'Support');
     $iconHelp = $this->icon('control/help.png'      ,'Help');
     $iconClose = '<i class="icon-remove " ></i>';
     $iconSave = '<i class="icon-save" ></i>';
-    $iconBug = $this->icon('control/bug.png'      ,'Bug');
 
     $iconSync = $this->icon('control/sync.png'      ,'Sync');
     $iconBuild = $this->icon('daidalos/build.png'      ,'Build');
@@ -106,11 +104,7 @@ class DaidalosPackage_Editor_Maintab_View extends WgtMaintabCustom
       <li class="current" >
         <p><i class="icon-question-sign" ></i> {$i18n->l('Support','wbf.label')}</p>
         <ul>
-          <li>
-            <a class="wcm wcm_req_ajax" href="modal.php?c=Webfrap.Bug.create&amp;context=webfrap_docu-create" >
-              {$iconBug} {$i18n->l('Bug','wbf.label')}
-            </a>
-          </li>
+
         </ul>
       </li>
       <li>
