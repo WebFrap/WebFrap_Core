@@ -92,7 +92,7 @@ HTML;
         <ul>
           <li><a class="wcm wcm_req_ajax" href="maintab.php?c=Webfrap.Base.help&refer=webfrap-maintenance-menu" >{$iconHelp} Help</a></li>
           <li><a class="wcm wcm_req_ajax" href="maintab.php?c=Wbfsys.Issue.create&refer=webfrap-maintenance-menu" >{$iconBug} Bug</a></li>
-          <li><a class="wcm wcm_req_ajax" href="maintab.php?c=Webfrap.Faq.create&refer=webfrap-maintenance-menu" >{$iconFaq} Faq</a></li>
+          <li><a class="wcm wcm_req_ajax" href="maintab.php?c=Webfrap.Faq.create&refer=webfrap-maintenance-menu" ><i class="icon-question" ></i> Faq</a></li>
         </ul>
       </li>
 

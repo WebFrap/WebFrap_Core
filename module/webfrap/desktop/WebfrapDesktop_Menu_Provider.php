@@ -28,7 +28,7 @@ class WebfrapDesktop_Menu_Provider extends Provider
    * @param int $profileId
    * @return array[rowid, label, icon, http_url]
    */
-  public function getProfileMenu( $profileId )
+  public function getProfileMenu( $profileKey )
   {
 
     $db = $this->getDb();
@@ -36,22 +36,22 @@ class WebfrapDesktop_Menu_Provider extends Provider
     $sql = <<<SQL
 
 SELECT
-  rowid,
-  label,
-  icon,
-  http_url
+  wbfsys_menu_entry.rowid,
+  wbfsys_menu_entry.label,
+  wbfsys_menu_entry.icon,
+  wbfsys_menu_entry.http_url
 FROM
   wbfsys_menu_entry
 JOIN
   wbfsys_profile
     ON wbfsys_profile.id_profile_menu = wbfsys_menu_entry.id_menu
 WHERE
-  wbfsys_profile.rowid = {$profileId}
+  wbfsys_profile.access_key = '{$profileKey}'
 order by m_order;
 
 SQL;
 
-    $db->select($sql)->getAll();
+    return $db->select($sql)->getAll();
 
 
   }//end public function getProfileMenu */
@@ -81,7 +81,8 @@ JOIN
   wbfsys_profile
     ON wbfsys_profile.id_main_menu = wbfsys_menu_entry.id_menu
 WHERE
-  wbfsys_profile.access_key = '{$profileKey}';
+  wbfsys_profile.access_key = '{$profileKey}'
+ORDER BY m_order;
 
 SQL;
 

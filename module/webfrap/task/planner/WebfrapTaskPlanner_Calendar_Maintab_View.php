@@ -80,13 +80,8 @@ class WebfrapTaskPlanner_Calendar_Maintab_View extends WgtMaintab
 
     $i18n = $this->getI18n();
 
-    $iconMenu = '<i class="icon-reorder" ></i>';
-    $iconSupport = $this->icon('control/support.png'      ,'Support');
     $iconHelp = $this->icon('control/help.png'      ,'Help');
-    $iconClose = '<i class="icon-remove " ></i>';
     $iconEdit = '<i class="icon-edit" ></i>';
-    $iconBug = $this->icon('control/bug.png'      ,'Bug');
-    $iconFaq = $this->icon('control/bookmark.png'      ,'Bookmark');
 
     $iconRefresh = '<i class="icon-refresh" ></i>';
 
@@ -97,7 +92,7 @@ class WebfrapTaskPlanner_Calendar_Maintab_View extends WgtMaintab
   <button
     class="wcm wcm_control_dropmenu wgt-button"
     id="{$this->id}-control"
-    wgt_drop_box="{$this->id}_dropmenu"  ><i class="icon-reorder" ></i> {$this->i18n->l('Menu','wbf.label')}</button>
+    wgt_drop_box="{$this->id}_dropmenu"  ><i class="icon-reorder" ></i> {$this->i18n->l('Menu','wbf.label')} <i class="icon-chevron-down" ></i></button>
   <var id="{$this->id}-control-cfg-dropmenu"  >{"triggerEvent":"mouseover","closeOnLeave":"true","align":"right"}</var>
 </div>
 
@@ -112,8 +107,7 @@ class WebfrapTaskPlanner_Calendar_Maintab_View extends WgtMaintab
       <a class="deeplink" ><i class="icon-question-sign" ></i> {$this->i18n->l('Support', 'wbf.label')}</a>
       <span>
       <ul>
-        <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Issue.create&amp;context=menu" >{$iconBug} {$this->i18n->l('Bug', 'wbf.label')}</a></li>
-        <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Faq.create&amp;context=menu" >{$iconFaq} {$this->i18n->l('Faq', 'wbf.label')}</a></li>
+        <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Faq.create&amp;context=menu" ><i class="icon-question" ></i> {$this->i18n->l('Faq', 'wbf.label')}</a></li>
       </ul>
       </span>
     </li>

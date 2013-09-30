@@ -97,8 +97,6 @@ HTML;
   protected function entriesSupport($params)
   {
 
-    $iconSupport = '<i class="icon-info-sign"></i>';
-    $iconFaq = '<i class="icon-question-sign"></i>';
     $iconHelp = '<i class="icon-info"></i>';
 
     $html = <<<HTML
@@ -109,7 +107,7 @@ HTML;
 
           <li><a class="wcm wcm_req_ajax" href="modal.php?c=Webfrap.Docu.open&amp;key=wbfsys_announcement-create" >{$iconHelp} {$this->view->i18n->l('Help','wbf.label')}</a></li>
 
-          <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Faq.create&amp;context=create" >{$iconFaq} {$this->view->i18n->l('FAQ','wbf.label')}</a></li>
+          <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Faq.create&amp;context=create" ><i class="icon-question" ></i> {$this->view->i18n->l('FAQ','wbf.label')}</a></li>
 
         </ul>
       </li>

@@ -154,8 +154,6 @@ HTML;
   protected function entriesSupport($objid, $params)
   {
 
-    $iconFaq = $this->view->icon( 'control/faq.png'      ,'Faq'  );
-
     $html = <<<HTML
 
   <li>
@@ -164,7 +162,7 @@ HTML;
       <ul>
         <li><a
           class="wcm wcm_req_ajax"
-          href="modal.php?c=Wbfsys.Faq.create&refer={$this->domainNode->domainName}-acl-dset" >{$iconFaq} Faq</a>
+          href="modal.php?c=Wbfsys.Faq.create&refer={$this->domainNode->domainName}-acl-dset" ><i class="icon-question" ></i> Faq</a>
         </li>
       </ul>
     </span>

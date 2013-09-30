@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $crudForm = new WgtFormBuilder(
   $this,
@@ -17,7 +17,7 @@ $crudForm->form();
   accept-charset="utf-8"
   id="<?php echo $VAR->searchFormId?>"
   action="<?php echo $VAR->searchFormAction?>" ></form>
-  
+
 <input
   type="hidden"
   id="wgt-input-<?php echo $VAR->domain->aclDomainKey ?>-backpath-id_area"
@@ -26,7 +26,7 @@ $crudForm->form();
   class="meta asgd-<?php echo $VAR->formIdCrud?>"
 />
 
-  
+
 <!-- Assignment Panel -->
 <div class="wgt-panel" style="margin-left:5px;"  >
   <button
@@ -46,8 +46,8 @@ $crudForm->form();
     <i class="icon-refresh" ></i> Reload</button>
 </div>
 
-<!-- formular -->
-<div class="left bw71 wgt-space" id="wgt-box-<?php echo $VAR->domain->aclDomainKey ?>-backpath_crudform" >
+
+<section class="wgt-content_box form" id="wgt-box-<?php echo $VAR->domain->aclDomainKey ?>-backpath_crudform" >
 
   <input
     type="hidden"
@@ -57,54 +57,59 @@ $crudForm->form();
     class="meta asgd-<?php echo $VAR->formIdCrud?>"
   />
 
-  <div class="left bw4" >
-    <?php $crudForm->autocomplete(
-      'Target Area', 
-      'path,id_target_area',
-      null,
-      'ajax.php?c=Acl.Mgmt_Backpath.autoArea&amp;area_id='.$VAR->areaId.'&amp;dkey='.$VAR->domain->domainName.'&amp;key=',
-      array(),
-      array('size'=>'large','entityMode'=>true)
-    ); ?>
-    <?php  $crudForm->input(
-      'Ref Field',
-      'path,ref_field',
-      null,
-      array(),
-      array('size'=>'large')
-    ); ?>
-    <?php  /* $crudForm->autocomplete(
-      'Ref Field',
-      'path[ref_field]',
-      null,
-      'ajax.php?c=Acl.Mgmt_Backpath.autoRefField&amp;area_id='.$VAR->areaId.'&amp;dkey='.$VAR->domain->domainName.'&amp;key=',
-      array(),
-      array('size'=>'large')
-    ); */ ?>
+  <div class="content" >
+    <fieldset>
+
+      <div class="left n-cols-2" >
+        <?php $crudForm->autocomplete(
+          'Target Area',
+          'path,id_target_area',
+          null,
+          'ajax.php?c=Acl.Mgmt_Backpath.autoArea&amp;area_id='.$VAR->areaId.'&amp;dkey='.$VAR->domain->domainName.'&amp;key=',
+          array(),
+          array('size'=>'large','entityMode'=>true)
+        ); ?>
+
+       <?php  $crudForm->input(
+          'Ref Field',
+          'path,ref_field',
+          null,
+          array(),
+          array('size'=>'large')
+        ); ?>
+
+        <?php  /* $crudForm->autocomplete(
+          'Ref Field',
+          'path[ref_field]',
+          null,
+          'ajax.php?c=Acl.Mgmt_Backpath.autoRefField&amp;area_id='.$VAR->areaId.'&amp;dkey='.$VAR->domain->domainName.'&amp;key=',
+          array(),
+          array('size'=>'large')
+        ); */ ?>
+      </div>
+
+      <div class="inline n-cols-2" >
+        <?php $crudForm->textarea(
+            'Groups',
+            'path,groups',
+            null,
+            array(),
+            array('size'=>'large')
+          );
+        ?>
+        <?php $crudForm->textarea(
+            'Set Groups',
+            'path,set_groups',
+            null,
+            array(),
+            array('size'=>'large')
+          );
+        ?>
+      </div>
+
+    </fieldset>
   </div>
-
-  <div class="inline bw3" >
-    <?php $crudForm->textarea(
-        'Groups',
-        'path,groups',
-        null,
-        array(),
-        array('size'=>'large')
-      );
-    ?>
-    <?php $crudForm->textarea(
-        'Set Groups',
-        'path,set_groups',
-        null,
-        array(),
-        array('size'=>'large')
-      );
-    ?>
-  </div>
-
-  <div class="wgt-clear small" >&nbsp;</div>
-
-</div>
+</section>
 
 <div class="full" style="width:100%;" >
   <?php echo $ELEMENT->listingBackpath ?>

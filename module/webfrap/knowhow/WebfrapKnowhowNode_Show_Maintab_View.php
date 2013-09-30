@@ -68,10 +68,7 @@ class WebfrapKnowhowNode_Show_Maintab_View extends WgtMaintabCustom
     $iconSave = '<i class="icon-save" ></i>';
     $iconEdit = '<i class="icon-edit" ></i>';
 
-    $iconSupport = $this->icon('control/support.png'  ,'Support');
-    $iconBug = $this->icon('control/bug.png'      ,'Bug');
     $iconFaq = $this->icon('control/faq.png'      ,'Faq');
-    $iconHelp = $this->icon('control/help.png'     ,'Help');
 
     $menu = $this->newMenu($this->id.'_dropmenu');
 
@@ -98,8 +95,7 @@ class WebfrapKnowhowNode_Show_Maintab_View extends WgtMaintabCustom
       <a class="deeplink" ><i class="icon-question-sign" ></i> {$this->i18n->l('Support', 'wbf.label')}</a>
       <span>
       <ul>
-        <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Issue.create&amp;context=menu" >{$iconBug} {$this->i18n->l('Bug', 'wbf.label')}</a></li>
-        <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Faq.create&amp;context=menu" >{$iconFaq} {$this->i18n->l('Faq', 'wbf.label')}</a></li>
+        <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Faq.create&amp;context=menu" ><i class="icon-question" ></i> {$this->i18n->l('Faq', 'wbf.label')}</a></li>
       </ul>
       </span>
     </li>

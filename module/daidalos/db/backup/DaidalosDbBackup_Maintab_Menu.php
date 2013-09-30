@@ -39,12 +39,8 @@ class DaidalosDbBackup_Maintab_Menu extends WgtDropmenu
   public function buildMenu($key, $params)
   {
 
-    $iconMenu = '<i class="icon-reorder" ></i>';
     $iconClose = '<i class="icon-remove " ></i>';
     $iconBackup = $this->view->icon('daidalos/backup.png' ,'Backup');
-    $iconSupport = $this->view->icon('control/support.png'  ,'Support');
-    $iconFaq = $this->view->icon('control/faq.png'      ,'Faq');
-    $iconHelp = $this->view->icon('control/help.png'     ,'Help');
 
     $entries = new TArray();
     $entries->support = $this->entriesSupport($params);
@@ -55,7 +51,7 @@ class DaidalosDbBackup_Maintab_Menu extends WgtDropmenu
   <button
     class="wcm wcm_control_dropmenu wgt-button"
     id="{$this->id}-control"
-    wgt_drop_box="{$this->id}_dropmenu"  ><i class="icon-reorder" ></i> {$this->i18n->l('Menu','wbf.label')}</button>
+    wgt_drop_box="{$this->id}_dropmenu"  ><i class="icon-reorder" ></i> {$this->i18n->l('Menu','wbf.label')} <i class="icon-chevron-down" ></i></button>
   <var id="{$this->id}-control-cfg-dropmenu"  >{"triggerEvent":"mouseover","closeOnLeave":"true","align":"right"}</var>
 </div>
 
@@ -70,7 +66,7 @@ class DaidalosDbBackup_Maintab_Menu extends WgtDropmenu
       <a class="deeplink" ><i class="icon-question-sign" ></i> {$this->i18n->l('Support', 'wbf.label')}</a>
       <span>
       <ul>
-        <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Faq.create&amp;context=menu" >{$iconFaq} {$this->i18n->l('Faq', 'wbf.label')}</a></li>
+        <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Faq.create&amp;context=menu" ><i class="icon-question" ></i> {$this->i18n->l('Faq', 'wbf.label')}</a></li>
       </ul>
       </span>
     </li>

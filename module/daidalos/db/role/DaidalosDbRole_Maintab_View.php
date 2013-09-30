@@ -78,8 +78,6 @@ class DaidalosDbRole_Maintab_View extends WgtMaintabCustom
     $iconMenu = '<i class="icon-reorder" ></i>';
     $iconClose = '<i class="icon-remove " ></i>';
 
-    $iconSupport = $this->icon('control/support.png'  ,'Support');
-    $iconFaq = $this->icon('control/faq.png'      ,'Faq');
 
     $iconQuery = $this->icon('daidalos/query.png' ,'Query');
 
@@ -97,7 +95,7 @@ class DaidalosDbRole_Maintab_View extends WgtMaintabCustom
   <button
     class="wcm wcm_control_dropmenu wgt-button"
     id="{$this->id}-control"
-    wgt_drop_box="{$this->id}_dropmenu"  ><i class="icon-reorder" ></i> {$this->i18n->l('Menu','wbf.label')}</button>
+    wgt_drop_box="{$this->id}_dropmenu"  ><i class="icon-reorder" ></i> {$this->i18n->l('Menu','wbf.label')} <i class="icon-chevron-down" ></i></button>
   <var id="{$this->id}-control-cfg-dropmenu"  >{"triggerEvent":"mouseover","closeOnLeave":"true","align":"right"}</var>
 </div>
 
@@ -127,7 +125,7 @@ class DaidalosDbRole_Maintab_View extends WgtMaintabCustom
       <a class="deeplink" ><i class="icon-question-sign" ></i> {$this->i18n->l('Support', 'wbf.label')}</a>
       <span>
       <ul>
-        <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Faq.create&amp;context=menu" >{$iconFaq} {$this->i18n->l('Faq', 'wbf.label')}</a></li>
+        <li><a class="wcm wcm_req_ajax" href="modal.php?c=Wbfsys.Faq.create&amp;context=menu" ><i class="icon-question" ></i> {$this->i18n->l('Faq', 'wbf.label')}</a></li>
       </ul>
       </span>
     </li>
