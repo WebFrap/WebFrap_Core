@@ -125,6 +125,33 @@ HTML;
 
     $this->injectActions($menu, $params);
 
+    // Setzen der Crumbs
+    $this->crumbs->setCrumbs(
+      array(
+        array(
+          'Dashboard',
+          '',
+          'icon-dashboard',
+          null,
+          'wgt-ui-desktop'
+        ),
+        array(
+          'Colab',
+          'maintab.php?c=Webfrap.Colab.overview',
+          'icon-puzzle-piece',
+          null,
+          'wgt_tab-webfrap-colab-overview'
+        ),
+        array(
+          'Contacts',
+          'maintab.php?c=Webfrap.Contact.list',
+          'icon-group',
+          'active',
+          'wgt_tab-'.$this->getIdKey()
+        )
+      )
+    );
+
   }//end public function addMenu */
 
   /**

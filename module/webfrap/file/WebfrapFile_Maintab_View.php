@@ -92,40 +92,6 @@ class WebfrapFile_Maintab_View extends WgtMaintab
   </ul>
 </div>
 
-<div class="wgt-panel-control" >
-  <div
-    class="wcm wcm_control_buttonset wgt-button-set"
-    id="wgt-mentry-groupware-data" >
-    <input
-      type="radio"
-      id="wgt-mentry-groupware-data-mail"
-      value="maintab.php?c=Webfrap.Message.messageList"
-      class="{$this->id}-maskswitcher"
-      name="nav-boxtype" /><label
-        for="wgt-mentry-groupware-data-mail"
-        class="wcm wcm_ui_tip-top"
-        tooltip="Show the messages"  ><i class="icon-envelope-alt" ></i></label>
-    <input
-      type="radio"
-      id="wgt-mentry-groupware-data-contact"
-      value="maintab.php?c=Webfrap.Contact.list"
-      class="{$this->id}-maskswitcher"
-      name="nav-boxtype"  /><label
-        for="wgt-mentry-groupware-data-contact"
-        class="wcm wcm_ui_tip-top"
-        tooltip="Show the contacts" ><i class="icon-user" ></i></label>
-    <input
-      type="radio"
-      id="wgt-mentry-groupware-data-calendar"
-      value="maintab.php?c=Webfrap.Calendar.element"
-      class="{$this->id}-maskswitcher"
-      checked="checked"
-      name="nav-boxtype" /><label
-        for="wgt-mentry-groupware-data-calendar"
-        class="wcm wcm_ui_tip-top"
-        tooltip="Show Calendar" ><i class="icon-calendar" ></i></label>
-  </div>
-</div>
 
 <div
   id="{$this->id}-cruddrop"
@@ -134,7 +100,7 @@ class WebfrapFile_Maintab_View extends WgtMaintab
   <button
     class="wcm wcm_ui_tip-top wgt-button wgtac_create  splitted"
     tabindex="-1"
-      ><i class="icon-plus-sign" ></i> {$this->i18n->l('Create','wbf.label')}</button><button
+      ><i class="icon-plus-sign" ></i> {$this->i18n->l('New','wbf.label')}</button><button
     id="{$this->id}-cruddrop-split"
     class="wgt-button append"
     tabindex="-1"
@@ -147,8 +113,17 @@ class WebfrapFile_Maintab_View extends WgtMaintab
 
   <ul>
     <li><a
-      class="wcm wgtac_search_con wcm_ui_tip-top"
-      title="Search for Persons and connect with them" ><i class="icon-plus-sign" ></i> {$this->i18n->l('Search & Connect','wbf.label')}</a></li>
+      class="wgtac_search_con"
+      title="Upload new File" ><i class="icon-plus-sign" ></i> {$this->i18n->l('New File','wbf.label')}</a></li>
+    <li><a
+      class="wgtac_search_con"
+      title="Create a new folder" ><i class="icon-plus-sign" ></i> {$this->i18n->l('New Folder','wbf.label')}</a></li>
+    <li><a
+      class="wgtac_search_con"
+      title="Load a file from a link" ><i class="icon-plus-sign" ></i> {$this->i18n->l('Load from Link','wbf.label')}</a></li>
+    <li><a
+      class="wgtac_search_con"
+      title="Create a link" ><i class="icon-plus-sign" ></i> {$this->i18n->l('New Link','wbf.label')}</a></li>
     <li>
   </ul>
 
@@ -157,6 +132,34 @@ class WebfrapFile_Maintab_View extends WgtMaintab
 
 
 HTML;
+
+
+    // Setzen der Crumbs
+    $this->crumbs->setCrumbs(
+      array(
+        array(
+          'Dashboard',
+          '',
+          'icon-dashboard',
+          null,
+          'wgt-ui-desktop'
+        ),
+        array(
+          'Colab',
+          'maintab.php?c=Webfrap.Colab.overview',
+          'icon-puzzle-piece',
+          null,
+          'wgt_tab-webfrap-colab-overview'
+        ),
+        array(
+          'Files',
+          'maintab.php?c=Wefrap.File.explorer',
+          'icon-th-large',
+          'active',
+          'wgt_tab-'.$this->getIdKey()
+        )
+      )
+    );
 
     $this->injectActions($menu, $params);
 

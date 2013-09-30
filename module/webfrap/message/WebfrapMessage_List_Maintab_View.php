@@ -222,9 +222,34 @@ class WebfrapMessage_List_Maintab_View extends WgtMaintab
   		class="icon-refresh" ></i> {$this->i18n->l('Check for Messages','wbf.label')}</button>
 </div>
 
-
-
 HTML;
+
+    // Setzen der Crumbs
+    $this->crumbs->setCrumbs(
+      array(
+        array(
+          'Dashboard',
+          '',
+          'icon-dashboard',
+          null,
+          'wgt-ui-desktop'
+        ),
+        array(
+          'Colab',
+          'maintab.php?c=Webfrap.Colab.overview',
+          'icon-puzzle-piece',
+          null,
+          'wgt_tab-webfrap-colab-overview'
+        ),
+        array(
+          'My Messages',
+          'maintab.php?c=Webfrap.Message.messageList',
+          'icon-envelope-alt',
+          'active',
+          'wgt_tab-'.$this->getIdKey()
+        )
+      )
+    );
 
     $this->injectActions($menu, $params);
 

@@ -160,6 +160,33 @@ HTML;
 
     $this->injectActions($menu, $params);
 
+    // Setzen der Crumbs
+    $this->crumbs->setCrumbs(
+      array(
+        array(
+          'Dashboard',
+          '',
+          'icon-dashboard',
+          null,
+          'wgt-ui-desktop'
+        ),
+        array(
+          'Colab',
+          'maintab.php?c=Webfrap.Colab.overview',
+          'icon-puzzle-piece',
+          null,
+          'wgt_tab-webfrap-colab-overview'
+        ),
+        array(
+          'My Calendar',
+          'maintab.php?c=Webfrap.Calendar.element',
+          'icon-calendar',
+          'active',
+          'wgt_tab-'.$this->getIdKey()
+        )
+      )
+    );
+
   }//end public function addMenu */
 
   /**
