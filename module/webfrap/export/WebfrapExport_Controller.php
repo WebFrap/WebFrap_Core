@@ -137,8 +137,7 @@ class WebfrapExport_Controller extends MvcController_Domain
 
     $exportModel = $this->loadModel($domainNode->domainKey.'_'.$variant->mask  );
 
-    $exportDoc = new $className
-    (
+    $exportDoc = new $className(
       $this,
       $domainNode->pLabel.' Export',
       null,
