@@ -122,5 +122,5 @@ MAIL;
 
   }//end public function loadAttachments */
 
-} // end class ProjectProject_Development_Accepted_Message */
+} // end class WebfrapAuth_ForgotPasswd_Message */
 
