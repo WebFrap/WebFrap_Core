@@ -3,7 +3,7 @@
   action="ajax.php?c=Webfrap.File.dropUpload"
   style="height:100%" >
 
-  <div id="wgt-grid-webfrap-files" class="wgt-grid left" style="width:900px;" >
+  <div id="wgt-grid-webfrap-files" class="wgt-grid left" style="min-width:900px;width:69%;" >
 
     <var id="wgt-grid-webfrap-files-table-cfg-grid" >{
       "height":"full",
@@ -29,7 +29,7 @@
     </table>
   </div>
 
-  <div class="preview-container inline" style="width:300px;" >
+  <div class="preview-container inline" style="min-width:300px;width:27%;" >
 
   </div>
 
