@@ -49,12 +49,14 @@ class WebfrapBase_Maintab_View extends WgtMaintab
     $modMenu = $this->newItem('modMenu', $className);
 
     $menuData = DaoFoldermenu::get('webfrap/'.$menuName, true);
-    $modMenu->setData
-    (
+    $modMenu->setData(
       $menuData,
       'maintab.php'
     );
-    $this->crumbs = $modMenu->buildCrumbs();
+    
+    $this->crumbs->setCrumbs($modMenu->getCrumbs());
+    
+    //$this->crumbs = $modMenu->buildCrumbs();
 
     if ($modMenu->title  )
       $this->setTitle($menuData->title);
@@ -120,8 +122,6 @@ class WebfrapBase_Maintab_View extends WgtMaintab
   </div>
 
 HTML;
-
-    $menu->content .= $this->crumbs;
 
     $menu->content .= <<<HTML
 
