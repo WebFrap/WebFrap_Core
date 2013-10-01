@@ -3,10 +3,10 @@
   action="ajax.php?c=Webfrap.File.dropUpload"
   style="height:100%" >
 
-  <div id="wgt-grid-webfrap-files" class="wgt-grid"  >
+  <div id="wgt-grid-webfrap-files" class="wgt-grid left" style="width:900px;" >
 
     <var id="wgt-grid-webfrap-files-table-cfg-grid" >{
-      "height":"medium",
+      "height":"full",
       "search_able":true,
       "search_form":"wgt-search-grid-webfrap-files",
       "select_able":"true"
@@ -28,7 +28,10 @@
       </tbody>
     </table>
   </div>
-  <div id="fubar-narf" style="height:200px;width:500px;" >test</div>
+
+  <div class="preview-container inline" style="width:300px;" >
+
+  </div>
 
   <div class="wgt-clear tiny">&nbsp;</div>
 </div>
