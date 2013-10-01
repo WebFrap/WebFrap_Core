@@ -24,6 +24,8 @@
 class WebfrapAttachment_Request extends ContextListing
 {
 
+  public $fetchUntyped = null;
+  
   /**
    * @param LibRequestHttp $request
    */
@@ -72,11 +74,15 @@ class WebfrapAttachment_Request extends ContextListing
     if ($typeFilter = $request->param('type_filter', Validator::CKEY))
       $this->typeFilter = $typeFilter;
 
+    if ($fetchUntyped = $request->param('futpd', Validator::BOOLEAN))
+      $this->fetchUntyped = $fetchUntyped;
+    else
+      $this->fetchUntyped = false;
+
     
     // listing stuff
     // start position of the query and size of the table
-    $this->offset
-	 = $request->param('offset', Validator::INT);
+    $this->offset = $request->param('offset', Validator::INT);
 
     
     // stepsite for query (limit) and the table
@@ -130,6 +136,9 @@ class WebfrapAttachment_Request extends ContextListing
 
     if ($this->refField)
       $this->urlExt .= '&amp;ref_field='.$this->refField;
+    
+    if ($this->fetchUntyped)
+      $this->urlExt .= '&amp;futpd=1';
 
     if ($this->maskFilter)
       $this->urlExt .= '&amp;mask_filter='.$this->maskFilter;
@@ -178,6 +187,9 @@ class WebfrapAttachment_Request extends ContextListing
 
     if ($this->refField)
       $this->actionExt .= '&ref_field='.$this->refField;
+    
+    if ($this->fetchUntyped)
+      $this->actionExt .= '&futpd=1';
 
     if ($this->maskFilter)
       $this->actionExt .= '&mask_filter='.$this->maskFilter;

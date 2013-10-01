@@ -51,7 +51,7 @@ class WebfrapAttachment_Ajax_View extends LibTemplatePlain
 
     $jsCode = <<<WGTJS
 
-  \$S('table#wgt-grid-attachment-{$context->element}-table').grid('renderRowLayout').grid('incEntries');
+  \$S('table#wgt-grid-attachment-{$context->element}-table').grid('renderRowLayout').grid('syncColWidth').grid('incEntries');
 
 WGTJS;
 
@@ -85,7 +85,7 @@ WGTJS;
 
     $jsCode = <<<WGTJS
 
-  \$S('table#wgt-grid-attachment-{$context->element}-table').grid('renderRowLayout');
+  \$S('table#wgt-grid-attachment-{$context->element}-table').grid('renderRowLayout').grid('syncColWidth');
 
 WGTJS;
 
@@ -109,7 +109,7 @@ WGTJS;
 
     $jsCode = <<<WGTJS
 
-  \$S('table#wgt-grid-attachment-{$context->element}-table').grid('renderRowLayout').grid('decEntries');
+  \$S('table#wgt-grid-attachment-{$context->element}-table').grid('renderRowLayout').grid('syncColWidth').grid('decEntries');
 
 WGTJS;
 
@@ -143,7 +143,7 @@ WGTJS;
 
     $jsCode = <<<WGTJS
 
-  \$S('table#wgt-grid-attachment-{$context->element}-table').grid('renderRowLayout').grid('setNumEntries','{$numElem}');
+  \$S('table#wgt-grid-attachment-{$context->element}-table').grid('renderRowLayout').grid('syncColWidth').grid('setNumEntries','{$numElem}');
 
 WGTJS;
 
@@ -181,7 +181,7 @@ WGTJS;
 
     $jsCode = <<<WGTJS
 
-  \$S('table#wgt-grid-attachment-{$context->element}-storage-table').grid('renderRowLayout').grid('incEntries');
+  \$S('table#wgt-grid-attachment-{$context->element}-storage-table').grid('renderRowLayout').grid('syncColWidth').grid('incEntries');
 
 WGTJS;
 
@@ -214,7 +214,7 @@ WGTJS;
 
     $jsCode = <<<WGTJS
 
-  \$S('table#wgt-grid-attachment-{$context->element}-storage-table').grid('renderRowLayout');
+  \$S('table#wgt-grid-attachment-{$context->element}-storage-table').grid('renderRowLayout').grid('syncColWidth');
 
 WGTJS;
 
@@ -238,7 +238,7 @@ WGTJS;
 
     $jsCode = <<<WGTJS
 
-  \$S('table#wgt-grid-attachment-{$context->element}-storage-table').grid('renderRowLayout').grid('decEntries');
+  \$S('table#wgt-grid-attachment-{$context->element}-storage-table').grid('renderRowLayout').grid('syncColWidth').grid('decEntries');
 
 WGTJS;
 
