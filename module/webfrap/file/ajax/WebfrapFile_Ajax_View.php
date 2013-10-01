@@ -27,31 +27,67 @@ class WebfrapFile_Ajax_View extends LibTemplatePlain
 /*//////////////////////////////////////////////////////////////////////////////
 // display methodes
 //////////////////////////////////////////////////////////////////////////////*/
-    
+
   /**
-   * 
-   * @var WebfrapCalendar_Model
+   *
+   * @var WebfrapFile_Model
    */
   public $model = null;
 
-  
+  /**
+   * Render des Suchergebnisses und übergabe in die ajax response
+   * @param string $elementId
+   */
+  public function displayDropUpload()
+  {
+
+    $tpl = $this->getTplEngine();
+
+    $entryArea = $tpl->newArea(
+      'wgt-grid-webfrap-files-table'
+    );
+    $entryArea->position = '#fubar-narf';
+    $entryArea->action = 'html';
+
+    $fileInfo = $this->model->uploadFiles();
+
+    $entries = Debug::dumpToString($_FILES, true);
+
+    $entryArea->setContent($entries);
+
+
+  }//end public function displayDropUpload */
+
+
   /**
    * Übergabe der Suchergebnisse
    * @param array $entries
    */
   public function displaySearch( $params )
   {
-  
+
     $tpl = $this->getTplEngine();
-    
-    
+
+
     $entries = $this->model->searchEvents( $params );
-    
-    
+
+
     $tpl->setRawJsonData($entries);
 
-  
-  }//end public function displaySearch */  
+
+  }//end public function displaySearch */
+
+  /**
+   * Render des Suchergebnisses und übergabe in die ajax response
+   * @param int $linkId
+   */
+  public function displayDelRef($linkId)
+  {
+
+    $tpl = $this->getTplEngine();
+    $tpl->addJsCode("\$S('li#wgt-entry-msg-ref-".$linkId."').remove();");
+
+  }//end public function displayDelRef */
 
 
   /**
@@ -67,47 +103,11 @@ class WebfrapFile_Ajax_View extends LibTemplatePlain
     $view->setRawJsonData($this->model->getUserListByKey($key, $params));
 
   }//end public function displayUserAutocomplete */
-  
-  
-  /**
-   * Render des Suchergebnisses und übergabe in die ajax response
-   * @param string $elementId
-   */
-  public function displayAddRef($refId, $msgId)
-  {
 
-    $tpl = $this->getTplEngine();
 
-    $pageFragment = new WgtAjaxArea();
-    $pageFragment->selector = '#wgt-list-show-msg-ref-'.$msgId;
-    $pageFragment->action = 'append';
 
-    $msgRef = $this->model->loadRefById($refId);
 
-    $pageFragment->setContent(<<<HTML
-  <li><a 
-    class="wcm wcm_req_ajax" 
-    href="maintab.php?c={$msgRef['edit_link']}&objid={$msgRef['vid']}" 
-    >{$msgRef['name']}:{$msgRef['title']}</a></li>
-HTML
 
-);
-
-    $tpl->setArea('new_ref', $pageFragment);
-
-  }//end public function displayAddRef */
-  
-  /**
-   * Render des Suchergebnisses und übergabe in die ajax response
-   * @param int $linkId
-   */
-  public function displayDelRef($linkId)
-  {
-
-    $tpl = $this->getTplEngine();
-    $tpl->addJsCode("\$S('li#wgt-entry-msg-ref-".$linkId."').remove();");
-
-  }//end public function displayDelRef */
 
 } // end class WebfrapMessage_Ajax_View */
 

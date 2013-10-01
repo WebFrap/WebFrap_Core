@@ -28,6 +28,10 @@ class WebfrapFile_Maintab_View extends WgtMaintab
 //////////////////////////////////////////////////////////////////////////////*/
 
   /**
+   */
+  public $overflowY = 'auto';
+
+  /**
    * @param WebfrapCalendar_Element_Search_Request $params
    * @return void
    */
