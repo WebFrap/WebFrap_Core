@@ -25,11 +25,6 @@ class WebfrapNavigation_Maintab_Menu extends WgtDropmenu
 {
 
   /**
-   * @var array
-   */
-  public $crumbs = null;
-
-  /**
    * build the window menu
    * @param TArray $params
    */
@@ -93,7 +88,6 @@ class WebfrapNavigation_Maintab_Menu extends WgtDropmenu
 
 HTML;
 
-    $this->content .= $this->crumbs;
 
     $this->content .= <<<HTML
 <div class="right" >

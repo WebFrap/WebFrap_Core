@@ -1,6 +1,13 @@
 <?php
 
 $this->crumbs = array(
+  array(
+    'Dashboard',
+    '',
+    'icon-dashboard',
+    null,
+    'wgt-ui-desktop'
+  ),
   array('Root', $this->interface.'?c=Webfrap.Navigation.explorer','icon-desktop'),
   array('System', $this->interface.'?c=Webfrap.Base.menu&amp;menu=maintenance','icon-folder-close-alt'),
   array('Masterdata', $this->interface.'?c=Webfrap.Base.menu&amp;menu=masterdata','icon-folder-close-alt'),

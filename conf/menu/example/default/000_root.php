@@ -1,6 +1,13 @@
 <?php
 
 $this->crumbs = array(
+  array(
+    'Dashboard',
+    '',
+    'icon-dashboard',
+    null,
+    'wgt-ui-desktop'
+  ),
   array('Root',$this->interface.'?c=Webfrap.Navigation.explorer','icon-desktop'),
   array('Daidalos',$this->interface.'?c=Daidalos.Base.menu','icon-folder-close-alt'),
   array('Example',$this->interface.'?c=Example.Base.menu','icon-folder-close-alt'),
