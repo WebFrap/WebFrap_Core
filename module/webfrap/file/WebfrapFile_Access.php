@@ -29,12 +29,12 @@ class WebfrapFile_Access extends LibAclContainer_Dataset
   /**
    * @var string
    */
-  public $aclKey = 'mgmt-project_activity';
+  public $aclKey = 'mgmt-wbfsys_file';
 
   /**
    * @var string
    */
-  public $aclPath = 'mod-project/mod-project-cat-base>mgmt-project_activity';
+  public $aclPath = 'mod-wbfsys/mod-wbfsys-cat-base>mgmt-wbfsys_file';
 
 }//end class WebfrapFile_Access
 
