@@ -183,7 +183,7 @@ class WebfrapAttachment_Controller extends Controller
     $model->setProperties($context);
     $model->loadAccessContainer($context);
 
-    if (!$model->access->update) {
+    if (!$model->access->listing) {
       throw new PermissionDenied_Exception();
     }
 
