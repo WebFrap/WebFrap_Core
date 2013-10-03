@@ -42,6 +42,11 @@ class WebfrapDms_Folder_Controller extends MvcController
       'views' => array('ajax')
     ),
 
+    'openfolder' => array(
+      'method' => array('GET'),
+      'views' => array('ajax')
+    ),
+
     'delete' => array(
       'method' => array('DELETE'),
       'views' => array('ajax')
@@ -97,6 +102,49 @@ class WebfrapDms_Folder_Controller extends MvcController
     $view->setModel($folderModel);
 
     $view->displayNew($userRqt);
+
+  }//end public function service_create */
+
+  /**
+   * Form zum erstellen einer neuen Message
+   * @param LibRequestHttp $request
+   * @param LibResponseHttp $response
+   * @return boolean
+   */
+  public function service_openFolder($request, $response)
+  {
+
+    // prüfen ob irgendwelche steuerflags übergeben wurde
+    $userRqt = new WebfrapDms_Folder_Search_Request();
+    $userRqt->interpretInsert($request, $this);
+
+    /* @var $model WebfrapDms_Model */
+    $model = $this->loadModel('WebfrapDms');
+    $model->loadAccess($userRqt);
+
+    if (!$model->access->listing) {
+      throw new InvalidRequest_Exception(
+          Response::FORBIDDEN_MSG,
+          Response::FORBIDDEN
+      );
+    }
+
+    // load the view object
+    /* @var $view WebfrapDms_Folder_Ajax_View */
+    $view = $response->loadView(
+        'webfrap-dms-open-folder',
+        'WebfrapDms_Folder',
+        'displayFolder'
+    );
+
+    // request bearbeiten
+    /* @var $folderModel WebfrapDms_Folder_Model */
+    $folderModel = $this->loadModel('WebfrapDms_Folder');
+    $model->access = $model->getAccess();
+
+    $view->setModel($folderModel);
+
+    $view->displayFolder($userRqt);
 
   }//end public function service_create */
 
