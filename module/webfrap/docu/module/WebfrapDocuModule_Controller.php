@@ -21,7 +21,7 @@
  * @author Dominik Bonsch <dominik.bonsch@webfrap.net>
  * @copyright Webfrap Developer Network <contact@webfrap.net>
  */
-class WebfrapDocuModule_Controller extends Controller
+class WebfrapDocuModule_Controller extends MvcController
 {
 /*//////////////////////////////////////////////////////////////////////////////
 // Attributes
@@ -74,7 +74,7 @@ class WebfrapDocuModule_Controller extends Controller
       'WebfrapDocuModule',
       'displayList'
     );
-    
+
     $view->model = $this->loadModel('WebfrapDocuModule');
 
     $view->displayList($params);
@@ -88,22 +88,22 @@ class WebfrapDocuModule_Controller extends Controller
    */
   public function service_entry($request, $response)
   {
-  
+
     $params = $this->getFlags($request);
-  
+
     $params->key = $request->param('key',Validator::CKEY);
-    
+
     /* @var $view WebfrapDocuModule_Maintab_View */
     $view = $response->loadView(
       'webfrap-docu-viewer',
       'WebfrapDocuModule',
       'displayEntry'
     );
-    
+
     $view->model = $this->loadModel('WebfrapDocuModule');
-  
+
     $view->displayEntry($params);
-  
+
   }//end public function service_list */
 
 }//end class WebfrapDocuEntity_Controller

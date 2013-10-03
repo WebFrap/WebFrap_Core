@@ -19,7 +19,7 @@
       <li>/</li>
       <li><a href="maintab.php?c=Webfrap.Colab.overview" class=""><i class="icon-folder"></i> my data</a></li>
       <li>/</li>
-      <li><a href="maintab.php?c=Wefrap.File.explorer" class="active"><i class="icon-folder"></i> Files</a></li>
+      <li><a href="maintab.php?c=Wefrap.Dms.explorer" class="active"><i class="icon-folder"></i> Files</a></li>
     </ul>
   </div>
 

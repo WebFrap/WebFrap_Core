@@ -32,12 +32,12 @@ class WebfrapDms_Maintab_View extends WgtMaintab
   public $overflowY = 'auto';
 
   /**
-   * @var WebfrapFile_Model
+   * @var WebfrapDms_Model
    */
   public $model = null;
 
   /**
-   * @param WebfrapFile_Search_Request $userRqt
+   * @param WebfrapDms_Search_Request $userRqt
    * @return void
    */
   public function displayExplorer($userRqt)
@@ -45,10 +45,10 @@ class WebfrapDms_Maintab_View extends WgtMaintab
 
     $user = $this->getUser();
 
-    $this->setLabel('Files');
-    $this->setTitle('Files');
+    $this->setLabel('Dms');
+    $this->setTitle('Dms');
 
-    $this->setTemplate('webfrap/file/maintab/explorer', true);
+    $this->setTemplate('webfrap/dms/maintab/explorer', true);
 
     $mandantId =
 
@@ -225,12 +225,10 @@ HTML;
       next.show();
       input.change(function(){
 
-        \$R.post('ajax.php?c=Webfrap.File.createFolder',{'folder':input.val(),'id_parent':\$S("#wgt-dropzone-webfrap-files-folder").val()});
+        \$R.post('ajax.php?c=Webfrap.Dms.createFolder',{'folder':input.val(),'id_parent':\$S("#wgt-dropzone-webfrap-files-folder").val()});
 
         next.hide();
         entry.show();
-
-
 
       });
       input.focus();

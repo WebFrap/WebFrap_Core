@@ -26,7 +26,7 @@
  * @author Dominik Bonsch <dominik.bonsch@webfrap.net>
  * @copyright webfrap.net <contact@webfrap.net>
  */
-class WebfrapDms_Controller extends Controller
+class WebfrapDms_Controller extends MvcController
 {
 /*//////////////////////////////////////////////////////////////////////////////
 // methodes
@@ -73,11 +73,11 @@ class WebfrapDms_Controller extends Controller
   public function service_explorer($request, $response)
   {
 
-    /* @var $model WebfrapFile_Model  */
-    $model = $this->loadModel('WebfrapFile');
+    /* @var $model WebfrapDms_Model  */
+    $model = $this->loadModel('WebfrapDms');
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
-    $params = new WebfrapFile_Search_Request($request);
+    $params = new WebfrapDms_Search_Request($request);
 
     $model->loadAccess($params);
 
@@ -89,10 +89,10 @@ class WebfrapDms_Controller extends Controller
     }
 
     // load the view object
-    /* @var $view WebfrapFile_Maintab_View */
+    /* @var $view WebfrapDms_Maintab_View */
     $view = $response->loadView(
       'webfrap-file_list',
-      'WebfrapFile',
+      'WebfrapDms',
       'displayExplorer'
     );
 
@@ -102,7 +102,7 @@ class WebfrapDms_Controller extends Controller
 
     $view->displayExplorer($params);
 
-  }//end public function service_search */
+  }//end public function service_explorer */
 
   /**
    * Form zum erstellen einer neuen Message
@@ -116,7 +116,7 @@ class WebfrapDms_Controller extends Controller
     // prüfen ob irgendwelche steuerflags übergeben wurde
     $params = $this->getFlags($request);
 
-    $model = $this->loadModel('WebfrapFile');
+    $model = $this->loadModel('WebfrapDms');
     $model->loadAccess($params);
 
     if (!$model->access->listing) {
@@ -127,16 +127,16 @@ class WebfrapDms_Controller extends Controller
     }
 
     // load the view object
-    /* @var $view WebfrapFile_Ajax_View */
+    /* @var $view WebfrapDms_Ajax_View */
     $view = $response->loadView(
       'webfrap-file-upload',
-      'WebfrapFile',
+      'WebfrapDms',
       'displayDropUpload'
     );
 
     // request bearbeiten
-    /* @var $model WebfrapFile_Model */
-    $model = $this->loadModel('WebfrapFile');
+    /* @var $model WebfrapDms_Model */
+    $model = $this->loadModel('WebfrapDms');
     $view->setModel($model);
 
     $view->displayDropUpload($params);
@@ -155,7 +155,7 @@ class WebfrapDms_Controller extends Controller
     // prüfen ob irgendwelche steuerflags übergeben wurde
     $params = $this->getFlags($request);
 
-    $model = $this->loadModel('WebfrapFile');
+    $model = $this->loadModel('WebfrapDms');
     $model->loadTableAccess($params);
 
     if (!$model->access->listing) {
@@ -168,13 +168,13 @@ class WebfrapDms_Controller extends Controller
     // load the view object
     $view = $response->loadView(
       'form-messages-new',
-      'WebfrapFile_New',
+      'WebfrapDms_New',
       'displayNew'
     );
 
     // request bearbeiten
-    /* @var $model WebfrapFile_Model */
-    $model = $this->loadModel('WebfrapFile');
+    /* @var $model WebfrapDms_Model */
+    $model = $this->loadModel('WebfrapDms');
     $view->setModel($model);
 
     $view->displayNew($params);
@@ -193,7 +193,7 @@ class WebfrapDms_Controller extends Controller
     // prüfen ob irgendwelche steuerflags übergeben wurde
     $params = $this->getFlags($request);
 
-    $model = $this->loadModel('WebfrapFile');
+    $model = $this->loadModel('WebfrapDms');
     $model->loadTableAccess($params);
 
     if (!$model->access->listing) {
@@ -206,13 +206,13 @@ class WebfrapDms_Controller extends Controller
     // load the view object
     $view = $response->loadView(
       'form-messages-new',
-      'WebfrapFile_New',
+      'WebfrapDms_New',
       'displayNew'
     );
 
     // request bearbeiten
-    /* @var $model WebfrapFile_Model */
-    $model = $this->loadModel('WebfrapFile');
+    /* @var $model WebfrapDms_Model */
+    $model = $this->loadModel('WebfrapDms');
     $view->setModel($model);
 
     $view->displayNew($params);
@@ -220,4 +220,4 @@ class WebfrapDms_Controller extends Controller
   }//end public function service_upload */
 
 
-} // end class WebfrapFile_Controller
+} // end class WebfrapDms_Controller

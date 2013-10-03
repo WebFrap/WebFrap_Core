@@ -21,7 +21,7 @@
  * @author Dominik Bonsch <dominik.bonsch@webfrap.net>
  * @copyright Webfrap Developer Network <contact@webfrap.net>
  */
-class WebfrapDocuEntity_Controller extends Controller
+class WebfrapDocuEntity_Controller extends MvcController
 {
 /*//////////////////////////////////////////////////////////////////////////////
 // Attributes
