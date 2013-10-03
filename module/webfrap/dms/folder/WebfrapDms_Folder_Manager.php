@@ -57,8 +57,9 @@ class WebfrapDms_Folder_Manager extends Manager
     $structure = $orm->getWhere('WbfsysFolderStructure','vid='.$user->mandantId);
 
     if (!$structure) {
+      /* @var $mandantManager WebfrapDms_Mandant_Manager */
       $mandantManager = Manager::get('WebfrapDms_Mandant');
-      $mandantManager->createMandantRoot( $mandantId );
+      $mandantManager->createMandantRoot( $user->mandantId );
     }
 
     return $structure->getId();
@@ -107,10 +108,10 @@ SELECT
 FROM
   wbfsys_folder folder
 JOIN
-  wbfsys_folder_structure tructure
-  ON tructure.rowid = folder.id_structure
+  wbfsys_folder_structure structure
+  ON structure.rowid = folder.id_structure
 WHERE
-  tructure.vid = {$vid}
+  structure.vid = {$vid}
   {$where}
 ORDER BY folder.name;
 

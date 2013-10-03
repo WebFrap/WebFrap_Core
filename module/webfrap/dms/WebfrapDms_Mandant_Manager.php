@@ -41,7 +41,7 @@ class WebfrapDms_Mandant_Manager extends Manager
 
     $mandant = $orm->get('WbfsysRoleMandant', $mandantId);
 
-    $folderStructure = $orm->newEntity('FolderStructure');
+    $folderStructure = $orm->newEntity('WbfsysFolderStructure');
     $folderStructure->vid = $mandantId;
     $folderStructure->description = 'The Root folder for Mandant '.$mandant->name;
 

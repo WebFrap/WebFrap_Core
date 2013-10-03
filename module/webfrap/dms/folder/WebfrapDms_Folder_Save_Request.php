@@ -51,12 +51,10 @@ class WebfrapDms_Folder_Save_Request extends Context
     $request->validateInsert(
       $this->folder,
       'folder',
-      array(
-        'folder' => array(
-          'name',
-          'id_parent'
-        )
-      )
+       array(
+        'name',
+        'm_parent'
+       )
     );
 
     $this->interpretRequestAcls($request);

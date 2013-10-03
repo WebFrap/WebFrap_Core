@@ -41,8 +41,6 @@ class WebfrapDms_Folder_Ajax_View extends LibTemplatePlain
   public function displayNew( $params )
   {
 
-
-
     $area = $this->newArea('newEntry');
     $area->position = '#wgt-grid-webfrap-files-table>tbody';
     $area->action = 'prepend';

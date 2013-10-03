@@ -51,6 +51,13 @@ class WebfrapDms_Maintab_View extends WgtMaintab
     $this->setTemplate('webfrap/dms/tpl/explorer_maintab', true);
 
     $this->addVar('folders', $this->model->getFolders($user->mandantId, $userRqt->idParent));
+
+    $folderMenu = new WebfrapDms_Folder_Menu($this);
+    $folderMenu->access = $this->model->access;
+    $folderMenu->setup();
+    $this->addVar('folderMenu', $folderMenu);
+
+
     $this->addVar('files', $this->model->getFiles($userRqt->idParent));
 
     $this->addMenu($userRqt);
@@ -220,14 +227,19 @@ HTML;
       var input = next.find('input');
 
       next.show();
-      input.change(function(){
 
-        \$R.post('ajax.php?c=Webfrap.Dms_Folder.create',{'folder':input.val(),'id_parent':\$S("#wgt-dropzone-webfrap-files-folder").val()});
+      if(!input.is('.wgt-ready')){
+        input.addClass('wgt-ready');
+        input.change(function(){
 
-        next.hide();
-        entry.show();
+          \$R.post('ajax.php?c=Webfrap.Dms_Folder.create',{'folder[name]':input.val(),'folder[id_parent]':\$S("#wgt-dropzone-webfrap-files-folder").val()});
+          input.val('');
 
-      });
+          next.hide();
+          entry.show();
+
+        });
+      }
       input.focus();
     });
 

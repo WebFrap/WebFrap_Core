@@ -91,7 +91,7 @@ class WebfrapDms_Folder_Controller extends MvcController
 
     $view->setModel($folderModel);
 
-    $view->displayNew($params);
+    $view->displayNew($userRqt);
 
   }//end public function service_create */
 

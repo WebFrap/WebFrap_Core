@@ -21,15 +21,15 @@
  * @author Dominik Bonsch <dominik.bonsch@webfrap.net>
  * @copyright Webfrap Developer Network <contact@webfrap.net>
  */
-class WebfrapDms_File_Menu extends WgtMenuBuilder_SplitButton
+class WebfrapDms_Folder_Menu extends WgtMenuBuilder_SplitButton
 {
 /*//////////////////////////////////////////////////////////////////////////////
 // Methoden
 //////////////////////////////////////////////////////////////////////////////*/
-  
+
   public function setup()
   {
-    
+
     $this->buttons = array(
       'edit' => array(
         Wgt::ACTION_BUTTON_GET,
@@ -38,39 +38,29 @@ class WebfrapDms_File_Menu extends WgtMenuBuilder_SplitButton
         'icon-edit',
         '',
         'wbf.label',
-        Acl::UPDATE
-      ),
-      'message' => array(
-        Wgt::ACTION_BUTTON_GET,
-        'Contact',
-        'modal.php?c=Webfrap.Contact.contactForm&amp;objid=',
-        'icon-envelope',
-        '',
-        'wbf.label',
-        Acl::LISTING
+        //Acl::UPDATE
       ),
       'delete' => array(
         Wgt::ACTION_DELETE,
         'Delete',
-        'index.php?c=Webfrap.Contact.delete&amp;objid=',
+        'index.php?c=Webfrap.Dms_Folder.delete&amp;objid=',
         'icon-remove',
         '',
         'wbf.label',
-        Acl::DELETE
+        //Acl::DELETE
       ),
       'sep' => array(
         Wgt::ACTION_SEP
       ),
-    
+
     );
-    
+
     $this->actions = array(
       'edit',
-      'message',
       'sep',
       'delete'
     );
-    
+
   }//end public function setup */
 
 
