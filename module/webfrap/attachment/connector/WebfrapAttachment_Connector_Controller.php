@@ -21,7 +21,7 @@
  * @author Dominik Bonsch <dominik.bonsch@webfrap.net>
  * @copyright Webfrap Developer Network <contact@webfrap.net>
  */
-class WebfrapAttachment_Connector_Controller extends Controller
+class WebfrapAttachment_Connector_Controller extends MvcController
 {
 /*//////////////////////////////////////////////////////////////////////////////
 // Attributes
@@ -73,7 +73,7 @@ class WebfrapAttachment_Connector_Controller extends Controller
 /*//////////////////////////////////////////////////////////////////////////////
 // Base Methodes
 //////////////////////////////////////////////////////////////////////////////*/
-  
+
   /**
    * @param LibRequestHttp $request
    * @param LibResponseHttp $response
@@ -87,7 +87,7 @@ class WebfrapAttachment_Connector_Controller extends Controller
     /* @var $model WebfrapAttachment_Model */
     $model = $this->loadModel('WebfrapAttachment');
     $model->setProperties($context);
-    
+
     /*
     $model->loadAccessContainer($context);
 
@@ -153,7 +153,7 @@ class WebfrapAttachment_Connector_Controller extends Controller
     $view->displayEdit($objid, $fileNode, $context);
 
   }//end public function service_edit */
-  
+
   /**
    * @param LibRequestHttp $request
    * @param LibResponseHttp $response
@@ -322,12 +322,12 @@ class WebfrapAttachment_Connector_Controller extends Controller
 
   }//end public function service_saveFile */
 
-  
 
 
 
 
- 
+
+
 
 } // end class WebfrapAttachment_Connector_Controller
 
