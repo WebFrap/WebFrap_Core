@@ -222,7 +222,7 @@ HTML;
       next.show();
       input.change(function(){
 
-        \$R.post('ajax.php?c=Webfrap.Dms.createFolder',{'folder':input.val(),'id_parent':\$S("#wgt-dropzone-webfrap-files-folder").val()});
+        \$R.post('ajax.php?c=Webfrap.Dms_Folder.create',{'folder':input.val(),'id_parent':\$S("#wgt-dropzone-webfrap-files-folder").val()});
 
         next.hide();
         entry.show();

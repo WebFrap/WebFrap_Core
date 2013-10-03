@@ -86,7 +86,7 @@ class WebfrapDms_Model extends MvcModel
    */
   public function getFiles($idParent)
   {
-    return $this->folderManager->getFoles($idParent);
+    return $this->folderManager->getFiles($idParent);
   }//end public function getFolders */
 
 

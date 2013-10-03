@@ -57,7 +57,7 @@ class WebfrapDms_Folder_Controller extends MvcController
    * @param LibResponseHttp $response
    * @return boolean
    */
-  public function service_createFolder($request, $response)
+  public function service_create($request, $response)
   {
 
     // prüfen ob irgendwelche steuerflags übergeben wurde
@@ -66,7 +66,7 @@ class WebfrapDms_Folder_Controller extends MvcController
 
     /* @var $model WebfrapDms_Model */
     $model = $this->loadModel('WebfrapDms');
-    $model->loadTableAccess($userRqt);
+    $model->loadAccess($userRqt);
 
     if (!$model->access->listing) {
       throw new InvalidRequest_Exception(
@@ -76,6 +76,7 @@ class WebfrapDms_Folder_Controller extends MvcController
     }
 
     // load the view object
+    /* @var $view WebfrapDms_Folder_Ajax_View */
     $view = $response->loadView(
       'webfrap-dms-new-folder',
       'WebfrapDms_Folder',
@@ -92,7 +93,7 @@ class WebfrapDms_Folder_Controller extends MvcController
 
     $view->displayNew($params);
 
-  }//end public function service_upload */
+  }//end public function service_create */
 
 
 } // end class WebfrapDms_Controller

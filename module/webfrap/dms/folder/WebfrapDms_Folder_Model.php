@@ -24,7 +24,7 @@
 class WebfrapDms_Folder_Model extends MvcModel
 {
 /*//////////////////////////////////////////////////////////////////////////////
-// Methodes
+// Attributes
 //////////////////////////////////////////////////////////////////////////////*/
 
   public $folder = null;
@@ -34,10 +34,20 @@ class WebfrapDms_Folder_Model extends MvcModel
    */
   protected $folderManager = null;
 
+/*//////////////////////////////////////////////////////////////////////////////
+// Methodes
+//////////////////////////////////////////////////////////////////////////////*/
+
+  /**
+   * (non-PHPdoc)
+   * @see MvcModel::init()
+   */
   protected function init()
   {
+
     $this->folderManager = Manager::get('WebfrapDms_Folder');
-  }
+
+  }//end protected function init */
 
   /**
    * @param WebfrapDms_Folder_Save_Request $userRqt
@@ -45,23 +55,22 @@ class WebfrapDms_Folder_Model extends MvcModel
   public function create( $userRqt )
   {
 
-    /* @var $folderManager WebfrapDms_Folder_Manager */
-    $folderManager = Manager::get('WebfrapDms_Folder');
-    $this->folder = $folderManager->create($userRqt->folder);
+    $this->folder = $this->folderManager->create($userRqt->folder);
 
   }//end public function create */
 
   /**
-   * @param WebfrapDms_Folder_Save_Request $userRqt
+   * @depends create kann erst nach create aufgerufen werden
    */
-  public function create( $userRqt )
+  public function getActiveFolder()
   {
 
-    /* @var $folderManager WebfrapDms_Folder_Manager */
-    $folderManager = Manager::get('WebfrapDms_Folder');
-    $this->folder = $folderManager->create($userRqt->folder);
+    return $this->folderManager->getFolders(
+      $this->folder->vid,
+      $this->folder->id_parent, array('id'=>$this->folder->getid())
+    );
 
-  }//end public function create */
+  }//end public function getActiveFolder */
 
 
 } // end class WebfrapFile_Model

@@ -22,7 +22,7 @@
  * @author Dominik Bonsch <dominik.bonsch@webfrap.net>
  * @copyright Webfrap Developer Network <contact@webfrap.net>
  */
-class WebfrapDms_Ajax_View extends LibTemplatePlain
+class WebfrapDms_Folder_Ajax_View extends LibTemplatePlain
 {
 /*//////////////////////////////////////////////////////////////////////////////
 // display methodes
@@ -38,19 +38,32 @@ class WebfrapDms_Ajax_View extends LibTemplatePlain
    * Übergabe der Suchergebnisse
    * @param array $entries
    */
-  public function displayCreate( $params )
+  public function displayNew( $params )
   {
 
-    $tpl = $this->getTplEngine();
 
 
-    $entries = $this->model->searchEvents( $params );
+    $area = $this->newArea('newEntry');
+    $area->position = '#wgt-grid-webfrap-files-table>tbody';
+    $area->action = 'prepend';
+
+    $folder = $this->model->getActiveFolder();
+
+    $icon = isset($folder['folder_icon'])?$folder['folder_icon']:'icon-folder';
+
+    $area->content = <<<CODE
+  <tr class="folder" >
+    <th><input type="checkbox" value="{$folder['rowid']}" /></th>
+    <td><i class="{$icon}" ></i> {$folder['name']}</td>
+    <td>Status</td>
+    <td>{$this->i18n->date($folder['created'])}</td>
+    <td></td>
+  </tr>
+CODE;
 
 
-    $tpl->setRawJsonData($entries);
 
-
-  }//end public function displayCreate */
+  }//end public function displayNew */
 
   /**
    * Übergabe der Suchergebnisse

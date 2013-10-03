@@ -45,6 +45,9 @@ class WebfrapDms_Folder_Manager extends Manager
 
   }//end public function create */
 
+  /**
+   * @return int die Id des aktuellen Mandanten
+   */
   public function getMandantFolderStructure()
   {
 
@@ -60,31 +63,37 @@ class WebfrapDms_Folder_Manager extends Manager
 
     return $structure->getId();
 
-  }
-
-
+  }//end public function getMandantFolderStructure */
 
   /**
    * @param int $vid
    * @param int $parentFolder
+   * @param array $conditions
    * @return array
    */
-  public function getFolders( $vid, $parentFolder = null)
+  public function getFolders( $vid, $parentFolder = null, $conditions = array())
   {
 
     $where = '';
     if (is_null($parentFolder)) {
 
       $where = <<<SQL
-  folder.m_parent is null
+  AND folder.m_parent is null
 SQL;
 
     } else {
 
       $where = <<<SQL
-  folder.m_parent = {$parentFolder}
+  AND folder.m_parent = {$parentFolder}
 SQL;
 
+    }
+
+    // nur einen bestimmten folder zurückgeben
+    if ( isset($conditions['id']) ){
+      $where .= <<<SQL
+  AND folder.rowid = {$conditions['id']}
+SQL;
     }
 
     $sql = <<<SQL
@@ -97,7 +106,13 @@ SELECT
   folder.m_time_created as created
 FROM
   wbfsys_folder folder
-WHERE {$where} order by folder.name;
+JOIN
+  wbfsys_folder_structure tructure
+  ON tructure.rowid = folder.id_structure
+WHERE
+  tructure.vid = {$vid}
+  {$where}
+ORDER BY folder.name;
 
 SQL;
 

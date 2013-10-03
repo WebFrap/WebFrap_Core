@@ -44,7 +44,7 @@
         </tr>
       </thead>
       <tbody>
-        <?php foreach( $VAR->folders as $folder ){ include $this->subTemplate('webfrap/dms/tpl/folder_entry'); } ?>
+        <?php include $this->getPath('webfrap/dms/tpl/folder_entry'); ?>
         <?php foreach( $VAR->files as $file ){ ?>
           <tr class="file" >
             <th><input type="checkbox" value="<?php echo $folder['rowid'] ?>" /></th>
