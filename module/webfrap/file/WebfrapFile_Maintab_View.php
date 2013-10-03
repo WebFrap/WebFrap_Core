@@ -43,6 +43,9 @@ class WebfrapFile_Maintab_View extends WgtMaintab
 
     $this->setTemplate('webfrap/file/maintab/explorer', true);
 
+    $this->addVar('folders', array());
+    $this->addVar('files', array());
+
     $this->addMenu($userRqt);
 
   }//end public function displayElement */

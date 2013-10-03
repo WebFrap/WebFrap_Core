@@ -65,11 +65,127 @@ class WebfrapFile_Model extends Model
   public function uploadFiles()
   {
 
+    $files = $this->getRequest()->files('file', Validator::FILE );
+
+    foreach ( $files as /* @var $file LibUploadFile */ $file ) {
+
+      $file->copy();
+
+    }
 
 
   }//end public function uploadFiles */
 
+  /**
+   * @param int $vid
+   * @param int $parentFolder
+   * @return array
+   */
+  public function getMandantFolder( $vid, $parentFolder = null)
+  {
 
+    $where = '';
+    if (is_null($parentFolder)) {
+
+      $where = <<<SQL
+  folder.m_parent is null
+SQL;
+
+    } else {
+
+      $where = <<<SQL
+  folder.m_parent = {$parentFolder}
+SQL;
+
+    }
+
+    $sql = <<<SQL
+SELECT
+  folder.rowid,
+  folder.name,
+  folder.folder_icon,
+  folder.description,
+  folder.vid,
+  folder.m_time_created as created
+FROM
+  wbfsys_folder folder
+WHERE {$where} order by folder.name;
+
+SQL;
+
+    return $this->getDb()->select($sql);
+
+  }//end public function getFolders */
+
+  /**
+   * @param int $vid
+   * @param int $parentFolder
+   * @return array
+   */
+  public function getFolders( $vid, $parentFolder = null)
+  {
+
+    $where = '';
+    if (is_null($parentFolder)) {
+
+      $where = <<<SQL
+  folder.m_parent is null
+SQL;
+
+    } else {
+
+      $where = <<<SQL
+  folder.m_parent = {$parentFolder}
+SQL;
+
+    }
+
+    $sql = <<<SQL
+SELECT
+  folder.rowid,
+  folder.name,
+  folder.folder_icon,
+  folder.description,
+  folder.vid,
+  folder.m_time_created as created
+FROM
+  wbfsys_folder folder
+WHERE {$where} order by folder.name;
+
+SQL;
+
+    return $this->getDb()->select($sql);
+
+  }//end public function getFolders */
+
+  /**
+   * @param int $parentFolder
+   * @return array
+   */
+  public function getFiles($parentFolder)
+  {
+
+
+    $sql = <<<SQL
+SELECT
+  file.rowid,
+  file.name,
+  file.link,
+  file.id_confidentiality,
+  file.description,
+  file.mimetype,
+  file.m_time_created as created
+FROM
+  wbfsys_file file
+WHERE
+  file.id_folder = {$parentFolder}
+ORDER BY
+  file.name;
+SQL;
+
+    return $this->getDb()->select($sql);
+
+  }//end public function getFiles */
 
 
 } // end class WebfrapFile_Model
