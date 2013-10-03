@@ -21,47 +21,46 @@
  * @author Dominik Bonsch <dominik.bonsch@webfrap.net>
  * @copyright Webfrap Developer Network <contact@webfrap.net>
  */
-class WebfrapDms_Folder_Manager extends Model
+class WebfrapDms_Folder_Manager extends Manager
 {
 /*//////////////////////////////////////////////////////////////////////////////
 // Methodes
 //////////////////////////////////////////////////////////////////////////////*/
 
+
   /**
-   * @param TFlag $params
-   * @return WebfrapFile_List_Access
+   * @param WbfsysFolder_Entity $folder
+   * @return WbfsysFolder_Entity
    */
-  public function loadAccess($params)
+  public function create( $folder )
+  {
+    $orm = $this->getOrm();
+
+    if (!$folder->id_structure)
+      $folder->id_structure = $this->getMandantFolderStructure();
+
+    $orm->insert($folder);
+
+    return $folder;
+
+  }//end public function create */
+
+  public function getMandantFolderStructure()
   {
 
     $user = $this->getUser();
+    $orm = $this->getOrm();
 
-    // ok nun kommen wir zu der zugriffskontrolle
-    $this->access = new WebfrapDms_Access($this);
-    $this->access->init($params);
+    $structure = $orm->getWhere('WbfsysFolderStructure','vid='.$user->mandantId);
 
-    $params->access = $this->access;
-
-    return $this->access;
-
-  }//end public function loadAccess */
-
-  /**
-   * @param WebfrapFile_Upload_Request $params
-   * @return array
-   */
-  public function uploadFiles()
-  {
-
-    $files = $this->getRequest()->files('file', Validator::FILE );
-
-    foreach ( $files as /* @var $file LibUploadFile */ $file ) {
-
-      $file->copy();
-
+    if (!$structure) {
+      $mandantManager = Manager::get('WebfrapDms_Mandant');
+      $mandantManager->createMandantRoot( $mandantId );
     }
 
-  }//end public function uploadFiles */
+    return $structure->getId();
+
+  }
 
 
 

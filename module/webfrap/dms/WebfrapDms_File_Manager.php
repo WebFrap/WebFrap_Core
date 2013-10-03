@@ -21,28 +21,29 @@
  * @author Dominik Bonsch <dominik.bonsch@webfrap.net>
  * @copyright Webfrap Developer Network <contact@webfrap.net>
  */
-class WebfrapDms_Folder_Model extends Model
+class WebfrapDms_File_Manager extends Manager
 {
 /*//////////////////////////////////////////////////////////////////////////////
 // Methodes
 //////////////////////////////////////////////////////////////////////////////*/
 
-  public $folder = null;
 
   /**
-   * @param WebfrapDms_Folder_Save_Request $userRqt
+   * @param WebfrapFile_Upload_Request $params
+   * @return array
    */
-  public function create( $userRqt )
+  public function uploadFiles()
   {
 
-    /* @var $folderManager WebfrapDms_Folder_Manager */
-    $folderManager = Manager::get('DmsFolder');
-    $folderManager->create($userRqt);
+    $files = $this->getRequest()->files('file', Validator::FILE );
 
+    foreach ( $files as /* @var $file LibUploadFile */ $file ) {
+
+      $file->copy();
+
+    }
 
   }//end public function uploadFiles */
-
-
 
 
 } // end class WebfrapFile_Model
