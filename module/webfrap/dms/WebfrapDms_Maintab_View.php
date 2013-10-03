@@ -48,10 +48,7 @@ class WebfrapDms_Maintab_View extends WgtMaintab
     $this->setLabel('Dms');
     $this->setTitle('Dms');
 
-    $this->setTemplate('webfrap/dms/maintab/explorer', true);
-
-    $mandantId =
-
+    $this->setTemplate('webfrap/dms/tpl/explorer_maintab', true);
 
     $this->addVar('folders', $this->model->getFolders($user->mandantId, $userRqt->idParent));
     $this->addVar('files', $this->model->getFiles($userRqt->idParent));

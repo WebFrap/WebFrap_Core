@@ -30,13 +30,23 @@ class WebfrapDms_Folder_Model extends MvcModel
   public $folder = null;
 
   /**
+   * @var WebfrapDms_Folder_Manager
+   */
+  protected $folderManager = null;
+
+  protected function init()
+  {
+    $this->folderManager = Manager::get('WebfrapDms_Folder');
+  }
+
+  /**
    * @param WebfrapDms_Folder_Save_Request $userRqt
    */
   public function create( $userRqt )
   {
 
     /* @var $folderManager WebfrapDms_Folder_Manager */
-    $folderManager = Manager::get('DmsFolder');
+    $folderManager = Manager::get('WebfrapDms_Folder');
     $this->folder = $folderManager->create($userRqt->folder);
 
   }//end public function create */
@@ -48,7 +58,7 @@ class WebfrapDms_Folder_Model extends MvcModel
   {
 
     /* @var $folderManager WebfrapDms_Folder_Manager */
-    $folderManager = Manager::get('DmsFolder');
+    $folderManager = Manager::get('WebfrapDms_Folder');
     $this->folder = $folderManager->create($userRqt->folder);
 
   }//end public function create */

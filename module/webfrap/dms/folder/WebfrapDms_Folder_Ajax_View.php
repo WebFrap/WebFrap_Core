@@ -30,9 +30,46 @@ class WebfrapDms_Ajax_View extends LibTemplatePlain
 
   /**
    *
-   * @var WebfrapFile_Model
+   * @var WebfrapDms_Folder_Model
    */
   public $model = null;
+
+  /**
+   * Übergabe der Suchergebnisse
+   * @param array $entries
+   */
+  public function displayCreate( $params )
+  {
+
+    $tpl = $this->getTplEngine();
+
+
+    $entries = $this->model->searchEvents( $params );
+
+
+    $tpl->setRawJsonData($entries);
+
+
+  }//end public function displayCreate */
+
+  /**
+   * Übergabe der Suchergebnisse
+   * @param array $entries
+   */
+  public function displaySearch( $params )
+  {
+
+    $tpl = $this->getTplEngine();
+
+
+    $entries = $this->model->searchEvents( $params );
+
+
+    $tpl->setRawJsonData($entries);
+
+
+  }//end public function displaySearch */
+
 
   /**
    * Render des Suchergebnisses und übergabe in die ajax response
@@ -59,23 +96,7 @@ class WebfrapDms_Ajax_View extends LibTemplatePlain
   }//end public function displayDropUpload */
 
 
-  /**
-   * Übergabe der Suchergebnisse
-   * @param array $entries
-   */
-  public function displaySearch( $params )
-  {
 
-    $tpl = $this->getTplEngine();
-
-
-    $entries = $this->model->searchEvents( $params );
-
-
-    $tpl->setRawJsonData($entries);
-
-
-  }//end public function displaySearch */
 
   /**
    * Render des Suchergebnisses und übergabe in die ajax response

@@ -44,15 +44,7 @@
         </tr>
       </thead>
       <tbody>
-        <?php foreach( $VAR->folders as $folder ){ ?>
-          <tr class="folder" >
-            <th><input type="checkbox" value="<?php echo $folder['rowid'] ?>" /></th>
-            <td><i class="<?php echo isset($folder['folder_icon'])?$folder['folder_icon']:'icon-folder' ?>" ></i><?php echo $folder['name'] ?></td>
-            <td>Status</td>
-            <td><?php echo $I18N->date($folder['created']); ?></td>
-            <td></td>
-          </tr>
-        <?php } ?>
+        <?php foreach( $VAR->folders as $folder ){ include $this->subTemplate('webfrap/dms/tpl/folder_entry'); } ?>
         <?php foreach( $VAR->files as $file ){ ?>
           <tr class="file" >
             <th><input type="checkbox" value="<?php echo $folder['rowid'] ?>" /></th>

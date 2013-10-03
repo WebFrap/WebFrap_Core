@@ -21,7 +21,7 @@
  * @author Dominik Bonsch <dominik.bonsch@webfrap.net>
  * @copyright Webfrap Developer Network <contact@webfrap.net>
  */
-class WebfrapDms_Model extends Model
+class WebfrapDms_Model extends MvcModel
 {
 /*//////////////////////////////////////////////////////////////////////////////
 // Attributes
@@ -33,6 +33,16 @@ class WebfrapDms_Model extends Model
    * @var array
    */
   public $conditions = array();
+
+  /**
+   * @var WebfrapDms_Folder_Manager
+   */
+  protected $folderManager = null;
+
+  protected function init()
+  {
+    $this->folderManager = Manager::get('WebfrapDms_Folder');
+  }
 
 
 /*//////////////////////////////////////////////////////////////////////////////
@@ -58,7 +68,26 @@ class WebfrapDms_Model extends Model
 
   }//end public function loadAccess */
 
+  /**
+   * @param int $mandantId
+   * @param int $idParent
+   * @return array
+   */
+  public function getFolders($mandantId, $idParent)
+  {
 
+    return $this->folderManager->getFolders($mandantId, $idParent);
+
+  }//end public function getFolders */
+
+  /**
+   * @param int $idParent
+   * @return array
+   */
+  public function getFiles($idParent)
+  {
+    return $this->folderManager->getFoles($idParent);
+  }//end public function getFolders */
 
 
 
