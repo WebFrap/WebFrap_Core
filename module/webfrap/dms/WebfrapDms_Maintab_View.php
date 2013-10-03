@@ -21,7 +21,7 @@
  * @author Dominik Bonsch <dominik.bonsch@webfrap.net>
  * @copyright Webfrap Developer Network <contact@webfrap.net>
  */
-class WebfrapFile_Maintab_View extends WgtMaintab
+class WebfrapDms_Maintab_View extends WgtMaintab
 {
 /*//////////////////////////////////////////////////////////////////////////////
 // Methoden
@@ -32,19 +32,29 @@ class WebfrapFile_Maintab_View extends WgtMaintab
   public $overflowY = 'auto';
 
   /**
-   * @param WebfrapCalendar_Element_Search_Request $params
+   * @var WebfrapFile_Model
+   */
+  public $model = null;
+
+  /**
+   * @param WebfrapFile_Search_Request $userRqt
    * @return void
    */
   public function displayExplorer($userRqt)
   {
+
+    $user = $this->getUser();
 
     $this->setLabel('Files');
     $this->setTitle('Files');
 
     $this->setTemplate('webfrap/file/maintab/explorer', true);
 
-    $this->addVar('folders', array());
-    $this->addVar('files', array());
+    $mandantId =
+
+
+    $this->addVar('folders', $this->model->getFolders($user->mandantId, $userRqt->idParent));
+    $this->addVar('files', $this->model->getFiles($userRqt->idParent));
 
     $this->addMenu($userRqt);
 
@@ -123,8 +133,13 @@ class WebfrapFile_Maintab_View extends WgtMaintab
       class="wgtac_search_con"
       title="Upload new File" ><i class="icon-plus-sign" ></i> {$this->i18n->l('New File','wbf.label')}</a></li>
     <li><a
-      class="wgtac_search_con"
-      title="Create a new folder" ><i class="icon-plus-sign" ></i> {$this->i18n->l('New Folder','wbf.label')}</a></li>
+      class="wgtac_new_folder"
+      title="Create a new folder" ><i class="icon-plus-sign" ></i> {$this->i18n->l('New Folder','wbf.label')}</a>
+      <div class="input" >
+        <i class="icon-plus-sign" ></i>
+        <input type="text" placeholder="Enter new foldername"  />
+      </div>
+    </li>
     <li><a
       class="wgtac_search_con"
       title="Load a file from a link" ><i class="icon-plus-sign" ></i> {$this->i18n->l('Load from Link','wbf.label')}</a></li>
@@ -202,9 +217,29 @@ HTML;
       \$R.get('modal.php?c=Webfrap.Contact.formNew');
     });
 
+    self.getObject().find(".wgtac_new_folder").click(function() {
+      var entry = \$S(this).hide();
+      var next = entry.next();
+      var input = next.find('input');
+
+      next.show();
+      input.change(function(){
+
+        \$R.post('ajax.php?c=Webfrap.File.createFolder',{'folder':input.val(),'id_parent':\$S("#wgt-dropzone-webfrap-files-folder").val()});
+
+        next.hide();
+        entry.show();
+
+
+
+      });
+      input.focus();
+    });
+
     self.getObject().find(".wgtac_search_con").click(function() {
       \$R.get('maintab.php?c=Webfrap.Contact.selection');
     });
+
 
     self.getObject().find(".wgtac_refresh").click(function() {
       \$R.form('wgt-form-webfrap-contact-search');

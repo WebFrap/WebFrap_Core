@@ -22,7 +22,7 @@
  * @author Dominik Bonsch <dominik.bonsch@webfrap.net>
  * @copyright Webfrap Developer Network <contact@webfrap.net>
  */
-class WebfrapFile_Search_Request extends ContextListing
+class WebfrapDms_Search_Request extends ContextListing
 {
 
   public $start = null;

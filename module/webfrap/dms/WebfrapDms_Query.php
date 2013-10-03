@@ -24,7 +24,7 @@
  * @package WebFrap
  * @subpackage Example
  */
-class WebfrapFile_Query extends LibSqlQuery
+class WebfrapDms_Query extends LibSqlQuery
 {
 
  /**

@@ -21,7 +21,7 @@
  * @author Dominik Bonsch <dominik.bonsch@webfrap.net>
  * @copyright Webfrap Developer Network <contact@webfrap.net>
  */
-class WebfrapFile_Save_Request extends Context
+class WebfrapDms_Save_Request extends Context
 {
 /*//////////////////////////////////////////////////////////////////////////////
 // Aspects

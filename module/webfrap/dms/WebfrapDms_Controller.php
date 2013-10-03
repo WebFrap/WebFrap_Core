@@ -26,7 +26,7 @@
  * @author Dominik Bonsch <dominik.bonsch@webfrap.net>
  * @copyright webfrap.net <contact@webfrap.net>
  */
-class WebfrapFile_Controller extends Controller
+class WebfrapDms_Controller extends Controller
 {
 /*//////////////////////////////////////////////////////////////////////////////
 // methodes
@@ -50,6 +50,10 @@ class WebfrapFile_Controller extends Controller
       'views' => array('ajax')
     ),
     'upload' => array(
+      'method' => array('POST'),
+      'views' => array('ajax')
+    ),
+    'createfolder' => array(
       'method' => array('POST'),
       'views' => array('ajax')
     ),
@@ -177,7 +181,43 @@ class WebfrapFile_Controller extends Controller
 
   }//end public function service_upload */
 
+  /**
+   * Form zum erstellen einer neuen Message
+   * @param LibRequestHttp $request
+   * @param LibResponseHttp $response
+   * @return boolean
+   */
+  public function service_createFolder($request, $response)
+  {
 
+    // prüfen ob irgendwelche steuerflags übergeben wurde
+    $params = $this->getFlags($request);
+
+    $model = $this->loadModel('WebfrapFile');
+    $model->loadTableAccess($params);
+
+    if (!$model->access->listing) {
+      throw new InvalidRequest_Exception(
+        Response::FORBIDDEN_MSG,
+        Response::FORBIDDEN
+      );
+    }
+
+    // load the view object
+    $view = $response->loadView(
+      'form-messages-new',
+      'WebfrapFile_New',
+      'displayNew'
+    );
+
+    // request bearbeiten
+    /* @var $model WebfrapFile_Model */
+    $model = $this->loadModel('WebfrapFile');
+    $view->setModel($model);
+
+    $view->displayNew($params);
+
+  }//end public function service_upload */
 
 
 } // end class WebfrapFile_Controller

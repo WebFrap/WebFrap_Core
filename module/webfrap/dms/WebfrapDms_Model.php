@@ -21,7 +21,7 @@
  * @author Dominik Bonsch <dominik.bonsch@webfrap.net>
  * @copyright Webfrap Developer Network <contact@webfrap.net>
  */
-class WebfrapFile_Model extends Model
+class WebfrapDms_Model extends Model
 {
 /*//////////////////////////////////////////////////////////////////////////////
 // Attributes
@@ -73,49 +73,9 @@ class WebfrapFile_Model extends Model
 
     }
 
-
   }//end public function uploadFiles */
 
-  /**
-   * @param int $vid
-   * @param int $parentFolder
-   * @return array
-   */
-  public function getMandantFolder( $vid, $parentFolder = null)
-  {
 
-    $where = '';
-    if (is_null($parentFolder)) {
-
-      $where = <<<SQL
-  folder.m_parent is null
-SQL;
-
-    } else {
-
-      $where = <<<SQL
-  folder.m_parent = {$parentFolder}
-SQL;
-
-    }
-
-    $sql = <<<SQL
-SELECT
-  folder.rowid,
-  folder.name,
-  folder.folder_icon,
-  folder.description,
-  folder.vid,
-  folder.m_time_created as created
-FROM
-  wbfsys_folder folder
-WHERE {$where} order by folder.name;
-
-SQL;
-
-    return $this->getDb()->select($sql);
-
-  }//end public function getFolders */
 
   /**
    * @param int $vid
@@ -164,6 +124,11 @@ SQL;
    */
   public function getFiles($parentFolder)
   {
+
+    // root hat keine folder
+    if(is_null($parentFolder)){
+      return array();
+    }
 
 
     $sql = <<<SQL

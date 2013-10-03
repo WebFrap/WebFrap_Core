@@ -23,7 +23,7 @@
  * @author Dominik Bonsch <dominik.bonsch@webfrap.net>
  * @copyright webfrap.net <contact@webfrap.net>
  */
-class WebfrapFile_Access extends LibAclContainer_Dataset
+class WebfrapDms_Access extends LibAclContainer_Dataset
 {
 
   /**

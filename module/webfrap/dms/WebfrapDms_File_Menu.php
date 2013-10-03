@@ -21,7 +21,7 @@
  * @author Dominik Bonsch <dominik.bonsch@webfrap.net>
  * @copyright Webfrap Developer Network <contact@webfrap.net>
  */
-class WebfrapFile_List_Menu extends WgtMenuBuilder_SplitButton
+class WebfrapDms_File_Menu extends WgtMenuBuilder_SplitButton
 {
 /*//////////////////////////////////////////////////////////////////////////////
 // Methoden
