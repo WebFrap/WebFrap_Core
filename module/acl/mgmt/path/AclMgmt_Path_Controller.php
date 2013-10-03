@@ -26,7 +26,7 @@
  * @author Dominik Bonsch <dominik.bonsch@webfrap.net>
  * @copyright webfrap.net <contact@webfrap.net>
  */
-class AclMgmt_Path_Controller extends ControllerCrud
+class AclMgmt_Path_Controller extends MvcController
 {/*//////////////////////////////////////////////////////////////////////////////
 // Attributes
 //////////////////////////////////////////////////////////////////////////////*/

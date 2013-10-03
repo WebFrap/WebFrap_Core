@@ -26,7 +26,7 @@
  * @author Dominik Bonsch <dominik.bonsch@webfrap.net>
  * @copyright webfrap.net <contact@webfrap.net>
  */
-class AclUser_Controller extends ControllerCrud
+class AclUser_Controller extends MvcController
 {
 /*//////////////////////////////////////////////////////////////////////////////
 // Attributes

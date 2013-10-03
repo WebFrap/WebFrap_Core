@@ -21,7 +21,7 @@
  * @author Dominik Bonsch <dominik.bonsch@webfrap.net>
  * @copyright Webfrap Developer Network <contact@webfrap.net>
  */
-class WebfrapAnnouncement_Crud_Controller extends ControllerCrud
+class WebfrapAnnouncement_Crud_Controller extends MvcController
 {
 
  /**
