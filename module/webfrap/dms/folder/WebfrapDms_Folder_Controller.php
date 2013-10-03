@@ -42,6 +42,11 @@ class WebfrapDms_Folder_Controller extends MvcController
       'views' => array('ajax')
     ),
 
+    'delete' => array(
+      'method' => array('DELETE'),
+      'views' => array('ajax')
+    ),
+
 
   );
 
