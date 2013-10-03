@@ -50,6 +50,19 @@ class WebfrapDms_Folder_Model extends MvcModel
   }//end protected function init */
 
   /**
+   * @depends create kann erst nach create aufgerufen werden
+   */
+  public function getActiveFolder()
+  {
+
+    return $this->folderManager->getFolders(
+        $this->folder->vid,
+        $this->folder->id_parent, array('id'=>$this->folder->getid())
+    );
+
+  }//end public function getActiveFolder */
+
+  /**
    * @param WebfrapDms_Folder_Save_Request $userRqt
    */
   public function create( $userRqt )
@@ -60,17 +73,14 @@ class WebfrapDms_Folder_Model extends MvcModel
   }//end public function create */
 
   /**
-   * @depends create kann erst nach create aufgerufen werden
+   * @param WebfrapDms_Folder_Delete_Request $userRqt
    */
-  public function getActiveFolder()
+  public function delete( $userRqt )
   {
 
-    return $this->folderManager->getFolders(
-      $this->folder->vid,
-      $this->folder->id_parent, array('id'=>$this->folder->getid())
-    );
+    $this->folder = $this->folderManager->delete($userRqt->folder);
 
-  }//end public function getActiveFolder */
+  }//end public function delete */
 
 
 } // end class WebfrapFile_Model

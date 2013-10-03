@@ -46,6 +46,18 @@ class WebfrapDms_Folder_Manager extends Manager
   }//end public function create */
 
   /**
+   * @param WbfsysFolder_Entity $folder
+   * @return WbfsysFolder_Entity
+   */
+  public function delete( $folder )
+  {
+
+    $orm = $this->getOrm();
+    $orm->delete('WbfsysFolder', $folder);
+
+  }//end public function delete */
+
+  /**
    * @return int die Id des aktuellen Mandanten
    */
   public function getMandantFolderStructure()

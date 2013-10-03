@@ -100,5 +100,49 @@ class WebfrapDms_Folder_Controller extends MvcController
 
   }//end public function service_create */
 
+  /**
+   * Form zum erstellen einer neuen Message
+   * @param LibRequestHttp $request
+   * @param LibResponseHttp $response
+   * @return boolean
+   */
+  public function service_delete($request, $response)
+  {
+
+    // prüfen ob irgendwelche steuerflags übergeben wurde
+    $userRqt = new WebfrapDms_Folder_Delete_Request($request);
+
+    /* @var $model WebfrapDms_Model */
+    $model = $this->loadModel('WebfrapDms');
+    $model->loadAccess($userRqt);
+
+    if (!$model->access->listing) {
+      throw new InvalidRequest_Exception(
+          Response::FORBIDDEN_MSG,
+          Response::FORBIDDEN
+      );
+    }
+
+    // load the view object
+    /* @var $view WebfrapDms_Folder_Ajax_View */
+    $view = $response->loadView(
+      'webfrap-dms-delete-folder',
+      'WebfrapDms_Folder',
+      'displayDelete'
+    );
+
+    // request bearbeiten
+    /* @var $folderModel WebfrapDms_Folder_Model */
+    $folderModel = $this->loadModel('WebfrapDms_Folder');
+    $model->access = $model->getAccess();
+    $folderModel->delete($userRqt);
+
+    $view->setModel($folderModel);
+
+    $view->displayDelete($userRqt);
+    $response->addMessage('Deleted Folder');
+
+  }//end public function service_delete */
+
 
 } // end class WebfrapDms_Controller

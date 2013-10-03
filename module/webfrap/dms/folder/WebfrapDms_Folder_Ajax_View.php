@@ -59,86 +59,18 @@ class WebfrapDms_Folder_Ajax_View extends LibTemplatePlain
   </tr>
 CODE;
 
-
-
   }//end public function displayNew */
-
-  /**
-   * Übergabe der Suchergebnisse
-   * @param array $entries
-   */
-  public function displaySearch( $params )
-  {
-
-    $tpl = $this->getTplEngine();
-
-
-    $entries = $this->model->searchEvents( $params );
-
-
-    $tpl->setRawJsonData($entries);
-
-
-  }//end public function displaySearch */
-
-
-  /**
-   * Render des Suchergebnisses und übergabe in die ajax response
-   * @param string $elementId
-   */
-  public function displayDropUpload()
-  {
-
-    $tpl = $this->getTplEngine();
-
-    $entryArea = $tpl->newArea(
-      'wgt-grid-webfrap-files-table'
-    );
-    $entryArea->position = '#fubar-narf';
-    $entryArea->action = 'html';
-
-    $fileInfo = $this->model->uploadFiles();
-
-    $entries = Debug::dumpToString($_FILES, true);
-
-    $entryArea->setContent($entries);
-
-
-  }//end public function displayDropUpload */
-
-
-
 
   /**
    * Render des Suchergebnisses und übergabe in die ajax response
    * @param int $linkId
    */
-  public function displayDelRef($linkId)
+  public function displayDelete($userRqt)
   {
 
-    $tpl = $this->getTplEngine();
-    $tpl->addJsCode("\$S('li#wgt-entry-msg-ref-".$linkId."').remove();");
+    $this->addJsCode("\$S('#wgt-grid-webfrap-files-table').grid('deleteRowById','#wgt-row-webfrap-files-{$userRqt->folder}');");
 
-  }//end public function displayDelRef */
-
-
-  /**
-   * Autocomplete für User
-   *
-   * @param string $key
-   * @param TArray $params
-   */
-  public function displayUserAutocomplete($key, $params)
-  {
-
-    $view = $this->getTpl();
-    $view->setRawJsonData($this->model->getUserListByKey($key, $params));
-
-  }//end public function displayUserAutocomplete */
-
-
-
-
+  }//end public function displayDelete */
 
 
 } // end class WebfrapMessage_Ajax_View */
