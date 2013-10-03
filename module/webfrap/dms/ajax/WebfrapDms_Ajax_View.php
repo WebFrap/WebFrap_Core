@@ -22,7 +22,7 @@
  * @author Dominik Bonsch <dominik.bonsch@webfrap.net>
  * @copyright Webfrap Developer Network <contact@webfrap.net>
  */
-class WebfrapFile_Ajax_View extends LibTemplatePlain
+class WebfrapDms_Ajax_View extends LibTemplatePlain
 {
 /*//////////////////////////////////////////////////////////////////////////////
 // display methodes

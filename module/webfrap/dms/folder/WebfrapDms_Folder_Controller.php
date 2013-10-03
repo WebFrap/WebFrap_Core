@@ -83,6 +83,7 @@ class WebfrapDms_Folder_Controller extends MvcController
     );
 
     // request bearbeiten
+    /* @var $folderModel WebfrapDms_Folder_Model */
     $folderModel = $this->loadModel('WebfrapDms_Folder');
     $model->access = $model->getAccess();
     $folderModel->create($userRqt);
